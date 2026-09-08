@@ -45,7 +45,10 @@
     "test:fast": "npm run test",
     "test:mcp-host": "npm run build:mcp-host && playwright test --config playwright.mcp-host.config.ts",
     "test:watch": "vitest",
-    "typecheck": "tsc -b"
+    "typecheck": "tsc -b",
+    "try": "npm run try --workspace @refrain/presentation",
+    "build:try": "npm run build:try --workspace @refrain/presentation",
+    "test:try": "npm run build:try && playwright test --config playwright.presentation.config.ts"
   },
   "devDependencies": {
     "@playwright/test": "1.62.1",

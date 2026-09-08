@@ -24,6 +24,20 @@ npm run test:mcp-host
 
 `npm run dev:mcp-host -- --profile=portable` opens a local debugging host with explicit capabilities. It is a test harness, not an additional product UI or an actual third-party host.
 
+## First-listen page
+
+```bash
+npm run try
+npm run build:try
+npm run test:try
+```
+
+`try` opens the existing presentation app with the checked-in synthetic example, local file reopening, and agent setup guidance. Its loopback server chooses the next port if 4318 is occupied. `build:try` writes a static site to `apps/presentation/dist-try/` without copying the presentation public directory, samples, SoundFonts, or worklets. It uses relative asset paths so the output can be served from a subdirectory. The output includes the selected license texts and notices for the npm modules actually bundled; it reuses the MCP Canvas guard to exclude the unused SoundFont implementation. `test:try` exercises that built site under `/refrain/` in desktop and 390px Chromium.
+
+To host a first listen, serve the contents of `dist-try/` over HTTPS on an operator-chosen static host. No Refrain server, model key, user account, or upload endpoint is needed. The build does not deploy anything; a public URL has not yet been published. Preserve the selected licenses and the repository link when distributing it. Do not expose a private MCP origin to host this page.
+
+The page imports the exact checked-in `synthetic-counterpulse` score through `first-air.ts`, then uses the canonical compiler, root receipt, Artifact@3 factory, and presentation verifier. It mounts the same `AirRenderer` as the CLI/MCP paths. The example is authored music; this page does not compose. Imported artifacts retain their bindings. The static build supplies no sampled asset plane and never substitutes another sound. Ordinary CLI previews retain their prepared same-origin sample plane.
+
 ## Full build and adjacent contracts
 
 ```bash

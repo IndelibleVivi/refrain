@@ -186,6 +186,7 @@ export interface RendererAssetConfig {
 
 export interface RefrainRendererProps {
   initialLocale?: RefrainLocale;
+  onLocaleChange?: (locale: RefrainLocale) => void;
   artifact: AnyAirArtifact;
   assets: RendererAssetConfig;
   onDownload?: (

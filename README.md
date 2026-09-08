@@ -21,10 +21,12 @@ git clone https://github.com/IndelibleVivi/refrain.git
 cd refrain
 npm ci
 node bin/refrain.mjs doctor
-node bin/refrain.mjs open fixtures/air-v1/synthetic-counterpulse.air.json --binding f-synthetic-beat@0
+npm run try
 ```
 
-Press **Play** (▶) to hear the checked-in example. No provider key, sample download, or full production build is needed for this first listen. Keep the terminal open; Ctrl+C ends the preview. The URL is temporary and local to your computer. [Save the artifact and WAV](docs/GETTING-STARTED.md#keep-the-piece) to keep or share the result.
+Press **Play** at the top of the piece. Switch between four themes, select a melody, and choose **Export Refrain artifact** to keep it. Below the Canvas you can reopen a saved file and find the next step for your own agent. No provider key, sample download, or full production build is needed. Keep the terminal open; Ctrl+C ends the listening page.
+
+This local URL belongs to your computer. A static-hostable listening page can now be built, but **a public try-it URL has not been published**. See [building and hosting](docs/DEVELOPMENT.md#first-listen-page); for audio files, [export WAV / MIDI](docs/GETTING-STARTED.md#keep-the-piece).
 
 | Your next step                                         | Entrance                                                                                                                                                     |
 | ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -32,6 +34,21 @@ Press **Play** (▶) to hear the checked-in example. No provider key, sample dow
 | Give a local agent composition and production guidance | [Refrain Skill](plugins/refrain/README.md): progressive guidance with exact file tools. The Plugin is a source candidate, not an automatic MCP installation. |
 | Listen locally, save WAV/MIDI, or try acoustic sound   | [First-use guide](docs/GETTING-STARTED.md).                                                                                                                  |
 | Run a private HTTP connection for a remote host        | [Operator self-hosting guide](docs/runbooks/self-host-mcp.md).                                                                                               |
+
+## Four appearances, one air
+
+Use the appearance menu above the Canvas to switch. The music, playback position, and selected passage stay with you. These are real views of the same example; open an image for a closer look.
+
+<table>
+  <tr>
+    <td width="50%"><strong>Paper Sonata</strong><br>Manuscript paper and marks in the margin<br><a href="docs/images/canvas.png"><img src="docs/images/canvas.png" alt="Paper Sonata · Pulse leaves a door open"></a></td>
+    <td width="50%"><strong>Prism</strong><br>Refraction, gradients, and floating melodic lines<br><a href="docs/images/canvas-prism.png"><img src="docs/images/canvas-prism.png" alt="Prism · Pulse leaves a door open"></a></td>
+  </tr>
+  <tr>
+    <td width="50%"><strong>Nocturne Ink</strong><br>Deep water, ink, and restrained light<br><a href="docs/images/canvas-nocturne-ink.png"><img src="docs/images/canvas-nocturne-ink.png" alt="Nocturne Ink · Pulse leaves a door open"></a></td>
+    <td width="50%"><strong>Herbarium</strong><br>Specimen paper, moss, and returning sprigs<br><a href="docs/images/canvas-herbarium.png"><img src="docs/images/canvas-herbarium.png" alt="Herbarium · Pulse leaves a door open"></a></td>
+  </tr>
+</table>
 
 ## What you can make
 

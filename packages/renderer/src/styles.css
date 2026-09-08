@@ -269,9 +269,6 @@
 .theme-nocturne .section-jumps button {
   background: rgba(228, 223, 209, 0.05);
 }
-.theme-nocturne .appearance-badge {
-  background: rgba(228, 223, 209, 0.06);
-}
 .theme-nocturne input[type="range"].seek::-webkit-slider-thumb {
   width: 5px;
   height: 16px;
@@ -736,7 +733,41 @@ details.product-details[open] summary svg {
 .mcp-language-bar {
   display: flex;
   justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 8px;
   margin-bottom: 8px;
+}
+.refrain-renderer .refrain-theme {
+  max-width: 100%;
+  min-height: 36px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 4px 10px;
+  background: var(--surface);
+  color: var(--accent);
+  font:
+    500 11px/1.4 system-ui,
+    sans-serif;
+  cursor: pointer;
+}
+.refrain-theme:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+.artifact-save {
+  display: flex;
+  justify-content: flex-end;
+  margin: 16px 0;
+}
+.refrain-renderer .artifact-save button {
+  color: var(--accent);
+  border: 1px solid var(--line-strong);
+  border-radius: 6px;
+  background: var(--surface-2);
+  padding: 10px 14px;
+  font:
+    500 12px/1.4 system-ui,
+    sans-serif;
 }
 .refrain-language,
 .refrain-renderer .refrain-language {
@@ -768,25 +799,6 @@ details.product-details[open] summary svg {
   font-size: 16px;
   font-weight: 600;
   letter-spacing: -0.02em;
-}
-.appearance-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  min-height: 31px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  padding: 0 10px;
-  background: rgba(255, 255, 255, 0.34);
-  color: var(--muted);
-  font-size: 8.5px;
-  font-weight: 700;
-}
-.appearance-badge i {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--accent);
 }
 .page-hero .piece-title {
   font-size: 42px;
@@ -1090,13 +1102,6 @@ details.product-details[open] summary svg {
 }
 .air-page--mobile .air-page-brand {
   font-size: 15px;
-}
-.air-page--mobile .appearance-badge {
-  padding-inline: 8px;
-  max-width: 176px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 .air-page--mobile .page-hero {
   margin: 34px 2px 18px;
@@ -1675,9 +1680,6 @@ details.product-details[open] summary svg {
 .selection-action {
   background: var(--accent);
   box-shadow: 0 7px 18px color-mix(in srgb, var(--accent) 19%, transparent);
-}
-.appearance-badge {
-  backdrop-filter: blur(10px);
 }
 .page-panel h3 {
   font-size: 18px;

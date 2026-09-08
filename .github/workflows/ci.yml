@@ -114,12 +114,13 @@ jobs:
       - run: npm ci
       - run: npx playwright install --with-deps chromium
       - run: npm run test:mcp-host
+      - run: npm run test:try
       # actions/upload-artifact v7.0.1
       - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
         if: ${{ failure() }}
         with:
           name: mcp-host-failure-${{ github.sha }}
-          path: output/playwright/mcp-host/**
+          path: output/playwright/**
           if-no-files-found: warn
           retention-days: 7
 

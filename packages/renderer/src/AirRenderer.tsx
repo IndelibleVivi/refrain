@@ -84,8 +84,11 @@ export function AirRenderer({
   surface = "url",
   visualTheme = "paper-sonata",
   initialLocale,
+  onLocaleChange,
 }: RefrainRendererProps) {
   const [locale, setLocale] = useRefrainLocale(initialLocale);
+  const [selectedTheme, setSelectedTheme] = useState(visualTheme);
+  useEffect(() => setSelectedTheme(visualTheme), [visualTheme]);
   const copy = uiCopy(locale);
   const [playerState, setPlayerState] = useState<PlayerState>("idle");
   const [playerError, setPlayerError] = useState<string>();
@@ -570,7 +573,11 @@ export function AirRenderer({
         artifactIdentity={artifactIdentity}
         locale={locale}
         callbacks={{
-          onLocaleChange: setLocale,
+          onLocaleChange: (next) => {
+            setLocale(next);
+            onLocaleChange?.(next);
+          },
+          onThemeChange: setSelectedTheme,
           onExportArtifact: () => requestExport("artifact"),
           onExportSource: () => requestExport("source"),
           onRestartPlayback: () => restartCompletePiece(),
@@ -596,7 +603,7 @@ export function AirRenderer({
         selectionOptions={selectionOptions}
         selectedAnchor={selectedAnchor}
         surface={surface}
-        themeId={visualTheme}
+        themeId={selectedTheme}
       />
       {playerError ? (
         <p className="refrain-renderer__notice" role="alert">
@@ -629,9 +636,11 @@ export function AirRenderer({
           {exportStatus.detail}
         </p>
       ) : null}
-      <span className="refrain-renderer__live" aria-live="polite">
-        {copy.player[playerState]}
-      </span>
+      {!performanceUnavailable ? (
+        <span className="refrain-renderer__live" aria-live="polite">
+          {copy.player[playerState]}
+        </span>
+      ) : null}
     </div>
   );
 }

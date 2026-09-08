@@ -21,10 +21,12 @@ git clone https://github.com/IndelibleVivi/refrain.git
 cd refrain
 npm ci
 node bin/refrain.mjs doctor
-node bin/refrain.mjs open fixtures/air-v1/synthetic-counterpulse.air.json --binding f-synthetic-beat@0
+npm run try
 ```
 
-页面打开后按 **播放**，听这份随仓库提供的示例。第一次试听不需要 provider key、采样下载或完整 production build。保持终端运行；Ctrl+C 结束预览。这个 URL 只在本机临时有效；想保留或分享作品，请[导出 artifact 和 WAV](docs/GETTING-STARTED.md#keep-the-piece)。
+浏览器打开后，按上方的 **播放**。直接切换四个主题、点选旋律，再用 **导出 Refrain artifact** 保存作品；页面下方可以重新打开保存的文件，也有接入自己 agent 的指引。第一次试听不需要 provider key、采样下载或完整 production build。保持终端运行；Ctrl+C 结束试听页。
+
+这个本地 URL 只属于你的电脑。可静态托管的试听页面已能构建，**公共试玩网址尚未发布**；[构建与托管说明](docs/DEVELOPMENT.md#first-listen-page)。需要音频文件时，[导出 WAV / MIDI](docs/GETTING-STARTED.md#keep-the-piece)。
 
 | 接下来想做什么                      | 入口                                                                                                                         |
 | ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
@@ -32,6 +34,21 @@ node bin/refrain.mjs open fixtures/air-v1/synthetic-counterpulse.air.json --bind
 | 给本地 agent 作曲与 production 指引 | [Refrain Skill](plugins/refrain/README.md)：按需加载指导，调用精确的文件工具。Plugin 目前是源码候选，不会自动安装 MCP 连接。 |
 | 本地听、保存 WAV/MIDI、尝试原声音色 | [首次使用指南](docs/GETTING-STARTED.md)。                                                                                    |
 | 为远程 host 配置私人 HTTP 连接      | [Self-hosting 操作指南](docs/runbooks/self-host-mcp.md)。                                                                    |
+
+## 四种外观，同一首 air
+
+在 Canvas 上方的外观菜单中直接切换。音乐、播放位置和选中的段落保留。下面是同一首示例的真实画面；点击图片可以放大。
+
+<table>
+  <tr>
+    <td width="50%"><strong>Paper Sonata</strong><br>手稿、页边记号与纸的纹理<br><a href="docs/images/canvas.png"><img src="docs/images/canvas.png" alt="Paper Sonata · Pulse leaves a door open"></a></td>
+    <td width="50%"><strong>Prism</strong><br>折光、渐变与轻盈的旋律线<br><a href="docs/images/canvas-prism.png"><img src="docs/images/canvas-prism.png" alt="Prism · Pulse leaves a door open"></a></td>
+  </tr>
+  <tr>
+    <td width="50%"><strong>Nocturne Ink</strong><br>深水、墨色与克制的微光<br><a href="docs/images/canvas-nocturne-ink.png"><img src="docs/images/canvas-nocturne-ink.png" alt="Nocturne Ink · Pulse leaves a door open"></a></td>
+    <td width="50%"><strong>Herbarium</strong><br>标本纸、苔绿与再次生长的枝叶<br><a href="docs/images/canvas-herbarium.png"><img src="docs/images/canvas-herbarium.png" alt="Herbarium · Pulse leaves a door open"></a></td>
+  </tr>
+</table>
 
 ## 可以做什么
 

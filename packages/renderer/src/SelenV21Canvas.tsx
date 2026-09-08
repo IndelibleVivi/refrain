@@ -55,6 +55,7 @@ export function SelenV21Canvas({
         detailsOpen: boolean;
         selection: string;
         languageFocused: boolean;
+        themeFocused: boolean;
       }
     | undefined
   >(undefined);
@@ -88,6 +89,7 @@ export function SelenV21Canvas({
     runtime.current = mountSelenV21(element, {
       callbacks: {
         onLocaleChange: (next) => callbacksRef.current.onLocaleChange(next),
+        onThemeChange: (next) => callbacksRef.current.onThemeChange(next),
         onExportArtifact: () => callbacksRef.current.onExportArtifact?.(),
         onExportSource: () => callbacksRef.current.onExportSource?.(),
         onRestartPlayback: () => callbacksRef.current.onRestartPlayback(),
@@ -129,6 +131,8 @@ export function SelenV21Canvas({
       }
       if (previous.languageFocused)
         element.querySelector<HTMLButtonElement>(".refrain-language")?.focus();
+      if (previous.themeFocused)
+        element.querySelector<HTMLSelectElement>(".refrain-theme")?.focus();
     }
     return () => {
       presentation.current = {
@@ -139,6 +143,8 @@ export function SelenV21Canvas({
             ?.value ?? "",
         languageFocused:
           element.querySelector(".refrain-language") === document.activeElement,
+        themeFocused:
+          element.querySelector(".refrain-theme") === document.activeElement,
       };
       runtime.current?.destroy();
       runtime.current = undefined;

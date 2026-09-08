@@ -26,3 +26,5 @@ packages/mcp-server/vite.config.js
 packages/mcp-server/vite.config.d.ts
 packages/mcp-server/vite.config.d.ts.map
 tmp/
+
+apps/presentation/dist-try/

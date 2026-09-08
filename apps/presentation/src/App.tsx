@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { AnyAirArtifact, SelenV21ThemeId } from "@refrain/renderer";
 import {
   AirRenderer,
@@ -17,6 +17,8 @@ import {
   verifyArtifactForPresentation,
   verifyPresentationEnvelope,
 } from "./presentation-envelope.js";
+import { firstAir } from "./first-air.js";
+import { firstListenCopy } from "./first-listen-copy.js";
 
 const VISUAL_THEMES = new Set<SelenV21ThemeId>([
   "paper-sonata",
@@ -35,6 +37,11 @@ function requestedVisualTheme(): SelenV21ThemeId {
 export function App() {
   const [locale, setLocale] = useRefrainLocale();
   const copy = uiCopy(locale);
+  const welcome = firstListenCopy(locale);
+  const [firstListen, setFirstListen] = useState(false);
+  const [fileError, setFileError] = useState<string>();
+  const [copyStatus, setCopyStatus] = useState<"copied" | "manual">();
+  const revision = useRef(0);
   const [artifact, setArtifact] = useState<AnyAirArtifact>();
   const [message, setMessage] = useState<{
     key: UiMessageKey;
@@ -43,10 +50,10 @@ export function App() {
 
   useEffect(() => {
     let active = true;
-    let revision = 0;
     const loadHash = () => {
-      const requestedRevision = ++revision;
+      const requestedRevision = ++revision.current;
       setArtifact(undefined);
+      setFileError(undefined);
       setMessage({ key: "loadingAir" });
       const hash = new URLSearchParams(window.location.hash.slice(1));
       const artifactSha256 = hash.get("artifact");
@@ -58,6 +65,9 @@ export function App() {
         "binding",
       );
       const load = async () => {
+        const isFirstListen = !window.location.hash && !sessionHref;
+        setFirstListen(isFirstListen);
+        if (isFirstListen) return firstAir();
         if (artifactSha256 && fragment) {
           const ref: PresentationRefV0 = {
             format: PRESENTATION_REF_FORMAT,
@@ -108,7 +118,7 @@ export function App() {
       };
       void load()
         .then((result) => {
-          if (!active || requestedRevision !== revision) return;
+          if (!active || requestedRevision !== revision.current) return;
           if (result.ok) setArtifact(result.artifact);
           else
             setMessage({
@@ -117,7 +127,7 @@ export function App() {
             });
         })
         .catch((cause: unknown) => {
-          if (active && requestedRevision === revision)
+          if (active && requestedRevision === revision.current)
             setMessage({
               key: "invalidFile",
               detail: cause instanceof Error ? cause.message : undefined,
@@ -132,6 +142,41 @@ export function App() {
     };
   }, []);
 
+  const openFile = async (file: File) => {
+    const requestedRevision = ++revision.current;
+    setFileError(undefined);
+    try {
+      const result = verifyArtifactForPresentation(
+        JSON.parse(await file.text()),
+      );
+      if (requestedRevision !== revision.current) return;
+      if (result.ok) setArtifact(result.artifact);
+      else setFileError(result.message);
+    } catch (cause) {
+      if (requestedRevision === revision.current)
+        setFileError(cause instanceof Error ? cause.message : "Invalid JSON");
+    }
+  };
+  const fileInput = (
+    <label className="first-listen-file">
+      {firstListen ? welcome.open : copy.openFile}
+      <input
+        accept=".json,.refrain.json,application/json,application/vnd.refrain+json"
+        onChange={(event) => {
+          const file = event.currentTarget.files?.[0];
+          if (file) void openFile(file);
+          event.currentTarget.value = "";
+        }}
+        type="file"
+      />
+    </label>
+  );
+  const error = fileError ? (
+    <p role="alert">
+      {copy.invalidFile} <span lang="en">{fileError}</span>
+    </p>
+  ) : null;
+
   if (!artifact) {
     return (
       <main className="presentation-message" lang={locale}>
@@ -143,45 +188,88 @@ export function App() {
           {copy.openCommand}{" "}
           <code>node bin/refrain.mjs open path/to/file.air.json</code>
         </p>
-        <label>
-          {copy.openFile}
-          <input
-            accept=".json,.refrain.json,application/json,application/vnd.refrain+json"
-            onChange={(event) => {
-              const file = event.currentTarget.files?.[0];
-              if (!file) return;
-              void file.text().then((text) => {
-                let value: unknown;
-                try {
-                  value = JSON.parse(text) as unknown;
-                } catch {
-                  setMessage({ key: "invalidFile" });
-                  return;
-                }
-                const result = verifyArtifactForPresentation(value);
-                if (result.ok) setArtifact(result.artifact);
-                else setMessage({ key: "invalidFile", detail: result.message });
-              });
-            }}
-            type="file"
-          />
-        </label>
+        {fileInput}
+        {error}
       </main>
     );
   }
   return (
-    <main className="presentation-shell">
+    <main className="presentation-shell" lang={locale}>
+      {firstListen ? (
+        <header className="first-listen-intro">
+          <p className="first-listen-mark">
+            Refrain hums an air. <span>{welcome.label}</span>
+          </p>
+          <h1>{welcome.title}</h1>
+          <p>{welcome.intro}</p>
+        </header>
+      ) : null}
       <AirRenderer
         initialLocale={locale}
+        onLocaleChange={setLocale}
         artifact={artifact}
-        assets={{
-          soundBankUrl: "/soundpacks/GeneralUser-GS.sf2",
-          assetBaseUrl: "",
-          workletUrl: "/spessasynth_processor.min.js",
-        }}
+        assets={
+          firstListen || import.meta.env.MODE === "try"
+            ? {}
+            : {
+                soundBankUrl: "/soundpacks/GeneralUser-GS.sf2",
+                assetBaseUrl: "",
+                workletUrl: "/spessasynth_processor.min.js",
+              }
+        }
         surface="url"
         visualTheme={requestedVisualTheme()}
       />
+      {firstListen ? (
+        <footer className="first-listen-next">
+          <section className="first-listen-keep">
+            <h2>{welcome.keep}</h2>
+            <p>{welcome.keepBody}</p>
+            {fileInput}
+            <button
+              type="button"
+              onClick={() => {
+                ++revision.current;
+                const result = firstAir();
+                if (result.ok) setArtifact(result.artifact);
+                setFileError(undefined);
+              }}
+            >
+              {welcome.reset}
+            </button>
+            {error}
+            <p className="first-listen-note">{welcome.local}</p>
+          </section>
+          <section>
+            <h2>{welcome.next}</h2>
+            <p>{welcome.nextBody}</p>
+            <a
+              href="https://github.com/IndelibleVivi/refrain/blob/main/docs/MCP.md"
+              target="_blank"
+              rel="noreferrer"
+            >
+              {welcome.guide} ↗
+            </a>
+            <details className="first-listen-prompt">
+              <summary>{welcome.promptLabel}</summary>
+              <blockquote>{welcome.prompt}</blockquote>
+              <button
+                type="button"
+                onClick={() => {
+                  void navigator.clipboard?.writeText(welcome.prompt).then(
+                    () => setCopyStatus("copied"),
+                    () => setCopyStatus("manual"),
+                  );
+                  if (!navigator.clipboard) setCopyStatus("manual");
+                }}
+              >
+                {welcome.copy}
+              </button>
+              <p role="status">{copyStatus ? welcome[copyStatus] : ""}</p>
+            </details>
+          </section>
+        </footer>
+      ) : null}
     </main>
   );
 }

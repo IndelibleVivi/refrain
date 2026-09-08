@@ -1101,6 +1101,31 @@ test.describe("bilingual Canvas", () => {
       await app.getByRole("button", { name: "暂停", exact: true }).click();
       await expect(renderer).toHaveAttribute("data-player-state", "paused");
       const paused = await app.locator("input.seek").inputValue();
+      for (const theme of [
+        "prism",
+        "nocturne-ink",
+        "herbarium",
+        "paper-sonata",
+      ]) {
+        const appearance = app.getByRole("combobox", {
+          name: "外观",
+          exact: true,
+        });
+        await appearance.focus();
+        await appearance.selectOption(theme);
+        await expect(appearance).toHaveValue(theme);
+        await expect(appearance).toBeFocused();
+        await expect(app.locator("input.seek")).toHaveValue(paused);
+        await expect(
+          app.getByRole("combobox", { name: "选择一段" }),
+        ).toHaveValue(value);
+        await expect(app.locator("details")).toHaveAttribute("open", "");
+        const size = await app.locator("html").evaluate((element) => ({
+          client: element.clientWidth,
+          scroll: element.scrollWidth,
+        }));
+        expect(size.scroll).toBeLessThanOrEqual(size.client);
+      }
       await app.getByRole("button", { name: "导出 Refrain artifact" }).click();
       await expect
         .poll(

@@ -26,7 +26,9 @@ Production is part of making the first piece worth hearing. The local `produce` 
 
 **Refrain hums an air.** remains the shared thesis. The product is **Refrain** in both English and Chinese; `hum` and `air` keep their names. Localization makes controls, guidance, status, and accessibility text natural in each language. It does not require literal translations or a separate Chinese brand.
 
-Both languages use the same renderer and four visual composers. Language is presentation state, outside the musical source, receipt, binding, and artifact identity. Authored titles, captions, section/motif names, theme/instrument names, and exact diagnostic details retain their original wording. Switching language must preserve playback, the current selection, and export bytes.
+Both languages use the same renderer and four visual composers. Language is presentation state, outside the musical source, receipt, binding, and artifact identity. Authored titles, captions, section/motif names, theme/instrument names, and exact diagnostic details retain their original wording. Switching language or appearance must preserve playback, the current selection, and export bytes.
+
+The first-listen page lets a newcomer play a checked-in air, switch appearances, inspect a motif, and keep/reopen the work before configuring an agent. It uses the same Canvas and leads into the host conversation for authorship. A static example is not a hidden composer or an official work library.
 
 ## Five durable freedoms
 

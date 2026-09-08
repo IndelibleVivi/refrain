@@ -23,6 +23,7 @@ export interface SelenV21RuntimeState {
 
 export interface SelenV21RuntimeCallbacks {
   onLocaleChange: (locale: RefrainLocale) => void;
+  onThemeChange: (theme: SelenV21ThemeId) => void;
   onTogglePlayback: () => void | Promise<void>;
   onRestartPlayback: () => void | Promise<void>;
   onStopPlayback: () => void | Promise<void>;
@@ -3304,6 +3305,23 @@ export function mountSelenV21(
     return button;
   }
 
+  function buildThemeSwitch(theme) {
+    const select = document.createElement("select");
+    select.className = "refrain-theme";
+    select.setAttribute("aria-label", copy.appearance);
+    Object.values(themes).forEach((choice) => {
+      const option = document.createElement("option");
+      option.value = choice.id;
+      option.textContent = choice.label;
+      select.append(option);
+    });
+    select.value = theme.id;
+    select.addEventListener("change", () =>
+      callbacks.onThemeChange(select.value),
+    );
+    return select;
+  }
+
   function buildMCP(theme) {
     const root = htmlEl(
       "article",
@@ -3343,7 +3361,7 @@ export function mountSelenV21(
     const transport = buildTransport(theme, "mcp");
     const details = buildDetails(theme);
     const languageBar = htmlEl("div", "mcp-language-bar");
-    languageBar.append(buildLanguageSwitch());
+    languageBar.append(buildThemeSwitch(theme), buildLanguageSwitch());
     root.append(languageBar, header, figure.shell, transport, details);
     presentations.push({
       root,
@@ -3357,10 +3375,8 @@ export function mountSelenV21(
   function buildPageTopbar(theme) {
     const bar = htmlEl("div", "air-page-topbar");
     bar.append(htmlEl("div", "air-page-brand", "Refrain"));
-    const badge = htmlEl("div", "appearance-badge");
-    badge.innerHTML = `<i></i><span>${theme.label}</span>`;
     const controls = htmlEl("div", "air-page-controls");
-    controls.append(badge, buildLanguageSwitch());
+    controls.append(buildThemeSwitch(theme), buildLanguageSwitch());
     bar.append(controls);
     return bar;
   }
@@ -3523,7 +3539,7 @@ export function mountSelenV21(
     if (motif) lower.append(motif.root);
     else lower.classList.add("single");
     const details = buildDetails(theme);
-    root.append(topbar);
+    root.append(topbar, transport);
     if (theme.id === "paper-sonata") {
       const spread = htmlEl("div", "paper-page-spread");
       const editorial = htmlEl("div", "paper-editorial");
@@ -3531,9 +3547,9 @@ export function mountSelenV21(
       const stage = htmlEl("div", "paper-stage");
       stage.append(figure.shell);
       spread.append(editorial, stage);
-      root.append(spread, transport, jumps, lower, details);
+      root.append(spread, jumps, lower, details);
     } else {
-      root.append(hero, figure.shell, transport, jumps, lower, details);
+      root.append(hero, figure.shell, jumps, lower, details);
     }
     presentations.push({
       root,
@@ -3806,16 +3822,18 @@ export function mountSelenV21(
     exactSelection.append(label, actions);
     detailsBody.append(exactSelection);
   }
-  if (detailsBody && (callbacks.onExportArtifact || callbacks.onExportSource)) {
+  if (callbacks.onExportArtifact) {
+    const save = htmlEl("div", "artifact-save");
+    const artifactButton = htmlEl("button", "", copy.exportArtifact);
+    artifactButton.type = "button";
+    artifactButton.addEventListener("click", () =>
+      callbacks.onExportArtifact?.(),
+    );
+    save.append(artifactButton);
+    product.querySelector(".product-details")?.before(save);
+  }
+  if (detailsBody && callbacks.onExportSource) {
     const actions = htmlEl("div", "artifact-actions");
-    if (callbacks.onExportArtifact) {
-      const artifactButton = htmlEl("button", "", copy.exportArtifact);
-      artifactButton.type = "button";
-      artifactButton.addEventListener("click", () =>
-        callbacks.onExportArtifact?.(),
-      );
-      actions.append(artifactButton);
-    }
     if (callbacks.onExportSource) {
       const sourceButton = htmlEl("button", "", copy.exportSource);
       sourceButton.type = "button";

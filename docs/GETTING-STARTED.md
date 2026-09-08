@@ -22,18 +22,30 @@ Commands below run from this checkout. No global installation is required. Optio
 ## Hear the first example
 
 ```bash
+npm run try
+```
+
+The first-listen browser page opens with **Pulse leaves a door open**, a checked-in synthetic sketch. Playback controls are above the score. No AIR or MCP knowledge is needed to listen. Press **Play** (▶) to begin. Use **EN / 中文** to choose English or Chinese. The interface starts in the browser’s language (Chinese or English); a language change keeps the current playback position, selected passage, and open details. The choice lasts for this view, without storing a user profile. You can pause, restart, navigate sections, and select a motif or segment to inspect its place in the piece.
+
+Use the appearance menu above the piece to switch between Paper Sonata, Prism, Nocturne Ink, and Herbarium. Theme changes retain playback, the selected passage, open details, and exact artifact bytes. Theme and instrument names, authored titles/captions, and technical diagnostic details retain their original wording. **Refrain hums an air.** is shared across languages; there is no separate translated product name.
+
+This example uses only synthetic instruments. It needs no sample download, provider key, or full production build. The first-listen process stays in the terminal; **Ctrl+C** closes it. If a browser does not open, use the loopback URL printed in the terminal. It starts on port 4318 or the next available port.
+
+For a specific AIR or saved artifact, use the ordinary CLI preview:
+
+```bash
 node bin/refrain.mjs open fixtures/air-v1/synthetic-counterpulse.air.json --binding f-synthetic-beat@0
 ```
 
-A loopback browser page opens with **Pulse leaves a door open**. Press **Play** (▶) to begin. Use **EN / 中文** to choose English or Chinese. The interface starts in the browser’s language (Chinese or English); a language change keeps the current playback position, selected passage, and open details. The choice lasts for this view, without storing a user profile. You can pause, restart, navigate sections, and select a motif or segment to inspect its place in the piece.
-
-The four themes are Paper Sonata, Prism, Nocturne Ink, and Herbarium. Theme and instrument names, authored titles/captions, and technical diagnostic details retain their original wording. **Refrain hums an air.** is shared across languages; there is no separate translated product name.
-
-This example uses only synthetic instruments. It needs no sample download, provider key, or full production build. The preview process stays in the terminal; **Ctrl+C** closes it. To choose a browser yourself, add `--no-open` and open the printed URL. An agent can add `--json` to receive a short session URL.
+That command supports `--no-open` to print a URL without launching a browser, and `--json` for an agent-readable session result.
 
 The preview URL is temporary and belongs to this computer. It is not a shareable hosted work or a durable save. Save the artifact before closing a preview you want to keep.
 
 ## Keep the piece
+
+Choose **Export Refrain artifact** below the piece; technical details do not need to be expanded. The saved `.refrain.json` contains the score and exact performance choices. In the first-listen page, use **Open a saved air** to return to it. File contents stay in the browser and are not uploaded. **Back to the example** returns to the built-in sketch. This page has no sample asset plane, so a sampled work remains exact but cannot play here; open it with the CLI in a runtime that has its sounds.
+
+For WAV, MIDI, and the full export directory:
 
 ```bash
 node bin/refrain.mjs export fixtures/air-v1/synthetic-counterpulse.air.json --binding f-synthetic-beat@0 --out tmp/first-air

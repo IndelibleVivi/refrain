@@ -12,7 +12,9 @@
     "export:air": "tsx src/export-air.ts",
     "packs": "tsx src/packs.ts",
     "test": "vitest run --root ../.. apps/presentation",
-    "typecheck": "tsc -b --pretty false"
+    "typecheck": "tsc -b --pretty false",
+    "try": "vite --mode try --host 127.0.0.1",
+    "build:try": "vite build --mode try"
   },
   "dependencies": {
     "@refrain/air-schema": "*",
