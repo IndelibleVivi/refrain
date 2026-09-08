@@ -44,6 +44,34 @@
     sans-serif;
 }
 
+.refrain-renderer__performance {
+  width: min(100%, 860px);
+  margin: 0 auto 12px;
+  padding: 12px;
+  font:
+    13px/1.5 Inter,
+    ui-sans-serif,
+    system-ui,
+    sans-serif;
+}
+.refrain-renderer__performance label {
+  display: grid;
+  gap: 6px;
+}
+.refrain-renderer__performance select {
+  min-height: 44px;
+  width: 100%;
+  min-width: 0;
+  padding: 6px 10px;
+  font: inherit;
+}
+.refrain-renderer__performance p {
+  margin: 6px 0 0;
+}
+.refrain-renderer[data-surface="mcp-canvas"] .refrain-renderer__performance {
+  max-width: 390px;
+}
+
 .refrain-renderer__live {
   position: absolute;
   width: 1px;

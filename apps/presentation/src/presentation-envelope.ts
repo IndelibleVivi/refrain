@@ -1,12 +1,9 @@
 import { parseAir } from "@refrain/air-schema";
-import { parseAnyAir } from "@refrain/air-schema/any";
 import { parseAirV1 } from "@refrain/air-schema/v1";
-import { compileAnyAir } from "@refrain/compiler/any";
 import { compileAir } from "@refrain/compiler";
 import { compileAirV1 } from "@refrain/compiler/v1";
 import {
   MAX_PRESENTATION_FRAGMENT_CHARS,
-  parseRefrainArtifact,
   sourceReceiptIntegrityErrors,
 } from "@refrain/renderer";
 import type {
@@ -16,7 +13,6 @@ import type {
   LegacyPresentationEnvelope,
   PresentationEnvelope,
   PresentationEnvelopeV2,
-  RefrainArtifact,
 } from "@refrain/renderer";
 import {
   sourceReceiptIntegrityErrorsV1,
@@ -27,8 +23,6 @@ import {
   performanceBindingShapeIsValid,
   resolvePerformanceBindingAgainstRuntime,
 } from "@refrain/soundpack";
-import { resolvePerformanceBindingV1AgainstRuntime } from "@refrain/soundpack/vnext";
-import { SOUND_REGISTRY } from "@refrain/soundpack";
 
 export type PresentationVerification =
   { ok: true; artifact: AnyAirArtifact } | { ok: false; message: string };
@@ -106,22 +100,20 @@ export async function verifyPresentationEnvelope(
         ok: false,
         message: `The AIR@1 presentation receipt integrity does not verify (${receiptErrors.join(", ")}).`,
       };
-    if (!value.performanceBinding)
-      return {
-        ok: false,
-        message:
-          "Canonical AIR@1 and receipt verified. Exact performance is unavailable because this envelope carries no PerformanceBinding.",
-      };
     const artifact: AirArtifactV1 = {
       source: parsedV1.source,
       compiled: compiledV1.compiled,
       diagnostics: compiledV1.diagnostics,
       receipt: value.receipt as AirReceiptV1,
-      performanceBinding: value.performanceBinding,
-      performanceStatus: resolvePerformanceBindingAgainstRuntime(
-        value.performanceBinding,
-      ),
-      ...(value.caption ? { caption: value.caption } : {}),
+      ...(value.performanceBinding
+        ? {
+            performanceBinding: value.performanceBinding,
+            performanceStatus: resolvePerformanceBindingAgainstRuntime(
+              value.performanceBinding,
+            ),
+          }
+        : {}),
+      ...(value.caption === undefined ? {} : { caption: value.caption }),
     };
     return { ok: true, artifact };
   }
@@ -166,88 +158,9 @@ export async function verifyPresentationEnvelope(
       performanceBinding,
       performanceStatus:
         resolvePerformanceBindingAgainstRuntime(performanceBinding),
-      ...(value.caption ? { caption: value.caption } : {}),
+      ...(value.caption === undefined ? {} : { caption: value.caption }),
     },
   };
 }
 
-export function verifyArtifactForPresentation(
-  value: unknown,
-  requestedBindingId?: string,
-): PresentationVerification {
-  const parsedArtifact = parseRefrainArtifact(value);
-  if (!parsedArtifact.ok)
-    return { ok: false, message: parsedArtifact.errors.join(" ") };
-  const artifact: RefrainArtifact = parsedArtifact.artifact;
-  const parsed = parseAnyAir(artifact.source);
-  const compiled = parsed.source ? compileAnyAir(parsed.source) : undefined;
-  if (!parsed.source || !compiled?.compiled)
-    return {
-      ok: false,
-      message: "The canonical AIR in this artifact does not compile.",
-    };
-  if (artifact.format === "refrain-artifact@0-experimental")
-    return {
-      ok: false,
-      message:
-        "This legacy artifact is continuity-valid but audibly unbound. Choose and attach an installed PerformanceBinding before playback.",
-    };
-  const bindingId = requestedBindingId ?? artifact.defaultBindingId;
-  const performanceBinding = bindingId
-    ? artifact.performanceBindings.find((binding) => binding.id === bindingId)
-    : artifact.performanceBindings.length === 1
-      ? artifact.performanceBindings[0]
-      : undefined;
-  if (!performanceBinding)
-    return {
-      ok: false,
-      message:
-        artifact.performanceBindings.length === 0
-          ? "The artifact is continuity-valid but has no audible PerformanceBinding."
-          : "Choose one of the artifact's PerformanceBindings before playback.",
-    };
-  if (artifact.format === "refrain-artifact@3-experimental") {
-    const source = parseAirV1(artifact.source).source;
-    const v1Compiled = source ? compileAirV1(source) : undefined;
-    if (!source || !v1Compiled?.compiled)
-      return { ok: false, message: "The canonical AIR@1 does not compile." };
-    return {
-      ok: true,
-      artifact: {
-        source,
-        compiled: v1Compiled.compiled,
-        diagnostics: v1Compiled.diagnostics,
-        receipt: artifact.receipt,
-        performanceBinding,
-        performanceStatus:
-          performanceBinding.format ===
-          "refrain-performance-binding@1-experimental"
-            ? resolvePerformanceBindingV1AgainstRuntime(
-                performanceBinding,
-                SOUND_REGISTRY,
-              )
-            : resolvePerformanceBindingAgainstRuntime(performanceBinding),
-        ...(artifact.caption ? { caption: artifact.caption } : {}),
-      },
-    };
-  }
-  return {
-    ok: true,
-    artifact: {
-      source: parsed.source as import("@refrain/air-schema").AirSource,
-      compiled: compiled.compiled as import("@refrain/compiler").CompiledAir,
-      diagnostics: compiled.diagnostics,
-      receipt: artifact.receipt as import("@refrain/renderer").AirReceipt,
-      performanceBinding,
-      performanceStatus:
-        performanceBinding.format ===
-        "refrain-performance-binding@1-experimental"
-          ? resolvePerformanceBindingV1AgainstRuntime(
-              performanceBinding,
-              SOUND_REGISTRY,
-            )
-          : resolvePerformanceBindingAgainstRuntime(performanceBinding),
-      ...(artifact.caption ? { caption: artifact.caption } : {}),
-    },
-  };
-}
+export { presentPortableArtifact as verifyArtifactForPresentation } from "@refrain/renderer/artifact-document";

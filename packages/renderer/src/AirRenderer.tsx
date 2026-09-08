@@ -9,12 +9,13 @@ import { createExecutionBundle } from "@refrain/audio-engine/execution";
 import { SelenV21Canvas } from "./SelenV21Canvas.js";
 import { useRefrainLocale } from "./locale.js";
 import { uiCopy, type UiMessageKey } from "./ui-copy.js";
+import { stringifyRefrainArtifact } from "./portable.js";
 import {
-  createRefrainArtifact,
-  createRefrainArtifactV2,
-  createRefrainArtifactV3,
-  stringifyRefrainArtifact,
-} from "./portable.js";
+  carriedBindings,
+  portableArtifactForView,
+  withAuditionBinding,
+} from "./artifact-document.js";
+import type { RefrainArtifact } from "./types.js";
 import type { PerformanceBinding } from "@refrain/soundpack";
 import {
   createRefrainSelectionHandoff,
@@ -77,7 +78,7 @@ function artifactStem(title: string): string {
 }
 
 export function AirRenderer({
-  artifact,
+  artifact: suppliedArtifact,
   assets,
   onDownload,
   onSelectionRequest,
@@ -86,6 +87,22 @@ export function AirRenderer({
   initialLocale,
   onLocaleChange,
 }: RefrainRendererProps) {
+  const document = useMemo(
+    () => portableArtifactForView(suppliedArtifact),
+    [suppliedArtifact],
+  );
+  const [audition, setAudition] = useState<{
+    document: RefrainArtifact;
+    bindingId: string;
+  }>();
+  const artifact = useMemo(
+    () =>
+      audition?.document === document
+        ? withAuditionBinding(suppliedArtifact, audition.bindingId || undefined)
+        : suppliedArtifact,
+    [suppliedArtifact, document, audition],
+  );
+  const bindings = carriedBindings(document);
   const [locale, setLocale] = useRefrainLocale(initialLocale);
   const [selectedTheme, setSelectedTheme] = useState(visualTheme);
   useEffect(() => setSelectedTheme(visualTheme), [visualTheme]);
@@ -443,34 +460,7 @@ export function AirRenderer({
     browserDownload(file);
   };
 
-  const portableArtifactForCurrent = () =>
-    artifact.source.format === "air@1-experimental"
-      ? createRefrainArtifactV3({
-          source: artifact.source,
-          receipt: artifact.receipt as import("./v1.js").AirReceiptV1,
-          ...(performanceBinding ? { performanceBinding } : {}),
-          ...(artifact.caption === undefined
-            ? {}
-            : { caption: artifact.caption }),
-        })
-      : performanceBinding?.format ===
-          "refrain-performance-binding@1-experimental"
-        ? createRefrainArtifactV2({
-            source: artifact.source as import("@refrain/air-schema").AirSource,
-            receipt: artifact.receipt as import("./types.js").AirReceipt,
-            performanceBinding,
-            ...(artifact.caption === undefined
-              ? {}
-              : { caption: artifact.caption }),
-          })
-        : createRefrainArtifact({
-            source: artifact.source as import("@refrain/air-schema").AirSource,
-            receipt: artifact.receipt as import("./types.js").AirReceipt,
-            ...(performanceBinding ? { performanceBinding } : {}),
-            ...(artifact.caption === undefined
-              ? {}
-              : { caption: artifact.caption }),
-          });
+  const portableArtifactForCurrent = () => document;
 
   const exportPortableArtifact =
     async (): Promise<DownloadArtifactOutcome | void> => {
@@ -516,7 +506,7 @@ export function AirRenderer({
       exactSelection,
       portableArtifactForCurrent(),
     );
-    const request = selectionHandoffToAgentRequest(handoff);
+    const request = selectionHandoffToAgentRequest(handoff, performanceBinding);
     try {
       if (action === "download") {
         const file: DownloadArtifact = {
@@ -569,6 +559,28 @@ export function AirRenderer({
       data-surface={surface}
       data-llm={`Viewing the air ${artifact.source.title}; source revision ${artifact.receipt.sourceRevision}; receipt ${artifact.receipt.receiptId}; performance binding ${performanceBinding ? `${performanceBinding.id} sha256:${performanceBinding.contentSha256}` : "unbound"}; performance ${performanceUnavailable ? `unavailable: ${performanceUnavailable.message}` : "available"}; musical relation ${artifact.receipt.verification.status}; ${artifact.compiled.motifOccurrences.length} motif occurrences.`}
     >
+      {bindings.length > 1 ? (
+        <div className="refrain-renderer__performance">
+          <label>
+            <span>{copy.auditionSound}</span>
+            <select
+              aria-label={copy.auditionSound}
+              value={performanceBinding?.id ?? ""}
+              onChange={(event) =>
+                setAudition({ document, bindingId: event.currentTarget.value })
+              }
+            >
+              <option value="">{copy.chooseSound}</option>
+              {bindings.map((binding) => (
+                <option key={binding.id} value={binding.id}>
+                  {binding.id}
+                </option>
+              ))}
+            </select>
+          </label>
+          <p>{copy.auditionOnly}</p>
+        </div>
+      ) : null}
       <SelenV21Canvas
         artifactIdentity={artifactIdentity}
         locale={locale}

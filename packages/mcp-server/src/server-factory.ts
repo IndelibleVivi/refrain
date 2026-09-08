@@ -92,7 +92,7 @@ export function createRefrainServer() {
       description: [
         "Render one complete air@1-experimental source authored by you, the current host agent; exact historical air@0 sources remain accepted.",
         "Refrain validates, compiles, gives the person manual playback, and returns verified receipt integrity; it does not contain another composing model.",
-        `This MCP host defaults omitted AIR@1 performance.bindingId to ${defaultAirV1PerformanceBinding.id}. Its Canvas is a zero-asset direct-nodes build, so an explicit sampled binding remains exact but unavailable there; ordinary browser surfaces retain sampled playback.`,
+        `This MCP host defaults omitted AIR@1 performance.bindingId to ${defaultAirV1PerformanceBinding.id}. For a continuation, omitted performance inherits the exact parent default (or sole carried binding), including custom Binding@1; unbound or ambiguous parents stay unbound. Its Canvas is a zero-asset direct-nodes build, so an explicit sampled binding remains exact but unavailable there; ordinary browser surfaces retain sampled playback.`,
         `For audible playback in this Canvas, use only these exact zero-asset instrument identities: ${canvasSynthInstruments.join(", ")}. An AIR using any sample-backed identity remains canonical, but its performanceStatus is unavailable in this Canvas.`,
         "For AIR@1 continuation, pass the exact Artifact@3 from the prior result unchanged as from.parentArtifact, then choose revise, extend, reply, variation, or quote. Explicit evidence may bind motif transformation, orchestration, recurrence, section contrast, and meaningful absence. Optional embodiment lineage stays separate. Never send only an ID because the server is stateless.",
         "On failure, the MCP result is isError with strict structured content { ok: false, diagnostics }. On success, outputSchema exposes a compact result envelope while the returned Artifact@3 remains complete and from.parentArtifact validates it unchanged.",
@@ -208,7 +208,7 @@ export function createRefrainServer() {
           : createRefrainArtifact({
               source: result.source,
               receipt: result.receipt as import("@refrain/renderer").AirReceipt,
-              performanceBinding: result.performanceBinding!,
+              performanceBinding: historicalResult!.performanceBinding,
               ...(result.caption === undefined
                 ? {}
                 : { caption: result.caption }),

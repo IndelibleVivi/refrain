@@ -65,6 +65,8 @@ export interface AirReceipt {
 }
 
 export interface AirArtifact {
+  /** Full portable document; playback fields are a projection of it. */
+  portableArtifact?: RefrainArtifact;
   source: AirSource;
   compiled: CompiledAir;
   diagnostics: Diagnostic[];
@@ -153,6 +155,8 @@ export type RefrainArtifact =
   | RefrainArtifactV3;
 
 export interface AirArtifactV1 {
+  /** Full portable document; playback fields are a projection of it. */
+  portableArtifact?: RefrainArtifact;
   source: AirSourceV1;
   compiled: CompiledAirV1;
   diagnostics: Diagnostic[];

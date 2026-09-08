@@ -17,7 +17,7 @@ npm ci
 node bin/refrain.mjs doctor
 ```
 
-During publication preparation, cloning requires access to the private repository. See [current state](current-state.md) for the publication boundary. Installing dependencies uses the npm registry. `doctor` itself needs neither network nor authentication; it should report a supported Node runtime and available local entrypoints.
+Installing dependencies uses the npm registry. `doctor` itself needs neither network nor authentication; it should report a supported Node runtime and available local entrypoints.
 
 Commands below run from this checkout. No global installation is required. Optionally run `npm link` once to use `refrain` in place of `node bin/refrain.mjs`; keep the checkout in place because this is a source-tree link.
 
@@ -46,6 +46,8 @@ The preview URL is temporary and belongs to this computer. It is not a shareable
 ## Keep the piece
 
 Choose **Export Refrain artifact** below the piece; technical details do not need to be expanded. The saved `.refrain.json` contains the score and exact performance choices. In the first-listen page, use **Open a saved air** to return to it. File contents stay in the browser and are not uploaded. **Back to the example** returns to the built-in sketch. The page carries the two featured works’ exact sounds. Other sampled works remain exact but may need the CLI in a runtime that has their sounds.
+
+An imported artifact with multiple sounds exposes **Sound for this listening view**. Switching stops playback and resets its position; press Play to hear the choice. Save keeps the complete document, all carried sound versions and render/projection evidence, and its original default. It does not save the view-only choice or reduce the file to the currently playing sound. Valid unbound files and files with no default remain inspectable and saveable; select a carried sound where available. Missing samples never cause an automatic replacement sound.
 
 For WAV, MIDI, and the full export directory:
 

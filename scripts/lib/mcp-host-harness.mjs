@@ -574,6 +574,7 @@ export function mcpHostInitScript() {
 export async function startMcpHostHarness({
   root = process.cwd(),
   mode = "production",
+  extraCases = {},
 } = {}) {
   if (mode !== "production" && mode !== "development") {
     throw new Error(`Unknown MCP host harness mode ${mode}.`);
@@ -675,6 +676,12 @@ export async function startMcpHostHarness({
       throw new Error(
         "The artifact replacement fixtures unexpectedly share one receipt identity.",
       );
+    }
+
+    // Test-owned canonical artifacts can exercise transport/persistence without a model.
+    for (const [name, { input, result }] of Object.entries(extraCases)) {
+      if (cases[name]) throw new Error(`Duplicate host fixture ${name}.`);
+      cases[name] = successfulToolCase(name, input, result);
     }
 
     const pageHtml = hostPageHtml(resource, cases, mode);

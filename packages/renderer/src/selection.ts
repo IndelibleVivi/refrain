@@ -134,10 +134,16 @@ export function createRefrainSelectionHandoff(
 
 export function selectionHandoffToAgentRequest(
   handoff: RefrainSelectionHandoff,
+  audition?: { id: string; contentSha256: string },
 ): string {
   return [
     `The user selected the exact ${handoff.selection.kind} anchor ${handoff.selection.anchor} in Refrain.`,
     "Treat this selection as conversational context, not as an automatic request to call hum. The closed handoff below contains the exact parent source, same-generation receipt, and any attached exact performance binding. If the user asks for a continuation, use parentArtifact as the sole parent authority; never reconstruct it from prose or downgrade its AIR generation.",
+    ...(audition
+      ? [
+          `The listener auditioned carried binding ${audition.id} (sha256:${audition.contentSha256}). This is listening context, not permission to change sound. When continuing that sound, explicitly set performance.bindingId to ${JSON.stringify(audition.id)}; do not rewrite the saved parent default.`,
+        ]
+      : []),
     `Refrain selection handoff JSON:\n${JSON.stringify(handoff)}`,
   ].join("\n\n");
 }

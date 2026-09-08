@@ -2,16 +2,21 @@ import type { Diagnostic, VoiceRole } from "@refrain/air-schema";
 import type { AirSourceV1 } from "@refrain/air-schema/v1";
 import { compileAirV1, type CompiledAirV1 } from "@refrain/compiler/v1";
 import { createExecutionBundle } from "@refrain/audio-engine/execution";
+import { SHA256_ID } from "@refrain/renderer/identity";
+import { createInlinePresentationRef } from "@refrain/renderer/presentation-ref";
 import {
-  MAX_PRESENTATION_FRAGMENT_CHARS,
-  SHA256_ID,
-} from "@refrain/renderer/identity";
+  performanceStatusForSource,
+  type ExactPerformanceBinding,
+} from "@refrain/soundpack/binding-status";
 import type {
   AirLineage,
   ContinuationRelation,
   RefrainArtifactV3,
 } from "@refrain/renderer";
-import { parseRefrainArtifact } from "@refrain/renderer/portable";
+import {
+  createRefrainArtifactV3,
+  parseRefrainArtifact,
+} from "@refrain/renderer/portable";
 import {
   AIR_RECEIPT_V1_FORMAT,
   createEmbodimentLineage,
@@ -74,6 +79,8 @@ export interface HumInputV1 {
 export interface HumV1Defaults {
   defaultPerformanceBindingId?: string;
   playbackAssets?: RendererAssetConfig;
+  /** File-based authoring may explicitly supply an exact binding, never a hidden default. */
+  explicitPerformanceBinding?: ExactPerformanceBinding;
 }
 
 export interface CompiledAirSummaryV1 {
@@ -122,7 +129,7 @@ export interface HumSuccessV1 {
   summary: CompiledAirSummaryV1;
   diagnostics: Diagnostic[];
   receipt: AirReceiptV1;
-  performanceBinding?: PerformanceBinding;
+  performanceBinding?: ExactPerformanceBinding;
   performanceStatus: PerformanceBindingRuntimeStatus;
   caption?: string;
   presentation?: { url: string };
@@ -237,7 +244,7 @@ export function summarizeCompiledAirV1(
   };
 }
 
-function presentationUrl(envelope: unknown): {
+function presentationUrl(artifact: RefrainArtifactV3): {
   url?: string;
   diagnostic?: Diagnostic;
 } {
@@ -272,71 +279,100 @@ function presentationUrl(envelope: unknown): {
           "The presentation base must be HTTPS or loopback HTTP without credentials or a fragment.",
       },
     };
-  const payload = Buffer.from(JSON.stringify(envelope), "utf8").toString(
-    "base64url",
-  );
-  if (payload.length > MAX_PRESENTATION_FRAGMENT_CHARS)
+  const delivery = createInlinePresentationRef(artifact);
+  if (!delivery.ok)
     return {
       diagnostic: {
         severity: "note",
         code: "presentation_too_large",
         path: "$runtime.presentation",
-        message: `The presentation fragment is ${payload.length} characters; Tier 0 and export remain available.`,
+        message: `The presentation fragment is ${delivery.fragmentChars} characters; Tier 0 and export remain available.`,
       },
     };
-  url.hash = `air=${payload}`;
+  url.hash = new URLSearchParams({
+    artifact: delivery.ref.artifactSha256,
+    bytes: delivery.ref.delivery.fragment,
+  }).toString();
   return { url: url.href };
 }
 
 function selectPerformanceBinding(
   source: AirSourceV1,
   bindingId: string | undefined,
+  defaults: HumV1Defaults,
+  parent?: RefrainArtifactV3,
 ): {
-  binding?: PerformanceBinding;
+  binding?: ExactPerformanceBinding;
   status: PerformanceBindingRuntimeStatus;
   diagnostic?: Diagnostic;
 } {
-  const requested = bindingId
-    ? performanceBindingById.get(bindingId)
-    : COMPLETE_PIECE_PERFORMANCE_BINDING;
-  if (!requested)
+  // A carried identity is authoritative even when the installed catalogue changes.
+  // Root defaults must never fill an unbound or ambiguous parent implicitly.
+  const requested =
+    defaults.explicitPerformanceBinding ??
+    (bindingId !== undefined
+      ? (parent?.performanceBindings.find((b) => b.id === bindingId) ??
+        performanceBindingById.get(bindingId))
+      : parent
+        ? artifactBinding(parent)
+        : defaults.defaultPerformanceBindingId
+          ? performanceBindingById.get(defaults.defaultPerformanceBindingId)
+          : COMPLETE_PIECE_PERFORMANCE_BINDING);
+  if (!requested) {
+    const unknown =
+      bindingId !== undefined ||
+      (!parent && defaults.defaultPerformanceBindingId !== undefined);
+    const message = unknown
+      ? `Unknown performance binding ${bindingId ?? defaults.defaultPerformanceBindingId}.`
+      : "The parent has no selected exact performance binding. Choose a carried binding explicitly to add sound.";
     return {
       status: {
         status: "unavailable",
         reason: "performance-binding-invalid",
-        message: `Unknown performance binding ${bindingId}.`,
-        errors: [`Unknown performance binding ${bindingId}.`],
+        message,
+        errors: [message],
       },
       diagnostic: {
-        severity: "error",
-        code: "unknown_performance_binding",
+        severity: unknown ? "error" : "note",
+        code: unknown
+          ? "unknown_performance_binding"
+          : "exact_sound_unavailable",
         path: "$.performance.bindingId",
-        message: `Unknown performance binding ${bindingId}.`,
+        message,
       },
     };
-  const missing = [
-    ...new Set(source.voices.map((voice) => voice.instrument)),
-  ].filter(
-    (instrument) => requested.soundProfile.selections[instrument] === undefined,
-  );
-  if (missing.length > 0)
+  }
+  const errors = bindingIntegrityErrors(requested);
+  if (errors.length)
     return {
       status: {
         status: "unavailable",
-        reason: "instrument-vocabulary-not-installed",
-        message: `The selected performance binding does not embody: ${missing.join(", ")}.`,
-        errors: missing.map(
-          (instrument) => `No exact sound selection for ${instrument}.`,
-        ),
+        reason: "performance-binding-invalid",
+        message: errors.join(" "),
+        errors,
       },
       diagnostic: {
-        severity: "note",
-        code: "exact_sound_unavailable",
+        severity: "error",
+        code: "invalid_performance_binding",
         path: "$.performance",
-        message: `Canonical AIR and receipt remain valid, but exact playback is unavailable for: ${missing.join(", ")}.`,
+        message: errors.join(" "),
       },
     };
-  return { binding: requested, status: { status: "available" } };
+  const status = performanceStatusForSource(requested, source);
+  return {
+    binding: requested,
+    status,
+    ...(status.status === "unavailable"
+      ? {
+          diagnostic: {
+            severity: "note" as const,
+            code: "exact_sound_unavailable",
+            path: "$.performance",
+            message: status.message,
+          },
+        }
+      : {}),
+  };
 }
 
 function embodimentDiagnostic(
@@ -416,9 +452,27 @@ export function humV1(
   const current = compileAirV1(input.air);
   if (!current.source || !current.compiled)
     return { ok: false, diagnostics: current.diagnostics };
+  let exactParent: RefrainArtifactV3 | undefined;
+  if (input.from && "parentArtifact" in input.from) {
+    const parsed = parseRefrainArtifact(input.from.parentArtifact);
+    if (
+      !parsed.ok ||
+      parsed.artifact.format !== "refrain-artifact@3-experimental"
+    )
+      return embodimentDiagnostic(
+        "invalid_parent_artifact",
+        "$.from.parentArtifact",
+        parsed.ok
+          ? "AIR@1 continuation requires an exact Artifact@3 parent."
+          : `The exact parent artifact failed integrity: ${parsed.errors.join(" ")}`,
+      );
+    exactParent = parsed.artifact;
+  }
   let performance = selectPerformanceBinding(
     current.source,
-    input.performance?.bindingId ?? defaults.defaultPerformanceBindingId,
+    input.performance?.bindingId,
+    defaults,
+    exactParent,
   );
   if (performance.diagnostic?.severity === "error")
     return { ok: false, diagnostics: [performance.diagnostic] };
@@ -445,25 +499,7 @@ export function humV1(
     let parentReceipt: AirReceiptV1;
     let parentArtifact: RefrainArtifactV3 | undefined;
     if (artifactFrom) {
-      const parsedArtifact = parseRefrainArtifact(artifactFrom.parentArtifact);
-      if (
-        !parsedArtifact.ok ||
-        parsedArtifact.artifact.format !== "refrain-artifact@3-experimental"
-      )
-        return {
-          ok: false,
-          diagnostics: [
-            {
-              severity: "error",
-              code: "invalid_parent_artifact",
-              path: "$.from.parentArtifact",
-              message: parsedArtifact.ok
-                ? "AIR@1 continuation requires an exact Artifact@3 parent."
-                : `The exact parent artifact failed integrity: ${parsedArtifact.errors.join(" ")}`,
-            },
-          ],
-        };
-      parentArtifact = parsedArtifact.artifact;
+      parentArtifact = exactParent!;
       parentAir = parentArtifact.source;
       parentReceipt = parentArtifact.receipt;
     } else {
@@ -625,11 +661,7 @@ export function humV1(
     }
   }
 
-  if (
-    performance.binding &&
-    performance.status.status === "available" &&
-    defaults.playbackAssets
-  ) {
+  if (performance.binding && performance.status.status === "available") {
     let executionError: string | undefined;
     let assetRequirements:
       ReadonlyArray<{ kind: "wav" | "soundfont" }> | undefined;
@@ -643,15 +675,24 @@ export function humV1(
           ? cause.message
           : "The exact execution bundle could not be constructed.";
     }
-    const capability = rendererPlaybackCapability({
-      hasBinding: true,
-      completePiece:
-        performance.binding.renderer.performancePlanFormat ===
-        "performance-plan@3-experimental",
-      assetRequirements,
-      executionError,
-      assets: defaults.playbackAssets,
-    });
+    const capability = defaults.playbackAssets
+      ? rendererPlaybackCapability({
+          hasBinding: true,
+          completePiece: [
+            "performance-plan@3-experimental",
+            "performance-plan@4-experimental",
+          ].includes(performance.binding.renderer.performancePlanFormat),
+          assetRequirements,
+          executionError,
+          assets: defaults.playbackAssets,
+        })
+      : executionError
+        ? {
+            status: "unavailable" as const,
+            reason: "execution-bundle-invalid" as const,
+            message: executionError,
+          }
+        : { status: "available" as const };
     if (capability.status === "unavailable") {
       const reason =
         capability.reason === "sample-origin-missing" ||
@@ -699,15 +740,16 @@ export function humV1(
         },
       ],
     };
-  const envelope = {
-    format: "refrain-presentation@2-experimental",
-    source: current.source,
-    receipt,
-    ...(performance.binding ? { performanceBinding: performance.binding } : {}),
-    performanceStatus: performance.status,
-    ...(input.caption === undefined ? {} : { caption: input.caption }),
-  };
-  const presentation = presentationUrl(envelope);
+  const presentation = presentationUrl(
+    createRefrainArtifactV3({
+      source: current.source,
+      receipt,
+      ...(performance.binding
+        ? { performanceBinding: performance.binding }
+        : {}),
+      ...(input.caption === undefined ? {} : { caption: input.caption }),
+    }),
+  );
   return {
     ok: true,
     source: current.source,

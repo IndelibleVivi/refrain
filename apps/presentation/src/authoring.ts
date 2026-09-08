@@ -24,7 +24,6 @@ import {
   validateHistoricalPerformanceBindingV1,
   type PerformanceBindingV1,
 } from "@refrain/soundpack/vnext";
-import { performanceStatusForSource } from "./select-performance-binding.js";
 import { inspectMusic, readMusic } from "./inspect-air.js";
 
 export function draftAir(options: {
@@ -206,37 +205,46 @@ export async function runAuthoringCli(args: string[], cwd: string) {
     parent?.ok && parent.artifact.format === "refrain-artifact@3-experimental"
       ? parent.artifact
       : undefined;
-  const inherited = parentArtifact?.performanceBindings.find(
-    (b) => b.id === parentArtifact.defaultBindingId,
+  const requestedBinding = string("binding");
+  const explicitBinding = requestedBinding
+    ? (parentArtifact?.performanceBindings.find(
+        (b) => b.id === requestedBinding,
+      ) ?? (await readBinding(requestedBinding, cwd)))
+    : undefined;
+  const result = humV1(
+    {
+      air: input,
+      ...(string("caption") === undefined
+        ? {}
+        : { caption: string("caption")! }),
+      ...(parentArtifact
+        ? {
+            from: {
+              parentArtifact,
+              relation: relation as NonNullable<HumInputV1["from"]>["relation"],
+              ...(string("evidence")
+                ? {
+                    evidence: (await read(string("evidence")!)) as NonNullable<
+                      HumInputV1["from"]
+                    >["evidence"],
+                  }
+                : {}),
+            },
+          }
+        : {}),
+    },
+    {
+      defaultPerformanceBindingId: "f-synthetic-beat@0",
+      ...(explicitBinding
+        ? { explicitPerformanceBinding: explicitBinding }
+        : {}),
+    },
   );
-  const binding = string("binding")
-    ? await readBinding(string("binding")!, cwd)
-    : parentArtifact
-      ? inherited
-      : await readBinding("f-synthetic-beat@0", cwd);
-  const result = humV1({
-    air: input,
-    ...(string("caption") === undefined ? {} : { caption: string("caption")! }),
-    ...(parentArtifact
-      ? {
-          from: {
-            parentArtifact,
-            relation: relation as NonNullable<HumInputV1["from"]>["relation"],
-            ...(string("evidence")
-              ? {
-                  evidence: (await read(string("evidence")!)) as NonNullable<
-                    HumInputV1["from"]
-                  >["evidence"],
-                }
-              : {}),
-          },
-        }
-      : {}),
-  });
   if (!result.ok)
     throw new Error(
       result.diagnostics.map((d) => `${d.path}: ${d.message}`).join("\n"),
     );
+  const binding = result.performanceBinding;
   const artifact = createRefrainArtifactV3({
     source: result.source,
     receipt: result.receipt,
@@ -251,12 +259,7 @@ export async function runAuthoringCli(args: string[], cwd: string) {
     receiptId: artifact.receipt.receiptId,
     relation: artifact.receipt.lineage?.relation ?? null,
     binding: artifact.defaultBindingId ?? null,
-    performance: binding
-      ? performanceStatusForSource(binding, result.source)
-      : {
-          status: "unavailable",
-          message: "No exact binding was selected on the parent.",
-        },
+    performance: result.performanceStatus,
     durationSeconds: result.summary.durationSeconds,
     eventCount: result.summary.eventCount,
     diagnostics: result.diagnostics,

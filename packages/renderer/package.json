@@ -36,7 +36,11 @@
       "refrain-built": "./dist/playback-capability.js",
       "default": "./src/playback-capability.ts"
     },
-    "./styles.css": "./src/styles.css"
+    "./styles.css": "./src/styles.css",
+    "./artifact-document": {
+      "refrain-built": "./dist/artifact-document.js",
+      "default": "./src/artifact-document.ts"
+    }
   },
   "scripts": {
     "build": "tsc -b",
