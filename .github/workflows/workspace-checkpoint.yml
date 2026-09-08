@@ -1,0 +1,41 @@
+name: Isolated workspace checkpoint
+on:
+  pull_request:
+    paths:
+      - .github/workflows/workspace-checkpoint.yml
+permissions:
+  contents: read
+jobs:
+  checkpoint:
+    if: github.head_ref == 'cove/preserve-work-and-sound-20260909'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: 22.23.1
+          package-manager-cache: false
+      - run: npm ci
+      - name: Archive tracked source and installed dependencies only
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/refrain-checkpoint/.checkpoint-tools
+          git archive HEAD | tar -x -C /tmp/refrain-checkpoint
+          cp -a node_modules /tmp/refrain-checkpoint/node_modules
+          cp "$(command -v node)" /tmp/refrain-checkpoint/.checkpoint-tools/node
+          git rev-parse HEAD > /tmp/refrain-checkpoint/.checkpoint-tools/source-commit
+          tar -C /tmp/refrain-checkpoint -czf /tmp/refrain-workspace.tgz .
+          cd /tmp
+          sha256sum refrain-workspace.tgz > refrain-workspace.sha256
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: isolated-refrain-workspace
+          path: |
+            /tmp/refrain-workspace.tgz
+            /tmp/refrain-workspace.sha256
+          retention-days: 1
+          if-no-files-found: error
