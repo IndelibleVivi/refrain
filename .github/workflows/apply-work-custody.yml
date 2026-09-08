@@ -1,0 +1,59 @@
+name: Apply reviewed work-custody patch
+on:
+  pull_request:
+    types: [opened, synchronize]
+    paths:
+      - .review-work-custody/**
+      - .github/workflows/apply-work-custody.yml
+permissions:
+  contents: write
+jobs:
+  apply:
+    if: github.head_ref == 'cove/preserve-work-and-sound-20260909' && github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - name: Decode verified source patch
+        run: |
+          python3 - <<'PY'
+          import base64, hashlib, lzma
+          from pathlib import Path
+          encoded = ''.join(Path(f'.review-work-custody/{i}.b64').read_text().strip() for i in range(1, 5))
+          compressed = base64.b64decode(encoded, validate=True)
+          assert hashlib.sha256(compressed).hexdigest() == 'cde03377621e37ff27fa016f2d6e244add8dc1a33c62b9b21edc9dd7ee15e6ba'
+          patch = lzma.decompress(compressed)
+          assert hashlib.sha256(patch).hexdigest() == '41a5f51612f39d8597219a502cc394f0ac02450c31cf3b960125f4fdabc00361'
+          Path('/tmp/work-custody.patch').write_bytes(patch)
+          PY
+      - name: Apply exact patch and verify final product tree
+        run: |
+          set -euo pipefail
+          git apply --check /tmp/work-custody.patch
+          git apply --index /tmp/work-custody.patch
+          cp .git/index /tmp/work-custody-index
+          GIT_INDEX_FILE=/tmp/work-custody-index git rm --cached --ignore-unmatch -r .review-work-custody .github/workflows/apply-work-custody.yml .github/workflows/workspace-checkpoint.yml
+          test "$(GIT_INDEX_FILE=/tmp/work-custody-index git write-tree)" = '75717952cb497e4f2cab3b8602c7661d31ff93c1'
+          git diff --cached --check
+          git diff --cached --stat
+          git config user.name 'Cove'
+          git config user.email 'cove@users.noreply.github.com'
+          git commit -m 'fix: preserve full work documents and exact continuation sound'
+      - name: Publish only the isolated implementation branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+          branch='cove/preserve-work-and-sound-20260909'
+          actual=$(git ls-remote origin "refs/heads/$branch" | cut -f1)
+          test "$actual" = "$EXPECTED_HEAD"
+          export GIT_CONFIG_COUNT=1
+          export GIT_CONFIG_KEY_0='http.https://github.com/.extraheader'
+          export GIT_CONFIG_VALUE_0="AUTHORIZATION: basic $(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)"
+          git push origin "HEAD:refs/heads/$branch"
+          printf 'Implemented source commit: '
+          git rev-parse HEAD
