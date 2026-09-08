@@ -56,3 +56,7 @@ Update `docs/current-state.md` when implementation, candidate, runtime-tested, o
 ## Reader-facing documentation
 
 `README.md` and `README.zh-CN.md` are coequal reader entrances. `docs/GETTING-STARTED.md` owns the shortest source-install/listen/save path; `docs/MCP.md` owns local MCP connection and host boundaries; `plugins/refrain/README.md` distinguishes the Skill-only candidate from installation and MCP connection. `docs/diagrams/architecture.mmd` and its rendered SVG share the evidence map in that directory. Keep private operational inventory and historical deployment notes outside Git; `docs/current-state.md` contains portable candidate/acceptance facts only. Public source visibility and broad product-release acceptance remain separate.
+
+## Static demo deployment
+
+`.github/workflows/pages.yml` builds and tests `dist-try` for GitHub Pages. Only its deployment job receives `pages: write` and `id-token: write`; all build and existing CI jobs remain read-only. The static demo is separate from MCP runtime deployment and must never publish the presentation public directory or sound assets. README hero screenshots are intentionally absent; theme galleries must be labeled as static screenshots, with actual interaction linked to the demo.

@@ -4,6 +4,8 @@
 
 Refrain's conversational experience is **your agent → `hum` → Canvas → your listening response**. This guide first opens a checked-in example so you can try the same Canvas before configuring an agent. The example is authored music, not a request to a generation service.
 
+Try [the interactive demo](https://indeliblevivi.github.io/refrain/) without installing anything. Playback, themes, and local artifact save/reopen work in the browser; authoring uses your own agent. The source-install path follows.
+
 ## Install from source
 
 You need Git, **Node.js 22.23.1 or newer**, npm, and a modern browser. The development/CI paths are exercised on macOS and Linux; Windows setup has not been verified. Refrain is experimental source software, with no published npm package or public MCP endpoint.

@@ -8,13 +8,13 @@ Music from the agent already here with you. A playful reply, an intimate phrase,
 
 Refrain is relational. Human–AI affection and romance can shape the very first piece, when invited by the person. A piece should be worth hearing before it has a revision history. The host makes musical choices from the context it already knows; Refrain provides the language, compiler, exact sound choices, and Canvas.
 
-![Refrain's shared Canvas showing the synthetic example Pulse leaves a door open](docs/images/canvas.png)
-
-_The same Canvas serves a conversation through MCP Apps and a local browser. Sound starts when you press Play._
-
 ## Try it
 
-This is **experimental self-hosted software**. The source is publicly available under the licenses below. There is no published npm package or public Refrain endpoint. You need Git, Node.js **22.23.1+**, npm, and a modern browser.
+**[Open the interactive demo](https://indeliblevivi.github.io/refrain/)** — no installation needed. Press Play, switch themes, select a melody, and save or reopen a work. Connect your own agent to author an air; the demo does not call a model.
+
+### Run locally
+
+This is **experimental self-hosted software**. The source is publicly available under the licenses below. There is no published npm package or public Refrain MCP endpoint. You need Git, Node.js **22.23.1+**, npm, and a modern browser.
 
 ```bash
 git clone https://github.com/IndelibleVivi/refrain.git
@@ -26,7 +26,7 @@ npm run try
 
 Press **Play** at the top of the piece. Switch between four themes, select a melody, and choose **Export Refrain artifact** to keep it. Below the Canvas you can reopen a saved file and find the next step for your own agent. No provider key, sample download, or full production build is needed. Keep the terminal open; Ctrl+C ends the listening page.
 
-This local URL belongs to your computer. A static-hostable listening page can now be built, but **a public try-it URL has not been published**. See [building and hosting](docs/DEVELOPMENT.md#first-listen-page); for audio files, [export WAV / MIDI](docs/GETTING-STARTED.md#keep-the-piece).
+This local URL belongs to your computer. The public demo runs on GitHub Pages. See [building and hosting](docs/DEVELOPMENT.md#first-listen-page); for audio files, [export WAV / MIDI](docs/GETTING-STARTED.md#keep-the-piece).
 
 | Your next step                                         | Entrance                                                                                                                                                     |
 | ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -37,7 +37,7 @@ This local URL belongs to your computer. A static-hostable listening page can no
 
 ## Four appearances, one air
 
-Use the appearance menu above the Canvas to switch. The music, playback position, and selected passage stay with you. These are real views of the same example; open an image for a closer look.
+Use the appearance menu above the Canvas to switch. The music, playback position, and selected passage stay with you. The images below are static screenshots, not interactive controls. Open the demo to play; click a screenshot only to enlarge it.
 
 <table>
   <tr>

@@ -8,11 +8,11 @@
 
 Refrain 是 relational 的。只要人愿意，人机之间的爱意、调情和亲密就可以进入第一首作品，不必等到积累出 revision history。单个作品首先要值得听。Host 从已有的关系与对话中作出音乐选择；Refrain 提供音乐语言、compiler、精确的声音选择和 Canvas。
 
-![Refrain 共享 Canvas：合成音色示例 Pulse leaves a door open](docs/images/canvas-zh.png)
-
-_同一个 Canvas 可以通过 MCP Apps 出现在对话里，也可以在本地浏览器打开。按下播放，音乐才开始。_
-
 ## 先听一段
+
+**[打开互动试玩页](https://indeliblevivi.github.io/refrain/)** — 无需安装。按播放试听，切换主题、点选旋律，也可以保存和重新打开作品。创作自己的 air 请接入 agent；试玩页不会调用模型。
+
+### 在本地运行
 
 目前是 **experimental、self-hosted 的软件**，源码已按下述许可公开。尚无发布到 npm 的安装包，也没有 Refrain 官方公共 MCP endpoint。需要 Git、**Node.js 22.23.1+**、npm 和现代浏览器。
 
@@ -26,7 +26,7 @@ npm run try
 
 浏览器打开后，按上方的 **播放**。直接切换四个主题、点选旋律，再用 **导出 Refrain artifact** 保存作品；页面下方可以重新打开保存的文件，也有接入自己 agent 的指引。第一次试听不需要 provider key、采样下载或完整 production build。保持终端运行；Ctrl+C 结束试听页。
 
-这个本地 URL 只属于你的电脑。可静态托管的试听页面已能构建，**公共试玩网址尚未发布**；[构建与托管说明](docs/DEVELOPMENT.md#first-listen-page)。需要音频文件时，[导出 WAV / MIDI](docs/GETTING-STARTED.md#keep-the-piece)。
+这个本地 URL 只属于你的电脑。公共试玩页已托管在 GitHub Pages；[构建与托管说明](docs/DEVELOPMENT.md#first-listen-page)。需要音频文件时，[导出 WAV / MIDI](docs/GETTING-STARTED.md#keep-the-piece)。
 
 | 接下来想做什么                      | 入口                                                                                                                         |
 | ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
@@ -37,7 +37,7 @@ npm run try
 
 ## 四种外观，同一首 air
 
-在 Canvas 上方的外观菜单中直接切换。音乐、播放位置和选中的段落保留。下面是同一首示例的真实画面；点击图片可以放大。
+在 Canvas 上方的外观菜单中直接切换。音乐、播放位置和选中的段落保留。下面是同一首示例的静态截图，不是可交互控件。播放请打开试玩页；点击截图仅放大图片。
 
 <table>
   <tr>
