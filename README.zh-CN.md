@@ -14,7 +14,7 @@ _同一个 Canvas 可以通过 MCP Apps 出现在对话里，也可以在本地�
 
 ## 先听一段
 
-目前是 **experimental、self-hosted 的软件**，正在准备源码公开；仓库仍为 private。尚无发布到 npm 的安装包，也没有 Refrain 官方公共 MCP endpoint。需要 Git、**Node.js 22.23.1+**、npm 和现代浏览器。
+目前是 **experimental、self-hosted 的软件**，源码已按下述许可公开。尚无发布到 npm 的安装包，也没有 Refrain 官方公共 MCP endpoint。需要 Git、**Node.js 22.23.1+**、npm 和现代浏览器。
 
 ```bash
 git clone https://github.com/IndelibleVivi/refrain.git

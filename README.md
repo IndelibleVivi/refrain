@@ -14,7 +14,7 @@ _The same Canvas serves a conversation through MCP Apps and a local browser. Sou
 
 ## Try it
 
-This is **experimental self-hosted software**. Source publication is being prepared; the repository is currently private. There is no published npm package or public Refrain endpoint. You need Git, Node.js **22.23.1+**, npm, and a modern browser.
+This is **experimental self-hosted software**. The source is publicly available under the licenses below. There is no published npm package or public Refrain endpoint. You need Git, Node.js **22.23.1+**, npm, and a modern browser.
 
 ```bash
 git clone https://github.com/IndelibleVivi/refrain.git

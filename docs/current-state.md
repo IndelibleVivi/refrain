@@ -36,6 +36,6 @@ Earlier operator-owned ChatGPT trials exercised Canvas, Play/Replay, exact selec
 
 ## Publication boundary
 
-The GitHub repository is still **private**. This source line is being prepared for public inspection and self-hosted experimentation; it is not a public Refrain service, npm release, published Plugin, or newly activated deployment. The bilingual reader entrance, source-install guide, and architecture diagram belong to this preparation.
+This repository is the **public canonical source** for Refrain, available for inspection and self-hosted experimentation; it is not a public Refrain service, npm release, published Plugin, or newly activated deployment. The bilingual reader entrance, source-install guide, and architecture diagram belong to this preparation.
 
-Project-original functional materials now use SUL-1.0; authored content and example music use CC BY-NC-SA 4.0. Exact public history/destination still need owner selection. Private operational history is retained outside the reader-facing current-state page and must not cross a publication boundary by accident. [LICENSING.md](../LICENSING.md) records the current rights map. [ROADMAP.md](ROADMAP.md) retains the broader acceptance programme; opening source and accepting a broad product release are distinct decisions.
+Project-original functional materials now use SUL-1.0; authored content and example music use CC BY-NC-SA 4.0. The public repository begins with a clean source history. Private operational continuity stays outside this repository. [LICENSING.md](../LICENSING.md) records the current rights map. [ROADMAP.md](ROADMAP.md) retains the broader acceptance programme; opening source and accepting a broad product release are distinct decisions.
