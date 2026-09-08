@@ -1,0 +1,152 @@
+{
+  "format": "air@0-experimental",
+  "title": "The cassette forgets one word",
+  "tempo": 68,
+  "meter": "4/4",
+  "key": "F minor",
+  "motifs": {
+    "worn": "C5/8 Ab4/8 F4/4 r/4 Eb4/4",
+    "flicker": "F4/8 r/8 C5/8 r/8 Ab4/4 r/4",
+    "pulse": "C2/8 r/8 r/4 D2/8 r/8 r/4"
+  },
+  "harmony": [
+    {
+      "id": "tape",
+      "chords": [
+        { "symbol": "Fm7", "beats": 8 },
+        { "symbol": "Dbmaj7", "beats": 8 },
+        { "symbol": "Abmaj7", "beats": 8 },
+        { "symbol": "Eb7", "beats": 8 },
+        { "symbol": "Bbm7", "beats": 8 },
+        { "symbol": "Fm7", "beats": 8 },
+        { "symbol": "C7", "beats": 8 },
+        { "symbol": "Fm7", "beats": 8 }
+      ]
+    }
+  ],
+  "voices": [
+    {
+      "id": "piano",
+      "instrument": "warm_piano",
+      "role": "lead",
+      "gainDb": -5,
+      "pan": -0.16,
+      "realize": [
+        {
+          "id": "piano-worn-a",
+          "kind": "motif",
+          "motif": "worn",
+          "repeat": 8,
+          "section": "side-a",
+          "dynamicCurve": { "from": "pp", "to": "mp" },
+          "articulation": "tenuto"
+        },
+        {
+          "id": "piano-worn-b",
+          "kind": "motif",
+          "motif": "worn",
+          "repeat": 4,
+          "section": "dropout",
+          "transform": { "retrograde": true },
+          "dynamic": "p",
+          "articulation": "staccato"
+        },
+        {
+          "id": "piano-worn-return",
+          "kind": "motif",
+          "motif": "worn",
+          "repeat": 4,
+          "section": "return",
+          "transform": { "transpose": -5 },
+          "dynamicCurve": { "from": "mp", "to": "pp" },
+          "articulation": "tenuto"
+        }
+      ]
+    },
+    {
+      "id": "clarinet",
+      "instrument": "clarinet",
+      "role": "counter",
+      "gainDb": -7,
+      "pan": 0.2,
+      "realize": [
+        {
+          "id": "clarinet-flicker",
+          "kind": "motif",
+          "motif": "flicker",
+          "repeat": 16,
+          "section": "form",
+          "dynamicCurve": {
+            "from": "pp",
+            "via": [{ "at": 0.72, "level": "mf" }],
+            "to": "p"
+          },
+          "articulation": "legato"
+        }
+      ]
+    },
+    {
+      "id": "guitar",
+      "instrument": "nylon_guitar",
+      "role": "harmony",
+      "gainDb": -8,
+      "pan": 0.3,
+      "realize": [
+        {
+          "id": "guitar-tape",
+          "kind": "arpeggio",
+          "harmony": "tape",
+          "degrees": [1, 5, 3, 7],
+          "stepBeats": 2,
+          "octaveSpan": 2,
+          "register": { "min": "E2", "max": "E5" },
+          "dynamic": "pp",
+          "articulation": "staccato",
+          "section": "form"
+        }
+      ]
+    },
+    {
+      "id": "dust",
+      "instrument": "dust_texture",
+      "role": "texture",
+      "gainDb": -8,
+      "realize": [
+        {
+          "id": "dust-tape",
+          "kind": "chords",
+          "harmony": "tape",
+          "voicing": "open",
+          "register": { "min": "C3", "max": "C6" },
+          "rhythm": [8],
+          "voiceLeading": "nearest",
+          "dynamicCurve": { "from": "pp", "to": "mp" },
+          "articulation": "legato",
+          "section": "form"
+        }
+      ]
+    },
+    {
+      "id": "pulse",
+      "instrument": "rhythm_pulse",
+      "role": "percussion",
+      "gainDb": -10,
+      "realize": [
+        {
+          "id": "damaged-pulse",
+          "kind": "motif",
+          "motif": "pulse",
+          "repeat": 16,
+          "section": "form",
+          "dynamicCurve": { "from": "pp", "to": "mp" },
+          "articulation": "staccato"
+        }
+      ]
+    }
+  ],
+  "sections": [
+    { "id": "side-a", "startBar": 1, "bars": 8 },
+    { "id": "dropout", "startBar": 9, "bars": 4 },
+    { "id": "return", "startBar": 13, "bars": 4 }
+  ]
+}

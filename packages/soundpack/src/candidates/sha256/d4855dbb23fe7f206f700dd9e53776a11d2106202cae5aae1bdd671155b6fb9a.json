@@ -1,0 +1,1952 @@
+{
+  "format": "refrain-candidate-shard@0-experimental",
+  "id": "chamber-strings-vsco-sections-full",
+  "candidateContentSha256": "45adc125d09ac4c08d1bf6f14e56898806768837f1d2ca0a386b6ebc3d9307de",
+  "candidate": {
+    "id": "chamber-strings-vsco-sections-full",
+    "instrumentId": "chamber_strings",
+    "engine": "sampler",
+    "mapping": {
+      "type": "sample-map",
+      "playableMin": 36,
+      "playableMax": 96,
+      "midiFallbackProgram": 48,
+      "articulationFallbacks": {
+        "staccato": "none",
+        "tenuto": "none",
+        "accent": "none",
+        "legato": "none"
+      },
+      "regions": [
+        {
+          "id": "chamber-strings-vsco-sections-full-region-001",
+          "trigger": "attack",
+          "assetId": "chamber-strings-vsco-sections-full-cello-susvib-b1-v1-1-4f95c087c4b8",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 45,
+            "rootMidi": 47,
+            "maxMidi": 48
+          },
+          "velocity": {
+            "min": 1,
+            "max": 62
+          },
+          "gainDb": 16,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.8
+          }
+        },
+        {
+          "id": "chamber-strings-vsco-sections-full-region-002",
+          "trigger": "attack",
+          "assetId": "chamber-strings-vsco-sections-full-cello-susvib-c1-v1-1-abdcea431f38",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 36,
+            "rootMidi": 36,
+            "maxMidi": 37
+          },
+          "velocity": {
+            "min": 1,
+            "max": 62
+          },
+          "gainDb": 16,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.8
+          }
+        },
+        {
+          "id": "chamber-strings-vsco-sections-full-region-003",
+          "trigger": "attack",
+          "assetId": "chamber-strings-vsco-sections-full-cello-susvib-d2-v1-1-e8640dec9feb",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 49,
+            "rootMidi": 50,
+            "maxMidi": 51
+          },
+          "velocity": {
+            "min": 1,
+            "max": 62
+          },
+          "gainDb": 16,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.8
+          }
+        },
+        {
+          "id": "chamber-strings-vsco-sections-full-region-004",
+          "trigger": "attack",
+          "assetId": "chamber-strings-vsco-sections-full-cello-susvib-e1-v1-1-de31a61b02d4",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 38,
+            "rootMidi": 40,
+            "maxMidi": 41
+          },
+          "velocity": {
+            "min": 1,
+            "max": 41
+          },
+          "gainDb": 16,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.8
+          }
+        },
+        {
+          "id": "chamber-strings-vsco-sections-full-region-005",
+          "trigger": "attack",
+          "assetId": "chamber-strings-vsco-sections-full-cello-susvib-e1-v1-2-3f8c250028d5",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 38,
+            "rootMidi": 40,
+            "maxMidi": 41
+          },
+          "velocity": {
+            "min": 42,
+            "max": 62
+          },
+          "gainDb": 16,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.8
+          }
+        },
+        {
+          "id": "chamber-strings-vsco-sections-full-region-006",
+          "trigger": "attack",
+          "assetId": "chamber-strings-vsco-sections-full-cello-susvib-f2-v1-1-162054eab4ba",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 52,
+            "rootMidi": 53,
+            "maxMidi": 55
+          },
+          "velocity": {
+            "min": 1,
+            "max": 62
+          },
+          "gainDb": 16,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.8
+          }
+        },
+        {
+          "id": "chamber-strings-vsco-sections-full-region-007",
+          "trigger": "attack",
+          "assetId": "chamber-strings-vsco-sections-full-cello-susvib-g1-v1-1-9e5d24e8e28d",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 42,
+            "rootMidi": 43,
+            "maxMidi": 44
+          },
+          "velocity": {
+            "min": 1,
+            "max": 62
+          },
+          "gainDb": 16,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.8
+          }
+        },
+        {
+          "id": "chamber-strings-vsco-sections-full-region-008",
+          "trigger": "attack",
+          "assetId": "chamber-strings-vsco-sections-full-cello-susvib-b1-v3-1-8331a0e13f41",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 45,
+            "rootMidi": 47,
+            "maxMidi": 48
+          },
+          "velocity": {
+            "min": 63,
+            "max": 127
+          },
+          "gainDb": 4,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.8
+          }
+        },
+        {
+          "id": "chamber-strings-vsco-sections-full-region-009",
+          "trigger": "attack",
+          "assetId": "chamber-strings-vsco-sections-full-cello-susvib-c1-v3-1-19195ab85ab7",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 36,
+            "rootMidi": 36,
+            "maxMidi": 37
+          },
+          "velocity": {
+            "min": 63,
+            "max": 127
+          },
+          "gainDb": 4,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.8
+          }
+        },
+        {
+          "id": "chamber-strings-vsco-sections-full-region-010",
+          "trigger": "attack",
+          "assetId": "chamber-strings-vsco-sections-full-cello-susvib-d2-v3-1-fc946615cd65",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 49,
+            "rootMidi": 50,
+            "maxMidi": 51
+          },
+          "velocity": {
+            "min": 63,
+            "max": 127
+          },
+          "gainDb": 4,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.8
+          }
+        },
+        {
+          "id": "chamber-strings-vsco-sections-full-region-011",
+          "trigger": "attack",
+          "assetId": "chamber-strings-vsco-sections-full-cello-susvib-e1-v3-1-ee190b95be4f",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 38,
+            "rootMidi": 40,
+            "maxMidi": 41
+          },
+          "velocity": {
+            "min": 63,
+            "max": 127
+          },
+          "gainDb": 3,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.8
+          }
+        },
+        {
+          "id": "chamber-strings-vsco-sections-full-region-012",
+          "trigger": "attack",
+          "assetId": "chamber-strings-vsco-sections-full-cello-susvib-f2-v3-1-d965197faf2e",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 52,
+            "rootMidi": 53,
+            "maxMidi": 55
+          },
+          "velocity": {
+            "min": 63,
+            "max": 127
+          },
+          "gainDb": 4,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.8
+          }
+        },
+        {
+          "id": "chamber-strings-vsco-sections-full-region-013",
+          "trigger": "attack",
+          "assetId": "chamber-strings-vsco-sections-full-cello-susvib-g1-v3-1-e4c61d4ab855",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 42,
+            "rootMidi": 43,
+            "maxMidi": 44
+          },
+          "velocity": {
+            "min": 63,
+            "max": 127
+          },
+          "gainDb": 4,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.8
+          }
+        },
+        {
+          "id": "chamber-strings-vsco-sections-full-region-014",
+          "trigger": "attack",
+          "assetId": "chamber-strings-vsco-sections-full-viola-violaens-susvib-b2-v1-1-ad96d747c512",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 56,
+            "rootMidi": 59,
+            "maxMidi": 60
+          },
+          "velocity": {
+            "min": 1,
+            "max": 62
+          },
+          "gainDb": 24,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 1
+          }
+        },
+        {
+          "id": "chamber-strings-vsco-sections-full-region-015",
+          "trigger": "attack",
+          "assetId": "chamber-strings-vsco-sections-full-viola-violaens-susvib-d3-v1-1-61ab4cfc0ea9",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 61,
+            "rootMidi": 62,
+            "maxMidi": 63
+          },
+          "velocity": {
+            "min": 1,
+            "max": 62
+          },
+          "gainDb": 24,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 1
+          }
+        },
+        {
+          "id": "chamber-strings-vsco-sections-full-region-016",
+          "trigger": "attack",
+          "assetId": "chamber-strings-vsco-sections-full-viola-violaens-susvib-f3-v1-1-7a37f00ecb58",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 64,
+            "rootMidi": 65,
+            "maxMidi": 67
+          },
+          "velocity": {
+            "min": 1,
+            "max": 62
+          },
+          "gainDb": 24,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 1
+          }
+        },
+        {
+          "id": "chamber-strings-vsco-sections-full-region-017",
+          "trigger": "attack",
+          "assetId": "chamber-strings-vsco-sections-full-viola-violaens-susvib-b2-v2-1-edc77038a83f",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 56,
+            "rootMidi": 59,
+            "maxMidi": 60
+          },
+          "velocity": {
+            "min": 63,
+            "max": 127
+          },
+          "gainDb": 3,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 1
+          }
+        },
+        {
+          "id": "chamber-strings-vsco-sections-full-region-018",
+          "trigger": "attack",
+          "assetId": "chamber-strings-vsco-sections-full-viola-violaens-susvib-d3-v2-1-f941028c5d5e",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 61,
+            "rootMidi": 62,
+            "maxMidi": 63
+          },
+          "velocity": {
+            "min": 63,
+            "max": 127
+          },
+          "gainDb": 3,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 1
+          }
+        },
+        {
+          "id": "chamber-strings-vsco-sections-full-region-019",
+          "trigger": "attack",
+          "assetId": "chamber-strings-vsco-sections-full-viola-violaens-susvib-f3-v2-1-d281171e60b8",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 64,
+            "rootMidi": 65,
+            "maxMidi": 67
+          },
+          "velocity": {
+            "min": 63,
+            "max": 127
+          },
+          "gainDb": 3,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 1
+          }
+        },
+        {
+          "id": "chamber-strings-vsco-sections-full-region-020",
+          "trigger": "attack",
+          "assetId": "chamber-strings-vsco-sections-full-violin-vlnens-susvib-a3-v1-72817a53dfd2",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 68,
+            "rootMidi": 69,
+            "maxMidi": 70
+          },
+          "velocity": {
+            "min": 1,
+            "max": 62
+          },
+          "gainDb": 20,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.8
+          }
+        },
+        {
+          "id": "chamber-strings-vsco-sections-full-region-021",
+          "trigger": "attack",
+          "assetId": "chamber-strings-vsco-sections-full-violin-vlnens-susvib-b4-v1-ec4cea41ac77",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 81,
+            "rootMidi": 83,
+            "maxMidi": 84
+          },
+          "velocity": {
+            "min": 1,
+            "max": 62
+          },
+          "gainDb": 20,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.8
+          }
+        },
+        {
+          "id": "chamber-strings-vsco-sections-full-region-022",
+          "trigger": "attack",
+          "assetId": "chamber-strings-vsco-sections-full-violin-vlnens-susvib-c4-v1-c07edd5b2119",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 71,
+            "rootMidi": 72,
+            "maxMidi": 73
+          },
+          "velocity": {
+            "min": 1,
+            "max": 62
+          },
+          "gainDb": 20,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.8
+          }
+        },
+        {
+          "id": "chamber-strings-vsco-sections-full-region-023",
+          "trigger": "attack",
+          "assetId": "chamber-strings-vsco-sections-full-violin-vlnens-susvib-d5-v1-f8d870457826",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 85,
+            "rootMidi": 86,
+            "maxMidi": 96
+          },
+          "velocity": {
+            "min": 1,
+            "max": 62
+          },
+          "gainDb": 20,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.8
+          }
+        },
+        {
+          "id": "chamber-strings-vsco-sections-full-region-024",
+          "trigger": "attack",
+          "assetId": "chamber-strings-vsco-sections-full-violin-vlnens-susvib-e4-v1-787fb4bcfb47",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 74,
+            "rootMidi": 76,
+            "maxMidi": 77
+          },
+          "velocity": {
+            "min": 1,
+            "max": 62
+          },
+          "gainDb": 20,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.8
+          }
+        },
+        {
+          "id": "chamber-strings-vsco-sections-full-region-025",
+          "trigger": "attack",
+          "assetId": "chamber-strings-vsco-sections-full-violin-vlnens-susvib-g4-v1-ed2a89cf2544",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 78,
+            "rootMidi": 79,
+            "maxMidi": 80
+          },
+          "velocity": {
+            "min": 1,
+            "max": 62
+          },
+          "gainDb": 20,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.8
+          }
+        },
+        {
+          "id": "chamber-strings-vsco-sections-full-region-026",
+          "trigger": "attack",
+          "assetId": "chamber-strings-vsco-sections-full-violin-vlnens-susvib-a3-v2-3fc4a9e22037",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 68,
+            "rootMidi": 69,
+            "maxMidi": 70
+          },
+          "velocity": {
+            "min": 63,
+            "max": 127
+          },
+          "gainDb": 7,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.8
+          }
+        },
+        {
+          "id": "chamber-strings-vsco-sections-full-region-027",
+          "trigger": "attack",
+          "assetId": "chamber-strings-vsco-sections-full-violin-vlnens-susvib-b4-v2-bdb85532f47e",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 81,
+            "rootMidi": 83,
+            "maxMidi": 84
+          },
+          "velocity": {
+            "min": 63,
+            "max": 127
+          },
+          "gainDb": 7,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.8
+          }
+        },
+        {
+          "id": "chamber-strings-vsco-sections-full-region-028",
+          "trigger": "attack",
+          "assetId": "chamber-strings-vsco-sections-full-violin-vlnens-susvib-c4-v2-5857387b40c4",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 71,
+            "rootMidi": 72,
+            "maxMidi": 73
+          },
+          "velocity": {
+            "min": 63,
+            "max": 127
+          },
+          "gainDb": 7,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.8
+          }
+        },
+        {
+          "id": "chamber-strings-vsco-sections-full-region-029",
+          "trigger": "attack",
+          "assetId": "chamber-strings-vsco-sections-full-violin-vlnens-susvib-d5-v2-0c2ca9de723b",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 85,
+            "rootMidi": 86,
+            "maxMidi": 96
+          },
+          "velocity": {
+            "min": 63,
+            "max": 127
+          },
+          "gainDb": 7,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.8
+          }
+        },
+        {
+          "id": "chamber-strings-vsco-sections-full-region-030",
+          "trigger": "attack",
+          "assetId": "chamber-strings-vsco-sections-full-violin-vlnens-susvib-e4-v2-030c09a631eb",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 74,
+            "rootMidi": 76,
+            "maxMidi": 77
+          },
+          "velocity": {
+            "min": 63,
+            "max": 127
+          },
+          "gainDb": 7,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.8
+          }
+        },
+        {
+          "id": "chamber-strings-vsco-sections-full-region-031",
+          "trigger": "attack",
+          "assetId": "chamber-strings-vsco-sections-full-violin-vlnens-susvib-g4-v2-a1d6d5a03975",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 78,
+            "rootMidi": 79,
+            "maxMidi": 80
+          },
+          "velocity": {
+            "min": 63,
+            "max": 127
+          },
+          "gainDb": 7,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.8
+          }
+        }
+      ]
+    },
+    "calibrationGainDb": -3,
+    "tailSeconds": 1,
+    "releaseStatus": "listening-candidate"
+  },
+  "assets": [
+    {
+      "id": "chamber-strings-vsco-sections-full-cello-susvib-b1-v1-1-4f95c087c4b8",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Strings/Cello Section/susvib/susvib_B1_v1_1.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Strings/Cello%20Section/susvib/susvib_B1_v1_1.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/4f95c087c4b8d87ee591e9d39c3c9caf085c6f1b9125eac3ca9e4e637da628ee.wav",
+      "bytes": 2372492,
+      "sha256": "4f95c087c4b8d87ee591e9d39c3c9caf085c6f1b9125eac3ca9e4e637da628ee",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 395408,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "4f95c087c4b8d87ee591e9d39c3c9caf085c6f1b9125eac3ca9e4e637da628ee",
+          "outputSha256": "4f95c087c4b8d87ee591e9d39c3c9caf085c6f1b9125eac3ca9e4e637da628ee",
+          "parameters": {
+            "sfzPath": "CelloEnsSusVib.sfz",
+            "samplePath": "Strings/Cello Section/susvib/susvib_B1_v1_1.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "chamber-strings-vsco-sections-full-cello-susvib-c1-v1-1-abdcea431f38",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Strings/Cello Section/susvib/susvib_C1_v1_1.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Strings/Cello%20Section/susvib/susvib_C1_v1_1.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/abdcea431f384e135c469b0f3e4ac2a437f282f521dc5bcbe22abc221536e8de.wav",
+      "bytes": 2347376,
+      "sha256": "abdcea431f384e135c469b0f3e4ac2a437f282f521dc5bcbe22abc221536e8de",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 391222,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "abdcea431f384e135c469b0f3e4ac2a437f282f521dc5bcbe22abc221536e8de",
+          "outputSha256": "abdcea431f384e135c469b0f3e4ac2a437f282f521dc5bcbe22abc221536e8de",
+          "parameters": {
+            "sfzPath": "CelloEnsSusVib.sfz",
+            "samplePath": "Strings/Cello Section/susvib/susvib_C1_v1_1.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "chamber-strings-vsco-sections-full-cello-susvib-d2-v1-1-e8640dec9feb",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Strings/Cello Section/susvib/susvib_D2_v1_1.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Strings/Cello%20Section/susvib/susvib_D2_v1_1.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/e8640dec9febc6e39fcf06b19d2c95a85d5ff8c38f13c9879e69f551eaf38ab8.wav",
+      "bytes": 2550956,
+      "sha256": "e8640dec9febc6e39fcf06b19d2c95a85d5ff8c38f13c9879e69f551eaf38ab8",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 425152,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "e8640dec9febc6e39fcf06b19d2c95a85d5ff8c38f13c9879e69f551eaf38ab8",
+          "outputSha256": "e8640dec9febc6e39fcf06b19d2c95a85d5ff8c38f13c9879e69f551eaf38ab8",
+          "parameters": {
+            "sfzPath": "CelloEnsSusVib.sfz",
+            "samplePath": "Strings/Cello Section/susvib/susvib_D2_v1_1.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "chamber-strings-vsco-sections-full-cello-susvib-e1-v1-1-de31a61b02d4",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Strings/Cello Section/susvib/susvib_E1_v1_1.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Strings/Cello%20Section/susvib/susvib_E1_v1_1.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/de31a61b02d4e1d5a79b8bc432b0f35fe2e434290ad34402cc0f2dd7dc278cde.wav",
+      "bytes": 2468348,
+      "sha256": "de31a61b02d4e1d5a79b8bc432b0f35fe2e434290ad34402cc0f2dd7dc278cde",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 411384,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "de31a61b02d4e1d5a79b8bc432b0f35fe2e434290ad34402cc0f2dd7dc278cde",
+          "outputSha256": "de31a61b02d4e1d5a79b8bc432b0f35fe2e434290ad34402cc0f2dd7dc278cde",
+          "parameters": {
+            "sfzPath": "CelloEnsSusVib.sfz",
+            "samplePath": "Strings/Cello Section/susvib/susvib_E1_v1_1.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "chamber-strings-vsco-sections-full-cello-susvib-e1-v1-2-3f8c250028d5",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Strings/Cello Section/susvib/susvib_E1_v1_2.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Strings/Cello%20Section/susvib/susvib_E1_v1_2.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/3f8c250028d5364fc9c5584ad204d7a1d4c8c02ae41e90ad482e7b0d7d1bc674.wav",
+      "bytes": 2439512,
+      "sha256": "3f8c250028d5364fc9c5584ad204d7a1d4c8c02ae41e90ad482e7b0d7d1bc674",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 406578,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "3f8c250028d5364fc9c5584ad204d7a1d4c8c02ae41e90ad482e7b0d7d1bc674",
+          "outputSha256": "3f8c250028d5364fc9c5584ad204d7a1d4c8c02ae41e90ad482e7b0d7d1bc674",
+          "parameters": {
+            "sfzPath": "CelloEnsSusVib.sfz",
+            "samplePath": "Strings/Cello Section/susvib/susvib_E1_v1_2.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "chamber-strings-vsco-sections-full-cello-susvib-f2-v1-1-162054eab4ba",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Strings/Cello Section/susvib/susvib_F2_v1_1.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Strings/Cello%20Section/susvib/susvib_F2_v1_1.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/162054eab4ba118924f8f8986cf1b17ccfd65211d1945743ffbae30b4953f901.wav",
+      "bytes": 2186012,
+      "sha256": "162054eab4ba118924f8f8986cf1b17ccfd65211d1945743ffbae30b4953f901",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 364328,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "162054eab4ba118924f8f8986cf1b17ccfd65211d1945743ffbae30b4953f901",
+          "outputSha256": "162054eab4ba118924f8f8986cf1b17ccfd65211d1945743ffbae30b4953f901",
+          "parameters": {
+            "sfzPath": "CelloEnsSusVib.sfz",
+            "samplePath": "Strings/Cello Section/susvib/susvib_F2_v1_1.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "chamber-strings-vsco-sections-full-cello-susvib-g1-v1-1-9e5d24e8e28d",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Strings/Cello Section/susvib/susvib_G1_v1_1.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Strings/Cello%20Section/susvib/susvib_G1_v1_1.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/9e5d24e8e28d6c7f650f9bb2b33d43c13e341a8bd33124c64e23881378b181ba.wav",
+      "bytes": 2161700,
+      "sha256": "9e5d24e8e28d6c7f650f9bb2b33d43c13e341a8bd33124c64e23881378b181ba",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 360276,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "9e5d24e8e28d6c7f650f9bb2b33d43c13e341a8bd33124c64e23881378b181ba",
+          "outputSha256": "9e5d24e8e28d6c7f650f9bb2b33d43c13e341a8bd33124c64e23881378b181ba",
+          "parameters": {
+            "sfzPath": "CelloEnsSusVib.sfz",
+            "samplePath": "Strings/Cello Section/susvib/susvib_G1_v1_1.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "chamber-strings-vsco-sections-full-cello-susvib-b1-v3-1-8331a0e13f41",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Strings/Cello Section/susvib/susvib_B1_v3_1.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Strings/Cello%20Section/susvib/susvib_B1_v3_1.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/8331a0e13f41243efab111f9b5e9185524c27ee48631269acecafc954ab7eaa8.wav",
+      "bytes": 3372962,
+      "sha256": "8331a0e13f41243efab111f9b5e9185524c27ee48631269acecafc954ab7eaa8",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 562153,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "8331a0e13f41243efab111f9b5e9185524c27ee48631269acecafc954ab7eaa8",
+          "outputSha256": "8331a0e13f41243efab111f9b5e9185524c27ee48631269acecafc954ab7eaa8",
+          "parameters": {
+            "sfzPath": "CelloEnsSusVib.sfz",
+            "samplePath": "Strings/Cello Section/susvib/susvib_B1_v3_1.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "chamber-strings-vsco-sections-full-cello-susvib-c1-v3-1-19195ab85ab7",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Strings/Cello Section/susvib/susvib_C1_v3_1.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Strings/Cello%20Section/susvib/susvib_C1_v3_1.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/19195ab85ab71626bd11e7100febdaeeba1c237ff5887b934fd0ffd8dfad82cb.wav",
+      "bytes": 3335948,
+      "sha256": "19195ab85ab71626bd11e7100febdaeeba1c237ff5887b934fd0ffd8dfad82cb",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 555984,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "19195ab85ab71626bd11e7100febdaeeba1c237ff5887b934fd0ffd8dfad82cb",
+          "outputSha256": "19195ab85ab71626bd11e7100febdaeeba1c237ff5887b934fd0ffd8dfad82cb",
+          "parameters": {
+            "sfzPath": "CelloEnsSusVib.sfz",
+            "samplePath": "Strings/Cello Section/susvib/susvib_C1_v3_1.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "chamber-strings-vsco-sections-full-cello-susvib-d2-v3-1-fc946615cd65",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Strings/Cello Section/susvib/susvib_D2_v3_1.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Strings/Cello%20Section/susvib/susvib_D2_v3_1.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/fc946615cd6550570c8f05d61c0d59b9079bf9daba8bf25be7943487fea5a7ae.wav",
+      "bytes": 3291368,
+      "sha256": "fc946615cd6550570c8f05d61c0d59b9079bf9daba8bf25be7943487fea5a7ae",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 548554,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "fc946615cd6550570c8f05d61c0d59b9079bf9daba8bf25be7943487fea5a7ae",
+          "outputSha256": "fc946615cd6550570c8f05d61c0d59b9079bf9daba8bf25be7943487fea5a7ae",
+          "parameters": {
+            "sfzPath": "CelloEnsSusVib.sfz",
+            "samplePath": "Strings/Cello Section/susvib/susvib_D2_v3_1.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "chamber-strings-vsco-sections-full-cello-susvib-e1-v3-1-ee190b95be4f",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Strings/Cello Section/susvib/susvib_E1_v3_1.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Strings/Cello%20Section/susvib/susvib_E1_v3_1.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/ee190b95be4f2416b9f41d248d255a4d7067b722f9b21482b30bc9872a9bb0d1.wav",
+      "bytes": 3080426,
+      "sha256": "ee190b95be4f2416b9f41d248d255a4d7067b722f9b21482b30bc9872a9bb0d1",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 513397,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "ee190b95be4f2416b9f41d248d255a4d7067b722f9b21482b30bc9872a9bb0d1",
+          "outputSha256": "ee190b95be4f2416b9f41d248d255a4d7067b722f9b21482b30bc9872a9bb0d1",
+          "parameters": {
+            "sfzPath": "CelloEnsSusVib.sfz",
+            "samplePath": "Strings/Cello Section/susvib/susvib_E1_v3_1.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "chamber-strings-vsco-sections-full-cello-susvib-f2-v3-1-d965197faf2e",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Strings/Cello Section/susvib/susvib_F2_v3_1.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Strings/Cello%20Section/susvib/susvib_F2_v3_1.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/d965197faf2e6ab8675f1d65505e5ba934a5ab769412d314bad94133e18f24d0.wav",
+      "bytes": 3062696,
+      "sha256": "d965197faf2e6ab8675f1d65505e5ba934a5ab769412d314bad94133e18f24d0",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 510442,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "d965197faf2e6ab8675f1d65505e5ba934a5ab769412d314bad94133e18f24d0",
+          "outputSha256": "d965197faf2e6ab8675f1d65505e5ba934a5ab769412d314bad94133e18f24d0",
+          "parameters": {
+            "sfzPath": "CelloEnsSusVib.sfz",
+            "samplePath": "Strings/Cello Section/susvib/susvib_F2_v3_1.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "chamber-strings-vsco-sections-full-cello-susvib-g1-v3-1-e4c61d4ab855",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Strings/Cello Section/susvib/susvib_G1_v3_1.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Strings/Cello%20Section/susvib/susvib_G1_v3_1.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/e4c61d4ab855ec20ddb69ff608a1c066ff8a779ddd08d1dfe1d534d3a4563ad0.wav",
+      "bytes": 3370496,
+      "sha256": "e4c61d4ab855ec20ddb69ff608a1c066ff8a779ddd08d1dfe1d534d3a4563ad0",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 561742,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "e4c61d4ab855ec20ddb69ff608a1c066ff8a779ddd08d1dfe1d534d3a4563ad0",
+          "outputSha256": "e4c61d4ab855ec20ddb69ff608a1c066ff8a779ddd08d1dfe1d534d3a4563ad0",
+          "parameters": {
+            "sfzPath": "CelloEnsSusVib.sfz",
+            "samplePath": "Strings/Cello Section/susvib/susvib_G1_v3_1.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "chamber-strings-vsco-sections-full-viola-violaens-susvib-b2-v1-1-ad96d747c512",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Strings/Viola Section/susvib/ViolaEns_susvib_B2_v1_1.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Strings/Viola%20Section/susvib/ViolaEns_susvib_B2_v1_1.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/ad96d747c5125adec8f069c49091ee3ba937efd4a5b909d3c4938f17e3c8513d.wav",
+      "bytes": 2861510,
+      "sha256": "ad96d747c5125adec8f069c49091ee3ba937efd4a5b909d3c4938f17e3c8513d",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 476911,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "ad96d747c5125adec8f069c49091ee3ba937efd4a5b909d3c4938f17e3c8513d",
+          "outputSha256": "ad96d747c5125adec8f069c49091ee3ba937efd4a5b909d3c4938f17e3c8513d",
+          "parameters": {
+            "sfzPath": "ViolaEnsSusVib.sfz",
+            "samplePath": "Strings/Viola Section/susvib/ViolaEns_susvib_B2_v1_1.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "chamber-strings-vsco-sections-full-viola-violaens-susvib-d3-v1-1-61ab4cfc0ea9",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Strings/Viola Section/susvib/ViolaEns_susvib_D3_v1_1.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Strings/Viola%20Section/susvib/ViolaEns_susvib_D3_v1_1.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/61ab4cfc0ea90c683433a7c50b3bb4fa86a81c9d4854589562707d54ed028349.wav",
+      "bytes": 2789648,
+      "sha256": "61ab4cfc0ea90c683433a7c50b3bb4fa86a81c9d4854589562707d54ed028349",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 464934,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "61ab4cfc0ea90c683433a7c50b3bb4fa86a81c9d4854589562707d54ed028349",
+          "outputSha256": "61ab4cfc0ea90c683433a7c50b3bb4fa86a81c9d4854589562707d54ed028349",
+          "parameters": {
+            "sfzPath": "ViolaEnsSusVib.sfz",
+            "samplePath": "Strings/Viola Section/susvib/ViolaEns_susvib_D3_v1_1.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "chamber-strings-vsco-sections-full-viola-violaens-susvib-f3-v1-1-7a37f00ecb58",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Strings/Viola Section/susvib/ViolaEns_susvib_F3_v1_1.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Strings/Viola%20Section/susvib/ViolaEns_susvib_F3_v1_1.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/7a37f00ecb58fcaa5c32427a5ffb30950787b40c247409a8e18cfe0880955fd8.wav",
+      "bytes": 2487818,
+      "sha256": "7a37f00ecb58fcaa5c32427a5ffb30950787b40c247409a8e18cfe0880955fd8",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 414629,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "7a37f00ecb58fcaa5c32427a5ffb30950787b40c247409a8e18cfe0880955fd8",
+          "outputSha256": "7a37f00ecb58fcaa5c32427a5ffb30950787b40c247409a8e18cfe0880955fd8",
+          "parameters": {
+            "sfzPath": "ViolaEnsSusVib.sfz",
+            "samplePath": "Strings/Viola Section/susvib/ViolaEns_susvib_F3_v1_1.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "chamber-strings-vsco-sections-full-viola-violaens-susvib-b2-v2-1-edc77038a83f",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Strings/Viola Section/susvib/ViolaEns_susvib_B2_v2_1.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Strings/Viola%20Section/susvib/ViolaEns_susvib_B2_v2_1.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/edc77038a83f47cf49296c0009fdac23cb5ade3133a2beabd0d2d1f591ccf3cb.wav",
+      "bytes": 3268364,
+      "sha256": "edc77038a83f47cf49296c0009fdac23cb5ade3133a2beabd0d2d1f591ccf3cb",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 544720,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "edc77038a83f47cf49296c0009fdac23cb5ade3133a2beabd0d2d1f591ccf3cb",
+          "outputSha256": "edc77038a83f47cf49296c0009fdac23cb5ade3133a2beabd0d2d1f591ccf3cb",
+          "parameters": {
+            "sfzPath": "ViolaEnsSusVib.sfz",
+            "samplePath": "Strings/Viola Section/susvib/ViolaEns_susvib_B2_v2_1.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "chamber-strings-vsco-sections-full-viola-violaens-susvib-d3-v2-1-f941028c5d5e",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Strings/Viola Section/susvib/ViolaEns_susvib_D3_v2_1.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Strings/Viola%20Section/susvib/ViolaEns_susvib_D3_v2_1.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/f941028c5d5e854b4391669056f0f639799f80ac7c8da3939c7788b1a394d16c.wav",
+      "bytes": 3596756,
+      "sha256": "f941028c5d5e854b4391669056f0f639799f80ac7c8da3939c7788b1a394d16c",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 599452,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "f941028c5d5e854b4391669056f0f639799f80ac7c8da3939c7788b1a394d16c",
+          "outputSha256": "f941028c5d5e854b4391669056f0f639799f80ac7c8da3939c7788b1a394d16c",
+          "parameters": {
+            "sfzPath": "ViolaEnsSusVib.sfz",
+            "samplePath": "Strings/Viola Section/susvib/ViolaEns_susvib_D3_v2_1.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "chamber-strings-vsco-sections-full-viola-violaens-susvib-f3-v2-1-d281171e60b8",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Strings/Viola Section/susvib/ViolaEns_susvib_F3_v2_1.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Strings/Viola%20Section/susvib/ViolaEns_susvib_F3_v2_1.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/d281171e60b852451deecce57a6f5e9b623eea9632916336324c52c4ada6c750.wav",
+      "bytes": 3471944,
+      "sha256": "d281171e60b852451deecce57a6f5e9b623eea9632916336324c52c4ada6c750",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 578650,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "d281171e60b852451deecce57a6f5e9b623eea9632916336324c52c4ada6c750",
+          "outputSha256": "d281171e60b852451deecce57a6f5e9b623eea9632916336324c52c4ada6c750",
+          "parameters": {
+            "sfzPath": "ViolaEnsSusVib.sfz",
+            "samplePath": "Strings/Viola Section/susvib/ViolaEns_susvib_F3_v2_1.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "chamber-strings-vsco-sections-full-violin-vlnens-susvib-a3-v1-72817a53dfd2",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Strings/Violin Section/susVib/VlnEns_susVib_A3_v1.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Strings/Violin%20Section/susVib/VlnEns_susVib_A3_v1.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/72817a53dfd2eb61eca94658c14e1cab6017629ca2f27bab8e394c6675bfaad7.wav",
+      "bytes": 1890316,
+      "sha256": "72817a53dfd2eb61eca94658c14e1cab6017629ca2f27bab8e394c6675bfaad7",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 472568,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "72817a53dfd2eb61eca94658c14e1cab6017629ca2f27bab8e394c6675bfaad7",
+          "outputSha256": "72817a53dfd2eb61eca94658c14e1cab6017629ca2f27bab8e394c6675bfaad7",
+          "parameters": {
+            "sfzPath": "ViolinEnsSusVib.sfz",
+            "samplePath": "Strings/Violin Section/susVib/VlnEns_susVib_A3_v1.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "chamber-strings-vsco-sections-full-violin-vlnens-susvib-b4-v1-ec4cea41ac77",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Strings/Violin Section/susVib/VlnEns_susVib_B4_v1.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Strings/Violin%20Section/susVib/VlnEns_susVib_B4_v1.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/ec4cea41ac77f251bf5f4158fe9cbeeae13755e3785106e505808de18fdddc0d.wav",
+      "bytes": 2056964,
+      "sha256": "ec4cea41ac77f251bf5f4158fe9cbeeae13755e3785106e505808de18fdddc0d",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 514230,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "ec4cea41ac77f251bf5f4158fe9cbeeae13755e3785106e505808de18fdddc0d",
+          "outputSha256": "ec4cea41ac77f251bf5f4158fe9cbeeae13755e3785106e505808de18fdddc0d",
+          "parameters": {
+            "sfzPath": "ViolinEnsSusVib.sfz",
+            "samplePath": "Strings/Violin Section/susVib/VlnEns_susVib_B4_v1.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "chamber-strings-vsco-sections-full-violin-vlnens-susvib-c4-v1-c07edd5b2119",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Strings/Violin Section/susVib/VlnEns_susVib_C4_v1.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Strings/Violin%20Section/susVib/VlnEns_susVib_C4_v1.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/c07edd5b2119fa1da2207aba996961b50dd616f69bbcf2300ab271bc6c16239f.wav",
+      "bytes": 2063320,
+      "sha256": "c07edd5b2119fa1da2207aba996961b50dd616f69bbcf2300ab271bc6c16239f",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 515819,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "c07edd5b2119fa1da2207aba996961b50dd616f69bbcf2300ab271bc6c16239f",
+          "outputSha256": "c07edd5b2119fa1da2207aba996961b50dd616f69bbcf2300ab271bc6c16239f",
+          "parameters": {
+            "sfzPath": "ViolinEnsSusVib.sfz",
+            "samplePath": "Strings/Violin Section/susVib/VlnEns_susVib_C4_v1.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "chamber-strings-vsco-sections-full-violin-vlnens-susvib-d5-v1-f8d870457826",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Strings/Violin Section/susVib/VlnEns_susVib_D5_v1.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Strings/Violin%20Section/susVib/VlnEns_susVib_D5_v1.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/f8d870457826c94270b9c3ead8e8ec02cb7e6c4a3481cded055641b7fab7df62.wav",
+      "bytes": 2116352,
+      "sha256": "f8d870457826c94270b9c3ead8e8ec02cb7e6c4a3481cded055641b7fab7df62",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 529077,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "f8d870457826c94270b9c3ead8e8ec02cb7e6c4a3481cded055641b7fab7df62",
+          "outputSha256": "f8d870457826c94270b9c3ead8e8ec02cb7e6c4a3481cded055641b7fab7df62",
+          "parameters": {
+            "sfzPath": "ViolinEnsSusVib.sfz",
+            "samplePath": "Strings/Violin Section/susVib/VlnEns_susVib_D5_v1.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "chamber-strings-vsco-sections-full-violin-vlnens-susvib-e4-v1-787fb4bcfb47",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Strings/Violin Section/susVib/VlnEns_susVib_E4_v1.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Strings/Violin%20Section/susVib/VlnEns_susVib_E4_v1.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/787fb4bcfb47d5c88ee1573c8db15f32d345386301be4a8eea6a825847413ae2.wav",
+      "bytes": 2315540,
+      "sha256": "787fb4bcfb47d5c88ee1573c8db15f32d345386301be4a8eea6a825847413ae2",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 578874,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "787fb4bcfb47d5c88ee1573c8db15f32d345386301be4a8eea6a825847413ae2",
+          "outputSha256": "787fb4bcfb47d5c88ee1573c8db15f32d345386301be4a8eea6a825847413ae2",
+          "parameters": {
+            "sfzPath": "ViolinEnsSusVib.sfz",
+            "samplePath": "Strings/Violin Section/susVib/VlnEns_susVib_E4_v1.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "chamber-strings-vsco-sections-full-violin-vlnens-susvib-g4-v1-ed2a89cf2544",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Strings/Violin Section/susVib/VlnEns_susVib_G4_v1.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Strings/Violin%20Section/susVib/VlnEns_susVib_G4_v1.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/ed2a89cf254432d2af073699fa43ebfa16cfbc5552c7fc964a184fc434eaaa39.wav",
+      "bytes": 2330236,
+      "sha256": "ed2a89cf254432d2af073699fa43ebfa16cfbc5552c7fc964a184fc434eaaa39",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 582548,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "ed2a89cf254432d2af073699fa43ebfa16cfbc5552c7fc964a184fc434eaaa39",
+          "outputSha256": "ed2a89cf254432d2af073699fa43ebfa16cfbc5552c7fc964a184fc434eaaa39",
+          "parameters": {
+            "sfzPath": "ViolinEnsSusVib.sfz",
+            "samplePath": "Strings/Violin Section/susVib/VlnEns_susVib_G4_v1.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "chamber-strings-vsco-sections-full-violin-vlnens-susvib-a3-v2-3fc4a9e22037",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Strings/Violin Section/susVib/VlnEns_susVib_A3_v2.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Strings/Violin%20Section/susVib/VlnEns_susVib_A3_v2.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/3fc4a9e22037643fce11e755da72c61c664893f83e637c24a7b5c2d3824ab986.wav",
+      "bytes": 1671704,
+      "sha256": "3fc4a9e22037643fce11e755da72c61c664893f83e637c24a7b5c2d3824ab986",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 417915,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "3fc4a9e22037643fce11e755da72c61c664893f83e637c24a7b5c2d3824ab986",
+          "outputSha256": "3fc4a9e22037643fce11e755da72c61c664893f83e637c24a7b5c2d3824ab986",
+          "parameters": {
+            "sfzPath": "ViolinEnsSusVib.sfz",
+            "samplePath": "Strings/Violin Section/susVib/VlnEns_susVib_A3_v2.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "chamber-strings-vsco-sections-full-violin-vlnens-susvib-b4-v2-bdb85532f47e",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Strings/Violin Section/susVib/VlnEns_susVib_B4_v2.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Strings/Violin%20Section/susVib/VlnEns_susVib_B4_v2.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/bdb85532f47e4ebd681f9617a415116e7e5aeb786dce2eeab5ab9b93c1b31644.wav",
+      "bytes": 1923744,
+      "sha256": "bdb85532f47e4ebd681f9617a415116e7e5aeb786dce2eeab5ab9b93c1b31644",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 480925,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "bdb85532f47e4ebd681f9617a415116e7e5aeb786dce2eeab5ab9b93c1b31644",
+          "outputSha256": "bdb85532f47e4ebd681f9617a415116e7e5aeb786dce2eeab5ab9b93c1b31644",
+          "parameters": {
+            "sfzPath": "ViolinEnsSusVib.sfz",
+            "samplePath": "Strings/Violin Section/susVib/VlnEns_susVib_B4_v2.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "chamber-strings-vsco-sections-full-violin-vlnens-susvib-c4-v2-5857387b40c4",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Strings/Violin Section/susVib/VlnEns_susVib_C4_v2.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Strings/Violin%20Section/susVib/VlnEns_susVib_C4_v2.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/5857387b40c412f756ef281c1171247664432a4e5078c98142d595d15cd92ef9.wav",
+      "bytes": 2017512,
+      "sha256": "5857387b40c412f756ef281c1171247664432a4e5078c98142d595d15cd92ef9",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 504367,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "5857387b40c412f756ef281c1171247664432a4e5078c98142d595d15cd92ef9",
+          "outputSha256": "5857387b40c412f756ef281c1171247664432a4e5078c98142d595d15cd92ef9",
+          "parameters": {
+            "sfzPath": "ViolinEnsSusVib.sfz",
+            "samplePath": "Strings/Violin Section/susVib/VlnEns_susVib_C4_v2.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "chamber-strings-vsco-sections-full-violin-vlnens-susvib-d5-v2-0c2ca9de723b",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Strings/Violin Section/susVib/VlnEns_susVib_D5_v2.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Strings/Violin%20Section/susVib/VlnEns_susVib_D5_v2.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/0c2ca9de723bed0a0968e32126b934f778cd678b367a29e7fde91004daf84daf.wav",
+      "bytes": 1976276,
+      "sha256": "0c2ca9de723bed0a0968e32126b934f778cd678b367a29e7fde91004daf84daf",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 494058,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "0c2ca9de723bed0a0968e32126b934f778cd678b367a29e7fde91004daf84daf",
+          "outputSha256": "0c2ca9de723bed0a0968e32126b934f778cd678b367a29e7fde91004daf84daf",
+          "parameters": {
+            "sfzPath": "ViolinEnsSusVib.sfz",
+            "samplePath": "Strings/Violin Section/susVib/VlnEns_susVib_D5_v2.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "chamber-strings-vsco-sections-full-violin-vlnens-susvib-e4-v2-030c09a631eb",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Strings/Violin Section/susVib/VlnEns_susVib_E4_v2.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Strings/Violin%20Section/susVib/VlnEns_susVib_E4_v2.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/030c09a631ebbc7304fc0b47bb5c346cd646e7451d9fdc531870f2534c60d9e9.wav",
+      "bytes": 1702620,
+      "sha256": "030c09a631ebbc7304fc0b47bb5c346cd646e7451d9fdc531870f2534c60d9e9",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 425644,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "030c09a631ebbc7304fc0b47bb5c346cd646e7451d9fdc531870f2534c60d9e9",
+          "outputSha256": "030c09a631ebbc7304fc0b47bb5c346cd646e7451d9fdc531870f2534c60d9e9",
+          "parameters": {
+            "sfzPath": "ViolinEnsSusVib.sfz",
+            "samplePath": "Strings/Violin Section/susVib/VlnEns_susVib_E4_v2.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "chamber-strings-vsco-sections-full-violin-vlnens-susvib-g4-v2-a1d6d5a03975",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Strings/Violin Section/susVib/VlnEns_susVib_G4_v2.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Strings/Violin%20Section/susVib/VlnEns_susVib_G4_v2.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/a1d6d5a0397541692e2f88a0cd9820eabe90407784ee631aa3bfa74772637a65.wav",
+      "bytes": 2150136,
+      "sha256": "a1d6d5a0397541692e2f88a0cd9820eabe90407784ee631aa3bfa74772637a65",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 537523,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "a1d6d5a0397541692e2f88a0cd9820eabe90407784ee631aa3bfa74772637a65",
+          "outputSha256": "a1d6d5a0397541692e2f88a0cd9820eabe90407784ee631aa3bfa74772637a65",
+          "parameters": {
+            "sfzPath": "ViolinEnsSusVib.sfz",
+            "samplePath": "Strings/Violin Section/susVib/VlnEns_susVib_G4_v2.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    }
+  ],
+  "contentSha256": "d4855dbb23fe7f206f700dd9e53776a11d2106202cae5aae1bdd671155b6fb9a"
+}

@@ -1,0 +1,15 @@
+{
+  "format": "air@0-experimental",
+  "title": "Marimba candidate phrase",
+  "tempo": 72,
+  "meter": "4/4",
+  "motifs": {},
+  "voices": [
+    {
+      "id": "solo",
+      "instrument": "marimba",
+      "role": "lead",
+      "part": "C4/4 E4/4 G4/4 C5/4"
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "format": "refrain-air-vocabulary-closure@0-experimental",
+  "id": "refrain-zero-asset-canvas@1",
+  "instruments": [
+    {
+      "id": "air_pad",
+      "label": "Air pad",
+      "family": "texture",
+      "midiMin": 36,
+      "midiMax": 96,
+      "status": "active",
+      "authoringMeaning": "A restrained synthetic sustained texture used as supporting air rather than an acoustic substitute."
+    },
+    {
+      "id": "clean_bass",
+      "label": "Clean bass",
+      "family": "pitched",
+      "midiMin": 28,
+      "midiMax": 67,
+      "status": "active",
+      "authoringMeaning": "A clear low-register bass voice that supports pulse and harmonic foundation."
+    },
+    {
+      "id": "dust_texture",
+      "label": "Dust texture",
+      "family": "texture",
+      "midiMin": 36,
+      "midiMax": 108,
+      "status": "active",
+      "authoringMeaning": "A deliberately unstable synthetic texture for degraded air, soft interference, and worn harmonic edges."
+    },
+    {
+      "id": "glass_bell",
+      "label": "Glass bell",
+      "family": "texture",
+      "midiMin": 60,
+      "midiMax": 108,
+      "status": "active",
+      "authoringMeaning": "A restrained synthetic bell color for sparse high-register punctuation and returning motifs."
+    },
+    {
+      "id": "lattice_pluck",
+      "label": "Lattice pluck",
+      "family": "pitched",
+      "midiMin": 36,
+      "midiMax": 96,
+      "status": "active",
+      "authoringMeaning": "A short synthetic pluck for interlocking figures, pointillist harmony, and bright repeated patterns."
+    },
+    {
+      "id": "prism_lead",
+      "label": "Prism lead",
+      "family": "pitched",
+      "midiMin": 48,
+      "midiMax": 100,
+      "status": "active",
+      "authoringMeaning": "A clear synthetic lead voice for exposed motifs, bent contour, and focused upper-register lines."
+    },
+    {
+      "id": "rhythm_pulse",
+      "label": "Rhythm pulse",
+      "family": "percussion",
+      "midiMin": 36,
+      "midiMax": 51,
+      "status": "active",
+      "supportedNotes": [36, 38, 42, 46, 49, 51],
+      "authoringMeaning": "A tuned electronic pulse set for kick-like anchors, clipped answers, and sparse beat-led structure."
+    },
+    {
+      "id": "sub_bass",
+      "label": "Sub bass",
+      "family": "pitched",
+      "midiMin": 24,
+      "midiMax": 72,
+      "status": "active",
+      "authoringMeaning": "A synthetic sub-bass voice for grounded fundamentals, slow pressure, and sparse low-register motion."
+    }
+  ],
+  "techniques": [],
+  "contentSha256": "a47dbea2791365eea7392cfb680b060f8af818676b8d8d0d4199fb48d8bc955d"
+}

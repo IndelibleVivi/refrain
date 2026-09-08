@@ -1,0 +1,23 @@
+[Unit]
+Description=Refrain private MCP App
+After=docker.service network-online.target
+Requires=docker.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+EnvironmentFile=/etc/refrain-mcp/runtime.env
+ExecStartPre=/bin/sh -c '/usr/bin/printf %%s "$${REFRAIN_IMAGE}" | /bin/grep --extended-regexp --quiet "^(sha256:[0-9a-f]{64}|.+@sha256:[0-9a-f]{64})$" || { echo "REFRAIN_IMAGE must use an immutable image ID or repository digest" >&2; exit 1; }'
+ExecStart=/usr/bin/docker run --rm --name refrain-mcp --read-only --tmpfs /tmp:rw,nosuid,nodev,noexec,size=64m --cap-drop=ALL --security-opt=no-new-privileges --memory=2g --cpus=2 --pids-limit=256 --publish 127.0.0.1:${REFRAIN_PORT}:3000 ${REFRAIN_IMAGE}
+ExecStop=/usr/bin/docker stop --time 20 refrain-mcp
+Restart=on-failure
+RestartSec=5s
+TimeoutStartSec=120s
+TimeoutStopSec=30s
+NoNewPrivileges=yes
+ProtectSystem=strict
+ProtectHome=yes
+PrivateTmp=yes
+
+[Install]
+WantedBy=multi-user.target

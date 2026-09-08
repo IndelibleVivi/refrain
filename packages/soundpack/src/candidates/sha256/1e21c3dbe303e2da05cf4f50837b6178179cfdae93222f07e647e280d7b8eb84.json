@@ -1,0 +1,85 @@
+{
+  "format": "refrain-candidate-shard@0-experimental",
+  "id": "marimba-vcsl-c4",
+  "candidateContentSha256": "91bef73fe309554686716aa8968fa4ce4a1622abda0ac385ee00809f63650f3c",
+  "candidate": {
+    "id": "marimba-vcsl-c4",
+    "instrumentId": "marimba",
+    "engine": "sampler",
+    "mapping": {
+      "type": "sample-map",
+      "playableMin": 48,
+      "playableMax": 72,
+      "midiFallbackProgram": 12,
+      "articulationFallbacks": {},
+      "regions": [
+        {
+          "id": "marimba-vcsl-c4-main",
+          "trigger": "attack",
+          "assetId": "vcsl-marimba-c4-med-01",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 48,
+            "rootMidi": 60,
+            "maxMidi": 72
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 0,
+          "tuneCents": 0,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.08
+          }
+        }
+      ]
+    },
+    "calibrationGainDb": -2.5,
+    "tailSeconds": 2.5,
+    "releaseStatus": "listening-accepted"
+  },
+  "assets": [
+    {
+      "id": "vcsl-marimba-c4-med-01",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VCSL",
+        "ref": "c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e",
+        "path": "Idiophones/Struck Idiophones/Marimba/Marimba_hit_Outrigger_C4_med_01.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Idiophones/Struck%20Idiophones/Marimba/Marimba_hit_Outrigger_C4_med_01.wav"
+      },
+      "localPath": "soundpacks/vcsl/Marimba_hit_Outrigger_C4_med_01.wav",
+      "bytes": 655244,
+      "sha256": "3e88c006eef05e8f7891f8f6027042006199a4ec3b53a0ad7308f9782a52d4df",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 109200,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VCSL/LICENSE.txt",
+        "assetScope": "the pinned VCSL repository asset"
+      },
+      "processingHistory": [
+        {
+          "operation": "byte-exact-copy",
+          "tool": "refrain-soundpack-fetch@0",
+          "inputSha256": "3e88c006eef05e8f7891f8f6027042006199a4ec3b53a0ad7308f9782a52d4df",
+          "outputSha256": "3e88c006eef05e8f7891f8f6027042006199a4ec3b53a0ad7308f9782a52d4df",
+          "parameters": {
+            "modified": false
+          }
+        }
+      ],
+      "releaseStatus": "listening-accepted",
+      "publicReleaseAccepted": false
+    }
+  ],
+  "contentSha256": "1e21c3dbe303e2da05cf4f50837b6178179cfdae93222f07e647e280d7b8eb84"
+}

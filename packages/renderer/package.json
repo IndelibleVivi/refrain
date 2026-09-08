@@ -1,0 +1,58 @@
+{
+  "name": "@refrain/renderer",
+  "version": "0.0.0-experimental",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": {
+      "refrain-built": "./dist/index.js",
+      "default": "./src/index.ts"
+    },
+    "./identity": {
+      "refrain-built": "./dist/identity.js",
+      "default": "./src/identity.ts"
+    },
+    "./v1": {
+      "refrain-built": "./dist/v1.js",
+      "default": "./src/v1.ts"
+    },
+    "./portable": {
+      "refrain-built": "./dist/portable.js",
+      "default": "./src/portable.ts"
+    },
+    "./presentation-ref": {
+      "refrain-built": "./dist/presentation-ref.js",
+      "default": "./src/presentation-ref.ts"
+    },
+    "./selection": {
+      "refrain-built": "./dist/selection.js",
+      "default": "./src/selection.ts"
+    },
+    "./view-model": {
+      "refrain-built": "./dist/view-model.js",
+      "default": "./src/view-model.ts"
+    },
+    "./playback-capability": {
+      "refrain-built": "./dist/playback-capability.js",
+      "default": "./src/playback-capability.ts"
+    },
+    "./styles.css": "./src/styles.css"
+  },
+  "scripts": {
+    "build": "tsc -b",
+    "test": "vitest run --root ../.. packages/renderer",
+    "typecheck": "tsc -b --pretty false"
+  },
+  "dependencies": {
+    "@refrain/air-schema": "*",
+    "@refrain/audio-engine": "*",
+    "@refrain/compiler": "*",
+    "@refrain/identity": "*",
+    "@refrain/soundpack": "*",
+    "react": "^19.1.1"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.10"
+  },
+  "license": "SEE LICENSE IN ../../LICENSING.md"
+}

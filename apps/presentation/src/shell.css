@@ -1,0 +1,22 @@
+body {
+  min-width: 280px;
+}
+.presentation-shell {
+  width: min(960px, calc(100% - 24px));
+  margin: 12px auto;
+}
+.presentation-message {
+  width: min(680px, calc(100% - 32px));
+  margin: 12vh auto;
+}
+.presentation-message h1 {
+  font:
+    500 clamp(28px, 6vw, 54px)/1.05 Georgia,
+    serif;
+}
+.presentation-message p {
+  color: #767169;
+}
+.presentation-message code {
+  color: inherit;
+}

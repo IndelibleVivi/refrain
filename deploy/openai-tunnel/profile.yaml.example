@@ -1,0 +1,16 @@
+config_version: 1
+control_plane:
+  base_url: "https://api.openai.com"
+  tunnel_id: "tunnel_replace_me"
+health:
+  listen_addr: "127.0.0.1:18102"
+  url_file: "/run/refrain-gpt-tunnel/health-url"
+admin_ui:
+  open_browser: false
+log:
+  level: info
+  format: json
+mcp:
+  server_urls:
+    - channel: main
+      url: "http://127.0.0.1:18101/mcp"

@@ -1,0 +1,38 @@
+{
+  "format": "refrain-listening-decisions@0-experimental",
+  "decisions": [
+    {
+      "instrumentId": "warm_piano",
+      "candidateId": "warm-piano-vcsl-kawai-c4",
+      "decision": "accepted",
+      "decidedBy": "Faye",
+      "decidedAt": "2026-08-22",
+      "scope": "Exact G3A one-region candidate and A/B listening packet only; not multisample or public-release acceptance.",
+      "packetSha256": "97e358ac67ab0594ae3b7a0a4918bb8e90832c9495b3db30f77a3558284b7a5",
+      "candidateAudioSha256": "5f3b2d93371ab0594ae3b7a0a4918bb8e90832c9495b3db30f77a3558284b7a5",
+      "fallbackAudioSha256": "cc6e7580bcd562f5dfa860d6018aefb220a5d0c87c7dd5f2825f057aba9c4aef"
+    },
+    {
+      "instrumentId": "harp",
+      "candidateId": "harp-vcsl-concert-a4",
+      "decision": "accepted",
+      "decidedBy": "Faye",
+      "decidedAt": "2026-08-22",
+      "scope": "Exact G3A one-region candidate and A/B listening packet only; not multisample or public-release acceptance.",
+      "packetSha256": "d3240fb1b546a74d8a7734985285c90db5b7cda897f8c31ade5198abe036c1ce",
+      "candidateAudioSha256": "4306202314a7e76eefeb10e3e478de8e8f4a09456b84bf377092bf1dafb00b31",
+      "fallbackAudioSha256": "89181856f3b1f19c3cbdfaca7f267dc321dcc43001f5fe033915820de432b433"
+    },
+    {
+      "instrumentId": "marimba",
+      "candidateId": "marimba-vcsl-c4",
+      "decision": "accepted",
+      "decidedBy": "Faye",
+      "decidedAt": "2026-08-22",
+      "scope": "Exact G3A one-region candidate and A/B listening packet only; not multisample or public-release acceptance.",
+      "packetSha256": "7fe30add4fbc686d988d964e0fcb7f76f6a0acebf1dd0ef7ca3c8fc42e468616",
+      "candidateAudioSha256": "feb7e2d4aa5f5bc7f0cf5492dbd23828b02a6c3de50fd56c863edbcce8f0863b",
+      "fallbackAudioSha256": "f6eb5273bdb2217efbe9faa693c7f18633e4980a8d2a4b326333300c19de51c0"
+    }
+  ]
+}

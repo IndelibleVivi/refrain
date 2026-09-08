@@ -1,0 +1,2076 @@
+{
+  "format": "refrain-candidate-shard@0-experimental",
+  "id": "clarinet-vsco-suslong-full",
+  "candidateContentSha256": "144e2a8e089355f8b8101844640ea30f38054dd2d5c1cb1f7403614e73bf783f",
+  "candidate": {
+    "id": "clarinet-vsco-suslong-full",
+    "instrumentId": "clarinet",
+    "engine": "sampler",
+    "mapping": {
+      "type": "sample-map",
+      "playableMin": 50,
+      "playableMax": 94,
+      "midiFallbackProgram": 71,
+      "articulationFallbacks": {
+        "staccato": "none",
+        "tenuto": "none",
+        "accent": "none",
+        "legato": "none"
+      },
+      "regions": [
+        {
+          "id": "clarinet-vsco-suslong-full-region-001",
+          "trigger": "attack",
+          "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-a-2-v1-rr1-sum-f4e51e4addda",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 56,
+            "rootMidi": 58,
+            "maxMidi": 59
+          },
+          "velocity": {
+            "min": 1,
+            "max": 41
+          },
+          "gainDb": 20,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.7
+          }
+        },
+        {
+          "id": "clarinet-vsco-suslong-full-region-002",
+          "trigger": "attack",
+          "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-a-3-v1-rr1-sum-c314aa26ec14",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 68,
+            "rootMidi": 70,
+            "maxMidi": 71
+          },
+          "velocity": {
+            "min": 1,
+            "max": 41
+          },
+          "gainDb": 20,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.7
+          }
+        },
+        {
+          "id": "clarinet-vsco-suslong-full-region-003",
+          "trigger": "attack",
+          "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-a-4-v1-rr1-sum-9669ede565f4",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 80,
+            "rootMidi": 82,
+            "maxMidi": 83
+          },
+          "velocity": {
+            "min": 1,
+            "max": 41
+          },
+          "gainDb": 20,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.7
+          }
+        },
+        {
+          "id": "clarinet-vsco-suslong-full-region-004",
+          "trigger": "attack",
+          "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-d2-v1-rr1-sum-359344f125ee",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 50,
+            "rootMidi": 50,
+            "maxMidi": 51
+          },
+          "velocity": {
+            "min": 1,
+            "max": 41
+          },
+          "gainDb": 20,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.7
+          }
+        },
+        {
+          "id": "clarinet-vsco-suslong-full-region-005",
+          "trigger": "attack",
+          "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-d3-v1-rr1-sum-74ba0ec6cb06",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 60,
+            "rootMidi": 62,
+            "maxMidi": 63
+          },
+          "velocity": {
+            "min": 1,
+            "max": 41
+          },
+          "gainDb": 20,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.7
+          }
+        },
+        {
+          "id": "clarinet-vsco-suslong-full-region-006",
+          "trigger": "attack",
+          "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-d4-v1-rr1-sum-61ff877d4b50",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 72,
+            "rootMidi": 74,
+            "maxMidi": 75
+          },
+          "velocity": {
+            "min": 1,
+            "max": 41
+          },
+          "gainDb": 20,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.7
+          }
+        },
+        {
+          "id": "clarinet-vsco-suslong-full-region-007",
+          "trigger": "attack",
+          "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-d5-v1-rr1-sum-0ed79db13dc3",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 84,
+            "rootMidi": 86,
+            "maxMidi": 87
+          },
+          "velocity": {
+            "min": 1,
+            "max": 41
+          },
+          "gainDb": 12,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.7
+          }
+        },
+        {
+          "id": "clarinet-vsco-suslong-full-region-008",
+          "trigger": "attack",
+          "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-f-5-v1-rr1-sum-26fcfdba581d",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 88,
+            "rootMidi": 89,
+            "maxMidi": 94
+          },
+          "velocity": {
+            "min": 1,
+            "max": 41
+          },
+          "gainDb": 12,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.7
+          }
+        },
+        {
+          "id": "clarinet-vsco-suslong-full-region-009",
+          "trigger": "attack",
+          "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-f2-v1-rr1-sum-008d2f0894c9",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 52,
+            "rootMidi": 53,
+            "maxMidi": 55
+          },
+          "velocity": {
+            "min": 1,
+            "max": 41
+          },
+          "gainDb": 20,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.7
+          }
+        },
+        {
+          "id": "clarinet-vsco-suslong-full-region-010",
+          "trigger": "attack",
+          "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-f3-v1-rr1-sum-0677787afa8d",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 64,
+            "rootMidi": 65,
+            "maxMidi": 67
+          },
+          "velocity": {
+            "min": 1,
+            "max": 41
+          },
+          "gainDb": 20,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.7
+          }
+        },
+        {
+          "id": "clarinet-vsco-suslong-full-region-011",
+          "trigger": "attack",
+          "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-f4-v1-rr1-sum-e7b54b1ac626",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 76,
+            "rootMidi": 77,
+            "maxMidi": 79
+          },
+          "velocity": {
+            "min": 1,
+            "max": 41
+          },
+          "gainDb": 20,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.7
+          }
+        },
+        {
+          "id": "clarinet-vsco-suslong-full-region-012",
+          "trigger": "attack",
+          "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-a-2-v2-rr1-sum-82be872b7915",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 56,
+            "rootMidi": 58,
+            "maxMidi": 59
+          },
+          "velocity": {
+            "min": 42,
+            "max": 83
+          },
+          "gainDb": 13,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.7
+          }
+        },
+        {
+          "id": "clarinet-vsco-suslong-full-region-013",
+          "trigger": "attack",
+          "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-a-3-v2-rr1-sum-779e2cad84f6",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 68,
+            "rootMidi": 70,
+            "maxMidi": 71
+          },
+          "velocity": {
+            "min": 42,
+            "max": 83
+          },
+          "gainDb": 13,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.7
+          }
+        },
+        {
+          "id": "clarinet-vsco-suslong-full-region-014",
+          "trigger": "attack",
+          "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-a-4-v2-rr1-sum-569e902693e7",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 80,
+            "rootMidi": 82,
+            "maxMidi": 83
+          },
+          "velocity": {
+            "min": 42,
+            "max": 83
+          },
+          "gainDb": 13,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.7
+          }
+        },
+        {
+          "id": "clarinet-vsco-suslong-full-region-015",
+          "trigger": "attack",
+          "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-d2-v2-rr1-sum-b1a793ff45d8",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 50,
+            "rootMidi": 50,
+            "maxMidi": 51
+          },
+          "velocity": {
+            "min": 42,
+            "max": 83
+          },
+          "gainDb": 13,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.7
+          }
+        },
+        {
+          "id": "clarinet-vsco-suslong-full-region-016",
+          "trigger": "attack",
+          "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-d3-v2-rr1-sum-30e686ffc58c",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 60,
+            "rootMidi": 62,
+            "maxMidi": 63
+          },
+          "velocity": {
+            "min": 42,
+            "max": 83
+          },
+          "gainDb": 13,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.7
+          }
+        },
+        {
+          "id": "clarinet-vsco-suslong-full-region-017",
+          "trigger": "attack",
+          "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-d4-v2-rr1-sum-4bdc53f3ef91",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 72,
+            "rootMidi": 74,
+            "maxMidi": 75
+          },
+          "velocity": {
+            "min": 42,
+            "max": 83
+          },
+          "gainDb": 13,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.7
+          }
+        },
+        {
+          "id": "clarinet-vsco-suslong-full-region-018",
+          "trigger": "attack",
+          "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-d5-v2-rr1-sum-4cedd1d7bd77",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 84,
+            "rootMidi": 86,
+            "maxMidi": 87
+          },
+          "velocity": {
+            "min": 42,
+            "max": 83
+          },
+          "gainDb": 13,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.7
+          }
+        },
+        {
+          "id": "clarinet-vsco-suslong-full-region-019",
+          "trigger": "attack",
+          "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-f-5-v2-rr1-sum-2f024789f1b2",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 88,
+            "rootMidi": 89,
+            "maxMidi": 94
+          },
+          "velocity": {
+            "min": 42,
+            "max": 83
+          },
+          "gainDb": 8,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.7
+          }
+        },
+        {
+          "id": "clarinet-vsco-suslong-full-region-020",
+          "trigger": "attack",
+          "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-f2-v2-rr1-sum-36348e1fd1a1",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 52,
+            "rootMidi": 53,
+            "maxMidi": 55
+          },
+          "velocity": {
+            "min": 42,
+            "max": 83
+          },
+          "gainDb": 13,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.7
+          }
+        },
+        {
+          "id": "clarinet-vsco-suslong-full-region-021",
+          "trigger": "attack",
+          "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-f3-v2-rr1-sum-3c9a237651cd",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 64,
+            "rootMidi": 65,
+            "maxMidi": 67
+          },
+          "velocity": {
+            "min": 42,
+            "max": 83
+          },
+          "gainDb": 13,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.7
+          }
+        },
+        {
+          "id": "clarinet-vsco-suslong-full-region-022",
+          "trigger": "attack",
+          "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-f4-v2-rr1-sum-9988142d8fd2",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 76,
+            "rootMidi": 77,
+            "maxMidi": 79
+          },
+          "velocity": {
+            "min": 42,
+            "max": 83
+          },
+          "gainDb": 13,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.7
+          }
+        },
+        {
+          "id": "clarinet-vsco-suslong-full-region-023",
+          "trigger": "attack",
+          "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-a-2-v3-rr1-sum-45db5a4eda19",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 56,
+            "rootMidi": 58,
+            "maxMidi": 59
+          },
+          "velocity": {
+            "min": 84,
+            "max": 127
+          },
+          "gainDb": 3,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.7
+          }
+        },
+        {
+          "id": "clarinet-vsco-suslong-full-region-024",
+          "trigger": "attack",
+          "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-a-3-v3-rr1-sum-29fc72eb3b93",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 68,
+            "rootMidi": 70,
+            "maxMidi": 71
+          },
+          "velocity": {
+            "min": 84,
+            "max": 127
+          },
+          "gainDb": 3,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.7
+          }
+        },
+        {
+          "id": "clarinet-vsco-suslong-full-region-025",
+          "trigger": "attack",
+          "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-a-4-v3-rr1-sum-6867f47637a3",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 80,
+            "rootMidi": 82,
+            "maxMidi": 83
+          },
+          "velocity": {
+            "min": 84,
+            "max": 127
+          },
+          "gainDb": 3,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.7
+          }
+        },
+        {
+          "id": "clarinet-vsco-suslong-full-region-026",
+          "trigger": "attack",
+          "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-d2-v3-rr1-sum-346775f54394",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 50,
+            "rootMidi": 50,
+            "maxMidi": 51
+          },
+          "velocity": {
+            "min": 84,
+            "max": 127
+          },
+          "gainDb": 3,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.7
+          }
+        },
+        {
+          "id": "clarinet-vsco-suslong-full-region-027",
+          "trigger": "attack",
+          "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-d3-v3-rr1-sum-bec366e90370",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 60,
+            "rootMidi": 62,
+            "maxMidi": 63
+          },
+          "velocity": {
+            "min": 84,
+            "max": 127
+          },
+          "gainDb": 3,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.7
+          }
+        },
+        {
+          "id": "clarinet-vsco-suslong-full-region-028",
+          "trigger": "attack",
+          "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-d4-v3-rr1-sum-f913c749eb6b",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 72,
+            "rootMidi": 74,
+            "maxMidi": 75
+          },
+          "velocity": {
+            "min": 84,
+            "max": 127
+          },
+          "gainDb": 3,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.7
+          }
+        },
+        {
+          "id": "clarinet-vsco-suslong-full-region-029",
+          "trigger": "attack",
+          "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-d5-v3-rr1-sum-4bcff7aa31fe",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 84,
+            "rootMidi": 86,
+            "maxMidi": 87
+          },
+          "velocity": {
+            "min": 84,
+            "max": 127
+          },
+          "gainDb": 3,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.7
+          }
+        },
+        {
+          "id": "clarinet-vsco-suslong-full-region-030",
+          "trigger": "attack",
+          "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-f-5-v3-rr1-sum-13355ccf2ead",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 88,
+            "rootMidi": 89,
+            "maxMidi": 94
+          },
+          "velocity": {
+            "min": 84,
+            "max": 127
+          },
+          "gainDb": 3,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.7
+          }
+        },
+        {
+          "id": "clarinet-vsco-suslong-full-region-031",
+          "trigger": "attack",
+          "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-f2-v3-rr1-sum-7049e55a7385",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 52,
+            "rootMidi": 53,
+            "maxMidi": 55
+          },
+          "velocity": {
+            "min": 84,
+            "max": 127
+          },
+          "gainDb": 3,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.7
+          }
+        },
+        {
+          "id": "clarinet-vsco-suslong-full-region-032",
+          "trigger": "attack",
+          "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-f3-v3-rr1-sum-6b434e88f724",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 64,
+            "rootMidi": 65,
+            "maxMidi": 67
+          },
+          "velocity": {
+            "min": 84,
+            "max": 127
+          },
+          "gainDb": 3,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.7
+          }
+        },
+        {
+          "id": "clarinet-vsco-suslong-full-region-033",
+          "trigger": "attack",
+          "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-f4-v3-rr1-sum-8d9bcdf56ed0",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 76,
+            "rootMidi": 77,
+            "maxMidi": 79
+          },
+          "velocity": {
+            "min": 84,
+            "max": 127
+          },
+          "gainDb": 3,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.7
+          }
+        }
+      ]
+    },
+    "calibrationGainDb": 0,
+    "tailSeconds": 0.7,
+    "releaseStatus": "listening-candidate"
+  },
+  "assets": [
+    {
+      "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-a-2-v1-rr1-sum-f4e51e4addda",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_A#2_v1_rr1_sum.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Woodwinds/Clarinet/susLong/DCClar_susLong_A%232_v1_rr1_sum.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/f4e51e4addda4e87e84b0a57b1de21cb447adff0a2c1aa5c71b5d3ef5618a93e.wav",
+      "bytes": 1825324,
+      "sha256": "f4e51e4addda4e87e84b0a57b1de21cb447adff0a2c1aa5c71b5d3ef5618a93e",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 456320,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "f4e51e4addda4e87e84b0a57b1de21cb447adff0a2c1aa5c71b5d3ef5618a93e",
+          "outputSha256": "f4e51e4addda4e87e84b0a57b1de21cb447adff0a2c1aa5c71b5d3ef5618a93e",
+          "parameters": {
+            "sfzPath": "ClarinetSus.sfz",
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_A#2_v1_rr1_sum.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-a-3-v1-rr1-sum-c314aa26ec14",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_A#3_v1_rr1_sum.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Woodwinds/Clarinet/susLong/DCClar_susLong_A%233_v1_rr1_sum.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/c314aa26ec148ffa30afe988d7f4f178941a38ca401f487ea2633ce635e78d3f.wav",
+      "bytes": 1599888,
+      "sha256": "c314aa26ec148ffa30afe988d7f4f178941a38ca401f487ea2633ce635e78d3f",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 399961,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "c314aa26ec148ffa30afe988d7f4f178941a38ca401f487ea2633ce635e78d3f",
+          "outputSha256": "c314aa26ec148ffa30afe988d7f4f178941a38ca401f487ea2633ce635e78d3f",
+          "parameters": {
+            "sfzPath": "ClarinetSus.sfz",
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_A#3_v1_rr1_sum.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-a-4-v1-rr1-sum-9669ede565f4",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_A#4_v1_rr1_sum.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Woodwinds/Clarinet/susLong/DCClar_susLong_A%234_v1_rr1_sum.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/9669ede565f46af967a1ff72cb106a14736e0325680aa3b62ee148f8750efd88.wav",
+      "bytes": 1996064,
+      "sha256": "9669ede565f46af967a1ff72cb106a14736e0325680aa3b62ee148f8750efd88",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 499005,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "9669ede565f46af967a1ff72cb106a14736e0325680aa3b62ee148f8750efd88",
+          "outputSha256": "9669ede565f46af967a1ff72cb106a14736e0325680aa3b62ee148f8750efd88",
+          "parameters": {
+            "sfzPath": "ClarinetSus.sfz",
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_A#4_v1_rr1_sum.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-d2-v1-rr1-sum-359344f125ee",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_D2_v1_rr1_sum.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Woodwinds/Clarinet/susLong/DCClar_susLong_D2_v1_rr1_sum.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/359344f125ee42ea30b1143ef7ad3ea0d8a19f871d400a07bf784bd691b1a72a.wav",
+      "bytes": 806612,
+      "sha256": "359344f125ee42ea30b1143ef7ad3ea0d8a19f871d400a07bf784bd691b1a72a",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 201642,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "359344f125ee42ea30b1143ef7ad3ea0d8a19f871d400a07bf784bd691b1a72a",
+          "outputSha256": "359344f125ee42ea30b1143ef7ad3ea0d8a19f871d400a07bf784bd691b1a72a",
+          "parameters": {
+            "sfzPath": "ClarinetSus.sfz",
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_D2_v1_rr1_sum.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-d3-v1-rr1-sum-74ba0ec6cb06",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_D3_v1_rr1_sum.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Woodwinds/Clarinet/susLong/DCClar_susLong_D3_v1_rr1_sum.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/74ba0ec6cb0698f314b07cee2f63cd309d5fd30db262d10d1f69e6aec9cd5896.wav",
+      "bytes": 2230948,
+      "sha256": "74ba0ec6cb0698f314b07cee2f63cd309d5fd30db262d10d1f69e6aec9cd5896",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 557726,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "74ba0ec6cb0698f314b07cee2f63cd309d5fd30db262d10d1f69e6aec9cd5896",
+          "outputSha256": "74ba0ec6cb0698f314b07cee2f63cd309d5fd30db262d10d1f69e6aec9cd5896",
+          "parameters": {
+            "sfzPath": "ClarinetSus.sfz",
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_D3_v1_rr1_sum.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-d4-v1-rr1-sum-61ff877d4b50",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_D4_v1_rr1_sum.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Woodwinds/Clarinet/susLong/DCClar_susLong_D4_v1_rr1_sum.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/61ff877d4b500c2e1b6b51f693cd1ea8df05c7473c2ea458a207b1450495e430.wav",
+      "bytes": 1987372,
+      "sha256": "61ff877d4b500c2e1b6b51f693cd1ea8df05c7473c2ea458a207b1450495e430",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 496832,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "61ff877d4b500c2e1b6b51f693cd1ea8df05c7473c2ea458a207b1450495e430",
+          "outputSha256": "61ff877d4b500c2e1b6b51f693cd1ea8df05c7473c2ea458a207b1450495e430",
+          "parameters": {
+            "sfzPath": "ClarinetSus.sfz",
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_D4_v1_rr1_sum.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-d5-v1-rr1-sum-0ed79db13dc3",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_D5_v1_rr1_sum.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Woodwinds/Clarinet/susLong/DCClar_susLong_D5_v1_rr1_sum.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/0ed79db13dc312c9f5adaf11492f6fd871a5619a9e452434043c33d7a1608697.wav",
+      "bytes": 1692352,
+      "sha256": "0ed79db13dc312c9f5adaf11492f6fd871a5619a9e452434043c33d7a1608697",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 423077,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "0ed79db13dc312c9f5adaf11492f6fd871a5619a9e452434043c33d7a1608697",
+          "outputSha256": "0ed79db13dc312c9f5adaf11492f6fd871a5619a9e452434043c33d7a1608697",
+          "parameters": {
+            "sfzPath": "ClarinetSus.sfz",
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_D5_v1_rr1_sum.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-f-5-v1-rr1-sum-26fcfdba581d",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_F#5_v1_rr1_sum.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Woodwinds/Clarinet/susLong/DCClar_susLong_F%235_v1_rr1_sum.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/26fcfdba581d7251cf96007650890bbb3f8c61d020278b45441113d47ce1c05e.wav",
+      "bytes": 1025344,
+      "sha256": "26fcfdba581d7251cf96007650890bbb3f8c61d020278b45441113d47ce1c05e",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 256325,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "26fcfdba581d7251cf96007650890bbb3f8c61d020278b45441113d47ce1c05e",
+          "outputSha256": "26fcfdba581d7251cf96007650890bbb3f8c61d020278b45441113d47ce1c05e",
+          "parameters": {
+            "sfzPath": "ClarinetSus.sfz",
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_F#5_v1_rr1_sum.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-f2-v1-rr1-sum-008d2f0894c9",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_F2_v1_rr1_sum.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Woodwinds/Clarinet/susLong/DCClar_susLong_F2_v1_rr1_sum.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/008d2f0894c90e912f8315639ff8ed2687454195be14054e5fadee8e0db3b559.wav",
+      "bytes": 1527412,
+      "sha256": "008d2f0894c90e912f8315639ff8ed2687454195be14054e5fadee8e0db3b559",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 381842,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "008d2f0894c90e912f8315639ff8ed2687454195be14054e5fadee8e0db3b559",
+          "outputSha256": "008d2f0894c90e912f8315639ff8ed2687454195be14054e5fadee8e0db3b559",
+          "parameters": {
+            "sfzPath": "ClarinetSus.sfz",
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_F2_v1_rr1_sum.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-f3-v1-rr1-sum-0677787afa8d",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_F3_v1_rr1_sum.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Woodwinds/Clarinet/susLong/DCClar_susLong_F3_v1_rr1_sum.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/0677787afa8d1fdc99e267a1518a49dacf3f1899dc27239c1fbe93568fda2222.wav",
+      "bytes": 1762976,
+      "sha256": "0677787afa8d1fdc99e267a1518a49dacf3f1899dc27239c1fbe93568fda2222",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 440733,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "0677787afa8d1fdc99e267a1518a49dacf3f1899dc27239c1fbe93568fda2222",
+          "outputSha256": "0677787afa8d1fdc99e267a1518a49dacf3f1899dc27239c1fbe93568fda2222",
+          "parameters": {
+            "sfzPath": "ClarinetSus.sfz",
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_F3_v1_rr1_sum.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-f4-v1-rr1-sum-e7b54b1ac626",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_F4_v1_rr1_sum.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Woodwinds/Clarinet/susLong/DCClar_susLong_F4_v1_rr1_sum.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/e7b54b1ac626a6c54db3fa320a38acd3f099c33c936fca0d82259f9f9641e4f3.wav",
+      "bytes": 2034208,
+      "sha256": "e7b54b1ac626a6c54db3fa320a38acd3f099c33c936fca0d82259f9f9641e4f3",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 508541,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "e7b54b1ac626a6c54db3fa320a38acd3f099c33c936fca0d82259f9f9641e4f3",
+          "outputSha256": "e7b54b1ac626a6c54db3fa320a38acd3f099c33c936fca0d82259f9f9641e4f3",
+          "parameters": {
+            "sfzPath": "ClarinetSus.sfz",
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_F4_v1_rr1_sum.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-a-2-v2-rr1-sum-82be872b7915",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_A#2_v2_rr1_sum.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Woodwinds/Clarinet/susLong/DCClar_susLong_A%232_v2_rr1_sum.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/82be872b7915c833e06910846e3398b55591f69bfe6474c39dd4051742db2700.wav",
+      "bytes": 1909388,
+      "sha256": "82be872b7915c833e06910846e3398b55591f69bfe6474c39dd4051742db2700",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 477336,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "82be872b7915c833e06910846e3398b55591f69bfe6474c39dd4051742db2700",
+          "outputSha256": "82be872b7915c833e06910846e3398b55591f69bfe6474c39dd4051742db2700",
+          "parameters": {
+            "sfzPath": "ClarinetSus.sfz",
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_A#2_v2_rr1_sum.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-a-3-v2-rr1-sum-779e2cad84f6",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_A#3_v2_rr1_sum.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Woodwinds/Clarinet/susLong/DCClar_susLong_A%233_v2_rr1_sum.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/779e2cad84f6f5103272f17cb4637a94d8e9c533a5811233595960cad61b391f.wav",
+      "bytes": 1791140,
+      "sha256": "779e2cad84f6f5103272f17cb4637a94d8e9c533a5811233595960cad61b391f",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 447774,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "779e2cad84f6f5103272f17cb4637a94d8e9c533a5811233595960cad61b391f",
+          "outputSha256": "779e2cad84f6f5103272f17cb4637a94d8e9c533a5811233595960cad61b391f",
+          "parameters": {
+            "sfzPath": "ClarinetSus.sfz",
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_A#3_v2_rr1_sum.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-a-4-v2-rr1-sum-569e902693e7",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_A#4_v2_rr1_sum.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Woodwinds/Clarinet/susLong/DCClar_susLong_A%234_v2_rr1_sum.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/569e902693e7d04ecd20507f0a3dd0be92a7a3cdf14ab685d89aefacff2a34cb.wav",
+      "bytes": 1823220,
+      "sha256": "569e902693e7d04ecd20507f0a3dd0be92a7a3cdf14ab685d89aefacff2a34cb",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 455794,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "569e902693e7d04ecd20507f0a3dd0be92a7a3cdf14ab685d89aefacff2a34cb",
+          "outputSha256": "569e902693e7d04ecd20507f0a3dd0be92a7a3cdf14ab685d89aefacff2a34cb",
+          "parameters": {
+            "sfzPath": "ClarinetSus.sfz",
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_A#4_v2_rr1_sum.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-d2-v2-rr1-sum-b1a793ff45d8",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_D2_v2_rr1_sum.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Woodwinds/Clarinet/susLong/DCClar_susLong_D2_v2_rr1_sum.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/b1a793ff45d8f068dd83b591924b1a29bbece98e6e8177b31fc003f2f426fe00.wav",
+      "bytes": 1689164,
+      "sha256": "b1a793ff45d8f068dd83b591924b1a29bbece98e6e8177b31fc003f2f426fe00",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 422280,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "b1a793ff45d8f068dd83b591924b1a29bbece98e6e8177b31fc003f2f426fe00",
+          "outputSha256": "b1a793ff45d8f068dd83b591924b1a29bbece98e6e8177b31fc003f2f426fe00",
+          "parameters": {
+            "sfzPath": "ClarinetSus.sfz",
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_D2_v2_rr1_sum.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-d3-v2-rr1-sum-30e686ffc58c",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_D3_v2_rr1_sum.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Woodwinds/Clarinet/susLong/DCClar_susLong_D3_v2_rr1_sum.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/30e686ffc58caa48bbfae309a06f1c27c75b192fb653729ffdf8586cbd9b8405.wav",
+      "bytes": 1876188,
+      "sha256": "30e686ffc58caa48bbfae309a06f1c27c75b192fb653729ffdf8586cbd9b8405",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 469036,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "30e686ffc58caa48bbfae309a06f1c27c75b192fb653729ffdf8586cbd9b8405",
+          "outputSha256": "30e686ffc58caa48bbfae309a06f1c27c75b192fb653729ffdf8586cbd9b8405",
+          "parameters": {
+            "sfzPath": "ClarinetSus.sfz",
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_D3_v2_rr1_sum.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-d4-v2-rr1-sum-4bdc53f3ef91",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_D4_v2_rr1_sum.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Woodwinds/Clarinet/susLong/DCClar_susLong_D4_v2_rr1_sum.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/4bdc53f3ef917cc9146e10cec5eb33744524e8b510c4a39c080dc5c774b3c956.wav",
+      "bytes": 2047596,
+      "sha256": "4bdc53f3ef917cc9146e10cec5eb33744524e8b510c4a39c080dc5c774b3c956",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 510625,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "4bdc53f3ef917cc9146e10cec5eb33744524e8b510c4a39c080dc5c774b3c956",
+          "outputSha256": "4bdc53f3ef917cc9146e10cec5eb33744524e8b510c4a39c080dc5c774b3c956",
+          "parameters": {
+            "sfzPath": "ClarinetSus.sfz",
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_D4_v2_rr1_sum.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-d5-v2-rr1-sum-4cedd1d7bd77",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_D5_v2_rr1_sum.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Woodwinds/Clarinet/susLong/DCClar_susLong_D5_v2_rr1_sum.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/4cedd1d7bd779fe357529e34ff398bc0e80c5088fc3908944962d65fcdc94823.wav",
+      "bytes": 1772224,
+      "sha256": "4cedd1d7bd779fe357529e34ff398bc0e80c5088fc3908944962d65fcdc94823",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 443045,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "4cedd1d7bd779fe357529e34ff398bc0e80c5088fc3908944962d65fcdc94823",
+          "outputSha256": "4cedd1d7bd779fe357529e34ff398bc0e80c5088fc3908944962d65fcdc94823",
+          "parameters": {
+            "sfzPath": "ClarinetSus.sfz",
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_D5_v2_rr1_sum.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-f-5-v2-rr1-sum-2f024789f1b2",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_F#5_v2_rr1_sum.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Woodwinds/Clarinet/susLong/DCClar_susLong_F%235_v2_rr1_sum.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/2f024789f1b2ecc25f0e07dcff06084e4c2def83ff74e693c098c28fbec319fc.wav",
+      "bytes": 1252444,
+      "sha256": "2f024789f1b2ecc25f0e07dcff06084e4c2def83ff74e693c098c28fbec319fc",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 313100,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "2f024789f1b2ecc25f0e07dcff06084e4c2def83ff74e693c098c28fbec319fc",
+          "outputSha256": "2f024789f1b2ecc25f0e07dcff06084e4c2def83ff74e693c098c28fbec319fc",
+          "parameters": {
+            "sfzPath": "ClarinetSus.sfz",
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_F#5_v2_rr1_sum.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-f2-v2-rr1-sum-36348e1fd1a1",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_F2_v2_rr1_sum.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Woodwinds/Clarinet/susLong/DCClar_susLong_F2_v2_rr1_sum.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/36348e1fd1a1e53485c7f48983cfd758ced036f6af1a832671bf5ef1f8b00448.wav",
+      "bytes": 1835164,
+      "sha256": "36348e1fd1a1e53485c7f48983cfd758ced036f6af1a832671bf5ef1f8b00448",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 458780,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "36348e1fd1a1e53485c7f48983cfd758ced036f6af1a832671bf5ef1f8b00448",
+          "outputSha256": "36348e1fd1a1e53485c7f48983cfd758ced036f6af1a832671bf5ef1f8b00448",
+          "parameters": {
+            "sfzPath": "ClarinetSus.sfz",
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_F2_v2_rr1_sum.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-f3-v2-rr1-sum-3c9a237651cd",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_F3_v2_rr1_sum.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Woodwinds/Clarinet/susLong/DCClar_susLong_F3_v2_rr1_sum.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/3c9a237651cd049cacdf4052ef85ff406da1d9e5d4f59439c20f45a7578ff431.wav",
+      "bytes": 2069572,
+      "sha256": "3c9a237651cd049cacdf4052ef85ff406da1d9e5d4f59439c20f45a7578ff431",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 517382,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "3c9a237651cd049cacdf4052ef85ff406da1d9e5d4f59439c20f45a7578ff431",
+          "outputSha256": "3c9a237651cd049cacdf4052ef85ff406da1d9e5d4f59439c20f45a7578ff431",
+          "parameters": {
+            "sfzPath": "ClarinetSus.sfz",
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_F3_v2_rr1_sum.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-f4-v2-rr1-sum-9988142d8fd2",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_F4_v2_rr1_sum.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Woodwinds/Clarinet/susLong/DCClar_susLong_F4_v2_rr1_sum.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/9988142d8fd2856af4217e3983316a42ef1d91b6381afd9fa138072d91122c2e.wav",
+      "bytes": 2142808,
+      "sha256": "9988142d8fd2856af4217e3983316a42ef1d91b6381afd9fa138072d91122c2e",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 535691,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "9988142d8fd2856af4217e3983316a42ef1d91b6381afd9fa138072d91122c2e",
+          "outputSha256": "9988142d8fd2856af4217e3983316a42ef1d91b6381afd9fa138072d91122c2e",
+          "parameters": {
+            "sfzPath": "ClarinetSus.sfz",
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_F4_v2_rr1_sum.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-a-2-v3-rr1-sum-45db5a4eda19",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_A#2_v3_rr1_sum.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Woodwinds/Clarinet/susLong/DCClar_susLong_A%232_v3_rr1_sum.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/45db5a4eda1927cb627006145cd751d99bfd4449576730009d521191bfb8d746.wav",
+      "bytes": 2335540,
+      "sha256": "45db5a4eda1927cb627006145cd751d99bfd4449576730009d521191bfb8d746",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 583874,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "45db5a4eda1927cb627006145cd751d99bfd4449576730009d521191bfb8d746",
+          "outputSha256": "45db5a4eda1927cb627006145cd751d99bfd4449576730009d521191bfb8d746",
+          "parameters": {
+            "sfzPath": "ClarinetSus.sfz",
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_A#2_v3_rr1_sum.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-a-3-v3-rr1-sum-29fc72eb3b93",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_A#3_v3_rr1_sum.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Woodwinds/Clarinet/susLong/DCClar_susLong_A%233_v3_rr1_sum.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/29fc72eb3b93cc297095d6cdeb54b3d819de8e4070855c565302bb0a471b0a5c.wav",
+      "bytes": 2059160,
+      "sha256": "29fc72eb3b93cc297095d6cdeb54b3d819de8e4070855c565302bb0a471b0a5c",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 514779,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "29fc72eb3b93cc297095d6cdeb54b3d819de8e4070855c565302bb0a471b0a5c",
+          "outputSha256": "29fc72eb3b93cc297095d6cdeb54b3d819de8e4070855c565302bb0a471b0a5c",
+          "parameters": {
+            "sfzPath": "ClarinetSus.sfz",
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_A#3_v3_rr1_sum.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-a-4-v3-rr1-sum-6867f47637a3",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_A#4_v3_rr1_sum.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Woodwinds/Clarinet/susLong/DCClar_susLong_A%234_v3_rr1_sum.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/6867f47637a3a869504911814be53dbc5e01fa52c2705a87afee20d2b71fc5aa.wav",
+      "bytes": 1885948,
+      "sha256": "6867f47637a3a869504911814be53dbc5e01fa52c2705a87afee20d2b71fc5aa",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 471476,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "6867f47637a3a869504911814be53dbc5e01fa52c2705a87afee20d2b71fc5aa",
+          "outputSha256": "6867f47637a3a869504911814be53dbc5e01fa52c2705a87afee20d2b71fc5aa",
+          "parameters": {
+            "sfzPath": "ClarinetSus.sfz",
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_A#4_v3_rr1_sum.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-d2-v3-rr1-sum-346775f54394",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_D2_v3_rr1_sum.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Woodwinds/Clarinet/susLong/DCClar_susLong_D2_v3_rr1_sum.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/346775f54394b9cf5e9513a4ab8292274f20370f2ac4cd47cea6319c1fa494ff.wav",
+      "bytes": 1381704,
+      "sha256": "346775f54394b9cf5e9513a4ab8292274f20370f2ac4cd47cea6319c1fa494ff",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 345415,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "346775f54394b9cf5e9513a4ab8292274f20370f2ac4cd47cea6319c1fa494ff",
+          "outputSha256": "346775f54394b9cf5e9513a4ab8292274f20370f2ac4cd47cea6319c1fa494ff",
+          "parameters": {
+            "sfzPath": "ClarinetSus.sfz",
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_D2_v3_rr1_sum.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-d3-v3-rr1-sum-bec366e90370",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_D3_v3_rr1_sum.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Woodwinds/Clarinet/susLong/DCClar_susLong_D3_v3_rr1_sum.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/bec366e903704a8d267202b16c3f170c513aef18fc6727f5bc4ec424c27efeb3.wav",
+      "bytes": 1856124,
+      "sha256": "bec366e903704a8d267202b16c3f170c513aef18fc6727f5bc4ec424c27efeb3",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 464020,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "bec366e903704a8d267202b16c3f170c513aef18fc6727f5bc4ec424c27efeb3",
+          "outputSha256": "bec366e903704a8d267202b16c3f170c513aef18fc6727f5bc4ec424c27efeb3",
+          "parameters": {
+            "sfzPath": "ClarinetSus.sfz",
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_D3_v3_rr1_sum.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-d4-v3-rr1-sum-f913c749eb6b",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_D4_v3_rr1_sum.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Woodwinds/Clarinet/susLong/DCClar_susLong_D4_v3_rr1_sum.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/f913c749eb6b5a1c621e13548d5c30c8f67a6007a2992a6f85deb977c2d41b1f.wav",
+      "bytes": 2087348,
+      "sha256": "f913c749eb6b5a1c621e13548d5c30c8f67a6007a2992a6f85deb977c2d41b1f",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 521826,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "f913c749eb6b5a1c621e13548d5c30c8f67a6007a2992a6f85deb977c2d41b1f",
+          "outputSha256": "f913c749eb6b5a1c621e13548d5c30c8f67a6007a2992a6f85deb977c2d41b1f",
+          "parameters": {
+            "sfzPath": "ClarinetSus.sfz",
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_D4_v3_rr1_sum.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-d5-v3-rr1-sum-4bcff7aa31fe",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_D5_v3_rr1_sum.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Woodwinds/Clarinet/susLong/DCClar_susLong_D5_v3_rr1_sum.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/4bcff7aa31fe94c9d4a23acde1a9c2cb437dd4ee9c9804c981bbfb184c76509a.wav",
+      "bytes": 1593652,
+      "sha256": "4bcff7aa31fe94c9d4a23acde1a9c2cb437dd4ee9c9804c981bbfb184c76509a",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 398402,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "4bcff7aa31fe94c9d4a23acde1a9c2cb437dd4ee9c9804c981bbfb184c76509a",
+          "outputSha256": "4bcff7aa31fe94c9d4a23acde1a9c2cb437dd4ee9c9804c981bbfb184c76509a",
+          "parameters": {
+            "sfzPath": "ClarinetSus.sfz",
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_D5_v3_rr1_sum.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-f-5-v3-rr1-sum-13355ccf2ead",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_F#5_v3_rr1_sum.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Woodwinds/Clarinet/susLong/DCClar_susLong_F%235_v3_rr1_sum.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/13355ccf2ead9ed98142c0062682aecf3ed3c443df619e94a9b3ec7ef523f057.wav",
+      "bytes": 1586272,
+      "sha256": "13355ccf2ead9ed98142c0062682aecf3ed3c443df619e94a9b3ec7ef523f057",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 396557,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "13355ccf2ead9ed98142c0062682aecf3ed3c443df619e94a9b3ec7ef523f057",
+          "outputSha256": "13355ccf2ead9ed98142c0062682aecf3ed3c443df619e94a9b3ec7ef523f057",
+          "parameters": {
+            "sfzPath": "ClarinetSus.sfz",
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_F#5_v3_rr1_sum.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-f2-v3-rr1-sum-7049e55a7385",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_F2_v3_rr1_sum.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Woodwinds/Clarinet/susLong/DCClar_susLong_F2_v3_rr1_sum.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/7049e55a73851574d5e11a518aeaa3c646bdd0f2323780a10abc379410dad2cf.wav",
+      "bytes": 1747440,
+      "sha256": "7049e55a73851574d5e11a518aeaa3c646bdd0f2323780a10abc379410dad2cf",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 436849,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "7049e55a73851574d5e11a518aeaa3c646bdd0f2323780a10abc379410dad2cf",
+          "outputSha256": "7049e55a73851574d5e11a518aeaa3c646bdd0f2323780a10abc379410dad2cf",
+          "parameters": {
+            "sfzPath": "ClarinetSus.sfz",
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_F2_v3_rr1_sum.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-f3-v3-rr1-sum-6b434e88f724",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_F3_v3_rr1_sum.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Woodwinds/Clarinet/susLong/DCClar_susLong_F3_v3_rr1_sum.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/6b434e88f724e46116dd71bdfe52dc82c9b1ec7cec5f512bf9719be51e646671.wav",
+      "bytes": 1743712,
+      "sha256": "6b434e88f724e46116dd71bdfe52dc82c9b1ec7cec5f512bf9719be51e646671",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 435917,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "6b434e88f724e46116dd71bdfe52dc82c9b1ec7cec5f512bf9719be51e646671",
+          "outputSha256": "6b434e88f724e46116dd71bdfe52dc82c9b1ec7cec5f512bf9719be51e646671",
+          "parameters": {
+            "sfzPath": "ClarinetSus.sfz",
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_F3_v3_rr1_sum.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-f4-v3-rr1-sum-8d9bcdf56ed0",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_F4_v3_rr1_sum.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Woodwinds/Clarinet/susLong/DCClar_susLong_F4_v3_rr1_sum.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/8d9bcdf56ed0c2adebb38242d7b5bb0e2da6884fa9f42a6d4226fb21c1bc7f68.wav",
+      "bytes": 2373520,
+      "sha256": "8d9bcdf56ed0c2adebb38242d7b5bb0e2da6884fa9f42a6d4226fb21c1bc7f68",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 593369,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "8d9bcdf56ed0c2adebb38242d7b5bb0e2da6884fa9f42a6d4226fb21c1bc7f68",
+          "outputSha256": "8d9bcdf56ed0c2adebb38242d7b5bb0e2da6884fa9f42a6d4226fb21c1bc7f68",
+          "parameters": {
+            "sfzPath": "ClarinetSus.sfz",
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_F4_v3_rr1_sum.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    }
+  ],
+  "contentSha256": "f2ef979996edd7eb99392b74cd4277da667499936d7df2ed8a1441db52c68778"
+}

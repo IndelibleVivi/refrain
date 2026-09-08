@@ -1,0 +1,1456 @@
+{
+  "format": "refrain-sfz-pilot-evidence@0-experimental",
+  "source": {
+    "repository": "https://github.com/sgossner/VSCO-2-CE",
+    "ref": "6dd651d55dde97fd4028699be9d4481f26917891"
+  },
+  "pilots": [
+    {
+      "candidateId": "flute-vsco-susnv-sfz-pilot",
+      "candidateContentSha256": "692223503d6301f0b0d0c9ba4f3d42f9916d4ff01a49ade5bc6e4fd0dcd1d1ca",
+      "shardSha256": "564373eae20a19574c0af4dad8c8e20fb24774f37fabdb00fdd689076e0405fb",
+      "sourceMap": {
+        "format": "refrain-sfz-source-map@0-experimental",
+        "compiler": "refrain-sfz-compiler@0-experimental",
+        "source": {
+          "path": "FluteSusNV.sfz",
+          "sha256": "0c3e15abe738778c38f93aa69e1d994e3b6e32b68ab7977b9138c4e079f99661"
+        },
+        "regions": [
+          {
+            "regionId": "flute-vsco-susnv-sfz-pilot-region-001",
+            "sourceLine": 33,
+            "samplePath": "Woodwinds/Flute/susNV/LDFlute_susNV_A3_v1_1.wav",
+            "assetId": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-a3-v1-1-6fc8d707afdd",
+            "inheritedOpcodes": {
+              "ampeg_attack": "0.001",
+              "ampeg_dynamic": "1",
+              "ampeg_release": "0.7",
+              "hikey": "70",
+              "hivel": "62",
+              "lokey": "67",
+              "lovel": "0",
+              "pitch_keycenter": "69",
+              "sample": "LDFlute_susNV_A3_v1_1.wav",
+              "volume": "12"
+            }
+          },
+          {
+            "regionId": "flute-vsco-susnv-sfz-pilot-region-002",
+            "sourceLine": 43,
+            "samplePath": "Woodwinds/Flute/susNV/LDFlute_susNV_A4_v1_1.wav",
+            "assetId": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-a4-v1-1-c8fd15bb561d",
+            "inheritedOpcodes": {
+              "ampeg_attack": "0.001",
+              "ampeg_dynamic": "1",
+              "ampeg_release": "0.7",
+              "hikey": "82",
+              "hivel": "62",
+              "lokey": "79",
+              "lovel": "0",
+              "pitch_keycenter": "81",
+              "sample": "LDFlute_susNV_A4_v1_1.wav",
+              "volume": "12"
+            }
+          },
+          {
+            "regionId": "flute-vsco-susnv-sfz-pilot-region-003",
+            "sourceLine": 53,
+            "samplePath": "Woodwinds/Flute/susNV/LDFlute_susNV_A5_v1_1.wav",
+            "assetId": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-a5-v1-1-d35c9b6cc3fa",
+            "inheritedOpcodes": {
+              "ampeg_attack": "0.001",
+              "ampeg_dynamic": "1",
+              "ampeg_release": "0.7",
+              "hikey": "94",
+              "hivel": "62",
+              "lokey": "91",
+              "lovel": "0",
+              "pitch_keycenter": "93",
+              "sample": "LDFlute_susNV_A5_v1_1.wav",
+              "volume": "12"
+            }
+          },
+          {
+            "regionId": "flute-vsco-susnv-sfz-pilot-region-004",
+            "sourceLine": 63,
+            "samplePath": "Woodwinds/Flute/susNV/LDFlute_susNV_C3_v1_1.wav",
+            "assetId": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-c3-v1-1-4f221909317e",
+            "inheritedOpcodes": {
+              "ampeg_attack": "0.001",
+              "ampeg_dynamic": "1",
+              "ampeg_release": "0.7",
+              "hikey": "61",
+              "hivel": "62",
+              "lokey": "60",
+              "lovel": "0",
+              "pitch_keycenter": "60",
+              "sample": "LDFlute_susNV_C3_v1_1.wav",
+              "volume": "12"
+            }
+          },
+          {
+            "regionId": "flute-vsco-susnv-sfz-pilot-region-005",
+            "sourceLine": 73,
+            "samplePath": "Woodwinds/Flute/susNV/LDFlute_susNV_C4_v1_1.wav",
+            "assetId": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-c4-v1-1-105a6dbced98",
+            "inheritedOpcodes": {
+              "ampeg_attack": "0.001",
+              "ampeg_dynamic": "1",
+              "ampeg_release": "0.7",
+              "hikey": "73",
+              "hivel": "62",
+              "lokey": "71",
+              "lovel": "0",
+              "pitch_keycenter": "72",
+              "sample": "LDFlute_susNV_C4_v1_1.wav",
+              "volume": "12"
+            }
+          },
+          {
+            "regionId": "flute-vsco-susnv-sfz-pilot-region-006",
+            "sourceLine": 83,
+            "samplePath": "Woodwinds/Flute/susNV/LDFlute_susNV_C5_v1_1.wav",
+            "assetId": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-c5-v1-1-46a335b804c9",
+            "inheritedOpcodes": {
+              "ampeg_attack": "0.001",
+              "ampeg_dynamic": "1",
+              "ampeg_release": "0.7",
+              "hikey": "85",
+              "hivel": "62",
+              "lokey": "83",
+              "lovel": "0",
+              "pitch_keycenter": "84",
+              "sample": "LDFlute_susNV_C5_v1_1.wav",
+              "volume": "12"
+            }
+          },
+          {
+            "regionId": "flute-vsco-susnv-sfz-pilot-region-007",
+            "sourceLine": 93,
+            "samplePath": "Woodwinds/Flute/susNV/LDFlute_susNV_C6_v1_1.wav",
+            "assetId": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-c6-v1-1-0d1c90287356",
+            "inheritedOpcodes": {
+              "ampeg_attack": "0.001",
+              "ampeg_dynamic": "1",
+              "ampeg_release": "0.7",
+              "hikey": "96",
+              "hivel": "127",
+              "lokey": "95",
+              "lovel": "0",
+              "pitch_keycenter": "96",
+              "sample": "LDFlute_susNV_C6_v1_1.wav",
+              "volume": "8"
+            }
+          },
+          {
+            "regionId": "flute-vsco-susnv-sfz-pilot-region-008",
+            "sourceLine": 103,
+            "samplePath": "Woodwinds/Flute/susNV/LDFlute_susNV_E3_v1_1.wav",
+            "assetId": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-e3-v1-1-87c667c2af88",
+            "inheritedOpcodes": {
+              "ampeg_attack": "0.001",
+              "ampeg_dynamic": "1",
+              "ampeg_release": "0.7",
+              "hikey": "66",
+              "hivel": "62",
+              "lokey": "62",
+              "lovel": "0",
+              "pitch_keycenter": "64",
+              "sample": "LDFlute_susNV_E3_v1_1.wav",
+              "volume": "12"
+            }
+          },
+          {
+            "regionId": "flute-vsco-susnv-sfz-pilot-region-009",
+            "sourceLine": 113,
+            "samplePath": "Woodwinds/Flute/susNV/LDFlute_susNV_E4_v1_1.wav",
+            "assetId": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-e4-v1-1-b609d37fb577",
+            "inheritedOpcodes": {
+              "ampeg_attack": "0.001",
+              "ampeg_dynamic": "1",
+              "ampeg_release": "0.7",
+              "hikey": "78",
+              "hivel": "62",
+              "lokey": "74",
+              "lovel": "0",
+              "pitch_keycenter": "76",
+              "sample": "LDFlute_susNV_E4_v1_1.wav",
+              "volume": "12"
+            }
+          },
+          {
+            "regionId": "flute-vsco-susnv-sfz-pilot-region-010",
+            "sourceLine": 123,
+            "samplePath": "Woodwinds/Flute/susNV/LDFlute_susNV_E5_v1_1.wav",
+            "assetId": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-e5-v1-1-660df172b551",
+            "inheritedOpcodes": {
+              "ampeg_attack": "0.001",
+              "ampeg_dynamic": "1",
+              "ampeg_release": "0.7",
+              "hikey": "90",
+              "hivel": "62",
+              "lokey": "86",
+              "lovel": "0",
+              "pitch_keycenter": "88",
+              "sample": "LDFlute_susNV_E5_v1_1.wav",
+              "volume": "12"
+            }
+          },
+          {
+            "regionId": "flute-vsco-susnv-sfz-pilot-region-011",
+            "sourceLine": 133,
+            "samplePath": "Woodwinds/Flute/susNV/LDFlute_susNV_C5_v2_1.wav",
+            "assetId": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-c5-v2-1-7c9414267bad",
+            "inheritedOpcodes": {
+              "ampeg_attack": "0.001",
+              "ampeg_dynamic": "1",
+              "ampeg_release": "0.7",
+              "hikey": "85",
+              "hivel": "127",
+              "lokey": "83",
+              "lovel": "63",
+              "pitch_keycenter": "84",
+              "sample": "LDFlute_susNV_C5_v2_1.wav",
+              "volume": "4"
+            }
+          },
+          {
+            "regionId": "flute-vsco-susnv-sfz-pilot-region-012",
+            "sourceLine": 143,
+            "samplePath": "Woodwinds/Flute/susNV/LDFlute_susNV_E5_v2_1.wav",
+            "assetId": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-e5-v2-1-c9617b571d5a",
+            "inheritedOpcodes": {
+              "ampeg_attack": "0.001",
+              "ampeg_dynamic": "1",
+              "ampeg_release": "0.7",
+              "hikey": "90",
+              "hivel": "127",
+              "lokey": "86",
+              "lovel": "63",
+              "pitch_keycenter": "88",
+              "sample": "LDFlute_susNV_E5_v2_1.wav",
+              "volume": "4"
+            }
+          },
+          {
+            "regionId": "flute-vsco-susnv-sfz-pilot-region-013",
+            "sourceLine": 153,
+            "samplePath": "Woodwinds/Flute/susNV/LDFlute_susNV_A3_v3_1.wav",
+            "assetId": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-a3-v3-1-8a24758e25e1",
+            "inheritedOpcodes": {
+              "ampeg_attack": "0.001",
+              "ampeg_dynamic": "1",
+              "ampeg_release": "0.7",
+              "hikey": "70",
+              "hivel": "127",
+              "lokey": "67",
+              "lovel": "63",
+              "pitch_keycenter": "69",
+              "sample": "LDFlute_susNV_A3_v3_1.wav",
+              "volume": "4"
+            }
+          },
+          {
+            "regionId": "flute-vsco-susnv-sfz-pilot-region-014",
+            "sourceLine": 163,
+            "samplePath": "Woodwinds/Flute/susNV/LDFlute_susNV_A4_v3_1.wav",
+            "assetId": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-a4-v3-1-9958014f58a1",
+            "inheritedOpcodes": {
+              "ampeg_attack": "0.001",
+              "ampeg_dynamic": "1",
+              "ampeg_release": "0.7",
+              "hikey": "82",
+              "hivel": "127",
+              "lokey": "79",
+              "lovel": "63",
+              "pitch_keycenter": "81",
+              "sample": "LDFlute_susNV_A4_v3_1.wav",
+              "volume": "4"
+            }
+          },
+          {
+            "regionId": "flute-vsco-susnv-sfz-pilot-region-015",
+            "sourceLine": 173,
+            "samplePath": "Woodwinds/Flute/susNV/LDFlute_susNV_A5_v3_1.wav",
+            "assetId": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-a5-v3-1-36f09bd6d712",
+            "inheritedOpcodes": {
+              "ampeg_attack": "0.001",
+              "ampeg_dynamic": "1",
+              "ampeg_release": "0.7",
+              "hikey": "94",
+              "hivel": "127",
+              "lokey": "91",
+              "lovel": "63",
+              "pitch_keycenter": "93",
+              "sample": "LDFlute_susNV_A5_v3_1.wav",
+              "volume": "4"
+            }
+          },
+          {
+            "regionId": "flute-vsco-susnv-sfz-pilot-region-016",
+            "sourceLine": 183,
+            "samplePath": "Woodwinds/Flute/susNV/LDFlute_susNV_C3_v3_1.wav",
+            "assetId": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-c3-v3-1-8e0549fb4482",
+            "inheritedOpcodes": {
+              "ampeg_attack": "0.001",
+              "ampeg_dynamic": "1",
+              "ampeg_release": "0.7",
+              "hikey": "61",
+              "hivel": "127",
+              "lokey": "60",
+              "lovel": "63",
+              "pitch_keycenter": "60",
+              "sample": "LDFlute_susNV_C3_v3_1.wav",
+              "volume": "4"
+            }
+          },
+          {
+            "regionId": "flute-vsco-susnv-sfz-pilot-region-017",
+            "sourceLine": 193,
+            "samplePath": "Woodwinds/Flute/susNV/LDFlute_susNV_C4_v3_1.wav",
+            "assetId": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-c4-v3-1-9e09ce606f8f",
+            "inheritedOpcodes": {
+              "ampeg_attack": "0.001",
+              "ampeg_dynamic": "1",
+              "ampeg_release": "0.7",
+              "hikey": "73",
+              "hivel": "127",
+              "lokey": "71",
+              "lovel": "63",
+              "pitch_keycenter": "72",
+              "sample": "LDFlute_susNV_C4_v3_1.wav",
+              "volume": "4"
+            }
+          },
+          {
+            "regionId": "flute-vsco-susnv-sfz-pilot-region-018",
+            "sourceLine": 203,
+            "samplePath": "Woodwinds/Flute/susNV/LDFlute_susNV_E3_v3_1.wav",
+            "assetId": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-e3-v3-1-3226ecd95142",
+            "inheritedOpcodes": {
+              "ampeg_attack": "0.001",
+              "ampeg_dynamic": "1",
+              "ampeg_release": "0.7",
+              "hikey": "66",
+              "hivel": "127",
+              "lokey": "62",
+              "lovel": "63",
+              "pitch_keycenter": "64",
+              "sample": "LDFlute_susNV_E3_v3_1.wav",
+              "volume": "4"
+            }
+          },
+          {
+            "regionId": "flute-vsco-susnv-sfz-pilot-region-019",
+            "sourceLine": 213,
+            "samplePath": "Woodwinds/Flute/susNV/LDFlute_susNV_E4_v3_1.wav",
+            "assetId": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-e4-v3-1-670c72afcd4d",
+            "inheritedOpcodes": {
+              "ampeg_attack": "0.001",
+              "ampeg_dynamic": "1",
+              "ampeg_release": "0.7",
+              "hikey": "78",
+              "hivel": "127",
+              "lokey": "74",
+              "lovel": "63",
+              "pitch_keycenter": "76",
+              "sample": "LDFlute_susNV_E4_v3_1.wav",
+              "volume": "4"
+            }
+          }
+        ]
+      },
+      "coverage": {
+        "playableMin": 60,
+        "playableMax": 96,
+        "regionCount": 19,
+        "assetCount": 19,
+        "velocityBreaks": [1, 62, 63, 127]
+      },
+      "assetLocks": [
+        {
+          "path": "Woodwinds/Flute/susNV/LDFlute_susNV_A3_v1_1.wav",
+          "id": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-a3-v1-1-6fc8d707afdd",
+          "bytes": 2706216,
+          "sha256": "6fc8d707afddfaaf3003551b95a83b52f514adbe488bfea1c8c5250080a07278",
+          "audio": { "sampleRate": 44100, "frameCount": 450927, "channels": 2 }
+        },
+        {
+          "path": "Woodwinds/Flute/susNV/LDFlute_susNV_A4_v1_1.wav",
+          "id": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-a4-v1-1-c8fd15bb561d",
+          "bytes": 3460842,
+          "sha256": "c8fd15bb561dbdac6d35ffd9c5e49413131d96f8948d5bdf03d4a03fa344c5c0",
+          "audio": { "sampleRate": 44100, "frameCount": 576698, "channels": 2 }
+        },
+        {
+          "path": "Woodwinds/Flute/susNV/LDFlute_susNV_A5_v1_1.wav",
+          "id": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-a5-v1-1-d35c9b6cc3fa",
+          "bytes": 2885970,
+          "sha256": "d35c9b6cc3fa887cb93042b901ddaa6a05c72eb9040bd125d82a0940366f9022",
+          "audio": { "sampleRate": 44100, "frameCount": 480886, "channels": 2 }
+        },
+        {
+          "path": "Woodwinds/Flute/susNV/LDFlute_susNV_C3_v1_1.wav",
+          "id": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-c3-v1-1-4f221909317e",
+          "bytes": 2642490,
+          "sha256": "4f221909317e257e4d0bc49f10479643c80cb213a0486455c1bdc1d6ed13a450",
+          "audio": { "sampleRate": 44100, "frameCount": 440306, "channels": 2 }
+        },
+        {
+          "path": "Woodwinds/Flute/susNV/LDFlute_susNV_C4_v1_1.wav",
+          "id": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-c4-v1-1-105a6dbced98",
+          "bytes": 2722056,
+          "sha256": "105a6dbced98de7ae04a317bdd3ba1a5c6b90dc94034439b68cce6635e2781df",
+          "audio": { "sampleRate": 44100, "frameCount": 453567, "channels": 2 }
+        },
+        {
+          "path": "Woodwinds/Flute/susNV/LDFlute_susNV_C5_v1_1.wav",
+          "id": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-c5-v1-1-46a335b804c9",
+          "bytes": 2491416,
+          "sha256": "46a335b804c9b2f081efa8e6c695f155d05b3700c69bf73950cc9cb40ed53d41",
+          "audio": { "sampleRate": 44100, "frameCount": 415127, "channels": 2 }
+        },
+        {
+          "path": "Woodwinds/Flute/susNV/LDFlute_susNV_C6_v1_1.wav",
+          "id": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-c6-v1-1-0d1c90287356",
+          "bytes": 1618152,
+          "sha256": "0d1c902873564fac780ded78ce54788745bc81b0b3113b311169cfee9fdf9357",
+          "audio": { "sampleRate": 44100, "frameCount": 269583, "channels": 2 }
+        },
+        {
+          "path": "Woodwinds/Flute/susNV/LDFlute_susNV_E3_v1_1.wav",
+          "id": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-e3-v1-1-87c667c2af88",
+          "bytes": 2874126,
+          "sha256": "87c667c2af888ed86dff87f2452248de3e3d958fc93848a4426b7c16f85f09da",
+          "audio": { "sampleRate": 44100, "frameCount": 478912, "channels": 2 }
+        },
+        {
+          "path": "Woodwinds/Flute/susNV/LDFlute_susNV_E4_v1_1.wav",
+          "id": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-e4-v1-1-b609d37fb577",
+          "bytes": 2591256,
+          "sha256": "b609d37fb577e2a0f64f20800fba4bed067151375349bf713c0d4e803f862580",
+          "audio": { "sampleRate": 44100, "frameCount": 431767, "channels": 2 }
+        },
+        {
+          "path": "Woodwinds/Flute/susNV/LDFlute_susNV_E5_v1_1.wav",
+          "id": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-e5-v1-1-660df172b551",
+          "bytes": 2956800,
+          "sha256": "660df172b551dfd7859dade283cb1e8dd6eac8095ccaabb5b19416caaacdef87",
+          "audio": { "sampleRate": 44100, "frameCount": 492691, "channels": 2 }
+        },
+        {
+          "path": "Woodwinds/Flute/susNV/LDFlute_susNV_C5_v2_1.wav",
+          "id": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-c5-v2-1-7c9414267bad",
+          "bytes": 2382720,
+          "sha256": "7c9414267bade75f432e38aa893edea9fb7146b5b1b3e0ae1f97a475fa89db0f",
+          "audio": { "sampleRate": 44100, "frameCount": 397011, "channels": 2 }
+        },
+        {
+          "path": "Woodwinds/Flute/susNV/LDFlute_susNV_E5_v2_1.wav",
+          "id": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-e5-v2-1-c9617b571d5a",
+          "bytes": 2121246,
+          "sha256": "c9617b571d5a40e70b1a1c93120e6ab37691c98902ce319b0a8ca50705858594",
+          "audio": { "sampleRate": 44100, "frameCount": 353432, "channels": 2 }
+        },
+        {
+          "path": "Woodwinds/Flute/susNV/LDFlute_susNV_A3_v3_1.wav",
+          "id": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-a3-v3-1-8a24758e25e1",
+          "bytes": 2765718,
+          "sha256": "8a24758e25e1b6036fc8ca55cdff129d18d70b0719cdb63f6eb6dc756b41cfc7",
+          "audio": { "sampleRate": 44100, "frameCount": 460844, "channels": 2 }
+        },
+        {
+          "path": "Woodwinds/Flute/susNV/LDFlute_susNV_A4_v3_1.wav",
+          "id": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-a4-v3-1-9958014f58a1",
+          "bytes": 2147490,
+          "sha256": "9958014f58a16b5b28b8a8b3afe2e28a9f5af5b68c9bc9057ea2cbdfcadbf4df",
+          "audio": { "sampleRate": 44100, "frameCount": 357806, "channels": 2 }
+        },
+        {
+          "path": "Woodwinds/Flute/susNV/LDFlute_susNV_A5_v3_1.wav",
+          "id": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-a5-v3-1-36f09bd6d712",
+          "bytes": 2100774,
+          "sha256": "36f09bd6d712c9c55d4e32e15bca12966f0dc96206973c8aa25088036f662513",
+          "audio": { "sampleRate": 44100, "frameCount": 350020, "channels": 2 }
+        },
+        {
+          "path": "Woodwinds/Flute/susNV/LDFlute_susNV_C3_v3_1.wav",
+          "id": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-c3-v3-1-8e0549fb4482",
+          "bytes": 2729730,
+          "sha256": "8e0549fb44827c7379b74bba4d8402671c863e483cc1ea85a73407ce27ca3bd6",
+          "audio": { "sampleRate": 44100, "frameCount": 454846, "channels": 2 }
+        },
+        {
+          "path": "Woodwinds/Flute/susNV/LDFlute_susNV_C4_v3_1.wav",
+          "id": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-c4-v3-1-9e09ce606f8f",
+          "bytes": 2539512,
+          "sha256": "9e09ce606f8fe31c8dd071c717de54d40c38029e3c2e947500defac474e8cd7d",
+          "audio": { "sampleRate": 44100, "frameCount": 423143, "channels": 2 }
+        },
+        {
+          "path": "Woodwinds/Flute/susNV/LDFlute_susNV_E3_v3_1.wav",
+          "id": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-e3-v3-1-3226ecd95142",
+          "bytes": 2814822,
+          "sha256": "3226ecd95142e09f1c1b6db0834265da845ea0ce48ea2570131c558eb8ad8f66",
+          "audio": { "sampleRate": 44100, "frameCount": 469028, "channels": 2 }
+        },
+        {
+          "path": "Woodwinds/Flute/susNV/LDFlute_susNV_E4_v3_1.wav",
+          "id": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-e4-v3-1-670c72afcd4d",
+          "bytes": 2449278,
+          "sha256": "670c72afcd4d437236f0a9f33a532c46fd56145615aad775eb7aab1c5ab6c24d",
+          "audio": { "sampleRate": 44100, "frameCount": 408104, "channels": 2 }
+        }
+      ]
+    },
+    {
+      "candidateId": "clarinet-vsco-suslong-sfz-pilot",
+      "candidateContentSha256": "deced535bb5fc12d8fa2b237ad09e8d95cba4c25ddb0e7dd59e8434f94b87513",
+      "shardSha256": "a517f1154ba537568d37d7069e4e66d48d6feca97a02405e64a5a68bbe02da49",
+      "sourceMap": {
+        "format": "refrain-sfz-source-map@0-experimental",
+        "compiler": "refrain-sfz-compiler@0-experimental",
+        "source": {
+          "path": "ClarinetSus.sfz",
+          "sha256": "7e38b51122a750df7f2678f6f4ae39a41b35743e500577da1ca0f53662485ce5"
+        },
+        "regions": [
+          {
+            "regionId": "clarinet-vsco-suslong-sfz-pilot-region-001",
+            "sourceLine": 46,
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_A#2_v1_rr1_sum.wav",
+            "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-a-2-v1-rr1-sum-f4e51e4addda",
+            "inheritedOpcodes": {
+              "ampeg_attack": "0.001",
+              "ampeg_dynamic": "1",
+              "ampeg_release": "0.7",
+              "group_label": "gr_1",
+              "hikey": "59",
+              "hivel": "41",
+              "lokey": "56",
+              "lovel": "0",
+              "pitch_keycenter": "58",
+              "sample": "DCClar_susLong_A#2_v1_rr1_sum.wav",
+              "seq_length": "1",
+              "seq_position": "1",
+              "volume": "20"
+            }
+          },
+          {
+            "regionId": "clarinet-vsco-suslong-sfz-pilot-region-002",
+            "sourceLine": 56,
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_A#3_v1_rr1_sum.wav",
+            "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-a-3-v1-rr1-sum-c314aa26ec14",
+            "inheritedOpcodes": {
+              "ampeg_attack": "0.001",
+              "ampeg_dynamic": "1",
+              "ampeg_release": "0.7",
+              "group_label": "gr_1",
+              "hikey": "71",
+              "hivel": "41",
+              "lokey": "68",
+              "lovel": "0",
+              "pitch_keycenter": "70",
+              "sample": "DCClar_susLong_A#3_v1_rr1_sum.wav",
+              "seq_length": "1",
+              "seq_position": "1",
+              "volume": "20"
+            }
+          },
+          {
+            "regionId": "clarinet-vsco-suslong-sfz-pilot-region-003",
+            "sourceLine": 66,
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_A#4_v1_rr1_sum.wav",
+            "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-a-4-v1-rr1-sum-9669ede565f4",
+            "inheritedOpcodes": {
+              "ampeg_attack": "0.001",
+              "ampeg_dynamic": "1",
+              "ampeg_release": "0.7",
+              "group_label": "gr_1",
+              "hikey": "83",
+              "hivel": "41",
+              "lokey": "80",
+              "lovel": "0",
+              "pitch_keycenter": "82",
+              "sample": "DCClar_susLong_A#4_v1_rr1_sum.wav",
+              "seq_length": "1",
+              "seq_position": "1",
+              "volume": "20"
+            }
+          },
+          {
+            "regionId": "clarinet-vsco-suslong-sfz-pilot-region-004",
+            "sourceLine": 76,
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_D2_v1_rr1_sum.wav",
+            "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-d2-v1-rr1-sum-359344f125ee",
+            "inheritedOpcodes": {
+              "ampeg_attack": "0.001",
+              "ampeg_dynamic": "1",
+              "ampeg_release": "0.7",
+              "group_label": "gr_1",
+              "hikey": "51",
+              "hivel": "41",
+              "lokey": "50",
+              "lovel": "0",
+              "pitch_keycenter": "50",
+              "sample": "DCClar_susLong_D2_v1_rr1_sum.wav",
+              "seq_length": "1",
+              "seq_position": "1",
+              "volume": "20"
+            }
+          },
+          {
+            "regionId": "clarinet-vsco-suslong-sfz-pilot-region-005",
+            "sourceLine": 86,
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_D3_v1_rr1_sum.wav",
+            "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-d3-v1-rr1-sum-74ba0ec6cb06",
+            "inheritedOpcodes": {
+              "ampeg_attack": "0.001",
+              "ampeg_dynamic": "1",
+              "ampeg_release": "0.7",
+              "group_label": "gr_1",
+              "hikey": "63",
+              "hivel": "41",
+              "lokey": "60",
+              "lovel": "0",
+              "pitch_keycenter": "62",
+              "sample": "DCClar_susLong_D3_v1_rr1_sum.wav",
+              "seq_length": "1",
+              "seq_position": "1",
+              "volume": "20"
+            }
+          },
+          {
+            "regionId": "clarinet-vsco-suslong-sfz-pilot-region-006",
+            "sourceLine": 96,
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_D4_v1_rr1_sum.wav",
+            "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-d4-v1-rr1-sum-61ff877d4b50",
+            "inheritedOpcodes": {
+              "ampeg_attack": "0.001",
+              "ampeg_dynamic": "1",
+              "ampeg_release": "0.7",
+              "group_label": "gr_1",
+              "hikey": "75",
+              "hivel": "41",
+              "lokey": "72",
+              "lovel": "0",
+              "pitch_keycenter": "74",
+              "sample": "DCClar_susLong_D4_v1_rr1_sum.wav",
+              "seq_length": "1",
+              "seq_position": "1",
+              "volume": "20"
+            }
+          },
+          {
+            "regionId": "clarinet-vsco-suslong-sfz-pilot-region-007",
+            "sourceLine": 106,
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_D5_v1_rr1_sum.wav",
+            "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-d5-v1-rr1-sum-0ed79db13dc3",
+            "inheritedOpcodes": {
+              "ampeg_attack": "0.001",
+              "ampeg_dynamic": "1",
+              "ampeg_release": "0.7",
+              "group_label": "gr_1",
+              "hikey": "87",
+              "hivel": "41",
+              "lokey": "84",
+              "lovel": "0",
+              "pitch_keycenter": "86",
+              "sample": "DCClar_susLong_D5_v1_rr1_sum.wav",
+              "seq_length": "1",
+              "seq_position": "1",
+              "volume": "12"
+            }
+          },
+          {
+            "regionId": "clarinet-vsco-suslong-sfz-pilot-region-008",
+            "sourceLine": 116,
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_F#5_v1_rr1_sum.wav",
+            "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-f-5-v1-rr1-sum-26fcfdba581d",
+            "inheritedOpcodes": {
+              "ampeg_attack": "0.001",
+              "ampeg_dynamic": "1",
+              "ampeg_release": "0.7",
+              "group_label": "gr_1",
+              "hikey": "90",
+              "hivel": "41",
+              "lokey": "88",
+              "lovel": "0",
+              "pitch_keycenter": "89",
+              "sample": "DCClar_susLong_F#5_v1_rr1_sum.wav",
+              "seq_length": "1",
+              "seq_position": "1",
+              "volume": "12"
+            }
+          },
+          {
+            "regionId": "clarinet-vsco-suslong-sfz-pilot-region-009",
+            "sourceLine": 126,
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_F2_v1_rr1_sum.wav",
+            "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-f2-v1-rr1-sum-008d2f0894c9",
+            "inheritedOpcodes": {
+              "ampeg_attack": "0.001",
+              "ampeg_dynamic": "1",
+              "ampeg_release": "0.7",
+              "group_label": "gr_1",
+              "hikey": "55",
+              "hivel": "41",
+              "lokey": "52",
+              "lovel": "0",
+              "pitch_keycenter": "53",
+              "sample": "DCClar_susLong_F2_v1_rr1_sum.wav",
+              "seq_length": "1",
+              "seq_position": "1",
+              "volume": "20"
+            }
+          },
+          {
+            "regionId": "clarinet-vsco-suslong-sfz-pilot-region-010",
+            "sourceLine": 136,
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_F3_v1_rr1_sum.wav",
+            "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-f3-v1-rr1-sum-0677787afa8d",
+            "inheritedOpcodes": {
+              "ampeg_attack": "0.001",
+              "ampeg_dynamic": "1",
+              "ampeg_release": "0.7",
+              "group_label": "gr_1",
+              "hikey": "67",
+              "hivel": "41",
+              "lokey": "64",
+              "lovel": "0",
+              "pitch_keycenter": "65",
+              "sample": "DCClar_susLong_F3_v1_rr1_sum.wav",
+              "seq_length": "1",
+              "seq_position": "1",
+              "volume": "20"
+            }
+          },
+          {
+            "regionId": "clarinet-vsco-suslong-sfz-pilot-region-011",
+            "sourceLine": 146,
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_F4_v1_rr1_sum.wav",
+            "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-f4-v1-rr1-sum-e7b54b1ac626",
+            "inheritedOpcodes": {
+              "ampeg_attack": "0.001",
+              "ampeg_dynamic": "1",
+              "ampeg_release": "0.7",
+              "group_label": "gr_1",
+              "hikey": "79",
+              "hivel": "41",
+              "lokey": "76",
+              "lovel": "0",
+              "pitch_keycenter": "77",
+              "sample": "DCClar_susLong_F4_v1_rr1_sum.wav",
+              "seq_length": "1",
+              "seq_position": "1",
+              "volume": "20"
+            }
+          },
+          {
+            "regionId": "clarinet-vsco-suslong-sfz-pilot-region-012",
+            "sourceLine": 156,
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_A#2_v2_rr1_sum.wav",
+            "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-a-2-v2-rr1-sum-82be872b7915",
+            "inheritedOpcodes": {
+              "ampeg_attack": "0.001",
+              "ampeg_dynamic": "1",
+              "ampeg_release": "0.7",
+              "group_label": "gr_1",
+              "hikey": "59",
+              "hivel": "83",
+              "lokey": "56",
+              "lovel": "42",
+              "pitch_keycenter": "58",
+              "sample": "DCClar_susLong_A#2_v2_rr1_sum.wav",
+              "seq_length": "1",
+              "seq_position": "1",
+              "volume": "13"
+            }
+          },
+          {
+            "regionId": "clarinet-vsco-suslong-sfz-pilot-region-013",
+            "sourceLine": 166,
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_A#3_v2_rr1_sum.wav",
+            "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-a-3-v2-rr1-sum-779e2cad84f6",
+            "inheritedOpcodes": {
+              "ampeg_attack": "0.001",
+              "ampeg_dynamic": "1",
+              "ampeg_release": "0.7",
+              "group_label": "gr_1",
+              "hikey": "71",
+              "hivel": "83",
+              "lokey": "68",
+              "lovel": "42",
+              "pitch_keycenter": "70",
+              "sample": "DCClar_susLong_A#3_v2_rr1_sum.wav",
+              "seq_length": "1",
+              "seq_position": "1",
+              "volume": "13"
+            }
+          },
+          {
+            "regionId": "clarinet-vsco-suslong-sfz-pilot-region-014",
+            "sourceLine": 176,
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_A#4_v2_rr1_sum.wav",
+            "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-a-4-v2-rr1-sum-569e902693e7",
+            "inheritedOpcodes": {
+              "ampeg_attack": "0.001",
+              "ampeg_dynamic": "1",
+              "ampeg_release": "0.7",
+              "group_label": "gr_1",
+              "hikey": "83",
+              "hivel": "83",
+              "lokey": "80",
+              "lovel": "42",
+              "pitch_keycenter": "82",
+              "sample": "DCClar_susLong_A#4_v2_rr1_sum.wav",
+              "seq_length": "1",
+              "seq_position": "1",
+              "volume": "13"
+            }
+          },
+          {
+            "regionId": "clarinet-vsco-suslong-sfz-pilot-region-015",
+            "sourceLine": 186,
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_D2_v2_rr1_sum.wav",
+            "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-d2-v2-rr1-sum-b1a793ff45d8",
+            "inheritedOpcodes": {
+              "ampeg_attack": "0.001",
+              "ampeg_dynamic": "1",
+              "ampeg_release": "0.7",
+              "group_label": "gr_1",
+              "hikey": "51",
+              "hivel": "83",
+              "lokey": "50",
+              "lovel": "42",
+              "pitch_keycenter": "50",
+              "sample": "DCClar_susLong_D2_v2_rr1_sum.wav",
+              "seq_length": "1",
+              "seq_position": "1",
+              "volume": "13"
+            }
+          },
+          {
+            "regionId": "clarinet-vsco-suslong-sfz-pilot-region-016",
+            "sourceLine": 196,
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_D3_v2_rr1_sum.wav",
+            "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-d3-v2-rr1-sum-30e686ffc58c",
+            "inheritedOpcodes": {
+              "ampeg_attack": "0.001",
+              "ampeg_dynamic": "1",
+              "ampeg_release": "0.7",
+              "group_label": "gr_1",
+              "hikey": "63",
+              "hivel": "83",
+              "lokey": "60",
+              "lovel": "42",
+              "pitch_keycenter": "62",
+              "sample": "DCClar_susLong_D3_v2_rr1_sum.wav",
+              "seq_length": "1",
+              "seq_position": "1",
+              "volume": "13"
+            }
+          },
+          {
+            "regionId": "clarinet-vsco-suslong-sfz-pilot-region-017",
+            "sourceLine": 206,
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_D4_v2_rr1_sum.wav",
+            "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-d4-v2-rr1-sum-4bdc53f3ef91",
+            "inheritedOpcodes": {
+              "ampeg_attack": "0.001",
+              "ampeg_dynamic": "1",
+              "ampeg_release": "0.7",
+              "group_label": "gr_1",
+              "hikey": "75",
+              "hivel": "83",
+              "lokey": "72",
+              "lovel": "42",
+              "pitch_keycenter": "74",
+              "sample": "DCClar_susLong_D4_v2_rr1_sum.wav",
+              "seq_length": "1",
+              "seq_position": "1",
+              "volume": "13"
+            }
+          },
+          {
+            "regionId": "clarinet-vsco-suslong-sfz-pilot-region-018",
+            "sourceLine": 216,
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_D5_v2_rr1_sum.wav",
+            "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-d5-v2-rr1-sum-4cedd1d7bd77",
+            "inheritedOpcodes": {
+              "ampeg_attack": "0.001",
+              "ampeg_dynamic": "1",
+              "ampeg_release": "0.7",
+              "group_label": "gr_1",
+              "hikey": "87",
+              "hivel": "83",
+              "lokey": "84",
+              "lovel": "42",
+              "pitch_keycenter": "86",
+              "sample": "DCClar_susLong_D5_v2_rr1_sum.wav",
+              "seq_length": "1",
+              "seq_position": "1",
+              "volume": "13"
+            }
+          },
+          {
+            "regionId": "clarinet-vsco-suslong-sfz-pilot-region-019",
+            "sourceLine": 226,
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_F#5_v2_rr1_sum.wav",
+            "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-f-5-v2-rr1-sum-2f024789f1b2",
+            "inheritedOpcodes": {
+              "ampeg_attack": "0.001",
+              "ampeg_dynamic": "1",
+              "ampeg_release": "0.7",
+              "group_label": "gr_1",
+              "hikey": "90",
+              "hivel": "83",
+              "lokey": "88",
+              "lovel": "42",
+              "pitch_keycenter": "89",
+              "sample": "DCClar_susLong_F#5_v2_rr1_sum.wav",
+              "seq_length": "1",
+              "seq_position": "1",
+              "volume": "8"
+            }
+          },
+          {
+            "regionId": "clarinet-vsco-suslong-sfz-pilot-region-020",
+            "sourceLine": 236,
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_F2_v2_rr1_sum.wav",
+            "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-f2-v2-rr1-sum-36348e1fd1a1",
+            "inheritedOpcodes": {
+              "ampeg_attack": "0.001",
+              "ampeg_dynamic": "1",
+              "ampeg_release": "0.7",
+              "group_label": "gr_1",
+              "hikey": "55",
+              "hivel": "83",
+              "lokey": "52",
+              "lovel": "42",
+              "pitch_keycenter": "53",
+              "sample": "DCClar_susLong_F2_v2_rr1_sum.wav",
+              "seq_length": "1",
+              "seq_position": "1",
+              "volume": "13"
+            }
+          },
+          {
+            "regionId": "clarinet-vsco-suslong-sfz-pilot-region-021",
+            "sourceLine": 246,
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_F3_v2_rr1_sum.wav",
+            "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-f3-v2-rr1-sum-3c9a237651cd",
+            "inheritedOpcodes": {
+              "ampeg_attack": "0.001",
+              "ampeg_dynamic": "1",
+              "ampeg_release": "0.7",
+              "group_label": "gr_1",
+              "hikey": "67",
+              "hivel": "83",
+              "lokey": "64",
+              "lovel": "42",
+              "pitch_keycenter": "65",
+              "sample": "DCClar_susLong_F3_v2_rr1_sum.wav",
+              "seq_length": "1",
+              "seq_position": "1",
+              "volume": "13"
+            }
+          },
+          {
+            "regionId": "clarinet-vsco-suslong-sfz-pilot-region-022",
+            "sourceLine": 256,
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_F4_v2_rr1_sum.wav",
+            "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-f4-v2-rr1-sum-9988142d8fd2",
+            "inheritedOpcodes": {
+              "ampeg_attack": "0.001",
+              "ampeg_dynamic": "1",
+              "ampeg_release": "0.7",
+              "group_label": "gr_1",
+              "hikey": "79",
+              "hivel": "83",
+              "lokey": "76",
+              "lovel": "42",
+              "pitch_keycenter": "77",
+              "sample": "DCClar_susLong_F4_v2_rr1_sum.wav",
+              "seq_length": "1",
+              "seq_position": "1",
+              "volume": "13"
+            }
+          },
+          {
+            "regionId": "clarinet-vsco-suslong-sfz-pilot-region-023",
+            "sourceLine": 266,
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_A#2_v3_rr1_sum.wav",
+            "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-a-2-v3-rr1-sum-45db5a4eda19",
+            "inheritedOpcodes": {
+              "ampeg_attack": "0.001",
+              "ampeg_dynamic": "1",
+              "ampeg_release": "0.7",
+              "group_label": "gr_1",
+              "hikey": "59",
+              "hivel": "127",
+              "lokey": "56",
+              "lovel": "84",
+              "pitch_keycenter": "58",
+              "sample": "DCClar_susLong_A#2_v3_rr1_sum.wav",
+              "seq_length": "1",
+              "seq_position": "1",
+              "volume": "3"
+            }
+          },
+          {
+            "regionId": "clarinet-vsco-suslong-sfz-pilot-region-024",
+            "sourceLine": 276,
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_A#3_v3_rr1_sum.wav",
+            "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-a-3-v3-rr1-sum-29fc72eb3b93",
+            "inheritedOpcodes": {
+              "ampeg_attack": "0.001",
+              "ampeg_dynamic": "1",
+              "ampeg_release": "0.7",
+              "group_label": "gr_1",
+              "hikey": "71",
+              "hivel": "127",
+              "lokey": "68",
+              "lovel": "84",
+              "pitch_keycenter": "70",
+              "sample": "DCClar_susLong_A#3_v3_rr1_sum.wav",
+              "seq_length": "1",
+              "seq_position": "1",
+              "volume": "3"
+            }
+          },
+          {
+            "regionId": "clarinet-vsco-suslong-sfz-pilot-region-025",
+            "sourceLine": 286,
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_A#4_v3_rr1_sum.wav",
+            "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-a-4-v3-rr1-sum-6867f47637a3",
+            "inheritedOpcodes": {
+              "ampeg_attack": "0.001",
+              "ampeg_dynamic": "1",
+              "ampeg_release": "0.7",
+              "group_label": "gr_1",
+              "hikey": "83",
+              "hivel": "127",
+              "lokey": "80",
+              "lovel": "84",
+              "pitch_keycenter": "82",
+              "sample": "DCClar_susLong_A#4_v3_rr1_sum.wav",
+              "seq_length": "1",
+              "seq_position": "1",
+              "volume": "3"
+            }
+          },
+          {
+            "regionId": "clarinet-vsco-suslong-sfz-pilot-region-026",
+            "sourceLine": 296,
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_D2_v3_rr1_sum.wav",
+            "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-d2-v3-rr1-sum-346775f54394",
+            "inheritedOpcodes": {
+              "ampeg_attack": "0.001",
+              "ampeg_dynamic": "1",
+              "ampeg_release": "0.7",
+              "group_label": "gr_1",
+              "hikey": "51",
+              "hivel": "127",
+              "lokey": "50",
+              "lovel": "84",
+              "pitch_keycenter": "50",
+              "sample": "DCClar_susLong_D2_v3_rr1_sum.wav",
+              "seq_length": "1",
+              "seq_position": "1",
+              "volume": "3"
+            }
+          },
+          {
+            "regionId": "clarinet-vsco-suslong-sfz-pilot-region-027",
+            "sourceLine": 306,
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_D3_v3_rr1_sum.wav",
+            "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-d3-v3-rr1-sum-bec366e90370",
+            "inheritedOpcodes": {
+              "ampeg_attack": "0.001",
+              "ampeg_dynamic": "1",
+              "ampeg_release": "0.7",
+              "group_label": "gr_1",
+              "hikey": "63",
+              "hivel": "127",
+              "lokey": "60",
+              "lovel": "84",
+              "pitch_keycenter": "62",
+              "sample": "DCClar_susLong_D3_v3_rr1_sum.wav",
+              "seq_length": "1",
+              "seq_position": "1",
+              "volume": "3"
+            }
+          },
+          {
+            "regionId": "clarinet-vsco-suslong-sfz-pilot-region-028",
+            "sourceLine": 316,
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_D4_v3_rr1_sum.wav",
+            "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-d4-v3-rr1-sum-f913c749eb6b",
+            "inheritedOpcodes": {
+              "ampeg_attack": "0.001",
+              "ampeg_dynamic": "1",
+              "ampeg_release": "0.7",
+              "group_label": "gr_1",
+              "hikey": "75",
+              "hivel": "127",
+              "lokey": "72",
+              "lovel": "84",
+              "pitch_keycenter": "74",
+              "sample": "DCClar_susLong_D4_v3_rr1_sum.wav",
+              "seq_length": "1",
+              "seq_position": "1",
+              "volume": "3"
+            }
+          },
+          {
+            "regionId": "clarinet-vsco-suslong-sfz-pilot-region-029",
+            "sourceLine": 326,
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_D5_v3_rr1_sum.wav",
+            "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-d5-v3-rr1-sum-4bcff7aa31fe",
+            "inheritedOpcodes": {
+              "ampeg_attack": "0.001",
+              "ampeg_dynamic": "1",
+              "ampeg_release": "0.7",
+              "group_label": "gr_1",
+              "hikey": "87",
+              "hivel": "127",
+              "lokey": "84",
+              "lovel": "84",
+              "pitch_keycenter": "86",
+              "sample": "DCClar_susLong_D5_v3_rr1_sum.wav",
+              "seq_length": "1",
+              "seq_position": "1",
+              "volume": "3"
+            }
+          },
+          {
+            "regionId": "clarinet-vsco-suslong-sfz-pilot-region-030",
+            "sourceLine": 336,
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_F#5_v3_rr1_sum.wav",
+            "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-f-5-v3-rr1-sum-13355ccf2ead",
+            "inheritedOpcodes": {
+              "ampeg_attack": "0.001",
+              "ampeg_dynamic": "1",
+              "ampeg_release": "0.7",
+              "group_label": "gr_1",
+              "hikey": "90",
+              "hivel": "127",
+              "lokey": "88",
+              "lovel": "84",
+              "pitch_keycenter": "89",
+              "sample": "DCClar_susLong_F#5_v3_rr1_sum.wav",
+              "seq_length": "1",
+              "seq_position": "1",
+              "volume": "3"
+            }
+          },
+          {
+            "regionId": "clarinet-vsco-suslong-sfz-pilot-region-031",
+            "sourceLine": 346,
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_F2_v3_rr1_sum.wav",
+            "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-f2-v3-rr1-sum-7049e55a7385",
+            "inheritedOpcodes": {
+              "ampeg_attack": "0.001",
+              "ampeg_dynamic": "1",
+              "ampeg_release": "0.7",
+              "group_label": "gr_1",
+              "hikey": "55",
+              "hivel": "127",
+              "lokey": "52",
+              "lovel": "84",
+              "pitch_keycenter": "53",
+              "sample": "DCClar_susLong_F2_v3_rr1_sum.wav",
+              "seq_length": "1",
+              "seq_position": "1",
+              "volume": "3"
+            }
+          },
+          {
+            "regionId": "clarinet-vsco-suslong-sfz-pilot-region-032",
+            "sourceLine": 356,
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_F3_v3_rr1_sum.wav",
+            "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-f3-v3-rr1-sum-6b434e88f724",
+            "inheritedOpcodes": {
+              "ampeg_attack": "0.001",
+              "ampeg_dynamic": "1",
+              "ampeg_release": "0.7",
+              "group_label": "gr_1",
+              "hikey": "67",
+              "hivel": "127",
+              "lokey": "64",
+              "lovel": "84",
+              "pitch_keycenter": "65",
+              "sample": "DCClar_susLong_F3_v3_rr1_sum.wav",
+              "seq_length": "1",
+              "seq_position": "1",
+              "volume": "3"
+            }
+          },
+          {
+            "regionId": "clarinet-vsco-suslong-sfz-pilot-region-033",
+            "sourceLine": 366,
+            "samplePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_F4_v3_rr1_sum.wav",
+            "assetId": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-f4-v3-rr1-sum-8d9bcdf56ed0",
+            "inheritedOpcodes": {
+              "ampeg_attack": "0.001",
+              "ampeg_dynamic": "1",
+              "ampeg_release": "0.7",
+              "group_label": "gr_1",
+              "hikey": "79",
+              "hivel": "127",
+              "lokey": "76",
+              "lovel": "84",
+              "pitch_keycenter": "77",
+              "sample": "DCClar_susLong_F4_v3_rr1_sum.wav",
+              "seq_length": "1",
+              "seq_position": "1",
+              "volume": "3"
+            }
+          }
+        ]
+      },
+      "coverage": {
+        "playableMin": 50,
+        "playableMax": 90,
+        "regionCount": 33,
+        "assetCount": 33,
+        "velocityBreaks": [1, 41, 42, 83, 84, 127]
+      },
+      "assetLocks": [
+        {
+          "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_A#2_v1_rr1_sum.wav",
+          "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-a-2-v1-rr1-sum-f4e51e4addda",
+          "bytes": 1825324,
+          "sha256": "f4e51e4addda4e87e84b0a57b1de21cb447adff0a2c1aa5c71b5d3ef5618a93e",
+          "audio": { "sampleRate": 44100, "frameCount": 456320, "channels": 2 }
+        },
+        {
+          "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_A#3_v1_rr1_sum.wav",
+          "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-a-3-v1-rr1-sum-c314aa26ec14",
+          "bytes": 1599888,
+          "sha256": "c314aa26ec148ffa30afe988d7f4f178941a38ca401f487ea2633ce635e78d3f",
+          "audio": { "sampleRate": 44100, "frameCount": 399961, "channels": 2 }
+        },
+        {
+          "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_A#4_v1_rr1_sum.wav",
+          "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-a-4-v1-rr1-sum-9669ede565f4",
+          "bytes": 1996064,
+          "sha256": "9669ede565f46af967a1ff72cb106a14736e0325680aa3b62ee148f8750efd88",
+          "audio": { "sampleRate": 44100, "frameCount": 499005, "channels": 2 }
+        },
+        {
+          "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_D2_v1_rr1_sum.wav",
+          "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-d2-v1-rr1-sum-359344f125ee",
+          "bytes": 806612,
+          "sha256": "359344f125ee42ea30b1143ef7ad3ea0d8a19f871d400a07bf784bd691b1a72a",
+          "audio": { "sampleRate": 44100, "frameCount": 201642, "channels": 2 }
+        },
+        {
+          "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_D3_v1_rr1_sum.wav",
+          "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-d3-v1-rr1-sum-74ba0ec6cb06",
+          "bytes": 2230948,
+          "sha256": "74ba0ec6cb0698f314b07cee2f63cd309d5fd30db262d10d1f69e6aec9cd5896",
+          "audio": { "sampleRate": 44100, "frameCount": 557726, "channels": 2 }
+        },
+        {
+          "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_D4_v1_rr1_sum.wav",
+          "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-d4-v1-rr1-sum-61ff877d4b50",
+          "bytes": 1987372,
+          "sha256": "61ff877d4b500c2e1b6b51f693cd1ea8df05c7473c2ea458a207b1450495e430",
+          "audio": { "sampleRate": 44100, "frameCount": 496832, "channels": 2 }
+        },
+        {
+          "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_D5_v1_rr1_sum.wav",
+          "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-d5-v1-rr1-sum-0ed79db13dc3",
+          "bytes": 1692352,
+          "sha256": "0ed79db13dc312c9f5adaf11492f6fd871a5619a9e452434043c33d7a1608697",
+          "audio": { "sampleRate": 44100, "frameCount": 423077, "channels": 2 }
+        },
+        {
+          "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_F#5_v1_rr1_sum.wav",
+          "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-f-5-v1-rr1-sum-26fcfdba581d",
+          "bytes": 1025344,
+          "sha256": "26fcfdba581d7251cf96007650890bbb3f8c61d020278b45441113d47ce1c05e",
+          "audio": { "sampleRate": 44100, "frameCount": 256325, "channels": 2 }
+        },
+        {
+          "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_F2_v1_rr1_sum.wav",
+          "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-f2-v1-rr1-sum-008d2f0894c9",
+          "bytes": 1527412,
+          "sha256": "008d2f0894c90e912f8315639ff8ed2687454195be14054e5fadee8e0db3b559",
+          "audio": { "sampleRate": 44100, "frameCount": 381842, "channels": 2 }
+        },
+        {
+          "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_F3_v1_rr1_sum.wav",
+          "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-f3-v1-rr1-sum-0677787afa8d",
+          "bytes": 1762976,
+          "sha256": "0677787afa8d1fdc99e267a1518a49dacf3f1899dc27239c1fbe93568fda2222",
+          "audio": { "sampleRate": 44100, "frameCount": 440733, "channels": 2 }
+        },
+        {
+          "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_F4_v1_rr1_sum.wav",
+          "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-f4-v1-rr1-sum-e7b54b1ac626",
+          "bytes": 2034208,
+          "sha256": "e7b54b1ac626a6c54db3fa320a38acd3f099c33c936fca0d82259f9f9641e4f3",
+          "audio": { "sampleRate": 44100, "frameCount": 508541, "channels": 2 }
+        },
+        {
+          "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_A#2_v2_rr1_sum.wav",
+          "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-a-2-v2-rr1-sum-82be872b7915",
+          "bytes": 1909388,
+          "sha256": "82be872b7915c833e06910846e3398b55591f69bfe6474c39dd4051742db2700",
+          "audio": { "sampleRate": 44100, "frameCount": 477336, "channels": 2 }
+        },
+        {
+          "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_A#3_v2_rr1_sum.wav",
+          "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-a-3-v2-rr1-sum-779e2cad84f6",
+          "bytes": 1791140,
+          "sha256": "779e2cad84f6f5103272f17cb4637a94d8e9c533a5811233595960cad61b391f",
+          "audio": { "sampleRate": 44100, "frameCount": 447774, "channels": 2 }
+        },
+        {
+          "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_A#4_v2_rr1_sum.wav",
+          "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-a-4-v2-rr1-sum-569e902693e7",
+          "bytes": 1823220,
+          "sha256": "569e902693e7d04ecd20507f0a3dd0be92a7a3cdf14ab685d89aefacff2a34cb",
+          "audio": { "sampleRate": 44100, "frameCount": 455794, "channels": 2 }
+        },
+        {
+          "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_D2_v2_rr1_sum.wav",
+          "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-d2-v2-rr1-sum-b1a793ff45d8",
+          "bytes": 1689164,
+          "sha256": "b1a793ff45d8f068dd83b591924b1a29bbece98e6e8177b31fc003f2f426fe00",
+          "audio": { "sampleRate": 44100, "frameCount": 422280, "channels": 2 }
+        },
+        {
+          "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_D3_v2_rr1_sum.wav",
+          "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-d3-v2-rr1-sum-30e686ffc58c",
+          "bytes": 1876188,
+          "sha256": "30e686ffc58caa48bbfae309a06f1c27c75b192fb653729ffdf8586cbd9b8405",
+          "audio": { "sampleRate": 44100, "frameCount": 469036, "channels": 2 }
+        },
+        {
+          "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_D4_v2_rr1_sum.wav",
+          "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-d4-v2-rr1-sum-4bdc53f3ef91",
+          "bytes": 2047596,
+          "sha256": "4bdc53f3ef917cc9146e10cec5eb33744524e8b510c4a39c080dc5c774b3c956",
+          "audio": { "sampleRate": 44100, "frameCount": 510625, "channels": 2 }
+        },
+        {
+          "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_D5_v2_rr1_sum.wav",
+          "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-d5-v2-rr1-sum-4cedd1d7bd77",
+          "bytes": 1772224,
+          "sha256": "4cedd1d7bd779fe357529e34ff398bc0e80c5088fc3908944962d65fcdc94823",
+          "audio": { "sampleRate": 44100, "frameCount": 443045, "channels": 2 }
+        },
+        {
+          "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_F#5_v2_rr1_sum.wav",
+          "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-f-5-v2-rr1-sum-2f024789f1b2",
+          "bytes": 1252444,
+          "sha256": "2f024789f1b2ecc25f0e07dcff06084e4c2def83ff74e693c098c28fbec319fc",
+          "audio": { "sampleRate": 44100, "frameCount": 313100, "channels": 2 }
+        },
+        {
+          "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_F2_v2_rr1_sum.wav",
+          "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-f2-v2-rr1-sum-36348e1fd1a1",
+          "bytes": 1835164,
+          "sha256": "36348e1fd1a1e53485c7f48983cfd758ced036f6af1a832671bf5ef1f8b00448",
+          "audio": { "sampleRate": 44100, "frameCount": 458780, "channels": 2 }
+        },
+        {
+          "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_F3_v2_rr1_sum.wav",
+          "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-f3-v2-rr1-sum-3c9a237651cd",
+          "bytes": 2069572,
+          "sha256": "3c9a237651cd049cacdf4052ef85ff406da1d9e5d4f59439c20f45a7578ff431",
+          "audio": { "sampleRate": 44100, "frameCount": 517382, "channels": 2 }
+        },
+        {
+          "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_F4_v2_rr1_sum.wav",
+          "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-f4-v2-rr1-sum-9988142d8fd2",
+          "bytes": 2142808,
+          "sha256": "9988142d8fd2856af4217e3983316a42ef1d91b6381afd9fa138072d91122c2e",
+          "audio": { "sampleRate": 44100, "frameCount": 535691, "channels": 2 }
+        },
+        {
+          "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_A#2_v3_rr1_sum.wav",
+          "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-a-2-v3-rr1-sum-45db5a4eda19",
+          "bytes": 2335540,
+          "sha256": "45db5a4eda1927cb627006145cd751d99bfd4449576730009d521191bfb8d746",
+          "audio": { "sampleRate": 44100, "frameCount": 583874, "channels": 2 }
+        },
+        {
+          "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_A#3_v3_rr1_sum.wav",
+          "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-a-3-v3-rr1-sum-29fc72eb3b93",
+          "bytes": 2059160,
+          "sha256": "29fc72eb3b93cc297095d6cdeb54b3d819de8e4070855c565302bb0a471b0a5c",
+          "audio": { "sampleRate": 44100, "frameCount": 514779, "channels": 2 }
+        },
+        {
+          "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_A#4_v3_rr1_sum.wav",
+          "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-a-4-v3-rr1-sum-6867f47637a3",
+          "bytes": 1885948,
+          "sha256": "6867f47637a3a869504911814be53dbc5e01fa52c2705a87afee20d2b71fc5aa",
+          "audio": { "sampleRate": 44100, "frameCount": 471476, "channels": 2 }
+        },
+        {
+          "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_D2_v3_rr1_sum.wav",
+          "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-d2-v3-rr1-sum-346775f54394",
+          "bytes": 1381704,
+          "sha256": "346775f54394b9cf5e9513a4ab8292274f20370f2ac4cd47cea6319c1fa494ff",
+          "audio": { "sampleRate": 44100, "frameCount": 345415, "channels": 2 }
+        },
+        {
+          "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_D3_v3_rr1_sum.wav",
+          "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-d3-v3-rr1-sum-bec366e90370",
+          "bytes": 1856124,
+          "sha256": "bec366e903704a8d267202b16c3f170c513aef18fc6727f5bc4ec424c27efeb3",
+          "audio": { "sampleRate": 44100, "frameCount": 464020, "channels": 2 }
+        },
+        {
+          "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_D4_v3_rr1_sum.wav",
+          "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-d4-v3-rr1-sum-f913c749eb6b",
+          "bytes": 2087348,
+          "sha256": "f913c749eb6b5a1c621e13548d5c30c8f67a6007a2992a6f85deb977c2d41b1f",
+          "audio": { "sampleRate": 44100, "frameCount": 521826, "channels": 2 }
+        },
+        {
+          "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_D5_v3_rr1_sum.wav",
+          "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-d5-v3-rr1-sum-4bcff7aa31fe",
+          "bytes": 1593652,
+          "sha256": "4bcff7aa31fe94c9d4a23acde1a9c2cb437dd4ee9c9804c981bbfb184c76509a",
+          "audio": { "sampleRate": 44100, "frameCount": 398402, "channels": 2 }
+        },
+        {
+          "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_F#5_v3_rr1_sum.wav",
+          "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-f-5-v3-rr1-sum-13355ccf2ead",
+          "bytes": 1586272,
+          "sha256": "13355ccf2ead9ed98142c0062682aecf3ed3c443df619e94a9b3ec7ef523f057",
+          "audio": { "sampleRate": 44100, "frameCount": 396557, "channels": 2 }
+        },
+        {
+          "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_F2_v3_rr1_sum.wav",
+          "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-f2-v3-rr1-sum-7049e55a7385",
+          "bytes": 1747440,
+          "sha256": "7049e55a73851574d5e11a518aeaa3c646bdd0f2323780a10abc379410dad2cf",
+          "audio": { "sampleRate": 44100, "frameCount": 436849, "channels": 2 }
+        },
+        {
+          "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_F3_v3_rr1_sum.wav",
+          "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-f3-v3-rr1-sum-6b434e88f724",
+          "bytes": 1743712,
+          "sha256": "6b434e88f724e46116dd71bdfe52dc82c9b1ec7cec5f512bf9719be51e646671",
+          "audio": { "sampleRate": 44100, "frameCount": 435917, "channels": 2 }
+        },
+        {
+          "path": "Woodwinds/Clarinet/susLong/DCClar_susLong_F4_v3_rr1_sum.wav",
+          "id": "clarinet-vsco-suslong-sfz-pilot-dcclar-suslong-f4-v3-rr1-sum-8d9bcdf56ed0",
+          "bytes": 2373520,
+          "sha256": "8d9bcdf56ed0c2adebb38242d7b5bb0e2da6884fa9f42a6d4226fb21c1bc7f68",
+          "audio": { "sampleRate": 44100, "frameCount": 593369, "channels": 2 }
+        }
+      ]
+    }
+  ]
+}

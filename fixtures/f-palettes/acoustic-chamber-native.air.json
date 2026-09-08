@@ -1,0 +1,182 @@
+{
+  "format": "air@0-experimental",
+  "title": "The table keeps one place warm",
+  "tempo": 72,
+  "meter": "4/4",
+  "key": "D minor",
+  "motifs": {
+    "thread": "D4/4 F4/8 A4/8 C5/4 A4/4",
+    "answer": "r/4 A3/4 C4/4 D4/4",
+    "pulse": "C2/4 r/4 D2/4 r/4"
+  },
+  "harmony": [
+    {
+      "id": "room",
+      "chords": [
+        { "symbol": "Dm7", "beats": 8 },
+        { "symbol": "Bbmaj7", "beats": 8 },
+        { "symbol": "Fmaj7", "beats": 8 },
+        { "symbol": "C7/E", "beats": 8, "inversion": 1 },
+        { "symbol": "Gm7", "beats": 8 },
+        { "symbol": "Dm7/F", "beats": 8, "inversion": 1 },
+        { "symbol": "A7", "beats": 8 },
+        { "symbol": "Dm7", "beats": 8 }
+      ]
+    }
+  ],
+  "voices": [
+    {
+      "id": "cello",
+      "instrument": "solo_cello",
+      "role": "lead",
+      "gainDb": -2,
+      "pan": -0.08,
+      "realize": [
+        {
+          "id": "cello-seed",
+          "kind": "motif",
+          "motif": "thread",
+          "repeat": 4,
+          "section": "seed",
+          "dynamicCurve": { "from": "p", "to": "mp" },
+          "articulation": "legato"
+        },
+        {
+          "id": "cello-open",
+          "kind": "motif",
+          "motif": "thread",
+          "repeat": 4,
+          "section": "open",
+          "transform": { "transpose": 3, "retrograde": true },
+          "dynamic": "mf",
+          "articulation": "tenuto"
+        },
+        {
+          "id": "cello-turn",
+          "kind": "motif",
+          "motif": "thread",
+          "repeat": 4,
+          "section": "turn",
+          "transform": { "inversion": true },
+          "dynamicCurve": { "from": "mf", "to": "f" },
+          "articulation": "accent"
+        },
+        {
+          "id": "cello-return",
+          "kind": "motif",
+          "motif": "thread",
+          "repeat": 4,
+          "section": "return",
+          "dynamicCurve": { "from": "mp", "to": "pp" },
+          "articulation": "legato"
+        }
+      ]
+    },
+    {
+      "id": "clarinet",
+      "instrument": "clarinet",
+      "role": "counter",
+      "gainDb": -5,
+      "pan": 0.18,
+      "realize": [
+        {
+          "id": "clarinet-answer",
+          "kind": "motif",
+          "motif": "answer",
+          "repeat": 16,
+          "section": "form",
+          "dynamicCurve": {
+            "from": "pp",
+            "via": [{ "at": 0.55, "level": "mf" }],
+            "to": "p"
+          },
+          "articulation": "legato"
+        }
+      ]
+    },
+    {
+      "id": "piano",
+      "instrument": "warm_piano",
+      "role": "harmony",
+      "gainDb": -5,
+      "pan": -0.22,
+      "realize": [
+        {
+          "id": "piano-room",
+          "kind": "chords",
+          "harmony": "room",
+          "voicing": "close",
+          "register": { "min": "C3", "max": "C5" },
+          "rhythm": [4],
+          "voiceLeading": "nearest",
+          "dynamicCurve": { "from": "pp", "to": "mp" },
+          "articulation": "tenuto",
+          "section": "form"
+        }
+      ]
+    },
+    {
+      "id": "guitar",
+      "instrument": "nylon_guitar",
+      "role": "counter",
+      "gainDb": -4,
+      "pan": 0.3,
+      "realize": [
+        {
+          "id": "guitar-room",
+          "kind": "arpeggio",
+          "harmony": "room",
+          "degrees": [1, 5, 3, 7],
+          "stepBeats": 1,
+          "octaveSpan": 2,
+          "register": { "min": "E2", "max": "E5" },
+          "dynamic": "p",
+          "articulation": "staccato",
+          "section": "form"
+        }
+      ]
+    },
+    {
+      "id": "bass",
+      "instrument": "clean_bass",
+      "role": "bass",
+      "gainDb": -5,
+      "realize": [
+        {
+          "id": "bass-room",
+          "kind": "bass",
+          "harmony": "room",
+          "degrees": [1, 5],
+          "stepBeats": 2,
+          "register": { "min": "C2", "max": "C4" },
+          "slashBass": "honor",
+          "dynamic": "mp",
+          "section": "form"
+        }
+      ]
+    },
+    {
+      "id": "brushes",
+      "instrument": "soft_percussion",
+      "role": "percussion",
+      "gainDb": -7,
+      "realize": [
+        {
+          "id": "brush-pulse",
+          "kind": "motif",
+          "motif": "pulse",
+          "repeat": 16,
+          "section": "form",
+          "dynamicCurve": { "from": "pp", "to": "mp" },
+          "articulation": "staccato"
+        }
+      ]
+    }
+  ],
+  "sections": [
+    { "id": "seed", "startBar": 1, "bars": 4 },
+    { "id": "open", "startBar": 5, "bars": 4 },
+    { "id": "turn", "startBar": 9, "bars": 4 },
+    { "id": "return", "startBar": 13, "bars": 4 }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "name": "@refrain/mcp-server",
+  "version": "0.0.0-experimental",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./hum": "./src/hum.ts",
+    "./hum-any": "./src/hum-any.ts",
+    "./hum-v1": "./src/hum-v1.ts"
+  },
+  "scripts": {
+    "prebuild": "tsx ../../scripts/prepare-presentation-assets.ts mcp-server --profile e-vsco-wind-pilots@1",
+    "build": "skybridge build",
+    "build:mcp-host": "REFRAIN_MCP_HOST_BUILD=1 skybridge build",
+    "predev": "tsx ../../scripts/prepare-presentation-assets.ts mcp-server --profile e-vsco-wind-pilots@1",
+    "dev": "skybridge dev",
+    "start": "node --conditions=refrain-built ../../scripts/start-mcp.mjs",
+    "stdio": "node ../../bin/refrain.mjs mcp stdio",
+    "test": "vitest run --root ../.. packages/mcp-server",
+    "typecheck": "tsc -b --pretty false"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.30.0",
+    "@refrain/air-schema": "*",
+    "@refrain/audio-engine": "*",
+    "@refrain/compiler": "*",
+    "@refrain/renderer": "*",
+    "@refrain/soundpack": "*",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "skybridge": "1.4.0",
+    "vite": "^7.1.3",
+    "zod": "^4.1.5"
+  },
+  "devDependencies": {
+    "@skybridge/devtools": "^1.4.0",
+    "@types/react": "^19.1.10",
+    "@types/react-dom": "^19.1.7",
+    "nodemon": "^3.1.10",
+    "tsx": "^4.20.5"
+  },
+  "license": "SEE LICENSE IN ../../LICENSING.md"
+}

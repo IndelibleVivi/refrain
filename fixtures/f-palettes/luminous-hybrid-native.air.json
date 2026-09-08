@@ -1,0 +1,200 @@
+{
+  "format": "air@0-experimental",
+  "title": "Light enters by remembering",
+  "tempo": 80,
+  "meter": "4/4",
+  "key": "A major",
+  "motifs": {
+    "prism": "E5/8 A5/8 B5/4 C#6/4 r/4",
+    "facet": "A4/8 E5/8 C#5/8 B4/8 E5/4 r/4",
+    "bell": "A5/4 r/2 E6/4",
+    "halo": "r/4 A3/2 r/4"
+  },
+  "harmony": [
+    {
+      "id": "spectrum",
+      "chords": [
+        { "symbol": "Amaj7", "beats": 8 },
+        { "symbol": "Eadd9/G#", "beats": 8, "inversion": 1 },
+        { "symbol": "F#m7", "beats": 8 },
+        { "symbol": "Dmaj7", "beats": 8 },
+        { "symbol": "Bm7", "beats": 8 },
+        { "symbol": "C#m7", "beats": 8 },
+        { "symbol": "Dmaj7", "beats": 8 },
+        { "symbol": "Amaj7", "beats": 8 }
+      ]
+    }
+  ],
+  "voices": [
+    {
+      "id": "flute",
+      "instrument": "flute",
+      "role": "lead",
+      "gainDb": -3,
+      "pan": 0.12,
+      "realize": [
+        {
+          "id": "flute-prism",
+          "kind": "motif",
+          "motif": "prism",
+          "repeat": 4,
+          "section": "glint",
+          "dynamicCurve": { "from": "p", "to": "mf" },
+          "articulation": "legato"
+        },
+        {
+          "id": "flute-refract",
+          "kind": "motif",
+          "motif": "prism",
+          "repeat": 4,
+          "section": "refract",
+          "transform": { "inversion": true },
+          "dynamic": "mp",
+          "articulation": "tenuto"
+        },
+        {
+          "id": "flute-open",
+          "kind": "motif",
+          "motif": "prism",
+          "repeat": 4,
+          "section": "open",
+          "transform": { "transpose": -5, "retrograde": true },
+          "dynamic": "f",
+          "articulation": "accent"
+        },
+        {
+          "id": "flute-afterimage",
+          "kind": "motif",
+          "motif": "prism",
+          "repeat": 4,
+          "section": "afterimage",
+          "dynamicCurve": { "from": "mp", "to": "pp" },
+          "articulation": "legato"
+        }
+      ]
+    },
+    {
+      "id": "harp",
+      "instrument": "harp",
+      "role": "harmony",
+      "gainDb": -5,
+      "pan": -0.26,
+      "realize": [
+        {
+          "id": "harp-spectrum",
+          "kind": "arpeggio",
+          "harmony": "spectrum",
+          "degrees": [1, 5, 3, 7],
+          "stepBeats": 0.5,
+          "octaveSpan": 3,
+          "register": { "min": "C3", "max": "C7" },
+          "dynamicCurve": { "from": "pp", "to": "mf" },
+          "articulation": "staccato",
+          "section": "form"
+        }
+      ]
+    },
+    {
+      "id": "marimba",
+      "instrument": "marimba",
+      "role": "counter",
+      "gainDb": -6,
+      "pan": 0.24,
+      "realize": [
+        {
+          "id": "marimba-facet",
+          "kind": "motif",
+          "motif": "facet",
+          "repeat": 16,
+          "section": "form",
+          "dynamicCurve": {
+            "from": "p",
+            "via": [{ "at": 0.65, "level": "f" }],
+            "to": "mp"
+          },
+          "articulation": "staccato"
+        }
+      ]
+    },
+    {
+      "id": "strings",
+      "instrument": "chamber_strings",
+      "role": "harmony",
+      "gainDb": -9,
+      "realize": [
+        {
+          "id": "strings-spectrum",
+          "kind": "motif",
+          "motif": "prism",
+          "repeat": 16,
+          "section": "form",
+          "transform": { "transpose": -24 },
+          "dynamicCurve": { "from": "pp", "to": "mp" },
+          "articulation": "legato"
+        }
+      ]
+    },
+    {
+      "id": "air",
+      "instrument": "air_pad",
+      "role": "texture",
+      "gainDb": -8,
+      "realize": [
+        {
+          "id": "air-spectrum",
+          "kind": "motif",
+          "motif": "halo",
+          "repeat": 16,
+          "section": "form",
+          "dynamic": "p",
+          "articulation": "legato"
+        }
+      ]
+    },
+    {
+      "id": "lattice",
+      "instrument": "lattice_pluck",
+      "role": "counter",
+      "gainDb": -7,
+      "pan": 0.36,
+      "realize": [
+        {
+          "id": "lattice-spectrum",
+          "kind": "arpeggio",
+          "harmony": "spectrum",
+          "degrees": [1, 3, 5, 7],
+          "stepBeats": 1,
+          "octaveSpan": 2,
+          "register": { "min": "C4", "max": "C7" },
+          "dynamic": "mp",
+          "articulation": "staccato",
+          "section": "form"
+        }
+      ]
+    },
+    {
+      "id": "glass",
+      "instrument": "glass_bell",
+      "role": "texture",
+      "gainDb": -9,
+      "pan": -0.34,
+      "realize": [
+        {
+          "id": "glass-bell",
+          "kind": "motif",
+          "motif": "bell",
+          "repeat": 16,
+          "section": "form",
+          "dynamicCurve": { "from": "pp", "to": "mp" },
+          "articulation": "tenuto"
+        }
+      ]
+    }
+  ],
+  "sections": [
+    { "id": "glint", "startBar": 1, "bars": 4 },
+    { "id": "refract", "startBar": 5, "bars": 4 },
+    { "id": "open", "startBar": 9, "bars": 4 },
+    { "id": "afterimage", "startBar": 13, "bars": 4 }
+  ]
+}

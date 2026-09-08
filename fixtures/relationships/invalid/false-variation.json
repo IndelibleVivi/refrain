@@ -1,0 +1,49 @@
+{
+  "format": "refrain-relationship-fixture@0-experimental",
+  "relation": "variation",
+  "parent": {
+    "format": "air@0-experimental",
+    "title": "Return seed",
+    "tempo": 72,
+    "meter": "4/4",
+    "motifs": { "return": "A4/4 B4/4 D5/4 E5/4" },
+    "voices": [
+      {
+        "id": "lead",
+        "instrument": "warm_piano",
+        "role": "lead",
+        "part": "@return"
+      }
+    ]
+  },
+  "child": {
+    "format": "air@0-experimental",
+    "title": "False return",
+    "tempo": 72,
+    "meter": "4/4",
+    "motifs": { "return_low": "A3/4 B3/4 D4/4 E4/4" },
+    "voices": [
+      {
+        "id": "lead",
+        "instrument": "warm_piano",
+        "role": "lead",
+        "part": "@return_low"
+      }
+    ]
+  },
+  "motifLinks": [
+    {
+      "parent": "return",
+      "child": "return_low",
+      "parentAnchor": "lead:part:1:return",
+      "childAnchor": "lead:part:1:return_low",
+      "transform": {
+        "transpose": -11,
+        "stretch": 1,
+        "invert": false,
+        "retrograde": false
+      }
+    }
+  ],
+  "expectedCode": "motif_evidence_mismatch"
+}

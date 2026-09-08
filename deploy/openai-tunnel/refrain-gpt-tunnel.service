@@ -1,0 +1,34 @@
+[Unit]
+Description=OpenAI Secure MCP Tunnel for Refrain
+After=network-online.target refrain-mcp.service
+BindsTo=refrain-mcp.service
+PartOf=refrain-mcp.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+DynamicUser=yes
+LoadCredential=profile.yaml:/etc/refrain-tunnel/profile.yaml
+LoadCredential=control-plane-api-key:/etc/refrain-tunnel/control-plane-api-key
+RuntimeDirectory=refrain-gpt-tunnel
+StateDirectory=refrain-gpt-tunnel
+ExecStartPre=/usr/bin/timeout 60s /usr/local/libexec/refrain-tunnel-preflight %d/profile.yaml
+ExecStart=/usr/local/bin/tunnel-client run --profile-file %d/profile.yaml --control-plane.api-key file:%d/control-plane-api-key --health.url-file /run/refrain-gpt-tunnel/health-url
+Restart=on-failure
+RestartSec=5s
+TimeoutStartSec=90s
+TimeoutStopSec=30s
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=strict
+ProtectHome=yes
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+ProtectControlGroups=yes
+RestrictSUIDSGID=yes
+LockPersonality=yes
+MemoryDenyWriteExecute=yes
+ReadWritePaths=/run/refrain-gpt-tunnel /var/lib/refrain-gpt-tunnel
+
+[Install]
+WantedBy=multi-user.target

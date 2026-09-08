@@ -1,0 +1,126 @@
+{
+  "format": "air@0-experimental",
+  "title": "The long way back",
+  "tempo": 72,
+  "meter": "4/4",
+  "key": "D minor",
+  "motifs": {
+    "air": "A4/4 C5/4 D5/4 F5/4"
+  },
+  "harmony": [
+    {
+      "id": "form",
+      "chords": [
+        { "symbol": "Dm7", "beats": 8 },
+        { "symbol": "Dm7", "beats": 4 },
+        { "symbol": "Bbmaj7", "beats": 4 },
+        { "symbol": "Fmaj7", "beats": 4 },
+        { "symbol": "C7/E", "beats": 4, "inversion": 1 },
+        { "symbol": "Dm7", "beats": 4 },
+        { "symbol": "Bbmaj7", "beats": 4 },
+        { "symbol": "Fmaj7", "beats": 4 },
+        { "symbol": "C7/E", "beats": 4, "inversion": 1 },
+        { "symbol": "Gm7", "beats": 4 },
+        { "symbol": "A7", "beats": 4 },
+        { "symbol": "Dm7", "beats": 4 },
+        { "symbol": "Bbmaj7", "beats": 4 },
+        { "symbol": "Dm7", "beats": 8 }
+      ]
+    }
+  ],
+  "voices": [
+    {
+      "id": "lead",
+      "instrument": "clarinet",
+      "role": "lead",
+      "realize": [
+        { "id": "intro", "kind": "rest", "beats": 8, "section": "intro" },
+        {
+          "id": "a-first",
+          "kind": "motif",
+          "motif": "air",
+          "repeat": 4,
+          "section": "A1",
+          "dynamicCurve": { "from": "p", "to": "mf" },
+          "articulation": "legato"
+        },
+        {
+          "id": "a-return",
+          "kind": "motif",
+          "motif": "air",
+          "repeat": 4,
+          "section": "A2",
+          "dynamicCurve": { "from": "mp", "to": "f" },
+          "articulation": "tenuto"
+        },
+        {
+          "id": "bridge",
+          "kind": "motif",
+          "motif": "air",
+          "repeat": 2,
+          "section": "B",
+          "transform": { "transpose": 5, "inversion": true },
+          "dynamic": "f",
+          "articulation": "accent"
+        },
+        {
+          "id": "return",
+          "kind": "motif",
+          "motif": "air",
+          "repeat": 2,
+          "section": "return",
+          "dynamicCurve": { "from": "mf", "to": "p" },
+          "articulation": "legato"
+        },
+        { "id": "coda", "kind": "rest", "beats": 8, "section": "coda" }
+      ],
+      "pan": 0.1
+    },
+    {
+      "id": "piano",
+      "instrument": "warm_piano",
+      "role": "harmony",
+      "realize": [
+        {
+          "id": "whole-form",
+          "kind": "chords",
+          "harmony": "form",
+          "voicing": "close",
+          "register": { "min": "C3", "max": "C5" },
+          "rhythm": [4],
+          "voiceLeading": "nearest",
+          "dynamicCurve": { "from": "p", "to": "mf" },
+          "articulation": "tenuto",
+          "section": "form"
+        }
+      ],
+      "pan": -0.18
+    },
+    {
+      "id": "bass",
+      "instrument": "clean_bass",
+      "role": "bass",
+      "realize": [
+        {
+          "id": "bass-form",
+          "kind": "bass",
+          "harmony": "form",
+          "degrees": [1, 5],
+          "stepBeats": 2,
+          "register": { "min": "C2", "max": "C4" },
+          "slashBass": "honor",
+          "dynamic": "mp",
+          "section": "form"
+        }
+      ]
+    }
+  ],
+  "sections": [
+    { "id": "intro", "startBar": 1, "bars": 2 },
+    { "id": "A1", "startBar": 3, "bars": 4 },
+    { "id": "A2", "startBar": 7, "bars": 4 },
+    { "id": "B", "startBar": 11, "bars": 2 },
+    { "id": "return", "startBar": 13, "bars": 2 },
+    { "id": "coda", "startBar": 15, "bars": 2 }
+  ]
+}

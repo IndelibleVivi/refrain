@@ -1,0 +1,40 @@
+{
+  "format": "refrain-candidate-shard@0-experimental",
+  "id": "glass-bell-modal-original",
+  "candidateContentSha256": "23a1c109541dd8fcbda429e9ef547977c42d1ea3c8f56254cd86a6090f5b3e66",
+  "candidate": {
+    "id": "glass-bell-modal-original",
+    "instrumentId": "glass_bell",
+    "engine": "synth",
+    "mapping": {
+      "type": "midi-fallback",
+      "program": 98
+    },
+    "calibrationGainDb": -14,
+    "releaseStatus": "development-identity",
+    "patch": {
+      "format": "refrain-synth-modal@0-experimental",
+      "modes": [
+        {
+          "ratio": 1,
+          "gain": 0.72,
+          "decaySeconds": 2.4
+        },
+        {
+          "ratio": 2.01,
+          "gain": 0.2,
+          "decaySeconds": 1.5
+        },
+        {
+          "ratio": 3.99,
+          "gain": 0.08,
+          "decaySeconds": 0.9
+        }
+      ],
+      "attack": 0.004,
+      "release": 1.6
+    }
+  },
+  "assets": [],
+  "contentSha256": "9a5770e6f00ca9e14541ac1f404d29b011870db0c68e67c1894a6f6cb6d8faf5"
+}

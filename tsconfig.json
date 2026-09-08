@@ -1,0 +1,14 @@
+{
+  "files": [],
+  "references": [
+    { "path": "packages/identity" },
+    { "path": "packages/air-schema" },
+    { "path": "packages/compiler" },
+    { "path": "packages/soundpack" },
+    { "path": "packages/audio-engine" },
+    { "path": "packages/renderer" },
+    { "path": "packages/mcp-server" },
+    { "path": "apps/presentation" },
+    { "path": "apps/soundbench" }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "format": "refrain-candidate-shard@0-experimental",
+  "id": "dust-texture-subtractive-original",
+  "candidateContentSha256": "dd3959ff09dd94d8fdeaf956cee408701d02d261f08cfd8806ded7b3ea4e4084",
+  "candidate": {
+    "id": "dust-texture-subtractive-original",
+    "instrumentId": "dust_texture",
+    "engine": "synth",
+    "mapping": {
+      "type": "midi-fallback",
+      "program": 96
+    },
+    "calibrationGainDb": -22,
+    "releaseStatus": "development-identity",
+    "patch": {
+      "format": "refrain-synth-subtractive@0-experimental",
+      "oscillators": [
+        {
+          "type": "triangle",
+          "ratio": 1,
+          "gain": 0.38,
+          "detune": -11
+        },
+        {
+          "type": "square",
+          "ratio": 1.5,
+          "gain": 0.12,
+          "detune": 13
+        },
+        {
+          "type": "sine",
+          "ratio": 4.03,
+          "gain": 0.08,
+          "detune": -7
+        }
+      ],
+      "attack": 0.42,
+      "decay": 0.85,
+      "sustain": 0.46,
+      "release": 1.8,
+      "filterHz": 1350,
+      "filterQ": 1.8
+    }
+  },
+  "assets": [],
+  "contentSha256": "09df8774ae46ecadbe59d01bab1f28c362da6cc5389733dc30944e99f43c6a70"
+}

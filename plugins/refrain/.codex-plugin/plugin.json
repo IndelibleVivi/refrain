@@ -1,0 +1,23 @@
+{
+  "name": "refrain",
+  "version": "0.3.0",
+  "description": "Let an agent author, produce, render, inspect, and continue portable music as exact Refrain airs.",
+  "author": {
+    "name": "Refrain"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Refrain",
+    "shortDescription": "Let your agent hum.",
+    "longDescription": "Refrain lets the agent already present in a conversation answer through inspectable original music. The agent authors the music; Refrain validates, renders, and preserves exact portable continuity without a hidden composing model or hosted work library.",
+    "developerName": "Refrain",
+    "category": "Creative Tools",
+    "capabilities": [],
+    "defaultPrompt": [
+      "Hum a short musical reply to this moment.",
+      "Turn this feeling into an original Refrain air I can hear and continue.",
+      "Continue the last Refrain air as a transformed return."
+    ]
+  },
+  "license": "SEE LICENSE IN ../../LICENSING.md"
+}

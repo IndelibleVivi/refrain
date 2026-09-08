@@ -1,0 +1,40 @@
+{
+  "format": "refrain-candidate-shard@0-experimental",
+  "id": "air-pad-subtractive-original",
+  "candidateContentSha256": "3717480602f5d3760f07d3a4531ea5ae59c228de84492fec420d6be793848d48",
+  "candidate": {
+    "id": "air-pad-subtractive-original",
+    "instrumentId": "air_pad",
+    "engine": "synth",
+    "mapping": {
+      "type": "midi-fallback",
+      "program": 89
+    },
+    "calibrationGainDb": -18,
+    "releaseStatus": "development-identity",
+    "patch": {
+      "format": "refrain-synth-subtractive@0-experimental",
+      "oscillators": [
+        {
+          "type": "sine",
+          "ratio": 1,
+          "gain": 0.72
+        },
+        {
+          "type": "triangle",
+          "ratio": 2,
+          "gain": 0.18,
+          "detune": 3
+        }
+      ],
+      "attack": 0.8,
+      "decay": 0.7,
+      "sustain": 0.62,
+      "release": 1.4,
+      "filterHz": 1800,
+      "filterQ": 0.7
+    }
+  },
+  "assets": [],
+  "contentSha256": "802a1283ae8146d46305985c0b43b33832bf5d42348daca2cb5d7ee42a73ba48"
+}

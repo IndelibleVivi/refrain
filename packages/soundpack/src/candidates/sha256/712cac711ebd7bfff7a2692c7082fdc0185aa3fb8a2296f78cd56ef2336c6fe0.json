@@ -1,0 +1,46 @@
+{
+  "format": "refrain-candidate-shard@0-experimental",
+  "id": "prism-lead-subtractive-original",
+  "candidateContentSha256": "090cfaa42f686657fe422d932239abec8f55577f7a5291c1f6eb821e1b530d53",
+  "candidate": {
+    "id": "prism-lead-subtractive-original",
+    "instrumentId": "prism_lead",
+    "engine": "synth",
+    "mapping": {
+      "type": "midi-fallback",
+      "program": 81
+    },
+    "calibrationGainDb": -18,
+    "releaseStatus": "development-identity",
+    "patch": {
+      "format": "refrain-synth-subtractive@0-experimental",
+      "oscillators": [
+        {
+          "type": "sawtooth",
+          "ratio": 1,
+          "gain": 0.42
+        },
+        {
+          "type": "triangle",
+          "ratio": 1,
+          "gain": 0.34,
+          "detune": 7
+        },
+        {
+          "type": "sine",
+          "ratio": 2,
+          "gain": 0.12,
+          "detune": -5
+        }
+      ],
+      "attack": 0.025,
+      "decay": 0.28,
+      "sustain": 0.54,
+      "release": 0.46,
+      "filterHz": 3400,
+      "filterQ": 1.35
+    }
+  },
+  "assets": [],
+  "contentSha256": "712cac711ebd7bfff7a2692c7082fdc0185aa3fb8a2296f78cd56ef2336c6fe0"
+}

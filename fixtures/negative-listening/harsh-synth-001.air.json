@@ -1,0 +1,27 @@
+{
+  "format": "air@0-experimental",
+  "title": "Harsh synth 001",
+  "tempo": 118,
+  "meter": "4/4",
+  "motifs": {},
+  "voices": [
+    {
+      "id": "glass-a",
+      "instrument": "glass_bell",
+      "role": "lead",
+      "part": "A6/4@ff B6/4@ff C7/4@ff D7/4@ff | A6/4@ff B6/4@ff C7/4@ff D7/4@ff"
+    },
+    {
+      "id": "glass-b",
+      "instrument": "glass_bell",
+      "role": "counter",
+      "part": "B6/4@ff C7/4@ff D7/4@ff E7/4@ff | B6/4@ff C7/4@ff D7/4@ff E7/4@ff"
+    },
+    {
+      "id": "glass-c",
+      "instrument": "glass_bell",
+      "role": "texture",
+      "part": "C7/4@ff D7/4@ff E7/4@ff F7/4@ff | C7/4@ff D7/4@ff E7/4@ff F7/4@ff"
+    }
+  ]
+}

@@ -1,0 +1,159 @@
+#!/bin/sh
+
+set -u
+
+if [ "$#" -lt 1 ] || [ "$#" -gt 2 ]; then
+  echo "usage: refrain-tunnel-preflight <credential-profile> [retry-seconds]" >&2
+  exit 2
+fi
+
+profile_path=$1
+retry_seconds=${2:-2}
+
+if [ ! -r "$profile_path" ]; then
+  echo "Refrain tunnel credential profile is not readable." >&2
+  exit 2
+fi
+
+case "$retry_seconds" in
+  "" | *[!0-9.]* | .* | *.*.*)
+    echo "Refrain tunnel preflight retry interval is invalid." >&2
+    exit 2
+    ;;
+esac
+
+mcp_urls=$(
+  /usr/bin/awk '
+    function indentation(value, stripped) {
+      stripped = value
+      sub(/^[ \t]*/, "", stripped)
+      return length(value) - length(stripped)
+    }
+
+    /^[ \t]*(#.*)?$/ { next }
+
+    {
+      level = indentation($0)
+
+      if ($0 ~ /^[ \t]*mcp:[ \t]*$/) {
+        in_mcp = 1
+        mcp_level = level
+        in_urls = 0
+        next
+      }
+
+      if (in_mcp && level <= mcp_level) {
+        in_mcp = 0
+        in_urls = 0
+      }
+
+      if (in_mcp && $0 ~ /^[ \t]*server_urls:[ \t]*$/) {
+        in_urls = 1
+        urls_level = level
+        next
+      }
+
+      if (in_urls && level <= urls_level) in_urls = 0
+
+      if (in_urls && $0 ~ /^[ \t]*url:[ \t]*/) {
+        value = $0
+        sub(/^[ \t]*url:[ \t]*/, "", value)
+        sub(/[ \t]+#.*/, "", value)
+        sub(/[ \t]+$/, "", value)
+        first = substr(value, 1, 1)
+        last = substr(value, length(value), 1)
+        if ((first == "\"" && last == "\"") ||
+            (first == "\047" && last == "\047")) {
+          value = substr(value, 2, length(value) - 2)
+        }
+        print value
+      }
+    }
+  ' "$profile_path"
+)
+
+url_count=$(printf '%s\n' "$mcp_urls" | /usr/bin/awk 'NF { count += 1 } END { print count + 0 }')
+if [ "$url_count" -ne 1 ]; then
+  echo "Refrain tunnel profile must contain exactly one MCP server URL." >&2
+  exit 2
+fi
+mcp_url=$mcp_urls
+
+case "$mcp_url" in
+  http://*) ;;
+  *)
+    echo "Refrain tunnel MCP target must use loopback HTTP." >&2
+    exit 2
+    ;;
+esac
+case "$mcp_url" in
+  *"?"* | *"#"* | *"@"*)
+    echo "Refrain tunnel MCP target cannot contain credentials, query, or fragment data." >&2
+    exit 2
+    ;;
+esac
+
+authority_and_path=${mcp_url#http://}
+case "$authority_and_path" in
+  */*) ;;
+  *)
+    echo "Refrain tunnel MCP target must include the /mcp path." >&2
+    exit 2
+    ;;
+esac
+authority=${authority_and_path%%/*}
+path=/${authority_and_path#*/}
+if [ "$path" != "/mcp" ]; then
+  echo "Refrain tunnel MCP target must use the exact /mcp path." >&2
+  exit 2
+fi
+
+port=""
+case "$authority" in
+  127.0.0.1 | localhost) ;;
+  127.0.0.1:* | localhost:*) port=${authority##*:} ;;
+  *)
+    echo "Refrain tunnel MCP target must remain on host loopback." >&2
+    exit 2
+    ;;
+esac
+if [ -n "$port" ]; then
+  case "$port" in
+    *[!0-9]* | "")
+      echo "Refrain tunnel MCP target port is invalid." >&2
+      exit 2
+      ;;
+  esac
+  if [ "$port" -lt 1 ] || [ "$port" -gt 65535 ]; then
+    echo "Refrain tunnel MCP target port is invalid." >&2
+    exit 2
+  fi
+fi
+
+health_url="http://$authority/healthz"
+
+mcp_ready() {
+  mcp_status=$(
+    /usr/bin/curl \
+      --silent \
+      --output /dev/null \
+      --write-out '%{http_code}' \
+      "$mcp_url"
+  ) || return 1
+  case "$mcp_status" in
+    "" | *[!0-9]*) return 1 ;;
+    2?? | 400 | 405 | 406 | 415) return 0 ;;
+  esac
+  return 1
+}
+
+release_ready() {
+  health_body=$(/usr/bin/curl --fail --silent "$health_url") || return 1
+  printf '%s' "$health_body" | /usr/bin/grep --fixed-strings --quiet '"status":"ok"' || return 1
+  printf '%s' "$health_body" | /usr/bin/grep --fixed-strings --quiet '"server":"Refrain"' || return 1
+  printf '%s' "$health_body" | /usr/bin/grep --extended-regexp --quiet '"bundleDigest":"sha256:[0-9a-f]{64}"'
+}
+
+until mcp_ready && release_ready; do
+  /bin/sleep "$retry_seconds"
+done

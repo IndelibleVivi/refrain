@@ -1,0 +1,3 @@
+import { MAX_BARS } from "@refrain/compiler";
+
+export const compactPartDescription = `Compact part syntax: NOTE/DURATION (C4/4), 2-6 note chord [C4,E4,G4]/2, rest r/4, durations 1|2|4|8|16|32 with optional dot, note/chord dynamic suffix @pp|@p|@mp|@mf|@f|@ff, | between 1-${MAX_BARS} bars, motif @name, or positional transformed motif @name(-3,0.5). In a transformed motif, the first argument is integer semitone transpose -24..24; the optional second argument is duration stretch 0.25..4 (0.5 sounds twice as fast, 2 lasts twice as long). Named text such as @name(transpose,1) is invalid. Every bar must fill the meter.`;

@@ -1,0 +1,17 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "outDir": "dist",
+    "rootDir": "src",
+    "tsBuildInfoFile": "dist/.tsbuildinfo"
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "references": [
+    { "path": "../air-schema" },
+    { "path": "../compiler" },
+    { "path": "../audio-engine" },
+    { "path": "../renderer" },
+    { "path": "../soundpack" }
+  ]
+}

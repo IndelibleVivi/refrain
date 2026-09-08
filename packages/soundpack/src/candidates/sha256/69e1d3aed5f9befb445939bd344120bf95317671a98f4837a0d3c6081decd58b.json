@@ -1,0 +1,659 @@
+{
+  "format": "refrain-candidate-shard@0-experimental",
+  "id": "soft-percussion-vcsl-acoustic-kit",
+  "candidateContentSha256": "9d649c24ab7da6b57ee52686cce788cd413269a4b6da18ad49a4d171007b1f0f",
+  "candidate": {
+    "id": "soft-percussion-vcsl-acoustic-kit",
+    "instrumentId": "soft_percussion",
+    "engine": "sampler",
+    "mapping": {
+      "type": "sample-map",
+      "playableMin": 36,
+      "playableMax": 51,
+      "midiFallbackProgram": 0,
+      "articulationFallbacks": {
+        "staccato": "none",
+        "tenuto": "none",
+        "accent": "none",
+        "legato": "none"
+      },
+      "regions": [
+        {
+          "id": "soft-kit-kick-rr1",
+          "trigger": "attack",
+          "assetId": "vcsl-kit-bass-drum-v5-rr1",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 36,
+            "rootMidi": 36,
+            "maxMidi": 36
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "roundRobin": {
+            "group": "soft-kit-kick",
+            "index": 0,
+            "count": 2
+          },
+          "gainDb": 0,
+          "tuneCents": 0,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "natural"
+          }
+        },
+        {
+          "id": "soft-kit-kick-rr2",
+          "trigger": "attack",
+          "assetId": "vcsl-kit-bass-drum-v5-rr2",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 36,
+            "rootMidi": 36,
+            "maxMidi": 36
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "roundRobin": {
+            "group": "soft-kit-kick",
+            "index": 1,
+            "count": 2
+          },
+          "gainDb": 0,
+          "tuneCents": 0,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "natural"
+          }
+        },
+        {
+          "id": "soft-kit-snare-rr1",
+          "trigger": "attack",
+          "assetId": "vcsl-kit-snare-v6-rr1",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 38,
+            "rootMidi": 38,
+            "maxMidi": 38
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "roundRobin": {
+            "group": "soft-kit-snare",
+            "index": 0,
+            "count": 2
+          },
+          "gainDb": -2,
+          "tuneCents": 0,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "natural"
+          }
+        },
+        {
+          "id": "soft-kit-snare-rr2",
+          "trigger": "attack",
+          "assetId": "vcsl-kit-snare-v6-rr2",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 38,
+            "rootMidi": 38,
+            "maxMidi": 38
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "roundRobin": {
+            "group": "soft-kit-snare",
+            "index": 1,
+            "count": 2
+          },
+          "gainDb": -2,
+          "tuneCents": 0,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "natural"
+          }
+        },
+        {
+          "id": "soft-kit-closed-hat-rr1",
+          "trigger": "attack",
+          "assetId": "vcsl-kit-closed-hat-v2-rr1",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 42,
+            "rootMidi": 42,
+            "maxMidi": 42
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "roundRobin": {
+            "group": "soft-kit-closed-hat",
+            "index": 0,
+            "count": 2
+          },
+          "gainDb": -7,
+          "tuneCents": 0,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "natural"
+          }
+        },
+        {
+          "id": "soft-kit-closed-hat-rr2",
+          "trigger": "attack",
+          "assetId": "vcsl-kit-closed-hat-v2-rr2",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 42,
+            "rootMidi": 42,
+            "maxMidi": 42
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "roundRobin": {
+            "group": "soft-kit-closed-hat",
+            "index": 1,
+            "count": 2
+          },
+          "gainDb": -7,
+          "tuneCents": 0,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "natural"
+          }
+        },
+        {
+          "id": "soft-kit-open-hat-rr1",
+          "trigger": "attack",
+          "assetId": "vcsl-kit-open-hat-rr1",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 46,
+            "rootMidi": 46,
+            "maxMidi": 46
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "roundRobin": {
+            "group": "soft-kit-open-hat",
+            "index": 0,
+            "count": 2
+          },
+          "gainDb": -9,
+          "tuneCents": 0,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "natural"
+          }
+        },
+        {
+          "id": "soft-kit-open-hat-rr2",
+          "trigger": "attack",
+          "assetId": "vcsl-kit-open-hat-rr2",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 46,
+            "rootMidi": 46,
+            "maxMidi": 46
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "roundRobin": {
+            "group": "soft-kit-open-hat",
+            "index": 1,
+            "count": 2
+          },
+          "gainDb": -9,
+          "tuneCents": 0,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "natural"
+          }
+        },
+        {
+          "id": "soft-kit-cymbal-hit",
+          "trigger": "attack",
+          "assetId": "vcsl-kit-suspended-cymbal-hit",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 49,
+            "rootMidi": 49,
+            "maxMidi": 49
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": -12,
+          "tuneCents": 0,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "natural"
+          }
+        },
+        {
+          "id": "soft-kit-cymbal-stick",
+          "trigger": "attack",
+          "assetId": "vcsl-kit-suspended-cymbal-stick",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 51,
+            "rootMidi": 51,
+            "maxMidi": 51
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": -12,
+          "tuneCents": 0,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "natural"
+          }
+        }
+      ]
+    },
+    "calibrationGainDb": -20,
+    "releaseStatus": "listening-candidate"
+  },
+  "assets": [
+    {
+      "id": "vcsl-kit-bass-drum-v5-rr1",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VCSL",
+        "ref": "c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e",
+        "path": "Membranophones/Struck Membranophones/Bass Drum 1/BDrumNew_hit_v5_rr1_Sum.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Membranophones/Struck%20Membranophones/Bass%20Drum%201/BDrumNew_hit_v5_rr1_Sum.wav"
+      },
+      "localPath": "soundpacks/vcsl/percussion/BDrumNew_hit_v5_rr1_Sum.wav",
+      "bytes": 588092,
+      "sha256": "642aaf3375eaff1307973f7de3ccbf74d18e71fb3cf9412e021b08fc3bf1981c",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 147012,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VCSL/LICENSE.txt",
+        "assetScope": "the pinned VCSL repository asset"
+      },
+      "processingHistory": [
+        {
+          "operation": "byte-exact-copy",
+          "tool": "refrain-soundpack-fetch@0",
+          "inputSha256": "642aaf3375eaff1307973f7de3ccbf74d18e71fb3cf9412e021b08fc3bf1981c",
+          "outputSha256": "642aaf3375eaff1307973f7de3ccbf74d18e71fb3cf9412e021b08fc3bf1981c",
+          "parameters": {
+            "modified": false
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "vcsl-kit-bass-drum-v5-rr2",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VCSL",
+        "ref": "c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e",
+        "path": "Membranophones/Struck Membranophones/Bass Drum 1/BDrumNew_hit_v5_rr2_Sum.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Membranophones/Struck%20Membranophones/Bass%20Drum%201/BDrumNew_hit_v5_rr2_Sum.wav"
+      },
+      "localPath": "soundpacks/vcsl/percussion/BDrumNew_hit_v5_rr2_Sum.wav",
+      "bytes": 614388,
+      "sha256": "a83943f8125ae39469ef5dab1d0be2fe3145c6842c0621b27be5d86aa44b325d",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 153586,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VCSL/LICENSE.txt",
+        "assetScope": "the pinned VCSL repository asset"
+      },
+      "processingHistory": [
+        {
+          "operation": "byte-exact-copy",
+          "tool": "refrain-soundpack-fetch@0",
+          "inputSha256": "a83943f8125ae39469ef5dab1d0be2fe3145c6842c0621b27be5d86aa44b325d",
+          "outputSha256": "a83943f8125ae39469ef5dab1d0be2fe3145c6842c0621b27be5d86aa44b325d",
+          "parameters": {
+            "modified": false
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "vcsl-kit-snare-v6-rr1",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VCSL",
+        "ref": "c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e",
+        "path": "Membranophones/Struck Membranophones/Snare Drum, Modern 1/Snare2_HitSN_v6_rr1_Mid.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Membranophones/Struck%20Membranophones/Snare%20Drum%2C%20Modern%201/Snare2_HitSN_v6_rr1_Mid.wav"
+      },
+      "localPath": "soundpacks/vcsl/percussion/Snare2_HitSN_v6_rr1_Mid.wav",
+      "bytes": 240660,
+      "sha256": "ca0ee01347176a65f9d7e361203a61e736fa14acb2a743df355a4bded1ee40bd",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 60154,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VCSL/LICENSE.txt",
+        "assetScope": "the pinned VCSL repository asset"
+      },
+      "processingHistory": [
+        {
+          "operation": "byte-exact-copy",
+          "tool": "refrain-soundpack-fetch@0",
+          "inputSha256": "ca0ee01347176a65f9d7e361203a61e736fa14acb2a743df355a4bded1ee40bd",
+          "outputSha256": "ca0ee01347176a65f9d7e361203a61e736fa14acb2a743df355a4bded1ee40bd",
+          "parameters": {
+            "modified": false
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "vcsl-kit-snare-v6-rr2",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VCSL",
+        "ref": "c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e",
+        "path": "Membranophones/Struck Membranophones/Snare Drum, Modern 1/Snare2_HitSN_v6_rr2_Mid.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Membranophones/Struck%20Membranophones/Snare%20Drum%2C%20Modern%201/Snare2_HitSN_v6_rr2_Mid.wav"
+      },
+      "localPath": "soundpacks/vcsl/percussion/Snare2_HitSN_v6_rr2_Mid.wav",
+      "bytes": 241176,
+      "sha256": "95105301c2eff6649f1983c7b2cb4bed78b310b500c7d5a0f708ac0c9c45edfc",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 60283,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VCSL/LICENSE.txt",
+        "assetScope": "the pinned VCSL repository asset"
+      },
+      "processingHistory": [
+        {
+          "operation": "byte-exact-copy",
+          "tool": "refrain-soundpack-fetch@0",
+          "inputSha256": "95105301c2eff6649f1983c7b2cb4bed78b310b500c7d5a0f708ac0c9c45edfc",
+          "outputSha256": "95105301c2eff6649f1983c7b2cb4bed78b310b500c7d5a0f708ac0c9c45edfc",
+          "parameters": {
+            "modified": false
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "vcsl-kit-closed-hat-v2-rr1",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VCSL",
+        "ref": "c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e",
+        "path": "Idiophones/Struck Idiophones/Hi-Hat Cymbal/HiHat_HitC_v2_rr1_Mid.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Idiophones/Struck%20Idiophones/Hi-Hat%20Cymbal/HiHat_HitC_v2_rr1_Mid.wav"
+      },
+      "localPath": "soundpacks/vcsl/percussion/HiHat_HitC_v2_rr1_Mid.wav",
+      "bytes": 247272,
+      "sha256": "e1fb54c9a030800038abcebbed1c056fb74bdeec627315f3cd5fd893c6e6b031",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 61792,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VCSL/LICENSE.txt",
+        "assetScope": "the pinned VCSL repository asset"
+      },
+      "processingHistory": [
+        {
+          "operation": "byte-exact-copy",
+          "tool": "refrain-soundpack-fetch@0",
+          "inputSha256": "e1fb54c9a030800038abcebbed1c056fb74bdeec627315f3cd5fd893c6e6b031",
+          "outputSha256": "e1fb54c9a030800038abcebbed1c056fb74bdeec627315f3cd5fd893c6e6b031",
+          "parameters": {
+            "modified": false
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "vcsl-kit-closed-hat-v2-rr2",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VCSL",
+        "ref": "c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e",
+        "path": "Idiophones/Struck Idiophones/Hi-Hat Cymbal/HiHat_HitC_v2_rr2_Mid.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Idiophones/Struck%20Idiophones/Hi-Hat%20Cymbal/HiHat_HitC_v2_rr2_Mid.wav"
+      },
+      "localPath": "soundpacks/vcsl/percussion/HiHat_HitC_v2_rr2_Mid.wav",
+      "bytes": 250072,
+      "sha256": "72830eafed387f4b4b5904d4d6f1da23e13b48986fa1bc09d7c5771eafbb3a1a",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 62492,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VCSL/LICENSE.txt",
+        "assetScope": "the pinned VCSL repository asset"
+      },
+      "processingHistory": [
+        {
+          "operation": "byte-exact-copy",
+          "tool": "refrain-soundpack-fetch@0",
+          "inputSha256": "72830eafed387f4b4b5904d4d6f1da23e13b48986fa1bc09d7c5771eafbb3a1a",
+          "outputSha256": "72830eafed387f4b4b5904d4d6f1da23e13b48986fa1bc09d7c5771eafbb3a1a",
+          "parameters": {
+            "modified": false
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "vcsl-kit-open-hat-rr1",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VCSL",
+        "ref": "c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e",
+        "path": "Idiophones/Struck Idiophones/Hi-Hat Cymbal/HiHat_HitO_rr1_Mid.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Idiophones/Struck%20Idiophones/Hi-Hat%20Cymbal/HiHat_HitO_rr1_Mid.wav"
+      },
+      "localPath": "soundpacks/vcsl/percussion/HiHat_HitO_rr1_Mid.wav",
+      "bytes": 1026612,
+      "sha256": "fa492ec14cc6924b43ad5fcf9e9a0f406d926998835bde2eb5847cd15ad25be7",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 256627,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VCSL/LICENSE.txt",
+        "assetScope": "the pinned VCSL repository asset"
+      },
+      "processingHistory": [
+        {
+          "operation": "byte-exact-copy",
+          "tool": "refrain-soundpack-fetch@0",
+          "inputSha256": "fa492ec14cc6924b43ad5fcf9e9a0f406d926998835bde2eb5847cd15ad25be7",
+          "outputSha256": "fa492ec14cc6924b43ad5fcf9e9a0f406d926998835bde2eb5847cd15ad25be7",
+          "parameters": {
+            "modified": false
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "vcsl-kit-open-hat-rr2",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VCSL",
+        "ref": "c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e",
+        "path": "Idiophones/Struck Idiophones/Hi-Hat Cymbal/HiHat_HitO_rr2_Mid.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Idiophones/Struck%20Idiophones/Hi-Hat%20Cymbal/HiHat_HitO_rr2_Mid.wav"
+      },
+      "localPath": "soundpacks/vcsl/percussion/HiHat_HitO_rr2_Mid.wav",
+      "bytes": 1086072,
+      "sha256": "f71f21883f6fe5466d15610ef0e9241ba3851c821858a958f8a6a75bff774760",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 271492,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VCSL/LICENSE.txt",
+        "assetScope": "the pinned VCSL repository asset"
+      },
+      "processingHistory": [
+        {
+          "operation": "byte-exact-copy",
+          "tool": "refrain-soundpack-fetch@0",
+          "inputSha256": "f71f21883f6fe5466d15610ef0e9241ba3851c821858a958f8a6a75bff774760",
+          "outputSha256": "f71f21883f6fe5466d15610ef0e9241ba3851c821858a958f8a6a75bff774760",
+          "parameters": {
+            "modified": false
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "vcsl-kit-suspended-cymbal-hit",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VCSL",
+        "ref": "c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e",
+        "path": "Idiophones/Struck Idiophones/Suspended Cymbal 1/susCymb1_hit_mp1.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Idiophones/Struck%20Idiophones/Suspended%20Cymbal%201/susCymb1_hit_mp1.wav"
+      },
+      "localPath": "soundpacks/vcsl/percussion/susCymb1_hit_mp1.wav",
+      "bytes": 1981318,
+      "sha256": "426238ad2bfadab07895c7b8f89204fed623d865693cc02d72c68627a86df75e",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 495318,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VCSL/LICENSE.txt",
+        "assetScope": "the pinned VCSL repository asset"
+      },
+      "processingHistory": [
+        {
+          "operation": "byte-exact-copy",
+          "tool": "refrain-soundpack-fetch@0",
+          "inputSha256": "426238ad2bfadab07895c7b8f89204fed623d865693cc02d72c68627a86df75e",
+          "outputSha256": "426238ad2bfadab07895c7b8f89204fed623d865693cc02d72c68627a86df75e",
+          "parameters": {
+            "modified": false
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "vcsl-kit-suspended-cymbal-stick",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VCSL",
+        "ref": "c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e",
+        "path": "Idiophones/Struck Idiophones/Suspended Cymbal 1/susCymb1_hit_stick_mp1.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Idiophones/Struck%20Idiophones/Suspended%20Cymbal%201/susCymb1_hit_stick_mp1.wav"
+      },
+      "localPath": "soundpacks/vcsl/percussion/susCymb1_hit_stick_mp1.wav",
+      "bytes": 1399926,
+      "sha256": "17294cefa7f50367d1d9ae885a5f63a52eab372b90aeb7c3a8b400942cc95b9f",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 349970,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VCSL/LICENSE.txt",
+        "assetScope": "the pinned VCSL repository asset"
+      },
+      "processingHistory": [
+        {
+          "operation": "byte-exact-copy",
+          "tool": "refrain-soundpack-fetch@0",
+          "inputSha256": "17294cefa7f50367d1d9ae885a5f63a52eab372b90aeb7c3a8b400942cc95b9f",
+          "outputSha256": "17294cefa7f50367d1d9ae885a5f63a52eab372b90aeb7c3a8b400942cc95b9f",
+          "parameters": {
+            "modified": false
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    }
+  ],
+  "contentSha256": "69e1d3aed5f9befb445939bd344120bf95317671a98f4837a0d3c6081decd58b"
+}

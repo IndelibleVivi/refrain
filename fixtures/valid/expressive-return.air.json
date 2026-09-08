@@ -1,0 +1,74 @@
+{
+  "format": "air@0-experimental",
+  "title": "Hold, then answer",
+  "tempo": 68,
+  "meter": "4/4",
+  "key": "C major",
+  "motifs": {
+    "answer": "E5/4 G5/4 A5/4 G5/4"
+  },
+  "harmony": [
+    {
+      "id": "two-bars",
+      "chords": [
+        { "symbol": "Cmaj7", "beats": 4 },
+        { "symbol": "Am7", "beats": 4 }
+      ]
+    }
+  ],
+  "voices": [
+    {
+      "id": "lead",
+      "instrument": "flute",
+      "role": "lead",
+      "realize": [
+        {
+          "id": "held-a",
+          "kind": "literal",
+          "part": "C5/2",
+          "dynamic": "pp",
+          "tieToNext": true,
+          "section": "breath"
+        },
+        {
+          "id": "held-b",
+          "kind": "literal",
+          "part": "C5/2",
+          "dynamicCurve": { "from": "pp", "to": "mp" },
+          "articulation": "tenuto",
+          "section": "breath"
+        },
+        {
+          "id": "answering",
+          "kind": "motif",
+          "motif": "answer",
+          "dynamicCurve": { "from": "mp", "to": "f" },
+          "articulation": "legato",
+          "section": "answer"
+        }
+      ]
+    },
+    {
+      "id": "strings",
+      "instrument": "chamber_strings",
+      "role": "harmony",
+      "realize": [
+        {
+          "id": "strings-bed",
+          "kind": "chords",
+          "harmony": "two-bars",
+          "voicing": "open",
+          "register": { "min": "C3", "max": "C6" },
+          "rhythm": [4],
+          "voiceLeading": "nearest",
+          "dynamicCurve": { "from": "pp", "to": "mp" },
+          "articulation": "legato"
+        }
+      ]
+    }
+  ],
+  "sections": [
+    { "id": "breath", "startBar": 1, "bars": 1 },
+    { "id": "answer", "startBar": 2, "bars": 1 }
+  ]
+}

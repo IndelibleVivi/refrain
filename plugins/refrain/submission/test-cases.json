@@ -1,0 +1,66 @@
+{
+  "format": "refrain-plugin-submission-tests@0-experimental",
+  "status": "local-candidate",
+  "positive": [
+    {
+      "id": "root-gesture",
+      "prompt": "Hum me a brief original musical hello: curious, a little shy, and complete enough to stand on its own.",
+      "expectedInvocation": "Use refrain-air-authoring, author one complete AIR@1 root with a stable motif and a zero-asset synth identity, then call hum once.",
+      "expectedBehavior": "Return a successful exact Artifact@3 with audible public-Canvas performance and wait for the user's Play gesture.",
+      "expectedResultShape": "{ ok: true, artifact, summary, diagnostics, performanceStatus }",
+      "fixture": "No prior artifact required."
+    },
+    {
+      "id": "return-and-absence",
+      "prompt": "Answer this quiet reunion with an original two-section air. Let one small motif return changed, and leave a place where it is deliberately absent.",
+      "expectedInvocation": "Use refrain-air-authoring, author explicit sections, motif recurrence or transformation, and meaningful musical absence using zero-asset identities, then call hum.",
+      "expectedBehavior": "Return an audible exact Artifact@3 whose compact summary exposes the authored motif occurrences and sections.",
+      "expectedResultShape": "{ ok: true, artifact, summary, diagnostics, performanceStatus }",
+      "fixture": "No prior artifact required."
+    },
+    {
+      "id": "variation-from-artifact",
+      "prompt": "Take the exact Refrain artifact from the previous result and let its main motif return as a slower, lower variation in another synth body.",
+      "expectedInvocation": "Pass the prior Artifact@3 unchanged as from.parentArtifact, choose variation, author the transformed child AIR, and provide exact motif-link evidence before calling hum.",
+      "expectedBehavior": "Return a child Artifact@3 whose receipt records verified variation lineage without mutating or reconstructing the parent.",
+      "expectedResultShape": "{ ok: true, artifact, summary, diagnostics, performanceStatus }",
+      "fixture": "Run root-gesture first and preserve its exact artifact."
+    },
+    {
+      "id": "declared-reply",
+      "prompt": "Reply to this prior Refrain air without quoting it. Make the answer lighter, quicker, and unmistakably its own small voice.",
+      "expectedInvocation": "Pass the exact prior Artifact@3 unchanged, choose reply, author a distinct zero-asset child AIR, and call hum without inventing motif-link verification.",
+      "expectedBehavior": "Return an audible child Artifact@3 with declared reply lineage and a distinct logical air identity.",
+      "expectedResultShape": "{ ok: true, artifact, summary, diagnostics, performanceStatus }",
+      "fixture": "Any valid exact AIR@1 Artifact@3 from a prior hum result."
+    },
+    {
+      "id": "complete-synth-piece",
+      "prompt": "Write me an original one-minute Refrain piece with an opening, a real contrast, and a transformed return. Let bass, pulse, texture, and one clear lead each have a reason to be there.",
+      "expectedInvocation": "Use refrain-air-authoring to make a complete multi-section AIR@1 within the public zero-asset closure, then call hum once after the form is complete.",
+      "expectedBehavior": "Return an audible exact Artifact@3 with multi-section structure, bounded compact summary, manual playback, and portable export controls.",
+      "expectedResultShape": "{ ok: true, artifact, summary, diagnostics, performanceStatus }",
+      "fixture": "No prior artifact required."
+    }
+  ],
+  "negative": [
+    {
+      "id": "ordinary-information-request",
+      "prompt": "What is the capital of France?",
+      "expectedBehavior": "Do not activate refrain-air-authoring or call hum; answer the ordinary factual request directly.",
+      "why": "Music would be decorative and Refrain is unrelated to the requested task."
+    },
+    {
+      "id": "existing-recording-request",
+      "prompt": "Use Refrain to fetch and play the original studio recording of a commercial song.",
+      "expectedBehavior": "Do not call hum as though it were a catalog or streaming tool. Explain that Refrain authors original AIR music and offer an original response only if the user wants one.",
+      "why": "Refrain does not retrieve, stream, or reproduce existing recordings."
+    },
+    {
+      "id": "sample-backed-canvas-request",
+      "prompt": "Write a Refrain air for warm_piano and make sure it plays in the public zero-asset Canvas.",
+      "expectedBehavior": "Preserve warm_piano exactly if the user wants that canonical AIR. Return or explain the honest sample-origin-missing playback status; do not silently replace it with a synth. Clarify that a zero-asset synth identity is required only if public-Canvas playback is mandatory.",
+      "why": "Canonical musical identity and runtime asset availability are separate; silent rebinding would falsify the requested embodiment."
+    }
+  ]
+}

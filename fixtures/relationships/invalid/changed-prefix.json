@@ -1,0 +1,35 @@
+{
+  "format": "refrain-relationship-fixture@0-experimental",
+  "relation": "extend",
+  "parent": {
+    "format": "air@0-experimental",
+    "title": "One bar",
+    "tempo": 72,
+    "meter": "4/4",
+    "motifs": { "return": "A4/4 B4/4 D5/4 E5/4" },
+    "voices": [
+      {
+        "id": "lead",
+        "instrument": "warm_piano",
+        "role": "lead",
+        "part": "@return"
+      }
+    ]
+  },
+  "child": {
+    "format": "air@0-experimental",
+    "title": "Changed before extending",
+    "tempo": 72,
+    "meter": "4/4",
+    "motifs": { "return": "G4/4 B4/4 D5/4 E5/4" },
+    "voices": [
+      {
+        "id": "lead",
+        "instrument": "warm_piano",
+        "role": "lead",
+        "part": "@return | r/1"
+      }
+    ]
+  },
+  "expectedCode": "extension_prefix_mismatch"
+}

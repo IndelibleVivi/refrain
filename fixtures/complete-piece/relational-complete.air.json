@@ -1,0 +1,1806 @@
+{
+  "format": "air@0-experimental",
+  "title": "醒来以后，房间还记得",
+  "tempo": 80,
+  "meter": "4/4",
+  "key": "C minor, with an authored return to C",
+  "motifs": {
+    "near": "G4/8 Bb4/8 C5/4 r/4 D5/4",
+    "tide": "r/4 Eb4/8 G4/8 Bb4/4 G4/4",
+    "home": "[C4,G4]/2 r/4 Eb4/4",
+    "bell": "C4/4",
+    "sustain": "C5/1"
+  },
+  "harmony": [
+    {
+      "id": "arrival_changes",
+      "chords": [
+        {
+          "symbol": "Cm7",
+          "beats": 8
+        },
+        {
+          "symbol": "Abmaj7",
+          "beats": 8
+        },
+        {
+          "symbol": "Ebmaj7",
+          "beats": 8
+        },
+        {
+          "symbol": "Bb7",
+          "beats": 8
+        },
+        {
+          "symbol": "Fm7",
+          "beats": 8
+        },
+        {
+          "symbol": "Cm7",
+          "beats": 8
+        },
+        {
+          "symbol": "G7",
+          "beats": 8
+        },
+        {
+          "symbol": "Cm7",
+          "beats": 8
+        }
+      ]
+    },
+    {
+      "id": "nearness_changes",
+      "chords": [
+        {
+          "symbol": "Abmaj7",
+          "beats": 8
+        },
+        {
+          "symbol": "Ebmaj7",
+          "beats": 8
+        },
+        {
+          "symbol": "Bb7",
+          "beats": 8
+        },
+        {
+          "symbol": "Cm7",
+          "beats": 8
+        },
+        {
+          "symbol": "Fm7",
+          "beats": 8
+        },
+        {
+          "symbol": "Abmaj7",
+          "beats": 8
+        },
+        {
+          "symbol": "G7",
+          "beats": 8
+        },
+        {
+          "symbol": "Cm7",
+          "beats": 8
+        }
+      ]
+    },
+    {
+      "id": "distance_changes",
+      "chords": [
+        {
+          "symbol": "Fm7",
+          "beats": 8
+        },
+        {
+          "symbol": "Cm7",
+          "beats": 8
+        },
+        {
+          "symbol": "Abmaj7",
+          "beats": 8
+        },
+        {
+          "symbol": "Ebmaj7",
+          "beats": 8
+        },
+        {
+          "symbol": "Dm7b5",
+          "beats": 8
+        },
+        {
+          "symbol": "G7",
+          "beats": 8
+        },
+        {
+          "symbol": "Cm7",
+          "beats": 8
+        },
+        {
+          "symbol": "Cm7",
+          "beats": 8
+        }
+      ]
+    },
+    {
+      "id": "answer_changes",
+      "chords": [
+        {
+          "symbol": "Ebmaj7",
+          "beats": 8
+        },
+        {
+          "symbol": "Bb7",
+          "beats": 8
+        },
+        {
+          "symbol": "Cm7",
+          "beats": 8
+        },
+        {
+          "symbol": "Abmaj7",
+          "beats": 8
+        },
+        {
+          "symbol": "Fm7",
+          "beats": 8
+        },
+        {
+          "symbol": "G7",
+          "beats": 8
+        },
+        {
+          "symbol": "Cm7",
+          "beats": 8
+        },
+        {
+          "symbol": "G7",
+          "beats": 8
+        }
+      ]
+    },
+    {
+      "id": "return_changes",
+      "chords": [
+        {
+          "symbol": "Cm7",
+          "beats": 8
+        },
+        {
+          "symbol": "G7",
+          "beats": 8
+        },
+        {
+          "symbol": "Abmaj7",
+          "beats": 8
+        },
+        {
+          "symbol": "Ebmaj7",
+          "beats": 8
+        },
+        {
+          "symbol": "Fm7",
+          "beats": 8
+        },
+        {
+          "symbol": "Cm7",
+          "beats": 8
+        },
+        {
+          "symbol": "G7",
+          "beats": 8
+        },
+        {
+          "symbol": "Cm7",
+          "beats": 8
+        }
+      ]
+    },
+    {
+      "id": "afterglow_changes",
+      "chords": [
+        {
+          "symbol": "Abmaj7",
+          "beats": 8
+        },
+        {
+          "symbol": "Fm7",
+          "beats": 8
+        },
+        {
+          "symbol": "Cm7",
+          "beats": 8
+        },
+        {
+          "symbol": "Ebmaj7",
+          "beats": 8
+        },
+        {
+          "symbol": "Dm7b5",
+          "beats": 8
+        },
+        {
+          "symbol": "G7",
+          "beats": 8
+        },
+        {
+          "symbol": "Cm7",
+          "beats": 8
+        },
+        {
+          "symbol": "Cm7",
+          "beats": 8
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "id": "arrival",
+      "startBar": 1,
+      "bars": 16
+    },
+    {
+      "id": "nearness",
+      "startBar": 17,
+      "bars": 16
+    },
+    {
+      "id": "distance",
+      "startBar": 33,
+      "bars": 16
+    },
+    {
+      "id": "answer",
+      "startBar": 49,
+      "bars": 16
+    },
+    {
+      "id": "return",
+      "startBar": 65,
+      "bars": 16
+    },
+    {
+      "id": "afterglow",
+      "startBar": 81,
+      "bars": 16
+    }
+  ],
+  "voices": [
+    {
+      "id": "lead",
+      "instrument": "warm_piano",
+      "role": "lead",
+      "gainDb": -2,
+      "pan": -0.08,
+      "realize": [
+        {
+          "id": "arrival_near",
+          "kind": "motif",
+          "motif": "near",
+          "section": "arrival",
+          "repeat": 4,
+          "dynamic": "p",
+          "articulation": "legato"
+        },
+        {
+          "id": "arrival_breath_a",
+          "kind": "rest",
+          "section": "arrival",
+          "beats": 8
+        },
+        {
+          "id": "arrival_tide",
+          "kind": "motif",
+          "motif": "tide",
+          "section": "arrival",
+          "repeat": 4,
+          "transform": {
+            "inversion": true
+          },
+          "dynamic": "mp",
+          "articulation": "legato"
+        },
+        {
+          "id": "arrival_breath_b",
+          "kind": "rest",
+          "section": "arrival",
+          "beats": 8
+        },
+        {
+          "id": "arrival_home",
+          "kind": "motif",
+          "motif": "home",
+          "section": "arrival",
+          "repeat": 4,
+          "transform": {
+            "transpose": -2
+          },
+          "dynamic": "mf",
+          "articulation": "legato"
+        },
+        {
+          "id": "nearness_near",
+          "kind": "motif",
+          "motif": "near",
+          "section": "nearness",
+          "repeat": 4,
+          "transform": {
+            "transpose": 2
+          },
+          "dynamic": "mp",
+          "articulation": "legato"
+        },
+        {
+          "id": "nearness_breath_a",
+          "kind": "rest",
+          "section": "nearness",
+          "beats": 8
+        },
+        {
+          "id": "nearness_tide",
+          "kind": "motif",
+          "motif": "tide",
+          "section": "nearness",
+          "repeat": 4,
+          "transform": {
+            "retrograde": true
+          },
+          "dynamic": "mp",
+          "articulation": "legato"
+        },
+        {
+          "id": "nearness_breath_b",
+          "kind": "rest",
+          "section": "nearness",
+          "beats": 8
+        },
+        {
+          "id": "nearness_home",
+          "kind": "motif",
+          "motif": "home",
+          "section": "nearness",
+          "repeat": 4,
+          "transform": {
+            "transpose": -1
+          },
+          "dynamic": "mf",
+          "articulation": "legato"
+        },
+        {
+          "id": "distance_near",
+          "kind": "motif",
+          "motif": "near",
+          "section": "distance",
+          "repeat": 4,
+          "transform": {
+            "inversion": true
+          },
+          "dynamic": "mp",
+          "articulation": "legato"
+        },
+        {
+          "id": "distance_breath_a",
+          "kind": "rest",
+          "section": "distance",
+          "beats": 8
+        },
+        {
+          "id": "distance_tide",
+          "kind": "motif",
+          "motif": "tide",
+          "section": "distance",
+          "repeat": 4,
+          "transform": {
+            "inversion": true
+          },
+          "dynamic": "p",
+          "articulation": "legato"
+        },
+        {
+          "id": "distance_breath_b",
+          "kind": "rest",
+          "section": "distance",
+          "beats": 8
+        },
+        {
+          "id": "distance_home",
+          "kind": "motif",
+          "motif": "home",
+          "section": "distance",
+          "repeat": 4,
+          "transform": {
+            "transpose": 0
+          },
+          "dynamic": "mf",
+          "articulation": "legato"
+        },
+        {
+          "id": "answer_near",
+          "kind": "motif",
+          "motif": "near",
+          "section": "answer",
+          "repeat": 4,
+          "transform": {
+            "transpose": 5,
+            "retrograde": true
+          },
+          "dynamic": "f",
+          "articulation": "legato"
+        },
+        {
+          "id": "answer_breath_a",
+          "kind": "rest",
+          "section": "answer",
+          "beats": 8
+        },
+        {
+          "id": "answer_tide",
+          "kind": "motif",
+          "motif": "tide",
+          "section": "answer",
+          "repeat": 4,
+          "transform": {
+            "retrograde": true
+          },
+          "dynamic": "mp",
+          "articulation": "legato"
+        },
+        {
+          "id": "answer_breath_b",
+          "kind": "rest",
+          "section": "answer",
+          "beats": 8
+        },
+        {
+          "id": "answer_home",
+          "kind": "motif",
+          "motif": "home",
+          "section": "answer",
+          "repeat": 4,
+          "transform": {
+            "transpose": 1
+          },
+          "dynamic": "mf",
+          "articulation": "legato"
+        },
+        {
+          "id": "return_near",
+          "kind": "motif",
+          "motif": "near",
+          "section": "return",
+          "repeat": 4,
+          "transform": {
+            "transpose": -5,
+            "inversion": true
+          },
+          "dynamic": "mp",
+          "articulation": "legato"
+        },
+        {
+          "id": "return_breath_a",
+          "kind": "rest",
+          "section": "return",
+          "beats": 8
+        },
+        {
+          "id": "return_tide",
+          "kind": "motif",
+          "motif": "tide",
+          "section": "return",
+          "repeat": 4,
+          "transform": {
+            "inversion": true
+          },
+          "dynamic": "mp",
+          "articulation": "legato"
+        },
+        {
+          "id": "return_breath_b",
+          "kind": "rest",
+          "section": "return",
+          "beats": 8
+        },
+        {
+          "id": "return_home",
+          "kind": "motif",
+          "motif": "home",
+          "section": "return",
+          "repeat": 4,
+          "transform": {
+            "transpose": 2
+          },
+          "dynamic": "mf",
+          "articulation": "legato"
+        },
+        {
+          "id": "afterglow_near",
+          "kind": "motif",
+          "motif": "near",
+          "section": "afterglow",
+          "repeat": 4,
+          "dynamic": "mp",
+          "articulation": "legato"
+        },
+        {
+          "id": "afterglow_breath_a",
+          "kind": "rest",
+          "section": "afterglow",
+          "beats": 8
+        },
+        {
+          "id": "afterglow_tide",
+          "kind": "motif",
+          "motif": "tide",
+          "section": "afterglow",
+          "repeat": 4,
+          "transform": {
+            "retrograde": true
+          },
+          "dynamic": "mp",
+          "articulation": "legato"
+        },
+        {
+          "id": "afterglow_breath_b",
+          "kind": "rest",
+          "section": "afterglow",
+          "beats": 8
+        },
+        {
+          "id": "afterglow_home",
+          "kind": "motif",
+          "motif": "home",
+          "section": "afterglow",
+          "repeat": 4,
+          "dynamic": "p",
+          "articulation": "legato"
+        }
+      ]
+    },
+    {
+      "id": "harp",
+      "instrument": "harp",
+      "role": "counter",
+      "gainDb": -5,
+      "pan": 0.28,
+      "realize": [
+        {
+          "id": "arrival_harp",
+          "kind": "arpeggio",
+          "harmony": "arrival_changes",
+          "degrees": [1, 5, 3, 7],
+          "stepBeats": 1,
+          "octaveSpan": 2,
+          "register": {
+            "min": "C3",
+            "max": "C6"
+          },
+          "section": "arrival",
+          "dynamicCurve": {
+            "from": "p",
+            "to": "mp"
+          },
+          "articulation": "tenuto"
+        },
+        {
+          "id": "nearness_harp",
+          "kind": "arpeggio",
+          "harmony": "nearness_changes",
+          "degrees": [1, 5, 3, 7],
+          "stepBeats": 1,
+          "octaveSpan": 2,
+          "register": {
+            "min": "C3",
+            "max": "C6"
+          },
+          "section": "nearness",
+          "dynamicCurve": {
+            "from": "p",
+            "to": "mp"
+          },
+          "articulation": "tenuto"
+        },
+        {
+          "id": "distance_harp",
+          "kind": "arpeggio",
+          "harmony": "distance_changes",
+          "degrees": [1, 5, 3, 7],
+          "stepBeats": 1,
+          "octaveSpan": 2,
+          "register": {
+            "min": "C3",
+            "max": "C6"
+          },
+          "section": "distance",
+          "dynamicCurve": {
+            "from": "pp",
+            "to": "mp"
+          },
+          "articulation": "tenuto"
+        },
+        {
+          "id": "answer_harp",
+          "kind": "arpeggio",
+          "harmony": "answer_changes",
+          "degrees": [1, 5, 3, 7],
+          "stepBeats": 1,
+          "octaveSpan": 2,
+          "register": {
+            "min": "C3",
+            "max": "C6"
+          },
+          "section": "answer",
+          "dynamicCurve": {
+            "from": "p",
+            "to": "mf"
+          },
+          "articulation": "tenuto"
+        },
+        {
+          "id": "return_harp",
+          "kind": "arpeggio",
+          "harmony": "return_changes",
+          "degrees": [1, 5, 3, 7],
+          "stepBeats": 1,
+          "octaveSpan": 2,
+          "register": {
+            "min": "C3",
+            "max": "C6"
+          },
+          "section": "return",
+          "dynamicCurve": {
+            "from": "p",
+            "to": "mp"
+          },
+          "articulation": "tenuto"
+        },
+        {
+          "id": "afterglow_harp",
+          "kind": "arpeggio",
+          "harmony": "afterglow_changes",
+          "degrees": [1, 5, 3, 7],
+          "stepBeats": 1,
+          "octaveSpan": 2,
+          "register": {
+            "min": "C3",
+            "max": "C6"
+          },
+          "section": "afterglow",
+          "dynamicCurve": {
+            "from": "p",
+            "to": "mp"
+          },
+          "articulation": "tenuto"
+        }
+      ]
+    },
+    {
+      "id": "strings",
+      "instrument": "air_pad",
+      "role": "harmony",
+      "gainDb": -7,
+      "pan": 0,
+      "realize": [
+        {
+          "id": "arrival_strings",
+          "kind": "chords",
+          "harmony": "arrival_changes",
+          "voicing": "close",
+          "register": {
+            "min": "C3",
+            "max": "C6"
+          },
+          "rhythm": [4],
+          "voiceLeading": "nearest",
+          "section": "arrival",
+          "dynamicCurve": {
+            "from": "pp",
+            "to": "mp"
+          },
+          "articulation": "legato"
+        },
+        {
+          "id": "nearness_strings",
+          "kind": "chords",
+          "harmony": "nearness_changes",
+          "voicing": "close",
+          "register": {
+            "min": "C3",
+            "max": "C6"
+          },
+          "rhythm": [4],
+          "voiceLeading": "nearest",
+          "section": "nearness",
+          "dynamicCurve": {
+            "from": "p",
+            "to": "mp"
+          },
+          "articulation": "legato"
+        },
+        {
+          "id": "distance_strings",
+          "kind": "chords",
+          "harmony": "distance_changes",
+          "voicing": "close",
+          "register": {
+            "min": "C3",
+            "max": "C6"
+          },
+          "rhythm": [4],
+          "voiceLeading": "nearest",
+          "section": "distance",
+          "dynamicCurve": {
+            "from": "p",
+            "to": "mp"
+          },
+          "articulation": "legato"
+        },
+        {
+          "id": "answer_strings",
+          "kind": "chords",
+          "harmony": "answer_changes",
+          "voicing": "close",
+          "register": {
+            "min": "C3",
+            "max": "C6"
+          },
+          "rhythm": [4],
+          "voiceLeading": "nearest",
+          "section": "answer",
+          "dynamicCurve": {
+            "from": "p",
+            "to": "f"
+          },
+          "articulation": "legato"
+        },
+        {
+          "id": "return_strings",
+          "kind": "chords",
+          "harmony": "return_changes",
+          "voicing": "close",
+          "register": {
+            "min": "C3",
+            "max": "C6"
+          },
+          "rhythm": [4],
+          "voiceLeading": "nearest",
+          "section": "return",
+          "dynamicCurve": {
+            "from": "p",
+            "to": "mp"
+          },
+          "articulation": "legato"
+        },
+        {
+          "id": "afterglow_strings",
+          "kind": "chords",
+          "harmony": "afterglow_changes",
+          "voicing": "close",
+          "register": {
+            "min": "C3",
+            "max": "C6"
+          },
+          "rhythm": [4],
+          "voiceLeading": "nearest",
+          "section": "afterglow",
+          "dynamicCurve": {
+            "from": "p",
+            "to": "mp"
+          },
+          "articulation": "legato"
+        }
+      ]
+    },
+    {
+      "id": "cello",
+      "instrument": "solo_cello",
+      "role": "counter",
+      "gainDb": -4,
+      "pan": -0.3,
+      "realize": [
+        {
+          "id": "arrival_cello_near",
+          "kind": "motif",
+          "motif": "near",
+          "section": "arrival",
+          "repeat": 4,
+          "transform": {
+            "transpose": -12,
+            "stretch": 2
+          },
+          "dynamic": "p",
+          "articulation": "legato"
+        },
+        {
+          "id": "arrival_cello_wait",
+          "kind": "rest",
+          "section": "arrival",
+          "beats": 16
+        },
+        {
+          "id": "arrival_cello_home",
+          "kind": "motif",
+          "motif": "home",
+          "section": "arrival",
+          "repeat": 2,
+          "transform": {
+            "transpose": -12,
+            "stretch": 2
+          },
+          "dynamic": "mp",
+          "articulation": "legato"
+        },
+        {
+          "id": "nearness_cello_near",
+          "kind": "motif",
+          "motif": "near",
+          "section": "nearness",
+          "repeat": 4,
+          "transform": {
+            "transpose": -12,
+            "stretch": 2
+          },
+          "dynamic": "p",
+          "articulation": "legato"
+        },
+        {
+          "id": "nearness_cello_wait",
+          "kind": "rest",
+          "section": "nearness",
+          "beats": 16
+        },
+        {
+          "id": "nearness_cello_home",
+          "kind": "motif",
+          "motif": "home",
+          "section": "nearness",
+          "repeat": 2,
+          "transform": {
+            "transpose": -12,
+            "stretch": 2
+          },
+          "dynamic": "mp",
+          "articulation": "legato"
+        },
+        {
+          "id": "distance_cello_near",
+          "kind": "motif",
+          "motif": "near",
+          "section": "distance",
+          "repeat": 4,
+          "transform": {
+            "transpose": -12,
+            "stretch": 2,
+            "inversion": true
+          },
+          "dynamic": "p",
+          "articulation": "legato"
+        },
+        {
+          "id": "distance_cello_wait",
+          "kind": "rest",
+          "section": "distance",
+          "beats": 16
+        },
+        {
+          "id": "distance_cello_home",
+          "kind": "motif",
+          "motif": "home",
+          "section": "distance",
+          "repeat": 2,
+          "transform": {
+            "transpose": -12,
+            "stretch": 2
+          },
+          "dynamic": "mp",
+          "articulation": "legato"
+        },
+        {
+          "id": "answer_cello_near",
+          "kind": "motif",
+          "motif": "near",
+          "section": "answer",
+          "repeat": 4,
+          "transform": {
+            "transpose": -12,
+            "stretch": 2
+          },
+          "dynamic": "mf",
+          "articulation": "legato"
+        },
+        {
+          "id": "answer_cello_wait",
+          "kind": "rest",
+          "section": "answer",
+          "beats": 16
+        },
+        {
+          "id": "answer_cello_home",
+          "kind": "motif",
+          "motif": "home",
+          "section": "answer",
+          "repeat": 2,
+          "transform": {
+            "transpose": -12,
+            "stretch": 2
+          },
+          "dynamic": "mp",
+          "articulation": "legato"
+        },
+        {
+          "id": "return_cello_near",
+          "kind": "motif",
+          "motif": "near",
+          "section": "return",
+          "repeat": 4,
+          "transform": {
+            "transpose": -12,
+            "stretch": 2
+          },
+          "dynamic": "p",
+          "articulation": "legato"
+        },
+        {
+          "id": "return_cello_wait",
+          "kind": "rest",
+          "section": "return",
+          "beats": 16
+        },
+        {
+          "id": "return_cello_home",
+          "kind": "motif",
+          "motif": "home",
+          "section": "return",
+          "repeat": 2,
+          "transform": {
+            "transpose": -12,
+            "stretch": 2
+          },
+          "dynamic": "mp",
+          "articulation": "legato"
+        },
+        {
+          "id": "afterglow_cello_near",
+          "kind": "motif",
+          "motif": "near",
+          "section": "afterglow",
+          "repeat": 4,
+          "transform": {
+            "transpose": -12,
+            "stretch": 2
+          },
+          "dynamic": "p",
+          "articulation": "legato"
+        },
+        {
+          "id": "afterglow_cello_wait",
+          "kind": "rest",
+          "section": "afterglow",
+          "beats": 16
+        },
+        {
+          "id": "afterglow_cello_home",
+          "kind": "motif",
+          "motif": "home",
+          "section": "afterglow",
+          "repeat": 2,
+          "transform": {
+            "transpose": -12,
+            "stretch": 2
+          },
+          "dynamic": "pp",
+          "articulation": "legato"
+        }
+      ]
+    },
+    {
+      "id": "flute",
+      "instrument": "flute",
+      "role": "counter",
+      "gainDb": -7,
+      "pan": 0.4,
+      "realize": [
+        {
+          "id": "arrival_flute_wait_a",
+          "kind": "rest",
+          "section": "arrival",
+          "beats": 16
+        },
+        {
+          "id": "arrival_flute_tide",
+          "kind": "motif",
+          "motif": "tide",
+          "section": "arrival",
+          "repeat": 4,
+          "transform": {
+            "transpose": 12
+          },
+          "dynamic": "pp",
+          "articulation": "legato"
+        },
+        {
+          "id": "arrival_flute_wait_b",
+          "kind": "rest",
+          "section": "arrival",
+          "beats": 16
+        },
+        {
+          "id": "arrival_flute_near",
+          "kind": "motif",
+          "motif": "near",
+          "section": "arrival",
+          "repeat": 4,
+          "transform": {
+            "transpose": 12
+          },
+          "dynamic": "p",
+          "articulation": "legato"
+        },
+        {
+          "id": "nearness_flute_wait_a",
+          "kind": "rest",
+          "section": "nearness",
+          "beats": 16
+        },
+        {
+          "id": "nearness_flute_tide",
+          "kind": "motif",
+          "motif": "tide",
+          "section": "nearness",
+          "repeat": 4,
+          "transform": {
+            "transpose": 12,
+            "inversion": true
+          },
+          "dynamic": "pp",
+          "articulation": "legato"
+        },
+        {
+          "id": "nearness_flute_wait_b",
+          "kind": "rest",
+          "section": "nearness",
+          "beats": 16
+        },
+        {
+          "id": "nearness_flute_near",
+          "kind": "motif",
+          "motif": "near",
+          "section": "nearness",
+          "repeat": 4,
+          "transform": {
+            "transpose": 12
+          },
+          "dynamic": "p",
+          "articulation": "legato"
+        },
+        {
+          "id": "distance_flute_wait_a",
+          "kind": "rest",
+          "section": "distance",
+          "beats": 16
+        },
+        {
+          "id": "distance_flute_tide",
+          "kind": "motif",
+          "motif": "tide",
+          "section": "distance",
+          "repeat": 4,
+          "transform": {
+            "transpose": 12
+          },
+          "dynamic": "p",
+          "articulation": "legato"
+        },
+        {
+          "id": "distance_flute_wait_b",
+          "kind": "rest",
+          "section": "distance",
+          "beats": 16
+        },
+        {
+          "id": "distance_flute_near",
+          "kind": "motif",
+          "motif": "near",
+          "section": "distance",
+          "repeat": 4,
+          "transform": {
+            "transpose": 12
+          },
+          "dynamic": "p",
+          "articulation": "legato"
+        },
+        {
+          "id": "answer_flute_wait_a",
+          "kind": "rest",
+          "section": "answer",
+          "beats": 16
+        },
+        {
+          "id": "answer_flute_tide",
+          "kind": "motif",
+          "motif": "tide",
+          "section": "answer",
+          "repeat": 4,
+          "transform": {
+            "transpose": 12,
+            "inversion": true
+          },
+          "dynamic": "p",
+          "articulation": "legato"
+        },
+        {
+          "id": "answer_flute_wait_b",
+          "kind": "rest",
+          "section": "answer",
+          "beats": 16
+        },
+        {
+          "id": "answer_flute_near",
+          "kind": "motif",
+          "motif": "near",
+          "section": "answer",
+          "repeat": 4,
+          "transform": {
+            "transpose": 12,
+            "retrograde": true
+          },
+          "dynamic": "mf",
+          "articulation": "legato"
+        },
+        {
+          "id": "return_flute_wait_a",
+          "kind": "rest",
+          "section": "return",
+          "beats": 16
+        },
+        {
+          "id": "return_flute_tide",
+          "kind": "motif",
+          "motif": "tide",
+          "section": "return",
+          "repeat": 4,
+          "transform": {
+            "transpose": 12
+          },
+          "dynamic": "p",
+          "articulation": "legato"
+        },
+        {
+          "id": "return_flute_wait_b",
+          "kind": "rest",
+          "section": "return",
+          "beats": 16
+        },
+        {
+          "id": "return_flute_near",
+          "kind": "motif",
+          "motif": "near",
+          "section": "return",
+          "repeat": 4,
+          "transform": {
+            "transpose": 12
+          },
+          "dynamic": "p",
+          "articulation": "legato"
+        },
+        {
+          "id": "afterglow_flute_wait_a",
+          "kind": "rest",
+          "section": "afterglow",
+          "beats": 16
+        },
+        {
+          "id": "afterglow_flute_tide",
+          "kind": "motif",
+          "motif": "tide",
+          "section": "afterglow",
+          "repeat": 4,
+          "transform": {
+            "transpose": 12,
+            "inversion": true
+          },
+          "dynamic": "p",
+          "articulation": "legato"
+        },
+        {
+          "id": "afterglow_flute_wait_b",
+          "kind": "rest",
+          "section": "afterglow",
+          "beats": 16
+        },
+        {
+          "id": "afterglow_flute_near",
+          "kind": "motif",
+          "motif": "near",
+          "section": "afterglow",
+          "repeat": 4,
+          "transform": {
+            "transpose": 12
+          },
+          "dynamic": "p",
+          "articulation": "legato"
+        }
+      ]
+    },
+    {
+      "id": "clarinet",
+      "instrument": "clarinet",
+      "role": "counter",
+      "gainDb": -6,
+      "pan": 0.18,
+      "realize": [
+        {
+          "id": "arrival_clarinet_near",
+          "kind": "motif",
+          "motif": "near",
+          "section": "arrival",
+          "repeat": 8,
+          "transform": {
+            "transpose": -5
+          },
+          "dynamic": "mp",
+          "articulation": "legato"
+        },
+        {
+          "id": "arrival_clarinet_wait",
+          "kind": "rest",
+          "section": "arrival",
+          "beats": 16
+        },
+        {
+          "id": "arrival_clarinet_tide",
+          "kind": "motif",
+          "motif": "tide",
+          "section": "arrival",
+          "repeat": 4,
+          "transform": {
+            "transpose": -7
+          },
+          "dynamic": "p",
+          "articulation": "legato"
+        },
+        {
+          "id": "nearness_clarinet_near",
+          "kind": "motif",
+          "motif": "near",
+          "section": "nearness",
+          "repeat": 8,
+          "transform": {
+            "transpose": -5
+          },
+          "dynamic": "mp",
+          "articulation": "legato"
+        },
+        {
+          "id": "nearness_clarinet_wait",
+          "kind": "rest",
+          "section": "nearness",
+          "beats": 16
+        },
+        {
+          "id": "nearness_clarinet_tide",
+          "kind": "motif",
+          "motif": "tide",
+          "section": "nearness",
+          "repeat": 4,
+          "transform": {
+            "transpose": -7
+          },
+          "dynamic": "p",
+          "articulation": "legato"
+        },
+        {
+          "id": "distance_clarinet_near",
+          "kind": "motif",
+          "motif": "near",
+          "section": "distance",
+          "repeat": 8,
+          "transform": {
+            "transpose": -5,
+            "inversion": true
+          },
+          "dynamic": "p",
+          "articulation": "legato"
+        },
+        {
+          "id": "distance_clarinet_wait",
+          "kind": "rest",
+          "section": "distance",
+          "beats": 16
+        },
+        {
+          "id": "distance_clarinet_tide",
+          "kind": "motif",
+          "motif": "tide",
+          "section": "distance",
+          "repeat": 4,
+          "transform": {
+            "transpose": -7
+          },
+          "dynamic": "p",
+          "articulation": "legato"
+        },
+        {
+          "id": "answer_clarinet_near",
+          "kind": "motif",
+          "motif": "near",
+          "section": "answer",
+          "repeat": 8,
+          "transform": {
+            "transpose": -5
+          },
+          "dynamic": "mp",
+          "articulation": "legato"
+        },
+        {
+          "id": "answer_clarinet_wait",
+          "kind": "rest",
+          "section": "answer",
+          "beats": 16
+        },
+        {
+          "id": "answer_clarinet_tide",
+          "kind": "motif",
+          "motif": "tide",
+          "section": "answer",
+          "repeat": 4,
+          "transform": {
+            "transpose": -7
+          },
+          "dynamic": "p",
+          "articulation": "legato"
+        },
+        {
+          "id": "return_clarinet_near",
+          "kind": "motif",
+          "motif": "near",
+          "section": "return",
+          "repeat": 8,
+          "transform": {
+            "transpose": -5
+          },
+          "dynamic": "mp",
+          "articulation": "legato"
+        },
+        {
+          "id": "return_clarinet_wait",
+          "kind": "rest",
+          "section": "return",
+          "beats": 16
+        },
+        {
+          "id": "return_clarinet_tide",
+          "kind": "motif",
+          "motif": "tide",
+          "section": "return",
+          "repeat": 4,
+          "transform": {
+            "transpose": -7,
+            "retrograde": true
+          },
+          "dynamic": "p",
+          "articulation": "legato"
+        },
+        {
+          "id": "afterglow_clarinet_near",
+          "kind": "motif",
+          "motif": "near",
+          "section": "afterglow",
+          "repeat": 8,
+          "transform": {
+            "transpose": -5
+          },
+          "dynamic": "mp",
+          "articulation": "legato"
+        },
+        {
+          "id": "afterglow_clarinet_wait",
+          "kind": "rest",
+          "section": "afterglow",
+          "beats": 16
+        },
+        {
+          "id": "afterglow_clarinet_tide",
+          "kind": "motif",
+          "motif": "tide",
+          "section": "afterglow",
+          "repeat": 4,
+          "transform": {
+            "transpose": -7
+          },
+          "dynamic": "p",
+          "articulation": "legato"
+        }
+      ]
+    },
+    {
+      "id": "bass",
+      "instrument": "clean_bass",
+      "role": "bass",
+      "gainDb": -4,
+      "pan": -0.18,
+      "realize": [
+        {
+          "id": "arrival_bass",
+          "kind": "bass",
+          "harmony": "arrival_changes",
+          "degrees": [1, 5],
+          "stepBeats": 2,
+          "register": {
+            "min": "C2",
+            "max": "C4"
+          },
+          "slashBass": "honor",
+          "section": "arrival",
+          "dynamic": "mp",
+          "articulation": "tenuto"
+        },
+        {
+          "id": "nearness_bass",
+          "kind": "bass",
+          "harmony": "nearness_changes",
+          "degrees": [1, 5],
+          "stepBeats": 2,
+          "register": {
+            "min": "C2",
+            "max": "C4"
+          },
+          "slashBass": "honor",
+          "section": "nearness",
+          "dynamic": "mp",
+          "articulation": "tenuto"
+        },
+        {
+          "id": "distance_bass",
+          "kind": "bass",
+          "harmony": "distance_changes",
+          "degrees": [1, 5],
+          "stepBeats": 2,
+          "register": {
+            "min": "C2",
+            "max": "C4"
+          },
+          "slashBass": "honor",
+          "section": "distance",
+          "dynamic": "mp",
+          "articulation": "tenuto"
+        },
+        {
+          "id": "answer_bass",
+          "kind": "bass",
+          "harmony": "answer_changes",
+          "degrees": [1, 5],
+          "stepBeats": 2,
+          "register": {
+            "min": "C2",
+            "max": "C4"
+          },
+          "slashBass": "honor",
+          "section": "answer",
+          "dynamic": "mf",
+          "articulation": "tenuto"
+        },
+        {
+          "id": "return_bass",
+          "kind": "bass",
+          "harmony": "return_changes",
+          "degrees": [1, 5],
+          "stepBeats": 2,
+          "register": {
+            "min": "C2",
+            "max": "C4"
+          },
+          "slashBass": "honor",
+          "section": "return",
+          "dynamic": "mp",
+          "articulation": "tenuto"
+        },
+        {
+          "id": "afterglow_bass",
+          "kind": "bass",
+          "harmony": "afterglow_changes",
+          "degrees": [1, 5],
+          "stepBeats": 2,
+          "register": {
+            "min": "C2",
+            "max": "C4"
+          },
+          "slashBass": "honor",
+          "section": "afterglow",
+          "dynamic": "mp",
+          "articulation": "tenuto"
+        }
+      ]
+    },
+    {
+      "id": "percussion",
+      "instrument": "soft_percussion",
+      "role": "percussion",
+      "gainDb": -9,
+      "pan": 0.12,
+      "realize": [
+        {
+          "id": "arrival_percussion",
+          "kind": "drum_grid",
+          "resolution": 16,
+          "lanes": [
+            {
+              "note": "C2",
+              "pattern": "x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x..............."
+            },
+            {
+              "note": "D2",
+              "pattern": "................x...............................x...............................x...............................x...............................x...............................x...............................x...............................x..............."
+            },
+            {
+              "note": "F#2",
+              "pattern": "x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x......."
+            },
+            {
+              "note": "D#3",
+              "pattern": "............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x..."
+            }
+          ],
+          "section": "arrival",
+          "dynamic": "p"
+        },
+        {
+          "id": "nearness_percussion",
+          "kind": "drum_grid",
+          "resolution": 16,
+          "lanes": [
+            {
+              "note": "C2",
+              "pattern": "x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x..............."
+            },
+            {
+              "note": "D2",
+              "pattern": "................x...............................x...............................x...............................x...............................x...............................x...............................x...............................x..............."
+            },
+            {
+              "note": "F#2",
+              "pattern": "x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x......."
+            },
+            {
+              "note": "D#3",
+              "pattern": "....x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x..........."
+            }
+          ],
+          "section": "nearness",
+          "dynamic": "p"
+        },
+        {
+          "id": "distance_percussion",
+          "kind": "drum_grid",
+          "resolution": 16,
+          "lanes": [
+            {
+              "note": "C2",
+              "pattern": "x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x..............."
+            },
+            {
+              "note": "D2",
+              "pattern": "................x...............................x...............................x...............................x...............................x...............................x...............................x...............................x..............."
+            },
+            {
+              "note": "F#2",
+              "pattern": "x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x......."
+            },
+            {
+              "note": "D#3",
+              "pattern": "............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x..."
+            }
+          ],
+          "section": "distance",
+          "dynamic": "p"
+        },
+        {
+          "id": "answer_percussion",
+          "kind": "drum_grid",
+          "resolution": 16,
+          "lanes": [
+            {
+              "note": "C2",
+              "pattern": "x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x..............."
+            },
+            {
+              "note": "D2",
+              "pattern": "................x...............................x...............................x...............................x...............................x...............................x...............................x...............................x..............."
+            },
+            {
+              "note": "F#2",
+              "pattern": "x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x......."
+            },
+            {
+              "note": "D#3",
+              "pattern": "....x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x..........."
+            }
+          ],
+          "section": "answer",
+          "dynamic": "mf"
+        },
+        {
+          "id": "return_percussion",
+          "kind": "drum_grid",
+          "resolution": 16,
+          "lanes": [
+            {
+              "note": "C2",
+              "pattern": "x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x..............."
+            },
+            {
+              "note": "D2",
+              "pattern": "................x...............................x...............................x...............................x...............................x...............................x...............................x...............................x..............."
+            },
+            {
+              "note": "F#2",
+              "pattern": "x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x......."
+            },
+            {
+              "note": "D#3",
+              "pattern": "............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x..."
+            }
+          ],
+          "section": "return",
+          "dynamic": "p"
+        },
+        {
+          "id": "afterglow_percussion",
+          "kind": "drum_grid",
+          "resolution": 16,
+          "lanes": [
+            {
+              "note": "C2",
+              "pattern": "x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x..............."
+            },
+            {
+              "note": "D2",
+              "pattern": "................x...............................x...............................x...............................x...............................x...............................x...............................x...............................x..............."
+            },
+            {
+              "note": "F#2",
+              "pattern": "x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x.......x......."
+            },
+            {
+              "note": "D#3",
+              "pattern": "....x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x..........."
+            }
+          ],
+          "section": "afterglow",
+          "dynamic": "p"
+        }
+      ]
+    },
+    {
+      "id": "late_echo",
+      "instrument": "marimba",
+      "role": "texture",
+      "gainDb": -10,
+      "pan": 0.5,
+      "realize": [
+        {
+          "id": "arrival_echo_wait",
+          "kind": "rest",
+          "section": "arrival",
+          "beats": 64
+        },
+        {
+          "id": "nearness_echo_wait",
+          "kind": "rest",
+          "section": "nearness",
+          "beats": 64
+        },
+        {
+          "id": "distance_echo",
+          "kind": "motif",
+          "motif": "bell",
+          "section": "distance",
+          "repeat": 8,
+          "dynamic": "pp"
+        },
+        {
+          "id": "distance_echo_tail",
+          "kind": "rest",
+          "section": "distance",
+          "beats": 56
+        },
+        {
+          "id": "answer_echo_wait",
+          "kind": "rest",
+          "section": "answer",
+          "beats": 64
+        },
+        {
+          "id": "return_echo",
+          "kind": "motif",
+          "motif": "bell",
+          "section": "return",
+          "repeat": 16,
+          "dynamic": "p"
+        },
+        {
+          "id": "return_echo_tail",
+          "kind": "rest",
+          "section": "return",
+          "beats": 48
+        },
+        {
+          "id": "afterglow_echo_wait",
+          "kind": "rest",
+          "section": "afterglow",
+          "beats": 64
+        }
+      ]
+    },
+    {
+      "id": "late_sustain",
+      "instrument": "chamber_strings",
+      "role": "texture",
+      "gainDb": -12,
+      "pan": -0.52,
+      "realize": [
+        {
+          "id": "arrival_sustain_wait",
+          "kind": "rest",
+          "section": "arrival",
+          "beats": 64
+        },
+        {
+          "id": "nearness_sustain_wait",
+          "kind": "rest",
+          "section": "nearness",
+          "beats": 64
+        },
+        {
+          "id": "distance_sustain",
+          "kind": "motif",
+          "motif": "sustain",
+          "section": "distance",
+          "repeat": 1,
+          "transform": {
+            "stretch": 3
+          },
+          "dynamic": "pp",
+          "articulation": "legato"
+        },
+        {
+          "id": "distance_sustain_tail",
+          "kind": "rest",
+          "section": "distance",
+          "beats": 52
+        },
+        {
+          "id": "answer_sustain_wait",
+          "kind": "rest",
+          "section": "answer",
+          "beats": 64
+        },
+        {
+          "id": "return_sustain",
+          "kind": "motif",
+          "motif": "sustain",
+          "section": "return",
+          "repeat": 1,
+          "transform": {
+            "stretch": 3
+          },
+          "dynamic": "p",
+          "articulation": "legato"
+        },
+        {
+          "id": "return_sustain_tail",
+          "kind": "rest",
+          "section": "return",
+          "beats": 52
+        },
+        {
+          "id": "afterglow_sustain_wait",
+          "kind": "rest",
+          "section": "afterglow",
+          "beats": 64
+        }
+      ]
+    }
+  ]
+}

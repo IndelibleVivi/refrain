@@ -1,0 +1,588 @@
+{
+  "format": "refrain-candidate-shard@0-experimental",
+  "id": "marimba-vsco-full",
+  "candidateContentSha256": "a0285d6815659b861bc425476defc04b9cfbe3ff23df2929bfa01d6375bcf29d",
+  "candidate": {
+    "id": "marimba-vsco-full",
+    "instrumentId": "marimba",
+    "engine": "sampler",
+    "mapping": {
+      "type": "sample-map",
+      "playableMin": 45,
+      "playableMax": 96,
+      "midiFallbackProgram": 12,
+      "articulationFallbacks": {
+        "staccato": "none",
+        "tenuto": "none",
+        "accent": "none",
+        "legato": "none"
+      },
+      "regions": [
+        {
+          "id": "marimba-vsco-full-region-001",
+          "trigger": "attack",
+          "assetId": "marimba-vsco-full-marimba-hit-outrigger-b2-loud-01-a329138008da",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 57,
+            "rootMidi": 59,
+            "maxMidi": 61
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 6,
+          "tuneCents": 0,
+          "attackSeconds": 0.005,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 8
+          }
+        },
+        {
+          "id": "marimba-vsco-full-region-002",
+          "trigger": "attack",
+          "assetId": "marimba-vsco-full-marimba-hit-outrigger-b4-loud-01-d04aed262228",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 81,
+            "rootMidi": 83,
+            "maxMidi": 85
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 6,
+          "tuneCents": 0,
+          "attackSeconds": 0.005,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 8
+          }
+        },
+        {
+          "id": "marimba-vsco-full-region-003",
+          "trigger": "attack",
+          "assetId": "marimba-vsco-full-marimba-hit-outrigger-c2-loud-01-bfad3b0e57d0",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 45,
+            "rootMidi": 48,
+            "maxMidi": 51
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 6,
+          "tuneCents": 0,
+          "attackSeconds": 0.005,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 8
+          }
+        },
+        {
+          "id": "marimba-vsco-full-region-004",
+          "trigger": "attack",
+          "assetId": "marimba-vsco-full-marimba-hit-outrigger-c4-loud-01-4af539d47a45",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 69,
+            "rootMidi": 72,
+            "maxMidi": 75
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 6,
+          "tuneCents": 0,
+          "attackSeconds": 0.005,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 8
+          }
+        },
+        {
+          "id": "marimba-vsco-full-region-005",
+          "trigger": "attack",
+          "assetId": "marimba-vsco-full-marimba-hit-outrigger-c6-loud-01-2e42b1b6f692",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 93,
+            "rootMidi": 96,
+            "maxMidi": 96
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 6,
+          "tuneCents": 0,
+          "attackSeconds": 0.005,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 8
+          }
+        },
+        {
+          "id": "marimba-vsco-full-region-006",
+          "trigger": "attack",
+          "assetId": "marimba-vsco-full-marimba-hit-outrigger-f3-loud-01-379e749add43",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 62,
+            "rootMidi": 65,
+            "maxMidi": 68
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 6,
+          "tuneCents": 0,
+          "attackSeconds": 0.005,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 8
+          }
+        },
+        {
+          "id": "marimba-vsco-full-region-007",
+          "trigger": "attack",
+          "assetId": "marimba-vsco-full-marimba-hit-outrigger-f5-loud-01-a434c15978b2",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 86,
+            "rootMidi": 89,
+            "maxMidi": 92
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 6,
+          "tuneCents": 0,
+          "attackSeconds": 0.005,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 8
+          }
+        },
+        {
+          "id": "marimba-vsco-full-region-008",
+          "trigger": "attack",
+          "assetId": "marimba-vsco-full-marimba-hit-outrigger-g2-loud-01-3bd173f56481",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 52,
+            "rootMidi": 55,
+            "maxMidi": 56
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 6,
+          "tuneCents": 0,
+          "attackSeconds": 0.005,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 8
+          }
+        },
+        {
+          "id": "marimba-vsco-full-region-009",
+          "trigger": "attack",
+          "assetId": "marimba-vsco-full-marimba-hit-outrigger-g4-loud-01-36f39f9f2478",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 76,
+            "rootMidi": 79,
+            "maxMidi": 80
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 6,
+          "tuneCents": 0,
+          "attackSeconds": 0.005,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 8
+          }
+        }
+      ]
+    },
+    "calibrationGainDb": 0,
+    "tailSeconds": 8,
+    "releaseStatus": "listening-candidate"
+  },
+  "assets": [
+    {
+      "id": "marimba-vsco-full-marimba-hit-outrigger-b2-loud-01-a329138008da",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Percussion/Marimba/Marimba_hit_Outrigger_B2_loud_01.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Percussion/Marimba/Marimba_hit_Outrigger_B2_loud_01.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/a329138008daae1c03652822d7079c0e1e9941071b8c22195e1985f0c685fdeb.wav",
+      "bytes": 1585778,
+      "sha256": "a329138008daae1c03652822d7079c0e1e9941071b8c22195e1985f0c685fdeb",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 264289,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "a329138008daae1c03652822d7079c0e1e9941071b8c22195e1985f0c685fdeb",
+          "outputSha256": "a329138008daae1c03652822d7079c0e1e9941071b8c22195e1985f0c685fdeb",
+          "parameters": {
+            "sfzPath": "Marimba.sfz",
+            "samplePath": "Percussion/Marimba/Marimba_hit_Outrigger_B2_loud_01.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "marimba-vsco-full-marimba-hit-outrigger-b4-loud-01-d04aed262228",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Percussion/Marimba/Marimba_hit_Outrigger_B4_loud_01.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Percussion/Marimba/Marimba_hit_Outrigger_B4_loud_01.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/d04aed26222822d14435fa61b88cdcce95606a5e94bb5e7167d266875343a39c.wav",
+      "bytes": 694454,
+      "sha256": "d04aed26222822d14435fa61b88cdcce95606a5e94bb5e7167d266875343a39c",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 115735,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "d04aed26222822d14435fa61b88cdcce95606a5e94bb5e7167d266875343a39c",
+          "outputSha256": "d04aed26222822d14435fa61b88cdcce95606a5e94bb5e7167d266875343a39c",
+          "parameters": {
+            "sfzPath": "Marimba.sfz",
+            "samplePath": "Percussion/Marimba/Marimba_hit_Outrigger_B4_loud_01.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "marimba-vsco-full-marimba-hit-outrigger-c2-loud-01-bfad3b0e57d0",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Percussion/Marimba/Marimba_hit_Outrigger_C2_loud_01.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Percussion/Marimba/Marimba_hit_Outrigger_C2_loud_01.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/bfad3b0e57d04c31e6079aba11fb0a6c5c84627fd4bc46e4e0923663586c460c.wav",
+      "bytes": 2236004,
+      "sha256": "bfad3b0e57d04c31e6079aba11fb0a6c5c84627fd4bc46e4e0923663586c460c",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 372660,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "bfad3b0e57d04c31e6079aba11fb0a6c5c84627fd4bc46e4e0923663586c460c",
+          "outputSha256": "bfad3b0e57d04c31e6079aba11fb0a6c5c84627fd4bc46e4e0923663586c460c",
+          "parameters": {
+            "sfzPath": "Marimba.sfz",
+            "samplePath": "Percussion/Marimba/Marimba_hit_Outrigger_C2_loud_01.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "marimba-vsco-full-marimba-hit-outrigger-c4-loud-01-4af539d47a45",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Percussion/Marimba/Marimba_hit_Outrigger_C4_loud_01.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Percussion/Marimba/Marimba_hit_Outrigger_C4_loud_01.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/4af539d47a452d7fad26e171b1c8adcca272cee97191f040d192680462c880b8.wav",
+      "bytes": 1016564,
+      "sha256": "4af539d47a452d7fad26e171b1c8adcca272cee97191f040d192680462c880b8",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 169420,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "4af539d47a452d7fad26e171b1c8adcca272cee97191f040d192680462c880b8",
+          "outputSha256": "4af539d47a452d7fad26e171b1c8adcca272cee97191f040d192680462c880b8",
+          "parameters": {
+            "sfzPath": "Marimba.sfz",
+            "samplePath": "Percussion/Marimba/Marimba_hit_Outrigger_C4_loud_01.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "marimba-vsco-full-marimba-hit-outrigger-c6-loud-01-2e42b1b6f692",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Percussion/Marimba/Marimba_hit_Outrigger_C6_loud_01.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Percussion/Marimba/Marimba_hit_Outrigger_C6_loud_01.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/2e42b1b6f6923f32e3daadc12b063e94d15af20fa410ddcb267eb906fd6e0e89.wav",
+      "bytes": 472142,
+      "sha256": "2e42b1b6f6923f32e3daadc12b063e94d15af20fa410ddcb267eb906fd6e0e89",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 78683,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "2e42b1b6f6923f32e3daadc12b063e94d15af20fa410ddcb267eb906fd6e0e89",
+          "outputSha256": "2e42b1b6f6923f32e3daadc12b063e94d15af20fa410ddcb267eb906fd6e0e89",
+          "parameters": {
+            "sfzPath": "Marimba.sfz",
+            "samplePath": "Percussion/Marimba/Marimba_hit_Outrigger_C6_loud_01.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "marimba-vsco-full-marimba-hit-outrigger-f3-loud-01-379e749add43",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Percussion/Marimba/Marimba_hit_Outrigger_F3_loud_01.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Percussion/Marimba/Marimba_hit_Outrigger_F3_loud_01.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/379e749add43b12959fae06cc272f1871899cc05460faf41ead77b93e5d01843.wav",
+      "bytes": 1589876,
+      "sha256": "379e749add43b12959fae06cc272f1871899cc05460faf41ead77b93e5d01843",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 264972,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "379e749add43b12959fae06cc272f1871899cc05460faf41ead77b93e5d01843",
+          "outputSha256": "379e749add43b12959fae06cc272f1871899cc05460faf41ead77b93e5d01843",
+          "parameters": {
+            "sfzPath": "Marimba.sfz",
+            "samplePath": "Percussion/Marimba/Marimba_hit_Outrigger_F3_loud_01.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "marimba-vsco-full-marimba-hit-outrigger-f5-loud-01-a434c15978b2",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Percussion/Marimba/Marimba_hit_Outrigger_F5_loud_01.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Percussion/Marimba/Marimba_hit_Outrigger_F5_loud_01.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/a434c15978b2ea4b8921feeb3fd1f177447324d06c177801e0e46c12a97abc86.wav",
+      "bytes": 551306,
+      "sha256": "a434c15978b2ea4b8921feeb3fd1f177447324d06c177801e0e46c12a97abc86",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 91877,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "a434c15978b2ea4b8921feeb3fd1f177447324d06c177801e0e46c12a97abc86",
+          "outputSha256": "a434c15978b2ea4b8921feeb3fd1f177447324d06c177801e0e46c12a97abc86",
+          "parameters": {
+            "sfzPath": "Marimba.sfz",
+            "samplePath": "Percussion/Marimba/Marimba_hit_Outrigger_F5_loud_01.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "marimba-vsco-full-marimba-hit-outrigger-g2-loud-01-3bd173f56481",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Percussion/Marimba/Marimba_hit_Outrigger_G2_loud_01.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Percussion/Marimba/Marimba_hit_Outrigger_G2_loud_01.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/3bd173f56481e537c3489a94d1e4dd59c304f9f98679c7c90890fc9f5795c25d.wav",
+      "bytes": 1855448,
+      "sha256": "3bd173f56481e537c3489a94d1e4dd59c304f9f98679c7c90890fc9f5795c25d",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 309234,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "3bd173f56481e537c3489a94d1e4dd59c304f9f98679c7c90890fc9f5795c25d",
+          "outputSha256": "3bd173f56481e537c3489a94d1e4dd59c304f9f98679c7c90890fc9f5795c25d",
+          "parameters": {
+            "sfzPath": "Marimba.sfz",
+            "samplePath": "Percussion/Marimba/Marimba_hit_Outrigger_G2_loud_01.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "marimba-vsco-full-marimba-hit-outrigger-g4-loud-01-36f39f9f2478",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Percussion/Marimba/Marimba_hit_Outrigger_G4_loud_01.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Percussion/Marimba/Marimba_hit_Outrigger_G4_loud_01.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/36f39f9f24789001add2b4c440defb7641178b0e8449c5cb7f1960bccaf0aaaf.wav",
+      "bytes": 800102,
+      "sha256": "36f39f9f24789001add2b4c440defb7641178b0e8449c5cb7f1960bccaf0aaaf",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 133343,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "36f39f9f24789001add2b4c440defb7641178b0e8449c5cb7f1960bccaf0aaaf",
+          "outputSha256": "36f39f9f24789001add2b4c440defb7641178b0e8449c5cb7f1960bccaf0aaaf",
+          "parameters": {
+            "sfzPath": "Marimba.sfz",
+            "samplePath": "Percussion/Marimba/Marimba_hit_Outrigger_G4_loud_01.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    }
+  ],
+  "contentSha256": "28eb8f99573f7a6db40a098e75372cb4f3940f9adf0f31e320e602a2434b8d3e"
+}

@@ -1,0 +1,345 @@
+{
+  "format": "air@1-experimental",
+  "title": "Hands crossing in six",
+  "conductor": {
+    "tempo": 78,
+    "meters": [
+      {
+        "bar": 1,
+        "meter": "6/8"
+      }
+    ]
+  },
+  "key": "G minor",
+  "vocabulary": {
+    "format": "refrain-air-vocabulary-closure@0-experimental",
+    "id": "refrain-core-language@1",
+    "instruments": [
+      {
+        "id": "air_pad",
+        "label": "Air pad",
+        "family": "texture",
+        "midiMin": 36,
+        "midiMax": 96,
+        "status": "active",
+        "authoringMeaning": "A restrained synthetic sustained texture used as supporting air rather than an acoustic substitute."
+      },
+      {
+        "id": "chamber_strings",
+        "label": "Chamber strings",
+        "family": "pitched",
+        "midiMin": 36,
+        "midiMax": 96,
+        "status": "active",
+        "authoringMeaning": "A blended sustained string ensemble for harmony, counterlines, and long dynamic shapes."
+      },
+      {
+        "id": "clarinet",
+        "label": "Clarinet",
+        "family": "pitched",
+        "midiMin": 50,
+        "midiMax": 94,
+        "status": "active",
+        "authoringMeaning": "A rounded sustained woodwind voice spanning warm low lines and clear upper melody."
+      },
+      {
+        "id": "clean_bass",
+        "label": "Clean bass",
+        "family": "pitched",
+        "midiMin": 28,
+        "midiMax": 67,
+        "status": "active",
+        "authoringMeaning": "A clear low-register bass voice that supports pulse and harmonic foundation."
+      },
+      {
+        "id": "dust_texture",
+        "label": "Dust texture",
+        "family": "texture",
+        "midiMin": 36,
+        "midiMax": 108,
+        "status": "active",
+        "authoringMeaning": "A deliberately unstable synthetic texture for degraded air, soft interference, and worn harmonic edges."
+      },
+      {
+        "id": "flute",
+        "label": "Flute",
+        "family": "pitched",
+        "midiMin": 60,
+        "midiMax": 96,
+        "status": "active",
+        "authoringMeaning": "A light sustained woodwind voice for exposed melody and airy upper-register motion."
+      },
+      {
+        "id": "glass_bell",
+        "label": "Glass bell",
+        "family": "texture",
+        "midiMin": 60,
+        "midiMax": 108,
+        "status": "active",
+        "authoringMeaning": "A restrained synthetic bell color for sparse high-register punctuation and returning motifs."
+      },
+      {
+        "id": "harp",
+        "label": "Harp",
+        "family": "pitched",
+        "midiMin": 24,
+        "midiMax": 103,
+        "status": "active",
+        "authoringMeaning": "A resonant concert-harp voice for separated notes, arpeggiation, and luminous harmony."
+      },
+      {
+        "id": "lattice_pluck",
+        "label": "Lattice pluck",
+        "family": "pitched",
+        "midiMin": 36,
+        "midiMax": 96,
+        "status": "active",
+        "authoringMeaning": "A short synthetic pluck for interlocking figures, pointillist harmony, and bright repeated patterns."
+      },
+      {
+        "id": "marimba",
+        "label": "Marimba",
+        "family": "pitched",
+        "midiMin": 45,
+        "midiMax": 96,
+        "status": "active",
+        "authoringMeaning": "A pitched wooden mallet voice for melodic percussion, pulse, and resonant ostinato."
+      },
+      {
+        "id": "nylon_guitar",
+        "label": "Nylon guitar",
+        "family": "pitched",
+        "midiMin": 40,
+        "midiMax": 88,
+        "status": "active",
+        "authoringMeaning": "A plucked nylon-string voice with a soft attack and short natural decay."
+      },
+      {
+        "id": "prism_lead",
+        "label": "Prism lead",
+        "family": "pitched",
+        "midiMin": 48,
+        "midiMax": 100,
+        "status": "active",
+        "authoringMeaning": "A clear synthetic lead voice for exposed motifs, bent contour, and focused upper-register lines."
+      },
+      {
+        "id": "rhythm_pulse",
+        "label": "Rhythm pulse",
+        "family": "percussion",
+        "midiMin": 36,
+        "midiMax": 51,
+        "status": "active",
+        "authoringMeaning": "A tuned electronic pulse set for kick-like anchors, clipped answers, and sparse beat-led structure.",
+        "supportedNotes": [36, 38, 42, 46, 49, 51]
+      },
+      {
+        "id": "soft_percussion",
+        "label": "Soft percussion",
+        "family": "percussion",
+        "midiMin": 36,
+        "midiMax": 51,
+        "status": "active",
+        "authoringMeaning": "A restrained unpitched kit for soft low hits, hand-drum-like accents, hats, and light color.",
+        "supportedNotes": [36, 38, 42, 46, 49, 51]
+      },
+      {
+        "id": "solo_cello",
+        "label": "Solo cello",
+        "family": "pitched",
+        "midiMin": 36,
+        "midiMax": 76,
+        "status": "active",
+        "authoringMeaning": "A single bowed cello voice for lyrical lead, bass, and expressive sustained lines."
+      },
+      {
+        "id": "sub_bass",
+        "label": "Sub bass",
+        "family": "pitched",
+        "midiMin": 24,
+        "midiMax": 72,
+        "status": "active",
+        "authoringMeaning": "A synthetic sub-bass voice for grounded fundamentals, slow pressure, and sparse low-register motion."
+      },
+      {
+        "id": "warm_piano",
+        "label": "Warm piano",
+        "family": "pitched",
+        "midiMin": 21,
+        "midiMax": 108,
+        "status": "active",
+        "authoringMeaning": "A rounded acoustic piano voice for melody, harmony, and intimate accompaniment."
+      }
+    ],
+    "techniques": [
+      {
+        "id": "ghost_return",
+        "label": "Ghost return",
+        "appliesTo": ["motif", "phrase"],
+        "operations": [
+          {
+            "type": "velocity-scale",
+            "factor": {
+              "numerator": 2,
+              "denominator": 3
+            }
+          },
+          {
+            "type": "gate-scale",
+            "factor": {
+              "numerator": 3,
+              "denominator": 4
+            }
+          }
+        ]
+      },
+      {
+        "id": "hocket_even",
+        "label": "Hocket even atoms",
+        "appliesTo": ["literal", "motif", "phrase"],
+        "operations": [
+          {
+            "type": "thin",
+            "every": 2,
+            "offset": 0
+          }
+        ]
+      },
+      {
+        "id": "turn_once",
+        "label": "Turn once",
+        "appliesTo": ["literal", "motif", "phrase"],
+        "operations": [
+          {
+            "type": "rotate",
+            "steps": 1
+          }
+        ]
+      }
+    ],
+    "contentSha256": "7c8766bca53d86e06e9cdebc11c69c619885d81e1b29096ef8ad3086c6357b46"
+  },
+  "motifs": {},
+  "harmony": [
+    {
+      "id": "crossing",
+      "chords": [
+        {
+          "symbol": "Gm7",
+          "duration": {
+            "numerator": 3,
+            "denominator": 1
+          }
+        },
+        {
+          "symbol": "Ebmaj7",
+          "duration": {
+            "numerator": 3,
+            "denominator": 1
+          }
+        },
+        {
+          "symbol": "Bbmaj7",
+          "duration": {
+            "numerator": 3,
+            "denominator": 1
+          }
+        },
+        {
+          "symbol": "D7/F#",
+          "duration": {
+            "numerator": 3,
+            "denominator": 1
+          }
+        }
+      ]
+    }
+  ],
+  "voices": [
+    {
+      "id": "piano",
+      "instrument": "warm_piano",
+      "role": "harmony",
+      "realize": [
+        {
+          "id": "room",
+          "kind": "chords",
+          "harmony": "crossing",
+          "voicing": "close",
+          "register": {
+            "min": "C3",
+            "max": "C5"
+          },
+          "rhythm": [
+            {
+              "numerator": 3,
+              "denominator": 1
+            }
+          ],
+          "voiceLeading": "nearest",
+          "articulation": "tenuto"
+        }
+      ]
+    },
+    {
+      "id": "guitar",
+      "instrument": "nylon_guitar",
+      "role": "counter",
+      "realize": [
+        {
+          "id": "crossing",
+          "kind": "arpeggio",
+          "harmony": "crossing",
+          "degrees": [1, 5, 3, 7],
+          "step": {
+            "numerator": 1,
+            "denominator": 2
+          },
+          "octaveSpan": 2,
+          "register": {
+            "min": "E2",
+            "max": "E5"
+          }
+        }
+      ]
+    },
+    {
+      "id": "cello",
+      "instrument": "solo_cello",
+      "role": "bass",
+      "realize": [
+        {
+          "id": "ground",
+          "kind": "bass",
+          "harmony": "crossing",
+          "degrees": [1, 5],
+          "step": {
+            "numerator": 1,
+            "denominator": 1
+          },
+          "register": {
+            "min": "C2",
+            "max": "C4"
+          },
+          "slashBass": "honor",
+          "dynamicCurve": {
+            "from": "p",
+            "to": "mf"
+          }
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "id": "near",
+      "startBar": 1,
+      "bars": 2
+    },
+    {
+      "id": "cross",
+      "startBar": 3,
+      "bars": 2
+    }
+  ]
+}

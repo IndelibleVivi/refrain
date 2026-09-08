@@ -1,0 +1,57 @@
+{
+  "format": "refrain-air-v1-corpus@0-experimental",
+  "status": "schema-and-compiler-evidence",
+  "acceptanceBoundary": "Materially different local authored fixtures prove portable language behavior only. They are not multi-host/model acceptance, listening acceptance, or genre classification.",
+  "extensionPacks": [
+    {
+      "filename": "prismatic-voice.pack.json",
+      "vocabularyId": "prismatic-voice-language@1",
+      "vocabularySha256": "076f34df2fbf55641cf610f37b93909288c678fb259324360c3bfc929ab00abc"
+    }
+  ],
+  "items": [
+    {
+      "filename": "crooked-return.air.json",
+      "perspective": "crooked chamber return",
+      "density": "sparse",
+      "features": [
+        "pickup",
+        "5/8-to-7/8",
+        "tuplet",
+        "groove",
+        "phrase-reuse",
+        "portable-technique"
+      ]
+    },
+    {
+      "filename": "paper-waltz.air.json",
+      "perspective": "sparse relational waltz",
+      "density": "sparse",
+      "features": ["3/4", "phrase-reuse", "meaningful-rests", "technique"]
+    },
+    {
+      "filename": "synthetic-counterpulse.air.json",
+      "perspective": "dense synthetic counterpulse",
+      "density": "dense",
+      "features": [
+        "4/4",
+        "groove",
+        "hocket",
+        "multiple-registers",
+        "phrase-reuse"
+      ]
+    },
+    {
+      "filename": "six-eight-handoff.air.json",
+      "perspective": "6/8 acoustic ensemble handoff",
+      "density": "medium",
+      "features": ["6/8", "harmony", "voice-leading", "arpeggio", "bass"]
+    },
+    {
+      "filename": "prismatic-pack-voice.air.json",
+      "perspective": "portable extension-voice etude",
+      "density": "medium",
+      "features": ["7/8", "pack-vocabulary", "exact-unavailable-embodiment"]
+    }
+  ]
+}

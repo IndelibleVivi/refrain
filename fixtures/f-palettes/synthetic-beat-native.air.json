@@ -1,0 +1,215 @@
+{
+  "format": "air@0-experimental",
+  "title": "Signal animal at the threshold",
+  "tempo": 92,
+  "meter": "4/4",
+  "key": "E minor",
+  "motifs": {
+    "signal": "E5/8 G5/8 B5/8 D6/8 r/4 B5/4",
+    "cut": "B4/16 r/16 E5/8 G5/8 r/8 D5/4 r/4",
+    "beat": "C2/8 r/8 D2/8 r/8 F#2/8 r/8 D2/8 r/8",
+    "glitch": "E6/16 r/16 B5/8 r/4 G5/8 r/8 E5/4"
+  },
+  "harmony": [
+    {
+      "id": "circuit",
+      "chords": [
+        { "symbol": "Em7", "beats": 8 },
+        { "symbol": "Cmaj7", "beats": 8 },
+        { "symbol": "Gmaj7", "beats": 8 },
+        { "symbol": "Dadd9", "beats": 8 },
+        { "symbol": "Am7", "beats": 8 },
+        { "symbol": "Cmaj7", "beats": 8 },
+        { "symbol": "B7", "beats": 8 },
+        { "symbol": "Em7", "beats": 8 },
+        { "symbol": "Cmaj7", "beats": 8 },
+        { "symbol": "Em7", "beats": 8 }
+      ]
+    }
+  ],
+  "voices": [
+    {
+      "id": "lead",
+      "instrument": "prism_lead",
+      "role": "lead",
+      "gainDb": -3,
+      "pan": 0.1,
+      "realize": [
+        {
+          "id": "lead-wake",
+          "kind": "motif",
+          "motif": "signal",
+          "repeat": 4,
+          "section": "wake",
+          "dynamic": "mp",
+          "articulation": "staccato"
+        },
+        {
+          "id": "lead-lock",
+          "kind": "motif",
+          "motif": "signal",
+          "repeat": 4,
+          "section": "lock",
+          "transform": { "inversion": true },
+          "dynamic": "mf",
+          "articulation": "accent"
+        },
+        {
+          "id": "lead-shed",
+          "kind": "motif",
+          "motif": "signal",
+          "repeat": 4,
+          "section": "shed",
+          "transform": { "transpose": 5, "retrograde": true },
+          "dynamic": "f",
+          "articulation": "staccato"
+        },
+        {
+          "id": "lead-open",
+          "kind": "motif",
+          "motif": "signal",
+          "repeat": 4,
+          "section": "open",
+          "transform": { "transpose": -5 },
+          "dynamic": "mf",
+          "articulation": "tenuto"
+        },
+        {
+          "id": "lead-after",
+          "kind": "motif",
+          "motif": "signal",
+          "repeat": 4,
+          "section": "after",
+          "dynamicCurve": { "from": "mp", "to": "pp" },
+          "articulation": "staccato"
+        }
+      ]
+    },
+    {
+      "id": "pluck",
+      "instrument": "lattice_pluck",
+      "role": "counter",
+      "gainDb": -5,
+      "pan": -0.28,
+      "realize": [
+        {
+          "id": "pluck-cut-a",
+          "kind": "motif",
+          "motif": "cut",
+          "repeat": 16,
+          "section": "form",
+          "dynamicCurve": { "from": "p", "to": "f" },
+          "articulation": "staccato"
+        },
+        {
+          "id": "pluck-cut-b",
+          "kind": "motif",
+          "motif": "cut",
+          "repeat": 4,
+          "section": "after",
+          "dynamicCurve": { "from": "mf", "to": "mp" },
+          "articulation": "staccato"
+        }
+      ]
+    },
+    {
+      "id": "sub",
+      "instrument": "sub_bass",
+      "role": "bass",
+      "gainDb": -3,
+      "realize": [
+        {
+          "id": "sub-circuit",
+          "kind": "bass",
+          "harmony": "circuit",
+          "degrees": [1, 1, 5, 7],
+          "stepBeats": 1,
+          "register": { "min": "C1", "max": "C3" },
+          "slashBass": "honor",
+          "dynamicCurve": { "from": "mp", "to": "f" },
+          "section": "form"
+        }
+      ]
+    },
+    {
+      "id": "beat",
+      "instrument": "rhythm_pulse",
+      "role": "percussion",
+      "gainDb": -5,
+      "realize": [
+        {
+          "id": "beat-grid-a",
+          "kind": "motif",
+          "motif": "beat",
+          "repeat": 16,
+          "section": "form",
+          "dynamic": "mf",
+          "articulation": "staccato"
+        },
+        {
+          "id": "beat-grid-b",
+          "kind": "motif",
+          "motif": "beat",
+          "repeat": 4,
+          "section": "after",
+          "dynamicCurve": { "from": "mf", "to": "p" },
+          "articulation": "staccato"
+        }
+      ]
+    },
+    {
+      "id": "dust",
+      "instrument": "dust_texture",
+      "role": "texture",
+      "gainDb": -9,
+      "realize": [
+        {
+          "id": "dust-circuit",
+          "kind": "chords",
+          "harmony": "circuit",
+          "voicing": "open",
+          "register": { "min": "C3", "max": "C6" },
+          "rhythm": [8],
+          "voiceLeading": "nearest",
+          "dynamicCurve": { "from": "pp", "to": "mf" },
+          "articulation": "legato",
+          "section": "form"
+        }
+      ]
+    },
+    {
+      "id": "glass",
+      "instrument": "glass_bell",
+      "role": "texture",
+      "gainDb": -9,
+      "pan": 0.32,
+      "realize": [
+        {
+          "id": "glass-glitch-a",
+          "kind": "motif",
+          "motif": "glitch",
+          "repeat": 16,
+          "section": "form",
+          "dynamicCurve": { "from": "pp", "to": "mp" },
+          "articulation": "staccato"
+        },
+        {
+          "id": "glass-glitch-b",
+          "kind": "motif",
+          "motif": "glitch",
+          "repeat": 4,
+          "section": "after",
+          "dynamicCurve": { "from": "mp", "to": "pp" },
+          "articulation": "staccato"
+        }
+      ]
+    }
+  ],
+  "sections": [
+    { "id": "wake", "startBar": 1, "bars": 4 },
+    { "id": "lock", "startBar": 5, "bars": 4 },
+    { "id": "shed", "startBar": 9, "bars": 4 },
+    { "id": "open", "startBar": 13, "bars": 4 },
+    { "id": "after", "startBar": 17, "bars": 4 }
+  ]
+}

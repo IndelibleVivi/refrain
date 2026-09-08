@@ -1,0 +1,4308 @@
+{
+  "format": "refrain-candidate-shard@0-experimental",
+  "id": "warm-piano-vsco-upright-full",
+  "candidateContentSha256": "0444949c89f8f998057dfa4ce633f3a385586deac2a1577ee31bc2e4b5497843",
+  "candidate": {
+    "id": "warm-piano-vsco-upright-full",
+    "instrumentId": "warm_piano",
+    "engine": "sampler",
+    "mapping": {
+      "type": "sample-map",
+      "playableMin": 21,
+      "playableMax": 108,
+      "midiFallbackProgram": 0,
+      "articulationFallbacks": {
+        "staccato": "none",
+        "tenuto": "none",
+        "accent": "none",
+        "legato": "none"
+      },
+      "regions": [
+        {
+          "id": "warm-piano-vsco-upright-full-region-001",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-000-e61aeb988bf0",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 21,
+            "rootMidi": 21,
+            "maxMidi": 22
+          },
+          "velocity": {
+            "min": 1,
+            "max": 60
+          },
+          "gainDb": 23,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-002",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-002-a09c3877aa0c",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 23,
+            "rootMidi": 25,
+            "maxMidi": 26
+          },
+          "velocity": {
+            "min": 1,
+            "max": 60
+          },
+          "gainDb": 23,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-003",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-004-511af05989eb",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 27,
+            "rootMidi": 29,
+            "maxMidi": 30
+          },
+          "velocity": {
+            "min": 1,
+            "max": 60
+          },
+          "gainDb": 23,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-004",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-006-485d6822e74b",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 31,
+            "rootMidi": 33,
+            "maxMidi": 34
+          },
+          "velocity": {
+            "min": 1,
+            "max": 60
+          },
+          "gainDb": 23,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-005",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-008-3b4cdd096b01",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 35,
+            "rootMidi": 37,
+            "maxMidi": 38
+          },
+          "velocity": {
+            "min": 1,
+            "max": 60
+          },
+          "gainDb": 23,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-006",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-010-6bdbe8457f7b",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 39,
+            "rootMidi": 41,
+            "maxMidi": 42
+          },
+          "velocity": {
+            "min": 1,
+            "max": 60
+          },
+          "gainDb": 23,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-007",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-012-16be23a83781",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 43,
+            "rootMidi": 45,
+            "maxMidi": 46
+          },
+          "velocity": {
+            "min": 1,
+            "max": 60
+          },
+          "gainDb": 23,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-008",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-014-f3d00b63bb17",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 47,
+            "rootMidi": 49,
+            "maxMidi": 50
+          },
+          "velocity": {
+            "min": 1,
+            "max": 60
+          },
+          "gainDb": 23,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-009",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-016-f1a3a542cf70",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 51,
+            "rootMidi": 53,
+            "maxMidi": 54
+          },
+          "velocity": {
+            "min": 1,
+            "max": 60
+          },
+          "gainDb": 23,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-010",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-018-01387cb5318c",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 55,
+            "rootMidi": 57,
+            "maxMidi": 58
+          },
+          "velocity": {
+            "min": 1,
+            "max": 60
+          },
+          "gainDb": 23,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-011",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-020-08242e8d1c86",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 59,
+            "rootMidi": 61,
+            "maxMidi": 62
+          },
+          "velocity": {
+            "min": 1,
+            "max": 60
+          },
+          "gainDb": 23,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-012",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-022-660e57ad8fd8",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 63,
+            "rootMidi": 65,
+            "maxMidi": 66
+          },
+          "velocity": {
+            "min": 1,
+            "max": 60
+          },
+          "gainDb": 23,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-013",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-024-916c3ec2d61f",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 67,
+            "rootMidi": 69,
+            "maxMidi": 70
+          },
+          "velocity": {
+            "min": 1,
+            "max": 60
+          },
+          "gainDb": 23,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-014",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-026-254be5d34270",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 71,
+            "rootMidi": 73,
+            "maxMidi": 74
+          },
+          "velocity": {
+            "min": 1,
+            "max": 60
+          },
+          "gainDb": 23,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-015",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-028-a9fbd1af0703",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 75,
+            "rootMidi": 77,
+            "maxMidi": 78
+          },
+          "velocity": {
+            "min": 1,
+            "max": 60
+          },
+          "gainDb": 23,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-016",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-030-d3d47e121080",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 79,
+            "rootMidi": 81,
+            "maxMidi": 82
+          },
+          "velocity": {
+            "min": 1,
+            "max": 60
+          },
+          "gainDb": 23,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-017",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-032-2a903396ee71",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 83,
+            "rootMidi": 85,
+            "maxMidi": 86
+          },
+          "velocity": {
+            "min": 1,
+            "max": 60
+          },
+          "gainDb": 23,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-018",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-034-c9bdc616f2f2",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 87,
+            "rootMidi": 89,
+            "maxMidi": 90
+          },
+          "velocity": {
+            "min": 1,
+            "max": 60
+          },
+          "gainDb": 23,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-019",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-036-6dfbe8f959d7",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 91,
+            "rootMidi": 93,
+            "maxMidi": 94
+          },
+          "velocity": {
+            "min": 1,
+            "max": 60
+          },
+          "gainDb": 23,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-020",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-038-3176c8eec715",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 95,
+            "rootMidi": 97,
+            "maxMidi": 98
+          },
+          "velocity": {
+            "min": 1,
+            "max": 60
+          },
+          "gainDb": 23,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-021",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-040-43cd5b95a890",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 99,
+            "rootMidi": 101,
+            "maxMidi": 102
+          },
+          "velocity": {
+            "min": 1,
+            "max": 60
+          },
+          "gainDb": 23,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-022",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-042-4bc64bcdbe1b",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 103,
+            "rootMidi": 105,
+            "maxMidi": 106
+          },
+          "velocity": {
+            "min": 1,
+            "max": 60
+          },
+          "gainDb": 23,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-023",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-044-ab25ca49f0e9",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 107,
+            "rootMidi": 108,
+            "maxMidi": 108
+          },
+          "velocity": {
+            "min": 1,
+            "max": 60
+          },
+          "gainDb": 23,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-024",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn2-rr1-000-32f3cda282b6",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 21,
+            "rootMidi": 21,
+            "maxMidi": 22
+          },
+          "velocity": {
+            "min": 61,
+            "max": 110
+          },
+          "gainDb": 10,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-025",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn2-rr1-002-2ba9838d073b",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 23,
+            "rootMidi": 25,
+            "maxMidi": 26
+          },
+          "velocity": {
+            "min": 61,
+            "max": 110
+          },
+          "gainDb": 10,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-026",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn2-rr1-004-ea7f8c8e9977",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 27,
+            "rootMidi": 29,
+            "maxMidi": 30
+          },
+          "velocity": {
+            "min": 61,
+            "max": 110
+          },
+          "gainDb": 10,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-027",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn2-rr1-006-80ade36a6030",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 31,
+            "rootMidi": 33,
+            "maxMidi": 34
+          },
+          "velocity": {
+            "min": 61,
+            "max": 110
+          },
+          "gainDb": 10,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-028",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn2-rr1-008-52be11ac2a57",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 35,
+            "rootMidi": 37,
+            "maxMidi": 38
+          },
+          "velocity": {
+            "min": 61,
+            "max": 110
+          },
+          "gainDb": 10,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-029",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn2-rr1-010-324c53abf03b",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 39,
+            "rootMidi": 41,
+            "maxMidi": 42
+          },
+          "velocity": {
+            "min": 61,
+            "max": 110
+          },
+          "gainDb": 10,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-030",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn2-rr1-012-9accd92b7799",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 43,
+            "rootMidi": 45,
+            "maxMidi": 46
+          },
+          "velocity": {
+            "min": 61,
+            "max": 110
+          },
+          "gainDb": 10,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-031",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn2-rr1-014-0bdf66b89c2c",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 47,
+            "rootMidi": 49,
+            "maxMidi": 50
+          },
+          "velocity": {
+            "min": 61,
+            "max": 110
+          },
+          "gainDb": 10,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-032",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn2-rr1-016-87b90b8161b5",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 51,
+            "rootMidi": 53,
+            "maxMidi": 54
+          },
+          "velocity": {
+            "min": 61,
+            "max": 110
+          },
+          "gainDb": 10,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-033",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn2-rr1-018-fb39ae501f7d",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 55,
+            "rootMidi": 57,
+            "maxMidi": 58
+          },
+          "velocity": {
+            "min": 61,
+            "max": 110
+          },
+          "gainDb": 10,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-034",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn2-rr1-020-dc314226819e",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 59,
+            "rootMidi": 61,
+            "maxMidi": 62
+          },
+          "velocity": {
+            "min": 61,
+            "max": 110
+          },
+          "gainDb": 10,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-035",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn2-rr1-022-9a4e03fa389b",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 63,
+            "rootMidi": 65,
+            "maxMidi": 66
+          },
+          "velocity": {
+            "min": 61,
+            "max": 110
+          },
+          "gainDb": 10,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-036",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn2-rr1-024-a00ae1a2b2a7",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 67,
+            "rootMidi": 69,
+            "maxMidi": 70
+          },
+          "velocity": {
+            "min": 61,
+            "max": 110
+          },
+          "gainDb": 10,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-037",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn2-rr1-026-4e668e75c392",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 71,
+            "rootMidi": 73,
+            "maxMidi": 74
+          },
+          "velocity": {
+            "min": 61,
+            "max": 110
+          },
+          "gainDb": 10,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-038",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn2-rr1-028-84fe87bd24dc",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 75,
+            "rootMidi": 77,
+            "maxMidi": 78
+          },
+          "velocity": {
+            "min": 61,
+            "max": 110
+          },
+          "gainDb": 10,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-039",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn2-rr1-030-4b558995c108",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 79,
+            "rootMidi": 81,
+            "maxMidi": 82
+          },
+          "velocity": {
+            "min": 61,
+            "max": 110
+          },
+          "gainDb": 10,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-040",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn2-rr1-032-8a4b127b8420",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 83,
+            "rootMidi": 85,
+            "maxMidi": 86
+          },
+          "velocity": {
+            "min": 61,
+            "max": 110
+          },
+          "gainDb": 10,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-041",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn2-rr1-034-c5305eb82090",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 87,
+            "rootMidi": 89,
+            "maxMidi": 90
+          },
+          "velocity": {
+            "min": 61,
+            "max": 110
+          },
+          "gainDb": 10,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-042",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn2-rr1-036-87ef3cb2e7f2",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 91,
+            "rootMidi": 93,
+            "maxMidi": 94
+          },
+          "velocity": {
+            "min": 61,
+            "max": 110
+          },
+          "gainDb": 10,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-043",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn2-rr1-038-ace4ec29aa6a",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 95,
+            "rootMidi": 97,
+            "maxMidi": 98
+          },
+          "velocity": {
+            "min": 61,
+            "max": 110
+          },
+          "gainDb": 10,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-044",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn2-rr1-040-25028a985a79",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 99,
+            "rootMidi": 101,
+            "maxMidi": 102
+          },
+          "velocity": {
+            "min": 61,
+            "max": 110
+          },
+          "gainDb": 10,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-045",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn2-rr1-042-11dce969f3f1",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 103,
+            "rootMidi": 105,
+            "maxMidi": 106
+          },
+          "velocity": {
+            "min": 61,
+            "max": 110
+          },
+          "gainDb": 10,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-046",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn2-rr1-044-8dbeca4e4254",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 107,
+            "rootMidi": 108,
+            "maxMidi": 108
+          },
+          "velocity": {
+            "min": 61,
+            "max": 110
+          },
+          "gainDb": 10,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-047",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn3-rr1-000-529ef60490fc",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 21,
+            "rootMidi": 21,
+            "maxMidi": 22
+          },
+          "velocity": {
+            "min": 111,
+            "max": 127
+          },
+          "gainDb": 2,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-048",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn3-rr1-002-3937efc793df",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 23,
+            "rootMidi": 25,
+            "maxMidi": 26
+          },
+          "velocity": {
+            "min": 111,
+            "max": 127
+          },
+          "gainDb": 2,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-049",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn3-rr1-004-f2eae20cd065",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 27,
+            "rootMidi": 29,
+            "maxMidi": 30
+          },
+          "velocity": {
+            "min": 111,
+            "max": 127
+          },
+          "gainDb": 2,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-050",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn3-rr1-006-565fb26f1563",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 31,
+            "rootMidi": 33,
+            "maxMidi": 34
+          },
+          "velocity": {
+            "min": 111,
+            "max": 127
+          },
+          "gainDb": 2,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-051",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn3-rr1-008-19080adc5446",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 35,
+            "rootMidi": 37,
+            "maxMidi": 38
+          },
+          "velocity": {
+            "min": 111,
+            "max": 127
+          },
+          "gainDb": 2,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-052",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn3-rr1-010-e5fe5e4ec9c4",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 39,
+            "rootMidi": 41,
+            "maxMidi": 42
+          },
+          "velocity": {
+            "min": 111,
+            "max": 127
+          },
+          "gainDb": 2,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-053",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn3-rr1-012-ac6644ffc1aa",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 43,
+            "rootMidi": 45,
+            "maxMidi": 46
+          },
+          "velocity": {
+            "min": 111,
+            "max": 127
+          },
+          "gainDb": 2,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-054",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn3-rr1-014-d1d7318686f6",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 47,
+            "rootMidi": 49,
+            "maxMidi": 50
+          },
+          "velocity": {
+            "min": 111,
+            "max": 127
+          },
+          "gainDb": 2,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-055",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn3-rr1-016-bbf92571a777",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 51,
+            "rootMidi": 53,
+            "maxMidi": 54
+          },
+          "velocity": {
+            "min": 111,
+            "max": 127
+          },
+          "gainDb": 2,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-056",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn3-rr1-018-0914913456c7",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 55,
+            "rootMidi": 57,
+            "maxMidi": 58
+          },
+          "velocity": {
+            "min": 111,
+            "max": 127
+          },
+          "gainDb": 2,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-057",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn3-rr1-020-515e6d85e510",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 59,
+            "rootMidi": 61,
+            "maxMidi": 62
+          },
+          "velocity": {
+            "min": 111,
+            "max": 127
+          },
+          "gainDb": 2,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-058",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn3-rr1-022-c2c1f3d7f6ff",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 63,
+            "rootMidi": 65,
+            "maxMidi": 66
+          },
+          "velocity": {
+            "min": 111,
+            "max": 127
+          },
+          "gainDb": 2,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-059",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn3-rr1-024-cc8b22d17792",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 67,
+            "rootMidi": 69,
+            "maxMidi": 70
+          },
+          "velocity": {
+            "min": 111,
+            "max": 127
+          },
+          "gainDb": 2,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-060",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn3-rr1-026-d89966bb53c4",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 71,
+            "rootMidi": 73,
+            "maxMidi": 74
+          },
+          "velocity": {
+            "min": 111,
+            "max": 127
+          },
+          "gainDb": 2,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-061",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn3-rr1-028-bf6c7d1bbf94",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 75,
+            "rootMidi": 77,
+            "maxMidi": 78
+          },
+          "velocity": {
+            "min": 111,
+            "max": 127
+          },
+          "gainDb": 2,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-062",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn3-rr1-030-d19dfdb6db0a",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 79,
+            "rootMidi": 81,
+            "maxMidi": 82
+          },
+          "velocity": {
+            "min": 111,
+            "max": 127
+          },
+          "gainDb": 2,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-063",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn3-rr1-032-403a1f1a4b9d",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 83,
+            "rootMidi": 85,
+            "maxMidi": 86
+          },
+          "velocity": {
+            "min": 111,
+            "max": 127
+          },
+          "gainDb": 2,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-064",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn3-rr1-034-5263ea569e71",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 87,
+            "rootMidi": 89,
+            "maxMidi": 90
+          },
+          "velocity": {
+            "min": 111,
+            "max": 127
+          },
+          "gainDb": 2,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-065",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn3-rr1-036-06f39cb4f41c",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 91,
+            "rootMidi": 93,
+            "maxMidi": 94
+          },
+          "velocity": {
+            "min": 111,
+            "max": 127
+          },
+          "gainDb": 2,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-066",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn3-rr1-038-8b8a0f6d9789",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 95,
+            "rootMidi": 97,
+            "maxMidi": 98
+          },
+          "velocity": {
+            "min": 111,
+            "max": 127
+          },
+          "gainDb": 2,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-067",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn3-rr1-040-df8692ef3371",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 99,
+            "rootMidi": 101,
+            "maxMidi": 102
+          },
+          "velocity": {
+            "min": 111,
+            "max": 127
+          },
+          "gainDb": 2,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-068",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn3-rr1-042-9690e7ef1935",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 103,
+            "rootMidi": 105,
+            "maxMidi": 106
+          },
+          "velocity": {
+            "min": 111,
+            "max": 127
+          },
+          "gainDb": 2,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        },
+        {
+          "id": "warm-piano-vsco-upright-full-region-069",
+          "trigger": "attack",
+          "assetId": "warm-piano-vsco-upright-full-player-dyn3-rr1-044-5625c4930fa9",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 107,
+            "rootMidi": 108,
+            "maxMidi": 108
+          },
+          "velocity": {
+            "min": 111,
+            "max": 127
+          },
+          "gainDb": 2,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.6
+          }
+        }
+      ]
+    },
+    "calibrationGainDb": 0,
+    "tailSeconds": 0.6,
+    "releaseStatus": "listening-candidate"
+  },
+  "assets": [
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn1-rr1-000-e61aeb988bf0",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn1_rr1_000.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn1_rr1_000.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/e61aeb988bf05181b5666ec1ff24b3f4ca375517c7ea47b87a009bc116fca56d.wav",
+      "bytes": 4105066,
+      "sha256": "e61aeb988bf05181b5666ec1ff24b3f4ca375517c7ea47b87a009bc116fca56d",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 684055,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "e61aeb988bf05181b5666ec1ff24b3f4ca375517c7ea47b87a009bc116fca56d",
+          "outputSha256": "e61aeb988bf05181b5666ec1ff24b3f4ca375517c7ea47b87a009bc116fca56d",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn1_rr1_000.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn1-rr1-002-a09c3877aa0c",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn1_rr1_002.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn1_rr1_002.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/a09c3877aa0c5c33259a4122d732000975915ff64d7862cf37586c7404248424.wav",
+      "bytes": 4109632,
+      "sha256": "a09c3877aa0c5c33259a4122d732000975915ff64d7862cf37586c7404248424",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 684816,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "a09c3877aa0c5c33259a4122d732000975915ff64d7862cf37586c7404248424",
+          "outputSha256": "a09c3877aa0c5c33259a4122d732000975915ff64d7862cf37586c7404248424",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn1_rr1_002.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn1-rr1-004-511af05989eb",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn1_rr1_004.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn1_rr1_004.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/511af05989eb9636cb79d2c10caf58fe6d3c07f907f4380951b5640c5f11e06d.wav",
+      "bytes": 4128814,
+      "sha256": "511af05989eb9636cb79d2c10caf58fe6d3c07f907f4380951b5640c5f11e06d",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 688013,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "511af05989eb9636cb79d2c10caf58fe6d3c07f907f4380951b5640c5f11e06d",
+          "outputSha256": "511af05989eb9636cb79d2c10caf58fe6d3c07f907f4380951b5640c5f11e06d",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn1_rr1_004.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn1-rr1-006-485d6822e74b",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn1_rr1_006.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn1_rr1_006.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/485d6822e74b73f6bb38ff221fd7c4b55316c5653cf10d1edfcf471a32adf3dd.wav",
+      "bytes": 4063450,
+      "sha256": "485d6822e74b73f6bb38ff221fd7c4b55316c5653cf10d1edfcf471a32adf3dd",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 677119,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "485d6822e74b73f6bb38ff221fd7c4b55316c5653cf10d1edfcf471a32adf3dd",
+          "outputSha256": "485d6822e74b73f6bb38ff221fd7c4b55316c5653cf10d1edfcf471a32adf3dd",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn1_rr1_006.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn1-rr1-008-3b4cdd096b01",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn1_rr1_008.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn1_rr1_008.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/3b4cdd096b01b23a81b2ad8ad880c409c8a78d69cd0306fe9bf66795cd62acca.wav",
+      "bytes": 5470924,
+      "sha256": "3b4cdd096b01b23a81b2ad8ad880c409c8a78d69cd0306fe9bf66795cd62acca",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 911698,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "3b4cdd096b01b23a81b2ad8ad880c409c8a78d69cd0306fe9bf66795cd62acca",
+          "outputSha256": "3b4cdd096b01b23a81b2ad8ad880c409c8a78d69cd0306fe9bf66795cd62acca",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn1_rr1_008.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn1-rr1-010-6bdbe8457f7b",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn1_rr1_010.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn1_rr1_010.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/6bdbe8457f7b921ddfd2456aa5dd5932e60a687ca6fb255b3b80ffc6eecbd199.wav",
+      "bytes": 5770636,
+      "sha256": "6bdbe8457f7b921ddfd2456aa5dd5932e60a687ca6fb255b3b80ffc6eecbd199",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 961650,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "6bdbe8457f7b921ddfd2456aa5dd5932e60a687ca6fb255b3b80ffc6eecbd199",
+          "outputSha256": "6bdbe8457f7b921ddfd2456aa5dd5932e60a687ca6fb255b3b80ffc6eecbd199",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn1_rr1_010.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn1-rr1-012-16be23a83781",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn1_rr1_012.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn1_rr1_012.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/16be23a8378185f1b392600d3fa800a206945543866548640f7573534f76faf2.wav",
+      "bytes": 3870382,
+      "sha256": "16be23a8378185f1b392600d3fa800a206945543866548640f7573534f76faf2",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 644941,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "16be23a8378185f1b392600d3fa800a206945543866548640f7573534f76faf2",
+          "outputSha256": "16be23a8378185f1b392600d3fa800a206945543866548640f7573534f76faf2",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn1_rr1_012.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn1-rr1-014-f3d00b63bb17",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn1_rr1_014.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn1_rr1_014.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/f3d00b63bb178680fdd4d9ed7ea43d1df1cf29e00b567ccb022c2bd411a20607.wav",
+      "bytes": 2270980,
+      "sha256": "f3d00b63bb178680fdd4d9ed7ea43d1df1cf29e00b567ccb022c2bd411a20607",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 378374,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "f3d00b63bb178680fdd4d9ed7ea43d1df1cf29e00b567ccb022c2bd411a20607",
+          "outputSha256": "f3d00b63bb178680fdd4d9ed7ea43d1df1cf29e00b567ccb022c2bd411a20607",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn1_rr1_014.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn1-rr1-016-f1a3a542cf70",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn1_rr1_016.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn1_rr1_016.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/f1a3a542cf70a13aa865ce130d50d72cd735449e605d1c5a45dc06b5a60b27fd.wav",
+      "bytes": 3546940,
+      "sha256": "f1a3a542cf70a13aa865ce130d50d72cd735449e605d1c5a45dc06b5a60b27fd",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 591034,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "f1a3a542cf70a13aa865ce130d50d72cd735449e605d1c5a45dc06b5a60b27fd",
+          "outputSha256": "f1a3a542cf70a13aa865ce130d50d72cd735449e605d1c5a45dc06b5a60b27fd",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn1_rr1_016.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn1-rr1-018-01387cb5318c",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn1_rr1_018.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn1_rr1_018.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/01387cb5318c5abf11410ae8e2f4ef6aa83ec03254b4bccfe865aba262a2e412.wav",
+      "bytes": 3002200,
+      "sha256": "01387cb5318c5abf11410ae8e2f4ef6aa83ec03254b4bccfe865aba262a2e412",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 500244,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "01387cb5318c5abf11410ae8e2f4ef6aa83ec03254b4bccfe865aba262a2e412",
+          "outputSha256": "01387cb5318c5abf11410ae8e2f4ef6aa83ec03254b4bccfe865aba262a2e412",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn1_rr1_018.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn1-rr1-020-08242e8d1c86",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn1_rr1_020.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn1_rr1_020.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/08242e8d1c865c8cdc794cc7921d3d9663bedb5a12bfefe0de13aaa86fd23133.wav",
+      "bytes": 3134164,
+      "sha256": "08242e8d1c865c8cdc794cc7921d3d9663bedb5a12bfefe0de13aaa86fd23133",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 522238,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "08242e8d1c865c8cdc794cc7921d3d9663bedb5a12bfefe0de13aaa86fd23133",
+          "outputSha256": "08242e8d1c865c8cdc794cc7921d3d9663bedb5a12bfefe0de13aaa86fd23133",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn1_rr1_020.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn1-rr1-022-660e57ad8fd8",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn1_rr1_022.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn1_rr1_022.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/660e57ad8fd868ed9c56fe36e4862a6aff1cb65b7838a568d4c4f2f0865ad1ab.wav",
+      "bytes": 4126858,
+      "sha256": "660e57ad8fd868ed9c56fe36e4862a6aff1cb65b7838a568d4c4f2f0865ad1ab",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 687687,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "660e57ad8fd868ed9c56fe36e4862a6aff1cb65b7838a568d4c4f2f0865ad1ab",
+          "outputSha256": "660e57ad8fd868ed9c56fe36e4862a6aff1cb65b7838a568d4c4f2f0865ad1ab",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn1_rr1_022.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn1-rr1-024-916c3ec2d61f",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn1_rr1_024.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn1_rr1_024.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/916c3ec2d61fb421e74fb4866ef75d3ef17e9d88e9dc858da24159846489d33f.wav",
+      "bytes": 2222998,
+      "sha256": "916c3ec2d61fb421e74fb4866ef75d3ef17e9d88e9dc858da24159846489d33f",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 370377,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "916c3ec2d61fb421e74fb4866ef75d3ef17e9d88e9dc858da24159846489d33f",
+          "outputSha256": "916c3ec2d61fb421e74fb4866ef75d3ef17e9d88e9dc858da24159846489d33f",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn1_rr1_024.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn1-rr1-026-254be5d34270",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn1_rr1_026.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn1_rr1_026.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/254be5d34270e5eb78bbda3f7425c3e82b9596845db2c065b13179f23c23196b.wav",
+      "bytes": 3558112,
+      "sha256": "254be5d34270e5eb78bbda3f7425c3e82b9596845db2c065b13179f23c23196b",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 592896,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "254be5d34270e5eb78bbda3f7425c3e82b9596845db2c065b13179f23c23196b",
+          "outputSha256": "254be5d34270e5eb78bbda3f7425c3e82b9596845db2c065b13179f23c23196b",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn1_rr1_026.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn1-rr1-028-a9fbd1af0703",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn1_rr1_028.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn1_rr1_028.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/a9fbd1af0703b294d3267f8f88fca4b4366e3b772f7d780acf2de1cbf2056355.wav",
+      "bytes": 1935304,
+      "sha256": "a9fbd1af0703b294d3267f8f88fca4b4366e3b772f7d780acf2de1cbf2056355",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 322428,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "a9fbd1af0703b294d3267f8f88fca4b4366e3b772f7d780acf2de1cbf2056355",
+          "outputSha256": "a9fbd1af0703b294d3267f8f88fca4b4366e3b772f7d780acf2de1cbf2056355",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn1_rr1_028.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn1-rr1-030-d3d47e121080",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn1_rr1_030.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn1_rr1_030.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/d3d47e12108098d25a490fbac30cbbf29dfac801bbebd62b969cc1fe7a8342e5.wav",
+      "bytes": 3120676,
+      "sha256": "d3d47e12108098d25a490fbac30cbbf29dfac801bbebd62b969cc1fe7a8342e5",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 519990,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "d3d47e12108098d25a490fbac30cbbf29dfac801bbebd62b969cc1fe7a8342e5",
+          "outputSha256": "d3d47e12108098d25a490fbac30cbbf29dfac801bbebd62b969cc1fe7a8342e5",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn1_rr1_030.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn1-rr1-032-2a903396ee71",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn1_rr1_032.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn1_rr1_032.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/2a903396ee7130c42a75aa10497c6ee018445e0934dde135e7f168f07d3b8a07.wav",
+      "bytes": 1746142,
+      "sha256": "2a903396ee7130c42a75aa10497c6ee018445e0934dde135e7f168f07d3b8a07",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 290901,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "2a903396ee7130c42a75aa10497c6ee018445e0934dde135e7f168f07d3b8a07",
+          "outputSha256": "2a903396ee7130c42a75aa10497c6ee018445e0934dde135e7f168f07d3b8a07",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn1_rr1_032.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn1-rr1-034-c9bdc616f2f2",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn1_rr1_034.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn1_rr1_034.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/c9bdc616f2f289c16ebf40a33dd26c8cd55db92d6cfa6cda0792805ebfbf25dc.wav",
+      "bytes": 1303534,
+      "sha256": "c9bdc616f2f289c16ebf40a33dd26c8cd55db92d6cfa6cda0792805ebfbf25dc",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 217133,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "c9bdc616f2f289c16ebf40a33dd26c8cd55db92d6cfa6cda0792805ebfbf25dc",
+          "outputSha256": "c9bdc616f2f289c16ebf40a33dd26c8cd55db92d6cfa6cda0792805ebfbf25dc",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn1_rr1_034.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn1-rr1-036-6dfbe8f959d7",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn1_rr1_036.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn1_rr1_036.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/6dfbe8f959d75a52eadfa5802ac05e52684e8acacb5cb4ed39e858f7359e0385.wav",
+      "bytes": 1304218,
+      "sha256": "6dfbe8f959d75a52eadfa5802ac05e52684e8acacb5cb4ed39e858f7359e0385",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 217247,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "6dfbe8f959d75a52eadfa5802ac05e52684e8acacb5cb4ed39e858f7359e0385",
+          "outputSha256": "6dfbe8f959d75a52eadfa5802ac05e52684e8acacb5cb4ed39e858f7359e0385",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn1_rr1_036.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn1-rr1-038-3176c8eec715",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn1_rr1_038.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn1_rr1_038.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/3176c8eec715cccf5991efe99e1507d063f111060d97e91a74cf37ef1c111441.wav",
+      "bytes": 915352,
+      "sha256": "3176c8eec715cccf5991efe99e1507d063f111060d97e91a74cf37ef1c111441",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 152436,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "3176c8eec715cccf5991efe99e1507d063f111060d97e91a74cf37ef1c111441",
+          "outputSha256": "3176c8eec715cccf5991efe99e1507d063f111060d97e91a74cf37ef1c111441",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn1_rr1_038.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn1-rr1-040-43cd5b95a890",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn1_rr1_040.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn1_rr1_040.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/43cd5b95a890fd482c56fa1c49c87e63026e8968633272eed88a89abceb30d47.wav",
+      "bytes": 642772,
+      "sha256": "43cd5b95a890fd482c56fa1c49c87e63026e8968633272eed88a89abceb30d47",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 107006,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "43cd5b95a890fd482c56fa1c49c87e63026e8968633272eed88a89abceb30d47",
+          "outputSha256": "43cd5b95a890fd482c56fa1c49c87e63026e8968633272eed88a89abceb30d47",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn1_rr1_040.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn1-rr1-042-4bc64bcdbe1b",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn1_rr1_042.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn1_rr1_042.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/4bc64bcdbe1be494cc9c82246c2de8e7808432d18bd3d4dc0868fc9dd72de698.wav",
+      "bytes": 571294,
+      "sha256": "4bc64bcdbe1be494cc9c82246c2de8e7808432d18bd3d4dc0868fc9dd72de698",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 95093,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "4bc64bcdbe1be494cc9c82246c2de8e7808432d18bd3d4dc0868fc9dd72de698",
+          "outputSha256": "4bc64bcdbe1be494cc9c82246c2de8e7808432d18bd3d4dc0868fc9dd72de698",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn1_rr1_042.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn1-rr1-044-ab25ca49f0e9",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn1_rr1_044.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn1_rr1_044.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/ab25ca49f0e9fbc0d14be7321a1d08fdd61a37f56d47c3140720d91c89cc34b1.wav",
+      "bytes": 377608,
+      "sha256": "ab25ca49f0e9fbc0d14be7321a1d08fdd61a37f56d47c3140720d91c89cc34b1",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 62812,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "ab25ca49f0e9fbc0d14be7321a1d08fdd61a37f56d47c3140720d91c89cc34b1",
+          "outputSha256": "ab25ca49f0e9fbc0d14be7321a1d08fdd61a37f56d47c3140720d91c89cc34b1",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn1_rr1_044.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn2-rr1-000-32f3cda282b6",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn2_rr1_000.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn2_rr1_000.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/32f3cda282b64a65c6b2b071c91d98019514e8ffe80154a915431fa03443ee93.wav",
+      "bytes": 4500238,
+      "sha256": "32f3cda282b64a65c6b2b071c91d98019514e8ffe80154a915431fa03443ee93",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 749917,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "32f3cda282b64a65c6b2b071c91d98019514e8ffe80154a915431fa03443ee93",
+          "outputSha256": "32f3cda282b64a65c6b2b071c91d98019514e8ffe80154a915431fa03443ee93",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn2_rr1_000.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn2-rr1-002-2ba9838d073b",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn2_rr1_002.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn2_rr1_002.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/2ba9838d073b9dec7ed19a4b2b3ba608f62a8a1c89694d7ef1f1afd47406683f.wav",
+      "bytes": 6074254,
+      "sha256": "2ba9838d073b9dec7ed19a4b2b3ba608f62a8a1c89694d7ef1f1afd47406683f",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 1012253,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "2ba9838d073b9dec7ed19a4b2b3ba608f62a8a1c89694d7ef1f1afd47406683f",
+          "outputSha256": "2ba9838d073b9dec7ed19a4b2b3ba608f62a8a1c89694d7ef1f1afd47406683f",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn2_rr1_002.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn2-rr1-004-ea7f8c8e9977",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn2_rr1_004.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn2_rr1_004.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/ea7f8c8e997794656422b9c19f3a96f8ba03a0282ee664b97437c13b5ed2865c.wav",
+      "bytes": 5625058,
+      "sha256": "ea7f8c8e997794656422b9c19f3a96f8ba03a0282ee664b97437c13b5ed2865c",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 937387,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "ea7f8c8e997794656422b9c19f3a96f8ba03a0282ee664b97437c13b5ed2865c",
+          "outputSha256": "ea7f8c8e997794656422b9c19f3a96f8ba03a0282ee664b97437c13b5ed2865c",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn2_rr1_004.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn2-rr1-006-80ade36a6030",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn2_rr1_006.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn2_rr1_006.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/80ade36a6030d83d868b6abbd1e9ab6f85ec2494cfe25d2affffd88f453e81e0.wav",
+      "bytes": 4936726,
+      "sha256": "80ade36a6030d83d868b6abbd1e9ab6f85ec2494cfe25d2affffd88f453e81e0",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 822665,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "80ade36a6030d83d868b6abbd1e9ab6f85ec2494cfe25d2affffd88f453e81e0",
+          "outputSha256": "80ade36a6030d83d868b6abbd1e9ab6f85ec2494cfe25d2affffd88f453e81e0",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn2_rr1_006.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn2-rr1-008-52be11ac2a57",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn2_rr1_008.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn2_rr1_008.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/52be11ac2a57389f2d12cbd82df9b175da7b60e423d8a1154e1d7fc3340ecd6e.wav",
+      "bytes": 6862312,
+      "sha256": "52be11ac2a57389f2d12cbd82df9b175da7b60e423d8a1154e1d7fc3340ecd6e",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 1143596,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "52be11ac2a57389f2d12cbd82df9b175da7b60e423d8a1154e1d7fc3340ecd6e",
+          "outputSha256": "52be11ac2a57389f2d12cbd82df9b175da7b60e423d8a1154e1d7fc3340ecd6e",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn2_rr1_008.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn2-rr1-010-324c53abf03b",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn2_rr1_010.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn2_rr1_010.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/324c53abf03b2b32ff74f52886806ab5d4a7a37f6eb9c746558799037d7e12da.wav",
+      "bytes": 7572904,
+      "sha256": "324c53abf03b2b32ff74f52886806ab5d4a7a37f6eb9c746558799037d7e12da",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 1262028,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "324c53abf03b2b32ff74f52886806ab5d4a7a37f6eb9c746558799037d7e12da",
+          "outputSha256": "324c53abf03b2b32ff74f52886806ab5d4a7a37f6eb9c746558799037d7e12da",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn2_rr1_010.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn2-rr1-012-9accd92b7799",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn2_rr1_012.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn2_rr1_012.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/9accd92b779985736589d7bf25b93f1d6d508830d2f2aad3e76a481549cc1ca2.wav",
+      "bytes": 6306106,
+      "sha256": "9accd92b779985736589d7bf25b93f1d6d508830d2f2aad3e76a481549cc1ca2",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 1050895,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "9accd92b779985736589d7bf25b93f1d6d508830d2f2aad3e76a481549cc1ca2",
+          "outputSha256": "9accd92b779985736589d7bf25b93f1d6d508830d2f2aad3e76a481549cc1ca2",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn2_rr1_012.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn2-rr1-014-0bdf66b89c2c",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn2_rr1_014.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn2_rr1_014.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/0bdf66b89c2cd8042118b2cf9898aab334820fff7538b8553655a3d11d2ba107.wav",
+      "bytes": 6180628,
+      "sha256": "0bdf66b89c2cd8042118b2cf9898aab334820fff7538b8553655a3d11d2ba107",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 1029982,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "0bdf66b89c2cd8042118b2cf9898aab334820fff7538b8553655a3d11d2ba107",
+          "outputSha256": "0bdf66b89c2cd8042118b2cf9898aab334820fff7538b8553655a3d11d2ba107",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn2_rr1_014.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn2-rr1-016-87b90b8161b5",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn2_rr1_016.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn2_rr1_016.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/87b90b8161b5ddac5f1e81cce7895c726aff220e735586059c7ed684a5ae82dc.wav",
+      "bytes": 4643212,
+      "sha256": "87b90b8161b5ddac5f1e81cce7895c726aff220e735586059c7ed684a5ae82dc",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 773746,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "87b90b8161b5ddac5f1e81cce7895c726aff220e735586059c7ed684a5ae82dc",
+          "outputSha256": "87b90b8161b5ddac5f1e81cce7895c726aff220e735586059c7ed684a5ae82dc",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn2_rr1_016.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn2-rr1-018-fb39ae501f7d",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn2_rr1_018.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn2_rr1_018.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/fb39ae501f7dde4aa3626d2e382b3709962cbe5d48b6c001ba7c911d1ffb6aeb.wav",
+      "bytes": 5748202,
+      "sha256": "fb39ae501f7dde4aa3626d2e382b3709962cbe5d48b6c001ba7c911d1ffb6aeb",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 957911,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "fb39ae501f7dde4aa3626d2e382b3709962cbe5d48b6c001ba7c911d1ffb6aeb",
+          "outputSha256": "fb39ae501f7dde4aa3626d2e382b3709962cbe5d48b6c001ba7c911d1ffb6aeb",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn2_rr1_018.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn2-rr1-020-dc314226819e",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn2_rr1_020.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn2_rr1_020.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/dc314226819e7af0768cd7fc08933f5e5b550083145e05af630fd7556f4d3913.wav",
+      "bytes": 4346848,
+      "sha256": "dc314226819e7af0768cd7fc08933f5e5b550083145e05af630fd7556f4d3913",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 724352,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "dc314226819e7af0768cd7fc08933f5e5b550083145e05af630fd7556f4d3913",
+          "outputSha256": "dc314226819e7af0768cd7fc08933f5e5b550083145e05af630fd7556f4d3913",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn2_rr1_020.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn2-rr1-022-9a4e03fa389b",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn2_rr1_022.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn2_rr1_022.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/9a4e03fa389b7e59ea6b3a6719eef52be8d607844283c7163662030f57b60942.wav",
+      "bytes": 4476550,
+      "sha256": "9a4e03fa389b7e59ea6b3a6719eef52be8d607844283c7163662030f57b60942",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 745969,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "9a4e03fa389b7e59ea6b3a6719eef52be8d607844283c7163662030f57b60942",
+          "outputSha256": "9a4e03fa389b7e59ea6b3a6719eef52be8d607844283c7163662030f57b60942",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn2_rr1_022.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn2-rr1-024-a00ae1a2b2a7",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn2_rr1_024.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn2_rr1_024.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/a00ae1a2b2a78c154b067a9709afc1ce2d3be9f08d9f4ad3c9c869a7db80eb75.wav",
+      "bytes": 3204940,
+      "sha256": "a00ae1a2b2a78c154b067a9709afc1ce2d3be9f08d9f4ad3c9c869a7db80eb75",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 534034,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "a00ae1a2b2a78c154b067a9709afc1ce2d3be9f08d9f4ad3c9c869a7db80eb75",
+          "outputSha256": "a00ae1a2b2a78c154b067a9709afc1ce2d3be9f08d9f4ad3c9c869a7db80eb75",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn2_rr1_024.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn2-rr1-026-4e668e75c392",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn2_rr1_026.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn2_rr1_026.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/4e668e75c3922c79ef06bd46806224dbf8dbfa0be1569847a1cd17e573a967ec.wav",
+      "bytes": 2656870,
+      "sha256": "4e668e75c3922c79ef06bd46806224dbf8dbfa0be1569847a1cd17e573a967ec",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 442689,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "4e668e75c3922c79ef06bd46806224dbf8dbfa0be1569847a1cd17e573a967ec",
+          "outputSha256": "4e668e75c3922c79ef06bd46806224dbf8dbfa0be1569847a1cd17e573a967ec",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn2_rr1_026.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn2-rr1-028-84fe87bd24dc",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn2_rr1_028.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn2_rr1_028.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/84fe87bd24dc93d354213f730517a29f485c40715d5959af97976b364110b70a.wav",
+      "bytes": 3008866,
+      "sha256": "84fe87bd24dc93d354213f730517a29f485c40715d5959af97976b364110b70a",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 501355,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "84fe87bd24dc93d354213f730517a29f485c40715d5959af97976b364110b70a",
+          "outputSha256": "84fe87bd24dc93d354213f730517a29f485c40715d5959af97976b364110b70a",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn2_rr1_028.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn2-rr1-030-4b558995c108",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn2_rr1_030.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn2_rr1_030.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/4b558995c108f7f1dcede12c7e0444caa2658205fea34a314abf485dc6b7e710.wav",
+      "bytes": 3144364,
+      "sha256": "4b558995c108f7f1dcede12c7e0444caa2658205fea34a314abf485dc6b7e710",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 523938,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "4b558995c108f7f1dcede12c7e0444caa2658205fea34a314abf485dc6b7e710",
+          "outputSha256": "4b558995c108f7f1dcede12c7e0444caa2658205fea34a314abf485dc6b7e710",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn2_rr1_030.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn2-rr1-032-8a4b127b8420",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn2_rr1_032.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn2_rr1_032.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/8a4b127b8420c276d8935495d13b4e493c3eaa8f8aaef75bbc4f74d6437160f2.wav",
+      "bytes": 2888572,
+      "sha256": "8a4b127b8420c276d8935495d13b4e493c3eaa8f8aaef75bbc4f74d6437160f2",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 481306,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "8a4b127b8420c276d8935495d13b4e493c3eaa8f8aaef75bbc4f74d6437160f2",
+          "outputSha256": "8a4b127b8420c276d8935495d13b4e493c3eaa8f8aaef75bbc4f74d6437160f2",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn2_rr1_032.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn2-rr1-034-c5305eb82090",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn2_rr1_034.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn2_rr1_034.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/c5305eb820902b66b0a55768733956ff21d98692810d6e2cec24d68879ef5fcd.wav",
+      "bytes": 2605408,
+      "sha256": "c5305eb820902b66b0a55768733956ff21d98692810d6e2cec24d68879ef5fcd",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 434112,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "c5305eb820902b66b0a55768733956ff21d98692810d6e2cec24d68879ef5fcd",
+          "outputSha256": "c5305eb820902b66b0a55768733956ff21d98692810d6e2cec24d68879ef5fcd",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn2_rr1_034.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn2-rr1-036-87ef3cb2e7f2",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn2_rr1_036.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn2_rr1_036.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/87ef3cb2e7f234b56ca70ff323e2714bccd80d771fc6ac02dfef3405c217085c.wav",
+      "bytes": 2254930,
+      "sha256": "87ef3cb2e7f234b56ca70ff323e2714bccd80d771fc6ac02dfef3405c217085c",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 375699,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "87ef3cb2e7f234b56ca70ff323e2714bccd80d771fc6ac02dfef3405c217085c",
+          "outputSha256": "87ef3cb2e7f234b56ca70ff323e2714bccd80d771fc6ac02dfef3405c217085c",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn2_rr1_036.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn2-rr1-038-ace4ec29aa6a",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn2_rr1_038.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn2_rr1_038.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/ace4ec29aa6ae232566174c6b74ae861ce24e38e2cb3ab1d1ea5cf8e145ebdbd.wav",
+      "bytes": 1425370,
+      "sha256": "ace4ec29aa6ae232566174c6b74ae861ce24e38e2cb3ab1d1ea5cf8e145ebdbd",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 237439,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "ace4ec29aa6ae232566174c6b74ae861ce24e38e2cb3ab1d1ea5cf8e145ebdbd",
+          "outputSha256": "ace4ec29aa6ae232566174c6b74ae861ce24e38e2cb3ab1d1ea5cf8e145ebdbd",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn2_rr1_038.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn2-rr1-040-25028a985a79",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn2_rr1_040.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn2_rr1_040.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/25028a985a79b059659b785ecb29388bb8c173cf3a1b2e185fb8c64491d0f476.wav",
+      "bytes": 667948,
+      "sha256": "25028a985a79b059659b785ecb29388bb8c173cf3a1b2e185fb8c64491d0f476",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 111202,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "25028a985a79b059659b785ecb29388bb8c173cf3a1b2e185fb8c64491d0f476",
+          "outputSha256": "25028a985a79b059659b785ecb29388bb8c173cf3a1b2e185fb8c64491d0f476",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn2_rr1_040.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn2-rr1-042-11dce969f3f1",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn2_rr1_042.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn2_rr1_042.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/11dce969f3f159c10fbcdf4a743e4f18937b59e5e259fc24d197965fc241514d.wav",
+      "bytes": 633034,
+      "sha256": "11dce969f3f159c10fbcdf4a743e4f18937b59e5e259fc24d197965fc241514d",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 105383,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "11dce969f3f159c10fbcdf4a743e4f18937b59e5e259fc24d197965fc241514d",
+          "outputSha256": "11dce969f3f159c10fbcdf4a743e4f18937b59e5e259fc24d197965fc241514d",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn2_rr1_042.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn2-rr1-044-8dbeca4e4254",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn2_rr1_044.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn2_rr1_044.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/8dbeca4e4254bd3635fdb7be54bbe57cddd751a3d0a0bda64e85baf02a4de999.wav",
+      "bytes": 581164,
+      "sha256": "8dbeca4e4254bd3635fdb7be54bbe57cddd751a3d0a0bda64e85baf02a4de999",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 96738,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "8dbeca4e4254bd3635fdb7be54bbe57cddd751a3d0a0bda64e85baf02a4de999",
+          "outputSha256": "8dbeca4e4254bd3635fdb7be54bbe57cddd751a3d0a0bda64e85baf02a4de999",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn2_rr1_044.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn3-rr1-000-529ef60490fc",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn3_rr1_000.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn3_rr1_000.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/529ef60490fcb922cf3d469c420608a2205042b9b329db04abc0147aa5f4ea63.wav",
+      "bytes": 6918652,
+      "sha256": "529ef60490fcb922cf3d469c420608a2205042b9b329db04abc0147aa5f4ea63",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 1152986,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "529ef60490fcb922cf3d469c420608a2205042b9b329db04abc0147aa5f4ea63",
+          "outputSha256": "529ef60490fcb922cf3d469c420608a2205042b9b329db04abc0147aa5f4ea63",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn3_rr1_000.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn3-rr1-002-3937efc793df",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn3_rr1_002.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn3_rr1_002.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/3937efc793df279be101d0964cb46e3b2480f855ddb95d55f7e250eaaf725fac.wav",
+      "bytes": 6462502,
+      "sha256": "3937efc793df279be101d0964cb46e3b2480f855ddb95d55f7e250eaaf725fac",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 1076961,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "3937efc793df279be101d0964cb46e3b2480f855ddb95d55f7e250eaaf725fac",
+          "outputSha256": "3937efc793df279be101d0964cb46e3b2480f855ddb95d55f7e250eaaf725fac",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn3_rr1_002.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn3-rr1-004-f2eae20cd065",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn3_rr1_004.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn3_rr1_004.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/f2eae20cd065108f5ea9ba3b6c3fcaeada1f0a3b12566e1a5a719389233ce6ec.wav",
+      "bytes": 6156106,
+      "sha256": "f2eae20cd065108f5ea9ba3b6c3fcaeada1f0a3b12566e1a5a719389233ce6ec",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 1025895,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "f2eae20cd065108f5ea9ba3b6c3fcaeada1f0a3b12566e1a5a719389233ce6ec",
+          "outputSha256": "f2eae20cd065108f5ea9ba3b6c3fcaeada1f0a3b12566e1a5a719389233ce6ec",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn3_rr1_004.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn3-rr1-006-565fb26f1563",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn3_rr1_006.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn3_rr1_006.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/565fb26f15632002fb75c0cd42defcab8fa4cb23a504655d287b4a5b8642b7a0.wav",
+      "bytes": 6210712,
+      "sha256": "565fb26f15632002fb75c0cd42defcab8fa4cb23a504655d287b4a5b8642b7a0",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 1034996,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "565fb26f15632002fb75c0cd42defcab8fa4cb23a504655d287b4a5b8642b7a0",
+          "outputSha256": "565fb26f15632002fb75c0cd42defcab8fa4cb23a504655d287b4a5b8642b7a0",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn3_rr1_006.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn3-rr1-008-19080adc5446",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn3_rr1_008.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn3_rr1_008.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/19080adc5446961073aaeca7d5f5594cdd7c409ee0ffb95231400dfd8c2fd947.wav",
+      "bytes": 7063150,
+      "sha256": "19080adc5446961073aaeca7d5f5594cdd7c409ee0ffb95231400dfd8c2fd947",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 1177069,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "19080adc5446961073aaeca7d5f5594cdd7c409ee0ffb95231400dfd8c2fd947",
+          "outputSha256": "19080adc5446961073aaeca7d5f5594cdd7c409ee0ffb95231400dfd8c2fd947",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn3_rr1_008.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn3-rr1-010-e5fe5e4ec9c4",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn3_rr1_010.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn3_rr1_010.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/e5fe5e4ec9c4d4818a9ce651b284eee61d25deb228c7d9d3b46b1f90f894403b.wav",
+      "bytes": 6946702,
+      "sha256": "e5fe5e4ec9c4d4818a9ce651b284eee61d25deb228c7d9d3b46b1f90f894403b",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 1157661,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "e5fe5e4ec9c4d4818a9ce651b284eee61d25deb228c7d9d3b46b1f90f894403b",
+          "outputSha256": "e5fe5e4ec9c4d4818a9ce651b284eee61d25deb228c7d9d3b46b1f90f894403b",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn3_rr1_010.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn3-rr1-012-ac6644ffc1aa",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn3_rr1_012.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn3_rr1_012.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/ac6644ffc1aa25d194f024d3abdae4f06d6dff1ae42ba2a7e8edc1fddcdff12b.wav",
+      "bytes": 6153220,
+      "sha256": "ac6644ffc1aa25d194f024d3abdae4f06d6dff1ae42ba2a7e8edc1fddcdff12b",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 1025414,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "ac6644ffc1aa25d194f024d3abdae4f06d6dff1ae42ba2a7e8edc1fddcdff12b",
+          "outputSha256": "ac6644ffc1aa25d194f024d3abdae4f06d6dff1ae42ba2a7e8edc1fddcdff12b",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn3_rr1_012.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn3-rr1-014-d1d7318686f6",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn3_rr1_014.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn3_rr1_014.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/d1d7318686f6a5ae0e78560c171bb8f9cb4bffa3d2115f6e1ed32b5d4d07f81b.wav",
+      "bytes": 5030746,
+      "sha256": "d1d7318686f6a5ae0e78560c171bb8f9cb4bffa3d2115f6e1ed32b5d4d07f81b",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 838335,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "d1d7318686f6a5ae0e78560c171bb8f9cb4bffa3d2115f6e1ed32b5d4d07f81b",
+          "outputSha256": "d1d7318686f6a5ae0e78560c171bb8f9cb4bffa3d2115f6e1ed32b5d4d07f81b",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn3_rr1_014.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn3-rr1-016-bbf92571a777",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn3_rr1_016.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn3_rr1_016.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/bbf92571a777aeadee8751bba780b8a9a0b5913980c252d805acde2069bedb89.wav",
+      "bytes": 5759260,
+      "sha256": "bbf92571a777aeadee8751bba780b8a9a0b5913980c252d805acde2069bedb89",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 959754,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "bbf92571a777aeadee8751bba780b8a9a0b5913980c252d805acde2069bedb89",
+          "outputSha256": "bbf92571a777aeadee8751bba780b8a9a0b5913980c252d805acde2069bedb89",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn3_rr1_016.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn3-rr1-018-0914913456c7",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn3_rr1_018.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn3_rr1_018.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/0914913456c74ec906e7cfed81a4b2986658c8a006e2f278dfa49784215b1a4b.wav",
+      "bytes": 5608348,
+      "sha256": "0914913456c74ec906e7cfed81a4b2986658c8a006e2f278dfa49784215b1a4b",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 934602,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "0914913456c74ec906e7cfed81a4b2986658c8a006e2f278dfa49784215b1a4b",
+          "outputSha256": "0914913456c74ec906e7cfed81a4b2986658c8a006e2f278dfa49784215b1a4b",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn3_rr1_018.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn3-rr1-020-515e6d85e510",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn3_rr1_020.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn3_rr1_020.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/515e6d85e51050867174eb901dd2fdc8018e7be0e8f320d23cdeb854531ea4c8.wav",
+      "bytes": 5212972,
+      "sha256": "515e6d85e51050867174eb901dd2fdc8018e7be0e8f320d23cdeb854531ea4c8",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 868706,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "515e6d85e51050867174eb901dd2fdc8018e7be0e8f320d23cdeb854531ea4c8",
+          "outputSha256": "515e6d85e51050867174eb901dd2fdc8018e7be0e8f320d23cdeb854531ea4c8",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn3_rr1_020.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn3-rr1-022-c2c1f3d7f6ff",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn3_rr1_022.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn3_rr1_022.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/c2c1f3d7f6ffa05d2a840094a3191537445436bc1ef6efe01af7f0876a39d06e.wav",
+      "bytes": 4898926,
+      "sha256": "c2c1f3d7f6ffa05d2a840094a3191537445436bc1ef6efe01af7f0876a39d06e",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 816365,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "c2c1f3d7f6ffa05d2a840094a3191537445436bc1ef6efe01af7f0876a39d06e",
+          "outputSha256": "c2c1f3d7f6ffa05d2a840094a3191537445436bc1ef6efe01af7f0876a39d06e",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn3_rr1_022.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn3-rr1-024-cc8b22d17792",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn3_rr1_024.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn3_rr1_024.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/cc8b22d1779248f6edc88fa5d072b8ce8b51b06fbe62be3d3d19a324d1da9030.wav",
+      "bytes": 4721116,
+      "sha256": "cc8b22d1779248f6edc88fa5d072b8ce8b51b06fbe62be3d3d19a324d1da9030",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 786730,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "cc8b22d1779248f6edc88fa5d072b8ce8b51b06fbe62be3d3d19a324d1da9030",
+          "outputSha256": "cc8b22d1779248f6edc88fa5d072b8ce8b51b06fbe62be3d3d19a324d1da9030",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn3_rr1_024.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn3-rr1-026-d89966bb53c4",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn3_rr1_026.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn3_rr1_026.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/d89966bb53c4bdabdfe453c15d9779cf1eebae10069aaa7f78bd8074bad98b1a.wav",
+      "bytes": 3849658,
+      "sha256": "d89966bb53c4bdabdfe453c15d9779cf1eebae10069aaa7f78bd8074bad98b1a",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 641487,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "d89966bb53c4bdabdfe453c15d9779cf1eebae10069aaa7f78bd8074bad98b1a",
+          "outputSha256": "d89966bb53c4bdabdfe453c15d9779cf1eebae10069aaa7f78bd8074bad98b1a",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn3_rr1_026.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn3-rr1-028-bf6c7d1bbf94",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn3_rr1_028.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn3_rr1_028.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/bf6c7d1bbf94b66e4167ecafef413835eee568f6f750dae30c2f3b9250fd89f5.wav",
+      "bytes": 2854090,
+      "sha256": "bf6c7d1bbf94b66e4167ecafef413835eee568f6f750dae30c2f3b9250fd89f5",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 475559,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "bf6c7d1bbf94b66e4167ecafef413835eee568f6f750dae30c2f3b9250fd89f5",
+          "outputSha256": "bf6c7d1bbf94b66e4167ecafef413835eee568f6f750dae30c2f3b9250fd89f5",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn3_rr1_028.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn3-rr1-030-d19dfdb6db0a",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn3_rr1_030.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn3_rr1_030.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/d19dfdb6db0ade3b2cb7a5f6d152adc8824c86c79b4b9da0a82ac0c8bb58c02e.wav",
+      "bytes": 3738850,
+      "sha256": "d19dfdb6db0ade3b2cb7a5f6d152adc8824c86c79b4b9da0a82ac0c8bb58c02e",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 623019,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "d19dfdb6db0ade3b2cb7a5f6d152adc8824c86c79b4b9da0a82ac0c8bb58c02e",
+          "outputSha256": "d19dfdb6db0ade3b2cb7a5f6d152adc8824c86c79b4b9da0a82ac0c8bb58c02e",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn3_rr1_030.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn3-rr1-032-403a1f1a4b9d",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn3_rr1_032.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn3_rr1_032.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/403a1f1a4b9df06be59fb45382af40728755c92a225d9e7c3455159ed3ae3ba7.wav",
+      "bytes": 3372646,
+      "sha256": "403a1f1a4b9df06be59fb45382af40728755c92a225d9e7c3455159ed3ae3ba7",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 561985,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "403a1f1a4b9df06be59fb45382af40728755c92a225d9e7c3455159ed3ae3ba7",
+          "outputSha256": "403a1f1a4b9df06be59fb45382af40728755c92a225d9e7c3455159ed3ae3ba7",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn3_rr1_032.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn3-rr1-034-5263ea569e71",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn3_rr1_034.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn3_rr1_034.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/5263ea569e710d4cddb1da780b7806cd8dcbc4d3dee6f145f900fbba0fc972b1.wav",
+      "bytes": 2808244,
+      "sha256": "5263ea569e710d4cddb1da780b7806cd8dcbc4d3dee6f145f900fbba0fc972b1",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 467918,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "5263ea569e710d4cddb1da780b7806cd8dcbc4d3dee6f145f900fbba0fc972b1",
+          "outputSha256": "5263ea569e710d4cddb1da780b7806cd8dcbc4d3dee6f145f900fbba0fc972b1",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn3_rr1_034.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn3-rr1-036-06f39cb4f41c",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn3_rr1_036.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn3_rr1_036.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/06f39cb4f41cb2cb46f126b60b302269307cc397ead376c9186f182c4260cd78.wav",
+      "bytes": 1487410,
+      "sha256": "06f39cb4f41cb2cb46f126b60b302269307cc397ead376c9186f182c4260cd78",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 247779,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "06f39cb4f41cb2cb46f126b60b302269307cc397ead376c9186f182c4260cd78",
+          "outputSha256": "06f39cb4f41cb2cb46f126b60b302269307cc397ead376c9186f182c4260cd78",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn3_rr1_036.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn3-rr1-038-8b8a0f6d9789",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn3_rr1_038.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn3_rr1_038.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/8b8a0f6d9789467736bc582c65ad0402798ec9c43d009e41985de4f5faa8e72c.wav",
+      "bytes": 927712,
+      "sha256": "8b8a0f6d9789467736bc582c65ad0402798ec9c43d009e41985de4f5faa8e72c",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 154496,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "8b8a0f6d9789467736bc582c65ad0402798ec9c43d009e41985de4f5faa8e72c",
+          "outputSha256": "8b8a0f6d9789467736bc582c65ad0402798ec9c43d009e41985de4f5faa8e72c",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn3_rr1_038.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn3-rr1-040-df8692ef3371",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn3_rr1_040.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn3_rr1_040.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/df8692ef3371510f8492d45af6ddf9c576d5cfd88aac817c86f36afcb40866e2.wav",
+      "bytes": 725854,
+      "sha256": "df8692ef3371510f8492d45af6ddf9c576d5cfd88aac817c86f36afcb40866e2",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 120853,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "df8692ef3371510f8492d45af6ddf9c576d5cfd88aac817c86f36afcb40866e2",
+          "outputSha256": "df8692ef3371510f8492d45af6ddf9c576d5cfd88aac817c86f36afcb40866e2",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn3_rr1_040.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn3-rr1-042-9690e7ef1935",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn3_rr1_042.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn3_rr1_042.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/9690e7ef1935f22787898a3766fc9cd96f83e18dcee9dae1e8338674386dc190.wav",
+      "bytes": 472108,
+      "sha256": "9690e7ef1935f22787898a3766fc9cd96f83e18dcee9dae1e8338674386dc190",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 78562,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "9690e7ef1935f22787898a3766fc9cd96f83e18dcee9dae1e8338674386dc190",
+          "outputSha256": "9690e7ef1935f22787898a3766fc9cd96f83e18dcee9dae1e8338674386dc190",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn3_rr1_042.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "warm-piano-vsco-upright-full-player-dyn3-rr1-044-5625c4930fa9",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Keys/Upright Piano/Player_dyn3_rr1_044.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Keys/Upright%20Piano/Player_dyn3_rr1_044.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/5625c4930fa958ff18e92106002e6b63ef73a1a37f99c57cf7b7900abaf8ccd3.wav",
+      "bytes": 615094,
+      "sha256": "5625c4930fa958ff18e92106002e6b63ef73a1a37f99c57cf7b7900abaf8ccd3",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 102393,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "5625c4930fa958ff18e92106002e6b63ef73a1a37f99c57cf7b7900abaf8ccd3",
+          "outputSha256": "5625c4930fa958ff18e92106002e6b63ef73a1a37f99c57cf7b7900abaf8ccd3",
+          "parameters": {
+            "sfzPath": "UprightPiano.sfz",
+            "samplePath": "Keys/Upright Piano/Player_dyn3_rr1_044.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    }
+  ],
+  "contentSha256": "9b8333c778f0482f6ee2d6492546c5ec6d7ed06b72a383e41069926822c62edc"
+}

@@ -1,0 +1,39 @@
+{
+  "format": "refrain-candidate-shard@0-experimental",
+  "id": "sub-bass-subtractive-original",
+  "candidateContentSha256": "b798eff320d1816cd8365af1c5143d7d70e69894f8633622c9c09bcff75f88fd",
+  "candidate": {
+    "id": "sub-bass-subtractive-original",
+    "instrumentId": "sub_bass",
+    "engine": "synth",
+    "mapping": {
+      "type": "midi-fallback",
+      "program": 38
+    },
+    "calibrationGainDb": -17,
+    "releaseStatus": "development-identity",
+    "patch": {
+      "format": "refrain-synth-subtractive@0-experimental",
+      "oscillators": [
+        {
+          "type": "sine",
+          "ratio": 1,
+          "gain": 0.92
+        },
+        {
+          "type": "square",
+          "ratio": 0.5,
+          "gain": 0.06
+        }
+      ],
+      "attack": 0.035,
+      "decay": 0.45,
+      "sustain": 0.78,
+      "release": 0.65,
+      "filterHz": 430,
+      "filterQ": 0.65
+    }
+  },
+  "assets": [],
+  "contentSha256": "5adb762c03296ca1f9f106b423bda8f698e71f666e32ba7c4e55ddee31012a57"
+}

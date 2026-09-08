@@ -1,0 +1,19 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "noEmit": true,
+    "tsBuildInfoFile": "node_modules/.cache/presentation.tsbuildinfo"
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx", "vite.config.ts"],
+  "references": [
+    { "path": "../../packages/air-schema" },
+    { "path": "../../packages/audio-engine" },
+    { "path": "../../packages/compiler" },
+    { "path": "../../packages/soundpack" },
+    { "path": "../../packages/renderer" },
+    { "path": "../../packages/mcp-server" }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "name": "@refrain/air-schema",
+  "version": "0.0.0-experimental",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@refrain/identity": "*"
+  },
+  "exports": {
+    ".": {
+      "refrain-built": "./dist/index.js",
+      "default": "./src/index.ts"
+    },
+    "./any": {
+      "refrain-built": "./dist/any.js",
+      "default": "./src/any.ts"
+    },
+    "./v1": {
+      "refrain-built": "./dist/v1.js",
+      "default": "./src/v1.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc -b",
+    "test": "vitest run --root ../.. packages/air-schema",
+    "typecheck": "tsc -b --pretty false"
+  },
+  "license": "SEE LICENSE IN ../../LICENSING.md"
+}

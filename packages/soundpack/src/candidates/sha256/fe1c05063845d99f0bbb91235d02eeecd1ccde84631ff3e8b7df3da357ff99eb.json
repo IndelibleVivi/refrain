@@ -1,0 +1,1456 @@
+{
+  "format": "refrain-candidate-shard@0-experimental",
+  "id": "harp-vsco-full",
+  "candidateContentSha256": "d995945514b0ff70e0edfdd373e98af78c65f9fedcac9a342351d369d2ac378a",
+  "candidate": {
+    "id": "harp-vsco-full",
+    "instrumentId": "harp",
+    "engine": "sampler",
+    "mapping": {
+      "type": "sample-map",
+      "playableMin": 24,
+      "playableMax": 103,
+      "midiFallbackProgram": 46,
+      "articulationFallbacks": {
+        "staccato": "none",
+        "tenuto": "none",
+        "accent": "none",
+        "legato": "none"
+      },
+      "regions": [
+        {
+          "id": "harp-vsco-full-region-001",
+          "trigger": "attack",
+          "assetId": "harp-vsco-full-ksharp-g1-mp-f9fa1a6ea784",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 30,
+            "rootMidi": 31,
+            "maxMidi": 32
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 10,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 12
+          }
+        },
+        {
+          "id": "harp-vsco-full-region-002",
+          "trigger": "attack",
+          "assetId": "harp-vsco-full-ksharp-a2-mf-1df9f4d138ca",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 43,
+            "rootMidi": 45,
+            "maxMidi": 46
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 10,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 12
+          }
+        },
+        {
+          "id": "harp-vsco-full-region-003",
+          "trigger": "attack",
+          "assetId": "harp-vsco-full-ksharp-a4-mf-3665f3975cad",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 67,
+            "rootMidi": 69,
+            "maxMidi": 70
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 10,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 12
+          }
+        },
+        {
+          "id": "harp-vsco-full-region-004",
+          "trigger": "attack",
+          "assetId": "harp-vsco-full-ksharp-a6-mf-4605355d22fa",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 91,
+            "rootMidi": 93,
+            "maxMidi": 93
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 10,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 12
+          }
+        },
+        {
+          "id": "harp-vsco-full-region-005",
+          "trigger": "attack",
+          "assetId": "harp-vsco-full-ksharp-b1-mf-284034807efb",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 33,
+            "rootMidi": 35,
+            "maxMidi": 36
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 10,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 12
+          }
+        },
+        {
+          "id": "harp-vsco-full-region-006",
+          "trigger": "attack",
+          "assetId": "harp-vsco-full-ksharp-b3-mf-f6f71be8c640",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 57,
+            "rootMidi": 59,
+            "maxMidi": 60
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 10,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 12
+          }
+        },
+        {
+          "id": "harp-vsco-full-region-007",
+          "trigger": "attack",
+          "assetId": "harp-vsco-full-ksharp-b5-mf-f2757b674c6b",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 81,
+            "rootMidi": 83,
+            "maxMidi": 84
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 10,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 12
+          }
+        },
+        {
+          "id": "harp-vsco-full-region-008",
+          "trigger": "attack",
+          "assetId": "harp-vsco-full-ksharp-b6-mf-720e56b99f84",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 94,
+            "rootMidi": 95,
+            "maxMidi": 96
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 10,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 12
+          }
+        },
+        {
+          "id": "harp-vsco-full-region-009",
+          "trigger": "attack",
+          "assetId": "harp-vsco-full-ksharp-c3-mf-e5d232771704",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 47,
+            "rootMidi": 48,
+            "maxMidi": 49
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 10,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 12
+          }
+        },
+        {
+          "id": "harp-vsco-full-region-010",
+          "trigger": "attack",
+          "assetId": "harp-vsco-full-ksharp-c5-mf-7c8b862f6fd3",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 71,
+            "rootMidi": 72,
+            "maxMidi": 73
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 10,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 12
+          }
+        },
+        {
+          "id": "harp-vsco-full-region-011",
+          "trigger": "attack",
+          "assetId": "harp-vsco-full-ksharp-d2-mf-b9cbdc08e43f",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 37,
+            "rootMidi": 38,
+            "maxMidi": 39
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 10,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 12
+          }
+        },
+        {
+          "id": "harp-vsco-full-region-012",
+          "trigger": "attack",
+          "assetId": "harp-vsco-full-ksharp-d4-mf-ebfde8aab441",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 61,
+            "rootMidi": 62,
+            "maxMidi": 63
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 10,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 12
+          }
+        },
+        {
+          "id": "harp-vsco-full-region-013",
+          "trigger": "attack",
+          "assetId": "harp-vsco-full-ksharp-d6-mf-b040b61fb279",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 85,
+            "rootMidi": 86,
+            "maxMidi": 87
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 10,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 12
+          }
+        },
+        {
+          "id": "harp-vsco-full-region-014",
+          "trigger": "attack",
+          "assetId": "harp-vsco-full-ksharp-e3-mf-aafa9d41ec0f",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 50,
+            "rootMidi": 52,
+            "maxMidi": 53
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 10,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 12
+          }
+        },
+        {
+          "id": "harp-vsco-full-region-015",
+          "trigger": "attack",
+          "assetId": "harp-vsco-full-ksharp-e5-mf-95dd9ddb0bd1",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 74,
+            "rootMidi": 76,
+            "maxMidi": 77
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 10,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 12
+          }
+        },
+        {
+          "id": "harp-vsco-full-region-016",
+          "trigger": "attack",
+          "assetId": "harp-vsco-full-ksharp-f2-mf-d5c0fb42c176",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 40,
+            "rootMidi": 41,
+            "maxMidi": 42
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 10,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 12
+          }
+        },
+        {
+          "id": "harp-vsco-full-region-017",
+          "trigger": "attack",
+          "assetId": "harp-vsco-full-ksharp-f4-mf-db27ebbb3733",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 64,
+            "rootMidi": 65,
+            "maxMidi": 66
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 10,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 12
+          }
+        },
+        {
+          "id": "harp-vsco-full-region-018",
+          "trigger": "attack",
+          "assetId": "harp-vsco-full-ksharp-f6-mf-7cf4c012542d",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 88,
+            "rootMidi": 89,
+            "maxMidi": 90
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 10,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 12
+          }
+        },
+        {
+          "id": "harp-vsco-full-region-019",
+          "trigger": "attack",
+          "assetId": "harp-vsco-full-ksharp-g3-mf-62600eb1b37b",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 54,
+            "rootMidi": 55,
+            "maxMidi": 56
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 10,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 12
+          }
+        },
+        {
+          "id": "harp-vsco-full-region-020",
+          "trigger": "attack",
+          "assetId": "harp-vsco-full-ksharp-g5-mf-f2004dfc6179",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 78,
+            "rootMidi": 79,
+            "maxMidi": 80
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 10,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 12
+          }
+        },
+        {
+          "id": "harp-vsco-full-region-021",
+          "trigger": "attack",
+          "assetId": "harp-vsco-full-ksharp-d7-f-87ca6f45c5c2",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 97,
+            "rootMidi": 98,
+            "maxMidi": 99
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 10,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 12
+          }
+        },
+        {
+          "id": "harp-vsco-full-region-022",
+          "trigger": "attack",
+          "assetId": "harp-vsco-full-ksharp-e1-f-70f534627d61",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 24,
+            "rootMidi": 28,
+            "maxMidi": 29
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 10,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 12
+          }
+        },
+        {
+          "id": "harp-vsco-full-region-023",
+          "trigger": "attack",
+          "assetId": "harp-vsco-full-ksharp-f7-f-638b40d6c6c6",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 100,
+            "rootMidi": 101,
+            "maxMidi": 103
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 10,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 12
+          }
+        }
+      ]
+    },
+    "calibrationGainDb": 0,
+    "tailSeconds": 12,
+    "releaseStatus": "listening-candidate"
+  },
+  "assets": [
+    {
+      "id": "harp-vsco-full-ksharp-g1-mp-f9fa1a6ea784",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Strings/Harp/KSHarp_G1_mp.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Strings/Harp/KSHarp_G1_mp.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/f9fa1a6ea784320125fef31495ff223ceea675641d0728c2a33b431c06a78bfb.wav",
+      "bytes": 1189890,
+      "sha256": "f9fa1a6ea784320125fef31495ff223ceea675641d0728c2a33b431c06a78bfb",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 297461,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "f9fa1a6ea784320125fef31495ff223ceea675641d0728c2a33b431c06a78bfb",
+          "outputSha256": "f9fa1a6ea784320125fef31495ff223ceea675641d0728c2a33b431c06a78bfb",
+          "parameters": {
+            "sfzPath": "Harp.sfz",
+            "samplePath": "Strings/Harp/KSHarp_G1_mp.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "harp-vsco-full-ksharp-a2-mf-1df9f4d138ca",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Strings/Harp/KSHarp_A2_mf.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Strings/Harp/KSHarp_A2_mf.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/1df9f4d138ca3931fcb458bcdf01304cadf2e5f4eef67bbc17b0e42c0e60fce6.wav",
+      "bytes": 2007670,
+      "sha256": "1df9f4d138ca3931fcb458bcdf01304cadf2e5f4eef67bbc17b0e42c0e60fce6",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 501906,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "1df9f4d138ca3931fcb458bcdf01304cadf2e5f4eef67bbc17b0e42c0e60fce6",
+          "outputSha256": "1df9f4d138ca3931fcb458bcdf01304cadf2e5f4eef67bbc17b0e42c0e60fce6",
+          "parameters": {
+            "sfzPath": "Harp.sfz",
+            "samplePath": "Strings/Harp/KSHarp_A2_mf.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "harp-vsco-full-ksharp-a4-mf-3665f3975cad",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Strings/Harp/KSHarp_A4_mf.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Strings/Harp/KSHarp_A4_mf.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/3665f3975cad4a33f46784aa4f896f4b4319ba2b7831e892d975bc38c9f09f23.wav",
+      "bytes": 2143618,
+      "sha256": "3665f3975cad4a33f46784aa4f896f4b4319ba2b7831e892d975bc38c9f09f23",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 535893,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "3665f3975cad4a33f46784aa4f896f4b4319ba2b7831e892d975bc38c9f09f23",
+          "outputSha256": "3665f3975cad4a33f46784aa4f896f4b4319ba2b7831e892d975bc38c9f09f23",
+          "parameters": {
+            "sfzPath": "Harp.sfz",
+            "samplePath": "Strings/Harp/KSHarp_A4_mf.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "harp-vsco-full-ksharp-a6-mf-4605355d22fa",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Strings/Harp/KSHarp_A6_mf.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Strings/Harp/KSHarp_A6_mf.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/4605355d22fae6f58190bf0d033d2ebdd745d63e2e43204d6f41ad27e4f09af0.wav",
+      "bytes": 636870,
+      "sha256": "4605355d22fae6f58190bf0d033d2ebdd745d63e2e43204d6f41ad27e4f09af0",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 159206,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "4605355d22fae6f58190bf0d033d2ebdd745d63e2e43204d6f41ad27e4f09af0",
+          "outputSha256": "4605355d22fae6f58190bf0d033d2ebdd745d63e2e43204d6f41ad27e4f09af0",
+          "parameters": {
+            "sfzPath": "Harp.sfz",
+            "samplePath": "Strings/Harp/KSHarp_A6_mf.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "harp-vsco-full-ksharp-b1-mf-284034807efb",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Strings/Harp/KSHarp_B1_mf.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Strings/Harp/KSHarp_B1_mf.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/284034807efbb429cb63f6fb744834b18e6281a4914e6460de0a5818b5d0d0e6.wav",
+      "bytes": 2284022,
+      "sha256": "284034807efbb429cb63f6fb744834b18e6281a4914e6460de0a5818b5d0d0e6",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 570994,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "284034807efbb429cb63f6fb744834b18e6281a4914e6460de0a5818b5d0d0e6",
+          "outputSha256": "284034807efbb429cb63f6fb744834b18e6281a4914e6460de0a5818b5d0d0e6",
+          "parameters": {
+            "sfzPath": "Harp.sfz",
+            "samplePath": "Strings/Harp/KSHarp_B1_mf.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "harp-vsco-full-ksharp-b3-mf-f6f71be8c640",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Strings/Harp/KSHarp_B3_mf.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Strings/Harp/KSHarp_B3_mf.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/f6f71be8c640822ef48a448b245585659acdfcc7ed5774e10f37be2fc02fcab4.wav",
+      "bytes": 1981130,
+      "sha256": "f6f71be8c640822ef48a448b245585659acdfcc7ed5774e10f37be2fc02fcab4",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 495271,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "f6f71be8c640822ef48a448b245585659acdfcc7ed5774e10f37be2fc02fcab4",
+          "outputSha256": "f6f71be8c640822ef48a448b245585659acdfcc7ed5774e10f37be2fc02fcab4",
+          "parameters": {
+            "sfzPath": "Harp.sfz",
+            "samplePath": "Strings/Harp/KSHarp_B3_mf.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "harp-vsco-full-ksharp-b5-mf-f2757b674c6b",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Strings/Harp/KSHarp_B5_mf.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Strings/Harp/KSHarp_B5_mf.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/f2757b674c6b7301bed52e17a1ae3e3d34d628b3f7edc5773ebb25798d2541f7.wav",
+      "bytes": 779058,
+      "sha256": "f2757b674c6b7301bed52e17a1ae3e3d34d628b3f7edc5773ebb25798d2541f7",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 194753,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "f2757b674c6b7301bed52e17a1ae3e3d34d628b3f7edc5773ebb25798d2541f7",
+          "outputSha256": "f2757b674c6b7301bed52e17a1ae3e3d34d628b3f7edc5773ebb25798d2541f7",
+          "parameters": {
+            "sfzPath": "Harp.sfz",
+            "samplePath": "Strings/Harp/KSHarp_B5_mf.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "harp-vsco-full-ksharp-b6-mf-720e56b99f84",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Strings/Harp/KSHarp_B6_mf.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Strings/Harp/KSHarp_B6_mf.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/720e56b99f84d4ef1b9bc8cd3c217170320f523edb68488af3da76d2217e16f7.wav",
+      "bytes": 483966,
+      "sha256": "720e56b99f84d4ef1b9bc8cd3c217170320f523edb68488af3da76d2217e16f7",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 120980,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "720e56b99f84d4ef1b9bc8cd3c217170320f523edb68488af3da76d2217e16f7",
+          "outputSha256": "720e56b99f84d4ef1b9bc8cd3c217170320f523edb68488af3da76d2217e16f7",
+          "parameters": {
+            "sfzPath": "Harp.sfz",
+            "samplePath": "Strings/Harp/KSHarp_B6_mf.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "harp-vsco-full-ksharp-c3-mf-e5d232771704",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Strings/Harp/KSHarp_C3_mf.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Strings/Harp/KSHarp_C3_mf.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/e5d232771704e140959819de8cf2a3e0ba49d021ca77354c42664ce4fce6d9f3.wav",
+      "bytes": 1586172,
+      "sha256": "e5d232771704e140959819de8cf2a3e0ba49d021ca77354c42664ce4fce6d9f3",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 395269,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "e5d232771704e140959819de8cf2a3e0ba49d021ca77354c42664ce4fce6d9f3",
+          "outputSha256": "e5d232771704e140959819de8cf2a3e0ba49d021ca77354c42664ce4fce6d9f3",
+          "parameters": {
+            "sfzPath": "Harp.sfz",
+            "samplePath": "Strings/Harp/KSHarp_C3_mf.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "harp-vsco-full-ksharp-c5-mf-7c8b862f6fd3",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Strings/Harp/KSHarp_C5_mf.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Strings/Harp/KSHarp_C5_mf.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/7c8b862f6fd3f1442ed87537af976d84bda8c05a5b4900e8907d570b5202a517.wav",
+      "bytes": 1237142,
+      "sha256": "7c8b862f6fd3f1442ed87537af976d84bda8c05a5b4900e8907d570b5202a517",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 309274,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "7c8b862f6fd3f1442ed87537af976d84bda8c05a5b4900e8907d570b5202a517",
+          "outputSha256": "7c8b862f6fd3f1442ed87537af976d84bda8c05a5b4900e8907d570b5202a517",
+          "parameters": {
+            "sfzPath": "Harp.sfz",
+            "samplePath": "Strings/Harp/KSHarp_C5_mf.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "harp-vsco-full-ksharp-d2-mf-b9cbdc08e43f",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Strings/Harp/KSHarp_D2_mf.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Strings/Harp/KSHarp_D2_mf.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/b9cbdc08e43fc0b28ac70246df991cb390f5cbd7f31519b3cc7f70d283b70566.wav",
+      "bytes": 1741118,
+      "sha256": "b9cbdc08e43fc0b28ac70246df991cb390f5cbd7f31519b3cc7f70d283b70566",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 435268,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "b9cbdc08e43fc0b28ac70246df991cb390f5cbd7f31519b3cc7f70d283b70566",
+          "outputSha256": "b9cbdc08e43fc0b28ac70246df991cb390f5cbd7f31519b3cc7f70d283b70566",
+          "parameters": {
+            "sfzPath": "Harp.sfz",
+            "samplePath": "Strings/Harp/KSHarp_D2_mf.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "harp-vsco-full-ksharp-d4-mf-ebfde8aab441",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Strings/Harp/KSHarp_D4_mf.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Strings/Harp/KSHarp_D4_mf.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/ebfde8aab4411019e37e3426f4dd88d6a52a38c2d0261d7f10ec63d8ff584dc7.wav",
+      "bytes": 1921690,
+      "sha256": "ebfde8aab4411019e37e3426f4dd88d6a52a38c2d0261d7f10ec63d8ff584dc7",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 480411,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "ebfde8aab4411019e37e3426f4dd88d6a52a38c2d0261d7f10ec63d8ff584dc7",
+          "outputSha256": "ebfde8aab4411019e37e3426f4dd88d6a52a38c2d0261d7f10ec63d8ff584dc7",
+          "parameters": {
+            "sfzPath": "Harp.sfz",
+            "samplePath": "Strings/Harp/KSHarp_D4_mf.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "harp-vsco-full-ksharp-d6-mf-b040b61fb279",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Strings/Harp/KSHarp_D6_mf.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Strings/Harp/KSHarp_D6_mf.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/b040b61fb279efa1a9b9c60dcbd8626a37f57ffb30f3b50747a2123ee4db5bd2.wav",
+      "bytes": 687750,
+      "sha256": "b040b61fb279efa1a9b9c60dcbd8626a37f57ffb30f3b50747a2123ee4db5bd2",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 171926,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "b040b61fb279efa1a9b9c60dcbd8626a37f57ffb30f3b50747a2123ee4db5bd2",
+          "outputSha256": "b040b61fb279efa1a9b9c60dcbd8626a37f57ffb30f3b50747a2123ee4db5bd2",
+          "parameters": {
+            "sfzPath": "Harp.sfz",
+            "samplePath": "Strings/Harp/KSHarp_D6_mf.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "harp-vsco-full-ksharp-e3-mf-aafa9d41ec0f",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Strings/Harp/KSHarp_E3_mf.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Strings/Harp/KSHarp_E3_mf.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/aafa9d41ec0f77da8f2891055af8b3f9557e0ba1f1df93d53ae6e1fda07afae5.wav",
+      "bytes": 2461138,
+      "sha256": "aafa9d41ec0f77da8f2891055af8b3f9557e0ba1f1df93d53ae6e1fda07afae5",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 615273,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "aafa9d41ec0f77da8f2891055af8b3f9557e0ba1f1df93d53ae6e1fda07afae5",
+          "outputSha256": "aafa9d41ec0f77da8f2891055af8b3f9557e0ba1f1df93d53ae6e1fda07afae5",
+          "parameters": {
+            "sfzPath": "Harp.sfz",
+            "samplePath": "Strings/Harp/KSHarp_E3_mf.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "harp-vsco-full-ksharp-e5-mf-95dd9ddb0bd1",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Strings/Harp/KSHarp_E5_mf.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Strings/Harp/KSHarp_E5_mf.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/95dd9ddb0bd15bee7687906e00f25aafcaa43020cc9501f0e8b6cabf0e9a53ec.wav",
+      "bytes": 1171586,
+      "sha256": "95dd9ddb0bd15bee7687906e00f25aafcaa43020cc9501f0e8b6cabf0e9a53ec",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 292885,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "95dd9ddb0bd15bee7687906e00f25aafcaa43020cc9501f0e8b6cabf0e9a53ec",
+          "outputSha256": "95dd9ddb0bd15bee7687906e00f25aafcaa43020cc9501f0e8b6cabf0e9a53ec",
+          "parameters": {
+            "sfzPath": "Harp.sfz",
+            "samplePath": "Strings/Harp/KSHarp_E5_mf.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "harp-vsco-full-ksharp-f2-mf-d5c0fb42c176",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Strings/Harp/KSHarp_F2_mf.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Strings/Harp/KSHarp_F2_mf.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/d5c0fb42c176af334fd6f6d1b97858556619c51e177efb5b0c6c23bc19ce6dad.wav",
+      "bytes": 3086590,
+      "sha256": "d5c0fb42c176af334fd6f6d1b97858556619c51e177efb5b0c6c23bc19ce6dad",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 771636,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "d5c0fb42c176af334fd6f6d1b97858556619c51e177efb5b0c6c23bc19ce6dad",
+          "outputSha256": "d5c0fb42c176af334fd6f6d1b97858556619c51e177efb5b0c6c23bc19ce6dad",
+          "parameters": {
+            "sfzPath": "Harp.sfz",
+            "samplePath": "Strings/Harp/KSHarp_F2_mf.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "harp-vsco-full-ksharp-f4-mf-db27ebbb3733",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Strings/Harp/KSHarp_F4_mf.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Strings/Harp/KSHarp_F4_mf.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/db27ebbb37334c10e06f2ae63f4d9ff555e4d11704fcc6f0bcf503863867e577.wav",
+      "bytes": 1913498,
+      "sha256": "db27ebbb37334c10e06f2ae63f4d9ff555e4d11704fcc6f0bcf503863867e577",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 478363,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "db27ebbb37334c10e06f2ae63f4d9ff555e4d11704fcc6f0bcf503863867e577",
+          "outputSha256": "db27ebbb37334c10e06f2ae63f4d9ff555e4d11704fcc6f0bcf503863867e577",
+          "parameters": {
+            "sfzPath": "Harp.sfz",
+            "samplePath": "Strings/Harp/KSHarp_F4_mf.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "harp-vsco-full-ksharp-f6-mf-7cf4c012542d",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Strings/Harp/KSHarp_F6_mf.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Strings/Harp/KSHarp_F6_mf.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/7cf4c012542df737be39900af262fdd980681956e734f43af106718184f34213.wav",
+      "bytes": 413126,
+      "sha256": "7cf4c012542df737be39900af262fdd980681956e734f43af106718184f34213",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 103270,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "7cf4c012542df737be39900af262fdd980681956e734f43af106718184f34213",
+          "outputSha256": "7cf4c012542df737be39900af262fdd980681956e734f43af106718184f34213",
+          "parameters": {
+            "sfzPath": "Harp.sfz",
+            "samplePath": "Strings/Harp/KSHarp_F6_mf.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "harp-vsco-full-ksharp-g3-mf-62600eb1b37b",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Strings/Harp/KSHarp_G3_mf.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Strings/Harp/KSHarp_G3_mf.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/62600eb1b37bc2829ca65351f7ca7e506c9ae472abd5bea0765a8b8fa7df2772.wav",
+      "bytes": 1806874,
+      "sha256": "62600eb1b37bc2829ca65351f7ca7e506c9ae472abd5bea0765a8b8fa7df2772",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 451707,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "62600eb1b37bc2829ca65351f7ca7e506c9ae472abd5bea0765a8b8fa7df2772",
+          "outputSha256": "62600eb1b37bc2829ca65351f7ca7e506c9ae472abd5bea0765a8b8fa7df2772",
+          "parameters": {
+            "sfzPath": "Harp.sfz",
+            "samplePath": "Strings/Harp/KSHarp_G3_mf.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "harp-vsco-full-ksharp-g5-mf-f2004dfc6179",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Strings/Harp/KSHarp_G5_mf.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Strings/Harp/KSHarp_G5_mf.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/f2004dfc617997fbabc6f849add2af06f4f859361c44a8fca0f993dc7f999540.wav",
+      "bytes": 1049778,
+      "sha256": "f2004dfc617997fbabc6f849add2af06f4f859361c44a8fca0f993dc7f999540",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 262433,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "f2004dfc617997fbabc6f849add2af06f4f859361c44a8fca0f993dc7f999540",
+          "outputSha256": "f2004dfc617997fbabc6f849add2af06f4f859361c44a8fca0f993dc7f999540",
+          "parameters": {
+            "sfzPath": "Harp.sfz",
+            "samplePath": "Strings/Harp/KSHarp_G5_mf.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "harp-vsco-full-ksharp-d7-f-87ca6f45c5c2",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Strings/Harp/KSHarp_D7_f.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Strings/Harp/KSHarp_D7_f.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/87ca6f45c5c242d9cd595911278290a4abdba587f71ed263acb1650236fcd4a7.wav",
+      "bytes": 396134,
+      "sha256": "87ca6f45c5c242d9cd595911278290a4abdba587f71ed263acb1650236fcd4a7",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 99022,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "87ca6f45c5c242d9cd595911278290a4abdba587f71ed263acb1650236fcd4a7",
+          "outputSha256": "87ca6f45c5c242d9cd595911278290a4abdba587f71ed263acb1650236fcd4a7",
+          "parameters": {
+            "sfzPath": "Harp.sfz",
+            "samplePath": "Strings/Harp/KSHarp_D7_f.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "harp-vsco-full-ksharp-e1-f-70f534627d61",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Strings/Harp/KSHarp_E1_f.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Strings/Harp/KSHarp_E1_f.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/70f534627d6155bab46262e0383a8b431c25fde78ca029947d453748b1f73038.wav",
+      "bytes": 4001190,
+      "sha256": "70f534627d6155bab46262e0383a8b431c25fde78ca029947d453748b1f73038",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 1000286,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "70f534627d6155bab46262e0383a8b431c25fde78ca029947d453748b1f73038",
+          "outputSha256": "70f534627d6155bab46262e0383a8b431c25fde78ca029947d453748b1f73038",
+          "parameters": {
+            "sfzPath": "Harp.sfz",
+            "samplePath": "Strings/Harp/KSHarp_E1_f.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "harp-vsco-full-ksharp-f7-f-638b40d6c6c6",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Strings/Harp/KSHarp_F7_f.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Strings/Harp/KSHarp_F7_f.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/638b40d6c6c674257daa89b0b1e5108973ccbf13d7cc282e21266d3fb71500c5.wav",
+      "bytes": 332482,
+      "sha256": "638b40d6c6c674257daa89b0b1e5108973ccbf13d7cc282e21266d3fb71500c5",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 83109,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "638b40d6c6c674257daa89b0b1e5108973ccbf13d7cc282e21266d3fb71500c5",
+          "outputSha256": "638b40d6c6c674257daa89b0b1e5108973ccbf13d7cc282e21266d3fb71500c5",
+          "parameters": {
+            "sfzPath": "Harp.sfz",
+            "samplePath": "Strings/Harp/KSHarp_F7_f.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    }
+  ],
+  "contentSha256": "fe1c05063845d99f0bbb91235d02eeecd1ccde84631ff3e8b7df3da357ff99eb"
+}

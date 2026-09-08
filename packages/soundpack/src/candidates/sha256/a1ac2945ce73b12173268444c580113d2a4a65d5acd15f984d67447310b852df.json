@@ -1,0 +1,51 @@
+{
+  "format": "refrain-candidate-shard@0-experimental",
+  "id": "harp-generaluser",
+  "candidateContentSha256": "b22647d04f2b89855d4822e2bd9609b4af6f3649a36a5c359b6f206a24350eac",
+  "candidate": {
+    "id": "harp-generaluser",
+    "instrumentId": "harp",
+    "engine": "soundfont",
+    "assetId": "generaluser-gs-2.0.3",
+    "mapping": {
+      "type": "program",
+      "program": 46
+    },
+    "calibrationGainDb": -10,
+    "tailSeconds": 2.5,
+    "releaseStatus": "audition-fallback"
+  },
+  "assets": [
+    {
+      "id": "generaluser-gs-2.0.3",
+      "kind": "soundfont",
+      "source": {
+        "repository": "https://github.com/mrbumpy409/GeneralUser-GS",
+        "ref": "684543d5e5efaef08d02be50dcda8d552478fa60",
+        "url": "https://raw.githubusercontent.com/mrbumpy409/GeneralUser-GS/684543d5e5efaef08d02be50dcda8d552478fa60/GeneralUser-GS.sf2"
+      },
+      "localPath": "soundpacks/GeneralUser-GS.sf2",
+      "bytes": 32319396,
+      "sha256": "9575028c7a1f589f5770fccc8cff2734566af40cd26ed836944e9a5152688cfe",
+      "license": {
+        "expression": "LicenseRef-GeneralUser-GS-2.0.3",
+        "path": "third_party/GeneralUser-GS/LICENSE.txt",
+        "assetScope": "complete SoundFont bank; upstream records incomplete provenance for some contained samples"
+      },
+      "processingHistory": [
+        {
+          "operation": "byte-exact-copy",
+          "tool": "refrain-soundpack-fetch@0",
+          "inputSha256": "9575028c7a1f589f5770fccc8cff2734566af40cd26ed836944e9a5152688cfe",
+          "outputSha256": "9575028c7a1f589f5770fccc8cff2734566af40cd26ed836944e9a5152688cfe",
+          "parameters": {
+            "modified": false
+          }
+        }
+      ],
+      "releaseStatus": "audition-fallback",
+      "publicReleaseAccepted": false
+    }
+  ],
+  "contentSha256": "a1ac2945ce73b12173268444c580113d2a4a65d5acd15f984d67447310b852df"
+}

@@ -1,0 +1,37 @@
+{
+  "format": "air@0-experimental",
+  "title": "A small return",
+  "tempo": 72,
+  "meter": "4/4",
+  "key": "D minor",
+  "motifs": {
+    "return": "A4/8 B4/8 D5/4 r/2"
+  },
+  "voices": [
+    {
+      "id": "lead",
+      "instrument": "warm_piano",
+      "role": "lead",
+      "part": "@return | r/1 | @return | @return(-3,1)"
+    },
+    {
+      "id": "bed",
+      "instrument": "air_pad",
+      "role": "harmony",
+      "part": "[D3,A3]/1 | [F3,C4]/1 | [G3,D4]/1 | [D3,A3]/1",
+      "gainDb": -3,
+      "pan": -0.08
+    },
+    {
+      "id": "answer",
+      "instrument": "glass_bell",
+      "role": "counter",
+      "part": "r/1 | r/1 | r/1 | r/2 A5/2@p",
+      "pan": 0.32
+    }
+  ],
+  "sections": [
+    { "id": "arrival", "startBar": 1, "bars": 2 },
+    { "id": "return", "startBar": 3, "bars": 2 }
+  ]
+}

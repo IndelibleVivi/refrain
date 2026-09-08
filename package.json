@@ -1,0 +1,62 @@
+{
+  "name": "refrain",
+  "version": "0.0.0-experimental",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "refrain": "./bin/refrain.mjs"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "build:mcp-host": "npm run build:mcp-host --workspace @refrain/mcp-server",
+    "check": "npm run typecheck && npm run plugin:check && npm run test && npm run build",
+    "cli:smoke": "node bin/refrain.mjs --json doctor && node bin/refrain.mjs --json bindings list",
+    "dev": "npm run dev --workspace @refrain/soundbench",
+    "dev:mcp-host": "npm run build:mcp-host && node scripts/dev-mcp-host.mjs",
+    "format:check": "prettier --check .",
+    "format:write": "prettier --write .",
+    "open:air": "npm run open:air --workspace @refrain/presentation --",
+    "export:air": "npm run export:air --workspace @refrain/presentation --",
+    "packs": "npm run packs --workspace @refrain/presentation --",
+    "mcp:smoke": "node scripts/mcp-smoke.mjs",
+    "mcp:http-smoke": "node scripts/mcp-http-smoke.mjs",
+    "mcp:package": "node scripts/package-mcp-runtime.mjs",
+    "mcp:stdio": "npm run stdio --workspace @refrain/mcp-server",
+    "plugin:check": "tsx scripts/check-refrain-plugin.ts",
+    "audio:smoke": "tsx scripts/audio-smoke.ts",
+    "export:repro-smoke": "node scripts/export-repro-smoke.mjs",
+    "fixtures:air-v1": "tsx scripts/generate-air-v1-corpus.ts",
+    "f:palette-packets": "tsx scripts/f-palette-packets.ts",
+    "listening:packets": "tsx scripts/listening-packets.ts",
+    "listening:verify": "tsx scripts/verify-listening-decisions.ts",
+    "selection:smoke": "tsx scripts/selection-variation-smoke.ts",
+    "soundpack:catalog": "node scripts/build-sound-catalog.mjs",
+    "soundpack:build-wind-pilots": "tsx scripts/build-vsco-wind-pilots.ts",
+    "soundpack:build-f-samples": "tsx scripts/build-f-sample-candidates.ts",
+    "soundpack:build-f-palettes": "tsx scripts/build-f-palettes.ts",
+    "soundpack:build-synth-families": "tsx scripts/build-synth-families.ts",
+    "soundpack:fetch": "tsx scripts/fetch-soundpack.ts",
+    "tranche:d:evidence": "tsx scripts/tranche-d-evidence.ts",
+    "test": "vitest run --maxWorkers=2",
+    "test:fast": "npm run test",
+    "test:mcp-host": "npm run build:mcp-host && playwright test --config playwright.mcp-host.config.ts",
+    "test:watch": "vitest",
+    "typecheck": "tsc -b"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.62.1",
+    "@types/node": "^24.3.0",
+    "prettier": "^3.6.2",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4"
+  },
+  "engines": {
+    "node": ">=22.23.1"
+  },
+  "license": "SEE LICENSE IN LICENSING.md"
+}

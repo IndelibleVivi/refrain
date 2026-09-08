@@ -1,0 +1,30 @@
+{
+  "name": "@refrain/compiler",
+  "version": "0.0.0-experimental",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": {
+      "refrain-built": "./dist/index.js",
+      "default": "./src/index.ts"
+    },
+    "./any": {
+      "refrain-built": "./dist/any.js",
+      "default": "./src/any.ts"
+    },
+    "./v1": {
+      "refrain-built": "./dist/v1.js",
+      "default": "./src/v1.ts"
+    }
+  },
+  "dependencies": {
+    "@refrain/air-schema": "*",
+    "@refrain/soundpack": "*"
+  },
+  "scripts": {
+    "build": "tsc -b",
+    "test": "vitest run --root ../.. packages/compiler",
+    "typecheck": "tsc -b --pretty false"
+  },
+  "license": "SEE LICENSE IN ../../LICENSING.md"
+}

@@ -1,0 +1,35 @@
+{
+  "name": "@refrain/presentation",
+  "version": "0.0.0-experimental",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "prebuild": "tsx ../../scripts/prepare-presentation-assets.ts presentation",
+    "build": "vite build",
+    "predev": "tsx ../../scripts/prepare-presentation-assets.ts presentation",
+    "dev": "vite --host 127.0.0.1 --port 4318 --strictPort",
+    "open:air": "tsx src/open-air.ts",
+    "export:air": "tsx src/export-air.ts",
+    "packs": "tsx src/packs.ts",
+    "test": "vitest run --root ../.. apps/presentation",
+    "typecheck": "tsc -b --pretty false"
+  },
+  "dependencies": {
+    "@refrain/air-schema": "*",
+    "@refrain/audio-engine": "*",
+    "@refrain/compiler": "*",
+    "@refrain/mcp-server": "*",
+    "@refrain/renderer": "*",
+    "@refrain/soundpack": "*",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.10",
+    "@types/react-dom": "^19.1.7",
+    "@vitejs/plugin-react": "^5.0.2",
+    "tsx": "^4.20.5",
+    "vite": "^7.1.3"
+  },
+  "license": "SEE LICENSE IN ../../LICENSING.md"
+}

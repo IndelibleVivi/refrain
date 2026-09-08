@@ -1,0 +1,1687 @@
+/* Production host only. The product grammar below is Selen v21 source. */
+.refrain-renderer,
+.refrain-renderer * {
+  box-sizing: border-box;
+}
+
+.refrain-renderer {
+  width: 100%;
+  min-width: 0;
+}
+
+.refrain-renderer button,
+.refrain-renderer input,
+.refrain-renderer summary {
+  font: inherit;
+}
+
+.selen-v21-host {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  width: 100%;
+  min-width: 0;
+  place-items: start center;
+}
+
+.selen-v21-host > .mcp-piece,
+.selen-v21-host > .air-page--mobile {
+  width: min(390px, 100%);
+  min-width: 0;
+}
+
+.refrain-renderer__notice {
+  width: min(100%, 860px);
+  margin: 10px auto 0;
+  border: 1px solid rgba(139, 82, 96, 0.22);
+  border-radius: 10px;
+  padding: 9px 11px;
+  background: rgba(139, 82, 96, 0.055);
+  color: #78505a;
+  font:
+    600 10px/1.45 Inter,
+    ui-sans-serif,
+    system-ui,
+    sans-serif;
+}
+
+.refrain-renderer__live {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.artifact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 12px;
+  padding-top: 11px;
+  border-top: 1px solid var(--line);
+}
+
+.artifact-actions button {
+  min-height: 31px;
+  border: 1px solid var(--line-strong);
+  border-radius: 9px;
+  padding: 0 9px;
+  background: transparent;
+  color: var(--ink);
+  font-size: 9px;
+  font-weight: 680;
+  cursor: pointer;
+}
+
+.artifact-actions button:hover {
+  border-color: var(--accent);
+}
+
+.exact-selection {
+  display: grid;
+  gap: 8px;
+  margin-top: 12px;
+  padding-top: 11px;
+  border-top: 1px solid var(--line);
+}
+
+.exact-selection label,
+.exact-selection label > span {
+  display: block;
+}
+
+.exact-selection label > span {
+  margin-bottom: 5px;
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.exact-selection select {
+  width: 100%;
+  min-height: 34px;
+  border: 1px solid var(--line-strong);
+  border-radius: 9px;
+  padding: 0 9px;
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 9px;
+}
+
+.exact-selection__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.exact-selection__actions button {
+  min-height: 30px;
+  border: 1px solid var(--line-strong);
+  border-radius: 9px;
+  padding: 0 9px;
+  background: transparent;
+  color: var(--ink);
+  font-size: 9px;
+  font-weight: 680;
+  cursor: pointer;
+}
+
+.exact-selection__actions button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.exact-selection__actions button:not(:disabled):hover {
+  border-color: var(--accent);
+}
+
+.refrain-surface .selection-action {
+  min-height: 30px;
+  border: 1px solid var(--line-strong);
+  background: transparent;
+  color: var(--accent);
+  box-shadow: none;
+  font-size: 8.5px;
+}
+
+.refrain-surface[data-motif-density="high"]
+  .air-figure
+  .svg-motif-occurrence[data-landmark="false"]:not(.selected):not(.current) {
+  opacity: 0 !important;
+  pointer-events: none;
+}
+
+.refrain-surface[data-motif-density="high"]
+  .air-figure
+  .svg-motif-occurrence[data-landmark="true"] {
+  opacity: 0.82;
+}
+
+.motif-panel[data-density="high"] .motif-list {
+  max-height: 430px;
+  overflow-y: auto;
+  padding-right: 4px;
+  scrollbar-gutter: stable;
+}
+
+@media (max-width: 450px) {
+  .mcp-header .piece-title {
+    font-size: 30px;
+  }
+  .air-page--mobile .page-hero .piece-title {
+    font-size: 36px;
+  }
+}
+
+/* Shared product primitives */
+.refrain-surface {
+  --page: #f6f5f2;
+  --surface: #fbfaf6;
+  --surface-2: #f5f1e8;
+  --ink: #20252a;
+  --muted: #70716f;
+  --line: rgba(38, 40, 39, 0.16);
+  --line-strong: rgba(38, 40, 39, 0.24);
+  --accent: #273f59;
+  --companion: #86505a;
+  --warm: #a68143;
+  --focus: #1d4f87;
+  --selection-bg: rgba(39, 63, 89, 0.075);
+  --button-bg: #24282d;
+  --button-ink: #fff;
+  --display: ui-serif, "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --ui:
+    Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  color: var(--ink);
+  font-family: var(--ui);
+}
+.refrain-surface.theme-paper {
+  --page: #eeeae1;
+  --surface: #faf8f2;
+  --surface-2: #f2eee4;
+  --ink: #1d252b;
+  --muted: #6f706d;
+  --line: rgba(52, 54, 52, 0.14);
+  --line-strong: rgba(52, 54, 52, 0.24);
+  --accent: #29465f;
+  --companion: #8b5260;
+  --warm: #9b7942;
+  --focus: #315b82;
+  --selection-bg: rgba(41, 70, 95, 0.075);
+  --button-bg: #20282d;
+}
+.refrain-surface.theme-prism {
+  --page: #eef0f8;
+  --surface: #fffefe;
+  --surface-2: #f7f6fb;
+  --ink: #181824;
+  --muted: #6d6a79;
+  --line: rgba(75, 62, 99, 0.14);
+  --line-strong: rgba(75, 62, 99, 0.24);
+  --accent: #4965ff;
+  --companion: #f0677b;
+  --warm: #e9a13c;
+  --focus: #3152f1;
+  --selection-bg: rgba(73, 101, 255, 0.075);
+  --button-bg: #202035;
+}
+/* Nocturne Ink: dark surface is the material, not a mode toggle.
+   Mineral silver carries selection; muted wine stays companion-only. */
+.refrain-surface.theme-nocturne {
+  --page: #0f1114;
+  --surface: #171a1f;
+  --surface-2: #1c2026;
+  --ink: #e4dfd1;
+  --muted: #8f8c82;
+  --line: rgba(228, 223, 209, 0.13);
+  --line-strong: rgba(228, 223, 209, 0.26);
+  --accent: #cfd3d6;
+  --companion: #8a5f6d;
+  --warm: #b3a077;
+  --focus: #dde2e5;
+  --selection-bg: rgba(207, 211, 214, 0.1);
+  --button-bg: #e4dfd1;
+  --button-ink: #171a1f;
+}
+.theme-nocturne.mcp-piece,
+.theme-nocturne.air-page {
+  background-color: var(--surface);
+  background-image:
+    radial-gradient(
+      circle at 22% 8%,
+      rgba(207, 211, 214, 0.028),
+      transparent 24rem
+    ),
+    radial-gradient(
+      circle at 84% 88%,
+      rgba(138, 95, 109, 0.032),
+      transparent 22rem
+    );
+}
+.theme-nocturne .figure-shell {
+  background: #13161b;
+  border-color: var(--line);
+}
+.theme-nocturne .page-transport {
+  background: rgba(228, 223, 209, 0.035);
+}
+.theme-nocturne .section-jumps button {
+  background: rgba(228, 223, 209, 0.05);
+}
+.theme-nocturne .appearance-badge {
+  background: rgba(228, 223, 209, 0.06);
+}
+.theme-nocturne input[type="range"].seek::-webkit-slider-thumb {
+  width: 5px;
+  height: 16px;
+  margin-top: -6.5px;
+  border-radius: 1px;
+  box-shadow: 0 0 0 1px var(--line-strong);
+}
+.theme-nocturne input[type="range"].seek::-moz-range-thumb {
+  width: 4px;
+  height: 13px;
+  border-radius: 1px;
+}
+
+/* Herbarium: warm specimen paper is the material. Pressed rose carries
+   selection; moss green stays the accent. */
+.refrain-surface.theme-herbarium {
+  --page: #ece7d8;
+  --surface: #f7f3e8;
+  --surface-2: #efe9da;
+  --ink: #2c2f26;
+  --muted: #77745f;
+  --line: rgba(74, 80, 58, 0.16);
+  --line-strong: rgba(74, 80, 58, 0.28);
+  --accent: #6a7a58;
+  --companion: #a3685f;
+  --warm: #a3854f;
+  --focus: #4e6039;
+  --selection-bg: rgba(163, 104, 95, 0.1);
+  --button-bg: #3a4433;
+}
+.theme-herbarium .figure-shell {
+  background: #f3eee1;
+  border-color: var(--line);
+}
+/* Seek thumb: a small round pin head, echoing the specimen-pin cursor. */
+.theme-herbarium input[type="range"].seek::-webkit-slider-thumb {
+  width: 10px;
+  height: 10px;
+  margin-top: -3.5px;
+  border-radius: 999px;
+  border-color: var(--companion);
+  box-shadow:
+    0 0 0 1px var(--line-strong),
+    0 1px 4px rgba(74, 80, 58, 0.25);
+}
+.theme-herbarium input[type="range"].seek::-moz-range-thumb {
+  border-radius: 999px;
+  border-color: var(--companion);
+}
+
+.theme-paper .paper-texture,
+.theme-paper.mcp-piece,
+.theme-paper.air-page {
+  background-color: var(--surface);
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      rgba(38, 48, 53, 0.018) 0,
+      rgba(38, 48, 53, 0.018) 1px,
+      transparent 1px,
+      transparent 4px
+    ),
+    radial-gradient(
+      circle at 18% 5%,
+      rgba(139, 82, 96, 0.035),
+      transparent 22rem
+    ),
+    radial-gradient(
+      circle at 90% 82%,
+      rgba(41, 70, 95, 0.035),
+      transparent 24rem
+    );
+}
+.theme-prism.mcp-piece,
+.theme-prism.air-page {
+  background-color: var(--surface);
+  background-image:
+    radial-gradient(
+      circle at 7% 0%,
+      rgba(73, 101, 255, 0.075),
+      transparent 25rem
+    ),
+    radial-gradient(
+      circle at 96% 4%,
+      rgba(240, 103, 123, 0.065),
+      transparent 24rem
+    ),
+    radial-gradient(
+      circle at 70% 100%,
+      rgba(233, 161, 60, 0.045),
+      transparent 25rem
+    );
+}
+
+.product-mark {
+  margin: 0 0 8px;
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 760;
+  letter-spacing: 0.045em;
+}
+.product-mark span {
+  color: var(--muted);
+  font-weight: 560;
+}
+.piece-title {
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 520;
+  letter-spacing: -0.035em;
+  line-height: 1.02;
+}
+.piece-caption {
+  margin: 8px 0 0;
+  color: var(--muted);
+  line-height: 1.52;
+}
+.figure-shell {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.3);
+}
+.theme-paper .figure-shell {
+  box-shadow:
+    inset 0 1px rgba(255, 255, 255, 0.75),
+    inset 0 -16px 26px rgba(71, 57, 37, 0.018);
+}
+.theme-prism .figure-shell {
+  border-color: transparent;
+  background:
+    radial-gradient(
+      72% 112% at 8% 34%,
+      rgba(73, 101, 255, 0.07),
+      transparent 68%
+    ),
+    radial-gradient(
+      66% 108% at 70% 14%,
+      rgba(142, 94, 255, 0.052),
+      transparent 72%
+    ),
+    radial-gradient(
+      62% 108% at 96% 82%,
+      rgba(233, 161, 60, 0.052),
+      transparent 73%
+    );
+  box-shadow: inset 0 0 0 1px rgba(73, 101, 255, 0.045);
+}
+.air-figure {
+  display: block;
+  width: 100%;
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.selection-strip {
+  display: none;
+  align-items: center;
+  gap: 11px;
+  border-top: 1px solid var(--line);
+  background: var(--selection-bg);
+}
+.selection-strip[data-visible="true"] {
+  display: flex;
+}
+.selection-copy {
+  min-width: 0;
+  flex: 1;
+}
+.selection-copy strong {
+  display: block;
+  overflow: hidden;
+  font-size: 10.5px;
+  font-weight: 760;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.selection-copy span {
+  display: block;
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 9px;
+  line-height: 1.38;
+}
+.selection-action {
+  flex: none;
+  min-height: 34px;
+  border: 0;
+  border-radius: 10px;
+  padding: 0 10px;
+  background: var(--button-bg);
+  color: var(--button-ink);
+  font-size: 9px;
+  font-weight: 720;
+  cursor: pointer;
+}
+
+.transport {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 12px;
+}
+.transport-buttons {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.icon-button {
+  display: grid;
+  width: 39px;
+  height: 39px;
+  place-items: center;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.5);
+  color: var(--ink);
+  cursor: pointer;
+  transition:
+    transform 0.14s ease,
+    background 0.14s ease,
+    border-color 0.14s ease;
+}
+.icon-button.primary {
+  width: 46px;
+  height: 46px;
+  border-color: transparent;
+  background: var(--button-bg);
+  color: var(--button-ink);
+  box-shadow: 0 8px 21px rgba(28, 27, 32, 0.14);
+}
+.icon-button:hover {
+  border-color: var(--accent);
+}
+.icon-button:active {
+  transform: scale(0.96);
+}
+.icon-button svg {
+  width: 17px;
+  height: 17px;
+}
+.timeline {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 9px;
+  row-gap: 6px;
+  align-items: center;
+}
+.time {
+  color: var(--muted);
+  font-size: 10.5px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.time strong {
+  color: var(--ink);
+  font-weight: 740;
+}
+.section-now {
+  justify-self: end;
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 660;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+input[type="range"].seek {
+  --progress: 0%;
+  grid-column: 1 / -1;
+  width: 100%;
+  height: 17px;
+  margin: -3px 0 0;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+input[type="range"].seek::-webkit-slider-runnable-track {
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(
+    to right,
+    var(--accent) 0 var(--progress),
+    var(--line-strong) var(--progress) 100%
+  );
+}
+input[type="range"].seek::-moz-range-track {
+  height: 3px;
+  border-radius: 999px;
+  background: var(--line-strong);
+}
+input[type="range"].seek::-moz-range-progress {
+  height: 3px;
+  border-radius: 999px;
+  background: var(--accent);
+}
+input[type="range"].seek::-webkit-slider-thumb {
+  width: 12px;
+  height: 12px;
+  margin-top: -4.5px;
+  appearance: none;
+  border: 2px solid var(--surface);
+  background: var(--accent);
+  box-shadow:
+    0 0 0 1px var(--line-strong),
+    0 2px 8px rgba(32, 30, 38, 0.12);
+}
+/* Paper Sonata: a small graphite seal-diamond. Prism: a light slit. */
+.theme-paper input[type="range"].seek::-webkit-slider-thumb {
+  border-radius: 2.5px;
+  transform: rotate(45deg);
+}
+.theme-prism input[type="range"].seek::-webkit-slider-thumb {
+  width: 6px;
+  height: 18px;
+  margin-top: -7.5px;
+  border-radius: 999px;
+  box-shadow:
+    0 0 0 1px var(--line-strong),
+    0 0 9px rgba(73, 101, 255, 0.4);
+}
+input[type="range"].seek::-moz-range-thumb {
+  width: 9px;
+  height: 9px;
+  border: 2px solid var(--surface);
+  border-radius: 2.5px;
+  background: var(--accent);
+}
+.theme-paper input[type="range"].seek::-moz-range-thumb {
+  transform: rotate(45deg);
+}
+.theme-prism input[type="range"].seek::-moz-range-thumb {
+  width: 5px;
+  height: 14px;
+  border-radius: 999px;
+}
+
+details.product-details {
+  border-top: 1px solid var(--line);
+}
+details.product-details summary {
+  min-height: 46px;
+  padding: 13px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 680;
+  cursor: pointer;
+}
+details.product-details summary::-webkit-details-marker {
+  display: none;
+}
+details.product-details summary svg {
+  width: 15px;
+  height: 15px;
+  transition: transform 0.18s ease;
+}
+details.product-details[open] summary svg {
+  transform: rotate(180deg);
+}
+.details-body {
+  padding: 0 16px 16px;
+  color: var(--muted);
+  font-size: 9.5px;
+  line-height: 1.52;
+}
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 7px;
+  margin-bottom: 11px;
+}
+.details-grid div {
+  padding: 8px 9px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.33);
+}
+.details-grid strong {
+  display: block;
+  color: var(--ink);
+  font-size: 10px;
+}
+.details-grid span {
+  display: block;
+  margin-top: 2px;
+}
+.appearance-line {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+}
+.appearance-line strong {
+  color: var(--ink);
+  font-weight: 720;
+}
+
+/* MCP composition */
+.mcp-piece {
+  width: 390px;
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  border-radius: 24px;
+  box-shadow:
+    0 22px 54px rgba(32, 28, 38, 0.12),
+    0 2px 8px rgba(32, 28, 38, 0.05);
+}
+.mcp-header {
+  padding: 21px 20px 13px;
+}
+.mcp-header .piece-title {
+  font-size: 31px;
+}
+.mcp-header .piece-caption {
+  max-width: 34ch;
+  font-size: 12px;
+}
+.mcp-piece .figure-shell {
+  margin: 0 11px;
+  border-radius: 18px;
+}
+.mcp-piece .air-figure {
+  height: auto;
+}
+.mcp-piece .selection-strip {
+  margin-top: -1px;
+  padding: 10px 10px 10px 12px;
+}
+.mcp-piece .transport {
+  padding: 15px 16px 16px;
+}
+
+/* Air Page compositions */
+.air-page {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  box-shadow:
+    0 24px 62px rgba(32, 28, 38, 0.11),
+    0 2px 8px rgba(32, 28, 38, 0.045);
+}
+.air-page-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.air-page-controls {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+.mcp-language-bar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 8px;
+}
+.refrain-language,
+.refrain-renderer .refrain-language {
+  flex-shrink: 0;
+  min-height: 36px;
+  border: 1px solid var(--line, #c8c6c0);
+  border-radius: 999px;
+  padding: 4px 10px;
+  background: transparent;
+  color: var(--muted, #62626a);
+  font:
+    500 11px/1.4 system-ui,
+    sans-serif;
+  cursor: pointer;
+}
+.refrain-language [data-active="true"] {
+  color: var(--accent, #29465f);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.refrain-language:focus-visible {
+  outline: 2px solid var(--accent, #29465f);
+  outline-offset: 3px;
+}
+.air-page-brand {
+  color: var(--accent);
+  font-family: var(--display);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+.appearance-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 31px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0 10px;
+  background: rgba(255, 255, 255, 0.34);
+  color: var(--muted);
+  font-size: 8.5px;
+  font-weight: 700;
+}
+.appearance-badge i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.page-hero .piece-title {
+  font-size: 42px;
+}
+.page-hero .piece-caption {
+  max-width: 52ch;
+  font-size: 14px;
+}
+.lineage-note {
+  margin: 9px 0 0;
+  color: var(--muted);
+  font-size: 9.5px;
+  font-weight: 650;
+}
+.air-page .figure-shell {
+  border-radius: 20px;
+}
+.air-page .selection-strip {
+  padding: 11px 12px 11px 14px;
+}
+.page-transport {
+  border-bottom: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.27);
+}
+/* Form rail: sections as duration-proportional segments, not pill rows */
+.section-jumps {
+  display: flex;
+  gap: 3px;
+}
+.section-jumps button {
+  flex: var(--span, 1) 1 0;
+  min-width: 0;
+  min-height: 32px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  padding: 0 8px;
+  background: rgba(255, 255, 255, 0.32);
+  color: var(--muted);
+  font-size: 8.5px;
+  font-weight: 690;
+  letter-spacing: 0.02em;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.section-jumps button[data-current="true"] {
+  border-color: var(--accent);
+  background: var(--selection-bg);
+  color: var(--ink);
+}
+.page-panel {
+  min-width: 0;
+  padding-top: 15px;
+  border-top: 1px solid var(--line);
+}
+.page-panel h3 {
+  margin: 0;
+  font-family: var(--display);
+  font-size: 17px;
+  font-weight: 560;
+  letter-spacing: -0.02em;
+}
+.page-panel p {
+  margin: 7px 0 0;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.55;
+}
+.passage-facts {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 620;
+  letter-spacing: 0.015em;
+}
+.motif-list {
+  display: grid;
+  gap: 0;
+  margin-top: 10px;
+}
+.motif-row {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  min-height: 40px;
+  border-top: 1px solid var(--line);
+  padding: 8px 9px 8px 6px;
+  background: transparent;
+  cursor: pointer;
+}
+.motif-row[data-selected="true"] {
+  border-radius: 8px;
+  background: var(--selection-bg);
+  box-shadow: inset 2.5px 0 0 var(--accent);
+}
+.air-page--desktop .motif-list {
+  grid-template-columns: 1fr 1fr;
+  column-gap: 26px;
+  align-content: start;
+}
+.air-page--desktop .motif-row:nth-child(-n + 2) {
+  border-top: none;
+}
+.air-page--mobile .motif-row:first-child {
+  border-top: none;
+}
+/* Return reading without a trace line: sibling occurrences of the
+   selected motif family get a companion-colored ring. */
+.svg-motif-occurrence.related .svg-motif-ring {
+  stroke: var(--companion);
+  stroke-width: 1.4;
+}
+/* Theme-shaped gem replaces the circled Arabic index: a diamond for
+   Prism, a square seal for Paper, tinted with the voice color. */
+.motif-gem {
+  width: 9px;
+  height: 9px;
+  margin-left: 3px;
+  transform: rotate(45deg);
+  border: 1px solid var(--gem, var(--accent));
+  background: color-mix(in srgb, var(--gem, var(--accent)) 16%, transparent);
+}
+.theme-paper .motif-gem {
+  transform: rotate(2.5deg);
+  border-radius: 1.5px;
+}
+.motif-row[data-selected="true"] .motif-gem {
+  background: var(--gem, var(--accent));
+}
+.motif-row strong {
+  display: block;
+  font-size: 9.5px;
+}
+.motif-row span {
+  display: block;
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.motif-row em {
+  color: var(--muted);
+  font-size: 8px;
+  font-style: normal;
+  text-align: right;
+  white-space: nowrap;
+}
+.motif-row em b {
+  display: block;
+  color: var(--accent);
+  font-size: 8.5px;
+  font-weight: 760;
+}
+/* Return transit: where the motif's occurrences sit along the whole
+   air, so the list below reads as a map instead of a pile of cards. */
+.motif-transit {
+  position: relative;
+  height: 26px;
+  margin-top: 12px;
+}
+.motif-transit::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  right: 2px;
+  top: 12px;
+  height: 1px;
+  background: var(--line-strong);
+  opacity: 0.45;
+}
+.motif-transit button {
+  position: absolute;
+  top: 2px;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 22px;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+.motif-transit button i {
+  width: 8px;
+  height: 8px;
+  transform: rotate(45deg);
+  border: 1px solid var(--gem, var(--accent));
+  background: color-mix(in srgb, var(--gem, var(--accent)) 16%, transparent);
+  transition:
+    transform 0.15s ease,
+    background 0.15s ease;
+}
+.theme-paper .motif-transit button i {
+  transform: rotate(2.5deg);
+  border-radius: 1.5px;
+}
+.motif-transit button[data-selected="true"] i {
+  background: var(--gem, var(--accent));
+  transform: rotate(45deg) scale(1.35);
+}
+.theme-paper .motif-transit button[data-selected="true"] i {
+  transform: rotate(2.5deg) scale(1.35);
+}
+
+/* v21: panel dialects. Nocturne panels go borderless and quiet, with
+   mineral-dot gems; Herbarium rows become pinned collector tickets with
+   leaf gems. */
+.theme-nocturne .page-panel {
+  border-top: none;
+  padding-top: 19px;
+}
+.theme-nocturne .page-panel h3 {
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+}
+.theme-nocturne .motif-row {
+  border-top-color: rgba(228, 223, 209, 0.07);
+}
+.theme-nocturne .motif-gem,
+.theme-nocturne .motif-transit button i {
+  transform: none;
+  border-radius: 50%;
+}
+.theme-nocturne .motif-transit button[data-selected="true"] i {
+  transform: scale(1.35);
+}
+.theme-herbarium .motif-list {
+  gap: 7px;
+}
+.theme-herbarium .motif-row {
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  background: #fbf8ef;
+  box-shadow: 1px 1px 0 rgba(74, 80, 58, 0.08);
+}
+.theme-herbarium.air-page--desktop .motif-row:nth-child(-n + 2) {
+  border-top: 1px solid var(--line);
+}
+.theme-herbarium .motif-row[data-selected="true"] {
+  border-color: var(--companion);
+  background: #f7ecdf;
+  box-shadow:
+    inset 2.5px 0 0 var(--companion),
+    1px 1px 0 rgba(74, 80, 58, 0.08);
+}
+.theme-herbarium .motif-gem,
+.theme-herbarium .motif-transit button i {
+  border-radius: 0 62% 62% 62%;
+}
+
+.air-page--desktop {
+  width: min(100%, 710px);
+  min-height: 710px;
+  border-radius: 24px;
+  padding: 29px 32px 27px;
+}
+.air-page--desktop .page-hero {
+  margin: 24px 0 20px;
+}
+.air-page--desktop .air-figure {
+  height: auto;
+}
+.air-page--desktop .page-transport {
+  margin: 0 -32px;
+  padding: 12px 32px;
+}
+.air-page--desktop .page-lower {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin-top: 24px;
+}
+.air-page--desktop .page-lower.single {
+  grid-template-columns: minmax(0, 62ch);
+}
+.air-page--desktop .section-jumps {
+  margin-top: 12px;
+}
+.air-page--desktop .product-details {
+  margin: 23px -32px -27px;
+}
+.air-page--desktop .product-details summary {
+  padding-inline: 32px;
+}
+.air-page--desktop .details-body {
+  padding-inline: 32px;
+}
+
+.air-page--mobile {
+  width: 390px;
+  min-height: 760px;
+  border-radius: 23px;
+  padding: 20px 18px 0;
+}
+.air-page--mobile .air-page-brand {
+  font-size: 15px;
+}
+.air-page--mobile .appearance-badge {
+  padding-inline: 8px;
+  max-width: 176px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.air-page--mobile .page-hero {
+  margin: 34px 2px 18px;
+}
+.air-page--mobile .page-hero .piece-title {
+  font-size: 38px;
+}
+.air-page--mobile .page-hero .piece-caption {
+  font-size: 12px;
+}
+.air-page--mobile .air-figure {
+  height: auto;
+}
+.air-page--mobile .page-transport {
+  margin: 0 -18px;
+  padding: 13px 16px;
+}
+.air-page--mobile .section-jumps {
+  margin-top: 17px;
+}
+.air-page--mobile .page-lower {
+  display: grid;
+  gap: 18px;
+  margin-top: 20px;
+}
+.air-page--mobile .product-details {
+  margin: 20px -18px 0;
+}
+.air-page--mobile .product-details summary {
+  padding-inline: 18px;
+}
+.air-page--mobile .details-body {
+  padding-inline: 18px;
+}
+
+/* SVG shared semantics */
+.svg-section-label {
+  font-family: var(--ui);
+  font-size: 10px;
+  font-weight: 720;
+  letter-spacing: 0.055em;
+}
+.svg-voice,
+.svg-voice-played,
+.svg-voice-now,
+.svg-return-trace,
+.svg-motif-glyph,
+.svg-motif-echo {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+.svg-motif-occurrence {
+  outline: none;
+  cursor: pointer;
+}
+.svg-motif-hit {
+  fill: transparent;
+}
+.svg-playhead-hit {
+  fill: transparent;
+  cursor: ew-resize;
+  touch-action: none;
+}
+.svg-playhead-ui {
+  outline: none;
+}
+.svg-playhead-time {
+  opacity: 0;
+  transition: opacity 0.13s ease;
+  pointer-events: none;
+}
+.svg-playhead-ui:hover .svg-playhead-time,
+.svg-playhead-ui.dragging .svg-playhead-time,
+.svg-playhead-ui:focus-visible .svg-playhead-time {
+  opacity: 1;
+}
+.svg-motif-occurrence:focus-visible .svg-motif-ring {
+  stroke: var(--focus) !important;
+  stroke-width: 2.4 !important;
+}
+.svg-playhead-ui:focus-visible > :not(.svg-playhead-hit) {
+  filter: drop-shadow(0 0 2px var(--focus));
+}
+.svg-motif-occurrence.selected .svg-motif-ring {
+  stroke-width: 2.1 !important;
+}
+.svg-motif-occurrence.related:not(.selected) {
+  opacity: 0.75;
+}
+
+.refrain-surface
+  :where(button, input, select, summary, .motif-row):focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .refrain-surface *,
+  .refrain-surface *::before,
+  .refrain-surface *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0ms !important;
+    transition-delay: 0ms !important;
+    animation: none !important;
+  }
+}
+
+.refrain-surface[data-display="modern"] {
+  --display: ui-serif, "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+}
+.refrain-surface[data-display="lyrical"] {
+  --display: Baskerville, "Baskerville Old Face", "Times New Roman", serif;
+}
+.refrain-surface[data-display="editorial"] {
+  --display: Georgia, "Times New Roman", serif;
+}
+.refrain-surface[data-texture="none"] {
+  background-image: none !important;
+}
+.refrain-surface[data-texture="none"] .figure-shell {
+  background-image: none !important;
+}
+.refrain-surface[data-texture="present"].theme-paper {
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      rgba(38, 48, 53, 0.028) 0,
+      rgba(38, 48, 53, 0.028) 1px,
+      transparent 1px,
+      transparent 3px
+    ),
+    radial-gradient(
+      circle at 18% 5%,
+      color-mix(in srgb, var(--companion) 7%, transparent),
+      transparent 22rem
+    ),
+    radial-gradient(
+      circle at 90% 82%,
+      color-mix(in srgb, var(--accent) 7%, transparent),
+      transparent 24rem
+    );
+}
+.refrain-surface[data-texture="present"].theme-prism .figure-shell {
+  background:
+    radial-gradient(
+      75% 110% at 10% 28%,
+      color-mix(in srgb, var(--accent) 16%, transparent),
+      transparent 66%
+    ),
+    radial-gradient(
+      70% 108% at 68% 16%,
+      color-mix(in srgb, var(--companion) 12%, transparent),
+      transparent 70%
+    ),
+    radial-gradient(
+      58% 98% at 95% 82%,
+      color-mix(in srgb, var(--warm) 12%, transparent),
+      transparent 72%
+    ),
+    rgba(255, 255, 255, 0.58);
+}
+.refrain-surface[data-motion="still"] *,
+.refrain-surface[data-motion="still"] *::before,
+.refrain-surface[data-motion="still"] *::after {
+  transition-duration: 0ms !important;
+  animation: none !important;
+}
+.refrain-surface[data-motion="expressive"] .svg-now-band {
+  opacity: 0.92;
+}
+
+.theme-paper .figure-shell {
+  background: rgba(250, 248, 242, 0.78);
+}
+.theme-prism .figure-shell {
+  border-color: transparent;
+}
+
+.paper-mcp-header {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  gap: 13px;
+  align-items: start;
+}
+.paper-folio-index {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 58px;
+  border-right: 1px solid var(--line-strong);
+  color: var(--companion);
+  font-family: var(--display);
+  font-size: 12px;
+  line-height: 1.1;
+  text-align: center;
+}
+.paper-folio-index span {
+  display: block;
+  margin-top: 3px;
+  color: var(--muted);
+  font-family: var(--ui);
+  font-size: 7px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.theme-paper.mcp-piece .figure-shell {
+  border-radius: 8px;
+}
+.theme-paper.mcp-piece .selection-strip {
+  background: rgba(139, 82, 96, 0.055);
+}
+.theme-prism.mcp-piece .figure-shell {
+  border-radius: 18px;
+  margin-inline: 7px;
+}
+.theme-prism.mcp-piece {
+  border-radius: 28px;
+}
+
+.paper-page-spread {
+  display: block;
+  margin: 20px 0 20px;
+}
+/* Desktop Paper reads as a folio page: a stacked inscription
+   (mark, title, epigraph) closed by a hairline, above the
+   full-width manuscript field. */
+.paper-editorial {
+  min-width: 0;
+  padding: 0 0 14px;
+  border-bottom: 1px solid var(--line-strong);
+}
+.paper-editorial .page-hero {
+  margin: 0;
+}
+.paper-editorial .page-hero .piece-title {
+  font-size: 30px;
+}
+.paper-editorial .piece-caption {
+  max-width: 62ch;
+  font-size: 12.5px;
+}
+.paper-editorial .lineage-note {
+  margin-top: 7px;
+}
+.paper-stage {
+  min-width: 0;
+}
+.paper-stage .figure-shell {
+  border-radius: 9px;
+}
+.theme-paper.air-page--desktop {
+  width: min(100%, 860px);
+}
+.theme-paper.air-page--desktop .page-transport {
+  margin-top: 0;
+}
+.theme-paper.air-page--desktop .page-panel {
+  border-top-style: double;
+}
+.theme-prism.air-page--desktop .page-hero {
+  max-width: 75%;
+}
+.theme-prism.air-page--desktop .figure-shell {
+  border-radius: 20px;
+}
+
+.svg-paper-leaf {
+  filter: none;
+}
+.svg-paper-margin-label {
+  font-family: var(--display);
+  font-size: 12px;
+  letter-spacing: 0.02em;
+}
+.svg-paper-voice-label {
+  font-family: var(--ui);
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
+}
+.svg-paper-onset,
+.svg-prism-spark {
+  vector-effect: non-scaling-stroke;
+}
+.svg-prism-plane {
+  vector-effect: non-scaling-stroke;
+}
+.svg-prism-ribbon {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+.theme-paper .svg-motif-occurrence.selected .svg-motif-ring {
+  filter: drop-shadow(0 2px 3px rgba(91, 53, 63, 0.18));
+}
+.theme-prism .svg-motif-occurrence.selected .svg-motif-ring {
+  filter: drop-shadow(0 0 7px rgba(73, 101, 255, 0.28));
+}
+.theme-nocturne .svg-motif-occurrence.selected .svg-motif-ring {
+  filter: drop-shadow(0 0 6px rgba(126, 184, 190, 0.32));
+}
+.theme-herbarium .svg-motif-occurrence.selected .svg-motif-ring {
+  filter: drop-shadow(0 1px 2px rgba(163, 104, 95, 0.3));
+}
+
+/* Mobile composition is class-scoped (not viewport media queries) so the
+   bench's 390 px frames reproduce it inside a wide desktop window. */
+.theme-paper.air-page--mobile .paper-page-spread {
+  display: contents;
+}
+.theme-paper.air-page--mobile .paper-editorial {
+  margin: 30px 2px 18px;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+.theme-paper.air-page--mobile .paper-editorial .page-hero {
+  display: block;
+}
+.theme-paper.air-page--mobile .paper-editorial .piece-caption {
+  margin-top: 8px;
+  font-size: 12px;
+}
+.theme-paper.air-page--mobile .paper-stage {
+  margin-bottom: 0;
+}
+@media (max-width: 620px) {
+  .paper-editorial .page-hero .piece-title {
+    font-size: 38px;
+  }
+}
+
+.section-jumps.empty {
+  display: none;
+}
+.svg-form-seam,
+.svg-paper-section-rule,
+.svg-prism-caustic,
+.svg-prism-glint,
+.svg-prism-ribbon {
+  vector-effect: non-scaling-stroke;
+}
+.svg-form-label {
+  font-family: var(--ui);
+  font-size: 8px;
+  font-weight: 720;
+  letter-spacing: 0.045em;
+}
+.svg-form-index {
+  font-family: var(--display);
+  font-size: 8.5px;
+  font-weight: 650;
+}
+.svg-prism-caustic {
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+.svg-prism-ribbon {
+  mix-blend-mode: multiply;
+}
+.svg-prism-glint {
+  pointer-events: none;
+}
+.theme-prism .figure-shell {
+  border-color: transparent;
+  background:
+    radial-gradient(
+      78% 112% at 5% 28%,
+      color-mix(in srgb, var(--accent) 6%, transparent),
+      transparent 72%
+    ),
+    radial-gradient(
+      64% 94% at 86% 74%,
+      color-mix(in srgb, var(--companion) 5%, transparent),
+      transparent 75%
+    );
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 5%, transparent);
+}
+.theme-paper .figure-shell {
+  background: linear-gradient(
+    180deg,
+    rgba(252, 250, 244, 0.86),
+    rgba(248, 245, 238, 0.82)
+  );
+}
+.theme-prism .svg-motif-occurrence .svg-motif-ring {
+  transition:
+    stroke-width 0.16s ease,
+    opacity 0.16s ease,
+    filter 0.16s ease;
+}
+.theme-prism .svg-motif-occurrence.selected .svg-motif-ring {
+  filter: drop-shadow(
+    0 0 8px color-mix(in srgb, var(--accent) 35%, transparent)
+  );
+  stroke-width: 1.5;
+}
+
+.refrain-surface {
+  --display:
+    "Songti SC", "STSong", "Source Han Serif SC", "Noto Serif CJK SC", ui-serif,
+    "Iowan Old Style", Georgia, serif;
+  --ui:
+    Inter, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", ui-sans-serif,
+    -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+.refrain-surface[data-display="modern"] {
+  --display:
+    "Songti SC", "STSong", "Source Han Serif SC", "Noto Serif CJK SC", ui-serif,
+    "Iowan Old Style", Georgia, serif;
+}
+.refrain-surface[data-display="lyrical"] {
+  --display: "Kaiti SC", "STKaiti", KaiTi, Baskerville, serif;
+}
+.refrain-surface[data-display="editorial"] {
+  --display:
+    "Source Han Serif SC", "Noto Serif CJK SC", "Songti SC", Georgia, serif;
+}
+.refrain-surface[data-display="spectral"] {
+  --display:
+    "Avenir Next", Futura, "Century Gothic", "PingFang SC", "Hiragino Sans GB",
+    ui-sans-serif, sans-serif;
+}
+/* v17: hero typography dialects — each theme speaks in its own voice. */
+.theme-prism.air-page--desktop .page-hero .piece-title {
+  font-size: 44px;
+  font-weight: 520;
+  letter-spacing: -0.02em;
+  background: linear-gradient(102deg, var(--accent) 8%, var(--companion) 88%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.theme-prism.mcp-piece .piece-title {
+  color: #2c2f4a;
+}
+.theme-nocturne .piece-title {
+  letter-spacing: 0.22em;
+  font-weight: 480;
+}
+.theme-nocturne.air-page .page-hero {
+  text-align: center;
+}
+.theme-nocturne.air-page .page-hero .piece-caption {
+  margin-left: auto;
+  margin-right: auto;
+}
+.theme-nocturne .piece-caption {
+  letter-spacing: 0.05em;
+}
+.theme-nocturne .lineage-note {
+  letter-spacing: 0.08em;
+}
+.theme-nocturne .product-mark {
+  letter-spacing: 0.18em;
+}
+.theme-herbarium.air-page .page-hero {
+  border: 1px solid var(--line-strong);
+  border-radius: 3px;
+  background: #fbf8ef;
+  padding: 15px 20px 13px;
+  box-shadow: 2px 2px 0 rgba(74, 80, 58, 0.09);
+}
+.theme-herbarium .piece-title {
+  letter-spacing: 0.03em;
+}
+.theme-herbarium .product-mark {
+  letter-spacing: 0.12em;
+}
+.piece-title {
+  letter-spacing: -0.02em;
+}
+.piece-caption {
+  line-height: 1.62;
+}
+.page-hero .piece-caption {
+  margin-top: 8px;
+}
+.lineage-note {
+  line-height: 1.6;
+}
+.page-panel p {
+  line-height: 1.68;
+}
+.theme-paper.mcp-piece,
+.theme-paper.air-page {
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      rgba(38, 48, 53, 0.015) 0,
+      rgba(38, 48, 53, 0.015) 1px,
+      transparent 1px,
+      transparent 4px
+    ),
+    repeating-linear-gradient(
+      89deg,
+      rgba(82, 67, 47, 0.008) 0,
+      rgba(82, 67, 47, 0.008) 1px,
+      transparent 1px,
+      transparent 9px
+    ),
+    radial-gradient(
+      circle at 14% 4%,
+      rgba(139, 82, 96, 0.035),
+      transparent 20rem
+    ),
+    radial-gradient(
+      circle at 90% 86%,
+      rgba(41, 70, 95, 0.035),
+      transparent 23rem
+    );
+}
+.theme-paper .figure-shell {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(43, 65, 78, 0.045),
+      transparent 2.4%,
+      transparent 97%,
+      rgba(139, 82, 96, 0.025)
+    ),
+    linear-gradient(
+      180deg,
+      rgba(253, 251, 246, 0.93),
+      rgba(248, 245, 237, 0.88)
+    );
+  box-shadow:
+    inset 0 1px rgba(255, 255, 255, 0.82),
+    inset 15px 0 22px rgba(45, 53, 58, 0.018),
+    inset 0 -20px 30px rgba(71, 57, 37, 0.022);
+}
+.theme-prism.mcp-piece,
+.theme-prism.air-page {
+  background-image:
+    radial-gradient(
+      80% 58% at 3% 0%,
+      rgba(73, 101, 255, 0.09),
+      transparent 70%
+    ),
+    radial-gradient(
+      68% 62% at 100% 4%,
+      rgba(240, 103, 123, 0.075),
+      transparent 74%
+    ),
+    radial-gradient(
+      56% 54% at 68% 100%,
+      rgba(233, 161, 60, 0.05),
+      transparent 76%
+    );
+}
+.theme-prism .figure-shell {
+  background:
+    radial-gradient(
+      70% 118% at 7% 38%,
+      rgba(73, 101, 255, 0.085),
+      transparent 66%
+    ),
+    radial-gradient(
+      63% 110% at 60% 13%,
+      rgba(142, 94, 255, 0.065),
+      transparent 70%
+    ),
+    radial-gradient(
+      58% 104% at 97% 80%,
+      rgba(233, 161, 60, 0.062),
+      transparent 72%
+    ),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.4), rgba(247, 246, 253, 0.16));
+  box-shadow:
+    inset 0 0 0 1px rgba(73, 101, 255, 0.055),
+    0 18px 42px rgba(73, 101, 255, 0.045);
+}
+.selection-action {
+  background: var(--accent);
+  box-shadow: 0 7px 18px color-mix(in srgb, var(--accent) 19%, transparent);
+}
+.appearance-badge {
+  backdrop-filter: blur(10px);
+}
+.page-panel h3 {
+  font-size: 18px;
+}
+.page-panel p {
+  font-size: 10.5px;
+}

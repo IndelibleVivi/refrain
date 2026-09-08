@@ -1,0 +1,51 @@
+{
+  "format": "refrain-candidate-shard@0-experimental",
+  "id": "warm-piano-generaluser",
+  "candidateContentSha256": "617ec909ed16f974fecd22b5eec657cfeaba938ceb3e51775915cdbf40da6543",
+  "candidate": {
+    "id": "warm-piano-generaluser",
+    "instrumentId": "warm_piano",
+    "engine": "soundfont",
+    "assetId": "generaluser-gs-2.0.3",
+    "mapping": {
+      "type": "program",
+      "program": 0
+    },
+    "calibrationGainDb": -8,
+    "tailSeconds": 2.5,
+    "releaseStatus": "audition-fallback"
+  },
+  "assets": [
+    {
+      "id": "generaluser-gs-2.0.3",
+      "kind": "soundfont",
+      "source": {
+        "repository": "https://github.com/mrbumpy409/GeneralUser-GS",
+        "ref": "684543d5e5efaef08d02be50dcda8d552478fa60",
+        "url": "https://raw.githubusercontent.com/mrbumpy409/GeneralUser-GS/684543d5e5efaef08d02be50dcda8d552478fa60/GeneralUser-GS.sf2"
+      },
+      "localPath": "soundpacks/GeneralUser-GS.sf2",
+      "bytes": 32319396,
+      "sha256": "9575028c7a1f589f5770fccc8cff2734566af40cd26ed836944e9a5152688cfe",
+      "license": {
+        "expression": "LicenseRef-GeneralUser-GS-2.0.3",
+        "path": "third_party/GeneralUser-GS/LICENSE.txt",
+        "assetScope": "complete SoundFont bank; upstream records incomplete provenance for some contained samples"
+      },
+      "processingHistory": [
+        {
+          "operation": "byte-exact-copy",
+          "tool": "refrain-soundpack-fetch@0",
+          "inputSha256": "9575028c7a1f589f5770fccc8cff2734566af40cd26ed836944e9a5152688cfe",
+          "outputSha256": "9575028c7a1f589f5770fccc8cff2734566af40cd26ed836944e9a5152688cfe",
+          "parameters": {
+            "modified": false
+          }
+        }
+      ],
+      "releaseStatus": "audition-fallback",
+      "publicReleaseAccepted": false
+    }
+  ],
+  "contentSha256": "dd30c14bb7b587e2cd930ec0276972e3c9194c2a7437eb7a6cefb80adc0884ed"
+}

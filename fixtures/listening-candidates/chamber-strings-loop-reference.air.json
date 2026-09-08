@@ -1,0 +1,15 @@
+{
+  "format": "air@0-experimental",
+  "title": "Chamber strings sustain-loop phrase",
+  "tempo": 72,
+  "meter": "4/4",
+  "motifs": {},
+  "voices": [
+    {
+      "id": "strings",
+      "instrument": "chamber_strings",
+      "role": "harmony",
+      "part": "C5/1 | B4/2 C5/2 | C#5/1 | C5/1"
+    }
+  ]
+}

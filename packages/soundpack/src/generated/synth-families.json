@@ -1,0 +1,61 @@
+{
+  "format": "refrain-synth-family-evidence@0-experimental",
+  "candidates": [
+    {
+      "candidateId": "air-pad-subtractive-original",
+      "candidateContentSha256": "3717480602f5d3760f07d3a4531ea5ae59c228de84492fec420d6be793848d48",
+      "shardSha256": "802a1283ae8146d46305985c0b43b33832bf5d42348daca2cb5d7ee42a73ba48",
+      "patchFormat": "refrain-synth-subtractive@0-experimental",
+      "patchSha256": "701288afb0b19bdc7df09a0c3f9d2f01f9bc53dda4d9af88c64acf4a9ec0dcd5"
+    },
+    {
+      "candidateId": "glass-bell-modal-original",
+      "candidateContentSha256": "23a1c109541dd8fcbda429e9ef547977c42d1ea3c8f56254cd86a6090f5b3e66",
+      "shardSha256": "9a5770e6f00ca9e14541ac1f404d29b011870db0c68e67c1894a6f6cb6d8faf5",
+      "patchFormat": "refrain-synth-modal@0-experimental",
+      "patchSha256": "447a0e4e16cf960a4ff8d10baafbd8c42f16cb264646a51f49dc2041465f7627"
+    },
+    {
+      "candidateId": "clean-bass-subtractive-original",
+      "candidateContentSha256": "26ea8be6de3ead654e262ff34875446cd890bcfd95e8d70ab3325ef3018f0eb2",
+      "shardSha256": "2663f1b18b2ff27e957c1d6783b159ff4f6fc7e4307218aa2c8e120f50cb1915",
+      "patchFormat": "refrain-synth-subtractive@0-experimental",
+      "patchSha256": "91e7f61f3ffb0f00206d3d2cac6c4ed0878e3170e96cc526a6dea1d04b43ecde"
+    },
+    {
+      "candidateId": "sub-bass-subtractive-original",
+      "candidateContentSha256": "b798eff320d1816cd8365af1c5143d7d70e69894f8633622c9c09bcff75f88fd",
+      "shardSha256": "5adb762c03296ca1f9f106b423bda8f698e71f666e32ba7c4e55ddee31012a57",
+      "patchFormat": "refrain-synth-subtractive@0-experimental",
+      "patchSha256": "fbef6bb6b24fee72d0e7b84daeaa4b8974d5644c4328d1a0abee93699991edea"
+    },
+    {
+      "candidateId": "lattice-pluck-subtractive-original",
+      "candidateContentSha256": "ab75f87979d0d291f331f7eaa9dc9f9bf4e1f0e80ec668f253a2c6bcde87e73b",
+      "shardSha256": "c8039c84e0697dca15e5c940fef9ac9b86327b8f28e60cb10599c98d4233ff2e",
+      "patchFormat": "refrain-synth-subtractive@0-experimental",
+      "patchSha256": "5e2f2f27efd3d69f08451e6ed9a1bc15cd8f8231b343168c8a636231ffc6d0d3"
+    },
+    {
+      "candidateId": "prism-lead-subtractive-original",
+      "candidateContentSha256": "090cfaa42f686657fe422d932239abec8f55577f7a5291c1f6eb821e1b530d53",
+      "shardSha256": "712cac711ebd7bfff7a2692c7082fdc0185aa3fb8a2296f78cd56ef2336c6fe0",
+      "patchFormat": "refrain-synth-subtractive@0-experimental",
+      "patchSha256": "69f9c1f4a42d015b84d6f8a04ed6e2900ab0867726c9567ef687f3eb9c32d874"
+    },
+    {
+      "candidateId": "dust-texture-subtractive-original",
+      "candidateContentSha256": "dd3959ff09dd94d8fdeaf956cee408701d02d261f08cfd8806ded7b3ea4e4084",
+      "shardSha256": "09df8774ae46ecadbe59d01bab1f28c362da6cc5389733dc30944e99f43c6a70",
+      "patchFormat": "refrain-synth-subtractive@0-experimental",
+      "patchSha256": "487cf80cf5e043df353ddbc6e915d7073347969b42d2335a6e3cd10c4664848e"
+    },
+    {
+      "candidateId": "rhythm-pulse-modal-original",
+      "candidateContentSha256": "2f3c8bda957fdb7dde72c2c11a87e8a9a57859563668c0649036ca253a6754f2",
+      "shardSha256": "c6dbf0df7778b37e940b79052933888d808df4de32e108e9aad426b3b8f2e890",
+      "patchFormat": "refrain-synth-modal@0-experimental",
+      "patchSha256": "f7c98ee23b0a69fd36916f59c26e38872259f15b6f3382414f62a2341e6224e9"
+    }
+  ]
+}

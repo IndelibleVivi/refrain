@@ -1,0 +1,42 @@
+{
+  "format": "refrain-candidate-shard@0-experimental",
+  "id": "rhythm-pulse-modal-original",
+  "candidateContentSha256": "2f3c8bda957fdb7dde72c2c11a87e8a9a57859563668c0649036ca253a6754f2",
+  "candidate": {
+    "id": "rhythm-pulse-modal-original",
+    "instrumentId": "rhythm_pulse",
+    "engine": "synth",
+    "mapping": {
+      "type": "midi-fallback",
+      "program": 118
+    },
+    "calibrationGainDb": -15,
+    "releaseStatus": "development-identity",
+    "patch": {
+      "format": "refrain-synth-modal@0-experimental",
+      "modes": [
+        {
+          "ratio": 1,
+          "gain": 0.8,
+          "decaySeconds": 0.24
+        },
+        {
+          "ratio": 1.51,
+          "gain": 0.16,
+          "decaySeconds": 0.11,
+          "detune": -6
+        },
+        {
+          "ratio": 3.97,
+          "gain": 0.05,
+          "decaySeconds": 0.07,
+          "detune": 8
+        }
+      ],
+      "attack": 0.002,
+      "release": 0.18
+    }
+  },
+  "assets": [],
+  "contentSha256": "c6dbf0df7778b37e940b79052933888d808df4de32e108e9aad426b3b8f2e890"
+}

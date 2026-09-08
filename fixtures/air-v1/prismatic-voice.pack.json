@@ -1,0 +1,15 @@
+{
+  "format": "refrain-extension-pack@1-experimental",
+  "id": "prismatic-voice-kit@1",
+  "version": "1.0.0",
+  "label": "Prismatic voice authoring kit",
+  "modules": [
+    {
+      "kind": "authoring-vocabulary",
+      "id": "prismatic-voice-language@1",
+      "sha256": "076f34df2fbf55641cf610f37b93909288c678fb259324360c3bfc929ab00abc"
+    }
+  ],
+  "assets": [],
+  "contentSha256": "1b8cef35877606a0fa57d5807b79940eeb39505331b8d5a9ac100c47238f2639"
+}

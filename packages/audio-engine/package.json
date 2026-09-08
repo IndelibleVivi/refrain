@@ -1,0 +1,45 @@
+{
+  "name": "@refrain/audio-engine",
+  "version": "0.0.0-experimental",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./block-renderer": "./src/block-renderer.ts",
+    "./block-worker": "./src/block-worker.ts",
+    "./browser": "./src/browser.ts",
+    "./complete-browser": "./src/complete-browser.ts",
+    "./content-addressed-store": "./src/content-addressed-store.ts",
+    "./execution": {
+      "refrain-built": "./dist/execution.js",
+      "default": "./src/execution.ts"
+    },
+    "./execution-transport": "./src/execution-transport.ts",
+    "./local-asset-projection": "./src/local-asset-projection.ts",
+    "./midi": "./src/midi.ts",
+    "./performance": "./src/performance.ts",
+    "./pcm": "./src/pcm.ts",
+    "./receipt": {
+      "refrain-built": "./dist/receipt.js",
+      "default": "./src/receipt.ts"
+    },
+    "./sampler": "./src/sampler.ts",
+    "./scene-renderer": "./src/scene-renderer.ts",
+    "./scene-routing": "./src/scene-routing.ts",
+    "./synth-kernel": "./src/synth-kernel.ts",
+    "./verified-asset-store": "./src/verified-asset-store.ts"
+  },
+  "dependencies": {
+    "@refrain/compiler": "*",
+    "@refrain/soundpack": "*",
+    "7zip-bin": "^5.2.0",
+    "spessasynth_core": "4.3.20",
+    "spessasynth_lib": "4.3.14"
+  },
+  "scripts": {
+    "build": "tsc -b",
+    "test": "vitest run --root ../.. packages/audio-engine",
+    "typecheck": "tsc -b --pretty false"
+  },
+  "license": "SEE LICENSE IN ../../LICENSING.md"
+}

@@ -1,0 +1,165 @@
+# Programme roadmap
+
+Status: complete implementation plan for the owner-approved 2026-08-22 product/system re-spec. This is a programme, not a promise to stop at the earliest audible or shippable slice.
+
+## Spec authority
+
+- Canonical product and technical authority: [`../SPEC.md`](../SPEC.md) plus [`PRODUCT.md`](PRODUCT.md) and [`ARCHITECTURE.md`](ARCHITECTURE.md), owner-approved 2026-08-22.
+- Earlier G0–G3B requirement evidence remains in [`G2-COVERAGE.md`](G2-COVERAGE.md), [`G3A-COVERAGE.md`](G3A-COVERAGE.md), and [`G3B-COVERAGE.md`](G3B-COVERAGE.md).
+- Current implementation facts and gates live only in [`current-state.md`](current-state.md). A planned target here is not a current support claim.
+
+Status terms in the ledger are `planned`, `blocked-decision`, `in-progress`, `implemented`, and `verified`. `implemented` means source exists; `verified` means the named evidence passed at the appropriate boundary.
+
+## Dependency order and execution tranches
+
+### A — Contract adoption
+
+Adopt the gesture-to-complete-piece product sentence, source-plural sound direction, authority chain, scale targets, delivery envelopes, Canvas functional contract, release truth, and full coverage ledger. Record present limits as temporary implementation guards. Model-visible MCP wording changes only when the corresponding input/output implementation is live.
+
+Stopping point: canonical docs agree on target versus current truth. Later tranches remain required.
+
+### B — Sound Integrity kernel
+
+Preserve native PCM/WAV amplitude; make audition loudness matching a separate versioned transform; verify byte count and SHA-256 before decode in browser and headless paths; bind actually verified bytes in `RenderReceipt`; use candidate-local content identity plus stable attack ordinal for real RR rotation; validate release-region overlap, gain, sample-release coverage, loops, and closure.
+
+Stopping point: old matched listening evidence remains reproducible, ordinary export is native-gain, same-length corruption fails, and focused plus existing audio gates pass.
+
+### C — Exact performance contract
+
+Define `refrain-render-scene@0-experimental`, exact `SoundPalette`, and `refrain-performance-binding@0-experimental`; make the present `RenderProfile` derived `ResolvedRenderProfile` plan data; pin profile/scene/palette/candidate/renderer digests; bump the resolved plan contract; add explicit CLI binding selection; emit binding in `hum` result; migrate portable artifact to `refrain-artifact@1-experimental` while importing both `@0` and `@1`; export native WAV, optional matched preview, scene, binding, and new receipts without mutating AIR.
+
+Dependency: follows B because a binding must identify trustworthy output semantics. This tranche intentionally precedes CLI binding use; the source re-spec's original Stage B/D order was internally inverted.
+
+Status: **verified 2026-08-23.** `performance-plan@2-experimental`, `refrain-render-receipt@2-experimental`, exact binding selection in `hum` and both CLIs, current transparent scene/palettes, synchronous `@0`/`@1` import with `@1` export, native plus optional matched projections, fresh-process continuity, real artifact rebinding, complete gates, and direct/prerender browser playback passed. The post-review hardening passes also separated historical binding integrity from current-runtime availability, closed nested profile input, made imported render-receipt semantics constructor-equivalent, verified the artifact receipt/binding/projection graph, and unified musical-receipt evidence/status/identity plus source binding across producer, portable parser, and browser presentation without changing existing IDs. The implemented scene is deliberately narrow; D–H remain required.
+
+### D — Complete-piece vertical
+
+Author one real four-to-five-minute relational AIR and one upper-envelope stress AIR. Measure source bytes, compiled events, model/URL payload, plan size, asset bytes, memory, cold/warm first sound, pause/seek/restart/section jump, and offline render/export time. Add plan first-use/priorities, opening-closure preparation, bounded lookahead and prefetch, exact seek reconstruction, full transport, block/worker/Node offline render, inline/session/file/MCP-resource delivery, and aggregate/virtualized view-model projections. Add compact section/form reuse only where the reference AIR proves manual duplication or host context is a real constraint.
+
+Dependency: follows exact binding so every measurement and projection names the heard embodiment. The adopted 8-minute/12-voice/20,000-event envelope becomes a verified support claim only after measured stress evidence justifies concrete guards.
+
+Status: **source- and runtime-verified 2026-08-25.** The checked-in relational reference is 4:48 with 10 active voices, six authored sections, 2,294 compiled events, and late marimba/looped-strings first use; the upper-envelope fixture is 8:00 with 12 voices, eight authored sections, and 21,840 events. `performance-plan@3-experimental`, sealed execution bundles, indexed checkpoints, separate preparation plans, exact progressive assets, seek reconstruction, browser/worker/Node block execution, bounded two-pass WAV, inline/session/file/MCP-resource delivery, and bounded Structure@1 facts passed focused tests, full export/evidence runs, and real-browser playback at desktop and 390 px. The functional frontend remains disposable engineering UI; Selen's v1 visual language is reserved for G. This status is not sound-palette, host, production-Canvas, or release acceptance.
+
+### E — Sustainable sound-content factory
+
+Split the monolithic implementation manifest into a lightweight catalog and immutable candidate shards; pin candidate-level digests directly in profiles/bindings; add content-addressed asset records and selective fetch/prepare by candidate/profile/palette/AIR; build a deterministic allow-listed SFZ compiler with source maps, asset locks, provenance, generated coverage/listening fixtures, and fail-closed unsupported sound-affecting opcodes; pilot flute and clarinet; introduce closed versioned synth patch families with browser/headless parity.
+
+Dependency: follows binding and complete-piece measurements so catalog and preload structures serve observed consumers rather than imagined scale.
+
+Status: **source- and runtime-verified 2026-08-25.** The monolithic implementation manifest, v0 profile reader/materializer, fetch-all default, and unversioned synth shards are retired rather than retained behind compatibility branches. Nineteen immutable content-addressed candidate shards sit behind one lightweight catalog; `SoundProfile@1` pins candidate digests directly; performance identity derives from the selected profile closure and stays invariant under unrelated catalog growth. Explicit candidate/profile/palette/AIR selectors feed an ignored content-addressed store with bounded concurrent fetch, byte/SHA verification, atomic adoption/projection, and exact opening/full closure. The closed build-time SFZ compiler reproduced flute and clarinet sustain pilots from pinned VSCO source with source maps and asset locks, while two closed versioned synth families share realtime/offline oscillator semantics. Full tests/builds, protocol/export smokes, deterministic source rebuild, selective 108,348,442-byte wind acquisition, accepted-listening digest reproduction, and real-browser sampler/synth playback passed with zero console warnings/errors. This verifies the factory and mechanical pilot identities, not timbral acceptance, full articulation breadth, a release identity, or any F palette.
+
+### F — Palettes and full identities
+
+Complete honest release identities for piano, harp, marimba, strings, winds, percussion, bass, guitar, and cello; add synthetic bass/pluck/lead/texture/rhythmic identities from real palette needs; build acoustic/chamber, luminous hybrid, lofi/degraded, and synthetic/beat-led proof palettes. For each, run identity, pairing, native-piece, stress-piece, technical-metric, receipt, and Faye listening acceptance. No final palette may depend on GeneralUser GS.
+
+Dependency: uses the content factory, exact binding, RenderScene, and complete-piece runtime. Human listening cannot be replaced by automated metrics.
+
+Status: **source- and runtime-verified; listening pending 2026-08-26.** Eight full-range sampled listening candidates now cover piano, harp, marimba, nylon guitar, true solo cello, chamber strings, flute, and clarinet; eight closed project-original synth candidates cover clean/sub bass, pad, bell, pluck, lead, texture, and rhythmic roles. Four strict 17-identity profiles and exact acoustic/chamber, luminous hybrid, lofi/degraded, and synthetic/beat-led palette/binding/scene sets contain no GeneralUser dependency. Each has a checked-in native AIR, identity/pairing coverage, native and explicit matched renders, exact receipts, and a separately rendered 8:00/12-voice/21,840-event stress embodiment. Full 337-asset acquisition (568,757,670 bytes), deterministic candidate generation, focused/full tests, and real-browser luminous plus acoustic playback passed; the presentation now atomically projects only the selected AIR closure instead of accumulating a hard-coded E profile. This does not complete F: all four digest-bound packets remain `pending-faye`, and public-release acceptance is false.
+
+### G — Production Canvas
+
+After Faye and Selen establish the visual direction, implement that direction in the existing shared renderer: whole-form overview, current detail, motif recurrence/transformation, transport, exact selection, mobile behavior, keyboard access, text alternatives, visible focus, and reduced motion. No event-count-proportional DOM and no fork between URL and MCP Canvas.
+
+Dependency: functional view-model, scale, delivery, and transport contracts may land earlier; production aesthetics remain Selen-led.
+
+Status: **source-complete private candidate; local engineering acceptance passed 2026-08-26.** The retired generic density-lane UI has one physical replacement in `packages/renderer`: a typed exact-data adapter, a thin React lifecycle bridge, and Selen v21's Paper Sonata, Prism, Nocturne Ink, and Herbarium product builders/composers and scoped CSS. URL and MCP builds import the same `AirRenderer`; Paper Sonata is the default; production theme badges expose only the active theme name; section/segment/motif selection still uses the canonical selection serializer; audio remains user-gesture-only; and high-density motif figures retain every exact anchor while exposing deterministic family-by-section landmarks instead of painting every recurrence at full emphasis. Four-theme 1280 px and prior narrow-host browser QA, explicit visible focus/system reduced motion/section current state, dense-anchor keyboard and accessibility order, strict real playback through pause/section jump/resume/restart/stop, built MCP desktop/345 px rendering/playback/user-click selection handoff, focused tests, the full repository suite/build, and the browser-rendered 21,840-event upper envelope pass. The plan@3 MCP output-schema drift discovered by the rendered run is fixed with an exact renderer/plan union. The stress artifact projects to 1,197 body nodes / 1,074 SVG nodes with no horizontal overflow, pre-Play audio, or workbench status-label leakage. G remains `in-progress` only for Faye/Selen aesthetic acceptance; real ChatGPT/Codex/Claude/Kimi host acceptance belongs to H and is not claimed here.
+
+### I — Local extension packs and embodied listening
+
+Add one typed local `ExtensionPack@0` envelope whose modules keep independent digests and provenance: candidate shards/assets, sparse profile fragments, bounded scenes, and palette recipes. Implement explicit installed/hydrated/authoring-shelf/execution-closure states, an operator-rooted local manager with side-load, selective hydration, archive pins, and honest uninstall, and proof packs assembled from existing acoustic and synthetic material without duplicating canonical authority.
+
+Introduce a core-only explicit authoring-vocabulary closure, sparse `SoundProfile@2`, bounded executable `RenderScene@1`, resolved palette recipes, and the minimal new binding/plan/render-receipt/artifact versions needed to preserve strict historical formats. Add deterministic structural and embodiment `ListeningReport@0` projections with no taste score and no music mutation.
+
+Dependency: follows the verified E/F content factory and current audio/export/runtime chain. It does not depend on AIR@1 or pack-contributed authoring syntax.
+
+Status: **private P0 source- and runtime-verified 2026-08-26.** Closed validators now cover the pack container, explicit core vocabulary closure, sparse profile, scene, recipe/palette, Binding@1, plan@4, RenderReceipt@3, and Artifact@2. The explicit-root local manager passes metadata-install, selective exact hydration, shelf, shared-byte ownership, archive-pin refusal, and honest-uninstall tests. Acoustic Colors and asset-free Synthetic Spices reuse the current candidate authority as exact proof packs; the latter passes repeated deterministic offline scene DSP, native WAV/MIDI/receipt/artifact export reproduction, and real desktop/390 px browser playback through both routed buses with no console errors. This completes I's private engineering P0, not human listening, pack-contributed AIR syntax, AIR@1, host acceptance, rights closure, deployment, or release.
+
+### J — Expanded relational musical language
+
+Define and migrate one complete `air@1-experimental` contract for conductor/meter changes, pickup, rational durations and tuplets, explicit groove, phrase reuse, reusable segment-level techniques, and exact pack-contributed authoring definitions. Extend relational evidence across motif transformation, orchestration, recurrence, contrast, and meaningful absence, with separate optional embodiment lineage. Validate with materially different authors/models, genres, meters, forms, and sparse/dense textures.
+
+Dependency: follows I so every new identity and technique has portable semantic closure, bounded realization, exact sound embodiment, and honest diagnostics. Per-note controls, broader pitch collections, and microtonality stay later unless authored evidence requires them.
+
+Status: **private source-, runtime-, protocol-, export-, and browser-verified 2026-08-26; independent author/model acceptance pending.** One complete strict AIR@1 contract now carries conductor/meter maps, pickup, canonical rationals, tuplets, grooves, reusable phrases, portable techniques, and exact core/pack vocabulary closure; AIR@0 has a strict historical reader and explicit migration rather than a permissive compatibility layer. CompiledAir@1, Receipt@1 relation evidence plus separate embodiment lineage, ExtensionPack@1 authoring modules, Artifact@3, Presentation@2, export manifest@4, model-visible schema, mixed-meter MIDI/WAV, fresh-process continuation, Streamable HTTP, and desktop/mobile user-gesture playback pass. Five checked-in fixtures span materially different meters/forms/densities and one unavailable pack-carried voice, but they are one local implementation corpus. Genuine ChatGPT/Codex/Claude/Kimi authoring diversity, genre/listening judgment, and target-host behavior remain H acceptance work.
+
+### H — Host and public acceptance
+
+Run author-model and runtime matrices in ChatGPT Apps, Codex, Claude Code, and Kimi Code where available; verify schema discovery without repo docs, resource/artifact transport, playback, selection handoff, export, and exact host limitations. Complete project-original license choice, asset rights closure, package/naming review, clean clone/install, release/migration notes, and explicit owner public-release decision.
+
+Dependency: public claims follow source, runtime, listening, rights, host, and owner acceptance; private GitHub plus green tests is not release.
+
+Execution order is A–G, then I, then J, then H. The letter `H` retains its established meaning; inserting local capability work before it is an implementation-order clarification, not a release claim or removal of host acceptance.
+
+Local authoring checkpoint (2026-09-08): a tool + Skill source candidate now supports sound discovery, canonical silent drafting, section/voice inspection, file-based Artifact@3 sealing and continuation, independent previews, and native export. One independent local agent exercise completed the workflow without implementation imports. It supports H's authoring/host lane but does not close the multi-author/multi-host matrix, F/G listening and aesthetic acceptance, or release.
+
+Local production checkpoint (2026-09-08): `produce init/inspect/apply` and its progressive Skill reference make existing Scene@1 processing available through exact file operations. The host can author group placement, low-pass, saturation, delay, room and fade while preserving AIR, musical receipts, pinned sounds and prior render evidence. First-match routing is shared with execution; fully silent voices and inseparable instrument/role groups are explicit. This advances first-piece production through the existing I/H contracts without introducing new DSP, changing programme order or claiming model hearing, palette acceptance or deployment.
+
+## Complete coverage ledger
+
+| ID     | Adopted outcome                                                                                                   | Owning tranche    | Dependency or decision gate                 | Verification evidence                                    | Status           |
+| ------ | ----------------------------------------------------------------------------------------------------------------- | ----------------- | ------------------------------------------- | -------------------------------------------------------- | ---------------- |
+| P-01   | Gesture-to-complete-piece product promise and five freedoms                                                       | A, D              | None                                        | Canonical docs; reference and stress AIR                 | verified         |
+| P-02   | Explicit non-goals, agent authorship, no hidden taste/model                                                       | A, C, H           | None                                        | Contract tests; tools/list; host trials                  | in-progress      |
+| A-01   | AIR/CompiledAir/musical receipt remain music authority                                                            | existing, A       | None                                        | Source/receipt/fresh-process tests                       | verified         |
+| A-02   | Candidate, profile, scene, palette, binding, plan, render-receipt authority chain                                 | B, C, E           | B before C                                  | Schema/unit/export round trips                           | verified         |
+| S-01   | Same product from gesture through complete piece                                                                  | D                 | Real reference AIR                          | Duration/form/listening evidence                         | verified         |
+| S-02   | Target 8 min, 12 voices, 20,000 events without payload/DOM explosion                                              | D                 | Measurements choose guards                  | Stress benchmarks and browser memory/DOM evidence        | verified         |
+| C-01   | Stateless revise/extend/reply/variation/quote with motif lineage independent of sound                             | existing, C       | None                                        | Fresh-process relation and rebinding tests               | verified         |
+| SO-01  | Acoustic, synthetic, electronic, processed, hybrid, found materials are equal-class                               | A, E, F           | Sound identity evidence                     | Candidate/palette catalog and listening                  | in-progress      |
+| SO-02  | Local palette coherence plus intentional contrast, no universal score                                             | C, F              | Four palette programme                      | Palette contracts and acceptance packets                 | in-progress      |
+| SA-01  | Lightweight catalog, immutable candidate shards, candidate-level identity                                         | E                 | C binding contract                          | Unrelated-candidate invariance; shard validation         | verified         |
+| SA-02  | Build-time SFZ compiler and versioned synth patch families                                                        | E                 | Qualified sources and parity contract       | Generated fixtures, source maps, parity/browser evidence | verified         |
+| SA-03  | Selective acquisition and content-addressed assets                                                                | E                 | Candidate shards                            | Fetch/prepare closure tests and exact wind acquisition   | verified         |
+| R-01   | Native amplitude integrity and separate matched audition transform                                                | B                 | None                                        | PCM regression, packet/export digests, receipt facts     | verified         |
+| R-02   | Shared byte-count plus SHA-256 verified loader and actual-byte receipts                                           | B                 | None                                        | Corruption regressions, browser/headless smokes          | verified         |
+| R-03   | Candidate-scoped true RR and complete release contract                                                            | B                 | None                                        | Rotation/invariance and release negative tests           | verified         |
+| R-04   | Exact RenderScene/Binding and one resolved plan authority                                                         | C                 | B                                           | Digest identity, plan/adapter parity, artifact migration | verified         |
+| R-05   | Byte-exact pinned offline reference; browser semantic parity                                                      | C, D              | Renderer contract                           | Repeated offline digest and cross-adapter semantic tests | verified         |
+| PS-01  | First-use planning, progressive verification/load/decode, bounded scheduling                                      | D                 | Reference AIR and C binding                 | Cold/warm/bytes/first-sound trace                        | verified         |
+| PS-02  | Pause/resume/stop/restart/seek/section jump with sustained-state reconstruction                                   | D                 | Progressive engine                          | Browser transport and seek fixtures                      | verified         |
+| PS-03  | Block/worker/Node offline render without giant browser buffer                                                     | D                 | Measured export path                        | Memory/render benchmark and digest receipt               | verified         |
+| ST-01  | Save canonical music and exact choices; freeze audio deliberately                                                 | C, D              | Artifact @1                                 | Import/export/cache deletion tests                       | in-progress      |
+| ST-02  | Inline, secure expiring session, file, MCP resource/attachment envelopes                                          | D                 | Operator storage/origin authority           | Missing/expired/identity/privacy/host tests              | verified         |
+| UI-01  | One view model and renderer, whole-form/current-detail, bounded representation                                    | D, G              | Selen only for aesthetics                   | View-model scale tests and browser QA                    | in-progress      |
+| UI-02  | Exact selection and accessible complete-piece transport                                                           | D, G              | Host handoff capability                     | Keyboard/reduced-motion/mobile/selection tests           | in-progress      |
+| MCP-01 | One stateless `hum`; compact complete result or exact resource reference; exact binding                           | C, D, H           | Implemented schema before tools/list change | Contract tests and real-host trials                      | in-progress      |
+| EX-01  | Artifact, AIR, MIDI, native WAV, optional matched preview, profile, scene, binding, receipts, closure, provenance | C                 | Artifact/receipt migration                  | Export/import smoke and output digests                   | verified         |
+| PK-01  | One typed pack container whose semantic modules retain independent exact identities and provenance                | I                 | Existing content-addressed factory          | Manifest/module validation and invariance tests          | verified         |
+| PK-02  | Separate install, hydration, authoring shelf, execution closure, archive pin, and honest uninstall states         | I                 | Explicit operator root                      | Local manager lifecycle and shared-byte tests            | verified         |
+| PF-01  | Explicit vocabulary closure, sparse profile, recipe, binding, plan, receipt, and artifact exact migration         | I                 | Strict historical readers retained          | Round trips, coverage failures, export/import smoke      | verified         |
+| SC-01  | Bounded executable scene graph with offline identity and browser semantic parity                                  | I                 | Core-owned processor vocabulary             | DSP fixtures, repeated WAV, real-browser playback        | verified         |
+| LR-01  | Separate structural and embodiment listening facts without score or mutation                                      | I                 | Compiled AIR and exact render evidence      | Determinism, schema, and non-mutation tests              | verified         |
+| ML-01  | Complete AIR@1 musical-language migration with portable pack authoring definitions                                | J                 | I semantic and execution closure            | Parser/compiler/model-schema/migration corpus            | verified         |
+| RL-01  | Relational projections across motif, orchestration, recurrence, contrast, absence, and embodiment lineage         | J                 | Multi-author authored evidence              | Diverse author/model/form/meter acceptance corpus        | in-progress      |
+| PR-01  | Asset-level provenance and explicit candidate/listening/release states                                            | existing, E, F, H | Rights evidence                             | Manifest validation and release audit                    | in-progress      |
+| PR-02  | Four accepted materially different palettes                                                                       | F                 | Faye listening                              | Exact digest-bound packet decisions                      | planned          |
+| SEC-01 | Runtime sovereignty, no private context fields, no autoplay, explicit origins/roots                               | existing, D, H    | Operator configuration                      | Schema/privacy/browser/host tests                        | in-progress      |
+| AC-01  | Brief gesture, vignette, complete piece, stress piece, multi-author evidence                                      | D, H              | Runtime availability                        | Acceptance corpus and author trials                      | in-progress      |
+| AC-02  | Clean install, license/rights, host, release notes, explicit public decision                                      | H                 | Faye license/release decisions              | Clean-clone and publication checklist                    | blocked-decision |
+
+## Scope and order deltas from the adopted source document
+
+These entries preserve product meaning while removing implementation ambiguity:
+
+| Affected area               | Delta                                                                                                      | Reason and impact                                                                                | Decision owner                                     |
+| --------------------------- | ---------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ | -------------------------------------------------- |
+| PerformanceBinding          | associated beside AIR, never inside AIR/source revision                                                    | Keeps musical identity independent from audible embodiment                                       | adopted owner direction, engineering clarification |
+| RenderProfile / RenderScene | RenderScene is authored/versioned; current RenderProfile becomes derived plan data                         | Prevents two master-gain/ceiling authorities                                                     | adopted owner direction, engineering clarification |
+| SoundPalette                | catalog may resolve a friendly choice, but binding/result/artifact/render must be exact digest-pinned      | Removes hidden mutable audible defaults                                                          | adopted owner direction, engineering clarification |
+| Stage order                 | define Binding/Scene before CLI and `hum` require them                                                     | Original sequence used PerformanceBinding before defining it                                     | implementation reorder only                        |
+| Scale numbers               | measured D guard is 480 seconds, 12 voices, 24,576 events, and 65,536 expanded atoms                       | Supports the adopted 8-minute/12-voice/20,000-event envelope without redefining product identity | implementation evidence gate only                  |
+| Reproducibility             | byte-exact for a pinned offline reference; realtime browser owes semantic parity                           | Browser DSP/platform behavior cannot honestly promise universal byte identity                    | implementation clarification only                  |
+| Session delivery            | typed expiry/missing state, high-entropy locator, operator scope, identity revalidation                    | Keeps ephemeral delivery from becoming continuity or access authority                            | trust-boundary clarification only                  |
+| Format migration            | artifact and resolved plan gain new experimental versions; importers retain explicit prior-version support | Avoids silently widening strict current formats                                                  | compatibility technique only                       |
+| Local-pack order            | pull the minimal profile/scene/binding/plan/receipt/artifact migration into I before AIR@1                 | Makes pack scenes and sparse profiles actually executable without widening historical formats    | accepted implementation order                      |
+| Host acceptance order       | execute I and J before established tranche H while preserving the H identifier                             | Lets real hosts evaluate the intended extensible musical product rather than an interim grammar  | accepted owner direction                           |
+
+No accepted product capability is removed or narrowed. Production Canvas aesthetics and public release remain owner decision gates, not discarded scope.
+
+## Full acceptance
+
+The re-spec is complete only when every ledger row is `verified`, including local-pack and AIR@1 portability, diverse relational-language evidence, four accepted palettes, complete-piece and stress evidence, all delivery/transport paths, the shared accessible Canvas, real host trials, rights/license closure, and explicit public-release acceptance. Completion of A, B, I, J, or any other tranche is reported as tranche completion, never as completion of Refrain.
+
+## Source publication preparation
+
+The bilingual reader entrance, zero-asset first-use path, MCP connection guide, and architecture overview support public source inspection and self-hosted experimentation. This does not promote F/G listening or aesthetic candidates, certify every host, create a public service, or replace H’s broad product-release acceptance. Project-original licensing is now selected as SUL-1.0 plus CC BY-NC-SA 4.0 under the rights map; intended public history/destination remain explicit owner choices; current status lives in [current-state.md](current-state.md).

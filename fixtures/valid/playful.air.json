@@ -1,0 +1,38 @@
+{
+  "format": "air@0-experimental",
+  "title": "You made me look",
+  "tempo": 104,
+  "meter": "4/4",
+  "key": "A major",
+  "motifs": {
+    "hop": "E4/8 G#4/8 A4/4 G#4/4 E4/4"
+  },
+  "voices": [
+    {
+      "id": "guitar",
+      "instrument": "nylon_guitar",
+      "role": "lead",
+      "part": "@hop | @hop(2,1) | @hop | @hop(-5,1)",
+      "pan": -0.12
+    },
+    {
+      "id": "bass",
+      "instrument": "clean_bass",
+      "role": "bass",
+      "part": "A2/2 E3/2 | B2/2 F#3/2 | A2/2 E3/2 | E2/2 B2/2"
+    },
+    {
+      "id": "mallet",
+      "instrument": "marimba",
+      "role": "counter",
+      "part": "r/2 E5/4 C#5/4 | r/2 F#5/4 D5/4 | r/2 E5/4 C#5/4 | B4/4 r/4 E5/2",
+      "pan": 0.24
+    },
+    {
+      "id": "tick",
+      "instrument": "soft_percussion",
+      "role": "percussion",
+      "part": "C2/4 r/4 C2/4 r/4 | C2/4 r/4 C2/4 r/4 | C2/4 r/4 C2/4 r/4 | C2/4 C2/4 r/2"
+    }
+  ]
+}

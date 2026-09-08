@@ -1,0 +1,173 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  format:
+    name: format
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      # actions/checkout v7.0.1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      # actions/setup-node v7.0.0
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: 22.23.1
+          package-manager-cache: false
+      - run: npm ci
+      - run: npm run format:check
+
+  typecheck:
+    name: typecheck
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      # actions/checkout v7.0.1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      # actions/setup-node v7.0.0
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: 22.23.1
+          package-manager-cache: false
+      - run: npm ci
+      - run: npm run typecheck
+
+  unit-and-contracts:
+    name: unit-and-contracts
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      # actions/checkout v7.0.1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      # actions/setup-node v7.0.0
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: 22.23.1
+          package-manager-cache: false
+      - run: npm ci
+      - run: npm run test
+
+  tracked-drift:
+    name: tracked-drift
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      # actions/checkout v7.0.1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      # actions/setup-node v7.0.0
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: 22.23.1
+          package-manager-cache: false
+      - run: npm ci
+      - run: npm run fixtures:air-v1
+      - run: npm run soundpack:catalog
+      - run: npm run plugin:check
+      - run: git diff --check
+      - run: git diff --exit-code
+
+  browser-state-machine:
+    name: browser-state-machine
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      # actions/checkout v7.0.1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      # actions/setup-node v7.0.0
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: 22.23.1
+          package-manager-cache: false
+      - run: npm ci
+      - run: >-
+          npm run test --
+          packages/renderer/src/identity-scoped-engine.test.ts
+          packages/audio-engine/src/operation-authority.test.ts
+          packages/audio-engine/src/execution-transport.test.ts
+          packages/audio-engine/src/verified-asset-store.test.ts
+
+  mcp-host-browser:
+    name: mcp-host-browser
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      # actions/checkout v7.0.1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      # actions/setup-node v7.0.0
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: 22.23.1
+          package-manager-cache: false
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:mcp-host
+      # actions/upload-artifact v7.0.1
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        if: ${{ failure() }}
+        with:
+          name: mcp-host-failure-${{ github.sha }}
+          path: output/playwright/mcp-host/**
+          if-no-files-found: warn
+          retention-days: 7
+
+  core-contracts:
+    name: core-contracts
+    if: ${{ always() }}
+    needs:
+      - format
+      - typecheck
+      - unit-and-contracts
+      - tracked-drift
+      - browser-state-machine
+      - mcp-host-browser
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Require every independent contract gate
+        run: |
+          test "${{ needs.format.result }}" = success
+          test "${{ needs.typecheck.result }}" = success
+          test "${{ needs.unit-and-contracts.result }}" = success
+          test "${{ needs.tracked-drift.result }}" = success
+          test "${{ needs.browser-state-machine.result }}" = success
+          test "${{ needs.mcp-host-browser.result }}" = success
+
+  clean-production:
+    name: clean-production
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      # actions/checkout v7.0.1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      # actions/setup-node v7.0.0
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: 22.23.1
+          package-manager-cache: false
+      - run: npm ci
+      # actions/cache v6.1.0
+      - uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
+        with:
+          path: apps/soundbench/public/soundpacks
+          key: soundpack-${{ runner.os }}-${{ hashFiles('packages/soundpack/src/sound-catalog.json', 'packages/soundpack/src/candidates/sha256/*.json') }}
+      - run: npm run soundpack:fetch -- --profile e-vsco-wind-pilots@1
+      - run: npm run build
+      - run: npm run audio:smoke
+      - run: npm run mcp:smoke
+      - run: npm run selection:smoke
+      - run: npm run mcp:http-smoke
+      - run: git diff --check
+      - run: git diff --exit-code

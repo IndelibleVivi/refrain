@@ -1,0 +1,1203 @@
+{
+  "format": "refrain-candidate-shard@0-experimental",
+  "id": "flute-vsco-susnv-sfz-pilot",
+  "candidateContentSha256": "692223503d6301f0b0d0c9ba4f3d42f9916d4ff01a49ade5bc6e4fd0dcd1d1ca",
+  "candidate": {
+    "id": "flute-vsco-susnv-sfz-pilot",
+    "instrumentId": "flute",
+    "engine": "sampler",
+    "mapping": {
+      "type": "sample-map",
+      "playableMin": 60,
+      "playableMax": 96,
+      "midiFallbackProgram": 73,
+      "articulationFallbacks": {},
+      "regions": [
+        {
+          "id": "flute-vsco-susnv-sfz-pilot-region-001",
+          "trigger": "attack",
+          "assetId": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-a3-v1-1-6fc8d707afdd",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 67,
+            "rootMidi": 69,
+            "maxMidi": 70
+          },
+          "velocity": {
+            "min": 1,
+            "max": 62
+          },
+          "gainDb": 12,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.7
+          }
+        },
+        {
+          "id": "flute-vsco-susnv-sfz-pilot-region-002",
+          "trigger": "attack",
+          "assetId": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-a4-v1-1-c8fd15bb561d",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 79,
+            "rootMidi": 81,
+            "maxMidi": 82
+          },
+          "velocity": {
+            "min": 1,
+            "max": 62
+          },
+          "gainDb": 12,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.7
+          }
+        },
+        {
+          "id": "flute-vsco-susnv-sfz-pilot-region-003",
+          "trigger": "attack",
+          "assetId": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-a5-v1-1-d35c9b6cc3fa",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 91,
+            "rootMidi": 93,
+            "maxMidi": 94
+          },
+          "velocity": {
+            "min": 1,
+            "max": 62
+          },
+          "gainDb": 12,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.7
+          }
+        },
+        {
+          "id": "flute-vsco-susnv-sfz-pilot-region-004",
+          "trigger": "attack",
+          "assetId": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-c3-v1-1-4f221909317e",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 60,
+            "rootMidi": 60,
+            "maxMidi": 61
+          },
+          "velocity": {
+            "min": 1,
+            "max": 62
+          },
+          "gainDb": 12,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.7
+          }
+        },
+        {
+          "id": "flute-vsco-susnv-sfz-pilot-region-005",
+          "trigger": "attack",
+          "assetId": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-c4-v1-1-105a6dbced98",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 71,
+            "rootMidi": 72,
+            "maxMidi": 73
+          },
+          "velocity": {
+            "min": 1,
+            "max": 62
+          },
+          "gainDb": 12,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.7
+          }
+        },
+        {
+          "id": "flute-vsco-susnv-sfz-pilot-region-006",
+          "trigger": "attack",
+          "assetId": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-c5-v1-1-46a335b804c9",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 83,
+            "rootMidi": 84,
+            "maxMidi": 85
+          },
+          "velocity": {
+            "min": 1,
+            "max": 62
+          },
+          "gainDb": 12,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.7
+          }
+        },
+        {
+          "id": "flute-vsco-susnv-sfz-pilot-region-007",
+          "trigger": "attack",
+          "assetId": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-c6-v1-1-0d1c90287356",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 95,
+            "rootMidi": 96,
+            "maxMidi": 96
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 8,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.7
+          }
+        },
+        {
+          "id": "flute-vsco-susnv-sfz-pilot-region-008",
+          "trigger": "attack",
+          "assetId": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-e3-v1-1-87c667c2af88",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 62,
+            "rootMidi": 64,
+            "maxMidi": 66
+          },
+          "velocity": {
+            "min": 1,
+            "max": 62
+          },
+          "gainDb": 12,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.7
+          }
+        },
+        {
+          "id": "flute-vsco-susnv-sfz-pilot-region-009",
+          "trigger": "attack",
+          "assetId": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-e4-v1-1-b609d37fb577",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 74,
+            "rootMidi": 76,
+            "maxMidi": 78
+          },
+          "velocity": {
+            "min": 1,
+            "max": 62
+          },
+          "gainDb": 12,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.7
+          }
+        },
+        {
+          "id": "flute-vsco-susnv-sfz-pilot-region-010",
+          "trigger": "attack",
+          "assetId": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-e5-v1-1-660df172b551",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 86,
+            "rootMidi": 88,
+            "maxMidi": 90
+          },
+          "velocity": {
+            "min": 1,
+            "max": 62
+          },
+          "gainDb": 12,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.7
+          }
+        },
+        {
+          "id": "flute-vsco-susnv-sfz-pilot-region-011",
+          "trigger": "attack",
+          "assetId": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-c5-v2-1-7c9414267bad",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 83,
+            "rootMidi": 84,
+            "maxMidi": 85
+          },
+          "velocity": {
+            "min": 63,
+            "max": 127
+          },
+          "gainDb": 4,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.7
+          }
+        },
+        {
+          "id": "flute-vsco-susnv-sfz-pilot-region-012",
+          "trigger": "attack",
+          "assetId": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-e5-v2-1-c9617b571d5a",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 86,
+            "rootMidi": 88,
+            "maxMidi": 90
+          },
+          "velocity": {
+            "min": 63,
+            "max": 127
+          },
+          "gainDb": 4,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.7
+          }
+        },
+        {
+          "id": "flute-vsco-susnv-sfz-pilot-region-013",
+          "trigger": "attack",
+          "assetId": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-a3-v3-1-8a24758e25e1",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 67,
+            "rootMidi": 69,
+            "maxMidi": 70
+          },
+          "velocity": {
+            "min": 63,
+            "max": 127
+          },
+          "gainDb": 4,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.7
+          }
+        },
+        {
+          "id": "flute-vsco-susnv-sfz-pilot-region-014",
+          "trigger": "attack",
+          "assetId": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-a4-v3-1-9958014f58a1",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 79,
+            "rootMidi": 81,
+            "maxMidi": 82
+          },
+          "velocity": {
+            "min": 63,
+            "max": 127
+          },
+          "gainDb": 4,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.7
+          }
+        },
+        {
+          "id": "flute-vsco-susnv-sfz-pilot-region-015",
+          "trigger": "attack",
+          "assetId": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-a5-v3-1-36f09bd6d712",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 91,
+            "rootMidi": 93,
+            "maxMidi": 94
+          },
+          "velocity": {
+            "min": 63,
+            "max": 127
+          },
+          "gainDb": 4,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.7
+          }
+        },
+        {
+          "id": "flute-vsco-susnv-sfz-pilot-region-016",
+          "trigger": "attack",
+          "assetId": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-c3-v3-1-8e0549fb4482",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 60,
+            "rootMidi": 60,
+            "maxMidi": 61
+          },
+          "velocity": {
+            "min": 63,
+            "max": 127
+          },
+          "gainDb": 4,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.7
+          }
+        },
+        {
+          "id": "flute-vsco-susnv-sfz-pilot-region-017",
+          "trigger": "attack",
+          "assetId": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-c4-v3-1-9e09ce606f8f",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 71,
+            "rootMidi": 72,
+            "maxMidi": 73
+          },
+          "velocity": {
+            "min": 63,
+            "max": 127
+          },
+          "gainDb": 4,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.7
+          }
+        },
+        {
+          "id": "flute-vsco-susnv-sfz-pilot-region-018",
+          "trigger": "attack",
+          "assetId": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-e3-v3-1-3226ecd95142",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 62,
+            "rootMidi": 64,
+            "maxMidi": 66
+          },
+          "velocity": {
+            "min": 63,
+            "max": 127
+          },
+          "gainDb": 4,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.7
+          }
+        },
+        {
+          "id": "flute-vsco-susnv-sfz-pilot-region-019",
+          "trigger": "attack",
+          "assetId": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-e4-v3-1-670c72afcd4d",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 74,
+            "rootMidi": 76,
+            "maxMidi": 78
+          },
+          "velocity": {
+            "min": 63,
+            "max": 127
+          },
+          "gainDb": 4,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.7
+          }
+        }
+      ]
+    },
+    "calibrationGainDb": 0,
+    "tailSeconds": 0.7,
+    "releaseStatus": "listening-candidate"
+  },
+  "assets": [
+    {
+      "id": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-a3-v1-1-6fc8d707afdd",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Woodwinds/Flute/susNV/LDFlute_susNV_A3_v1_1.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Woodwinds/Flute/susNV/LDFlute_susNV_A3_v1_1.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/6fc8d707afddfaaf3003551b95a83b52f514adbe488bfea1c8c5250080a07278.wav",
+      "bytes": 2706216,
+      "sha256": "6fc8d707afddfaaf3003551b95a83b52f514adbe488bfea1c8c5250080a07278",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 450927,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "6fc8d707afddfaaf3003551b95a83b52f514adbe488bfea1c8c5250080a07278",
+          "outputSha256": "6fc8d707afddfaaf3003551b95a83b52f514adbe488bfea1c8c5250080a07278",
+          "parameters": {
+            "sfzPath": "FluteSusNV.sfz",
+            "samplePath": "Woodwinds/Flute/susNV/LDFlute_susNV_A3_v1_1.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-a4-v1-1-c8fd15bb561d",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Woodwinds/Flute/susNV/LDFlute_susNV_A4_v1_1.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Woodwinds/Flute/susNV/LDFlute_susNV_A4_v1_1.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/c8fd15bb561dbdac6d35ffd9c5e49413131d96f8948d5bdf03d4a03fa344c5c0.wav",
+      "bytes": 3460842,
+      "sha256": "c8fd15bb561dbdac6d35ffd9c5e49413131d96f8948d5bdf03d4a03fa344c5c0",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 576698,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "c8fd15bb561dbdac6d35ffd9c5e49413131d96f8948d5bdf03d4a03fa344c5c0",
+          "outputSha256": "c8fd15bb561dbdac6d35ffd9c5e49413131d96f8948d5bdf03d4a03fa344c5c0",
+          "parameters": {
+            "sfzPath": "FluteSusNV.sfz",
+            "samplePath": "Woodwinds/Flute/susNV/LDFlute_susNV_A4_v1_1.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-a5-v1-1-d35c9b6cc3fa",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Woodwinds/Flute/susNV/LDFlute_susNV_A5_v1_1.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Woodwinds/Flute/susNV/LDFlute_susNV_A5_v1_1.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/d35c9b6cc3fa887cb93042b901ddaa6a05c72eb9040bd125d82a0940366f9022.wav",
+      "bytes": 2885970,
+      "sha256": "d35c9b6cc3fa887cb93042b901ddaa6a05c72eb9040bd125d82a0940366f9022",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 480886,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "d35c9b6cc3fa887cb93042b901ddaa6a05c72eb9040bd125d82a0940366f9022",
+          "outputSha256": "d35c9b6cc3fa887cb93042b901ddaa6a05c72eb9040bd125d82a0940366f9022",
+          "parameters": {
+            "sfzPath": "FluteSusNV.sfz",
+            "samplePath": "Woodwinds/Flute/susNV/LDFlute_susNV_A5_v1_1.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-c3-v1-1-4f221909317e",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Woodwinds/Flute/susNV/LDFlute_susNV_C3_v1_1.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Woodwinds/Flute/susNV/LDFlute_susNV_C3_v1_1.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/4f221909317e257e4d0bc49f10479643c80cb213a0486455c1bdc1d6ed13a450.wav",
+      "bytes": 2642490,
+      "sha256": "4f221909317e257e4d0bc49f10479643c80cb213a0486455c1bdc1d6ed13a450",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 440306,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "4f221909317e257e4d0bc49f10479643c80cb213a0486455c1bdc1d6ed13a450",
+          "outputSha256": "4f221909317e257e4d0bc49f10479643c80cb213a0486455c1bdc1d6ed13a450",
+          "parameters": {
+            "sfzPath": "FluteSusNV.sfz",
+            "samplePath": "Woodwinds/Flute/susNV/LDFlute_susNV_C3_v1_1.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-c4-v1-1-105a6dbced98",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Woodwinds/Flute/susNV/LDFlute_susNV_C4_v1_1.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Woodwinds/Flute/susNV/LDFlute_susNV_C4_v1_1.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/105a6dbced98de7ae04a317bdd3ba1a5c6b90dc94034439b68cce6635e2781df.wav",
+      "bytes": 2722056,
+      "sha256": "105a6dbced98de7ae04a317bdd3ba1a5c6b90dc94034439b68cce6635e2781df",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 453567,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "105a6dbced98de7ae04a317bdd3ba1a5c6b90dc94034439b68cce6635e2781df",
+          "outputSha256": "105a6dbced98de7ae04a317bdd3ba1a5c6b90dc94034439b68cce6635e2781df",
+          "parameters": {
+            "sfzPath": "FluteSusNV.sfz",
+            "samplePath": "Woodwinds/Flute/susNV/LDFlute_susNV_C4_v1_1.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-c5-v1-1-46a335b804c9",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Woodwinds/Flute/susNV/LDFlute_susNV_C5_v1_1.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Woodwinds/Flute/susNV/LDFlute_susNV_C5_v1_1.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/46a335b804c9b2f081efa8e6c695f155d05b3700c69bf73950cc9cb40ed53d41.wav",
+      "bytes": 2491416,
+      "sha256": "46a335b804c9b2f081efa8e6c695f155d05b3700c69bf73950cc9cb40ed53d41",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 415127,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "46a335b804c9b2f081efa8e6c695f155d05b3700c69bf73950cc9cb40ed53d41",
+          "outputSha256": "46a335b804c9b2f081efa8e6c695f155d05b3700c69bf73950cc9cb40ed53d41",
+          "parameters": {
+            "sfzPath": "FluteSusNV.sfz",
+            "samplePath": "Woodwinds/Flute/susNV/LDFlute_susNV_C5_v1_1.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-c6-v1-1-0d1c90287356",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Woodwinds/Flute/susNV/LDFlute_susNV_C6_v1_1.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Woodwinds/Flute/susNV/LDFlute_susNV_C6_v1_1.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/0d1c902873564fac780ded78ce54788745bc81b0b3113b311169cfee9fdf9357.wav",
+      "bytes": 1618152,
+      "sha256": "0d1c902873564fac780ded78ce54788745bc81b0b3113b311169cfee9fdf9357",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 269583,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "0d1c902873564fac780ded78ce54788745bc81b0b3113b311169cfee9fdf9357",
+          "outputSha256": "0d1c902873564fac780ded78ce54788745bc81b0b3113b311169cfee9fdf9357",
+          "parameters": {
+            "sfzPath": "FluteSusNV.sfz",
+            "samplePath": "Woodwinds/Flute/susNV/LDFlute_susNV_C6_v1_1.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-e3-v1-1-87c667c2af88",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Woodwinds/Flute/susNV/LDFlute_susNV_E3_v1_1.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Woodwinds/Flute/susNV/LDFlute_susNV_E3_v1_1.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/87c667c2af888ed86dff87f2452248de3e3d958fc93848a4426b7c16f85f09da.wav",
+      "bytes": 2874126,
+      "sha256": "87c667c2af888ed86dff87f2452248de3e3d958fc93848a4426b7c16f85f09da",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 478912,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "87c667c2af888ed86dff87f2452248de3e3d958fc93848a4426b7c16f85f09da",
+          "outputSha256": "87c667c2af888ed86dff87f2452248de3e3d958fc93848a4426b7c16f85f09da",
+          "parameters": {
+            "sfzPath": "FluteSusNV.sfz",
+            "samplePath": "Woodwinds/Flute/susNV/LDFlute_susNV_E3_v1_1.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-e4-v1-1-b609d37fb577",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Woodwinds/Flute/susNV/LDFlute_susNV_E4_v1_1.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Woodwinds/Flute/susNV/LDFlute_susNV_E4_v1_1.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/b609d37fb577e2a0f64f20800fba4bed067151375349bf713c0d4e803f862580.wav",
+      "bytes": 2591256,
+      "sha256": "b609d37fb577e2a0f64f20800fba4bed067151375349bf713c0d4e803f862580",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 431767,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "b609d37fb577e2a0f64f20800fba4bed067151375349bf713c0d4e803f862580",
+          "outputSha256": "b609d37fb577e2a0f64f20800fba4bed067151375349bf713c0d4e803f862580",
+          "parameters": {
+            "sfzPath": "FluteSusNV.sfz",
+            "samplePath": "Woodwinds/Flute/susNV/LDFlute_susNV_E4_v1_1.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-e5-v1-1-660df172b551",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Woodwinds/Flute/susNV/LDFlute_susNV_E5_v1_1.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Woodwinds/Flute/susNV/LDFlute_susNV_E5_v1_1.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/660df172b551dfd7859dade283cb1e8dd6eac8095ccaabb5b19416caaacdef87.wav",
+      "bytes": 2956800,
+      "sha256": "660df172b551dfd7859dade283cb1e8dd6eac8095ccaabb5b19416caaacdef87",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 492691,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "660df172b551dfd7859dade283cb1e8dd6eac8095ccaabb5b19416caaacdef87",
+          "outputSha256": "660df172b551dfd7859dade283cb1e8dd6eac8095ccaabb5b19416caaacdef87",
+          "parameters": {
+            "sfzPath": "FluteSusNV.sfz",
+            "samplePath": "Woodwinds/Flute/susNV/LDFlute_susNV_E5_v1_1.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-c5-v2-1-7c9414267bad",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Woodwinds/Flute/susNV/LDFlute_susNV_C5_v2_1.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Woodwinds/Flute/susNV/LDFlute_susNV_C5_v2_1.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/7c9414267bade75f432e38aa893edea9fb7146b5b1b3e0ae1f97a475fa89db0f.wav",
+      "bytes": 2382720,
+      "sha256": "7c9414267bade75f432e38aa893edea9fb7146b5b1b3e0ae1f97a475fa89db0f",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 397011,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "7c9414267bade75f432e38aa893edea9fb7146b5b1b3e0ae1f97a475fa89db0f",
+          "outputSha256": "7c9414267bade75f432e38aa893edea9fb7146b5b1b3e0ae1f97a475fa89db0f",
+          "parameters": {
+            "sfzPath": "FluteSusNV.sfz",
+            "samplePath": "Woodwinds/Flute/susNV/LDFlute_susNV_C5_v2_1.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-e5-v2-1-c9617b571d5a",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Woodwinds/Flute/susNV/LDFlute_susNV_E5_v2_1.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Woodwinds/Flute/susNV/LDFlute_susNV_E5_v2_1.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/c9617b571d5a40e70b1a1c93120e6ab37691c98902ce319b0a8ca50705858594.wav",
+      "bytes": 2121246,
+      "sha256": "c9617b571d5a40e70b1a1c93120e6ab37691c98902ce319b0a8ca50705858594",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 353432,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "c9617b571d5a40e70b1a1c93120e6ab37691c98902ce319b0a8ca50705858594",
+          "outputSha256": "c9617b571d5a40e70b1a1c93120e6ab37691c98902ce319b0a8ca50705858594",
+          "parameters": {
+            "sfzPath": "FluteSusNV.sfz",
+            "samplePath": "Woodwinds/Flute/susNV/LDFlute_susNV_E5_v2_1.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-a3-v3-1-8a24758e25e1",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Woodwinds/Flute/susNV/LDFlute_susNV_A3_v3_1.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Woodwinds/Flute/susNV/LDFlute_susNV_A3_v3_1.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/8a24758e25e1b6036fc8ca55cdff129d18d70b0719cdb63f6eb6dc756b41cfc7.wav",
+      "bytes": 2765718,
+      "sha256": "8a24758e25e1b6036fc8ca55cdff129d18d70b0719cdb63f6eb6dc756b41cfc7",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 460844,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "8a24758e25e1b6036fc8ca55cdff129d18d70b0719cdb63f6eb6dc756b41cfc7",
+          "outputSha256": "8a24758e25e1b6036fc8ca55cdff129d18d70b0719cdb63f6eb6dc756b41cfc7",
+          "parameters": {
+            "sfzPath": "FluteSusNV.sfz",
+            "samplePath": "Woodwinds/Flute/susNV/LDFlute_susNV_A3_v3_1.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-a4-v3-1-9958014f58a1",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Woodwinds/Flute/susNV/LDFlute_susNV_A4_v3_1.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Woodwinds/Flute/susNV/LDFlute_susNV_A4_v3_1.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/9958014f58a16b5b28b8a8b3afe2e28a9f5af5b68c9bc9057ea2cbdfcadbf4df.wav",
+      "bytes": 2147490,
+      "sha256": "9958014f58a16b5b28b8a8b3afe2e28a9f5af5b68c9bc9057ea2cbdfcadbf4df",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 357806,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "9958014f58a16b5b28b8a8b3afe2e28a9f5af5b68c9bc9057ea2cbdfcadbf4df",
+          "outputSha256": "9958014f58a16b5b28b8a8b3afe2e28a9f5af5b68c9bc9057ea2cbdfcadbf4df",
+          "parameters": {
+            "sfzPath": "FluteSusNV.sfz",
+            "samplePath": "Woodwinds/Flute/susNV/LDFlute_susNV_A4_v3_1.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-a5-v3-1-36f09bd6d712",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Woodwinds/Flute/susNV/LDFlute_susNV_A5_v3_1.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Woodwinds/Flute/susNV/LDFlute_susNV_A5_v3_1.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/36f09bd6d712c9c55d4e32e15bca12966f0dc96206973c8aa25088036f662513.wav",
+      "bytes": 2100774,
+      "sha256": "36f09bd6d712c9c55d4e32e15bca12966f0dc96206973c8aa25088036f662513",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 350020,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "36f09bd6d712c9c55d4e32e15bca12966f0dc96206973c8aa25088036f662513",
+          "outputSha256": "36f09bd6d712c9c55d4e32e15bca12966f0dc96206973c8aa25088036f662513",
+          "parameters": {
+            "sfzPath": "FluteSusNV.sfz",
+            "samplePath": "Woodwinds/Flute/susNV/LDFlute_susNV_A5_v3_1.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-c3-v3-1-8e0549fb4482",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Woodwinds/Flute/susNV/LDFlute_susNV_C3_v3_1.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Woodwinds/Flute/susNV/LDFlute_susNV_C3_v3_1.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/8e0549fb44827c7379b74bba4d8402671c863e483cc1ea85a73407ce27ca3bd6.wav",
+      "bytes": 2729730,
+      "sha256": "8e0549fb44827c7379b74bba4d8402671c863e483cc1ea85a73407ce27ca3bd6",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 454846,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "8e0549fb44827c7379b74bba4d8402671c863e483cc1ea85a73407ce27ca3bd6",
+          "outputSha256": "8e0549fb44827c7379b74bba4d8402671c863e483cc1ea85a73407ce27ca3bd6",
+          "parameters": {
+            "sfzPath": "FluteSusNV.sfz",
+            "samplePath": "Woodwinds/Flute/susNV/LDFlute_susNV_C3_v3_1.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-c4-v3-1-9e09ce606f8f",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Woodwinds/Flute/susNV/LDFlute_susNV_C4_v3_1.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Woodwinds/Flute/susNV/LDFlute_susNV_C4_v3_1.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/9e09ce606f8fe31c8dd071c717de54d40c38029e3c2e947500defac474e8cd7d.wav",
+      "bytes": 2539512,
+      "sha256": "9e09ce606f8fe31c8dd071c717de54d40c38029e3c2e947500defac474e8cd7d",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 423143,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "9e09ce606f8fe31c8dd071c717de54d40c38029e3c2e947500defac474e8cd7d",
+          "outputSha256": "9e09ce606f8fe31c8dd071c717de54d40c38029e3c2e947500defac474e8cd7d",
+          "parameters": {
+            "sfzPath": "FluteSusNV.sfz",
+            "samplePath": "Woodwinds/Flute/susNV/LDFlute_susNV_C4_v3_1.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-e3-v3-1-3226ecd95142",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Woodwinds/Flute/susNV/LDFlute_susNV_E3_v3_1.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Woodwinds/Flute/susNV/LDFlute_susNV_E3_v3_1.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/3226ecd95142e09f1c1b6db0834265da845ea0ce48ea2570131c558eb8ad8f66.wav",
+      "bytes": 2814822,
+      "sha256": "3226ecd95142e09f1c1b6db0834265da845ea0ce48ea2570131c558eb8ad8f66",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 469028,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "3226ecd95142e09f1c1b6db0834265da845ea0ce48ea2570131c558eb8ad8f66",
+          "outputSha256": "3226ecd95142e09f1c1b6db0834265da845ea0ce48ea2570131c558eb8ad8f66",
+          "parameters": {
+            "sfzPath": "FluteSusNV.sfz",
+            "samplePath": "Woodwinds/Flute/susNV/LDFlute_susNV_E3_v3_1.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "flute-vsco-susnv-sfz-pilot-ldflute-susnv-e4-v3-1-670c72afcd4d",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Woodwinds/Flute/susNV/LDFlute_susNV_E4_v3_1.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Woodwinds/Flute/susNV/LDFlute_susNV_E4_v3_1.wav"
+      },
+      "localPath": "soundpacks/vsco2-ce/sha256/670c72afcd4d437236f0a9f33a532c46fd56145615aad775eb7aab1c5ab6c24d.wav",
+      "bytes": 2449278,
+      "sha256": "670c72afcd4d437236f0a9f33a532c46fd56145615aad775eb7aab1c5ab6c24d",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 408104,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "Individual WAV in the pinned VSCO 2 CE SFZ branch."
+      },
+      "processingHistory": [
+        {
+          "operation": "source-lock",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "670c72afcd4d437236f0a9f33a532c46fd56145615aad775eb7aab1c5ab6c24d",
+          "outputSha256": "670c72afcd4d437236f0a9f33a532c46fd56145615aad775eb7aab1c5ab6c24d",
+          "parameters": {
+            "sfzPath": "FluteSusNV.sfz",
+            "samplePath": "Woodwinds/Flute/susNV/LDFlute_susNV_E4_v3_1.wav"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    }
+  ],
+  "contentSha256": "564373eae20a19574c0af4dad8c8e20fb24774f37fabdb00fdd689076e0405fb"
+}

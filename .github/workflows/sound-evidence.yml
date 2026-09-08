@@ -1,0 +1,63 @@
+name: Sound evidence
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 3 * * 1"
+  push:
+    branches:
+      - main
+    paths:
+      - apps/presentation/src/export-air.ts
+      - fixtures/listening-candidates/**
+      - package.json
+      - package-lock.json
+      - packages/audio-engine/**
+      - packages/soundpack/**
+      - scripts/export-repro-smoke.mjs
+      - scripts/listening-packets.ts
+      - scripts/verify-listening-decisions.ts
+      - .github/workflows/sound-evidence.yml
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  accepted-digest-reproduction:
+    name: accepted-digest-reproduction
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      # actions/checkout v7.0.1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      # actions/setup-node v7.0.0
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: 22.23.1
+          package-manager-cache: false
+      - run: npm ci
+      # actions/cache v6.1.0
+      - uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
+        with:
+          path: apps/soundbench/public/soundpacks
+          key: soundpack-${{ runner.os }}-${{ hashFiles('packages/soundpack/src/sound-catalog.json', 'packages/soundpack/src/candidates/sha256/*.json') }}
+      - run: npm run soundpack:fetch -- --profile g3b-vcsl-listening@1
+      - run: npm run listening:packets -- --out=tmp/g3b-listening-packets
+      - run: npm run listening:verify
+      - run: npm run export:repro-smoke
+      # actions/upload-artifact v7.0.1
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        if: always()
+        with:
+          name: sound-evidence-${{ github.sha }}
+          path: |
+            tmp/g3b-listening-packets/*.listening.json
+            tmp/g3b-listening-packets/accepted-digest-report.json
+            tmp/g3b-listening-packets/listening-verification-summary.txt
+            tmp/export-repro-smoke-report.json
+          if-no-files-found: warn
+          retention-days: 10

@@ -1,0 +1,15 @@
+{
+  "format": "air@0-experimental",
+  "title": "Unresolved motif",
+  "tempo": 72,
+  "meter": "4/4",
+  "motifs": {},
+  "voices": [
+    {
+      "id": "lead",
+      "instrument": "warm_piano",
+      "role": "lead",
+      "part": "@missing"
+    }
+  ]
+}

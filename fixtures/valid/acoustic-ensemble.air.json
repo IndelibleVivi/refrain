@@ -1,0 +1,128 @@
+{
+  "format": "air@0-experimental",
+  "title": "Five chairs by the window",
+  "tempo": 78,
+  "meter": "4/4",
+  "key": "D minor",
+  "motifs": {
+    "air": "D5/4 F5/4 A5/4 G5/4"
+  },
+  "harmony": [
+    {
+      "id": "room",
+      "chords": [
+        { "symbol": "Dm7", "beats": 4 },
+        { "symbol": "Bbmaj7", "beats": 4 },
+        { "symbol": "Fmaj7", "beats": 4 },
+        { "symbol": "C7/E", "beats": 4, "inversion": 1 }
+      ]
+    }
+  ],
+  "voices": [
+    {
+      "id": "lead",
+      "instrument": "flute",
+      "role": "lead",
+      "realize": [
+        {
+          "id": "lead-air",
+          "kind": "motif",
+          "motif": "air",
+          "repeat": 4,
+          "section": "A",
+          "dynamicCurve": { "from": "mp", "to": "f" },
+          "articulation": "legato"
+        }
+      ],
+      "pan": 0.12
+    },
+    {
+      "id": "piano",
+      "instrument": "warm_piano",
+      "role": "harmony",
+      "realize": [
+        {
+          "id": "piano-room",
+          "kind": "chords",
+          "harmony": "room",
+          "voicing": "close",
+          "register": { "min": "C3", "max": "C5" },
+          "rhythm": [2, 2],
+          "voiceLeading": "nearest",
+          "dynamic": "mp",
+          "articulation": "tenuto",
+          "section": "A"
+        }
+      ],
+      "gainDb": -2,
+      "pan": -0.2
+    },
+    {
+      "id": "guitar",
+      "instrument": "nylon_guitar",
+      "role": "counter",
+      "realize": [
+        {
+          "id": "guitar-room",
+          "kind": "arpeggio",
+          "harmony": "room",
+          "degrees": [1, 3, 5, 7],
+          "stepBeats": 0.5,
+          "octaveSpan": 2,
+          "register": { "min": "C3", "max": "C6" },
+          "dynamic": "p",
+          "articulation": "staccato",
+          "section": "A"
+        }
+      ],
+      "pan": 0.28
+    },
+    {
+      "id": "bass",
+      "instrument": "clean_bass",
+      "role": "bass",
+      "realize": [
+        {
+          "id": "bass-room",
+          "kind": "bass",
+          "harmony": "room",
+          "degrees": [1, 5],
+          "stepBeats": 1,
+          "register": { "min": "C2", "max": "C4" },
+          "slashBass": "honor",
+          "dynamic": "mp",
+          "section": "A"
+        }
+      ]
+    },
+    {
+      "id": "brushes",
+      "instrument": "soft_percussion",
+      "role": "percussion",
+      "realize": [
+        {
+          "id": "brush-grid",
+          "kind": "drum_grid",
+          "resolution": 16,
+          "lanes": [
+            {
+              "note": "C2",
+              "pattern": "x.......x.......x.......x.......x.......x.......x.......x......."
+            },
+            {
+              "note": "D2",
+              "pattern": "....x.......x.......x.......x.......x.......x.......x.......x..."
+            },
+            {
+              "note": "F#2",
+              "pattern": "x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x."
+            }
+          ],
+          "dynamic": "p",
+          "section": "A"
+        }
+      ]
+    }
+  ],
+  "sections": [{ "id": "A", "startBar": 1, "bars": 4 }]
+}

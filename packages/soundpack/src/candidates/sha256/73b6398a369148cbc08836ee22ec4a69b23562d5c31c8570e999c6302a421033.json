@@ -1,0 +1,85 @@
+{
+  "format": "refrain-candidate-shard@0-experimental",
+  "id": "harp-vcsl-concert-a4",
+  "candidateContentSha256": "d758e8920052acdd847b64277d4959795c641f1d3eff03014b04c660a9d33af6",
+  "candidate": {
+    "id": "harp-vcsl-concert-a4",
+    "instrumentId": "harp",
+    "engine": "sampler",
+    "mapping": {
+      "type": "sample-map",
+      "playableMin": 57,
+      "playableMax": 81,
+      "midiFallbackProgram": 46,
+      "articulationFallbacks": {},
+      "regions": [
+        {
+          "id": "harp-vcsl-concert-a4-main",
+          "trigger": "attack",
+          "assetId": "vcsl-concert-harp-a4-mf1",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 57,
+            "rootMidi": 69,
+            "maxMidi": 81
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 0,
+          "tuneCents": 0,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.08
+          }
+        }
+      ]
+    },
+    "calibrationGainDb": -13.5,
+    "tailSeconds": 2.5,
+    "releaseStatus": "listening-accepted"
+  },
+  "assets": [
+    {
+      "id": "vcsl-concert-harp-a4-mf1",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VCSL",
+        "ref": "c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e",
+        "path": "Chordophones/Composite Chordophones/Concert Harp/KSHarp_A4_mf1.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Chordophones/Composite%20Chordophones/Concert%20Harp/KSHarp_A4_mf1.wav"
+      },
+      "localPath": "soundpacks/vcsl/KSHarp_A4_mf1.wav",
+      "bytes": 2143618,
+      "sha256": "3665f3975cad4a33f46784aa4f896f4b4319ba2b7831e892d975bc38c9f09f23",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 535893,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VCSL/LICENSE.txt",
+        "assetScope": "the pinned VCSL repository asset"
+      },
+      "processingHistory": [
+        {
+          "operation": "byte-exact-copy",
+          "tool": "refrain-soundpack-fetch@0",
+          "inputSha256": "3665f3975cad4a33f46784aa4f896f4b4319ba2b7831e892d975bc38c9f09f23",
+          "outputSha256": "3665f3975cad4a33f46784aa4f896f4b4319ba2b7831e892d975bc38c9f09f23",
+          "parameters": {
+            "modified": false
+          }
+        }
+      ],
+      "releaseStatus": "listening-accepted",
+      "publicReleaseAccepted": false
+    }
+  ],
+  "contentSha256": "73b6398a369148cbc08836ee22ec4a69b23562d5c31c8570e999c6302a421033"
+}

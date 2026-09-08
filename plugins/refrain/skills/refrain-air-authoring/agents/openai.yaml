@@ -1,0 +1,4 @@
+interface:
+  display_name: "Refrain Air Authoring"
+  short_description: "Write original music that can return and continue"
+  default_prompt: "Use $refrain-air-authoring to hum an original musical response to this moment."

@@ -1,0 +1,407 @@
+{
+  "format": "air@0-experimental",
+  "title": "Upper Envelope — Eight Minutes",
+  "tempo": 120,
+  "meter": "4/4",
+  "key": "C minor stress form",
+  "motifs": {},
+  "harmony": [
+    {
+      "id": "stress_changes",
+      "chords": [
+        {
+          "symbol": "Cm7",
+          "beats": 64
+        },
+        {
+          "symbol": "Abmaj7",
+          "beats": 64
+        },
+        {
+          "symbol": "Ebmaj7",
+          "beats": 64
+        },
+        {
+          "symbol": "Bb7",
+          "beats": 64
+        },
+        {
+          "symbol": "Cm7",
+          "beats": 64
+        },
+        {
+          "symbol": "Abmaj7",
+          "beats": 64
+        },
+        {
+          "symbol": "Ebmaj7",
+          "beats": 64
+        },
+        {
+          "symbol": "Bb7",
+          "beats": 64
+        },
+        {
+          "symbol": "Cm7",
+          "beats": 64
+        },
+        {
+          "symbol": "Abmaj7",
+          "beats": 64
+        },
+        {
+          "symbol": "Ebmaj7",
+          "beats": 64
+        },
+        {
+          "symbol": "Bb7",
+          "beats": 64
+        },
+        {
+          "symbol": "Cm7",
+          "beats": 64
+        },
+        {
+          "symbol": "Abmaj7",
+          "beats": 64
+        },
+        {
+          "symbol": "Ebmaj7",
+          "beats": 64
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "id": "pressure_1",
+      "startBar": 1,
+      "bars": 30
+    },
+    {
+      "id": "pressure_2",
+      "startBar": 31,
+      "bars": 30
+    },
+    {
+      "id": "pressure_3",
+      "startBar": 61,
+      "bars": 30
+    },
+    {
+      "id": "pressure_4",
+      "startBar": 91,
+      "bars": 30
+    },
+    {
+      "id": "pressure_5",
+      "startBar": 121,
+      "bars": 30
+    },
+    {
+      "id": "pressure_6",
+      "startBar": 151,
+      "bars": 30
+    },
+    {
+      "id": "pressure_7",
+      "startBar": 181,
+      "bars": 30
+    },
+    {
+      "id": "pressure_8",
+      "startBar": 211,
+      "bars": 30
+    }
+  ],
+  "voices": [
+    {
+      "id": "stress_warm_piano",
+      "instrument": "warm_piano",
+      "role": "lead",
+      "gainDb": -12,
+      "pan": -0.8,
+      "realize": [
+        {
+          "id": "whole_form",
+          "kind": "arpeggio",
+          "harmony": "stress_changes",
+          "degrees": [1, 3, 5, 7],
+          "stepBeats": 0.5,
+          "octaveSpan": 2,
+          "register": {
+            "min": "C3",
+            "max": "C6"
+          },
+          "dynamic": "mp",
+          "articulation": "staccato"
+        }
+      ]
+    },
+    {
+      "id": "stress_nylon_guitar",
+      "instrument": "nylon_guitar",
+      "role": "pulse",
+      "gainDb": -12,
+      "pan": -0.64,
+      "realize": [
+        {
+          "id": "whole_form",
+          "kind": "arpeggio",
+          "harmony": "stress_changes",
+          "degrees": [1, 3, 5, 7],
+          "stepBeats": 0.5,
+          "octaveSpan": 2,
+          "register": {
+            "min": "E2",
+            "max": "E6"
+          },
+          "dynamic": "mp",
+          "articulation": "staccato"
+        }
+      ]
+    },
+    {
+      "id": "stress_harp",
+      "instrument": "harp",
+      "role": "counter",
+      "gainDb": -12,
+      "pan": -0.48000000000000004,
+      "realize": [
+        {
+          "id": "whole_form",
+          "kind": "arpeggio",
+          "harmony": "stress_changes",
+          "degrees": [1, 3, 5, 7],
+          "stepBeats": 0.5,
+          "octaveSpan": 2,
+          "register": {
+            "min": "C2",
+            "max": "C7"
+          },
+          "dynamic": "mp",
+          "articulation": "staccato"
+        }
+      ]
+    },
+    {
+      "id": "stress_clean_bass",
+      "instrument": "clean_bass",
+      "role": "bass",
+      "gainDb": -12,
+      "pan": -0.32000000000000006,
+      "realize": [
+        {
+          "id": "whole_form",
+          "kind": "arpeggio",
+          "harmony": "stress_changes",
+          "degrees": [1, 3, 5, 7],
+          "stepBeats": 0.5,
+          "octaveSpan": 2,
+          "register": {
+            "min": "E1",
+            "max": "G3"
+          },
+          "dynamic": "mp",
+          "articulation": "staccato"
+        }
+      ]
+    },
+    {
+      "id": "stress_chamber_strings",
+      "instrument": "chamber_strings",
+      "role": "harmony",
+      "gainDb": -12,
+      "pan": -0.16000000000000003,
+      "realize": [
+        {
+          "id": "whole_form",
+          "kind": "arpeggio",
+          "harmony": "stress_changes",
+          "degrees": [1, 3, 5, 7],
+          "stepBeats": 0.5,
+          "octaveSpan": 2,
+          "register": {
+            "min": "C3",
+            "max": "C6"
+          },
+          "dynamic": "mp",
+          "articulation": "staccato"
+        }
+      ]
+    },
+    {
+      "id": "stress_solo_cello",
+      "instrument": "solo_cello",
+      "role": "counter",
+      "gainDb": -12,
+      "pan": 0,
+      "realize": [
+        {
+          "id": "whole_form",
+          "kind": "arpeggio",
+          "harmony": "stress_changes",
+          "degrees": [1, 3, 5, 7],
+          "stepBeats": 0.5,
+          "octaveSpan": 2,
+          "register": {
+            "min": "C2",
+            "max": "E5"
+          },
+          "dynamic": "mp",
+          "articulation": "staccato"
+        }
+      ]
+    },
+    {
+      "id": "stress_flute",
+      "instrument": "flute",
+      "role": "lead",
+      "gainDb": -12,
+      "pan": 0.15999999999999992,
+      "realize": [
+        {
+          "id": "whole_form",
+          "kind": "arpeggio",
+          "harmony": "stress_changes",
+          "degrees": [1, 3, 5, 7],
+          "stepBeats": 0.5,
+          "octaveSpan": 2,
+          "register": {
+            "min": "C4",
+            "max": "C7"
+          },
+          "dynamic": "mp",
+          "articulation": "staccato"
+        }
+      ]
+    },
+    {
+      "id": "stress_clarinet",
+      "instrument": "clarinet",
+      "role": "counter",
+      "gainDb": -12,
+      "pan": 0.32000000000000006,
+      "realize": [
+        {
+          "id": "whole_form",
+          "kind": "arpeggio",
+          "harmony": "stress_changes",
+          "degrees": [1, 3, 5, 7],
+          "stepBeats": 0.5,
+          "octaveSpan": 2,
+          "register": {
+            "min": "D3",
+            "max": "Bb6"
+          },
+          "dynamic": "mp",
+          "articulation": "staccato"
+        }
+      ]
+    },
+    {
+      "id": "stress_marimba",
+      "instrument": "marimba",
+      "role": "pulse",
+      "gainDb": -12,
+      "pan": 0.48,
+      "realize": [
+        {
+          "id": "whole_form",
+          "kind": "arpeggio",
+          "harmony": "stress_changes",
+          "degrees": [1, 3, 5, 7],
+          "stepBeats": 0.5,
+          "octaveSpan": 2,
+          "register": {
+            "min": "A2",
+            "max": "C7"
+          },
+          "dynamic": "mp",
+          "articulation": "staccato"
+        }
+      ]
+    },
+    {
+      "id": "stress_air_pad",
+      "instrument": "air_pad",
+      "role": "texture",
+      "gainDb": -12,
+      "pan": 0.6399999999999999,
+      "realize": [
+        {
+          "id": "whole_form",
+          "kind": "arpeggio",
+          "harmony": "stress_changes",
+          "degrees": [1, 3, 5, 7],
+          "stepBeats": 0.5,
+          "octaveSpan": 2,
+          "register": {
+            "min": "C3",
+            "max": "C6"
+          },
+          "dynamic": "mp",
+          "articulation": "staccato"
+        }
+      ]
+    },
+    {
+      "id": "stress_glass_bell",
+      "instrument": "glass_bell",
+      "role": "texture",
+      "gainDb": -12,
+      "pan": 0.8,
+      "realize": [
+        {
+          "id": "whole_form",
+          "kind": "arpeggio",
+          "harmony": "stress_changes",
+          "degrees": [1, 3, 5, 7],
+          "stepBeats": 0.5,
+          "octaveSpan": 2,
+          "register": {
+            "min": "C4",
+            "max": "C7"
+          },
+          "dynamic": "mp",
+          "articulation": "staccato"
+        }
+      ]
+    },
+    {
+      "id": "stress_soft_percussion",
+      "instrument": "soft_percussion",
+      "role": "percussion",
+      "gainDb": -12,
+      "pan": 0,
+      "realize": [
+        {
+          "id": "whole_form",
+          "kind": "drum_grid",
+          "resolution": 16,
+          "repeat": 15,
+          "lanes": [
+            {
+              "note": "C2",
+              "pattern": "x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x..............."
+            },
+            {
+              "note": "D2",
+              "pattern": "................x...............................x...............................x...............................x...............................x...............................x...............................x...............................x..............."
+            },
+            {
+              "note": "F#2",
+              "pattern": "........x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x...............x......."
+            },
+            {
+              "note": "D#3",
+              "pattern": "............................x...............................x...............................x...............................x...............................x...............................x...............................x...............................x..."
+            }
+          ],
+          "dynamic": "mp",
+          "articulation": "staccato"
+        }
+      ]
+    }
+  ]
+}

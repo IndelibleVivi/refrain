@@ -1,0 +1,2721 @@
+{
+  "format": "refrain-candidate-shard@0-experimental",
+  "id": "nylon-guitar-freepats-spanish-classical",
+  "candidateContentSha256": "126009345d28ab7f9ae3bf99ca4b632602d3871cdbf3854c8d9dd7733f05bdb8",
+  "candidate": {
+    "id": "nylon-guitar-freepats-spanish-classical",
+    "instrumentId": "nylon_guitar",
+    "engine": "sampler",
+    "mapping": {
+      "type": "sample-map",
+      "playableMin": 40,
+      "playableMax": 88,
+      "midiFallbackProgram": 24,
+      "articulationFallbacks": {
+        "staccato": "none",
+        "tenuto": "none",
+        "accent": "none",
+        "legato": "none"
+      },
+      "regions": [
+        {
+          "id": "nylon-guitar-freepats-spanish-classical-region-001",
+          "trigger": "attack",
+          "assetId": "nylon-guitar-freepats-spanish-classical-e2-22a7c914051a",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 40,
+            "rootMidi": 40,
+            "maxMidi": 40
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 0,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 1.5
+          }
+        },
+        {
+          "id": "nylon-guitar-freepats-spanish-classical-region-002",
+          "trigger": "attack",
+          "assetId": "nylon-guitar-freepats-spanish-classical-f2-81131f7e292a",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 41,
+            "rootMidi": 41,
+            "maxMidi": 41
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 0,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 1.5
+          }
+        },
+        {
+          "id": "nylon-guitar-freepats-spanish-classical-region-003",
+          "trigger": "attack",
+          "assetId": "nylon-guitar-freepats-spanish-classical-g2-06114b39af58",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 42,
+            "rootMidi": 43,
+            "maxMidi": 43
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 0,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 1.5
+          }
+        },
+        {
+          "id": "nylon-guitar-freepats-spanish-classical-region-004",
+          "trigger": "attack",
+          "assetId": "nylon-guitar-freepats-spanish-classical-a2-1ed5725737f8",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 44,
+            "rootMidi": 45,
+            "maxMidi": 45
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 0,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 1.5
+          }
+        },
+        {
+          "id": "nylon-guitar-freepats-spanish-classical-region-005",
+          "trigger": "attack",
+          "assetId": "nylon-guitar-freepats-spanish-classical-b2-aa5fa8000f07",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 46,
+            "rootMidi": 47,
+            "maxMidi": 47
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 0,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 1.5
+          }
+        },
+        {
+          "id": "nylon-guitar-freepats-spanish-classical-region-006",
+          "trigger": "attack",
+          "assetId": "nylon-guitar-freepats-spanish-classical-c3-d7b5d1f1bf9a",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 48,
+            "rootMidi": 48,
+            "maxMidi": 48
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 0,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 1.5
+          }
+        },
+        {
+          "id": "nylon-guitar-freepats-spanish-classical-region-007",
+          "trigger": "attack",
+          "assetId": "nylon-guitar-freepats-spanish-classical-d3-ad05903b63e4",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 49,
+            "rootMidi": 50,
+            "maxMidi": 50
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 0,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 1.5
+          }
+        },
+        {
+          "id": "nylon-guitar-freepats-spanish-classical-region-008",
+          "trigger": "attack",
+          "assetId": "nylon-guitar-freepats-spanish-classical-e3-3b84c5f8d76f",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 51,
+            "rootMidi": 52,
+            "maxMidi": 52
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 0,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 1.5
+          }
+        },
+        {
+          "id": "nylon-guitar-freepats-spanish-classical-region-009",
+          "trigger": "attack",
+          "assetId": "nylon-guitar-freepats-spanish-classical-f3-e5fa4e9722a5",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 53,
+            "rootMidi": 53,
+            "maxMidi": 53
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 0,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 1.5
+          }
+        },
+        {
+          "id": "nylon-guitar-freepats-spanish-classical-region-010",
+          "trigger": "attack",
+          "assetId": "nylon-guitar-freepats-spanish-classical-f-3-c89e24f62497",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 54,
+            "rootMidi": 54,
+            "maxMidi": 54
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 0,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 1.5
+          }
+        },
+        {
+          "id": "nylon-guitar-freepats-spanish-classical-region-011",
+          "trigger": "attack",
+          "assetId": "nylon-guitar-freepats-spanish-classical-g3-c2d1a00e90a4",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 55,
+            "rootMidi": 55,
+            "maxMidi": 55
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 0,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 1.5
+          }
+        },
+        {
+          "id": "nylon-guitar-freepats-spanish-classical-region-012",
+          "trigger": "attack",
+          "assetId": "nylon-guitar-freepats-spanish-classical-g-3-b26c8dcd839b",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 56,
+            "rootMidi": 56,
+            "maxMidi": 56
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 0,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 1.5
+          }
+        },
+        {
+          "id": "nylon-guitar-freepats-spanish-classical-region-013",
+          "trigger": "attack",
+          "assetId": "nylon-guitar-freepats-spanish-classical-a3-a44a5f172bbd",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 57,
+            "rootMidi": 57,
+            "maxMidi": 57
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 0,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 1.5
+          }
+        },
+        {
+          "id": "nylon-guitar-freepats-spanish-classical-region-014",
+          "trigger": "attack",
+          "assetId": "nylon-guitar-freepats-spanish-classical-a-3-64b0721878e1",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 58,
+            "rootMidi": 58,
+            "maxMidi": 58
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 0,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 1.5
+          }
+        },
+        {
+          "id": "nylon-guitar-freepats-spanish-classical-region-015",
+          "trigger": "attack",
+          "assetId": "nylon-guitar-freepats-spanish-classical-b3-7e2c073fa60c",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 59,
+            "rootMidi": 59,
+            "maxMidi": 59
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 0,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 1.5
+          }
+        },
+        {
+          "id": "nylon-guitar-freepats-spanish-classical-region-016",
+          "trigger": "attack",
+          "assetId": "nylon-guitar-freepats-spanish-classical-c4-b37fb9279079",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 60,
+            "rootMidi": 60,
+            "maxMidi": 60
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 0,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 1.5
+          }
+        },
+        {
+          "id": "nylon-guitar-freepats-spanish-classical-region-017",
+          "trigger": "attack",
+          "assetId": "nylon-guitar-freepats-spanish-classical-c-4-b2b3dfdd7a2c",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 61,
+            "rootMidi": 61,
+            "maxMidi": 61
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 0,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 1.5
+          }
+        },
+        {
+          "id": "nylon-guitar-freepats-spanish-classical-region-018",
+          "trigger": "attack",
+          "assetId": "nylon-guitar-freepats-spanish-classical-d4-7301c859f712",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 62,
+            "rootMidi": 62,
+            "maxMidi": 62
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 0,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 1.5
+          }
+        },
+        {
+          "id": "nylon-guitar-freepats-spanish-classical-region-019",
+          "trigger": "attack",
+          "assetId": "nylon-guitar-freepats-spanish-classical-d-4-251b7e827972",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 63,
+            "rootMidi": 63,
+            "maxMidi": 63
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 0,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 1.5
+          }
+        },
+        {
+          "id": "nylon-guitar-freepats-spanish-classical-region-020",
+          "trigger": "attack",
+          "assetId": "nylon-guitar-freepats-spanish-classical-e4-b58da5a2a380",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 64,
+            "rootMidi": 64,
+            "maxMidi": 64
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 0,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 1.5
+          }
+        },
+        {
+          "id": "nylon-guitar-freepats-spanish-classical-region-021",
+          "trigger": "attack",
+          "assetId": "nylon-guitar-freepats-spanish-classical-f4-ef6f34ad82b2",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 65,
+            "rootMidi": 65,
+            "maxMidi": 65
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 0,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 1.5
+          }
+        },
+        {
+          "id": "nylon-guitar-freepats-spanish-classical-region-022",
+          "trigger": "attack",
+          "assetId": "nylon-guitar-freepats-spanish-classical-f-4-5809556edc5a",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 66,
+            "rootMidi": 66,
+            "maxMidi": 66
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 0,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 1.5
+          }
+        },
+        {
+          "id": "nylon-guitar-freepats-spanish-classical-region-023",
+          "trigger": "attack",
+          "assetId": "nylon-guitar-freepats-spanish-classical-g4-b1d36a1cc986",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 67,
+            "rootMidi": 67,
+            "maxMidi": 67
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 0,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 1.5
+          }
+        },
+        {
+          "id": "nylon-guitar-freepats-spanish-classical-region-024",
+          "trigger": "attack",
+          "assetId": "nylon-guitar-freepats-spanish-classical-a4-4347049a573a",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 68,
+            "rootMidi": 69,
+            "maxMidi": 69
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 0,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 1.5
+          }
+        },
+        {
+          "id": "nylon-guitar-freepats-spanish-classical-region-025",
+          "trigger": "attack",
+          "assetId": "nylon-guitar-freepats-spanish-classical-a-4-743ee18e7f01",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 70,
+            "rootMidi": 70,
+            "maxMidi": 70
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 0,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 1.5
+          }
+        },
+        {
+          "id": "nylon-guitar-freepats-spanish-classical-region-026",
+          "trigger": "attack",
+          "assetId": "nylon-guitar-freepats-spanish-classical-b4-71c6336d7fee",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 71,
+            "rootMidi": 71,
+            "maxMidi": 71
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 0,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 1.5
+          }
+        },
+        {
+          "id": "nylon-guitar-freepats-spanish-classical-region-027",
+          "trigger": "attack",
+          "assetId": "nylon-guitar-freepats-spanish-classical-c5-d3b547c93fa6",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 72,
+            "rootMidi": 72,
+            "maxMidi": 72
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 0,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 1.5
+          }
+        },
+        {
+          "id": "nylon-guitar-freepats-spanish-classical-region-028",
+          "trigger": "attack",
+          "assetId": "nylon-guitar-freepats-spanish-classical-c-5-586b35854d1a",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 73,
+            "rootMidi": 73,
+            "maxMidi": 73
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 0,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 1.5
+          }
+        },
+        {
+          "id": "nylon-guitar-freepats-spanish-classical-region-029",
+          "trigger": "attack",
+          "assetId": "nylon-guitar-freepats-spanish-classical-d5-1380dff1a61f",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 74,
+            "rootMidi": 74,
+            "maxMidi": 74
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 0,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 1.5
+          }
+        },
+        {
+          "id": "nylon-guitar-freepats-spanish-classical-region-030",
+          "trigger": "attack",
+          "assetId": "nylon-guitar-freepats-spanish-classical-d-5-012aef2b8ad3",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 75,
+            "rootMidi": 75,
+            "maxMidi": 75
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 0,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 1.5
+          }
+        },
+        {
+          "id": "nylon-guitar-freepats-spanish-classical-region-031",
+          "trigger": "attack",
+          "assetId": "nylon-guitar-freepats-spanish-classical-e5-1eaf4b6548d9",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 76,
+            "rootMidi": 76,
+            "maxMidi": 76
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 0,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 1.5
+          }
+        },
+        {
+          "id": "nylon-guitar-freepats-spanish-classical-region-032",
+          "trigger": "attack",
+          "assetId": "nylon-guitar-freepats-spanish-classical-f5-84f1e8db0706",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 77,
+            "rootMidi": 77,
+            "maxMidi": 77
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 0,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 1.5
+          }
+        },
+        {
+          "id": "nylon-guitar-freepats-spanish-classical-region-033",
+          "trigger": "attack",
+          "assetId": "nylon-guitar-freepats-spanish-classical-f-5-3da6b8bc2bd4",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 78,
+            "rootMidi": 78,
+            "maxMidi": 78
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 0,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 1.5
+          }
+        },
+        {
+          "id": "nylon-guitar-freepats-spanish-classical-region-034",
+          "trigger": "attack",
+          "assetId": "nylon-guitar-freepats-spanish-classical-g5-5612e7b0f421",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 79,
+            "rootMidi": 79,
+            "maxMidi": 79
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 0,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 1.5
+          }
+        },
+        {
+          "id": "nylon-guitar-freepats-spanish-classical-region-035",
+          "trigger": "attack",
+          "assetId": "nylon-guitar-freepats-spanish-classical-g-5-08704c9c1bda",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 80,
+            "rootMidi": 80,
+            "maxMidi": 80
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 0,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 1.5
+          }
+        },
+        {
+          "id": "nylon-guitar-freepats-spanish-classical-region-036",
+          "trigger": "attack",
+          "assetId": "nylon-guitar-freepats-spanish-classical-a5-39d1cc6d0417",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 81,
+            "rootMidi": 81,
+            "maxMidi": 81
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 0,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 1.5
+          }
+        },
+        {
+          "id": "nylon-guitar-freepats-spanish-classical-region-037",
+          "trigger": "attack",
+          "assetId": "nylon-guitar-freepats-spanish-classical-a-5-88ac184123e4",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 82,
+            "rootMidi": 82,
+            "maxMidi": 82
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 0,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 1.5
+          }
+        },
+        {
+          "id": "nylon-guitar-freepats-spanish-classical-region-038",
+          "trigger": "attack",
+          "assetId": "nylon-guitar-freepats-spanish-classical-b5-9ef813bc3570",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 83,
+            "rootMidi": 83,
+            "maxMidi": 83
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 0,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 1.5
+          }
+        },
+        {
+          "id": "nylon-guitar-freepats-spanish-classical-region-039",
+          "trigger": "attack",
+          "assetId": "nylon-guitar-freepats-spanish-classical-c6-a297c63a94eb",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 84,
+            "rootMidi": 84,
+            "maxMidi": 88
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 0,
+          "tuneCents": 0,
+          "attackSeconds": 0.001,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 1.5
+          }
+        }
+      ]
+    },
+    "calibrationGainDb": 0,
+    "tailSeconds": 1.5,
+    "releaseStatus": "listening-candidate"
+  },
+  "assets": [
+    {
+      "id": "nylon-guitar-freepats-spanish-classical-e2-22a7c914051a",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/freepats/spanish-classical-guitar",
+        "ref": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+        "url": "https://freepats.zenvoid.org/Guitar/SpanishClassicalGuitar/SpanishClassicalGuitar-SFZ-20190618.7z",
+        "path": "SpanishClassicalGuitar-SFZ-20190618/samples/E2.wav",
+        "container": {
+          "format": "7z",
+          "bytes": 7262494,
+          "sha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/E2.wav"
+        }
+      },
+      "localPath": "soundpacks/freepats-spanish-classical-guitar/sha256/22a7c914051a82b2a461f998bcefccb9868e67887af036270664c370913732a0.wav",
+      "bytes": 440912,
+      "sha256": "22a7c914051a82b2a461f998bcefccb9868e67887af036270664c370913732a0",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 220434,
+        "channels": 1
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/FreePats-Spanish-Classical-Guitar/LICENSE.txt",
+        "assetScope": "Individual WAV member in the exact FreePats 2019-06-18 SFZ WAV archive."
+      },
+      "processingHistory": [
+        {
+          "operation": "verified-container-member",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "outputSha256": "22a7c914051a82b2a461f998bcefccb9868e67887af036270664c370913732a0",
+          "parameters": {
+            "containerFormat": "7z",
+            "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/E2.wav",
+            "sfzPath": "SpanishClassicalGuitar-SFZ-20190618/SpanishClassicalGuitar-20190618.sfz"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "nylon-guitar-freepats-spanish-classical-f2-81131f7e292a",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/freepats/spanish-classical-guitar",
+        "ref": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+        "url": "https://freepats.zenvoid.org/Guitar/SpanishClassicalGuitar/SpanishClassicalGuitar-SFZ-20190618.7z",
+        "path": "SpanishClassicalGuitar-SFZ-20190618/samples/F2.wav",
+        "container": {
+          "format": "7z",
+          "bytes": 7262494,
+          "sha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/F2.wav"
+        }
+      },
+      "localPath": "soundpacks/freepats-spanish-classical-guitar/sha256/81131f7e292a74893641777f5fe754873466e8e44a030dc57fd631c749ce8c2c.wav",
+      "bytes": 471958,
+      "sha256": "81131f7e292a74893641777f5fe754873466e8e44a030dc57fd631c749ce8c2c",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 235957,
+        "channels": 1
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/FreePats-Spanish-Classical-Guitar/LICENSE.txt",
+        "assetScope": "Individual WAV member in the exact FreePats 2019-06-18 SFZ WAV archive."
+      },
+      "processingHistory": [
+        {
+          "operation": "verified-container-member",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "outputSha256": "81131f7e292a74893641777f5fe754873466e8e44a030dc57fd631c749ce8c2c",
+          "parameters": {
+            "containerFormat": "7z",
+            "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/F2.wav",
+            "sfzPath": "SpanishClassicalGuitar-SFZ-20190618/SpanishClassicalGuitar-20190618.sfz"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "nylon-guitar-freepats-spanish-classical-g2-06114b39af58",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/freepats/spanish-classical-guitar",
+        "ref": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+        "url": "https://freepats.zenvoid.org/Guitar/SpanishClassicalGuitar/SpanishClassicalGuitar-SFZ-20190618.7z",
+        "path": "SpanishClassicalGuitar-SFZ-20190618/samples/G2.wav",
+        "container": {
+          "format": "7z",
+          "bytes": 7262494,
+          "sha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/G2.wav"
+        }
+      },
+      "localPath": "soundpacks/freepats-spanish-classical-guitar/sha256/06114b39af585030ba24c90a0cf213973e88c823fda2fc8ba976ddb74cf6aacc.wav",
+      "bytes": 461614,
+      "sha256": "06114b39af585030ba24c90a0cf213973e88c823fda2fc8ba976ddb74cf6aacc",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 230785,
+        "channels": 1
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/FreePats-Spanish-Classical-Guitar/LICENSE.txt",
+        "assetScope": "Individual WAV member in the exact FreePats 2019-06-18 SFZ WAV archive."
+      },
+      "processingHistory": [
+        {
+          "operation": "verified-container-member",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "outputSha256": "06114b39af585030ba24c90a0cf213973e88c823fda2fc8ba976ddb74cf6aacc",
+          "parameters": {
+            "containerFormat": "7z",
+            "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/G2.wav",
+            "sfzPath": "SpanishClassicalGuitar-SFZ-20190618/SpanishClassicalGuitar-20190618.sfz"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "nylon-guitar-freepats-spanish-classical-a2-1ed5725737f8",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/freepats/spanish-classical-guitar",
+        "ref": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+        "url": "https://freepats.zenvoid.org/Guitar/SpanishClassicalGuitar/SpanishClassicalGuitar-SFZ-20190618.7z",
+        "path": "SpanishClassicalGuitar-SFZ-20190618/samples/A2.wav",
+        "container": {
+          "format": "7z",
+          "bytes": 7262494,
+          "sha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/A2.wav"
+        }
+      },
+      "localPath": "soundpacks/freepats-spanish-classical-guitar/sha256/1ed5725737f894444461e8778340c223e5ff1e0578ca08cd823582949d628db7.wav",
+      "bytes": 496492,
+      "sha256": "1ed5725737f894444461e8778340c223e5ff1e0578ca08cd823582949d628db7",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 248224,
+        "channels": 1
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/FreePats-Spanish-Classical-Guitar/LICENSE.txt",
+        "assetScope": "Individual WAV member in the exact FreePats 2019-06-18 SFZ WAV archive."
+      },
+      "processingHistory": [
+        {
+          "operation": "verified-container-member",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "outputSha256": "1ed5725737f894444461e8778340c223e5ff1e0578ca08cd823582949d628db7",
+          "parameters": {
+            "containerFormat": "7z",
+            "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/A2.wav",
+            "sfzPath": "SpanishClassicalGuitar-SFZ-20190618/SpanishClassicalGuitar-20190618.sfz"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "nylon-guitar-freepats-spanish-classical-b2-aa5fa8000f07",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/freepats/spanish-classical-guitar",
+        "ref": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+        "url": "https://freepats.zenvoid.org/Guitar/SpanishClassicalGuitar/SpanishClassicalGuitar-SFZ-20190618.7z",
+        "path": "SpanishClassicalGuitar-SFZ-20190618/samples/B2.wav",
+        "container": {
+          "format": "7z",
+          "bytes": 7262494,
+          "sha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/B2.wav"
+        }
+      },
+      "localPath": "soundpacks/freepats-spanish-classical-guitar/sha256/aa5fa8000f0714a6e201617551add81f771af07eaf2340a3c68d12bbd388ed86.wav",
+      "bytes": 341144,
+      "sha256": "aa5fa8000f0714a6e201617551add81f771af07eaf2340a3c68d12bbd388ed86",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 170550,
+        "channels": 1
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/FreePats-Spanish-Classical-Guitar/LICENSE.txt",
+        "assetScope": "Individual WAV member in the exact FreePats 2019-06-18 SFZ WAV archive."
+      },
+      "processingHistory": [
+        {
+          "operation": "verified-container-member",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "outputSha256": "aa5fa8000f0714a6e201617551add81f771af07eaf2340a3c68d12bbd388ed86",
+          "parameters": {
+            "containerFormat": "7z",
+            "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/B2.wav",
+            "sfzPath": "SpanishClassicalGuitar-SFZ-20190618/SpanishClassicalGuitar-20190618.sfz"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "nylon-guitar-freepats-spanish-classical-c3-d7b5d1f1bf9a",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/freepats/spanish-classical-guitar",
+        "ref": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+        "url": "https://freepats.zenvoid.org/Guitar/SpanishClassicalGuitar/SpanishClassicalGuitar-SFZ-20190618.7z",
+        "path": "SpanishClassicalGuitar-SFZ-20190618/samples/C3.wav",
+        "container": {
+          "format": "7z",
+          "bytes": 7262494,
+          "sha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/C3.wav"
+        }
+      },
+      "localPath": "soundpacks/freepats-spanish-classical-guitar/sha256/d7b5d1f1bf9a1852859376a4e2ed462d5339b9128f8c682a3eed7661dea41c65.wav",
+      "bytes": 378932,
+      "sha256": "d7b5d1f1bf9a1852859376a4e2ed462d5339b9128f8c682a3eed7661dea41c65",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 189444,
+        "channels": 1
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/FreePats-Spanish-Classical-Guitar/LICENSE.txt",
+        "assetScope": "Individual WAV member in the exact FreePats 2019-06-18 SFZ WAV archive."
+      },
+      "processingHistory": [
+        {
+          "operation": "verified-container-member",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "outputSha256": "d7b5d1f1bf9a1852859376a4e2ed462d5339b9128f8c682a3eed7661dea41c65",
+          "parameters": {
+            "containerFormat": "7z",
+            "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/C3.wav",
+            "sfzPath": "SpanishClassicalGuitar-SFZ-20190618/SpanishClassicalGuitar-20190618.sfz"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "nylon-guitar-freepats-spanish-classical-d3-ad05903b63e4",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/freepats/spanish-classical-guitar",
+        "ref": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+        "url": "https://freepats.zenvoid.org/Guitar/SpanishClassicalGuitar/SpanishClassicalGuitar-SFZ-20190618.7z",
+        "path": "SpanishClassicalGuitar-SFZ-20190618/samples/D3.wav",
+        "container": {
+          "format": "7z",
+          "bytes": 7262494,
+          "sha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/D3.wav"
+        }
+      },
+      "localPath": "soundpacks/freepats-spanish-classical-guitar/sha256/ad05903b63e490bacbd8f90d2ee4c3e763bf5675840ceef7374616c51421139a.wav",
+      "bytes": 466262,
+      "sha256": "ad05903b63e490bacbd8f90d2ee4c3e763bf5675840ceef7374616c51421139a",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 233109,
+        "channels": 1
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/FreePats-Spanish-Classical-Guitar/LICENSE.txt",
+        "assetScope": "Individual WAV member in the exact FreePats 2019-06-18 SFZ WAV archive."
+      },
+      "processingHistory": [
+        {
+          "operation": "verified-container-member",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "outputSha256": "ad05903b63e490bacbd8f90d2ee4c3e763bf5675840ceef7374616c51421139a",
+          "parameters": {
+            "containerFormat": "7z",
+            "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/D3.wav",
+            "sfzPath": "SpanishClassicalGuitar-SFZ-20190618/SpanishClassicalGuitar-20190618.sfz"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "nylon-guitar-freepats-spanish-classical-e3-3b84c5f8d76f",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/freepats/spanish-classical-guitar",
+        "ref": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+        "url": "https://freepats.zenvoid.org/Guitar/SpanishClassicalGuitar/SpanishClassicalGuitar-SFZ-20190618.7z",
+        "path": "SpanishClassicalGuitar-SFZ-20190618/samples/E3.wav",
+        "container": {
+          "format": "7z",
+          "bytes": 7262494,
+          "sha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/E3.wav"
+        }
+      },
+      "localPath": "soundpacks/freepats-spanish-classical-guitar/sha256/3b84c5f8d76f61b242e812c86bd0a876b065a8ff576a0769801bb2f690bff90b.wav",
+      "bytes": 419008,
+      "sha256": "3b84c5f8d76f61b242e812c86bd0a876b065a8ff576a0769801bb2f690bff90b",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 209482,
+        "channels": 1
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/FreePats-Spanish-Classical-Guitar/LICENSE.txt",
+        "assetScope": "Individual WAV member in the exact FreePats 2019-06-18 SFZ WAV archive."
+      },
+      "processingHistory": [
+        {
+          "operation": "verified-container-member",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "outputSha256": "3b84c5f8d76f61b242e812c86bd0a876b065a8ff576a0769801bb2f690bff90b",
+          "parameters": {
+            "containerFormat": "7z",
+            "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/E3.wav",
+            "sfzPath": "SpanishClassicalGuitar-SFZ-20190618/SpanishClassicalGuitar-20190618.sfz"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "nylon-guitar-freepats-spanish-classical-f3-e5fa4e9722a5",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/freepats/spanish-classical-guitar",
+        "ref": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+        "url": "https://freepats.zenvoid.org/Guitar/SpanishClassicalGuitar/SpanishClassicalGuitar-SFZ-20190618.7z",
+        "path": "SpanishClassicalGuitar-SFZ-20190618/samples/F3.wav",
+        "container": {
+          "format": "7z",
+          "bytes": 7262494,
+          "sha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/F3.wav"
+        }
+      },
+      "localPath": "soundpacks/freepats-spanish-classical-guitar/sha256/e5fa4e9722a5042aa89b60bcdbb0756aaf8396ffdb18589d3a4368400cc09ee7.wav",
+      "bytes": 370212,
+      "sha256": "e5fa4e9722a5042aa89b60bcdbb0756aaf8396ffdb18589d3a4368400cc09ee7",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 185084,
+        "channels": 1
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/FreePats-Spanish-Classical-Guitar/LICENSE.txt",
+        "assetScope": "Individual WAV member in the exact FreePats 2019-06-18 SFZ WAV archive."
+      },
+      "processingHistory": [
+        {
+          "operation": "verified-container-member",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "outputSha256": "e5fa4e9722a5042aa89b60bcdbb0756aaf8396ffdb18589d3a4368400cc09ee7",
+          "parameters": {
+            "containerFormat": "7z",
+            "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/F3.wav",
+            "sfzPath": "SpanishClassicalGuitar-SFZ-20190618/SpanishClassicalGuitar-20190618.sfz"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "nylon-guitar-freepats-spanish-classical-f-3-c89e24f62497",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/freepats/spanish-classical-guitar",
+        "ref": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+        "url": "https://freepats.zenvoid.org/Guitar/SpanishClassicalGuitar/SpanishClassicalGuitar-SFZ-20190618.7z",
+        "path": "SpanishClassicalGuitar-SFZ-20190618/samples/F#3.wav",
+        "container": {
+          "format": "7z",
+          "bytes": 7262494,
+          "sha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/F#3.wav"
+        }
+      },
+      "localPath": "soundpacks/freepats-spanish-classical-guitar/sha256/c89e24f62497a67a5d8223a1b1af7eea20b47639c29a4b5a3536d5d88de89cf8.wav",
+      "bytes": 345132,
+      "sha256": "c89e24f62497a67a5d8223a1b1af7eea20b47639c29a4b5a3536d5d88de89cf8",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 172544,
+        "channels": 1
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/FreePats-Spanish-Classical-Guitar/LICENSE.txt",
+        "assetScope": "Individual WAV member in the exact FreePats 2019-06-18 SFZ WAV archive."
+      },
+      "processingHistory": [
+        {
+          "operation": "verified-container-member",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "outputSha256": "c89e24f62497a67a5d8223a1b1af7eea20b47639c29a4b5a3536d5d88de89cf8",
+          "parameters": {
+            "containerFormat": "7z",
+            "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/F#3.wav",
+            "sfzPath": "SpanishClassicalGuitar-SFZ-20190618/SpanishClassicalGuitar-20190618.sfz"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "nylon-guitar-freepats-spanish-classical-g3-c2d1a00e90a4",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/freepats/spanish-classical-guitar",
+        "ref": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+        "url": "https://freepats.zenvoid.org/Guitar/SpanishClassicalGuitar/SpanishClassicalGuitar-SFZ-20190618.7z",
+        "path": "SpanishClassicalGuitar-SFZ-20190618/samples/G3.wav",
+        "container": {
+          "format": "7z",
+          "bytes": 7262494,
+          "sha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/G3.wav"
+        }
+      },
+      "localPath": "soundpacks/freepats-spanish-classical-guitar/sha256/c2d1a00e90a4ce14756a45836be5a9f4bb379c4ac72f6a124f4227426e9e1541.wav",
+      "bytes": 411170,
+      "sha256": "c2d1a00e90a4ce14756a45836be5a9f4bb379c4ac72f6a124f4227426e9e1541",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 205563,
+        "channels": 1
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/FreePats-Spanish-Classical-Guitar/LICENSE.txt",
+        "assetScope": "Individual WAV member in the exact FreePats 2019-06-18 SFZ WAV archive."
+      },
+      "processingHistory": [
+        {
+          "operation": "verified-container-member",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "outputSha256": "c2d1a00e90a4ce14756a45836be5a9f4bb379c4ac72f6a124f4227426e9e1541",
+          "parameters": {
+            "containerFormat": "7z",
+            "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/G3.wav",
+            "sfzPath": "SpanishClassicalGuitar-SFZ-20190618/SpanishClassicalGuitar-20190618.sfz"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "nylon-guitar-freepats-spanish-classical-g-3-b26c8dcd839b",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/freepats/spanish-classical-guitar",
+        "ref": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+        "url": "https://freepats.zenvoid.org/Guitar/SpanishClassicalGuitar/SpanishClassicalGuitar-SFZ-20190618.7z",
+        "path": "SpanishClassicalGuitar-SFZ-20190618/samples/G#3.wav",
+        "container": {
+          "format": "7z",
+          "bytes": 7262494,
+          "sha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/G#3.wav"
+        }
+      },
+      "localPath": "soundpacks/freepats-spanish-classical-guitar/sha256/b26c8dcd839bf926d131a7276f35947794a6e4c28b469bbaa0fdaedc259fab69.wav",
+      "bytes": 294542,
+      "sha256": "b26c8dcd839bf926d131a7276f35947794a6e4c28b469bbaa0fdaedc259fab69",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 147249,
+        "channels": 1
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/FreePats-Spanish-Classical-Guitar/LICENSE.txt",
+        "assetScope": "Individual WAV member in the exact FreePats 2019-06-18 SFZ WAV archive."
+      },
+      "processingHistory": [
+        {
+          "operation": "verified-container-member",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "outputSha256": "b26c8dcd839bf926d131a7276f35947794a6e4c28b469bbaa0fdaedc259fab69",
+          "parameters": {
+            "containerFormat": "7z",
+            "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/G#3.wav",
+            "sfzPath": "SpanishClassicalGuitar-SFZ-20190618/SpanishClassicalGuitar-20190618.sfz"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "nylon-guitar-freepats-spanish-classical-a3-a44a5f172bbd",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/freepats/spanish-classical-guitar",
+        "ref": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+        "url": "https://freepats.zenvoid.org/Guitar/SpanishClassicalGuitar/SpanishClassicalGuitar-SFZ-20190618.7z",
+        "path": "SpanishClassicalGuitar-SFZ-20190618/samples/A3.wav",
+        "container": {
+          "format": "7z",
+          "bytes": 7262494,
+          "sha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/A3.wav"
+        }
+      },
+      "localPath": "soundpacks/freepats-spanish-classical-guitar/sha256/a44a5f172bbd11dec66d4ac57b67ddbdecc0328883a9114fd0b676868f09d671.wav",
+      "bytes": 222782,
+      "sha256": "a44a5f172bbd11dec66d4ac57b67ddbdecc0328883a9114fd0b676868f09d671",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 111369,
+        "channels": 1
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/FreePats-Spanish-Classical-Guitar/LICENSE.txt",
+        "assetScope": "Individual WAV member in the exact FreePats 2019-06-18 SFZ WAV archive."
+      },
+      "processingHistory": [
+        {
+          "operation": "verified-container-member",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "outputSha256": "a44a5f172bbd11dec66d4ac57b67ddbdecc0328883a9114fd0b676868f09d671",
+          "parameters": {
+            "containerFormat": "7z",
+            "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/A3.wav",
+            "sfzPath": "SpanishClassicalGuitar-SFZ-20190618/SpanishClassicalGuitar-20190618.sfz"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "nylon-guitar-freepats-spanish-classical-a-3-64b0721878e1",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/freepats/spanish-classical-guitar",
+        "ref": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+        "url": "https://freepats.zenvoid.org/Guitar/SpanishClassicalGuitar/SpanishClassicalGuitar-SFZ-20190618.7z",
+        "path": "SpanishClassicalGuitar-SFZ-20190618/samples/A#3.wav",
+        "container": {
+          "format": "7z",
+          "bytes": 7262494,
+          "sha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/A#3.wav"
+        }
+      },
+      "localPath": "soundpacks/freepats-spanish-classical-guitar/sha256/64b0721878e1affa39f7c03382d1a95caa14316fa691dc499968d4a8d34ead78.wav",
+      "bytes": 219632,
+      "sha256": "64b0721878e1affa39f7c03382d1a95caa14316fa691dc499968d4a8d34ead78",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 109794,
+        "channels": 1
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/FreePats-Spanish-Classical-Guitar/LICENSE.txt",
+        "assetScope": "Individual WAV member in the exact FreePats 2019-06-18 SFZ WAV archive."
+      },
+      "processingHistory": [
+        {
+          "operation": "verified-container-member",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "outputSha256": "64b0721878e1affa39f7c03382d1a95caa14316fa691dc499968d4a8d34ead78",
+          "parameters": {
+            "containerFormat": "7z",
+            "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/A#3.wav",
+            "sfzPath": "SpanishClassicalGuitar-SFZ-20190618/SpanishClassicalGuitar-20190618.sfz"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "nylon-guitar-freepats-spanish-classical-b3-7e2c073fa60c",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/freepats/spanish-classical-guitar",
+        "ref": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+        "url": "https://freepats.zenvoid.org/Guitar/SpanishClassicalGuitar/SpanishClassicalGuitar-SFZ-20190618.7z",
+        "path": "SpanishClassicalGuitar-SFZ-20190618/samples/B3.wav",
+        "container": {
+          "format": "7z",
+          "bytes": 7262494,
+          "sha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/B3.wav"
+        }
+      },
+      "localPath": "soundpacks/freepats-spanish-classical-guitar/sha256/7e2c073fa60c7732024b07979286a7956ba7bbfd12c9a07ee032f3014073bdbb.wav",
+      "bytes": 200306,
+      "sha256": "7e2c073fa60c7732024b07979286a7956ba7bbfd12c9a07ee032f3014073bdbb",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 100131,
+        "channels": 1
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/FreePats-Spanish-Classical-Guitar/LICENSE.txt",
+        "assetScope": "Individual WAV member in the exact FreePats 2019-06-18 SFZ WAV archive."
+      },
+      "processingHistory": [
+        {
+          "operation": "verified-container-member",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "outputSha256": "7e2c073fa60c7732024b07979286a7956ba7bbfd12c9a07ee032f3014073bdbb",
+          "parameters": {
+            "containerFormat": "7z",
+            "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/B3.wav",
+            "sfzPath": "SpanishClassicalGuitar-SFZ-20190618/SpanishClassicalGuitar-20190618.sfz"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "nylon-guitar-freepats-spanish-classical-c4-b37fb9279079",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/freepats/spanish-classical-guitar",
+        "ref": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+        "url": "https://freepats.zenvoid.org/Guitar/SpanishClassicalGuitar/SpanishClassicalGuitar-SFZ-20190618.7z",
+        "path": "SpanishClassicalGuitar-SFZ-20190618/samples/C4.wav",
+        "container": {
+          "format": "7z",
+          "bytes": 7262494,
+          "sha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/C4.wav"
+        }
+      },
+      "localPath": "soundpacks/freepats-spanish-classical-guitar/sha256/b37fb9279079aa3334cd217bb4e0eba8e2618219c9cd646c793fab685a4bed46.wav",
+      "bytes": 213298,
+      "sha256": "b37fb9279079aa3334cd217bb4e0eba8e2618219c9cd646c793fab685a4bed46",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 106627,
+        "channels": 1
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/FreePats-Spanish-Classical-Guitar/LICENSE.txt",
+        "assetScope": "Individual WAV member in the exact FreePats 2019-06-18 SFZ WAV archive."
+      },
+      "processingHistory": [
+        {
+          "operation": "verified-container-member",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "outputSha256": "b37fb9279079aa3334cd217bb4e0eba8e2618219c9cd646c793fab685a4bed46",
+          "parameters": {
+            "containerFormat": "7z",
+            "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/C4.wav",
+            "sfzPath": "SpanishClassicalGuitar-SFZ-20190618/SpanishClassicalGuitar-20190618.sfz"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "nylon-guitar-freepats-spanish-classical-c-4-b2b3dfdd7a2c",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/freepats/spanish-classical-guitar",
+        "ref": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+        "url": "https://freepats.zenvoid.org/Guitar/SpanishClassicalGuitar/SpanishClassicalGuitar-SFZ-20190618.7z",
+        "path": "SpanishClassicalGuitar-SFZ-20190618/samples/C#4.wav",
+        "container": {
+          "format": "7z",
+          "bytes": 7262494,
+          "sha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/C#4.wav"
+        }
+      },
+      "localPath": "soundpacks/freepats-spanish-classical-guitar/sha256/b2b3dfdd7a2c883a97653be084e3237cacc716267b7c73eb18e2b8daa9b8a811.wav",
+      "bytes": 254920,
+      "sha256": "b2b3dfdd7a2c883a97653be084e3237cacc716267b7c73eb18e2b8daa9b8a811",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 127438,
+        "channels": 1
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/FreePats-Spanish-Classical-Guitar/LICENSE.txt",
+        "assetScope": "Individual WAV member in the exact FreePats 2019-06-18 SFZ WAV archive."
+      },
+      "processingHistory": [
+        {
+          "operation": "verified-container-member",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "outputSha256": "b2b3dfdd7a2c883a97653be084e3237cacc716267b7c73eb18e2b8daa9b8a811",
+          "parameters": {
+            "containerFormat": "7z",
+            "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/C#4.wav",
+            "sfzPath": "SpanishClassicalGuitar-SFZ-20190618/SpanishClassicalGuitar-20190618.sfz"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "nylon-guitar-freepats-spanish-classical-d4-7301c859f712",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/freepats/spanish-classical-guitar",
+        "ref": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+        "url": "https://freepats.zenvoid.org/Guitar/SpanishClassicalGuitar/SpanishClassicalGuitar-SFZ-20190618.7z",
+        "path": "SpanishClassicalGuitar-SFZ-20190618/samples/D4.wav",
+        "container": {
+          "format": "7z",
+          "bytes": 7262494,
+          "sha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/D4.wav"
+        }
+      },
+      "localPath": "soundpacks/freepats-spanish-classical-guitar/sha256/7301c859f712429a36baf56c37bc7f7808f2a913ae22e033c45938aede13c5f0.wav",
+      "bytes": 269726,
+      "sha256": "7301c859f712429a36baf56c37bc7f7808f2a913ae22e033c45938aede13c5f0",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 134841,
+        "channels": 1
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/FreePats-Spanish-Classical-Guitar/LICENSE.txt",
+        "assetScope": "Individual WAV member in the exact FreePats 2019-06-18 SFZ WAV archive."
+      },
+      "processingHistory": [
+        {
+          "operation": "verified-container-member",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "outputSha256": "7301c859f712429a36baf56c37bc7f7808f2a913ae22e033c45938aede13c5f0",
+          "parameters": {
+            "containerFormat": "7z",
+            "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/D4.wav",
+            "sfzPath": "SpanishClassicalGuitar-SFZ-20190618/SpanishClassicalGuitar-20190618.sfz"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "nylon-guitar-freepats-spanish-classical-d-4-251b7e827972",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/freepats/spanish-classical-guitar",
+        "ref": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+        "url": "https://freepats.zenvoid.org/Guitar/SpanishClassicalGuitar/SpanishClassicalGuitar-SFZ-20190618.7z",
+        "path": "SpanishClassicalGuitar-SFZ-20190618/samples/D#4.wav",
+        "container": {
+          "format": "7z",
+          "bytes": 7262494,
+          "sha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/D#4.wav"
+        }
+      },
+      "localPath": "soundpacks/freepats-spanish-classical-guitar/sha256/251b7e827972bf3406e204ae158d1f7db8b9ea8ba503373438234bd0d02e4c80.wav",
+      "bytes": 275734,
+      "sha256": "251b7e827972bf3406e204ae158d1f7db8b9ea8ba503373438234bd0d02e4c80",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 137845,
+        "channels": 1
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/FreePats-Spanish-Classical-Guitar/LICENSE.txt",
+        "assetScope": "Individual WAV member in the exact FreePats 2019-06-18 SFZ WAV archive."
+      },
+      "processingHistory": [
+        {
+          "operation": "verified-container-member",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "outputSha256": "251b7e827972bf3406e204ae158d1f7db8b9ea8ba503373438234bd0d02e4c80",
+          "parameters": {
+            "containerFormat": "7z",
+            "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/D#4.wav",
+            "sfzPath": "SpanishClassicalGuitar-SFZ-20190618/SpanishClassicalGuitar-20190618.sfz"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "nylon-guitar-freepats-spanish-classical-e4-b58da5a2a380",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/freepats/spanish-classical-guitar",
+        "ref": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+        "url": "https://freepats.zenvoid.org/Guitar/SpanishClassicalGuitar/SpanishClassicalGuitar-SFZ-20190618.7z",
+        "path": "SpanishClassicalGuitar-SFZ-20190618/samples/E4.wav",
+        "container": {
+          "format": "7z",
+          "bytes": 7262494,
+          "sha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/E4.wav"
+        }
+      },
+      "localPath": "soundpacks/freepats-spanish-classical-guitar/sha256/b58da5a2a380a2facf051c71b8178711a676d6b8b1021e0ffc3691841fe34e3a.wav",
+      "bytes": 330738,
+      "sha256": "b58da5a2a380a2facf051c71b8178711a676d6b8b1021e0ffc3691841fe34e3a",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 165347,
+        "channels": 1
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/FreePats-Spanish-Classical-Guitar/LICENSE.txt",
+        "assetScope": "Individual WAV member in the exact FreePats 2019-06-18 SFZ WAV archive."
+      },
+      "processingHistory": [
+        {
+          "operation": "verified-container-member",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "outputSha256": "b58da5a2a380a2facf051c71b8178711a676d6b8b1021e0ffc3691841fe34e3a",
+          "parameters": {
+            "containerFormat": "7z",
+            "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/E4.wav",
+            "sfzPath": "SpanishClassicalGuitar-SFZ-20190618/SpanishClassicalGuitar-20190618.sfz"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "nylon-guitar-freepats-spanish-classical-f4-ef6f34ad82b2",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/freepats/spanish-classical-guitar",
+        "ref": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+        "url": "https://freepats.zenvoid.org/Guitar/SpanishClassicalGuitar/SpanishClassicalGuitar-SFZ-20190618.7z",
+        "path": "SpanishClassicalGuitar-SFZ-20190618/samples/F4.wav",
+        "container": {
+          "format": "7z",
+          "bytes": 7262494,
+          "sha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/F4.wav"
+        }
+      },
+      "localPath": "soundpacks/freepats-spanish-classical-guitar/sha256/ef6f34ad82b29469a535b38573ff478159cdf0abcf5ad354173304b3e014daad.wav",
+      "bytes": 274344,
+      "sha256": "ef6f34ad82b29469a535b38573ff478159cdf0abcf5ad354173304b3e014daad",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 137150,
+        "channels": 1
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/FreePats-Spanish-Classical-Guitar/LICENSE.txt",
+        "assetScope": "Individual WAV member in the exact FreePats 2019-06-18 SFZ WAV archive."
+      },
+      "processingHistory": [
+        {
+          "operation": "verified-container-member",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "outputSha256": "ef6f34ad82b29469a535b38573ff478159cdf0abcf5ad354173304b3e014daad",
+          "parameters": {
+            "containerFormat": "7z",
+            "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/F4.wav",
+            "sfzPath": "SpanishClassicalGuitar-SFZ-20190618/SpanishClassicalGuitar-20190618.sfz"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "nylon-guitar-freepats-spanish-classical-f-4-5809556edc5a",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/freepats/spanish-classical-guitar",
+        "ref": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+        "url": "https://freepats.zenvoid.org/Guitar/SpanishClassicalGuitar/SpanishClassicalGuitar-SFZ-20190618.7z",
+        "path": "SpanishClassicalGuitar-SFZ-20190618/samples/F#4.wav",
+        "container": {
+          "format": "7z",
+          "bytes": 7262494,
+          "sha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/F#4.wav"
+        }
+      },
+      "localPath": "soundpacks/freepats-spanish-classical-guitar/sha256/5809556edc5a2de5bd0fbd5ec5985ea21f47805d1328a88ec3bb53104badca72.wav",
+      "bytes": 277368,
+      "sha256": "5809556edc5a2de5bd0fbd5ec5985ea21f47805d1328a88ec3bb53104badca72",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 138662,
+        "channels": 1
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/FreePats-Spanish-Classical-Guitar/LICENSE.txt",
+        "assetScope": "Individual WAV member in the exact FreePats 2019-06-18 SFZ WAV archive."
+      },
+      "processingHistory": [
+        {
+          "operation": "verified-container-member",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "outputSha256": "5809556edc5a2de5bd0fbd5ec5985ea21f47805d1328a88ec3bb53104badca72",
+          "parameters": {
+            "containerFormat": "7z",
+            "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/F#4.wav",
+            "sfzPath": "SpanishClassicalGuitar-SFZ-20190618/SpanishClassicalGuitar-20190618.sfz"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "nylon-guitar-freepats-spanish-classical-g4-b1d36a1cc986",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/freepats/spanish-classical-guitar",
+        "ref": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+        "url": "https://freepats.zenvoid.org/Guitar/SpanishClassicalGuitar/SpanishClassicalGuitar-SFZ-20190618.7z",
+        "path": "SpanishClassicalGuitar-SFZ-20190618/samples/G4.wav",
+        "container": {
+          "format": "7z",
+          "bytes": 7262494,
+          "sha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/G4.wav"
+        }
+      },
+      "localPath": "soundpacks/freepats-spanish-classical-guitar/sha256/b1d36a1cc9863eed45bef4b7027c9b651ba8284dd7b325cba998fdb17638d02b.wav",
+      "bytes": 212614,
+      "sha256": "b1d36a1cc9863eed45bef4b7027c9b651ba8284dd7b325cba998fdb17638d02b",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 106285,
+        "channels": 1
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/FreePats-Spanish-Classical-Guitar/LICENSE.txt",
+        "assetScope": "Individual WAV member in the exact FreePats 2019-06-18 SFZ WAV archive."
+      },
+      "processingHistory": [
+        {
+          "operation": "verified-container-member",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "outputSha256": "b1d36a1cc9863eed45bef4b7027c9b651ba8284dd7b325cba998fdb17638d02b",
+          "parameters": {
+            "containerFormat": "7z",
+            "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/G4.wav",
+            "sfzPath": "SpanishClassicalGuitar-SFZ-20190618/SpanishClassicalGuitar-20190618.sfz"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "nylon-guitar-freepats-spanish-classical-a4-4347049a573a",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/freepats/spanish-classical-guitar",
+        "ref": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+        "url": "https://freepats.zenvoid.org/Guitar/SpanishClassicalGuitar/SpanishClassicalGuitar-SFZ-20190618.7z",
+        "path": "SpanishClassicalGuitar-SFZ-20190618/samples/A4.wav",
+        "container": {
+          "format": "7z",
+          "bytes": 7262494,
+          "sha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/A4.wav"
+        }
+      },
+      "localPath": "soundpacks/freepats-spanish-classical-guitar/sha256/4347049a573a20e970c05913d7fce065adfd5365eaa651156004550e8ef5d175.wav",
+      "bytes": 363022,
+      "sha256": "4347049a573a20e970c05913d7fce065adfd5365eaa651156004550e8ef5d175",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 181489,
+        "channels": 1
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/FreePats-Spanish-Classical-Guitar/LICENSE.txt",
+        "assetScope": "Individual WAV member in the exact FreePats 2019-06-18 SFZ WAV archive."
+      },
+      "processingHistory": [
+        {
+          "operation": "verified-container-member",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "outputSha256": "4347049a573a20e970c05913d7fce065adfd5365eaa651156004550e8ef5d175",
+          "parameters": {
+            "containerFormat": "7z",
+            "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/A4.wav",
+            "sfzPath": "SpanishClassicalGuitar-SFZ-20190618/SpanishClassicalGuitar-20190618.sfz"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "nylon-guitar-freepats-spanish-classical-a-4-743ee18e7f01",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/freepats/spanish-classical-guitar",
+        "ref": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+        "url": "https://freepats.zenvoid.org/Guitar/SpanishClassicalGuitar/SpanishClassicalGuitar-SFZ-20190618.7z",
+        "path": "SpanishClassicalGuitar-SFZ-20190618/samples/A#4.wav",
+        "container": {
+          "format": "7z",
+          "bytes": 7262494,
+          "sha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/A#4.wav"
+        }
+      },
+      "localPath": "soundpacks/freepats-spanish-classical-guitar/sha256/743ee18e7f01b14e270698681ae1837506a7a1ef3d0f160c30dacadcf5786d60.wav",
+      "bytes": 209070,
+      "sha256": "743ee18e7f01b14e270698681ae1837506a7a1ef3d0f160c30dacadcf5786d60",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 104513,
+        "channels": 1
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/FreePats-Spanish-Classical-Guitar/LICENSE.txt",
+        "assetScope": "Individual WAV member in the exact FreePats 2019-06-18 SFZ WAV archive."
+      },
+      "processingHistory": [
+        {
+          "operation": "verified-container-member",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "outputSha256": "743ee18e7f01b14e270698681ae1837506a7a1ef3d0f160c30dacadcf5786d60",
+          "parameters": {
+            "containerFormat": "7z",
+            "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/A#4.wav",
+            "sfzPath": "SpanishClassicalGuitar-SFZ-20190618/SpanishClassicalGuitar-20190618.sfz"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "nylon-guitar-freepats-spanish-classical-b4-71c6336d7fee",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/freepats/spanish-classical-guitar",
+        "ref": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+        "url": "https://freepats.zenvoid.org/Guitar/SpanishClassicalGuitar/SpanishClassicalGuitar-SFZ-20190618.7z",
+        "path": "SpanishClassicalGuitar-SFZ-20190618/samples/B4.wav",
+        "container": {
+          "format": "7z",
+          "bytes": 7262494,
+          "sha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/B4.wav"
+        }
+      },
+      "localPath": "soundpacks/freepats-spanish-classical-guitar/sha256/71c6336d7fee2f24f00b4b9b9bbe6de2c77daeb6ff5d1d87813aa93e0973a873.wav",
+      "bytes": 167662,
+      "sha256": "71c6336d7fee2f24f00b4b9b9bbe6de2c77daeb6ff5d1d87813aa93e0973a873",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 83809,
+        "channels": 1
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/FreePats-Spanish-Classical-Guitar/LICENSE.txt",
+        "assetScope": "Individual WAV member in the exact FreePats 2019-06-18 SFZ WAV archive."
+      },
+      "processingHistory": [
+        {
+          "operation": "verified-container-member",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "outputSha256": "71c6336d7fee2f24f00b4b9b9bbe6de2c77daeb6ff5d1d87813aa93e0973a873",
+          "parameters": {
+            "containerFormat": "7z",
+            "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/B4.wav",
+            "sfzPath": "SpanishClassicalGuitar-SFZ-20190618/SpanishClassicalGuitar-20190618.sfz"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "nylon-guitar-freepats-spanish-classical-c5-d3b547c93fa6",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/freepats/spanish-classical-guitar",
+        "ref": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+        "url": "https://freepats.zenvoid.org/Guitar/SpanishClassicalGuitar/SpanishClassicalGuitar-SFZ-20190618.7z",
+        "path": "SpanishClassicalGuitar-SFZ-20190618/samples/C5.wav",
+        "container": {
+          "format": "7z",
+          "bytes": 7262494,
+          "sha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/C5.wav"
+        }
+      },
+      "localPath": "soundpacks/freepats-spanish-classical-guitar/sha256/d3b547c93fa6711647eaf921ec06f05171103f6ef04af3db2d52289a37e36764.wav",
+      "bytes": 137896,
+      "sha256": "d3b547c93fa6711647eaf921ec06f05171103f6ef04af3db2d52289a37e36764",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 68926,
+        "channels": 1
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/FreePats-Spanish-Classical-Guitar/LICENSE.txt",
+        "assetScope": "Individual WAV member in the exact FreePats 2019-06-18 SFZ WAV archive."
+      },
+      "processingHistory": [
+        {
+          "operation": "verified-container-member",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "outputSha256": "d3b547c93fa6711647eaf921ec06f05171103f6ef04af3db2d52289a37e36764",
+          "parameters": {
+            "containerFormat": "7z",
+            "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/C5.wav",
+            "sfzPath": "SpanishClassicalGuitar-SFZ-20190618/SpanishClassicalGuitar-20190618.sfz"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "nylon-guitar-freepats-spanish-classical-c-5-586b35854d1a",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/freepats/spanish-classical-guitar",
+        "ref": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+        "url": "https://freepats.zenvoid.org/Guitar/SpanishClassicalGuitar/SpanishClassicalGuitar-SFZ-20190618.7z",
+        "path": "SpanishClassicalGuitar-SFZ-20190618/samples/C#5.wav",
+        "container": {
+          "format": "7z",
+          "bytes": 7262494,
+          "sha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/C#5.wav"
+        }
+      },
+      "localPath": "soundpacks/freepats-spanish-classical-guitar/sha256/586b35854d1a75ce32c8dd0faae5affd4b7d8e22b32276188b3c46ce3db1feab.wav",
+      "bytes": 154780,
+      "sha256": "586b35854d1a75ce32c8dd0faae5affd4b7d8e22b32276188b3c46ce3db1feab",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 77368,
+        "channels": 1
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/FreePats-Spanish-Classical-Guitar/LICENSE.txt",
+        "assetScope": "Individual WAV member in the exact FreePats 2019-06-18 SFZ WAV archive."
+      },
+      "processingHistory": [
+        {
+          "operation": "verified-container-member",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "outputSha256": "586b35854d1a75ce32c8dd0faae5affd4b7d8e22b32276188b3c46ce3db1feab",
+          "parameters": {
+            "containerFormat": "7z",
+            "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/C#5.wav",
+            "sfzPath": "SpanishClassicalGuitar-SFZ-20190618/SpanishClassicalGuitar-20190618.sfz"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "nylon-guitar-freepats-spanish-classical-d5-1380dff1a61f",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/freepats/spanish-classical-guitar",
+        "ref": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+        "url": "https://freepats.zenvoid.org/Guitar/SpanishClassicalGuitar/SpanishClassicalGuitar-SFZ-20190618.7z",
+        "path": "SpanishClassicalGuitar-SFZ-20190618/samples/D5.wav",
+        "container": {
+          "format": "7z",
+          "bytes": 7262494,
+          "sha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/D5.wav"
+        }
+      },
+      "localPath": "soundpacks/freepats-spanish-classical-guitar/sha256/1380dff1a61f6364c8971a39b11e734a98c4358492307febaa9341fb114bfb28.wav",
+      "bytes": 111396,
+      "sha256": "1380dff1a61f6364c8971a39b11e734a98c4358492307febaa9341fb114bfb28",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 55676,
+        "channels": 1
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/FreePats-Spanish-Classical-Guitar/LICENSE.txt",
+        "assetScope": "Individual WAV member in the exact FreePats 2019-06-18 SFZ WAV archive."
+      },
+      "processingHistory": [
+        {
+          "operation": "verified-container-member",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "outputSha256": "1380dff1a61f6364c8971a39b11e734a98c4358492307febaa9341fb114bfb28",
+          "parameters": {
+            "containerFormat": "7z",
+            "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/D5.wav",
+            "sfzPath": "SpanishClassicalGuitar-SFZ-20190618/SpanishClassicalGuitar-20190618.sfz"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "nylon-guitar-freepats-spanish-classical-d-5-012aef2b8ad3",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/freepats/spanish-classical-guitar",
+        "ref": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+        "url": "https://freepats.zenvoid.org/Guitar/SpanishClassicalGuitar/SpanishClassicalGuitar-SFZ-20190618.7z",
+        "path": "SpanishClassicalGuitar-SFZ-20190618/samples/D#5.wav",
+        "container": {
+          "format": "7z",
+          "bytes": 7262494,
+          "sha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/D#5.wav"
+        }
+      },
+      "localPath": "soundpacks/freepats-spanish-classical-guitar/sha256/012aef2b8ad3999aa472d57482047f90aea09ff8fb82cf1d4773a58e94152b6a.wav",
+      "bytes": 110908,
+      "sha256": "012aef2b8ad3999aa472d57482047f90aea09ff8fb82cf1d4773a58e94152b6a",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 55432,
+        "channels": 1
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/FreePats-Spanish-Classical-Guitar/LICENSE.txt",
+        "assetScope": "Individual WAV member in the exact FreePats 2019-06-18 SFZ WAV archive."
+      },
+      "processingHistory": [
+        {
+          "operation": "verified-container-member",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "outputSha256": "012aef2b8ad3999aa472d57482047f90aea09ff8fb82cf1d4773a58e94152b6a",
+          "parameters": {
+            "containerFormat": "7z",
+            "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/D#5.wav",
+            "sfzPath": "SpanishClassicalGuitar-SFZ-20190618/SpanishClassicalGuitar-20190618.sfz"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "nylon-guitar-freepats-spanish-classical-e5-1eaf4b6548d9",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/freepats/spanish-classical-guitar",
+        "ref": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+        "url": "https://freepats.zenvoid.org/Guitar/SpanishClassicalGuitar/SpanishClassicalGuitar-SFZ-20190618.7z",
+        "path": "SpanishClassicalGuitar-SFZ-20190618/samples/E5.wav",
+        "container": {
+          "format": "7z",
+          "bytes": 7262494,
+          "sha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/E5.wav"
+        }
+      },
+      "localPath": "soundpacks/freepats-spanish-classical-guitar/sha256/1eaf4b6548d96781caf3b26a3a1a569ca097d3bbdfbc8e6fc58ffe15f3febd56.wav",
+      "bytes": 118164,
+      "sha256": "1eaf4b6548d96781caf3b26a3a1a569ca097d3bbdfbc8e6fc58ffe15f3febd56",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 59060,
+        "channels": 1
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/FreePats-Spanish-Classical-Guitar/LICENSE.txt",
+        "assetScope": "Individual WAV member in the exact FreePats 2019-06-18 SFZ WAV archive."
+      },
+      "processingHistory": [
+        {
+          "operation": "verified-container-member",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "outputSha256": "1eaf4b6548d96781caf3b26a3a1a569ca097d3bbdfbc8e6fc58ffe15f3febd56",
+          "parameters": {
+            "containerFormat": "7z",
+            "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/E5.wav",
+            "sfzPath": "SpanishClassicalGuitar-SFZ-20190618/SpanishClassicalGuitar-20190618.sfz"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "nylon-guitar-freepats-spanish-classical-f5-84f1e8db0706",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/freepats/spanish-classical-guitar",
+        "ref": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+        "url": "https://freepats.zenvoid.org/Guitar/SpanishClassicalGuitar/SpanishClassicalGuitar-SFZ-20190618.7z",
+        "path": "SpanishClassicalGuitar-SFZ-20190618/samples/F5.wav",
+        "container": {
+          "format": "7z",
+          "bytes": 7262494,
+          "sha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/F5.wav"
+        }
+      },
+      "localPath": "soundpacks/freepats-spanish-classical-guitar/sha256/84f1e8db070649fbc2abcd525612b5bb49c8371ba196a421a70efec7a5518e61.wav",
+      "bytes": 136454,
+      "sha256": "84f1e8db070649fbc2abcd525612b5bb49c8371ba196a421a70efec7a5518e61",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 68171,
+        "channels": 1
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/FreePats-Spanish-Classical-Guitar/LICENSE.txt",
+        "assetScope": "Individual WAV member in the exact FreePats 2019-06-18 SFZ WAV archive."
+      },
+      "processingHistory": [
+        {
+          "operation": "verified-container-member",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "outputSha256": "84f1e8db070649fbc2abcd525612b5bb49c8371ba196a421a70efec7a5518e61",
+          "parameters": {
+            "containerFormat": "7z",
+            "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/F5.wav",
+            "sfzPath": "SpanishClassicalGuitar-SFZ-20190618/SpanishClassicalGuitar-20190618.sfz"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "nylon-guitar-freepats-spanish-classical-f-5-3da6b8bc2bd4",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/freepats/spanish-classical-guitar",
+        "ref": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+        "url": "https://freepats.zenvoid.org/Guitar/SpanishClassicalGuitar/SpanishClassicalGuitar-SFZ-20190618.7z",
+        "path": "SpanishClassicalGuitar-SFZ-20190618/samples/F#5.wav",
+        "container": {
+          "format": "7z",
+          "bytes": 7262494,
+          "sha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/F#5.wav"
+        }
+      },
+      "localPath": "soundpacks/freepats-spanish-classical-guitar/sha256/3da6b8bc2bd4d56253937de6c68f8a4e985563b95e23f82a9b7efec69374131a.wav",
+      "bytes": 122060,
+      "sha256": "3da6b8bc2bd4d56253937de6c68f8a4e985563b95e23f82a9b7efec69374131a",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 61008,
+        "channels": 1
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/FreePats-Spanish-Classical-Guitar/LICENSE.txt",
+        "assetScope": "Individual WAV member in the exact FreePats 2019-06-18 SFZ WAV archive."
+      },
+      "processingHistory": [
+        {
+          "operation": "verified-container-member",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "outputSha256": "3da6b8bc2bd4d56253937de6c68f8a4e985563b95e23f82a9b7efec69374131a",
+          "parameters": {
+            "containerFormat": "7z",
+            "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/F#5.wav",
+            "sfzPath": "SpanishClassicalGuitar-SFZ-20190618/SpanishClassicalGuitar-20190618.sfz"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "nylon-guitar-freepats-spanish-classical-g5-5612e7b0f421",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/freepats/spanish-classical-guitar",
+        "ref": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+        "url": "https://freepats.zenvoid.org/Guitar/SpanishClassicalGuitar/SpanishClassicalGuitar-SFZ-20190618.7z",
+        "path": "SpanishClassicalGuitar-SFZ-20190618/samples/G5.wav",
+        "container": {
+          "format": "7z",
+          "bytes": 7262494,
+          "sha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/G5.wav"
+        }
+      },
+      "localPath": "soundpacks/freepats-spanish-classical-guitar/sha256/5612e7b0f421da28e673e7a02169777418dccb805d494e83ffda4dbbd3504fbc.wav",
+      "bytes": 125672,
+      "sha256": "5612e7b0f421da28e673e7a02169777418dccb805d494e83ffda4dbbd3504fbc",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 62814,
+        "channels": 1
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/FreePats-Spanish-Classical-Guitar/LICENSE.txt",
+        "assetScope": "Individual WAV member in the exact FreePats 2019-06-18 SFZ WAV archive."
+      },
+      "processingHistory": [
+        {
+          "operation": "verified-container-member",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "outputSha256": "5612e7b0f421da28e673e7a02169777418dccb805d494e83ffda4dbbd3504fbc",
+          "parameters": {
+            "containerFormat": "7z",
+            "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/G5.wav",
+            "sfzPath": "SpanishClassicalGuitar-SFZ-20190618/SpanishClassicalGuitar-20190618.sfz"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "nylon-guitar-freepats-spanish-classical-g-5-08704c9c1bda",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/freepats/spanish-classical-guitar",
+        "ref": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+        "url": "https://freepats.zenvoid.org/Guitar/SpanishClassicalGuitar/SpanishClassicalGuitar-SFZ-20190618.7z",
+        "path": "SpanishClassicalGuitar-SFZ-20190618/samples/G#5.wav",
+        "container": {
+          "format": "7z",
+          "bytes": 7262494,
+          "sha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/G#5.wav"
+        }
+      },
+      "localPath": "soundpacks/freepats-spanish-classical-guitar/sha256/08704c9c1bdaecdb16d1b7b33586508d96f7ed523e0c28247af566bdaeb4fd04.wav",
+      "bytes": 83798,
+      "sha256": "08704c9c1bdaecdb16d1b7b33586508d96f7ed523e0c28247af566bdaeb4fd04",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 41877,
+        "channels": 1
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/FreePats-Spanish-Classical-Guitar/LICENSE.txt",
+        "assetScope": "Individual WAV member in the exact FreePats 2019-06-18 SFZ WAV archive."
+      },
+      "processingHistory": [
+        {
+          "operation": "verified-container-member",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "outputSha256": "08704c9c1bdaecdb16d1b7b33586508d96f7ed523e0c28247af566bdaeb4fd04",
+          "parameters": {
+            "containerFormat": "7z",
+            "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/G#5.wav",
+            "sfzPath": "SpanishClassicalGuitar-SFZ-20190618/SpanishClassicalGuitar-20190618.sfz"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "nylon-guitar-freepats-spanish-classical-a5-39d1cc6d0417",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/freepats/spanish-classical-guitar",
+        "ref": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+        "url": "https://freepats.zenvoid.org/Guitar/SpanishClassicalGuitar/SpanishClassicalGuitar-SFZ-20190618.7z",
+        "path": "SpanishClassicalGuitar-SFZ-20190618/samples/A5.wav",
+        "container": {
+          "format": "7z",
+          "bytes": 7262494,
+          "sha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/A5.wav"
+        }
+      },
+      "localPath": "soundpacks/freepats-spanish-classical-guitar/sha256/39d1cc6d041796e2bdb57f973b9f6bf80c6b19bd296ae99a6202065896677190.wav",
+      "bytes": 143900,
+      "sha256": "39d1cc6d041796e2bdb57f973b9f6bf80c6b19bd296ae99a6202065896677190",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 71928,
+        "channels": 1
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/FreePats-Spanish-Classical-Guitar/LICENSE.txt",
+        "assetScope": "Individual WAV member in the exact FreePats 2019-06-18 SFZ WAV archive."
+      },
+      "processingHistory": [
+        {
+          "operation": "verified-container-member",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "outputSha256": "39d1cc6d041796e2bdb57f973b9f6bf80c6b19bd296ae99a6202065896677190",
+          "parameters": {
+            "containerFormat": "7z",
+            "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/A5.wav",
+            "sfzPath": "SpanishClassicalGuitar-SFZ-20190618/SpanishClassicalGuitar-20190618.sfz"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "nylon-guitar-freepats-spanish-classical-a-5-88ac184123e4",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/freepats/spanish-classical-guitar",
+        "ref": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+        "url": "https://freepats.zenvoid.org/Guitar/SpanishClassicalGuitar/SpanishClassicalGuitar-SFZ-20190618.7z",
+        "path": "SpanishClassicalGuitar-SFZ-20190618/samples/A#5.wav",
+        "container": {
+          "format": "7z",
+          "bytes": 7262494,
+          "sha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/A#5.wav"
+        }
+      },
+      "localPath": "soundpacks/freepats-spanish-classical-guitar/sha256/88ac184123e4fd187ccceda8e66f8137005313802cc09f594a7ecbfda7dc465d.wav",
+      "bytes": 115902,
+      "sha256": "88ac184123e4fd187ccceda8e66f8137005313802cc09f594a7ecbfda7dc465d",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 57929,
+        "channels": 1
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/FreePats-Spanish-Classical-Guitar/LICENSE.txt",
+        "assetScope": "Individual WAV member in the exact FreePats 2019-06-18 SFZ WAV archive."
+      },
+      "processingHistory": [
+        {
+          "operation": "verified-container-member",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "outputSha256": "88ac184123e4fd187ccceda8e66f8137005313802cc09f594a7ecbfda7dc465d",
+          "parameters": {
+            "containerFormat": "7z",
+            "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/A#5.wav",
+            "sfzPath": "SpanishClassicalGuitar-SFZ-20190618/SpanishClassicalGuitar-20190618.sfz"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "nylon-guitar-freepats-spanish-classical-b5-9ef813bc3570",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/freepats/spanish-classical-guitar",
+        "ref": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+        "url": "https://freepats.zenvoid.org/Guitar/SpanishClassicalGuitar/SpanishClassicalGuitar-SFZ-20190618.7z",
+        "path": "SpanishClassicalGuitar-SFZ-20190618/samples/B5.wav",
+        "container": {
+          "format": "7z",
+          "bytes": 7262494,
+          "sha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/B5.wav"
+        }
+      },
+      "localPath": "soundpacks/freepats-spanish-classical-guitar/sha256/9ef813bc3570c8042f06598df755ffa8ee049206e3dd14588c27b05557a49748.wav",
+      "bytes": 86560,
+      "sha256": "9ef813bc3570c8042f06598df755ffa8ee049206e3dd14588c27b05557a49748",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 43258,
+        "channels": 1
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/FreePats-Spanish-Classical-Guitar/LICENSE.txt",
+        "assetScope": "Individual WAV member in the exact FreePats 2019-06-18 SFZ WAV archive."
+      },
+      "processingHistory": [
+        {
+          "operation": "verified-container-member",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "outputSha256": "9ef813bc3570c8042f06598df755ffa8ee049206e3dd14588c27b05557a49748",
+          "parameters": {
+            "containerFormat": "7z",
+            "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/B5.wav",
+            "sfzPath": "SpanishClassicalGuitar-SFZ-20190618/SpanishClassicalGuitar-20190618.sfz"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    },
+    {
+      "id": "nylon-guitar-freepats-spanish-classical-c6-a297c63a94eb",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/freepats/spanish-classical-guitar",
+        "ref": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+        "url": "https://freepats.zenvoid.org/Guitar/SpanishClassicalGuitar/SpanishClassicalGuitar-SFZ-20190618.7z",
+        "path": "SpanishClassicalGuitar-SFZ-20190618/samples/C6.wav",
+        "container": {
+          "format": "7z",
+          "bytes": 7262494,
+          "sha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/C6.wav"
+        }
+      },
+      "localPath": "soundpacks/freepats-spanish-classical-guitar/sha256/a297c63a94eb823a2f7515b20c36c1760990cb33c699d3fe2d0b3b7da0135007.wav",
+      "bytes": 78974,
+      "sha256": "a297c63a94eb823a2f7515b20c36c1760990cb33c699d3fe2d0b3b7da0135007",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 39465,
+        "channels": 1
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/FreePats-Spanish-Classical-Guitar/LICENSE.txt",
+        "assetScope": "Individual WAV member in the exact FreePats 2019-06-18 SFZ WAV archive."
+      },
+      "processingHistory": [
+        {
+          "operation": "verified-container-member",
+          "tool": "refrain-sfz-compiler@0-experimental",
+          "inputSha256": "ef2fb7de0cc0ab561c4ebc28494f3fc2962596e4f32f16d6c96b8a385c7c098b",
+          "outputSha256": "a297c63a94eb823a2f7515b20c36c1760990cb33c699d3fe2d0b3b7da0135007",
+          "parameters": {
+            "containerFormat": "7z",
+            "memberPath": "SpanishClassicalGuitar-SFZ-20190618/samples/C6.wav",
+            "sfzPath": "SpanishClassicalGuitar-SFZ-20190618/SpanishClassicalGuitar-20190618.sfz"
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    }
+  ],
+  "contentSha256": "3adda69b68dd94c987c1b304aa24cfb094c3ab620919994358d3f4a52d779eb7"
+}

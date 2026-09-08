@@ -1,0 +1,33 @@
+{
+  "format": "air@0-experimental",
+  "title": "Small hours",
+  "tempo": 58,
+  "meter": "6/8",
+  "key": "E minor",
+  "motifs": {
+    "breath": "E4/8 G4/8 A4/4 r/4"
+  },
+  "voices": [
+    {
+      "id": "harp",
+      "instrument": "harp",
+      "role": "harmony",
+      "part": "E3/4 B3/4 E4/4 | C3/4 G3/4 E4/4 | G3/4 D4/4 B4/4 | E3/4 B3/4 E4/4",
+      "gainDb": -2,
+      "pan": -0.2
+    },
+    {
+      "id": "flute",
+      "instrument": "flute",
+      "role": "lead",
+      "part": "@breath(12,1) | r/2. | @breath(14,1) | @breath(12,1)",
+      "pan": 0.2
+    },
+    {
+      "id": "cello",
+      "instrument": "solo_cello",
+      "role": "bass",
+      "part": "E3/2. | C3/2. | G2/2. | E3/2."
+    }
+  ]
+}

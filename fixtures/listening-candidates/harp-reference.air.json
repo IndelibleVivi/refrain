@@ -1,0 +1,15 @@
+{
+  "format": "air@0-experimental",
+  "title": "Harp candidate phrase",
+  "tempo": 72,
+  "meter": "4/4",
+  "motifs": {},
+  "voices": [
+    {
+      "id": "solo",
+      "instrument": "harp",
+      "role": "lead",
+      "part": "A4/4 C5/4 E5/4 C5/4"
+    }
+  ]
+}

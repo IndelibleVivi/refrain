@@ -1,0 +1,60 @@
+{
+  "format": "air@0-experimental",
+  "title": "Two breaths across glass",
+  "tempo": 68,
+  "meter": "4/4",
+  "key": "C major",
+  "motifs": {
+    "rise": "C5/2 E5/4 A5/4",
+    "answer": "D4/2 F4/4 A4/4"
+  },
+  "voices": [
+    {
+      "id": "flute",
+      "instrument": "flute",
+      "role": "lead",
+      "realize": [
+        {
+          "id": "flute-arc",
+          "kind": "motif",
+          "motif": "rise",
+          "repeat": 4,
+          "section": "A",
+          "dynamicCurve": {
+            "from": "p",
+            "via": [
+              { "at": 0.32, "level": "mf" },
+              { "at": 0.7, "level": "f" }
+            ],
+            "to": "mp"
+          }
+        }
+      ],
+      "pan": 0.12
+    },
+    {
+      "id": "clarinet",
+      "instrument": "clarinet",
+      "role": "counter",
+      "realize": [
+        {
+          "id": "clarinet-arc",
+          "kind": "motif",
+          "motif": "answer",
+          "repeat": 4,
+          "section": "A",
+          "dynamicCurve": {
+            "from": "mp",
+            "via": [
+              { "at": 0.45, "level": "p" },
+              { "at": 0.78, "level": "mf" }
+            ],
+            "to": "p"
+          }
+        }
+      ],
+      "pan": -0.12
+    }
+  ],
+  "sections": [{ "id": "A", "startBar": 1, "bars": 4 }]
+}

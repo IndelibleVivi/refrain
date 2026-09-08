@@ -1,0 +1,10 @@
+{
+  "format": "air@0-experimental",
+  "title": "Out of range",
+  "tempo": 72,
+  "meter": "4/4",
+  "motifs": {},
+  "voices": [
+    { "id": "flute", "instrument": "flute", "role": "lead", "part": "C2/1" }
+  ]
+}

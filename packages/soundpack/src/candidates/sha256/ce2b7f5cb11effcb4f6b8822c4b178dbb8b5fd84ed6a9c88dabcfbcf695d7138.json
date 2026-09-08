@@ -1,0 +1,85 @@
+{
+  "format": "refrain-candidate-shard@0-experimental",
+  "id": "warm-piano-vcsl-kawai-c4",
+  "candidateContentSha256": "5b0e57cbc3bc801cc8a97c6c289b0b97a29cdc79a31401d5836900490ffbf0f3",
+  "candidate": {
+    "id": "warm-piano-vcsl-kawai-c4",
+    "instrumentId": "warm_piano",
+    "engine": "sampler",
+    "mapping": {
+      "type": "sample-map",
+      "playableMin": 48,
+      "playableMax": 72,
+      "midiFallbackProgram": 0,
+      "articulationFallbacks": {},
+      "regions": [
+        {
+          "id": "warm-piano-vcsl-kawai-c4-main",
+          "trigger": "attack",
+          "assetId": "vcsl-kawai-piano-c4-rr1",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 48,
+            "rootMidi": 60,
+            "maxMidi": 72
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 0,
+          "tuneCents": 0,
+          "loop": {
+            "mode": "none"
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.08
+          }
+        }
+      ]
+    },
+    "calibrationGainDb": -3,
+    "tailSeconds": 2.5,
+    "releaseStatus": "listening-accepted"
+  },
+  "assets": [
+    {
+      "id": "vcsl-kawai-piano-c4-rr1",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VCSL",
+        "ref": "c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e",
+        "path": "Chordophones/Zithers/Grand Piano, Kawai/Sustains/GPiano_sus_C4_v2_rr1_Player.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Chordophones/Zithers/Grand%20Piano%2C%20Kawai/Sustains/GPiano_sus_C4_v2_rr1_Player.wav"
+      },
+      "localPath": "soundpacks/vcsl/GPiano_sus_C4_v2_rr1_Player.wav",
+      "bytes": 2613976,
+      "sha256": "69845de40a38ed6501746520f9f385ae56200a4372faed48178e64a32a75e58c",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 653483,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VCSL/LICENSE.txt",
+        "assetScope": "the pinned VCSL repository asset"
+      },
+      "processingHistory": [
+        {
+          "operation": "byte-exact-copy",
+          "tool": "refrain-soundpack-fetch@0",
+          "inputSha256": "69845de40a38ed6501746520f9f385ae56200a4372faed48178e64a32a75e58c",
+          "outputSha256": "69845de40a38ed6501746520f9f385ae56200a4372faed48178e64a32a75e58c",
+          "parameters": {
+            "modified": false
+          }
+        }
+      ],
+      "releaseStatus": "listening-accepted",
+      "publicReleaseAccepted": false
+    }
+  ],
+  "contentSha256": "ce2b7f5cb11effcb4f6b8822c4b178dbb8b5fd84ed6a9c88dabcfbcf695d7138"
+}

@@ -1,0 +1,21 @@
+{
+  "name": "@refrain/identity",
+  "version": "0.0.0-experimental",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": {
+      "refrain-built": "./dist/index.js",
+      "default": "./src/index.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc -b",
+    "test": "vitest run --root ../.. packages/identity",
+    "typecheck": "tsc -b --pretty false"
+  },
+  "dependencies": {
+    "@noble/hashes": "2.3.0"
+  },
+  "license": "SEE LICENSE IN ../../LICENSING.md"
+}

@@ -1,0 +1,92 @@
+{
+  "format": "refrain-candidate-shard@0-experimental",
+  "id": "chamber-strings-vsco-loop-probe",
+  "candidateContentSha256": "2fbaa91badb03bd372222765eebe56a44c58f930dbf97a6e1e9c9210c996c080",
+  "candidate": {
+    "id": "chamber-strings-vsco-loop-probe",
+    "instrumentId": "chamber_strings",
+    "engine": "sampler",
+    "mapping": {
+      "type": "sample-map",
+      "playableMin": 71,
+      "playableMax": 73,
+      "midiFallbackProgram": 48,
+      "articulationFallbacks": {
+        "staccato": "none",
+        "tenuto": "none",
+        "accent": "none",
+        "legato": "none"
+      },
+      "regions": [
+        {
+          "id": "chamber-strings-vsco-susvib-c4-loop",
+          "trigger": "attack",
+          "assetId": "vsco2-violin-section-susvib-c4",
+          "articulation": "none",
+          "pitch": {
+            "minMidi": 71,
+            "rootMidi": 72,
+            "maxMidi": 73
+          },
+          "velocity": {
+            "min": 1,
+            "max": 127
+          },
+          "gainDb": 0,
+          "tuneCents": 0,
+          "loop": {
+            "mode": "sustain",
+            "startFrame": 88200,
+            "endFrame": 352800,
+            "crossfadeFrames": 4410
+          },
+          "release": {
+            "mode": "envelope",
+            "seconds": 0.8
+          }
+        }
+      ]
+    },
+    "calibrationGainDb": -12,
+    "releaseStatus": "listening-candidate"
+  },
+  "assets": [
+    {
+      "id": "vsco2-violin-section-susvib-c4",
+      "kind": "wav",
+      "source": {
+        "repository": "https://github.com/sgossner/VSCO-2-CE",
+        "ref": "6dd651d55dde97fd4028699be9d4481f26917891",
+        "path": "Strings/Violin Section/susVib/VlnEns_susVib_C4_v1.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/6dd651d55dde97fd4028699be9d4481f26917891/Strings/Violin%20Section/susVib/VlnEns_susVib_C4_v1.wav"
+      },
+      "localPath": "soundpacks/vsco2/strings/VlnEns_susVib_C4_v1.wav",
+      "bytes": 2063320,
+      "sha256": "c07edd5b2119fa1da2207aba996961b50dd616f69bbcf2300ab271bc6c16239f",
+      "audio": {
+        "sampleRate": 44100,
+        "frameCount": 515819,
+        "channels": 2
+      },
+      "license": {
+        "expression": "CC0-1.0",
+        "path": "third_party/VSCO-2-CE/LICENSE.txt",
+        "assetScope": "the pinned VSCO 2 Community Edition repository asset"
+      },
+      "processingHistory": [
+        {
+          "operation": "byte-exact-copy",
+          "tool": "refrain-soundpack-fetch@0",
+          "inputSha256": "c07edd5b2119fa1da2207aba996961b50dd616f69bbcf2300ab271bc6c16239f",
+          "outputSha256": "c07edd5b2119fa1da2207aba996961b50dd616f69bbcf2300ab271bc6c16239f",
+          "parameters": {
+            "modified": false
+          }
+        }
+      ],
+      "releaseStatus": "listening-candidate",
+      "publicReleaseAccepted": false
+    }
+  ],
+  "contentSha256": "831014ab6ea9060a8a072e3e9e2cf6c1f9fd50da7179ed1f9485c0cf2189b622"
+}

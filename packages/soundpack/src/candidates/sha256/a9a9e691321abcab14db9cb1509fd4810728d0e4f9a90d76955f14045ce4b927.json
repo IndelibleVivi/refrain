@@ -1,0 +1,51 @@
+{
+  "format": "refrain-candidate-shard@0-experimental",
+  "id": "chamber-strings-generaluser",
+  "candidateContentSha256": "4a5897b64e63e742046d41997acfe2e7b18e59847bd139af67a41c0fa2a9525f",
+  "candidate": {
+    "id": "chamber-strings-generaluser",
+    "instrumentId": "chamber_strings",
+    "engine": "soundfont",
+    "assetId": "generaluser-gs-2.0.3",
+    "mapping": {
+      "type": "program",
+      "program": 48
+    },
+    "calibrationGainDb": -12,
+    "tailSeconds": 2.5,
+    "releaseStatus": "audition-fallback"
+  },
+  "assets": [
+    {
+      "id": "generaluser-gs-2.0.3",
+      "kind": "soundfont",
+      "source": {
+        "repository": "https://github.com/mrbumpy409/GeneralUser-GS",
+        "ref": "684543d5e5efaef08d02be50dcda8d552478fa60",
+        "url": "https://raw.githubusercontent.com/mrbumpy409/GeneralUser-GS/684543d5e5efaef08d02be50dcda8d552478fa60/GeneralUser-GS.sf2"
+      },
+      "localPath": "soundpacks/GeneralUser-GS.sf2",
+      "bytes": 32319396,
+      "sha256": "9575028c7a1f589f5770fccc8cff2734566af40cd26ed836944e9a5152688cfe",
+      "license": {
+        "expression": "LicenseRef-GeneralUser-GS-2.0.3",
+        "path": "third_party/GeneralUser-GS/LICENSE.txt",
+        "assetScope": "complete SoundFont bank; upstream records incomplete provenance for some contained samples"
+      },
+      "processingHistory": [
+        {
+          "operation": "byte-exact-copy",
+          "tool": "refrain-soundpack-fetch@0",
+          "inputSha256": "9575028c7a1f589f5770fccc8cff2734566af40cd26ed836944e9a5152688cfe",
+          "outputSha256": "9575028c7a1f589f5770fccc8cff2734566af40cd26ed836944e9a5152688cfe",
+          "parameters": {
+            "modified": false
+          }
+        }
+      ],
+      "releaseStatus": "audition-fallback",
+      "publicReleaseAccepted": false
+    }
+  ],
+  "contentSha256": "a9a9e691321abcab14db9cb1509fd4810728d0e4f9a90d76955f14045ce4b927"
+}

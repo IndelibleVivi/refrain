@@ -1,0 +1,46 @@
+{
+  "format": "refrain-candidate-shard@0-experimental",
+  "id": "lattice-pluck-subtractive-original",
+  "candidateContentSha256": "ab75f87979d0d291f331f7eaa9dc9f9bf4e1f0e80ec668f253a2c6bcde87e73b",
+  "candidate": {
+    "id": "lattice-pluck-subtractive-original",
+    "instrumentId": "lattice_pluck",
+    "engine": "synth",
+    "mapping": {
+      "type": "midi-fallback",
+      "program": 84
+    },
+    "calibrationGainDb": -16,
+    "releaseStatus": "development-identity",
+    "patch": {
+      "format": "refrain-synth-subtractive@0-experimental",
+      "oscillators": [
+        {
+          "type": "triangle",
+          "ratio": 1,
+          "gain": 0.62
+        },
+        {
+          "type": "square",
+          "ratio": 2,
+          "gain": 0.19,
+          "detune": 4
+        },
+        {
+          "type": "sine",
+          "ratio": 3,
+          "gain": 0.08,
+          "detune": -3
+        }
+      ],
+      "attack": 0.003,
+      "decay": 0.19,
+      "sustain": 0.08,
+      "release": 0.34,
+      "filterHz": 4200,
+      "filterQ": 1.1
+    }
+  },
+  "assets": [],
+  "contentSha256": "c8039c84e0697dca15e5c940fef9ac9b86327b8f28e60cb10599c98d4233ff2e"
+}

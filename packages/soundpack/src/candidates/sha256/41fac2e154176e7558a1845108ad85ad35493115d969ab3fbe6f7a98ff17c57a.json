@@ -1,0 +1,51 @@
+{
+  "format": "refrain-candidate-shard@0-experimental",
+  "id": "solo-cello-generaluser",
+  "candidateContentSha256": "8ab21d17716d5ff9042e3a5447b15b85752b2149a2f26c4dab771d9142f458a9",
+  "candidate": {
+    "id": "solo-cello-generaluser",
+    "instrumentId": "solo_cello",
+    "engine": "soundfont",
+    "assetId": "generaluser-gs-2.0.3",
+    "mapping": {
+      "type": "program",
+      "program": 42
+    },
+    "calibrationGainDb": -10,
+    "tailSeconds": 2.5,
+    "releaseStatus": "audition-fallback"
+  },
+  "assets": [
+    {
+      "id": "generaluser-gs-2.0.3",
+      "kind": "soundfont",
+      "source": {
+        "repository": "https://github.com/mrbumpy409/GeneralUser-GS",
+        "ref": "684543d5e5efaef08d02be50dcda8d552478fa60",
+        "url": "https://raw.githubusercontent.com/mrbumpy409/GeneralUser-GS/684543d5e5efaef08d02be50dcda8d552478fa60/GeneralUser-GS.sf2"
+      },
+      "localPath": "soundpacks/GeneralUser-GS.sf2",
+      "bytes": 32319396,
+      "sha256": "9575028c7a1f589f5770fccc8cff2734566af40cd26ed836944e9a5152688cfe",
+      "license": {
+        "expression": "LicenseRef-GeneralUser-GS-2.0.3",
+        "path": "third_party/GeneralUser-GS/LICENSE.txt",
+        "assetScope": "complete SoundFont bank; upstream records incomplete provenance for some contained samples"
+      },
+      "processingHistory": [
+        {
+          "operation": "byte-exact-copy",
+          "tool": "refrain-soundpack-fetch@0",
+          "inputSha256": "9575028c7a1f589f5770fccc8cff2734566af40cd26ed836944e9a5152688cfe",
+          "outputSha256": "9575028c7a1f589f5770fccc8cff2734566af40cd26ed836944e9a5152688cfe",
+          "parameters": {
+            "modified": false
+          }
+        }
+      ],
+      "releaseStatus": "audition-fallback",
+      "publicReleaseAccepted": false
+    }
+  ],
+  "contentSha256": "41fac2e154176e7558a1845108ad85ad35493115d969ab3fbe6f7a98ff17c57a"
+}

@@ -1,0 +1,187 @@
+import { useEffect, useState } from "react";
+import type { AnyAirArtifact, SelenV21ThemeId } from "@refrain/renderer";
+import {
+  AirRenderer,
+  LanguageSwitch,
+  useRefrainLocale,
+  uiCopy,
+  type UiMessageKey,
+  decodeInlinePresentationRef,
+  parseArtifactBytes,
+  PRESENTATION_REF_FORMAT,
+  REFRAIN_ARTIFACT_MEDIA_TYPE,
+  type PresentationRefV0,
+} from "@refrain/renderer";
+import {
+  decodePresentationHash,
+  verifyArtifactForPresentation,
+  verifyPresentationEnvelope,
+} from "./presentation-envelope.js";
+
+const VISUAL_THEMES = new Set<SelenV21ThemeId>([
+  "paper-sonata",
+  "prism",
+  "nocturne-ink",
+  "herbarium",
+]);
+
+function requestedVisualTheme(): SelenV21ThemeId {
+  const requested = new URL(window.location.href).searchParams.get("theme");
+  return requested && VISUAL_THEMES.has(requested as SelenV21ThemeId)
+    ? (requested as SelenV21ThemeId)
+    : "paper-sonata";
+}
+
+export function App() {
+  const [locale, setLocale] = useRefrainLocale();
+  const copy = uiCopy(locale);
+  const [artifact, setArtifact] = useState<AnyAirArtifact>();
+  const [message, setMessage] = useState<{
+    key: UiMessageKey;
+    detail?: string;
+  }>({ key: "loadingAir" });
+
+  useEffect(() => {
+    let active = true;
+    let revision = 0;
+    const loadHash = () => {
+      const requestedRevision = ++revision;
+      setArtifact(undefined);
+      setMessage({ key: "loadingAir" });
+      const hash = new URLSearchParams(window.location.hash.slice(1));
+      const artifactSha256 = hash.get("artifact");
+      const fragment = hash.get("bytes");
+      const sessionHref = new URL(window.location.href).searchParams.get(
+        "sessionHref",
+      );
+      const bindingId = new URL(window.location.href).searchParams.get(
+        "binding",
+      );
+      const load = async () => {
+        if (artifactSha256 && fragment) {
+          const ref: PresentationRefV0 = {
+            format: PRESENTATION_REF_FORMAT,
+            artifactSha256,
+            mediaType: REFRAIN_ARTIFACT_MEDIA_TYPE,
+            delivery: { kind: "inline", fragment },
+          };
+          const decoded = decodeInlinePresentationRef(ref);
+          return decoded.ok
+            ? verifyArtifactForPresentation(
+                decoded.artifact,
+                bindingId ?? undefined,
+              )
+            : decoded;
+        }
+        if (sessionHref && artifactSha256) {
+          const response = await fetch(sessionHref, { cache: "no-store" });
+          if (!response.ok) {
+            let reason = `HTTP ${response.status}`;
+            try {
+              const body = (await response.json()) as { reason?: unknown };
+              if (typeof body.reason === "string") reason = body.reason;
+            } catch {
+              // The typed status is optional when an intermediary replaced it.
+            }
+            return {
+              ok: false as const,
+              message: reason,
+              messageKey: "sessionUnavailable" as const,
+            };
+          }
+          const bytes = new Uint8Array(await response.arrayBuffer());
+          const parsed = parseArtifactBytes(bytes, artifactSha256);
+          return parsed.ok
+            ? verifyArtifactForPresentation(
+                parsed.artifact,
+                bindingId ?? undefined,
+              )
+            : parsed;
+        }
+        const decoded = decodePresentationHash(window.location.hash);
+        if (decoded) return verifyPresentationEnvelope(decoded);
+        return {
+          ok: false as const,
+          message: "",
+          messageKey: "noAir" as const,
+        };
+      };
+      void load()
+        .then((result) => {
+          if (!active || requestedRevision !== revision) return;
+          if (result.ok) setArtifact(result.artifact);
+          else
+            setMessage({
+              key: "messageKey" in result ? result.messageKey : "invalidFile",
+              detail: result.message,
+            });
+        })
+        .catch((cause: unknown) => {
+          if (active && requestedRevision === revision)
+            setMessage({
+              key: "invalidFile",
+              detail: cause instanceof Error ? cause.message : undefined,
+            });
+        });
+    };
+    loadHash();
+    window.addEventListener("hashchange", loadHash);
+    return () => {
+      active = false;
+      window.removeEventListener("hashchange", loadHash);
+    };
+  }, []);
+
+  if (!artifact) {
+    return (
+      <main className="presentation-message" lang={locale}>
+        <LanguageSwitch locale={locale} onChange={setLocale} />
+        <p>Refrain hums an air.</p>
+        <h1>{copy[message.key]}</h1>
+        {message.detail ? <p lang="en">{message.detail}</p> : null}
+        <p>
+          {copy.openCommand}{" "}
+          <code>node bin/refrain.mjs open path/to/file.air.json</code>
+        </p>
+        <label>
+          {copy.openFile}
+          <input
+            accept=".json,.refrain.json,application/json,application/vnd.refrain+json"
+            onChange={(event) => {
+              const file = event.currentTarget.files?.[0];
+              if (!file) return;
+              void file.text().then((text) => {
+                let value: unknown;
+                try {
+                  value = JSON.parse(text) as unknown;
+                } catch {
+                  setMessage({ key: "invalidFile" });
+                  return;
+                }
+                const result = verifyArtifactForPresentation(value);
+                if (result.ok) setArtifact(result.artifact);
+                else setMessage({ key: "invalidFile", detail: result.message });
+              });
+            }}
+            type="file"
+          />
+        </label>
+      </main>
+    );
+  }
+  return (
+    <main className="presentation-shell">
+      <AirRenderer
+        initialLocale={locale}
+        artifact={artifact}
+        assets={{
+          soundBankUrl: "/soundpacks/GeneralUser-GS.sf2",
+          assetBaseUrl: "",
+          workletUrl: "/spessasynth_processor.min.js",
+        }}
+        surface="url"
+        visualTheme={requestedVisualTheme()}
+      />
+    </main>
+  );
+}

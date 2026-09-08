@@ -1,0 +1,45 @@
+{
+  "name": "@refrain/soundpack",
+  "version": "0.0.0-experimental",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": {
+      "refrain-built": "./dist/index.js",
+      "default": "./src/index.ts"
+    },
+    "./factory": {
+      "refrain-built": "./dist/factory.js",
+      "default": "./src/factory.ts"
+    },
+    "./catalog": {
+      "refrain-built": "./dist/sound-catalog.json",
+      "default": "./src/sound-catalog.json"
+    },
+    "./sfz": {
+      "refrain-built": "./dist/sfz.js",
+      "default": "./src/sfz.ts"
+    },
+    "./vnext": {
+      "refrain-built": "./dist/vnext.js",
+      "default": "./src/vnext.ts"
+    },
+    "./pack-manager": {
+      "refrain-built": "./dist/pack-manager.js",
+      "default": "./src/pack-manager.ts"
+    },
+    "./proof-packs": {
+      "refrain-built": "./dist/proof-packs.js",
+      "default": "./src/proof-packs.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc -b",
+    "test": "vitest run --root ../.. packages/soundpack",
+    "typecheck": "tsc -b --pretty false"
+  },
+  "dependencies": {
+    "@refrain/identity": "*"
+  },
+  "license": "SEE LICENSE IN ../../LICENSING.md"
+}

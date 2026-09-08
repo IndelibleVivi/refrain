@@ -1,0 +1,370 @@
+{
+  "format": "refrain-sound-catalog@0-experimental",
+  "id": "refrain-source-plural@0",
+  "candidates": [
+    {
+      "candidateId": "warm-piano-generaluser",
+      "instrumentId": "warm_piano",
+      "engine": "soundfont",
+      "releaseStatus": "audition-fallback",
+      "candidateContentSha256": "617ec909ed16f974fecd22b5eec657cfeaba938ceb3e51775915cdbf40da6543",
+      "shard": {
+        "path": "./candidates/sha256/dd30c14bb7b587e2cd930ec0276972e3c9194c2a7437eb7a6cefb80adc0884ed.json",
+        "sha256": "dd30c14bb7b587e2cd930ec0276972e3c9194c2a7437eb7a6cefb80adc0884ed"
+      }
+    },
+    {
+      "candidateId": "warm-piano-vcsl-kawai-c4",
+      "instrumentId": "warm_piano",
+      "engine": "sampler",
+      "releaseStatus": "listening-accepted",
+      "candidateContentSha256": "5b0e57cbc3bc801cc8a97c6c289b0b97a29cdc79a31401d5836900490ffbf0f3",
+      "shard": {
+        "path": "./candidates/sha256/ce2b7f5cb11effcb4f6b8822c4b178dbb8b5fd84ed6a9c88dabcfbcf695d7138.json",
+        "sha256": "ce2b7f5cb11effcb4f6b8822c4b178dbb8b5fd84ed6a9c88dabcfbcf695d7138"
+      }
+    },
+    {
+      "candidateId": "nylon-guitar-generaluser",
+      "instrumentId": "nylon_guitar",
+      "engine": "soundfont",
+      "releaseStatus": "audition-fallback",
+      "candidateContentSha256": "ef809914e034341487a20f7922221fb30afe62cb174f31e9e9e13f6e6e5c6edb",
+      "shard": {
+        "path": "./candidates/sha256/5541d9bd3c1f4ecd6f3b106551753afab59a18c0990dfbbe6b965b2abaf9f48f.json",
+        "sha256": "5541d9bd3c1f4ecd6f3b106551753afab59a18c0990dfbbe6b965b2abaf9f48f"
+      }
+    },
+    {
+      "candidateId": "harp-generaluser",
+      "instrumentId": "harp",
+      "engine": "soundfont",
+      "releaseStatus": "audition-fallback",
+      "candidateContentSha256": "b22647d04f2b89855d4822e2bd9609b4af6f3649a36a5c359b6f206a24350eac",
+      "shard": {
+        "path": "./candidates/sha256/a1ac2945ce73b12173268444c580113d2a4a65d5acd15f984d67447310b852df.json",
+        "sha256": "a1ac2945ce73b12173268444c580113d2a4a65d5acd15f984d67447310b852df"
+      }
+    },
+    {
+      "candidateId": "harp-vcsl-concert-a4",
+      "instrumentId": "harp",
+      "engine": "sampler",
+      "releaseStatus": "listening-accepted",
+      "candidateContentSha256": "d758e8920052acdd847b64277d4959795c641f1d3eff03014b04c660a9d33af6",
+      "shard": {
+        "path": "./candidates/sha256/73b6398a369148cbc08836ee22ec4a69b23562d5c31c8570e999c6302a421033.json",
+        "sha256": "73b6398a369148cbc08836ee22ec4a69b23562d5c31c8570e999c6302a421033"
+      }
+    },
+    {
+      "candidateId": "clean-bass-generaluser",
+      "instrumentId": "clean_bass",
+      "engine": "soundfont",
+      "releaseStatus": "audition-fallback",
+      "candidateContentSha256": "9e0aec1d8a92eb184fec0ff061d3f8195355251718b7d455025f1593657651fb",
+      "shard": {
+        "path": "./candidates/sha256/3df8f881ca3c5d32360adab183937ff2018dc899bcd6979f7b6bece559b9cd74.json",
+        "sha256": "3df8f881ca3c5d32360adab183937ff2018dc899bcd6979f7b6bece559b9cd74"
+      }
+    },
+    {
+      "candidateId": "chamber-strings-generaluser",
+      "instrumentId": "chamber_strings",
+      "engine": "soundfont",
+      "releaseStatus": "audition-fallback",
+      "candidateContentSha256": "4a5897b64e63e742046d41997acfe2e7b18e59847bd139af67a41c0fa2a9525f",
+      "shard": {
+        "path": "./candidates/sha256/a9a9e691321abcab14db9cb1509fd4810728d0e4f9a90d76955f14045ce4b927.json",
+        "sha256": "a9a9e691321abcab14db9cb1509fd4810728d0e4f9a90d76955f14045ce4b927"
+      }
+    },
+    {
+      "candidateId": "chamber-strings-vsco-loop-probe",
+      "instrumentId": "chamber_strings",
+      "engine": "sampler",
+      "releaseStatus": "listening-candidate",
+      "candidateContentSha256": "2fbaa91badb03bd372222765eebe56a44c58f930dbf97a6e1e9c9210c996c080",
+      "shard": {
+        "path": "./candidates/sha256/831014ab6ea9060a8a072e3e9e2cf6c1f9fd50da7179ed1f9485c0cf2189b622.json",
+        "sha256": "831014ab6ea9060a8a072e3e9e2cf6c1f9fd50da7179ed1f9485c0cf2189b622"
+      }
+    },
+    {
+      "candidateId": "solo-cello-generaluser",
+      "instrumentId": "solo_cello",
+      "engine": "soundfont",
+      "releaseStatus": "audition-fallback",
+      "candidateContentSha256": "8ab21d17716d5ff9042e3a5447b15b85752b2149a2f26c4dab771d9142f458a9",
+      "shard": {
+        "path": "./candidates/sha256/41fac2e154176e7558a1845108ad85ad35493115d969ab3fbe6f7a98ff17c57a.json",
+        "sha256": "41fac2e154176e7558a1845108ad85ad35493115d969ab3fbe6f7a98ff17c57a"
+      }
+    },
+    {
+      "candidateId": "flute-generaluser",
+      "instrumentId": "flute",
+      "engine": "soundfont",
+      "releaseStatus": "audition-fallback",
+      "candidateContentSha256": "c5eff7cf6c8688c68a06144c3a53fa84f0932dde15321cccb5c82f47cdff2310",
+      "shard": {
+        "path": "./candidates/sha256/c15d432dfcb2a0e7ea14474545eeef5482865175bec289cc8fb3ab97fa23ee23.json",
+        "sha256": "c15d432dfcb2a0e7ea14474545eeef5482865175bec289cc8fb3ab97fa23ee23"
+      }
+    },
+    {
+      "candidateId": "clarinet-generaluser",
+      "instrumentId": "clarinet",
+      "engine": "soundfont",
+      "releaseStatus": "audition-fallback",
+      "candidateContentSha256": "450e383dc78735debc8038f5e845860cde2fb367d4f01646df95a850daa10dfd",
+      "shard": {
+        "path": "./candidates/sha256/c1b263a31d32138a8865266d5fec8e7bad3258611f8f3c7497cdaa863211c9b7.json",
+        "sha256": "c1b263a31d32138a8865266d5fec8e7bad3258611f8f3c7497cdaa863211c9b7"
+      }
+    },
+    {
+      "candidateId": "marimba-generaluser",
+      "instrumentId": "marimba",
+      "engine": "soundfont",
+      "releaseStatus": "audition-fallback",
+      "candidateContentSha256": "0a68947d2b09b0a0821f291d72f5fe59f7ad2afd54de6a5c034693e5f8f61623",
+      "shard": {
+        "path": "./candidates/sha256/ae760fbbca103e3d5fabb4677c02612ec55f53a8ab37b59b7b0f1f207685c3b6.json",
+        "sha256": "ae760fbbca103e3d5fabb4677c02612ec55f53a8ab37b59b7b0f1f207685c3b6"
+      }
+    },
+    {
+      "candidateId": "marimba-vcsl-c4",
+      "instrumentId": "marimba",
+      "engine": "sampler",
+      "releaseStatus": "listening-accepted",
+      "candidateContentSha256": "91bef73fe309554686716aa8968fa4ce4a1622abda0ac385ee00809f63650f3c",
+      "shard": {
+        "path": "./candidates/sha256/1e21c3dbe303e2da05cf4f50837b6178179cfdae93222f07e647e280d7b8eb84.json",
+        "sha256": "1e21c3dbe303e2da05cf4f50837b6178179cfdae93222f07e647e280d7b8eb84"
+      }
+    },
+    {
+      "candidateId": "soft-percussion-generaluser",
+      "instrumentId": "soft_percussion",
+      "engine": "soundfont",
+      "releaseStatus": "audition-fallback",
+      "candidateContentSha256": "bcdc9b839730d8113ea8bf9ec473a64b4e5ed17ba10ae0796cd7e1d237753846",
+      "shard": {
+        "path": "./candidates/sha256/2fd2742615c9dfaf920b718515f82d1c6ae820eb7551f64f8546e2831c435b5f.json",
+        "sha256": "2fd2742615c9dfaf920b718515f82d1c6ae820eb7551f64f8546e2831c435b5f"
+      }
+    },
+    {
+      "candidateId": "soft-percussion-vcsl-acoustic-kit",
+      "instrumentId": "soft_percussion",
+      "engine": "sampler",
+      "releaseStatus": "listening-candidate",
+      "candidateContentSha256": "9d649c24ab7da6b57ee52686cce788cd413269a4b6da18ad49a4d171007b1f0f",
+      "shard": {
+        "path": "./candidates/sha256/69e1d3aed5f9befb445939bd344120bf95317671a98f4837a0d3c6081decd58b.json",
+        "sha256": "69e1d3aed5f9befb445939bd344120bf95317671a98f4837a0d3c6081decd58b"
+      }
+    },
+    {
+      "candidateId": "clarinet-vsco-suslong-sfz-pilot",
+      "instrumentId": "clarinet",
+      "engine": "sampler",
+      "releaseStatus": "listening-candidate",
+      "candidateContentSha256": "deced535bb5fc12d8fa2b237ad09e8d95cba4c25ddb0e7dd59e8434f94b87513",
+      "shard": {
+        "path": "./candidates/sha256/a517f1154ba537568d37d7069e4e66d48d6feca97a02405e64a5a68bbe02da49.json",
+        "sha256": "a517f1154ba537568d37d7069e4e66d48d6feca97a02405e64a5a68bbe02da49"
+      }
+    },
+    {
+      "candidateId": "flute-vsco-susnv-sfz-pilot",
+      "instrumentId": "flute",
+      "engine": "sampler",
+      "releaseStatus": "listening-candidate",
+      "candidateContentSha256": "692223503d6301f0b0d0c9ba4f3d42f9916d4ff01a49ade5bc6e4fd0dcd1d1ca",
+      "shard": {
+        "path": "./candidates/sha256/564373eae20a19574c0af4dad8c8e20fb24774f37fabdb00fdd689076e0405fb.json",
+        "sha256": "564373eae20a19574c0af4dad8c8e20fb24774f37fabdb00fdd689076e0405fb"
+      }
+    },
+    {
+      "candidateId": "air-pad-subtractive-original",
+      "instrumentId": "air_pad",
+      "engine": "synth",
+      "releaseStatus": "development-identity",
+      "candidateContentSha256": "3717480602f5d3760f07d3a4531ea5ae59c228de84492fec420d6be793848d48",
+      "shard": {
+        "path": "./candidates/sha256/802a1283ae8146d46305985c0b43b33832bf5d42348daca2cb5d7ee42a73ba48.json",
+        "sha256": "802a1283ae8146d46305985c0b43b33832bf5d42348daca2cb5d7ee42a73ba48"
+      }
+    },
+    {
+      "candidateId": "glass-bell-modal-original",
+      "instrumentId": "glass_bell",
+      "engine": "synth",
+      "releaseStatus": "development-identity",
+      "candidateContentSha256": "23a1c109541dd8fcbda429e9ef547977c42d1ea3c8f56254cd86a6090f5b3e66",
+      "shard": {
+        "path": "./candidates/sha256/9a5770e6f00ca9e14541ac1f404d29b011870db0c68e67c1894a6f6cb6d8faf5.json",
+        "sha256": "9a5770e6f00ca9e14541ac1f404d29b011870db0c68e67c1894a6f6cb6d8faf5"
+      }
+    },
+    {
+      "candidateId": "clean-bass-subtractive-original",
+      "instrumentId": "clean_bass",
+      "engine": "synth",
+      "releaseStatus": "development-identity",
+      "candidateContentSha256": "26ea8be6de3ead654e262ff34875446cd890bcfd95e8d70ab3325ef3018f0eb2",
+      "shard": {
+        "path": "./candidates/sha256/2663f1b18b2ff27e957c1d6783b159ff4f6fc7e4307218aa2c8e120f50cb1915.json",
+        "sha256": "2663f1b18b2ff27e957c1d6783b159ff4f6fc7e4307218aa2c8e120f50cb1915"
+      }
+    },
+    {
+      "candidateId": "dust-texture-subtractive-original",
+      "instrumentId": "dust_texture",
+      "engine": "synth",
+      "releaseStatus": "development-identity",
+      "candidateContentSha256": "dd3959ff09dd94d8fdeaf956cee408701d02d261f08cfd8806ded7b3ea4e4084",
+      "shard": {
+        "path": "./candidates/sha256/09df8774ae46ecadbe59d01bab1f28c362da6cc5389733dc30944e99f43c6a70.json",
+        "sha256": "09df8774ae46ecadbe59d01bab1f28c362da6cc5389733dc30944e99f43c6a70"
+      }
+    },
+    {
+      "candidateId": "lattice-pluck-subtractive-original",
+      "instrumentId": "lattice_pluck",
+      "engine": "synth",
+      "releaseStatus": "development-identity",
+      "candidateContentSha256": "ab75f87979d0d291f331f7eaa9dc9f9bf4e1f0e80ec668f253a2c6bcde87e73b",
+      "shard": {
+        "path": "./candidates/sha256/c8039c84e0697dca15e5c940fef9ac9b86327b8f28e60cb10599c98d4233ff2e.json",
+        "sha256": "c8039c84e0697dca15e5c940fef9ac9b86327b8f28e60cb10599c98d4233ff2e"
+      }
+    },
+    {
+      "candidateId": "prism-lead-subtractive-original",
+      "instrumentId": "prism_lead",
+      "engine": "synth",
+      "releaseStatus": "development-identity",
+      "candidateContentSha256": "090cfaa42f686657fe422d932239abec8f55577f7a5291c1f6eb821e1b530d53",
+      "shard": {
+        "path": "./candidates/sha256/712cac711ebd7bfff7a2692c7082fdc0185aa3fb8a2296f78cd56ef2336c6fe0.json",
+        "sha256": "712cac711ebd7bfff7a2692c7082fdc0185aa3fb8a2296f78cd56ef2336c6fe0"
+      }
+    },
+    {
+      "candidateId": "rhythm-pulse-modal-original",
+      "instrumentId": "rhythm_pulse",
+      "engine": "synth",
+      "releaseStatus": "development-identity",
+      "candidateContentSha256": "2f3c8bda957fdb7dde72c2c11a87e8a9a57859563668c0649036ca253a6754f2",
+      "shard": {
+        "path": "./candidates/sha256/c6dbf0df7778b37e940b79052933888d808df4de32e108e9aad426b3b8f2e890.json",
+        "sha256": "c6dbf0df7778b37e940b79052933888d808df4de32e108e9aad426b3b8f2e890"
+      }
+    },
+    {
+      "candidateId": "sub-bass-subtractive-original",
+      "instrumentId": "sub_bass",
+      "engine": "synth",
+      "releaseStatus": "development-identity",
+      "candidateContentSha256": "b798eff320d1816cd8365af1c5143d7d70e69894f8633622c9c09bcff75f88fd",
+      "shard": {
+        "path": "./candidates/sha256/5adb762c03296ca1f9f106b423bda8f698e71f666e32ba7c4e55ddee31012a57.json",
+        "sha256": "5adb762c03296ca1f9f106b423bda8f698e71f666e32ba7c4e55ddee31012a57"
+      }
+    },
+    {
+      "candidateId": "chamber-strings-vsco-sections-full",
+      "instrumentId": "chamber_strings",
+      "engine": "sampler",
+      "releaseStatus": "listening-candidate",
+      "candidateContentSha256": "45adc125d09ac4c08d1bf6f14e56898806768837f1d2ca0a386b6ebc3d9307de",
+      "shard": {
+        "path": "./candidates/sha256/d4855dbb23fe7f206f700dd9e53776a11d2106202cae5aae1bdd671155b6fb9a.json",
+        "sha256": "d4855dbb23fe7f206f700dd9e53776a11d2106202cae5aae1bdd671155b6fb9a"
+      }
+    },
+    {
+      "candidateId": "clarinet-vsco-suslong-full",
+      "instrumentId": "clarinet",
+      "engine": "sampler",
+      "releaseStatus": "listening-candidate",
+      "candidateContentSha256": "144e2a8e089355f8b8101844640ea30f38054dd2d5c1cb1f7403614e73bf783f",
+      "shard": {
+        "path": "./candidates/sha256/f2ef979996edd7eb99392b74cd4277da667499936d7df2ed8a1441db52c68778.json",
+        "sha256": "f2ef979996edd7eb99392b74cd4277da667499936d7df2ed8a1441db52c68778"
+      }
+    },
+    {
+      "candidateId": "harp-vsco-full",
+      "instrumentId": "harp",
+      "engine": "sampler",
+      "releaseStatus": "listening-candidate",
+      "candidateContentSha256": "d995945514b0ff70e0edfdd373e98af78c65f9fedcac9a342351d369d2ac378a",
+      "shard": {
+        "path": "./candidates/sha256/fe1c05063845d99f0bbb91235d02eeecd1ccde84631ff3e8b7df3da357ff99eb.json",
+        "sha256": "fe1c05063845d99f0bbb91235d02eeecd1ccde84631ff3e8b7df3da357ff99eb"
+      }
+    },
+    {
+      "candidateId": "marimba-vsco-full",
+      "instrumentId": "marimba",
+      "engine": "sampler",
+      "releaseStatus": "listening-candidate",
+      "candidateContentSha256": "a0285d6815659b861bc425476defc04b9cfbe3ff23df2929bfa01d6375bcf29d",
+      "shard": {
+        "path": "./candidates/sha256/28eb8f99573f7a6db40a098e75372cb4f3940f9adf0f31e320e602a2434b8d3e.json",
+        "sha256": "28eb8f99573f7a6db40a098e75372cb4f3940f9adf0f31e320e602a2434b8d3e"
+      }
+    },
+    {
+      "candidateId": "nylon-guitar-freepats-spanish-classical",
+      "instrumentId": "nylon_guitar",
+      "engine": "sampler",
+      "releaseStatus": "listening-candidate",
+      "candidateContentSha256": "126009345d28ab7f9ae3bf99ca4b632602d3871cdbf3854c8d9dd7733f05bdb8",
+      "shard": {
+        "path": "./candidates/sha256/3adda69b68dd94c987c1b304aa24cfb094c3ab620919994358d3f4a52d779eb7.json",
+        "sha256": "3adda69b68dd94c987c1b304aa24cfb094c3ab620919994358d3f4a52d779eb7"
+      }
+    },
+    {
+      "candidateId": "solo-cello-bigcat-bowed-full",
+      "instrumentId": "solo_cello",
+      "engine": "sampler",
+      "releaseStatus": "listening-candidate",
+      "candidateContentSha256": "9c395b4ac7f5155fb591e47394e843ea10cd8d8a8056ebf0a61a197a190260a4",
+      "shard": {
+        "path": "./candidates/sha256/d42d5267e3b3aa96da2c93d71bdcff7bae740a0896ab814d475e9094c77d28c6.json",
+        "sha256": "d42d5267e3b3aa96da2c93d71bdcff7bae740a0896ab814d475e9094c77d28c6"
+      }
+    },
+    {
+      "candidateId": "warm-piano-vsco-upright-full",
+      "instrumentId": "warm_piano",
+      "engine": "sampler",
+      "releaseStatus": "listening-candidate",
+      "candidateContentSha256": "0444949c89f8f998057dfa4ce633f3a385586deac2a1577ee31bc2e4b5497843",
+      "shard": {
+        "path": "./candidates/sha256/9b8333c778f0482f6ee2d6492546c5ec6d7ed06b72a383e41069926822c62edc.json",
+        "sha256": "9b8333c778f0482f6ee2d6492546c5ec6d7ed06b72a383e41069926822c62edc"
+      }
+    },
+    {
+      "candidateId": "flute-vsco-susnv-full",
+      "instrumentId": "flute",
+      "engine": "sampler",
+      "releaseStatus": "listening-candidate",
+      "candidateContentSha256": "1f1b5d89eb3330d643c04e2194efbefb77827164364856463a67220b4fc1ca40",
+      "shard": {
+        "path": "./candidates/sha256/c9a90e88b511e60d8cdd31cebef096d1bca2d106d3f0efdeead1143ca31f62b1.json",
+        "sha256": "c9a90e88b511e60d8cdd31cebef096d1bca2d106d3f0efdeead1143ca31f62b1"
+      }
+    }
+  ],
+  "contentSha256": "d95b16a57c76971b2144fa7f76410d1bb810884fc758498abfa63b842890e22f"
+}

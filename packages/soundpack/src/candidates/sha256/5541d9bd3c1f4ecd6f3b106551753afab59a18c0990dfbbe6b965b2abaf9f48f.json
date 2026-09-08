@@ -1,0 +1,51 @@
+{
+  "format": "refrain-candidate-shard@0-experimental",
+  "id": "nylon-guitar-generaluser",
+  "candidateContentSha256": "ef809914e034341487a20f7922221fb30afe62cb174f31e9e9e13f6e6e5c6edb",
+  "candidate": {
+    "id": "nylon-guitar-generaluser",
+    "instrumentId": "nylon_guitar",
+    "engine": "soundfont",
+    "assetId": "generaluser-gs-2.0.3",
+    "mapping": {
+      "type": "program",
+      "program": 24
+    },
+    "calibrationGainDb": -9,
+    "tailSeconds": 2.5,
+    "releaseStatus": "audition-fallback"
+  },
+  "assets": [
+    {
+      "id": "generaluser-gs-2.0.3",
+      "kind": "soundfont",
+      "source": {
+        "repository": "https://github.com/mrbumpy409/GeneralUser-GS",
+        "ref": "684543d5e5efaef08d02be50dcda8d552478fa60",
+        "url": "https://raw.githubusercontent.com/mrbumpy409/GeneralUser-GS/684543d5e5efaef08d02be50dcda8d552478fa60/GeneralUser-GS.sf2"
+      },
+      "localPath": "soundpacks/GeneralUser-GS.sf2",
+      "bytes": 32319396,
+      "sha256": "9575028c7a1f589f5770fccc8cff2734566af40cd26ed836944e9a5152688cfe",
+      "license": {
+        "expression": "LicenseRef-GeneralUser-GS-2.0.3",
+        "path": "third_party/GeneralUser-GS/LICENSE.txt",
+        "assetScope": "complete SoundFont bank; upstream records incomplete provenance for some contained samples"
+      },
+      "processingHistory": [
+        {
+          "operation": "byte-exact-copy",
+          "tool": "refrain-soundpack-fetch@0",
+          "inputSha256": "9575028c7a1f589f5770fccc8cff2734566af40cd26ed836944e9a5152688cfe",
+          "outputSha256": "9575028c7a1f589f5770fccc8cff2734566af40cd26ed836944e9a5152688cfe",
+          "parameters": {
+            "modified": false
+          }
+        }
+      ],
+      "releaseStatus": "audition-fallback",
+      "publicReleaseAccepted": false
+    }
+  ],
+  "contentSha256": "5541d9bd3c1f4ecd6f3b106551753afab59a18c0990dfbbe6b965b2abaf9f48f"
+}
