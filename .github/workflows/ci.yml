@@ -124,6 +124,15 @@ jobs:
           if-no-files-found: warn
           retention-days: 7
 
+      # Synthetic work fixtures only; retain views for human inspection even on success.
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        if: ${{ !cancelled() }}
+        with:
+          name: work-custody-views-${{ github.sha }}
+          path: output/playwright/work-custody/*.png
+          if-no-files-found: warn
+          retention-days: 7
+
   core-contracts:
     name: core-contracts
     if: ${{ always() }}
@@ -167,6 +176,7 @@ jobs:
       - run: npm run soundpack:fetch -- --profile e-vsco-wind-pilots@1
       - run: npm run build
       - run: npm run audio:smoke
+      - run: npm run export:repro-smoke
       - run: npm run mcp:smoke
       - run: npm run selection:smoke
       - run: npm run mcp:http-smoke

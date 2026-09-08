@@ -60,7 +60,8 @@ export default function HumView() {
         <p>{copy.compiling}</p>
       </section>
     );
-  const output = (info.responseMetadata["refrain/canvas"] ?? info.output) as
+  // MCP result metadata is optional; the complete current artifact lives in output.
+  const output = (info.responseMetadata?.["refrain/canvas"] ?? info.output) as
     HumResult | HumResultV1 | HumModelSuccessV1;
   if (!output.ok) {
     return (

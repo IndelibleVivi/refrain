@@ -1,3 +1,4 @@
+import { mkdir } from "node:fs/promises";
 import { test, expect } from "@playwright/test";
 import {
   startMcpHostHarness,
@@ -15,6 +16,7 @@ test.beforeAll(async () => {
   const musical = humV1({ air: work.document.source });
   if (!musical.ok) throw new Error("Fixture did not compile");
   // Declared synthetic host delivery: real export/production document + canonical summary.
+  // Omit optional result metadata deliberately: current artifacts must stand alone.
   // This is not a claim that a named third-party host has been exercised.
   harness = await startMcpHostHarness({
     extraCases: {
@@ -45,6 +47,10 @@ for (const device of ["desktop", "mobile"] as const) {
     context,
     page,
   }) => {
+    await page.setViewportSize({
+      width: device === "mobile" ? 390 : 1280,
+      height: 900,
+    });
     await context.addInitScript(mcpHostInitScript);
     const errors: string[] = [];
     page.on("pageerror", (error) => errors.push(error.message));
@@ -117,5 +123,9 @@ for (const device of ["desktop", "mobile"] as const) {
     expect(handoff.parentArtifact).toEqual(work.document);
     expect(evidence.unhandledExceptions).toEqual([]);
     expect(errors).toEqual([]);
+    await mkdir("output/playwright/work-custody", { recursive: true });
+    await page.locator("#refrain-app").screenshot({
+      path: `output/playwright/work-custody/mcp-${device}.png`,
+    });
   });
 }

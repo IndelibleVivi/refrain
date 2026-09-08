@@ -1,4 +1,4 @@
-import { readFile } from "node:fs/promises";
+import { mkdir, readFile } from "node:fs/promises";
 import { test, expect, type Page } from "@playwright/test";
 import { makeWorkDocument } from "../lib/work-document.js";
 import { stringifyRefrainArtifact } from "../../packages/renderer/src/portable.js";
@@ -47,6 +47,11 @@ for (const width of [1280, 390]) {
     await expect(
       page.getByRole("combobox", { name: "当前试听声音", exact: true }),
     ).toHaveValue(work.originalBindingId);
+    await mkdir("output/playwright/work-custody", { recursive: true });
+    await page.screenshot({
+      path: `output/playwright/work-custody/browser-${width}.png`,
+      fullPage: true,
+    });
     const saved = await save(page, "导出 Refrain artifact");
     expect(saved).toBe(original);
     expect(JSON.parse(saved).renderReceipts.length).toBeGreaterThan(0);
