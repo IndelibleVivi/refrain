@@ -28,3 +28,5 @@ packages/mcp-server/vite.config.d.ts.map
 tmp/
 
 apps/presentation/dist-try/
+
+apps/presentation/.demo-assets/

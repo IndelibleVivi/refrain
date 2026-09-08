@@ -17,7 +17,7 @@ import {
   verifyArtifactForPresentation,
   verifyPresentationEnvelope,
 } from "./presentation-envelope.js";
-import { firstAir } from "./first-air.js";
+import { firstAir, demoWorks, hasDemoSound } from "./first-air.js";
 import { firstListenCopy } from "./first-listen-copy.js";
 
 const VISUAL_THEMES = new Set<SelenV21ThemeId>([
@@ -202,6 +202,25 @@ export function App() {
           </p>
           <h1>{welcome.title}</h1>
           <p>{welcome.intro}</p>
+          <div
+            className="first-listen-works"
+            aria-label={locale === "zh-CN" ? "选择作品" : "Choose a work"}
+          >
+            {demoWorks.map((work) => (
+              <button
+                type="button"
+                key={work.id}
+                onClick={() => {
+                  ++revision.current;
+                  const result = firstAir(work.id);
+                  if (result.ok) setArtifact(result.artifact);
+                  setFileError(undefined);
+                }}
+              >
+                {work.title}
+              </button>
+            ))}
+          </div>
         </header>
       ) : null}
       <AirRenderer
@@ -210,7 +229,9 @@ export function App() {
         artifact={artifact}
         assets={
           firstListen || import.meta.env.MODE === "try"
-            ? {}
+            ? hasDemoSound(artifact)
+              ? { assetBaseUrl: new URL(".", window.location.href).href }
+              : {}
             : {
                 soundBankUrl: "/soundpacks/GeneralUser-GS.sf2",
                 assetBaseUrl: "",

@@ -1,20 +1,34 @@
-import { compileAirV1 } from "@refrain/compiler/v1";
-import { createRefrainArtifactV3 } from "@refrain/renderer";
-import { createRootReceiptV1 } from "@refrain/renderer/v1";
-import { F_SYNTHETIC_BEAT_PERFORMANCE_BINDING } from "@refrain/soundpack";
-import sourceText from "../../../fixtures/air-v1/synthetic-counterpulse.air.json?raw";
+import type { AnyAirArtifact } from "@refrain/renderer";
+import velvetText from "../../../examples/demo/velvet-mischief.refrain.json?raw";
+import doorText from "../../../examples/demo/after-the-door.refrain.json?raw";
 import { verifyArtifactForPresentation } from "./presentation-envelope.js";
 
-// This is the checked-in score, compiled by the same path as a supplied air.
-// The browser does not compose or contact a model.
-export function firstAir() {
-  const result = compileAirV1(sourceText);
-  if (!result.source || !result.compiled)
-    throw new Error("The first-listen score did not compile.");
-  const portable = createRefrainArtifactV3({
-    source: result.source,
-    receipt: createRootReceiptV1(result.source),
-    performanceBinding: F_SYNTHETIC_BEAT_PERFORMANCE_BINDING,
-  });
-  return verifyArtifactForPresentation(portable);
+export const demoWorks = [
+  {
+    id: "velvet-mischief",
+    title: "Velvet Mischief · 夜色偏心",
+    text: velvetText,
+  },
+  { id: "after-the-door", title: "After the Door · 门后", text: doorText },
+];
+
+const verifiedWorks = new Map(
+  demoWorks.map((work) => [
+    work.id,
+    verifyArtifactForPresentation(JSON.parse(work.text)),
+  ]),
+);
+
+export function firstAir(id = demoWorks[0]!.id) {
+  return verifiedWorks.get(id)!;
+}
+
+export function hasDemoSound(artifact: AnyAirArtifact) {
+  return [...verifiedWorks.values()].some(
+    (result) =>
+      result.ok &&
+      artifact.receipt.receiptId === result.artifact.receipt.receiptId &&
+      artifact.performanceBinding?.contentSha256 ===
+        result.artifact.performanceBinding?.contentSha256,
+  );
 }

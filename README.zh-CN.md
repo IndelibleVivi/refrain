@@ -24,7 +24,7 @@ node bin/refrain.mjs doctor
 npm run try
 ```
 
-浏览器打开后，按上方的 **播放**。直接切换四个主题、点选旋律，再用 **导出 Refrain artifact** 保存作品；页面下方可以重新打开保存的文件，也有接入自己 agent 的指引。第一次试听不需要 provider key、采样下载或完整 production build。保持终端运行；Ctrl+C 结束试听页。
+浏览器打开后，按上方的 **播放**。直接切换四个主题、点选旋律，再用 **导出 Refrain artifact** 保存作品；页面下方可以重新打开保存的文件，也有接入自己 agent 的指引。不需要 provider key；本地首次启动会准备这两首作品的音色采样。保持终端运行；Ctrl+C 结束试听页。
 
 这个本地 URL 只属于你的电脑。公共试玩页已托管在 GitHub Pages；[构建与托管说明](docs/DEVELOPMENT.md#first-listen-page)。需要音频文件时，[导出 WAV / MIDI](docs/GETTING-STARTED.md#keep-the-piece)。
 

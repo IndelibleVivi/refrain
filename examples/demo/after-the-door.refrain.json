@@ -1,0 +1,1782 @@
+{
+  "format": "refrain-artifact@3-experimental",
+  "source": {
+    "format": "air@1-experimental",
+    "conductor": {
+      "tempo": 96,
+      "meters": [
+        {
+          "bar": 1,
+          "meter": "4/4"
+        }
+      ]
+    },
+    "key": "E minor",
+    "vocabulary": {
+      "format": "refrain-air-vocabulary-closure@0-experimental",
+      "id": "refrain-core-language@1",
+      "instruments": [
+        {
+          "id": "air_pad",
+          "label": "Air pad",
+          "family": "texture",
+          "midiMin": 36,
+          "midiMax": 96,
+          "status": "active",
+          "authoringMeaning": "A restrained synthetic sustained texture used as supporting air rather than an acoustic substitute."
+        },
+        {
+          "id": "chamber_strings",
+          "label": "Chamber strings",
+          "family": "pitched",
+          "midiMin": 36,
+          "midiMax": 96,
+          "status": "active",
+          "authoringMeaning": "A blended sustained string ensemble for harmony, counterlines, and long dynamic shapes."
+        },
+        {
+          "id": "clarinet",
+          "label": "Clarinet",
+          "family": "pitched",
+          "midiMin": 50,
+          "midiMax": 94,
+          "status": "active",
+          "authoringMeaning": "A rounded sustained woodwind voice spanning warm low lines and clear upper melody."
+        },
+        {
+          "id": "clean_bass",
+          "label": "Clean bass",
+          "family": "pitched",
+          "midiMin": 28,
+          "midiMax": 67,
+          "status": "active",
+          "authoringMeaning": "A clear low-register bass voice that supports pulse and harmonic foundation."
+        },
+        {
+          "id": "dust_texture",
+          "label": "Dust texture",
+          "family": "texture",
+          "midiMin": 36,
+          "midiMax": 108,
+          "status": "active",
+          "authoringMeaning": "A deliberately unstable synthetic texture for degraded air, soft interference, and worn harmonic edges."
+        },
+        {
+          "id": "flute",
+          "label": "Flute",
+          "family": "pitched",
+          "midiMin": 60,
+          "midiMax": 96,
+          "status": "active",
+          "authoringMeaning": "A light sustained woodwind voice for exposed melody and airy upper-register motion."
+        },
+        {
+          "id": "glass_bell",
+          "label": "Glass bell",
+          "family": "texture",
+          "midiMin": 60,
+          "midiMax": 108,
+          "status": "active",
+          "authoringMeaning": "A restrained synthetic bell color for sparse high-register punctuation and returning motifs."
+        },
+        {
+          "id": "harp",
+          "label": "Harp",
+          "family": "pitched",
+          "midiMin": 24,
+          "midiMax": 103,
+          "status": "active",
+          "authoringMeaning": "A resonant concert-harp voice for separated notes, arpeggiation, and luminous harmony."
+        },
+        {
+          "id": "lattice_pluck",
+          "label": "Lattice pluck",
+          "family": "pitched",
+          "midiMin": 36,
+          "midiMax": 96,
+          "status": "active",
+          "authoringMeaning": "A short synthetic pluck for interlocking figures, pointillist harmony, and bright repeated patterns."
+        },
+        {
+          "id": "marimba",
+          "label": "Marimba",
+          "family": "pitched",
+          "midiMin": 45,
+          "midiMax": 96,
+          "status": "active",
+          "authoringMeaning": "A pitched wooden mallet voice for melodic percussion, pulse, and resonant ostinato."
+        },
+        {
+          "id": "nylon_guitar",
+          "label": "Nylon guitar",
+          "family": "pitched",
+          "midiMin": 40,
+          "midiMax": 88,
+          "status": "active",
+          "authoringMeaning": "A plucked nylon-string voice with a soft attack and short natural decay."
+        },
+        {
+          "id": "prism_lead",
+          "label": "Prism lead",
+          "family": "pitched",
+          "midiMin": 48,
+          "midiMax": 100,
+          "status": "active",
+          "authoringMeaning": "A clear synthetic lead voice for exposed motifs, bent contour, and focused upper-register lines."
+        },
+        {
+          "id": "rhythm_pulse",
+          "label": "Rhythm pulse",
+          "family": "percussion",
+          "midiMin": 36,
+          "midiMax": 51,
+          "status": "active",
+          "authoringMeaning": "A tuned electronic pulse set for kick-like anchors, clipped answers, and sparse beat-led structure.",
+          "supportedNotes": [36, 38, 42, 46, 49, 51]
+        },
+        {
+          "id": "soft_percussion",
+          "label": "Soft percussion",
+          "family": "percussion",
+          "midiMin": 36,
+          "midiMax": 51,
+          "status": "active",
+          "authoringMeaning": "A restrained unpitched kit for soft low hits, hand-drum-like accents, hats, and light color.",
+          "supportedNotes": [36, 38, 42, 46, 49, 51]
+        },
+        {
+          "id": "solo_cello",
+          "label": "Solo cello",
+          "family": "pitched",
+          "midiMin": 36,
+          "midiMax": 76,
+          "status": "active",
+          "authoringMeaning": "A single bowed cello voice for lyrical lead, bass, and expressive sustained lines."
+        },
+        {
+          "id": "sub_bass",
+          "label": "Sub bass",
+          "family": "pitched",
+          "midiMin": 24,
+          "midiMax": 72,
+          "status": "active",
+          "authoringMeaning": "A synthetic sub-bass voice for grounded fundamentals, slow pressure, and sparse low-register motion."
+        },
+        {
+          "id": "warm_piano",
+          "label": "Warm piano",
+          "family": "pitched",
+          "midiMin": 21,
+          "midiMax": 108,
+          "status": "active",
+          "authoringMeaning": "A rounded acoustic piano voice for melody, harmony, and intimate accompaniment."
+        }
+      ],
+      "techniques": [
+        {
+          "id": "ghost_return",
+          "label": "Ghost return",
+          "appliesTo": ["motif", "phrase"],
+          "operations": [
+            {
+              "type": "velocity-scale",
+              "factor": {
+                "numerator": 2,
+                "denominator": 3
+              }
+            },
+            {
+              "type": "gate-scale",
+              "factor": {
+                "numerator": 3,
+                "denominator": 4
+              }
+            }
+          ]
+        },
+        {
+          "id": "hocket_even",
+          "label": "Hocket even atoms",
+          "appliesTo": ["literal", "motif", "phrase"],
+          "operations": [
+            {
+              "type": "thin",
+              "every": 2,
+              "offset": 0
+            }
+          ]
+        },
+        {
+          "id": "turn_once",
+          "label": "Turn once",
+          "appliesTo": ["literal", "motif", "phrase"],
+          "operations": [
+            {
+              "type": "rotate",
+              "steps": 1
+            }
+          ]
+        }
+      ],
+      "contentSha256": "7c8766bca53d86e06e9cdebc11c69c619885d81e1b29096ef8ad3086c6357b46"
+    },
+    "motifs": {
+      "door": "E5/8 F#5/8 B5/4 A5/2",
+      "answer": "F#5/4 E5/8 D5/8 B4/2"
+    },
+    "phrases": [
+      {
+        "id": "threshold",
+        "segments": [
+          {
+            "id": "up",
+            "kind": "motif",
+            "motif": "door",
+            "dynamic": "mp"
+          },
+          {
+            "id": "back",
+            "kind": "motif",
+            "motif": "answer",
+            "dynamic": "mp"
+          }
+        ]
+      }
+    ],
+    "title": "After the Door · 门后",
+    "sections": [
+      {
+        "id": "glass",
+        "startBar": 1,
+        "bars": 4
+      },
+      {
+        "id": "warmth",
+        "startBar": 5,
+        "bars": 8
+      },
+      {
+        "id": "neon",
+        "startBar": 13,
+        "bars": 8
+      },
+      {
+        "id": "absence",
+        "startBar": 21,
+        "bars": 4
+      },
+      {
+        "id": "home",
+        "startBar": 25,
+        "bars": 8
+      }
+    ],
+    "voices": [
+      {
+        "id": "glass",
+        "instrument": "glass_bell",
+        "role": "lead",
+        "gainDb": -5,
+        "pan": -0.18,
+        "realize": [
+          {
+            "id": "first-light",
+            "kind": "phrase",
+            "phrase": "threshold",
+            "repeat": 2,
+            "dynamic": "mp"
+          },
+          {
+            "id": "behind-glass",
+            "kind": "rest",
+            "duration": {
+              "numerator": 32,
+              "denominator": 1
+            }
+          },
+          {
+            "id": "high-reflections",
+            "kind": "literal",
+            "part": "r/2 B5/4 r/4 | r/1 | r/2 F#6/4 r/4 | r/1",
+            "dynamic": "p",
+            "repeat": 2
+          },
+          {
+            "id": "missing",
+            "kind": "rest",
+            "duration": {
+              "numerator": 16,
+              "denominator": 1
+            }
+          },
+          {
+            "id": "listening",
+            "kind": "rest",
+            "duration": {
+              "numerator": 16,
+              "denominator": 1
+            }
+          },
+          {
+            "id": "last-door",
+            "kind": "motif",
+            "motif": "door",
+            "dynamic": "p"
+          },
+          {
+            "id": "last-answer",
+            "kind": "motif",
+            "motif": "answer",
+            "dynamic": "p"
+          },
+          {
+            "id": "last-light",
+            "kind": "literal",
+            "part": "E5/2 D5/2 | B4/1",
+            "dynamic": "pp"
+          }
+        ]
+      },
+      {
+        "id": "piano",
+        "instrument": "warm_piano",
+        "role": "lead",
+        "gainDb": -1,
+        "pan": 0.04,
+        "realize": [
+          {
+            "id": "waiting",
+            "kind": "rest",
+            "duration": {
+              "numerator": 16,
+              "denominator": 1
+            }
+          },
+          {
+            "id": "warm-door",
+            "kind": "phrase",
+            "phrase": "threshold",
+            "repeat": 3,
+            "dynamic": "mf",
+            "articulation": "tenuto"
+          },
+          {
+            "id": "warm-question",
+            "kind": "motif",
+            "motif": "door",
+            "dynamic": "mf"
+          },
+          {
+            "id": "warm-turn",
+            "kind": "literal",
+            "part": "F#5/8 E5/8 D5/4 F#5/4 A5/4",
+            "dynamic": "mp"
+          },
+          {
+            "id": "electronic-distance",
+            "kind": "rest",
+            "duration": {
+              "numerator": 32,
+              "denominator": 1
+            }
+          },
+          {
+            "id": "empty-place",
+            "kind": "rest",
+            "duration": {
+              "numerator": 16,
+              "denominator": 1
+            }
+          },
+          {
+            "id": "homecoming",
+            "kind": "phrase",
+            "phrase": "threshold",
+            "repeat": 2,
+            "dynamic": "mf",
+            "articulation": "tenuto"
+          },
+          {
+            "id": "remembered-door",
+            "kind": "motif",
+            "motif": "door",
+            "dynamic": "mf"
+          },
+          {
+            "id": "remembered-answer",
+            "kind": "motif",
+            "motif": "answer",
+            "dynamic": "mp"
+          },
+          {
+            "id": "authored-ending",
+            "kind": "literal",
+            "part": "G5/4 F#5/8 E5/8 D5/2 | B4/2 G4/2",
+            "dynamic": "p",
+            "gate": 0.95
+          }
+        ]
+      },
+      {
+        "id": "piano-room",
+        "instrument": "warm_piano",
+        "role": "harmony",
+        "gainDb": -6,
+        "pan": -0.12,
+        "realize": [
+          {
+            "id": "room-wait",
+            "kind": "rest",
+            "duration": {
+              "numerator": 16,
+              "denominator": 1
+            }
+          },
+          {
+            "id": "warm-harmony",
+            "kind": "literal",
+            "part": "[G3,B3,D4,F#4]/1 | [E3,G3,B3,D4]/1 | [F#3,A3,C4,E4]/1 | [F#3,A3,D4,E4]/1 | [G3,B3,D4,F#4]/1 | [E3,G3,B3,D4]/1 | [F#3,A3,C4,E4]/1 | [F#3,A3,D4,F#4]/1",
+            "dynamic": "p",
+            "gate": 0.92
+          },
+          {
+            "id": "room-dark",
+            "kind": "rest",
+            "duration": {
+              "numerator": 48,
+              "denominator": 1
+            }
+          },
+          {
+            "id": "home-harmony",
+            "kind": "literal",
+            "part": "[G3,B3,D4,F#4]/1 | [F#3,A3,D4,E4]/1 | [G3,B3,D4,F#4]/1 | [E3,G3,B3,D4]/1 | [G3,B3,D4,F#4]/1 | [F#3,A3,D4,E4]/1 | [E3,G3,A3,D4]/1 | [G3,B3,D4,E4]/1",
+            "dynamic": "p",
+            "gate": 0.92
+          }
+        ]
+      },
+      {
+        "id": "harp",
+        "instrument": "harp",
+        "role": "counter",
+        "gainDb": -5,
+        "pan": -0.36,
+        "realize": [
+          {
+            "id": "harp-wait",
+            "kind": "rest",
+            "duration": {
+              "numerator": 16,
+              "denominator": 1
+            }
+          },
+          {
+            "id": "warm-water",
+            "kind": "literal",
+            "part": "E3/8 B3/8 F#4/8 G4/8 B4/4 G4/4 | C3/8 G3/8 B3/8 E4/8 G4/4 E4/4 | A2/8 E3/8 G3/8 C4/8 E4/4 C4/4 | D3/8 A3/8 E4/8 F#4/8 A4/4 F#4/4",
+            "dynamic": "p",
+            "repeat": 2,
+            "gate": 0.8
+          },
+          {
+            "id": "water-still",
+            "kind": "rest",
+            "duration": {
+              "numerator": 48,
+              "denominator": 1
+            }
+          },
+          {
+            "id": "return-water",
+            "kind": "literal",
+            "part": "G3/8 D4/8 F#4/8 B4/8 A4/4 F#4/4 | D3/8 A3/8 E4/8 F#4/8 A4/4 E4/4 | E3/8 B3/8 D4/8 G4/8 F#4/4 D4/4 | C3/8 G3/8 B3/8 E4/8 D4/4 B3/4",
+            "dynamic": "p"
+          },
+          {
+            "id": "water-settles",
+            "kind": "literal",
+            "part": "G3/4 B3/4 D4/4 F#4/4 | D3/4 A3/4 E4/4 F#4/4 | C3/2 G3/2 | G3/1",
+            "dynamic": "pp"
+          }
+        ]
+      },
+      {
+        "id": "lattice",
+        "instrument": "lattice_pluck",
+        "role": "counter",
+        "gainDb": -1,
+        "pan": 0.22,
+        "realize": [
+          {
+            "id": "lattice-wait",
+            "kind": "rest",
+            "duration": {
+              "numerator": 48,
+              "denominator": 1
+            }
+          },
+          {
+            "id": "neon-door",
+            "kind": "phrase",
+            "phrase": "threshold",
+            "repeat": 3,
+            "dynamic": "mf",
+            "transform": {
+              "transpose": -12
+            },
+            "gate": 0.55
+          },
+          {
+            "id": "neon-question",
+            "kind": "motif",
+            "motif": "door",
+            "dynamic": "mf",
+            "transform": {
+              "transpose": -12
+            },
+            "gate": 0.6
+          },
+          {
+            "id": "neon-release",
+            "kind": "literal",
+            "part": "F#4/8 E4/8 D4/4 B3/4 r/4",
+            "dynamic": "mp"
+          },
+          {
+            "id": "lattice-quiet",
+            "kind": "rest",
+            "duration": {
+              "numerator": 48,
+              "denominator": 1
+            }
+          }
+        ]
+      },
+      {
+        "id": "floor",
+        "instrument": "sub_bass",
+        "role": "bass",
+        "gainDb": -5,
+        "pan": 0,
+        "realize": [
+          {
+            "id": "floor-wait",
+            "kind": "rest",
+            "duration": {
+              "numerator": 16,
+              "denominator": 1
+            }
+          },
+          {
+            "id": "warm-floor",
+            "kind": "literal",
+            "part": "E2/1 | C2/1 | A1/1 | D2/1",
+            "dynamic": "p",
+            "repeat": 2,
+            "gate": 0.85
+          },
+          {
+            "id": "neon-floor",
+            "kind": "literal",
+            "part": "E2/4 r/8 E2/8 B2/4 D3/4 | C2/4 r/8 G2/8 B2/4 G2/4 | A1/4 r/8 E2/8 G2/4 B2/4 | D2/4 r/8 A2/8 C3/4 A2/4",
+            "dynamic": "mp",
+            "repeat": 2,
+            "gate": 0.72
+          },
+          {
+            "id": "fall-away",
+            "kind": "rest",
+            "duration": {
+              "numerator": 16,
+              "denominator": 1
+            }
+          },
+          {
+            "id": "home-floor",
+            "kind": "literal",
+            "part": "G2/1 | D2/1 | E2/1 | C2/1 | G2/1 | D2/1 | C2/1 | G1/1",
+            "dynamic": "p",
+            "gate": 0.9
+          }
+        ]
+      },
+      {
+        "id": "air",
+        "instrument": "air_pad",
+        "role": "texture",
+        "gainDb": -12,
+        "pan": 0.3,
+        "realize": [
+          {
+            "id": "air-wait",
+            "kind": "rest",
+            "duration": {
+              "numerator": 8,
+              "denominator": 1
+            }
+          },
+          {
+            "id": "first-breath",
+            "kind": "literal",
+            "part": "[B3,E4]/1 | [A3,D4]/1",
+            "dynamic": "pp"
+          },
+          {
+            "id": "air-warm",
+            "kind": "rest",
+            "duration": {
+              "numerator": 32,
+              "denominator": 1
+            }
+          },
+          {
+            "id": "neon-air",
+            "kind": "literal",
+            "part": "[G3,B3,F#4]/2 r/2 | [G3,B3,E4]/2 r/2 | [G3,C4,E4]/2 r/2 | [F#3,A3,E4]/2 r/2",
+            "dynamic": "pp",
+            "repeat": 2,
+            "gate": 0.8
+          },
+          {
+            "id": "what-remains",
+            "kind": "literal",
+            "part": "[B3,F#4]/1 | [A3,E4]/1 | [G3,D4]/1 | r/1",
+            "dynamic": "pp",
+            "gate": 0.95
+          },
+          {
+            "id": "air-home",
+            "kind": "rest",
+            "duration": {
+              "numerator": 32,
+              "denominator": 1
+            }
+          }
+        ]
+      },
+      {
+        "id": "pulse",
+        "instrument": "rhythm_pulse",
+        "role": "percussion",
+        "gainDb": -8,
+        "pan": 0,
+        "realize": [
+          {
+            "id": "pulse-wait",
+            "kind": "rest",
+            "duration": {
+              "numerator": 48,
+              "denominator": 1
+            }
+          },
+          {
+            "id": "neon-pulse",
+            "kind": "literal",
+            "part": "C2/4 F#2/8 r/8 [C2,D2]/4 F#2/8 r/8 | C2/8 r/8 F#2/8 C2/8 D2/4 F#2/8 r/8",
+            "dynamic": "p",
+            "repeat": 3
+          },
+          {
+            "id": "pulse-exit",
+            "kind": "literal",
+            "part": "C2/4 F#2/8 r/8 [C2,D2]/4 F#2/8 r/8 | C2/8 r/8 F#2/8 C2/8 D2/4 F#2/8 r/8",
+            "dynamic": "pp"
+          },
+          {
+            "id": "pulse-gone",
+            "kind": "rest",
+            "duration": {
+              "numerator": 48,
+              "denominator": 1
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "receipt": {
+    "format": "refrain-receipt@1-experimental",
+    "sourceRevision": "sha256:170cd5e9f8ce2d20d835bbb5fd206c3f87276ae94d4d195c5d51cfe0112f2f88",
+    "airId": "sha256:170cd5e9f8ce2d20d835bbb5fd206c3f87276ae94d4d195c5d51cfe0112f2f88",
+    "sourceFormat": "air@1-experimental",
+    "verification": {
+      "contract": "musical-relation@1-experimental",
+      "status": "verified",
+      "motifLinks": [
+        {
+          "parent": "door",
+          "child": "door",
+          "parentAnchor": "glass:seed:1:door",
+          "childAnchor": "glass:first-light:1:door",
+          "transform": {
+            "transpose": 0,
+            "stretch": 1,
+            "invert": false,
+            "retrograde": false
+          }
+        },
+        {
+          "parent": "door",
+          "child": "door",
+          "parentAnchor": "glass:seed:1:door",
+          "childAnchor": "lattice:neon-door:1:door",
+          "transform": {
+            "transpose": -12,
+            "stretch": 1,
+            "invert": false,
+            "retrograde": false
+          }
+        },
+        {
+          "parent": "door",
+          "child": "door",
+          "parentAnchor": "glass:seed:1:door",
+          "childAnchor": "piano:warm-door:1:door",
+          "transform": {
+            "transpose": 0,
+            "stretch": 1,
+            "invert": false,
+            "retrograde": false
+          }
+        }
+      ],
+      "orchestrationLinks": [],
+      "recurrences": [
+        {
+          "motif": "door",
+          "parentCount": 1,
+          "childCount": 14
+        }
+      ],
+      "contrasts": [],
+      "absences": [
+        {
+          "motif": "door",
+          "parentAnchor": "glass:seed:1:door",
+          "childSection": "absence"
+        }
+      ],
+      "evidenceId": "sha256:3aae0d0e6b58e63d579cac1b66ab28e10b55dc4f57f9c6d6c8718e8e8c65516c"
+    },
+    "lineage": {
+      "relation": "variation",
+      "parentSourceRevision": "sha256:3668ce5cc1032532ffcd2afb04343801c3f20dc883a68a2fcfd2a995081c239a",
+      "parentReceiptId": "sha256:c6ec9331539f3866e56a88f6be68685778f9551d8c9cbd880c079489ca22f426",
+      "parentAirId": "sha256:3668ce5cc1032532ffcd2afb04343801c3f20dc883a68a2fcfd2a995081c239a"
+    },
+    "receiptId": "sha256:5e31e4f41739ee615f6c120b393061ff91e852e43685301b6ef69c33595e296c"
+  },
+  "performanceBindings": [
+    {
+      "format": "refrain-performance-binding@0-experimental",
+      "id": "f-luminous-hybrid@0",
+      "soundProfile": {
+        "format": "refrain-sound-profile@1-experimental",
+        "id": "f-luminous-hybrid@1",
+        "vocabulary": {
+          "id": "refrain-core-instruments@0",
+          "sha256": "9f6a54c1c4431812525696ebc68e517fd21e2dc7d92a0722937b640cf583e63b"
+        },
+        "selections": {
+          "warm_piano": {
+            "candidateChain": [
+              {
+                "id": "warm-piano-vsco-upright-full",
+                "sha256": "0444949c89f8f998057dfa4ce633f3a385586deac2a1577ee31bc2e4b5497843"
+              }
+            ],
+            "fallbackPolicy": "strict"
+          },
+          "nylon_guitar": {
+            "candidateChain": [
+              {
+                "id": "nylon-guitar-freepats-spanish-classical",
+                "sha256": "126009345d28ab7f9ae3bf99ca4b632602d3871cdbf3854c8d9dd7733f05bdb8"
+              }
+            ],
+            "fallbackPolicy": "strict"
+          },
+          "harp": {
+            "candidateChain": [
+              {
+                "id": "harp-vsco-full",
+                "sha256": "d995945514b0ff70e0edfdd373e98af78c65f9fedcac9a342351d369d2ac378a"
+              }
+            ],
+            "fallbackPolicy": "strict"
+          },
+          "clean_bass": {
+            "candidateChain": [
+              {
+                "id": "clean-bass-subtractive-original",
+                "sha256": "26ea8be6de3ead654e262ff34875446cd890bcfd95e8d70ab3325ef3018f0eb2"
+              }
+            ],
+            "fallbackPolicy": "strict"
+          },
+          "chamber_strings": {
+            "candidateChain": [
+              {
+                "id": "chamber-strings-vsco-sections-full",
+                "sha256": "45adc125d09ac4c08d1bf6f14e56898806768837f1d2ca0a386b6ebc3d9307de"
+              }
+            ],
+            "fallbackPolicy": "strict",
+            "profileGainDb": -1
+          },
+          "solo_cello": {
+            "candidateChain": [
+              {
+                "id": "solo-cello-bigcat-bowed-full",
+                "sha256": "9c395b4ac7f5155fb591e47394e843ea10cd8d8a8056ebf0a61a197a190260a4"
+              }
+            ],
+            "fallbackPolicy": "strict"
+          },
+          "flute": {
+            "candidateChain": [
+              {
+                "id": "flute-vsco-susnv-full",
+                "sha256": "1f1b5d89eb3330d643c04e2194efbefb77827164364856463a67220b4fc1ca40"
+              }
+            ],
+            "fallbackPolicy": "strict"
+          },
+          "clarinet": {
+            "candidateChain": [
+              {
+                "id": "clarinet-vsco-suslong-full",
+                "sha256": "144e2a8e089355f8b8101844640ea30f38054dd2d5c1cb1f7403614e73bf783f"
+              }
+            ],
+            "fallbackPolicy": "strict"
+          },
+          "marimba": {
+            "candidateChain": [
+              {
+                "id": "marimba-vsco-full",
+                "sha256": "a0285d6815659b861bc425476defc04b9cfbe3ff23df2929bfa01d6375bcf29d"
+              }
+            ],
+            "fallbackPolicy": "strict"
+          },
+          "soft_percussion": {
+            "candidateChain": [
+              {
+                "id": "soft-percussion-vcsl-acoustic-kit",
+                "sha256": "9d649c24ab7da6b57ee52686cce788cd413269a4b6da18ad49a4d171007b1f0f"
+              }
+            ],
+            "fallbackPolicy": "strict"
+          },
+          "air_pad": {
+            "candidateChain": [
+              {
+                "id": "air-pad-subtractive-original",
+                "sha256": "3717480602f5d3760f07d3a4531ea5ae59c228de84492fec420d6be793848d48"
+              }
+            ],
+            "fallbackPolicy": "strict",
+            "profileGainDb": 1
+          },
+          "glass_bell": {
+            "candidateChain": [
+              {
+                "id": "glass-bell-modal-original",
+                "sha256": "23a1c109541dd8fcbda429e9ef547977c42d1ea3c8f56254cd86a6090f5b3e66"
+              }
+            ],
+            "fallbackPolicy": "strict",
+            "profileGainDb": 1
+          },
+          "sub_bass": {
+            "candidateChain": [
+              {
+                "id": "sub-bass-subtractive-original",
+                "sha256": "b798eff320d1816cd8365af1c5143d7d70e69894f8633622c9c09bcff75f88fd"
+              }
+            ],
+            "fallbackPolicy": "strict"
+          },
+          "lattice_pluck": {
+            "candidateChain": [
+              {
+                "id": "lattice-pluck-subtractive-original",
+                "sha256": "ab75f87979d0d291f331f7eaa9dc9f9bf4e1f0e80ec668f253a2c6bcde87e73b"
+              }
+            ],
+            "fallbackPolicy": "strict",
+            "profileGainDb": 1
+          },
+          "prism_lead": {
+            "candidateChain": [
+              {
+                "id": "prism-lead-subtractive-original",
+                "sha256": "090cfaa42f686657fe422d932239abec8f55577f7a5291c1f6eb821e1b530d53"
+              }
+            ],
+            "fallbackPolicy": "strict",
+            "profileGainDb": -1
+          },
+          "dust_texture": {
+            "candidateChain": [
+              {
+                "id": "dust-texture-subtractive-original",
+                "sha256": "dd3959ff09dd94d8fdeaf956cee408701d02d261f08cfd8806ded7b3ea4e4084"
+              }
+            ],
+            "fallbackPolicy": "strict",
+            "profileGainDb": -3
+          },
+          "rhythm_pulse": {
+            "candidateChain": [
+              {
+                "id": "rhythm-pulse-modal-original",
+                "sha256": "2f3c8bda957fdb7dde72c2c11a87e8a9a57859563668c0649036ca253a6754f2"
+              }
+            ],
+            "fallbackPolicy": "strict"
+          }
+        },
+        "contentSha256": "a84ea39cb8db6a45fa3c50fd45b5a692e497e5f598a3096d8abc650debf0829f"
+      },
+      "soundProfileSha256": "a84ea39cb8db6a45fa3c50fd45b5a692e497e5f598a3096d8abc650debf0829f",
+      "renderScene": {
+        "format": "refrain-render-scene@0-experimental",
+        "id": "f-luminous-hybrid-native@0",
+        "masterGainDb": -12,
+        "peakCeiling": 0.68,
+        "velocityScale": 0.95,
+        "contentSha256": "6e47682452c17838966944b0b1be3969fb11f6861bc8ad631de557f5e14081ff"
+      },
+      "soundPalette": {
+        "format": "refrain-sound-palette@0-experimental",
+        "id": "f-luminous-hybrid@0",
+        "status": "listening-candidate",
+        "soundProfile": {
+          "id": "f-luminous-hybrid@1",
+          "sha256": "a84ea39cb8db6a45fa3c50fd45b5a692e497e5f598a3096d8abc650debf0829f"
+        },
+        "renderScene": {
+          "id": "f-luminous-hybrid-native@0",
+          "sha256": "6e47682452c17838966944b0b1be3969fb11f6861bc8ad631de557f5e14081ff"
+        },
+        "authoringGuide": "Interleave harp, flute, marimba, and high strings with air pad, glass bell, lattice pluck, and prism lead. Build brightness through recurrence, register, and complementary attacks; keep the synthetic layer articulated and motif-bearing rather than using it as a generic glow wash.",
+        "descriptors": ["luminous", "hybrid", "prismatic", "motif-forward"],
+        "strengths": [
+          "acoustic and synthetic attack pairing",
+          "clear returning motifs across timbral changes"
+        ],
+        "constraints": [
+          "Faye listening acceptance pending",
+          "avoid dense sustained stacking above the native ceiling"
+        ],
+        "intentionalContrasts": [
+          "rounded clarinet or cello against glass and lattice transients"
+        ],
+        "contentSha256": "8e2d501384a5c4bf5fda1c5dc0c718be1c4fd684050bd790038f274a95ac6926"
+      },
+      "soundPaletteSha256": "8e2d501384a5c4bf5fda1c5dc0c718be1c4fd684050bd790038f274a95ac6926",
+      "candidateDigests": {
+        "air-pad-subtractive-original": "3717480602f5d3760f07d3a4531ea5ae59c228de84492fec420d6be793848d48",
+        "chamber-strings-vsco-sections-full": "45adc125d09ac4c08d1bf6f14e56898806768837f1d2ca0a386b6ebc3d9307de",
+        "clarinet-vsco-suslong-full": "144e2a8e089355f8b8101844640ea30f38054dd2d5c1cb1f7403614e73bf783f",
+        "clean-bass-subtractive-original": "26ea8be6de3ead654e262ff34875446cd890bcfd95e8d70ab3325ef3018f0eb2",
+        "dust-texture-subtractive-original": "dd3959ff09dd94d8fdeaf956cee408701d02d261f08cfd8806ded7b3ea4e4084",
+        "flute-vsco-susnv-full": "1f1b5d89eb3330d643c04e2194efbefb77827164364856463a67220b4fc1ca40",
+        "glass-bell-modal-original": "23a1c109541dd8fcbda429e9ef547977c42d1ea3c8f56254cd86a6090f5b3e66",
+        "harp-vsco-full": "d995945514b0ff70e0edfdd373e98af78c65f9fedcac9a342351d369d2ac378a",
+        "lattice-pluck-subtractive-original": "ab75f87979d0d291f331f7eaa9dc9f9bf4e1f0e80ec668f253a2c6bcde87e73b",
+        "marimba-vsco-full": "a0285d6815659b861bc425476defc04b9cfbe3ff23df2929bfa01d6375bcf29d",
+        "nylon-guitar-freepats-spanish-classical": "126009345d28ab7f9ae3bf99ca4b632602d3871cdbf3854c8d9dd7733f05bdb8",
+        "prism-lead-subtractive-original": "090cfaa42f686657fe422d932239abec8f55577f7a5291c1f6eb821e1b530d53",
+        "rhythm-pulse-modal-original": "2f3c8bda957fdb7dde72c2c11a87e8a9a57859563668c0649036ca253a6754f2",
+        "soft-percussion-vcsl-acoustic-kit": "9d649c24ab7da6b57ee52686cce788cd413269a4b6da18ad49a4d171007b1f0f",
+        "solo-cello-bigcat-bowed-full": "9c395b4ac7f5155fb591e47394e843ea10cd8d8a8056ebf0a61a197a190260a4",
+        "sub-bass-subtractive-original": "b798eff320d1816cd8365af1c5143d7d70e69894f8633622c9c09bcff75f88fd",
+        "warm-piano-vsco-upright-full": "0444949c89f8f998057dfa4ce633f3a385586deac2a1577ee31bc2e4b5497843"
+      },
+      "permittedOverrides": ["masterGainDb", "peakCeiling", "velocityScale"],
+      "overrides": {},
+      "renderer": {
+        "contract": "refrain-renderer@1-experimental",
+        "performancePlanFormat": "performance-plan@3-experimental",
+        "adapters": [
+          "browser-direct",
+          "browser-streaming-pcm",
+          "worker-block-pcm",
+          "node-block-pcm",
+          "wav",
+          "midi"
+        ]
+      },
+      "contentSha256": "2ca72aec8a5285a10d43fb99e9f15cde10612c423461b4103fe24bb8bb3f5896"
+    }
+  ],
+  "defaultBindingId": "f-luminous-hybrid@0",
+  "renderReceipts": [
+    {
+      "format": "refrain-render-receipt@3-experimental",
+      "sourceRevision": "sha256:170cd5e9f8ce2d20d835bbb5fd206c3f87276ae94d4d195c5d51cfe0112f2f88",
+      "compilerContract": "compiled-air@1-experimental",
+      "resolverContract": "refrain-sound-resolver@1-experimental",
+      "vocabularyDigest": "sha256:9f6a54c1c4431812525696ebc68e517fd21e2dc7d92a0722937b640cf583e63b",
+      "soundClosureDigest": "sha256:87ca76f6ec04367407fcc1dbcf0b50957f36f6773e3fe860738fc05cc45fb217",
+      "soundProfileDigest": "sha256:a84ea39cb8db6a45fa3c50fd45b5a692e497e5f598a3096d8abc650debf0829f",
+      "renderSceneDigest": "sha256:6e47682452c17838966944b0b1be3969fb11f6861bc8ad631de557f5e14081ff",
+      "soundPaletteDigest": "sha256:8e2d501384a5c4bf5fda1c5dc0c718be1c4fd684050bd790038f274a95ac6926",
+      "performanceBindingDigest": "sha256:2ca72aec8a5285a10d43fb99e9f15cde10612c423461b4103fe24bb8bb3f5896",
+      "resolvedRenderProfileDigest": "sha256:c20fa020deab8909928e8cb7c75d1141687f3121ec20571bc32596ad15526954",
+      "rendererContract": "refrain-renderer@1-experimental",
+      "performancePlanDigest": "sha256:74a247195af813dc575def266aff3f96e8317439e138efc92194d093a95f5eeb",
+      "selectedCandidates": [
+        {
+          "instrumentId": "air_pad",
+          "candidateId": "air-pad-subtractive-original",
+          "candidateDigest": "sha256:3717480602f5d3760f07d3a4531ea5ae59c228de84492fec420d6be793848d48",
+          "fallbackUsed": false
+        },
+        {
+          "instrumentId": "glass_bell",
+          "candidateId": "glass-bell-modal-original",
+          "candidateDigest": "sha256:23a1c109541dd8fcbda429e9ef547977c42d1ea3c8f56254cd86a6090f5b3e66",
+          "fallbackUsed": false
+        },
+        {
+          "instrumentId": "harp",
+          "candidateId": "harp-vsco-full",
+          "candidateDigest": "sha256:d995945514b0ff70e0edfdd373e98af78c65f9fedcac9a342351d369d2ac378a",
+          "fallbackUsed": false
+        },
+        {
+          "instrumentId": "lattice_pluck",
+          "candidateId": "lattice-pluck-subtractive-original",
+          "candidateDigest": "sha256:ab75f87979d0d291f331f7eaa9dc9f9bf4e1f0e80ec668f253a2c6bcde87e73b",
+          "fallbackUsed": false
+        },
+        {
+          "instrumentId": "rhythm_pulse",
+          "candidateId": "rhythm-pulse-modal-original",
+          "candidateDigest": "sha256:2f3c8bda957fdb7dde72c2c11a87e8a9a57859563668c0649036ca253a6754f2",
+          "fallbackUsed": false
+        },
+        {
+          "instrumentId": "sub_bass",
+          "candidateId": "sub-bass-subtractive-original",
+          "candidateDigest": "sha256:b798eff320d1816cd8365af1c5143d7d70e69894f8633622c9c09bcff75f88fd",
+          "fallbackUsed": false
+        },
+        {
+          "instrumentId": "warm_piano",
+          "candidateId": "warm-piano-vsco-upright-full",
+          "candidateDigest": "sha256:0444949c89f8f998057dfa4ce633f3a385586deac2a1577ee31bc2e4b5497843",
+          "fallbackUsed": false
+        }
+      ],
+      "requiredAssets": [
+        {
+          "assetId": "harp-vsco-full-ksharp-a2-mf-1df9f4d138ca",
+          "sha256": "1df9f4d138ca3931fcb458bcdf01304cadf2e5f4eef67bbc17b0e42c0e60fce6",
+          "bytes": 2007670
+        },
+        {
+          "assetId": "harp-vsco-full-ksharp-a4-mf-3665f3975cad",
+          "sha256": "3665f3975cad4a33f46784aa4f896f4b4319ba2b7831e892d975bc38c9f09f23",
+          "bytes": 2143618
+        },
+        {
+          "assetId": "harp-vsco-full-ksharp-b3-mf-f6f71be8c640",
+          "sha256": "f6f71be8c640822ef48a448b245585659acdfcc7ed5774e10f37be2fc02fcab4",
+          "bytes": 1981130
+        },
+        {
+          "assetId": "harp-vsco-full-ksharp-c3-mf-e5d232771704",
+          "sha256": "e5d232771704e140959819de8cf2a3e0ba49d021ca77354c42664ce4fce6d9f3",
+          "bytes": 1586172
+        },
+        {
+          "assetId": "harp-vsco-full-ksharp-c5-mf-7c8b862f6fd3",
+          "sha256": "7c8b862f6fd3f1442ed87537af976d84bda8c05a5b4900e8907d570b5202a517",
+          "bytes": 1237142
+        },
+        {
+          "assetId": "harp-vsco-full-ksharp-d4-mf-ebfde8aab441",
+          "sha256": "ebfde8aab4411019e37e3426f4dd88d6a52a38c2d0261d7f10ec63d8ff584dc7",
+          "bytes": 1921690
+        },
+        {
+          "assetId": "harp-vsco-full-ksharp-e3-mf-aafa9d41ec0f",
+          "sha256": "aafa9d41ec0f77da8f2891055af8b3f9557e0ba1f1df93d53ae6e1fda07afae5",
+          "bytes": 2461138
+        },
+        {
+          "assetId": "harp-vsco-full-ksharp-f4-mf-db27ebbb3733",
+          "sha256": "db27ebbb37334c10e06f2ae63f4d9ff555e4d11704fcc6f0bcf503863867e577",
+          "bytes": 1913498
+        },
+        {
+          "assetId": "harp-vsco-full-ksharp-g3-mf-62600eb1b37b",
+          "sha256": "62600eb1b37bc2829ca65351f7ca7e506c9ae472abd5bea0765a8b8fa7df2772",
+          "bytes": 1806874
+        },
+        {
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-016-f1a3a542cf70",
+          "sha256": "f1a3a542cf70a13aa865ce130d50d72cd735449e605d1c5a45dc06b5a60b27fd",
+          "bytes": 3546940
+        },
+        {
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-018-01387cb5318c",
+          "sha256": "01387cb5318c5abf11410ae8e2f4ef6aa83ec03254b4bccfe865aba262a2e412",
+          "bytes": 3002200
+        },
+        {
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-020-08242e8d1c86",
+          "sha256": "08242e8d1c865c8cdc794cc7921d3d9663bedb5a12bfefe0de13aaa86fd23133",
+          "bytes": 3134164
+        },
+        {
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-022-660e57ad8fd8",
+          "sha256": "660e57ad8fd868ed9c56fe36e4862a6aff1cb65b7838a568d4c4f2f0865ad1ab",
+          "bytes": 4126858
+        },
+        {
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-024-916c3ec2d61f",
+          "sha256": "916c3ec2d61fb421e74fb4866ef75d3ef17e9d88e9dc858da24159846489d33f",
+          "bytes": 2222998
+        },
+        {
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-026-254be5d34270",
+          "sha256": "254be5d34270e5eb78bbda3f7425c3e82b9596845db2c065b13179f23c23196b",
+          "bytes": 3558112
+        },
+        {
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-028-a9fbd1af0703",
+          "sha256": "a9fbd1af0703b294d3267f8f88fca4b4366e3b772f7d780acf2de1cbf2056355",
+          "bytes": 1935304
+        },
+        {
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-030-d3d47e121080",
+          "sha256": "d3d47e12108098d25a490fbac30cbbf29dfac801bbebd62b969cc1fe7a8342e5",
+          "bytes": 3120676
+        },
+        {
+          "assetId": "warm-piano-vsco-upright-full-player-dyn2-rr1-026-4e668e75c392",
+          "sha256": "4e668e75c3922c79ef06bd46806224dbf8dbfa0be1569847a1cd17e573a967ec",
+          "bytes": 2656870
+        },
+        {
+          "assetId": "warm-piano-vsco-upright-full-player-dyn2-rr1-028-84fe87bd24dc",
+          "sha256": "84fe87bd24dc93d354213f730517a29f485c40715d5959af97976b364110b70a",
+          "bytes": 3008866
+        },
+        {
+          "assetId": "warm-piano-vsco-upright-full-player-dyn2-rr1-030-4b558995c108",
+          "sha256": "4b558995c108f7f1dcede12c7e0444caa2658205fea34a314abf485dc6b7e710",
+          "bytes": 3144364
+        },
+        {
+          "assetId": "warm-piano-vsco-upright-full-player-dyn2-rr1-032-8a4b127b8420",
+          "sha256": "8a4b127b8420c276d8935495d13b4e493c3eaa8f8aaef75bbc4f74d6437160f2",
+          "bytes": 2888572
+        }
+      ],
+      "verifiedAssets": [
+        {
+          "assetId": "harp-vsco-full-ksharp-a2-mf-1df9f4d138ca",
+          "bytes": 2007670,
+          "sha256": "1df9f4d138ca3931fcb458bcdf01304cadf2e5f4eef67bbc17b0e42c0e60fce6"
+        },
+        {
+          "assetId": "harp-vsco-full-ksharp-a4-mf-3665f3975cad",
+          "bytes": 2143618,
+          "sha256": "3665f3975cad4a33f46784aa4f896f4b4319ba2b7831e892d975bc38c9f09f23"
+        },
+        {
+          "assetId": "harp-vsco-full-ksharp-b3-mf-f6f71be8c640",
+          "bytes": 1981130,
+          "sha256": "f6f71be8c640822ef48a448b245585659acdfcc7ed5774e10f37be2fc02fcab4"
+        },
+        {
+          "assetId": "harp-vsco-full-ksharp-c3-mf-e5d232771704",
+          "bytes": 1586172,
+          "sha256": "e5d232771704e140959819de8cf2a3e0ba49d021ca77354c42664ce4fce6d9f3"
+        },
+        {
+          "assetId": "harp-vsco-full-ksharp-c5-mf-7c8b862f6fd3",
+          "bytes": 1237142,
+          "sha256": "7c8b862f6fd3f1442ed87537af976d84bda8c05a5b4900e8907d570b5202a517"
+        },
+        {
+          "assetId": "harp-vsco-full-ksharp-d4-mf-ebfde8aab441",
+          "bytes": 1921690,
+          "sha256": "ebfde8aab4411019e37e3426f4dd88d6a52a38c2d0261d7f10ec63d8ff584dc7"
+        },
+        {
+          "assetId": "harp-vsco-full-ksharp-e3-mf-aafa9d41ec0f",
+          "bytes": 2461138,
+          "sha256": "aafa9d41ec0f77da8f2891055af8b3f9557e0ba1f1df93d53ae6e1fda07afae5"
+        },
+        {
+          "assetId": "harp-vsco-full-ksharp-f4-mf-db27ebbb3733",
+          "bytes": 1913498,
+          "sha256": "db27ebbb37334c10e06f2ae63f4d9ff555e4d11704fcc6f0bcf503863867e577"
+        },
+        {
+          "assetId": "harp-vsco-full-ksharp-g3-mf-62600eb1b37b",
+          "bytes": 1806874,
+          "sha256": "62600eb1b37bc2829ca65351f7ca7e506c9ae472abd5bea0765a8b8fa7df2772"
+        },
+        {
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-016-f1a3a542cf70",
+          "bytes": 3546940,
+          "sha256": "f1a3a542cf70a13aa865ce130d50d72cd735449e605d1c5a45dc06b5a60b27fd"
+        },
+        {
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-018-01387cb5318c",
+          "bytes": 3002200,
+          "sha256": "01387cb5318c5abf11410ae8e2f4ef6aa83ec03254b4bccfe865aba262a2e412"
+        },
+        {
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-020-08242e8d1c86",
+          "bytes": 3134164,
+          "sha256": "08242e8d1c865c8cdc794cc7921d3d9663bedb5a12bfefe0de13aaa86fd23133"
+        },
+        {
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-022-660e57ad8fd8",
+          "bytes": 4126858,
+          "sha256": "660e57ad8fd868ed9c56fe36e4862a6aff1cb65b7838a568d4c4f2f0865ad1ab"
+        },
+        {
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-024-916c3ec2d61f",
+          "bytes": 2222998,
+          "sha256": "916c3ec2d61fb421e74fb4866ef75d3ef17e9d88e9dc858da24159846489d33f"
+        },
+        {
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-026-254be5d34270",
+          "bytes": 3558112,
+          "sha256": "254be5d34270e5eb78bbda3f7425c3e82b9596845db2c065b13179f23c23196b"
+        },
+        {
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-028-a9fbd1af0703",
+          "bytes": 1935304,
+          "sha256": "a9fbd1af0703b294d3267f8f88fca4b4366e3b772f7d780acf2de1cbf2056355"
+        },
+        {
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-030-d3d47e121080",
+          "bytes": 3120676,
+          "sha256": "d3d47e12108098d25a490fbac30cbbf29dfac801bbebd62b969cc1fe7a8342e5"
+        },
+        {
+          "assetId": "warm-piano-vsco-upright-full-player-dyn2-rr1-026-4e668e75c392",
+          "bytes": 2656870,
+          "sha256": "4e668e75c3922c79ef06bd46806224dbf8dbfa0be1569847a1cd17e573a967ec"
+        },
+        {
+          "assetId": "warm-piano-vsco-upright-full-player-dyn2-rr1-028-84fe87bd24dc",
+          "bytes": 3008866,
+          "sha256": "84fe87bd24dc93d354213f730517a29f485c40715d5959af97976b364110b70a"
+        },
+        {
+          "assetId": "warm-piano-vsco-upright-full-player-dyn2-rr1-030-4b558995c108",
+          "bytes": 3144364,
+          "sha256": "4b558995c108f7f1dcede12c7e0444caa2658205fea34a314abf485dc6b7e710"
+        },
+        {
+          "assetId": "warm-piano-vsco-upright-full-player-dyn2-rr1-032-8a4b127b8420",
+          "bytes": 2888572,
+          "sha256": "8a4b127b8420c276d8935495d13b4e493c3eaa8f8aaef75bbc4f74d6437160f2"
+        }
+      ],
+      "adapter": "wav",
+      "sampleRate": 44100,
+      "outputSha256": "sha256:b2b138c8c31bde83c8b9378d1a00896793d492fd424d2a7a4f8d4b5f3324993f",
+      "outputAmplitude": {
+        "mode": "native-gain"
+      },
+      "adaptationNotes": [
+        "The native WAV was rendered by the bounded Node block kernel and written with a two-pass peak ceiling."
+      ],
+      "renderReceiptId": "sha256:09aa659eceea8e298cf4bf0ee62017ec4aaebbf823716d4decc5ad1f48753fb1"
+    },
+    {
+      "format": "refrain-render-receipt@3-experimental",
+      "sourceRevision": "sha256:170cd5e9f8ce2d20d835bbb5fd206c3f87276ae94d4d195c5d51cfe0112f2f88",
+      "compilerContract": "compiled-air@1-experimental",
+      "resolverContract": "refrain-sound-resolver@1-experimental",
+      "vocabularyDigest": "sha256:9f6a54c1c4431812525696ebc68e517fd21e2dc7d92a0722937b640cf583e63b",
+      "soundClosureDigest": "sha256:87ca76f6ec04367407fcc1dbcf0b50957f36f6773e3fe860738fc05cc45fb217",
+      "soundProfileDigest": "sha256:a84ea39cb8db6a45fa3c50fd45b5a692e497e5f598a3096d8abc650debf0829f",
+      "renderSceneDigest": "sha256:6e47682452c17838966944b0b1be3969fb11f6861bc8ad631de557f5e14081ff",
+      "soundPaletteDigest": "sha256:8e2d501384a5c4bf5fda1c5dc0c718be1c4fd684050bd790038f274a95ac6926",
+      "performanceBindingDigest": "sha256:2ca72aec8a5285a10d43fb99e9f15cde10612c423461b4103fe24bb8bb3f5896",
+      "resolvedRenderProfileDigest": "sha256:c20fa020deab8909928e8cb7c75d1141687f3121ec20571bc32596ad15526954",
+      "rendererContract": "refrain-renderer@1-experimental",
+      "performancePlanDigest": "sha256:74a247195af813dc575def266aff3f96e8317439e138efc92194d093a95f5eeb",
+      "selectedCandidates": [
+        {
+          "instrumentId": "air_pad",
+          "candidateId": "air-pad-subtractive-original",
+          "candidateDigest": "sha256:3717480602f5d3760f07d3a4531ea5ae59c228de84492fec420d6be793848d48",
+          "fallbackUsed": false
+        },
+        {
+          "instrumentId": "glass_bell",
+          "candidateId": "glass-bell-modal-original",
+          "candidateDigest": "sha256:23a1c109541dd8fcbda429e9ef547977c42d1ea3c8f56254cd86a6090f5b3e66",
+          "fallbackUsed": false
+        },
+        {
+          "instrumentId": "harp",
+          "candidateId": "harp-vsco-full",
+          "candidateDigest": "sha256:d995945514b0ff70e0edfdd373e98af78c65f9fedcac9a342351d369d2ac378a",
+          "fallbackUsed": false
+        },
+        {
+          "instrumentId": "lattice_pluck",
+          "candidateId": "lattice-pluck-subtractive-original",
+          "candidateDigest": "sha256:ab75f87979d0d291f331f7eaa9dc9f9bf4e1f0e80ec668f253a2c6bcde87e73b",
+          "fallbackUsed": false
+        },
+        {
+          "instrumentId": "rhythm_pulse",
+          "candidateId": "rhythm-pulse-modal-original",
+          "candidateDigest": "sha256:2f3c8bda957fdb7dde72c2c11a87e8a9a57859563668c0649036ca253a6754f2",
+          "fallbackUsed": false
+        },
+        {
+          "instrumentId": "sub_bass",
+          "candidateId": "sub-bass-subtractive-original",
+          "candidateDigest": "sha256:b798eff320d1816cd8365af1c5143d7d70e69894f8633622c9c09bcff75f88fd",
+          "fallbackUsed": false
+        },
+        {
+          "instrumentId": "warm_piano",
+          "candidateId": "warm-piano-vsco-upright-full",
+          "candidateDigest": "sha256:0444949c89f8f998057dfa4ce633f3a385586deac2a1577ee31bc2e4b5497843",
+          "fallbackUsed": false
+        }
+      ],
+      "requiredAssets": [
+        {
+          "assetId": "harp-vsco-full-ksharp-a2-mf-1df9f4d138ca",
+          "sha256": "1df9f4d138ca3931fcb458bcdf01304cadf2e5f4eef67bbc17b0e42c0e60fce6",
+          "bytes": 2007670
+        },
+        {
+          "assetId": "harp-vsco-full-ksharp-a4-mf-3665f3975cad",
+          "sha256": "3665f3975cad4a33f46784aa4f896f4b4319ba2b7831e892d975bc38c9f09f23",
+          "bytes": 2143618
+        },
+        {
+          "assetId": "harp-vsco-full-ksharp-b3-mf-f6f71be8c640",
+          "sha256": "f6f71be8c640822ef48a448b245585659acdfcc7ed5774e10f37be2fc02fcab4",
+          "bytes": 1981130
+        },
+        {
+          "assetId": "harp-vsco-full-ksharp-c3-mf-e5d232771704",
+          "sha256": "e5d232771704e140959819de8cf2a3e0ba49d021ca77354c42664ce4fce6d9f3",
+          "bytes": 1586172
+        },
+        {
+          "assetId": "harp-vsco-full-ksharp-c5-mf-7c8b862f6fd3",
+          "sha256": "7c8b862f6fd3f1442ed87537af976d84bda8c05a5b4900e8907d570b5202a517",
+          "bytes": 1237142
+        },
+        {
+          "assetId": "harp-vsco-full-ksharp-d4-mf-ebfde8aab441",
+          "sha256": "ebfde8aab4411019e37e3426f4dd88d6a52a38c2d0261d7f10ec63d8ff584dc7",
+          "bytes": 1921690
+        },
+        {
+          "assetId": "harp-vsco-full-ksharp-e3-mf-aafa9d41ec0f",
+          "sha256": "aafa9d41ec0f77da8f2891055af8b3f9557e0ba1f1df93d53ae6e1fda07afae5",
+          "bytes": 2461138
+        },
+        {
+          "assetId": "harp-vsco-full-ksharp-f4-mf-db27ebbb3733",
+          "sha256": "db27ebbb37334c10e06f2ae63f4d9ff555e4d11704fcc6f0bcf503863867e577",
+          "bytes": 1913498
+        },
+        {
+          "assetId": "harp-vsco-full-ksharp-g3-mf-62600eb1b37b",
+          "sha256": "62600eb1b37bc2829ca65351f7ca7e506c9ae472abd5bea0765a8b8fa7df2772",
+          "bytes": 1806874
+        },
+        {
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-016-f1a3a542cf70",
+          "sha256": "f1a3a542cf70a13aa865ce130d50d72cd735449e605d1c5a45dc06b5a60b27fd",
+          "bytes": 3546940
+        },
+        {
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-018-01387cb5318c",
+          "sha256": "01387cb5318c5abf11410ae8e2f4ef6aa83ec03254b4bccfe865aba262a2e412",
+          "bytes": 3002200
+        },
+        {
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-020-08242e8d1c86",
+          "sha256": "08242e8d1c865c8cdc794cc7921d3d9663bedb5a12bfefe0de13aaa86fd23133",
+          "bytes": 3134164
+        },
+        {
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-022-660e57ad8fd8",
+          "sha256": "660e57ad8fd868ed9c56fe36e4862a6aff1cb65b7838a568d4c4f2f0865ad1ab",
+          "bytes": 4126858
+        },
+        {
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-024-916c3ec2d61f",
+          "sha256": "916c3ec2d61fb421e74fb4866ef75d3ef17e9d88e9dc858da24159846489d33f",
+          "bytes": 2222998
+        },
+        {
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-026-254be5d34270",
+          "sha256": "254be5d34270e5eb78bbda3f7425c3e82b9596845db2c065b13179f23c23196b",
+          "bytes": 3558112
+        },
+        {
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-028-a9fbd1af0703",
+          "sha256": "a9fbd1af0703b294d3267f8f88fca4b4366e3b772f7d780acf2de1cbf2056355",
+          "bytes": 1935304
+        },
+        {
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-030-d3d47e121080",
+          "sha256": "d3d47e12108098d25a490fbac30cbbf29dfac801bbebd62b969cc1fe7a8342e5",
+          "bytes": 3120676
+        },
+        {
+          "assetId": "warm-piano-vsco-upright-full-player-dyn2-rr1-026-4e668e75c392",
+          "sha256": "4e668e75c3922c79ef06bd46806224dbf8dbfa0be1569847a1cd17e573a967ec",
+          "bytes": 2656870
+        },
+        {
+          "assetId": "warm-piano-vsco-upright-full-player-dyn2-rr1-028-84fe87bd24dc",
+          "sha256": "84fe87bd24dc93d354213f730517a29f485c40715d5959af97976b364110b70a",
+          "bytes": 3008866
+        },
+        {
+          "assetId": "warm-piano-vsco-upright-full-player-dyn2-rr1-030-4b558995c108",
+          "sha256": "4b558995c108f7f1dcede12c7e0444caa2658205fea34a314abf485dc6b7e710",
+          "bytes": 3144364
+        },
+        {
+          "assetId": "warm-piano-vsco-upright-full-player-dyn2-rr1-032-8a4b127b8420",
+          "sha256": "8a4b127b8420c276d8935495d13b4e493c3eaa8f8aaef75bbc4f74d6437160f2",
+          "bytes": 2888572
+        }
+      ],
+      "adapter": "midi",
+      "outputSha256": "sha256:8e35e40b1feea7296db2f2d1b6d8648657a5fec5b5beb5d836a9e6cd45c6fdc6",
+      "adaptationNotes": [
+        "MIDI preserves schedule, channel, program/percussion approximation, velocity, gain, and pan where encodable; sample regions, loops, round robin, sampled releases, and synth timbre are omitted.",
+        "MIDI does not encode the RenderScene peak ceiling or other non-MIDI production treatment."
+      ],
+      "renderReceiptId": "sha256:89b16d1dd792857a49f6dd1a3b57f0db934307f30f5d6f04077a319e3d2413d3"
+    },
+    {
+      "format": "refrain-render-receipt@3-experimental",
+      "sourceRevision": "sha256:170cd5e9f8ce2d20d835bbb5fd206c3f87276ae94d4d195c5d51cfe0112f2f88",
+      "compilerContract": "compiled-air@1-experimental",
+      "resolverContract": "refrain-sound-resolver@1-experimental",
+      "vocabularyDigest": "sha256:9f6a54c1c4431812525696ebc68e517fd21e2dc7d92a0722937b640cf583e63b",
+      "soundClosureDigest": "sha256:87ca76f6ec04367407fcc1dbcf0b50957f36f6773e3fe860738fc05cc45fb217",
+      "soundProfileDigest": "sha256:a84ea39cb8db6a45fa3c50fd45b5a692e497e5f598a3096d8abc650debf0829f",
+      "renderSceneDigest": "sha256:6e47682452c17838966944b0b1be3969fb11f6861bc8ad631de557f5e14081ff",
+      "soundPaletteDigest": "sha256:8e2d501384a5c4bf5fda1c5dc0c718be1c4fd684050bd790038f274a95ac6926",
+      "performanceBindingDigest": "sha256:2ca72aec8a5285a10d43fb99e9f15cde10612c423461b4103fe24bb8bb3f5896",
+      "resolvedRenderProfileDigest": "sha256:c20fa020deab8909928e8cb7c75d1141687f3121ec20571bc32596ad15526954",
+      "rendererContract": "refrain-renderer@1-experimental",
+      "performancePlanDigest": "sha256:74a247195af813dc575def266aff3f96e8317439e138efc92194d093a95f5eeb",
+      "selectedCandidates": [
+        {
+          "instrumentId": "air_pad",
+          "candidateId": "air-pad-subtractive-original",
+          "candidateDigest": "sha256:3717480602f5d3760f07d3a4531ea5ae59c228de84492fec420d6be793848d48",
+          "fallbackUsed": false
+        },
+        {
+          "instrumentId": "glass_bell",
+          "candidateId": "glass-bell-modal-original",
+          "candidateDigest": "sha256:23a1c109541dd8fcbda429e9ef547977c42d1ea3c8f56254cd86a6090f5b3e66",
+          "fallbackUsed": false
+        },
+        {
+          "instrumentId": "harp",
+          "candidateId": "harp-vsco-full",
+          "candidateDigest": "sha256:d995945514b0ff70e0edfdd373e98af78c65f9fedcac9a342351d369d2ac378a",
+          "fallbackUsed": false
+        },
+        {
+          "instrumentId": "lattice_pluck",
+          "candidateId": "lattice-pluck-subtractive-original",
+          "candidateDigest": "sha256:ab75f87979d0d291f331f7eaa9dc9f9bf4e1f0e80ec668f253a2c6bcde87e73b",
+          "fallbackUsed": false
+        },
+        {
+          "instrumentId": "rhythm_pulse",
+          "candidateId": "rhythm-pulse-modal-original",
+          "candidateDigest": "sha256:2f3c8bda957fdb7dde72c2c11a87e8a9a57859563668c0649036ca253a6754f2",
+          "fallbackUsed": false
+        },
+        {
+          "instrumentId": "sub_bass",
+          "candidateId": "sub-bass-subtractive-original",
+          "candidateDigest": "sha256:b798eff320d1816cd8365af1c5143d7d70e69894f8633622c9c09bcff75f88fd",
+          "fallbackUsed": false
+        },
+        {
+          "instrumentId": "warm_piano",
+          "candidateId": "warm-piano-vsco-upright-full",
+          "candidateDigest": "sha256:0444949c89f8f998057dfa4ce633f3a385586deac2a1577ee31bc2e4b5497843",
+          "fallbackUsed": false
+        }
+      ],
+      "requiredAssets": [
+        {
+          "assetId": "harp-vsco-full-ksharp-a2-mf-1df9f4d138ca",
+          "sha256": "1df9f4d138ca3931fcb458bcdf01304cadf2e5f4eef67bbc17b0e42c0e60fce6",
+          "bytes": 2007670
+        },
+        {
+          "assetId": "harp-vsco-full-ksharp-a4-mf-3665f3975cad",
+          "sha256": "3665f3975cad4a33f46784aa4f896f4b4319ba2b7831e892d975bc38c9f09f23",
+          "bytes": 2143618
+        },
+        {
+          "assetId": "harp-vsco-full-ksharp-b3-mf-f6f71be8c640",
+          "sha256": "f6f71be8c640822ef48a448b245585659acdfcc7ed5774e10f37be2fc02fcab4",
+          "bytes": 1981130
+        },
+        {
+          "assetId": "harp-vsco-full-ksharp-c3-mf-e5d232771704",
+          "sha256": "e5d232771704e140959819de8cf2a3e0ba49d021ca77354c42664ce4fce6d9f3",
+          "bytes": 1586172
+        },
+        {
+          "assetId": "harp-vsco-full-ksharp-c5-mf-7c8b862f6fd3",
+          "sha256": "7c8b862f6fd3f1442ed87537af976d84bda8c05a5b4900e8907d570b5202a517",
+          "bytes": 1237142
+        },
+        {
+          "assetId": "harp-vsco-full-ksharp-d4-mf-ebfde8aab441",
+          "sha256": "ebfde8aab4411019e37e3426f4dd88d6a52a38c2d0261d7f10ec63d8ff584dc7",
+          "bytes": 1921690
+        },
+        {
+          "assetId": "harp-vsco-full-ksharp-e3-mf-aafa9d41ec0f",
+          "sha256": "aafa9d41ec0f77da8f2891055af8b3f9557e0ba1f1df93d53ae6e1fda07afae5",
+          "bytes": 2461138
+        },
+        {
+          "assetId": "harp-vsco-full-ksharp-f4-mf-db27ebbb3733",
+          "sha256": "db27ebbb37334c10e06f2ae63f4d9ff555e4d11704fcc6f0bcf503863867e577",
+          "bytes": 1913498
+        },
+        {
+          "assetId": "harp-vsco-full-ksharp-g3-mf-62600eb1b37b",
+          "sha256": "62600eb1b37bc2829ca65351f7ca7e506c9ae472abd5bea0765a8b8fa7df2772",
+          "bytes": 1806874
+        },
+        {
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-016-f1a3a542cf70",
+          "sha256": "f1a3a542cf70a13aa865ce130d50d72cd735449e605d1c5a45dc06b5a60b27fd",
+          "bytes": 3546940
+        },
+        {
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-018-01387cb5318c",
+          "sha256": "01387cb5318c5abf11410ae8e2f4ef6aa83ec03254b4bccfe865aba262a2e412",
+          "bytes": 3002200
+        },
+        {
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-020-08242e8d1c86",
+          "sha256": "08242e8d1c865c8cdc794cc7921d3d9663bedb5a12bfefe0de13aaa86fd23133",
+          "bytes": 3134164
+        },
+        {
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-022-660e57ad8fd8",
+          "sha256": "660e57ad8fd868ed9c56fe36e4862a6aff1cb65b7838a568d4c4f2f0865ad1ab",
+          "bytes": 4126858
+        },
+        {
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-024-916c3ec2d61f",
+          "sha256": "916c3ec2d61fb421e74fb4866ef75d3ef17e9d88e9dc858da24159846489d33f",
+          "bytes": 2222998
+        },
+        {
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-026-254be5d34270",
+          "sha256": "254be5d34270e5eb78bbda3f7425c3e82b9596845db2c065b13179f23c23196b",
+          "bytes": 3558112
+        },
+        {
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-028-a9fbd1af0703",
+          "sha256": "a9fbd1af0703b294d3267f8f88fca4b4366e3b772f7d780acf2de1cbf2056355",
+          "bytes": 1935304
+        },
+        {
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-030-d3d47e121080",
+          "sha256": "d3d47e12108098d25a490fbac30cbbf29dfac801bbebd62b969cc1fe7a8342e5",
+          "bytes": 3120676
+        },
+        {
+          "assetId": "warm-piano-vsco-upright-full-player-dyn2-rr1-026-4e668e75c392",
+          "sha256": "4e668e75c3922c79ef06bd46806224dbf8dbfa0be1569847a1cd17e573a967ec",
+          "bytes": 2656870
+        },
+        {
+          "assetId": "warm-piano-vsco-upright-full-player-dyn2-rr1-028-84fe87bd24dc",
+          "sha256": "84fe87bd24dc93d354213f730517a29f485c40715d5959af97976b364110b70a",
+          "bytes": 3008866
+        },
+        {
+          "assetId": "warm-piano-vsco-upright-full-player-dyn2-rr1-030-4b558995c108",
+          "sha256": "4b558995c108f7f1dcede12c7e0444caa2658205fea34a314abf485dc6b7e710",
+          "bytes": 3144364
+        },
+        {
+          "assetId": "warm-piano-vsco-upright-full-player-dyn2-rr1-032-8a4b127b8420",
+          "sha256": "8a4b127b8420c276d8935495d13b4e493c3eaa8f8aaef75bbc4f74d6437160f2",
+          "bytes": 2888572
+        }
+      ],
+      "verifiedAssets": [
+        {
+          "assetId": "harp-vsco-full-ksharp-a2-mf-1df9f4d138ca",
+          "bytes": 2007670,
+          "sha256": "1df9f4d138ca3931fcb458bcdf01304cadf2e5f4eef67bbc17b0e42c0e60fce6"
+        },
+        {
+          "assetId": "harp-vsco-full-ksharp-a4-mf-3665f3975cad",
+          "bytes": 2143618,
+          "sha256": "3665f3975cad4a33f46784aa4f896f4b4319ba2b7831e892d975bc38c9f09f23"
+        },
+        {
+          "assetId": "harp-vsco-full-ksharp-b3-mf-f6f71be8c640",
+          "bytes": 1981130,
+          "sha256": "f6f71be8c640822ef48a448b245585659acdfcc7ed5774e10f37be2fc02fcab4"
+        },
+        {
+          "assetId": "harp-vsco-full-ksharp-c3-mf-e5d232771704",
+          "bytes": 1586172,
+          "sha256": "e5d232771704e140959819de8cf2a3e0ba49d021ca77354c42664ce4fce6d9f3"
+        },
+        {
+          "assetId": "harp-vsco-full-ksharp-c5-mf-7c8b862f6fd3",
+          "bytes": 1237142,
+          "sha256": "7c8b862f6fd3f1442ed87537af976d84bda8c05a5b4900e8907d570b5202a517"
+        },
+        {
+          "assetId": "harp-vsco-full-ksharp-d4-mf-ebfde8aab441",
+          "bytes": 1921690,
+          "sha256": "ebfde8aab4411019e37e3426f4dd88d6a52a38c2d0261d7f10ec63d8ff584dc7"
+        },
+        {
+          "assetId": "harp-vsco-full-ksharp-e3-mf-aafa9d41ec0f",
+          "bytes": 2461138,
+          "sha256": "aafa9d41ec0f77da8f2891055af8b3f9557e0ba1f1df93d53ae6e1fda07afae5"
+        },
+        {
+          "assetId": "harp-vsco-full-ksharp-f4-mf-db27ebbb3733",
+          "bytes": 1913498,
+          "sha256": "db27ebbb37334c10e06f2ae63f4d9ff555e4d11704fcc6f0bcf503863867e577"
+        },
+        {
+          "assetId": "harp-vsco-full-ksharp-g3-mf-62600eb1b37b",
+          "bytes": 1806874,
+          "sha256": "62600eb1b37bc2829ca65351f7ca7e506c9ae472abd5bea0765a8b8fa7df2772"
+        },
+        {
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-016-f1a3a542cf70",
+          "bytes": 3546940,
+          "sha256": "f1a3a542cf70a13aa865ce130d50d72cd735449e605d1c5a45dc06b5a60b27fd"
+        },
+        {
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-018-01387cb5318c",
+          "bytes": 3002200,
+          "sha256": "01387cb5318c5abf11410ae8e2f4ef6aa83ec03254b4bccfe865aba262a2e412"
+        },
+        {
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-020-08242e8d1c86",
+          "bytes": 3134164,
+          "sha256": "08242e8d1c865c8cdc794cc7921d3d9663bedb5a12bfefe0de13aaa86fd23133"
+        },
+        {
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-022-660e57ad8fd8",
+          "bytes": 4126858,
+          "sha256": "660e57ad8fd868ed9c56fe36e4862a6aff1cb65b7838a568d4c4f2f0865ad1ab"
+        },
+        {
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-024-916c3ec2d61f",
+          "bytes": 2222998,
+          "sha256": "916c3ec2d61fb421e74fb4866ef75d3ef17e9d88e9dc858da24159846489d33f"
+        },
+        {
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-026-254be5d34270",
+          "bytes": 3558112,
+          "sha256": "254be5d34270e5eb78bbda3f7425c3e82b9596845db2c065b13179f23c23196b"
+        },
+        {
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-028-a9fbd1af0703",
+          "bytes": 1935304,
+          "sha256": "a9fbd1af0703b294d3267f8f88fca4b4366e3b772f7d780acf2de1cbf2056355"
+        },
+        {
+          "assetId": "warm-piano-vsco-upright-full-player-dyn1-rr1-030-d3d47e121080",
+          "bytes": 3120676,
+          "sha256": "d3d47e12108098d25a490fbac30cbbf29dfac801bbebd62b969cc1fe7a8342e5"
+        },
+        {
+          "assetId": "warm-piano-vsco-upright-full-player-dyn2-rr1-026-4e668e75c392",
+          "bytes": 2656870,
+          "sha256": "4e668e75c3922c79ef06bd46806224dbf8dbfa0be1569847a1cd17e573a967ec"
+        },
+        {
+          "assetId": "warm-piano-vsco-upright-full-player-dyn2-rr1-028-84fe87bd24dc",
+          "bytes": 3008866,
+          "sha256": "84fe87bd24dc93d354213f730517a29f485c40715d5959af97976b364110b70a"
+        },
+        {
+          "assetId": "warm-piano-vsco-upright-full-player-dyn2-rr1-030-4b558995c108",
+          "bytes": 3144364,
+          "sha256": "4b558995c108f7f1dcede12c7e0444caa2658205fea34a314abf485dc6b7e710"
+        },
+        {
+          "assetId": "warm-piano-vsco-upright-full-player-dyn2-rr1-032-8a4b127b8420",
+          "bytes": 2888572,
+          "sha256": "8a4b127b8420c276d8935495d13b4e493c3eaa8f8aaef75bbc4f74d6437160f2"
+        }
+      ],
+      "adapter": "wav",
+      "sampleRate": 44100,
+      "outputSha256": "sha256:d2de8061cdc9f23e7c6ab547c35d118fb83bc4f50519a7ee947076d3d93db3ec",
+      "outputAmplitude": {
+        "mode": "audition-peak-matched",
+        "targetPeak": 1,
+        "contract": "refrain-audition-peak-match@0-experimental"
+      },
+      "adaptationNotes": [
+        "This optional listening preview applies explicit peak matching; the native-gain WAV remains the ordinary audible projection."
+      ],
+      "renderReceiptId": "sha256:fe41637885e1fe1f316ac79c8f6061d662d44df12f0e3e9a9db18dd94bdc8aab"
+    }
+  ],
+  "projections": [
+    {
+      "format": "refrain-projection-reference@0-experimental",
+      "kind": "native-wav",
+      "filename": "after-the-door.native.wav",
+      "renderReceiptId": "sha256:09aa659eceea8e298cf4bf0ee62017ec4aaebbf823716d4decc5ad1f48753fb1"
+    },
+    {
+      "format": "refrain-projection-reference@0-experimental",
+      "kind": "midi",
+      "filename": "after-the-door.mid",
+      "renderReceiptId": "sha256:89b16d1dd792857a49f6dd1a3b57f0db934307f30f5d6f04077a319e3d2413d3"
+    },
+    {
+      "format": "refrain-projection-reference@0-experimental",
+      "kind": "audition-matched-wav",
+      "filename": "after-the-door.audition-matched.wav",
+      "renderReceiptId": "sha256:fe41637885e1fe1f316ac79c8f6061d662d44df12f0e3e9a9db18dd94bdc8aab"
+    }
+  ],
+  "caption": "一小句主题，穿过玻璃、暖光和电子脉搏；留空四小节，再回来。"
+}

@@ -63,7 +63,7 @@ export default defineConfig(({ mode }) => ({
   ...(mode === "try"
     ? {
         base: "./",
-        publicDir: false,
+        publicDir: ".demo-assets",
         build: { outDir: "dist-try" },
         resolve: {
           alias: {

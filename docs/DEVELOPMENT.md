@@ -32,11 +32,11 @@ npm run build:try
 npm run test:try
 ```
 
-`try` opens the existing presentation app with the checked-in synthetic example, local file reopening, and agent setup guidance. Its loopback server chooses the next port if 4318 is occupied. `build:try` writes a static site to `apps/presentation/dist-try/` without copying the presentation public directory, samples, SoundFonts, or worklets. It uses relative asset paths so the output can be served from a subdirectory. The output includes the selected license texts and notices for the npm modules actually bundled; it reuses the MCP Canvas guard to exclude the unused SoundFont implementation. `test:try` exercises that built site under `/refrain/` in desktop and 390px Chromium.
+`try` opens the existing presentation app with the two complete works in `examples/demo`, local file reopening, and agent setup guidance. Its loopback server chooses the next port if 4318 is occupied. `build:try` writes a static site to `apps/presentation/dist-try/` with only the exact demo sample closure from the ignored `.demo-assets` projection, never the general presentation public directory, SoundFonts, or worklets. It uses relative asset paths so the output can be served from a subdirectory. The output includes the selected license texts and notices for the npm modules actually bundled; it reuses the MCP Canvas guard to exclude the unused SoundFont implementation. `test:try` exercises that built site under `/refrain/` in desktop and 390px Chromium.
 
 To host a first listen, serve the contents of `dist-try/` over HTTPS on an operator-chosen static host. No Refrain server, model key, user account, or upload endpoint is needed. The build does not deploy anything; the public demo is hosted at https://indeliblevivi.github.io/refrain/. Preserve the selected licenses and the repository link when distributing it. Do not expose a private MCP origin to host this page.
 
-The page imports the exact checked-in `synthetic-counterpulse` score through `first-air.ts`, then uses the canonical compiler, root receipt, Artifact@3 factory, and presentation verifier. It mounts the same `AirRenderer` as the CLI/MCP paths. The example is authored music; this page does not compose. Imported artifacts retain their bindings. The static build supplies no sampled asset plane and never substitutes another sound. Ordinary CLI previews retain their prepared same-origin sample plane.
+The page imports the two exact Artifact@3 files in `examples/demo` through `first-air.ts` and the canonical presentation verifier. It mounts the same `AirRenderer` as the CLI/MCP paths. The example is authored music; this page does not compose. Imported artifacts retain their bindings. `prepare:demo` derives the union of the works’ exact asset requirements through the existing resolver and content store, verifies bytes/digests, and publishes those samples plus provenance and third-party notices. Playback uses that same-origin plane only for the featured receipt/binding identities; other imported sampled works remain unavailable rather than silently rebinding. Ordinary CLI previews retain their prepared same-origin sample plane.
 
 ## Full build and adjacent contracts
 
@@ -50,7 +50,7 @@ npm run selection:smoke
 npm run mcp:http-smoke
 ```
 
-The full build prepares sampled asset projections and can need network access. The synthetic first-use path does not require it. Fetching requires an explicit candidate/profile/palette/AIR selector; there is no fetch-all default.
+The full build prepares sampled asset projections and can need network access. The public demo is already prepared; local `try` prepares its two works on first use. Fetching requires an explicit candidate/profile/palette/AIR selector; there is no fetch-all default.
 
 For exporter/audio changes use `npm run export:repro-smoke`. For complete-piece scale use `npm run tranche:d:evidence -- --render-all`. Candidate changes require the exact packet and prior-decision checks in [AGENTS.md](../AGENTS.md); sound provenance and reproduction inputs are in [SOUND-SOURCES.md](SOUND-SOURCES.md). The local soundbench (`npm run dev`) is functional engineering UI.
 

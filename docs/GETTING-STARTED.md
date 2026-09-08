@@ -27,11 +27,11 @@ Commands below run from this checkout. No global installation is required. Optio
 npm run try
 ```
 
-The first-listen browser page opens with **Pulse leaves a door open**, a checked-in synthetic sketch. Playback controls are above the score. No AIR or MCP knowledge is needed to listen. Press **Play** (▶) to begin. Use **EN / 中文** to choose English or Chinese. The interface starts in the browser’s language (Chinese or English); a language change keeps the current playback position, selected passage, and open details. The choice lasts for this view, without storing a user profile. You can pause, restart, navigate sections, and select a motif or segment to inspect its place in the piece.
+The first-listen browser page opens with **Velvet Mischief · 夜色偏心**, with **After the Door · 门后** available beside it. Playback controls are above the score. No AIR or MCP knowledge is needed to listen. Press **Play** (▶) to begin. Use **EN / 中文** to choose English or Chinese. The interface starts in the browser’s language (Chinese or English); a language change keeps the current playback position, selected passage, and open details. The choice lasts for this view, without storing a user profile. You can pause, restart, navigate sections, and select a motif or segment to inspect its place in the piece.
 
 Use the appearance menu above the piece to switch between Paper Sonata, Prism, Nocturne Ink, and Herbarium. Theme changes retain playback, the selected passage, open details, and exact artifact bytes. Theme and instrument names, authored titles/captions, and technical diagnostic details retain their original wording. **Refrain hums an air.** is shared across languages; there is no separate translated product name.
 
-This example uses only synthetic instruments. It needs no sample download, provider key, or full production build. The first-listen process stays in the terminal; **Ctrl+C** closes it. If a browser does not open, use the loopback URL printed in the terminal. It starts on port 4318 or the next available port.
+These complete works retain their original acoustic and synthetic sounds. Local setup acquires their exact samples; the public page loads needed samples after Play. No provider key is needed. The first-listen process stays in the terminal; **Ctrl+C** closes it. If a browser does not open, use the loopback URL printed in the terminal. It starts on port 4318 or the next available port.
 
 For a specific AIR or saved artifact, use the ordinary CLI preview:
 
@@ -45,7 +45,7 @@ The preview URL is temporary and belongs to this computer. It is not a shareable
 
 ## Keep the piece
 
-Choose **Export Refrain artifact** below the piece; technical details do not need to be expanded. The saved `.refrain.json` contains the score and exact performance choices. In the first-listen page, use **Open a saved air** to return to it. File contents stay in the browser and are not uploaded. **Back to the example** returns to the built-in sketch. This page has no sample asset plane, so a sampled work remains exact but cannot play here; open it with the CLI in a runtime that has its sounds.
+Choose **Export Refrain artifact** below the piece; technical details do not need to be expanded. The saved `.refrain.json` contains the score and exact performance choices. In the first-listen page, use **Open a saved air** to return to it. File contents stay in the browser and are not uploaded. **Back to the example** returns to the built-in sketch. The page carries the two featured works’ exact sounds. Other sampled works remain exact but may need the CLI in a runtime that has their sounds.
 
 For WAV, MIDI, and the full export directory:
 

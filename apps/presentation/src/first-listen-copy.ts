@@ -5,14 +5,14 @@ export function firstListenCopy(locale: RefrainLocale) {
     ? {
         title: "先听一首，再带上你们的故事。",
         intro:
-          "这是 agent 写下的一首 air。按播放听听，换一种外观，点亮图里的旋律——它每次回来，都有迹可循。",
+          "两首由 agent 写下的完整作品。按播放听听，换一种外观，点亮图里的旋律——它每次回来，都有迹可循。",
         label: "第一次来？",
         keep: "喜欢就保存",
         keepBody:
           "在作品下方选择「导出 Refrain artifact」，把这首带走。以后用这里的「打开作品文件」重新打开。",
         open: "打开作品文件",
         local:
-          "文件只在你的浏览器中读取，不会上传。这个试听页使用合成音色；需要采样的作品请在自己的 Refrain 中打开。",
+          "文件只在你的浏览器中读取，不会上传。这两首保留原来的声音选择；按播放后加载所需音色。其他作品可能需要在自己的 Refrain 中准备音色。",
         reset: "回到这首示例",
         next: "让你的 agent 为你写一首",
         nextBody:
@@ -28,14 +28,14 @@ export function firstListenCopy(locale: RefrainLocale) {
     : {
         title: "Listen first. Bring your story next.",
         intro:
-          "An air written by an agent. Press Play, try another appearance, and touch a melody in the score. You can follow it each time it returns.",
+          "Two complete works written by an agent. Press Play, try another appearance, and touch a melody in the score. You can follow it each time it returns.",
         label: "Your first air",
         keep: "Keep what you hear",
         keepBody:
           "Choose “Export Refrain artifact” below the piece to keep it. Use “Open a saved air” here whenever you want to return.",
         open: "Open a saved air",
         local:
-          "Files are read in your browser and never uploaded. This listening page uses synthetic sounds; open works that need samples in your own Refrain runtime.",
+          "Files are read in your browser and never uploaded. These two works keep their original sounds, loaded after Play. Other works may need sounds prepared in your own Refrain runtime.",
         reset: "Back to the example",
         next: "Let your agent write one for you",
         nextBody:

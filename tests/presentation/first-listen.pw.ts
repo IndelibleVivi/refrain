@@ -32,9 +32,21 @@ for (const width of [1280, 390]) {
       "Listen first. Bring your story next.",
     );
     await expect(page.locator(".piece-title")).toHaveText(
-      "Pulse leaves a door open",
+      "Velvet Mischief · 夜色偏心",
     );
     await expect(renderer).toHaveAttribute("data-player-state", "idle");
+    await page
+      .getByRole("button", { name: "After the Door · 门后", exact: true })
+      .click();
+    await expect(page.locator(".piece-title")).toHaveText(
+      "After the Door · 门后",
+    );
+    await page
+      .getByRole("button", { name: "Velvet Mischief · 夜色偏心", exact: true })
+      .click();
+    expect(
+      requests.filter((url) => /soundpacks|\.wav|\.sf2/i.test(url)),
+    ).toEqual([]);
     const playBounds = await page
       .getByRole("button", { name: "Play", exact: true })
       .boundingBox();
@@ -111,10 +123,10 @@ for (const width of [1280, 390]) {
     const portable = JSON.parse(text);
     expect(parseRefrainArtifact(portable).ok).toBe(true);
     const source = JSON.parse(
-      await readFile("fixtures/air-v1/synthetic-counterpulse.air.json", "utf8"),
-    );
+      await readFile("examples/demo/velvet-mischief.refrain.json", "utf8"),
+    ).source;
     expect(portable.source).toEqual(source);
-    expect(portable.defaultBindingId).toBe("f-synthetic-beat@0");
+    expect(portable.defaultBindingId).toBe("velvet-mischief-native@0");
     await page.getByRole("button", { name: "停止", exact: true }).click();
     await page.locator('input[type="file"]').setInputFiles({
       name: "saved.refrain.json",
@@ -146,8 +158,8 @@ for (const width of [1280, 390]) {
       requests.every((url) => url.startsWith("http://127.0.0.1:4326/refrain/")),
     ).toBe(true);
     expect(
-      requests.filter((url) => /soundpacks|\.sf2|\.wav|spessasynth/i.test(url)),
-    ).toEqual([]);
+      requests.filter((url) => /soundpacks.*\.wav/i.test(url)).length,
+    ).toBeGreaterThan(0);
   });
 }
 
@@ -201,4 +213,26 @@ test("a saved sampled work keeps its binding and offers export without fetching 
   expect(
     requests.filter((url) => /soundpacks|\.sf2|\.wav|spessasynth/i.test(url)),
   ).toEqual([]);
+});
+
+test("After the Door plays with its original sampled binding", async ({
+  page,
+}) => {
+  const errors: string[] = [];
+  page.on("pageerror", (error) => errors.push(error.message));
+  await page.goto("./");
+  await page
+    .getByRole("button", { name: "After the Door · 门后", exact: true })
+    .click();
+  await page.getByRole("button", { name: "Play", exact: true }).click();
+  await expect(page.locator(".refrain-renderer")).toHaveAttribute(
+    "data-player-state",
+    "playing",
+  );
+  await expect
+    .poll(async () => Number(await page.locator("input.seek").inputValue()))
+    .toBeGreaterThan(0);
+  await page.getByRole("button", { name: "Stop", exact: true }).click();
+  await expect(page.locator("input.seek")).toHaveValue("0");
+  expect(errors).toEqual([]);
 });

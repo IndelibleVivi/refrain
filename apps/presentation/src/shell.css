@@ -112,3 +112,19 @@ body {
     padding-block: 16px 24px;
   }
 }
+
+.first-listen-works {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+.first-listen-works button {
+  border: 1px solid #b9c2ba;
+  border-radius: 6px;
+  padding: 10px 12px;
+  background: #f5f7f2;
+  color: #35574c;
+  font: inherit;
+  cursor: pointer;
+}
