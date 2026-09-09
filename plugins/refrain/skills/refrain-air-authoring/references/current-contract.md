@@ -12,7 +12,7 @@ This is a compact, drift-checked routing reference for the Plugin candidate. The
 
 ## Public zero-asset Canvas
 
-An omitted AIR@1 performance binding resolves visibly and exactly to `f-synthetic-beat@0`.
+For a new root, an omitted AIR@1 performance binding resolves visibly and exactly to `f-synthetic-beat@0`. Continuations inherit the parent default (or sole carried sound); zero or ambiguous bindings remain unbound. Explicit IDs choose exact parent-carried bindings before built-ins, including custom Binding@1. Keep the full parent unchanged. A view-only audition choice must be passed as an explicit child `performance.bindingId` to continue that sound; it never changes the parent default.
 
 The current self-contained Canvas can execute these eight zero-asset identities:
 

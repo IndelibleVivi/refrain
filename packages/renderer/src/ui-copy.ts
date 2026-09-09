@@ -22,6 +22,10 @@ const en = {
   voices: "voices",
   occurrences: "motif appearances",
   appearance: "Appearance",
+  auditionSound: "Sound for this listening view",
+  chooseSound: "Choose a carried sound",
+  auditionOnly:
+    "Listening choice only. Saving keeps every sound version and the original default. Copied or sent requests also name this listening choice.",
   aboutCopy:
     "Follow the voices, find a returning motif, or choose a passage to bring back into the conversation. Every mark belongs to the music in this air.",
   send: "Send to conversation",
@@ -138,6 +142,10 @@ const zh: typeof en = {
   voices: "声部",
   occurrences: "motif 出现",
   appearance: "外观",
+  auditionSound: "当前试听声音",
+  chooseSound: "选择作品携带的声音版本",
+  auditionOnly:
+    "仅切换试听；保存保留全部声音版本与原默认值。复制或发送的请求也会注明当前试听选择。",
   aboutCopy:
     "沿着声部听下去，找到再次出现的 motif，或选一段带回对话。这里的每一道痕迹，都属于这首 air。",
   send: "交给对话",

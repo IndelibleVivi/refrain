@@ -16,25 +16,19 @@ import type { HumSuccessV1 } from "@refrain/mcp-server/hum-v1";
 import {
   createInlinePresentationRef,
   createRefrainArtifact,
-  createRefrainArtifactV2,
   createRefrainArtifactV3,
   parseRefrainArtifact,
   sourceReceiptIntegrityErrors,
-  type RefrainArtifactV1,
-  type RefrainArtifactV2,
-  type RefrainArtifactV3,
+  type RefrainArtifact,
 } from "@refrain/renderer";
+import { presentPortableArtifact } from "@refrain/renderer/artifact-document";
 import { sourceReceiptIntegrityErrorsV1 } from "@refrain/renderer/v1";
 import {
   BUILT_IN_PERFORMANCE_BINDINGS,
-  DEFAULT_PERFORMANCE_BINDING,
   type PerformanceBinding,
 } from "@refrain/soundpack";
 import { type PerformanceBindingV1 } from "@refrain/soundpack/vnext";
-import {
-  selectPerformanceBinding,
-  performanceStatusForSource,
-} from "./select-performance-binding.js";
+import { performanceStatusForSource } from "./select-performance-binding.js";
 import {
   PresentationSessionStore,
   presentationSessionHandler,
@@ -67,7 +61,8 @@ try {
 
 type AnyBinding = PerformanceBinding | PerformanceBindingV1;
 
-let artifact: RefrainArtifactV1 | RefrainArtifactV2 | RefrainArtifactV3;
+let artifact: RefrainArtifact;
+let selectedBinding: AnyBinding | undefined;
 const parsedArtifact = parseRefrainArtifact(decoded);
 if (parsedArtifact.ok) {
   const imported = parsedArtifact.artifact;
@@ -82,10 +77,6 @@ if (parsedArtifact.ok) {
     throw new Error(
       "The Refrain artifact receipt does not match its canonical source.",
     );
-  const importedBindings: AnyBinding[] =
-    imported.format === "refrain-artifact@0-experimental"
-      ? []
-      : imported.performanceBindings;
   if (
     imported.format === "refrain-artifact@0-experimental" &&
     bindingArgument === undefined
@@ -93,27 +84,16 @@ if (parsedArtifact.ok) {
     throw new Error(
       "The legacy artifact is continuity-valid but audibly unbound. Pass an explicit --binding=id to open playback without silently assigning one.",
     );
-  const importedDefaultId =
-    imported.format === "refrain-artifact@0-experimental"
-      ? undefined
-      : imported.defaultBindingId;
-  const selected =
-    imported.format === "refrain-artifact@3-experimental" &&
-    bindingArgument === undefined &&
-    importedDefaultId === undefined
-      ? undefined
-      : selectPerformanceBinding({
-          builtIns: BUILT_IN_PERFORMANCE_BINDINGS,
-          imported: importedBindings,
-          runtimeDefault: DEFAULT_PERFORMANCE_BINDING,
-          ...(bindingArgument === undefined
-            ? {}
-            : { requestedId: bindingArgument }),
-          ...(importedDefaultId === undefined ? {} : { importedDefaultId }),
-        });
-  const performanceBinding = selected?.binding;
-  const performanceStatus = performanceBinding
-    ? performanceStatusForSource(performanceBinding, imported.source)
+  const presented = presentPortableArtifact(
+    imported,
+    bindingArgument,
+    BUILT_IN_PERFORMANCE_BINDINGS,
+  );
+  if (!presented.ok) throw new Error(presented.message);
+  selectedBinding = presented.artifact.performanceBinding;
+  const performanceStatus = selectedBinding
+    ? (presented.artifact.performanceStatus ??
+      performanceStatusForSource(selectedBinding, imported.source))
     : {
         status: "unavailable" as const,
         reason: "instrument-vocabulary-not-installed" as const,
@@ -121,9 +101,12 @@ if (parsedArtifact.ok) {
           "This AIR@1 artifact has no explicitly selected exact performance binding.",
         errors: ["No exact performance binding is selected."],
       };
-  if (performanceStatus.status === "unavailable" && selected?.explicit) {
+  if (
+    performanceStatus.status === "unavailable" &&
+    bindingArgument !== undefined
+  ) {
     throw new Error(
-      `Canonical AIR and receipt are valid, but requested PerformanceBinding ${performanceBinding!.id} is unavailable: ${performanceStatus.message}`,
+      `Canonical AIR and receipt are valid, but requested PerformanceBinding ${selectedBinding!.id} is unavailable: ${performanceStatus.message}`,
     );
   }
   if (performanceStatus.status === "unavailable") {
@@ -131,72 +114,7 @@ if (parsedArtifact.ok) {
       `Canonical AIR and receipt are valid. Opening structure with exact performance unavailable: ${performanceStatus.message}\n`,
     );
   }
-  artifact =
-    imported.format === "refrain-artifact@3-experimental"
-      ? createRefrainArtifactV3({
-          source: imported.source,
-          receipt: imported.receipt,
-          performanceBindings: imported.performanceBindings,
-          ...(performanceBinding === undefined
-            ? {}
-            : {
-                performanceBinding,
-                defaultBindingId: performanceBinding.id,
-              }),
-          ...(imported.renderReceipts
-            ? { renderReceipts: imported.renderReceipts }
-            : {}),
-          ...(imported.projections
-            ? { projections: imported.projections }
-            : {}),
-          ...(imported.caption === undefined
-            ? {}
-            : { caption: imported.caption }),
-        })
-      : performanceBinding!.format ===
-          "refrain-performance-binding@1-experimental"
-        ? createRefrainArtifactV2({
-            source: imported.source,
-            receipt: imported.receipt,
-            performanceBindings:
-              imported.format === "refrain-artifact@2-experimental"
-                ? imported.performanceBindings
-                : [],
-            performanceBinding: performanceBinding!,
-            defaultBindingId: performanceBinding!.id,
-            ...(imported.format === "refrain-artifact@2-experimental" &&
-            imported.renderReceipts
-              ? { renderReceipts: imported.renderReceipts }
-              : {}),
-            ...(imported.format === "refrain-artifact@2-experimental" &&
-            imported.projections
-              ? { projections: imported.projections }
-              : {}),
-            ...(imported.caption === undefined
-              ? {}
-              : { caption: imported.caption }),
-          })
-        : createRefrainArtifact({
-            source: imported.source,
-            receipt: imported.receipt,
-            performanceBindings:
-              imported.format === "refrain-artifact@1-experimental"
-                ? imported.performanceBindings
-                : [],
-            performanceBinding: performanceBinding!,
-            defaultBindingId: performanceBinding!.id,
-            ...(imported.format === "refrain-artifact@1-experimental" &&
-            imported.renderReceipts
-              ? { renderReceipts: imported.renderReceipts }
-              : {}),
-            ...(imported.format === "refrain-artifact@1-experimental" &&
-            imported.projections
-              ? { projections: imported.projections }
-              : {}),
-            ...(imported.caption === undefined
-              ? {}
-              : { caption: imported.caption }),
-          });
+  artifact = imported;
 } else {
   if (
     decoded &&
@@ -222,6 +140,7 @@ if (parsedArtifact.ok) {
         .join("\n"),
     );
   }
+  selectedBinding = result.performanceBinding;
   if (result.source.format === "air@1-experimental") {
     const current = result as HumSuccessV1;
     artifact = createRefrainArtifactV3({
@@ -252,9 +171,6 @@ async function closePreview() {
   else await rm(previewRoot, { recursive: true, force: true });
 }
 try {
-  const selectedBinding = artifact.performanceBindings.find(
-    (binding) => binding.id === artifact.defaultBindingId,
-  );
   if (
     selectedBinding &&
     performanceStatusForSource(selectedBinding, artifact.source).status ===
@@ -357,13 +273,12 @@ try {
       artifact: artifactSha256,
     }).toString();
   }
-  if (artifact.defaultBindingId)
-    url.searchParams.set("binding", artifact.defaultBindingId);
+  if (selectedBinding) url.searchParams.set("binding", selectedBinding.id);
   const report = {
     ok: true,
     url: url.toString(),
     sourceRevision: artifact.receipt.sourceRevision,
-    binding: artifact.defaultBindingId ?? null,
+    binding: selectedBinding?.id ?? null,
     delivery: inline ? "inline" : "session",
     expiresAt,
   };

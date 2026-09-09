@@ -1,19 +1,46 @@
 import { spawn, spawnSync, type ChildProcess } from "node:child_process";
-import { mkdtemp, readdir, rm } from "node:fs/promises";
+import { mkdtemp, readdir, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { resolve } from "node:path";
 import { expect, it } from "vitest";
-import { parseRefrainArtifact } from "@refrain/renderer/portable";
+import { parseAir } from "@refrain/air-schema";
+import { compileAir } from "@refrain/compiler";
+import { createExecutionBundle } from "@refrain/audio-engine/execution";
+import { createPerformancePlan } from "@refrain/audio-engine/performance";
+import {
+  createExecutionRenderReceipt,
+  createRenderReceipt,
+} from "@refrain/audio-engine/receipt";
+import {
+  createRefrainArtifact,
+  createRefrainArtifactV2,
+  parseRefrainArtifact,
+  receiptIdOf,
+  sourceRevisionOf,
+  type AirReceipt,
+  type RefrainArtifact,
+} from "@refrain/renderer";
+import {
+  F_SYNTHETIC_BEAT_PERFORMANCE_BINDING,
+  SOUND_REGISTRY,
+} from "@refrain/soundpack";
+import {
+  CORE_AUTHORING_VOCABULARY,
+  createPerformanceBindingV1,
+  createRenderSceneV1,
+  createSoundProfileV2,
+} from "@refrain/soundpack/vnext";
+import { makeWorkDocument } from "../tests/lib/work-document.js";
 
 const binary = resolve("bin/refrain.mjs");
 interface Preview {
   child: ChildProcess;
-  report: { url: string; delivery: string };
+  report: { url: string; delivery: string; binding: string | null };
 }
-async function open(cwd: string): Promise<Preview> {
+async function open(cwd: string, args: string[] = []): Promise<Preview> {
   const child = spawn(
     process.execPath,
-    [binary, "open", "work.json", "--no-open", "--json"],
+    [binary, "open", "work.json", ...args, "--no-open", "--json"],
     {
       cwd,
       env: { ...process.env, TMPDIR: cwd },
@@ -51,6 +78,127 @@ async function open(cwd: string): Promise<Preview> {
         }
       }
     });
+  });
+}
+
+async function deliveredArtifact(preview: Preview): Promise<RefrainArtifact> {
+  const url = new URL(preview.report.url);
+  const session = new URL(url.searchParams.get("sessionHref")!);
+  const response = await fetch(session);
+  expect(response.status).toBe(200);
+  return (await response.json()) as RefrainArtifact;
+}
+
+function historicalReceipt(
+  source: NonNullable<ReturnType<typeof parseAir>["source"]>,
+) {
+  const sourceRevision = sourceRevisionOf(source);
+  const core = {
+    format: "refrain-receipt@0-experimental" as const,
+    sourceRevision,
+    airId: sourceRevision,
+    sourceFormat: source.format,
+    verification: {
+      contract: "musical-relation@0-experimental" as const,
+      status: "not_applicable" as const,
+      motifLinks: [],
+    },
+  };
+  return { ...core, receiptId: receiptIdOf(core) } satisfies AirReceipt;
+}
+
+function historicalSource() {
+  const source = parseAir({
+    format: "air@0-experimental",
+    title: "Imported custody proof",
+    tempo: 120,
+    meter: "4/4",
+    motifs: {},
+    voices: [
+      {
+        id: "pad",
+        instrument: "air_pad",
+        role: "harmony",
+        part: "C4/1",
+      },
+    ],
+  }).source;
+  if (!source) throw new Error("Historical custody fixture is invalid.");
+  return source;
+}
+
+function artifactV1() {
+  const source = historicalSource();
+  const receipt = historicalReceipt(source);
+  const plan = createPerformancePlan(compileAir(source).compiled!, {
+    performanceBinding: F_SYNTHETIC_BEAT_PERFORMANCE_BINDING,
+  });
+  const renderReceipt = createRenderReceipt(plan, {
+    sourceRevision: receipt.sourceRevision,
+    adapter: "midi",
+    outputSha256: `sha256:${"1".repeat(64)}`,
+  });
+  return createRefrainArtifact({
+    source,
+    receipt,
+    performanceBindings: [F_SYNTHETIC_BEAT_PERFORMANCE_BINDING],
+    renderReceipts: [renderReceipt],
+    projections: [
+      {
+        format: "refrain-projection-reference@0-experimental",
+        kind: "midi",
+        filename: "custody-v1.mid",
+        renderReceiptId: renderReceipt.renderReceiptId,
+      },
+    ],
+    caption: "Historical Artifact@1 custody",
+  });
+}
+
+function artifactV2() {
+  const source = historicalSource();
+  const receipt = historicalReceipt(source);
+  const binding = createPerformanceBindingV1({
+    id: "historical-preview-room@1",
+    manifest: SOUND_REGISTRY,
+    soundProfile: createSoundProfileV2({
+      id: "historical-preview-profile@1",
+      vocabulary: CORE_AUTHORING_VOCABULARY,
+      selections: F_SYNTHETIC_BEAT_PERFORMANCE_BINDING.soundProfile.selections,
+    }),
+    renderScene: createRenderSceneV1({
+      id: "historical-preview-scene@1",
+      master: { gainDb: -14, peakCeiling: 0.72, velocityScale: 1 },
+      buses: [{ id: "mix", output: "master", processors: [] }],
+      routes: [{ id: "all", bus: "mix", match: {} }],
+    }),
+    requiredInstrumentIds: ["air_pad"],
+  });
+  const bundle = createExecutionBundle(compileAir(source).compiled!, {
+    sourceRevision: receipt.sourceRevision,
+    performanceBinding: binding,
+  });
+  const renderReceipt = createExecutionRenderReceipt(bundle, {
+    sourceRevision: receipt.sourceRevision,
+    adapter: "midi",
+    outputSha256: `sha256:${"2".repeat(64)}`,
+  });
+  if (renderReceipt.format !== "refrain-render-receipt@3-experimental")
+    throw new Error("Artifact@2 fixture needs RenderReceipt@3.");
+  return createRefrainArtifactV2({
+    source,
+    receipt,
+    performanceBinding: binding,
+    renderReceipts: [renderReceipt],
+    projections: [
+      {
+        format: "refrain-projection-reference@0-experimental",
+        kind: "midi",
+        filename: "custody-v2.mid",
+        renderReceiptId: renderReceipt.renderReceiptId,
+      },
+    ],
+    caption: "Historical Artifact@2 custody",
   });
 }
 async function close(child: ChildProcess, signal: NodeJS.Signals = "SIGTERM") {
@@ -117,3 +265,40 @@ it.each(["SIGINT", "SIGTERM"] as const)(
   },
   40_000,
 );
+
+it("keeps imported Artifact@1/@2/@3 documents exact while --binding changes only the preview", async () => {
+  const cwd = await mkdtemp(resolve(tmpdir(), "refrain-open-custody-"));
+  const previews: Preview[] = [];
+  const current = await makeWorkDocument();
+  try {
+    const cases = [
+      {
+        document: artifactV1(),
+        bindingId: F_SYNTHETIC_BEAT_PERFORMANCE_BINDING.id,
+      },
+      {
+        document: artifactV2(),
+        bindingId: F_SYNTHETIC_BEAT_PERFORMANCE_BINDING.id,
+      },
+      {
+        document: current.document,
+        bindingId: current.originalBindingId,
+      },
+    ];
+    for (const { document, bindingId } of cases) {
+      await writeFile(resolve(cwd, "work.json"), JSON.stringify(document));
+      const preview = await open(cwd, ["--binding", bindingId]);
+      previews.push(preview);
+      expect(preview.report).toMatchObject({ binding: bindingId });
+      expect(new URL(preview.report.url).searchParams.get("binding")).toBe(
+        bindingId,
+      );
+      expect(await deliveredArtifact(preview)).toEqual(document);
+      await close(preview.child);
+    }
+  } finally {
+    await Promise.all(previews.map((preview) => close(preview.child)));
+    await current.cleanup();
+    await rm(cwd, { recursive: true, force: true });
+  }
+}, 60_000);

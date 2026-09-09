@@ -45,11 +45,15 @@ Earlier private ChatGPT trials exercised Canvas, explicit Play/Replay, selection
 
 ## Sound and continuation
 
-The Canvas uses eight synthetic instrument identities: `air_pad`, `clean_bass`, `dust_texture`, `glass_bell`, `lattice_pluck`, `prism_lead`, `rhythm_pulse`, and `sub_bass`. An omitted AIR@1 binding visibly selects exact `f-synthetic-beat@0`. An explicit binding wins; sampled sound stays exact but unavailable in this zero-asset Canvas. Ordinary browser playback supports the selected sample closure.
+The Canvas uses eight synthetic instrument identities: `air_pad`, `clean_bass`, `dust_texture`, `glass_bell`, `lattice_pluck`, `prism_lead`, `rhythm_pulse`, and `sub_bass`. A new AIR@1 root with no binding visibly selects exact `f-synthetic-beat@0`. An explicit binding wins; sampled sound stays exact but unavailable in this zero-asset Canvas. Ordinary browser playback supports the selected sample closure.
 
 For continuation, pass the **complete prior Artifact@3** unchanged as `from.parentArtifact`, along with the newly authored AIR and relation. A bare ID is insufficient because the server does not store your works. The schema describes the evidence required for `extend`, `variation`, and `quote`; `reply` can express a declared relation without inventing verified musical proof.
 
-Selecting a motif, segment, or section can return its exact anchor and parent artifact through an explicit user action when the host permits it. Otherwise, export or copy the exact selection. Keep saved artifacts under your own custody.
+Omitting `performance.bindingId` on a continuation inherits the parent default, or its sole carried binding when there is no default. An unbound or ambiguous parent stays unbound; the root default is not substituted. An explicit ID selects an exact parent-carried binding before consulting the built-in catalog, so custom production Binding@1 works across fresh MCP processes. An inherited unavailable sound stays attached with an unavailable status. The local CLI uses this same rule; an explicit binding file is a local-only input.
+
+When an artifact carries several sounds, **Sound for this listening view** selects among them in both Canvas surfaces. Changing sound stops playback and resets position/selection; it never starts sound automatically. The choice is view-only: saving retains all bindings, render receipts, projections, caption, and the original default. A valid artifact without a selected or executable sound remains inspectable and exportable. This is not synchronized A/B playback and does not acquire extra samples; for a local sampled variant outside the prepared closure, reopen using `refrain open <file> --binding <carried-id>` after explicit acquisition.
+
+Selecting a motif, segment, or section can return its exact anchor and complete parent artifact through an explicit user action when the host permits it. Copied/sent requests also identify the currently auditioned binding; to continue that sound, the agent explicitly selects its carried ID without rewriting the parent default. The downloaded closed handoff preserves the saved parent/default and does not persist view-only audition state. Keep saved artifacts under your own custody.
 
 ## Private remote operation
 

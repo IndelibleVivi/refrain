@@ -22,7 +22,11 @@ import {
   INSTRUMENTS,
   type InstrumentId,
 } from "@refrain/soundpack";
-import { CORE_AUTHORING_VOCABULARY } from "@refrain/soundpack/vnext";
+import {
+  CORE_AUTHORING_VOCABULARY,
+  validateHistoricalPerformanceBindingV1,
+  type PerformanceBindingV1,
+} from "@refrain/soundpack/vnext";
 import { z } from "zod";
 import { compactPartDescription } from "./authoring-syntax.js";
 import {
@@ -498,6 +502,15 @@ export const humInputSchema = {
 
 export const humInputObjectSchema = z.object(humInputSchema).strict();
 
+// Internal result validation; the model-facing schema below still carries Artifact@3.
+const currentPerformanceBindingSchema = z.union([
+  performanceBindingSchema,
+  z.custom<PerformanceBindingV1>(
+    (value) => validateHistoricalPerformanceBindingV1(value).length === 0,
+    "Invalid exact Binding@1",
+  ),
+]);
+
 export const humSuccessOutputSchemaV1 = z
   .object({
     ok: z.literal(true),
@@ -505,7 +518,7 @@ export const humSuccessOutputSchemaV1 = z
     summary: compiledSummarySchemaV1,
     diagnostics: z.array(diagnosticSchema),
     receipt: receiptSchemaV1,
-    performanceBinding: performanceBindingSchema.optional(),
+    performanceBinding: currentPerformanceBindingSchema.optional(),
     performanceStatus: performanceStatusSchemaV1,
     caption: z.string().max(1000).optional(),
     presentation: presentationSchema.optional(),
@@ -519,7 +532,7 @@ export const humAnySuccessOutputSchema = z
     summary: z.union([compiledSummarySchemaV1, compiledSummarySchema]),
     diagnostics: z.array(diagnosticSchema),
     receipt: z.union([receiptSchemaV1, receiptSchema]),
-    performanceBinding: performanceBindingSchema.optional(),
+    performanceBinding: currentPerformanceBindingSchema.optional(),
     performanceStatus: performanceStatusSchemaV1.optional(),
     caption: z.string().max(1000).optional(),
     presentation: presentationSchema.optional(),
@@ -537,7 +550,10 @@ export const humAnySuccessOutputSchema = z
         message:
           "Source, summary, receipt, and performance status versions must agree.",
       });
-    if (!v1 && value.performanceBinding === undefined)
+    if (
+      !v1 &&
+      !performanceBindingSchema.safeParse(value.performanceBinding).success
+    )
       context.addIssue({
         code: "custom",
         message:
@@ -638,7 +654,19 @@ export const humAnyInputSchema = {
       "One complete AIR@1 source (current authoring contract) or an exact historical AIR@0 source.",
     ),
   caption: humInputSchema.caption,
-  performance: humInputSchema.performance,
+  performance: z
+    .object({
+      bindingId: z
+        .string()
+        .min(1)
+        .max(200)
+        .regex(/^[a-z0-9][a-z0-9_.@-]*$/)
+        .describe(
+          "Exact built-in or parent-carried binding ID. Carried identities win within their parent artifact. Omit to inherit the parent's exact selected sound, including an unbound parent; only new roots use the advertised host default.",
+        ),
+    })
+    .strict()
+    .optional(),
   from: z.union([humInputSchema.from.unwrap(), fromInputSchemaV1]).optional(),
 };
 

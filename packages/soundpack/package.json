@@ -31,6 +31,10 @@
     "./proof-packs": {
       "refrain-built": "./dist/proof-packs.js",
       "default": "./src/proof-packs.ts"
+    },
+    "./binding-status": {
+      "refrain-built": "./dist/binding-status.js",
+      "default": "./src/binding-status.ts"
     }
   },
   "scripts": {

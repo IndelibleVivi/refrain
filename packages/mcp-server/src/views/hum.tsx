@@ -8,6 +8,7 @@ import {
   type DownloadArtifact,
   type RefrainArtifactV3,
 } from "@refrain/renderer";
+import { presentPortableArtifact } from "@refrain/renderer/artifact-document";
 import { compileAnyAir } from "@refrain/compiler/any";
 import { performanceBindingShapeIsValid } from "@refrain/soundpack";
 import {
@@ -59,7 +60,8 @@ export default function HumView() {
         <p>{copy.compiling}</p>
       </section>
     );
-  const output = (info.responseMetadata["refrain/canvas"] ?? info.output) as
+  // MCP result metadata is optional; the complete current artifact lives in output.
+  const output = (info.responseMetadata?.["refrain/canvas"] ?? info.output) as
     HumResult | HumResultV1 | HumModelSuccessV1;
   if (!output.ok) {
     return (
@@ -89,57 +91,58 @@ export default function HumView() {
   const receipt = carriedArtifact
     ? carriedArtifact.receipt
     : ordinaryOutput!.receipt;
-  const carriedBinding = carriedArtifact
-    ? (carriedArtifact.performanceBindings.find(
-        (binding) => binding.id === carriedArtifact.defaultBindingId,
-      ) ??
-      (carriedArtifact.performanceBindings.length === 1
-        ? carriedArtifact.performanceBindings[0]
-        : undefined))
-    : ordinaryOutput!.performanceBinding;
-  const local = compileAnyAir(source);
-  if (!local.compiled) {
-    return (
-      <section lang={locale} aria-label={copy.diagnostics}>
-        {languageSwitch}
-        <h1>{copy.reconstructionFailed}</h1>
-        <ul>
-          {local.diagnostics.map((item) => (
-            <li key={`${item.code}-${item.path}`}>
-              <code>{item.path}</code> — {item.message}
-            </li>
-          ))}
-        </ul>
-      </section>
-    );
+  let artifact: AnyAirArtifact;
+  if (carriedArtifact) {
+    const presented = presentPortableArtifact(carriedArtifact);
+    if (!presented.ok)
+      return (
+        <section lang={locale} aria-label={copy.diagnostics}>
+          {languageSwitch}
+          <h1>{copy.reconstructionFailed}</h1>
+          <p>{presented.message}</p>
+        </section>
+      );
+    artifact = presented.artifact;
+  } else {
+    const local = compileAnyAir(source);
+    if (!local.compiled)
+      return (
+        <section lang={locale} aria-label={copy.diagnostics}>
+          {languageSwitch}
+          <h1>{copy.reconstructionFailed}</h1>
+          <ul>
+            {local.diagnostics.map((item) => (
+              <li key={`${item.code}-${item.path}`}>
+                {item.path} — {item.message}
+              </li>
+            ))}
+          </ul>
+        </section>
+      );
+    const binding = ordinaryOutput!.performanceBinding;
+    const shared = {
+      diagnostics: output.diagnostics,
+      ...(performanceBindingShapeIsValid(binding)
+        ? { performanceBinding: binding }
+        : {}),
+      ...(output.caption === undefined ? {} : { caption: output.caption }),
+    };
+    artifact =
+      source.format === "air@1-experimental"
+        ? {
+            ...shared,
+            source,
+            compiled:
+              local.compiled as import("@refrain/compiler/v1").CompiledAirV1,
+            receipt: receipt as import("@refrain/renderer/v1").AirReceiptV1,
+          }
+        : {
+            ...shared,
+            source,
+            compiled: local.compiled as import("@refrain/compiler").CompiledAir,
+            receipt: receipt as import("@refrain/renderer").AirReceipt,
+          };
   }
-  const performanceBinding = performanceBindingShapeIsValid(carriedBinding)
-    ? carriedBinding
-    : undefined;
-  const artifact: AnyAirArtifact =
-    source.format === "air@1-experimental"
-      ? {
-          source,
-          compiled:
-            local.compiled as import("@refrain/compiler/v1").CompiledAirV1,
-          diagnostics: output.diagnostics,
-          receipt: receipt as import("@refrain/renderer/v1").AirReceiptV1,
-          ...(performanceBinding ? { performanceBinding } : {}),
-          performanceStatus: (
-            output as Extract<HumResultV1, { ok: true }> | HumModelSuccessV1
-          ).performanceStatus,
-          ...(output.caption !== undefined ? { caption: output.caption } : {}),
-          ...(output.presentation ? { presentation: output.presentation } : {}),
-        }
-      : {
-          source,
-          compiled: local.compiled as import("@refrain/compiler").CompiledAir,
-          diagnostics: output.diagnostics,
-          receipt: receipt as import("@refrain/renderer").AirReceipt,
-          ...(performanceBinding ? { performanceBinding } : {}),
-          ...(output.caption !== undefined ? { caption: output.caption } : {}),
-          ...(output.presentation ? { presentation: output.presentation } : {}),
-        };
 
   const hostDownload = async (file: DownloadArtifact) => {
     const openai = typeof window === "undefined" ? undefined : window.openai;
