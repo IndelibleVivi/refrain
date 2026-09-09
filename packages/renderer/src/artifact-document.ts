@@ -1,7 +1,10 @@
 import { compileAnyAir } from "@refrain/compiler/any";
 import type { CompiledAir } from "@refrain/compiler";
 import type { CompiledAirV1 } from "@refrain/compiler/v1";
-import { performanceStatusForSource } from "@refrain/soundpack/binding-status";
+import {
+  performanceStatusForSource,
+  type ExactPerformanceBinding,
+} from "@refrain/soundpack/binding-status";
 import {
   createRefrainArtifact,
   createRefrainArtifactV2,
@@ -46,16 +49,19 @@ export function portableArtifactForView(view: AnyAirArtifact): RefrainArtifact {
       });
 }
 
-/** Choose a carried sound for this view only. The saved default stays untouched. */
+/** Choose a carried or explicitly supplied preview sound without changing the document. */
 export function withAuditionBinding(
   view: AnyAirArtifact,
   bindingId?: string,
+  previewBindings: readonly ExactPerformanceBinding[] = [],
 ): AnyAirArtifact {
   const document = portableArtifactForView(view);
-  const binding = carriedBindings(document).find((b) => b.id === bindingId);
+  const binding =
+    carriedBindings(document).find((candidate) => candidate.id === bindingId) ??
+    previewBindings.find((candidate) => candidate.id === bindingId);
   if (bindingId !== undefined && !binding)
     throw new Error(
-      `PerformanceBinding ${bindingId} is not carried by this artifact.`,
+      `PerformanceBinding ${bindingId} is unavailable to this presentation.`,
     );
   const {
     performanceBinding: _binding,
@@ -78,6 +84,7 @@ export function withAuditionBinding(
 export function presentPortableArtifact(
   value: unknown,
   requestedBindingId?: string,
+  previewBindings: readonly ExactPerformanceBinding[] = [],
 ): ArtifactPresentationResult {
   const parsed = parseRefrainArtifact(value);
   if (!parsed.ok) return { ok: false, message: parsed.errors.join(" ") };
@@ -113,7 +120,10 @@ export function presentPortableArtifact(
           compiled: compilation.compiled as CompiledAir,
         };
   try {
-    return { ok: true, artifact: withAuditionBinding(view, bindingId) };
+    return {
+      ok: true,
+      artifact: withAuditionBinding(view, bindingId, previewBindings),
+    };
   } catch (cause) {
     return {
       ok: false,

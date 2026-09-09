@@ -1,6 +1,6 @@
 # Current state
 
-Last reconciled: 2026-09-09. This page describes source and acceptance status, not a live deployment inventory.
+Last reconciled: 2026-09-10. This page describes source and acceptance status, not a live deployment inventory.
 
 ## Available in this source tree
 
@@ -17,11 +17,11 @@ Last reconciled: 2026-09-09. This page describes source and acceptance status, n
 
 ## Work custody and continuation candidate
 
-Browser file/URL and current MCP Canvas delivery now share the strict complete-document presentation boundary. Save and selection handoff retain every carried binding, render receipt, projection, caption, and the saved default. Multiple sounds have a view-only selector; changing it stops/reset playback without auto-play. Unbound/ambiguous valid files still display structure and remain exportable. The selector does not hydrate missing samples or claim synchronized comparison.
+Browser file/URL and current MCP Canvas delivery now share the strict complete-document presentation boundary. Save and selection handoff retain every carried binding, render receipt, projection, caption, and the saved default. Multiple sounds have a view-only selector; changing it stops/reset playback without auto-play. `refrain open --binding` likewise keeps an imported Artifact@1/@2/@3 document unchanged and passes the exact preview binding separately to the browser and asset preparation. Unbound/ambiguous valid files still display structure and remain exportable. The selector does not hydrate missing samples or claim synchronized comparison.
 
 CLI and MCP continuation share exact selection: an explicit carried ID precedes built-ins; otherwise inherit the parent's default or sole binding, including custom production Binding@1. Zero or ambiguous bindings remain unbound. New roots alone receive the host default. Missing runtime sound stays bound but unavailable. Current generated URLs carry digest-verified Artifact@3 rather than widening historical presentation-envelope formats.
 
-Focused regressions use synthetic scores, actual CLI native-WAV/MIDI export, real production bindings, complete-document comparison and fresh stdio MCP processes. New Chromium scenarios cover production archive save/reopen and selection on desktop/mobile browser and declared MCP host profiles. Local navigation in the isolated implementation environment was administratively blocked; builds and protocol/unit checks do not substitute for those browser scenarios. The PR records the final CI results separately. This candidate has not been merged, deployed, tested on physical iOS, or listened to by a person.
+Focused regressions use synthetic scores, actual CLI native-WAV/MIDI export, real production bindings, complete-document comparison and fresh stdio MCP processes. A process-level CLI-open regression now verifies exact Artifact@1/@2/@3 delivery while a separate binding drives the preview. New Chromium scenarios cover production archive save/reopen and selection on desktop/mobile browser and declared MCP host profiles. Local navigation in the isolated implementation environment was administratively blocked; builds and protocol/unit checks do not substitute for those browser scenarios. The PR records the final CI results separately. This candidate has not been merged, deployed, tested on physical iOS, or listened to by a person.
 
 Out of scope for this round: natural-end replay, AudioContext interruption recovery, scheduler lateness and effect-tail lifecycle; lazy acquisition for alternate sampled bindings; synchronized passage comparison, vocabulary bootstrap and tempo automation. These remain separate audit findings, not implied fixes.
 

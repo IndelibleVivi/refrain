@@ -161,6 +161,19 @@ it("preserves a legacy unbound generation and rejects invalid or unknown request
   expect(verifyArtifactForPresentation(legacy, "invented-sound").ok).toBe(
     false,
   );
+  const previewed = verifyArtifactForPresentation(
+    legacy,
+    F_SYNTHETIC_BEAT_PERFORMANCE_BINDING.id,
+  );
+  expect(previewed).toMatchObject({
+    ok: true,
+    artifact: {
+      performanceBinding: { id: F_SYNTHETIC_BEAT_PERFORMANCE_BINDING.id },
+      portableArtifact: legacy,
+    },
+  });
+  if (previewed.ok)
+    expect(portableArtifactForView(previewed.artifact)).toEqual(legacy);
   expect(
     verifyArtifactForPresentation({
       ...legacy,

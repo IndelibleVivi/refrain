@@ -20,9 +20,11 @@ import {
 } from "@refrain/renderer/v1";
 import {
   DEFAULT_PERFORMANCE_BINDING,
+  BUILT_IN_PERFORMANCE_BINDINGS,
   performanceBindingShapeIsValid,
   resolvePerformanceBindingAgainstRuntime,
 } from "@refrain/soundpack";
+import { presentPortableArtifact } from "@refrain/renderer/artifact-document";
 
 export type PresentationVerification =
   { ok: true; artifact: AnyAirArtifact } | { ok: false; message: string };
@@ -163,4 +165,13 @@ export async function verifyPresentationEnvelope(
   };
 }
 
-export { presentPortableArtifact as verifyArtifactForPresentation } from "@refrain/renderer/artifact-document";
+export function verifyArtifactForPresentation(
+  value: unknown,
+  requestedBindingId?: string,
+): PresentationVerification {
+  return presentPortableArtifact(
+    value,
+    requestedBindingId,
+    BUILT_IN_PERFORMANCE_BINDINGS,
+  );
+}
