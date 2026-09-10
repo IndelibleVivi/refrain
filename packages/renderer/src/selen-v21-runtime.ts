@@ -19,6 +19,12 @@ export interface SelenV21RuntimeState {
   playing: boolean;
   positionBeat: number;
   selectedAnchor?: string;
+  preparation?: {
+    completedAssets: number;
+    totalAssets: number;
+    completedBytes: number;
+    totalBytes: number;
+  } | null;
 }
 
 export interface SelenV21RuntimeCallbacks {
@@ -224,6 +230,7 @@ export function mountSelenV21(
     dragging: false,
     positionBeat: input.state.positionBeat,
     selectedAnchor: input.state.selectedAnchor ?? null,
+    preparation: input.state.preparation ?? null,
   };
   const figures = [];
   const transports = [];
@@ -3666,10 +3673,16 @@ export function mountSelenV21(
   }
 
   function updateTransport(transport) {
+    const preparing = !state.playing && state.preparation;
     transport.play.setAttribute(
       "aria-label",
-      state.playing ? copy.pause : copy.play,
+      preparing
+        ? copy.player.preparing
+        : state.playing
+          ? copy.pause
+          : copy.play,
     );
+    transport.play.toggleAttribute("data-busy", Boolean(preparing));
     transport.play.innerHTML = state.playing
       ? '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="5.5" width="3.5" height="13" rx="1" fill="currentColor"/><rect x="13.5" y="5.5" width="3.5" height="13" rx="1" fill="currentColor"/></svg>'
       : '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10-6.5z" fill="currentColor"/></svg>';
@@ -3677,8 +3690,13 @@ export function mountSelenV21(
       state.positionBeat * beatSeconds,
     );
     transport.total.textContent = formatTime(durationSeconds);
-    transport.sectionNow.textContent =
-      currentSection()?.label ?? copy.continuous;
+    transport.sectionNow.textContent = preparing
+      ? copy.preparingProgress(
+          state.preparation.completedAssets,
+          state.preparation.totalAssets,
+          (state.preparation.completedBytes / 1048576).toFixed(0),
+        )
+      : (currentSection()?.label ?? copy.continuous);
     transport.seek.value = String(state.positionBeat);
     transport.seek.style.setProperty(
       "--progress",
@@ -3853,6 +3871,7 @@ export function mountSelenV21(
       state.playing = nextState.playing;
       state.positionBeat = clamp(nextState.positionBeat, 0, durationBeats);
       state.selectedAnchor = nextState.selectedAnchor ?? null;
+      state.preparation = nextState.preparation ?? null;
       updateAll();
     },
     destroy() {

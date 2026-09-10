@@ -529,6 +529,25 @@
   color: var(--button-ink);
   box-shadow: 0 8px 21px rgba(28, 27, 32, 0.14);
 }
+.icon-button[data-busy] {
+  cursor: progress;
+  animation: refrain-busy-pulse 1.2s ease-in-out infinite;
+}
+@keyframes refrain-busy-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.45;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .icon-button[data-busy] {
+    animation: none;
+    opacity: 0.6;
+  }
+}
 .icon-button:hover {
   border-color: var(--accent);
 }
@@ -558,11 +577,12 @@
   font-weight: 740;
 }
 .section-now {
-  justify-self: end;
+  min-width: 0;
   overflow: hidden;
   color: var(--muted);
   font-size: 9px;
   font-weight: 660;
+  text-align: right;
   text-overflow: ellipsis;
   white-space: nowrap;
 }

@@ -24,6 +24,7 @@ export interface VerifiedAssetStoreOptions<T> {
     bytes: ArrayBuffer,
     signal: AbortSignal,
   ) => Promise<DecodedExecutionAsset<T>>;
+  onStateChange?: (assetId: string, state: VerifiedAssetState) => void;
 }
 
 export interface AssetPreparationEvidence {
@@ -179,9 +180,13 @@ export class VerifiedAssetStore<T> {
     let verifyMs = 0;
     let decodeMs = 0;
     const byteCache = entry.bytes ? "warm" : "cold";
+    const setState = (state: VerifiedAssetState) => {
+      entry.state = state;
+      this.options.onStateChange?.(requirement.assetId, state);
+    };
     try {
       if (!entry.bytes) {
-        entry.state = "fetching";
+        setState("fetching");
         const fetchStarted = timeNow();
         const loaded = await this.fetchSemaphore.use(() =>
           this.options.fetchBytes(requirement, signal),
@@ -193,10 +198,10 @@ export class VerifiedAssetStore<T> {
         verifyMs = timeNow() - verifyStarted;
         entry.bytes = verified.data;
         this.rawBytes += verified.data.byteLength;
-        entry.state = "verified-bytes";
+        setState("verified-bytes");
         this.evictRaw(requirement.assetId);
       }
-      entry.state = "decoding";
+      setState("decoding");
       const decodeStarted = timeNow();
       const decoded = await this.decodeSemaphore.use(() =>
         this.options.decode(requirement, entry.bytes!.slice(0), signal),
@@ -217,7 +222,7 @@ export class VerifiedAssetStore<T> {
       entry.decoded = decoded.value;
       entry.decodedBytes = decoded.decodedBytes;
       entry.lastUsed = ++this.counter;
-      entry.state = "decoded";
+      setState("decoded");
       this.decodedBytes += decoded.decodedBytes;
       this.releaseRaw(entry);
       this.evictDecoded(requirement.assetId);
@@ -231,7 +236,7 @@ export class VerifiedAssetStore<T> {
         decodeMs,
       };
     } catch (cause) {
-      entry.state = "failed";
+      setState("failed");
       entry.error =
         cause instanceof Error
           ? cause
@@ -306,9 +311,12 @@ export class VerifiedAssetStore<T> {
         )
         .sort((left, right) => left[1].lastUsed - right[1].lastUsed)[0];
       if (!candidate) return;
-      const [, entry] = candidate;
+      const [assetId, entry] = candidate;
       this.releaseRaw(entry);
-      if (entry.decoded === undefined) entry.state = "absent";
+      if (entry.decoded === undefined) {
+        entry.state = "absent";
+        this.options.onStateChange?.(assetId, entry.state);
+      }
     }
   }
 
@@ -321,9 +329,10 @@ export class VerifiedAssetStore<T> {
         )
         .sort((left, right) => left[1].lastUsed - right[1].lastUsed)[0];
       if (!candidate) return;
-      const [, entry] = candidate;
+      const [assetId, entry] = candidate;
       entry.decoded = undefined;
       entry.state = entry.bytes ? "verified-bytes" : "absent";
+      this.options.onStateChange?.(assetId, entry.state);
       this.decodedBytes -= entry.decodedBytes;
       entry.decodedBytes = 0;
     }

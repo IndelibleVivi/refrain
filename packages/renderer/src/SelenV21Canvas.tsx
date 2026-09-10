@@ -5,6 +5,7 @@ import {
   mountSelenV21,
   type SelenV21Runtime,
   type SelenV21RuntimeCallbacks,
+  type SelenV21RuntimeState,
   type SelenV21SelectionOption,
   type SelenV21Surface,
 } from "./selen-v21-runtime.js";
@@ -18,6 +19,7 @@ interface SelenV21CanvasProps {
   piece: SelenV21Piece;
   playing: boolean;
   positionBeat: number;
+  preparation?: SelenV21RuntimeState["preparation"];
   selectionOptions: readonly SelenV21SelectionOption[];
   selectedAnchor?: string;
   surface: "url" | "mcp-canvas";
@@ -42,6 +44,7 @@ export function SelenV21Canvas({
   piece,
   playing,
   positionBeat,
+  preparation,
   selectionOptions,
   selectedAnchor,
   surface,
@@ -108,7 +111,7 @@ export function SelenV21Canvas({
       canReturnSelection,
       playbackEnabled,
       selectionOptions,
-      state: { playing, positionBeat, selectedAnchor },
+      state: { playing, positionBeat, selectedAnchor, preparation },
       surface: resolvedSurface,
       themeId,
     });
@@ -162,8 +165,13 @@ export function SelenV21Canvas({
   ]);
 
   useLayoutEffect(() => {
-    runtime.current?.update({ playing, positionBeat, selectedAnchor });
-  }, [playing, positionBeat, selectedAnchor]);
+    runtime.current?.update({
+      playing,
+      positionBeat,
+      selectedAnchor,
+      preparation,
+    });
+  }, [playing, positionBeat, selectedAnchor, preparation]);
 
   return (
     <div className="selen-v21-host" data-renderer="selen-v21" ref={host} />

@@ -35,6 +35,8 @@ import {
 type WorkletSynthesizer = import("spessasynth_lib").WorkletSynthesizer;
 type Sequencer = import("spessasynth_lib").Sequencer;
 
+const REFRAIN_SOUND_BYTE_CACHE = "refrain-sound-bytes-v1";
+
 export interface CompletePieceBrowserOptions {
   soundBankUrl?: string;
   assetBaseUrl?: string;
@@ -70,6 +72,14 @@ export interface PlaybackEvidenceV0 {
   openingAssets: AssetPreparationEvidence[];
   deferredAssetCount: number;
   adaptationNotes: string[];
+}
+
+export interface PreparationProgressV0 {
+  active: boolean;
+  completedAssets: number;
+  totalAssets: number;
+  completedBytes: number;
+  totalBytes: number;
 }
 
 type BrowserDecodedAsset =
@@ -282,6 +292,10 @@ export class CompletePieceBrowserEngine {
   private readonly runtimePaths: Map<string, string>;
   private readonly voiceById: Map<string, PerformanceVoice>;
   private readonly listeners = new Set<(value: TransportSnapshotV0) => void>();
+  private readonly preparationListeners = new Set<
+    (value: PreparationProgressV0) => void
+  >();
+  private lastPreparationKey = "";
   private sampleSynth?: WorkletSynthesizer;
   private sequencer?: Sequencer;
   private adapter: CompletePieceBrowserAdapter = "direct-nodes@1";
@@ -401,6 +415,7 @@ export class CompletePieceBrowserEngine {
       fetchBytes: (requirement, signal) => this.fetchAsset(requirement, signal),
       decode: (requirement, bytes, signal) =>
         this.decodeAsset(requirement, bytes, signal),
+      onStateChange: () => this.emitPreparation(),
     });
   }
 
@@ -518,6 +533,57 @@ export class CompletePieceBrowserEngine {
     return () => this.listeners.delete(listener);
   }
 
+  subscribePreparation(
+    listener: (value: PreparationProgressV0) => void,
+  ): () => void {
+    this.preparationListeners.add(listener);
+    listener(this.preparationProgress());
+    return () => this.preparationListeners.delete(listener);
+  }
+
+  private preparationProgress(): PreparationProgressV0 {
+    let completedAssets = 0;
+    let completedBytes = 0;
+    let totalBytes = 0;
+    let inFlight = false;
+    for (const requirement of this.bundle.plan.assetRequirements) {
+      totalBytes += requirement.bytes;
+      const state = this.assetStore.state(requirement.assetId);
+      if (state === "decoded") {
+        completedAssets += 1;
+        completedBytes += requirement.bytes;
+      } else if (
+        state === "fetching" ||
+        state === "verified-bytes" ||
+        state === "decoding"
+      ) {
+        inFlight = true;
+      }
+    }
+    return {
+      active: inFlight,
+      completedAssets,
+      totalAssets: this.bundle.plan.assetRequirements.length,
+      completedBytes,
+      totalBytes,
+    };
+  }
+
+  private emitPreparation(): void {
+    if (this.preparationListeners.size === 0) return;
+    const progress = this.preparationProgress();
+    const key = [
+      progress.active,
+      progress.completedAssets,
+      progress.totalAssets,
+      progress.completedBytes,
+      progress.totalBytes,
+    ].join(":");
+    if (key === this.lastPreparationKey) return;
+    this.lastPreparationKey = key;
+    for (const listener of this.preparationListeners) listener(progress);
+  }
+
   private emit(): void {
     const snapshot = this.transport;
     for (const listener of this.listeners) listener(snapshot);
@@ -537,7 +603,49 @@ export class CompletePieceBrowserEngine {
     requirement: AssetRequirementV3,
     signal: AbortSignal,
   ): Promise<ArrayBuffer> {
-    const response = await fetch(this.assetUrl(requirement), { signal });
+    const url = this.assetUrl(requirement);
+    // Sound bytes are content-addressed and digest-verified after this
+    // function returns, so a persistent local byte cache can only ever
+    // supply or retain exact immutable bytes.
+    if (/\/sha256\//.test(url) && typeof globalThis.caches !== "undefined") {
+      try {
+        const cache = await globalThis.caches.open(REFRAIN_SOUND_BYTE_CACHE);
+        const key = new URL(url, globalThis.location?.href).href;
+        const cached = await cache.match(key);
+        if (cached) {
+          const bytes = await cached.arrayBuffer();
+          if (bytes.byteLength > 0) return bytes;
+        }
+        const response = await fetch(url, { signal });
+        if (!response.ok)
+          throw new Error(
+            `${requirement.assetId} failed to load: HTTP ${response.status}`,
+          );
+        const bytes = await response.arrayBuffer();
+        if (bytes.byteLength === requirement.bytes) {
+          try {
+            await cache.put(
+              key,
+              new Response(bytes.slice(0), {
+                headers: { "content-type": "audio/wav" },
+              }),
+            );
+          } catch {
+            // Quota or storage-policy failures must never block playback.
+          }
+        }
+        return bytes;
+      } catch (cause) {
+        if (cause instanceof Error && cause.name === "AbortError") throw cause;
+        if (
+          cause instanceof Error &&
+          cause.message.includes("failed to load")
+        )
+          throw cause;
+        // Cache infrastructure itself failed; fall back to a plain fetch.
+      }
+    }
+    const response = await fetch(url, { signal });
     if (!response.ok)
       throw new Error(
         `${requirement.assetId} failed to load: HTTP ${response.status}`,
@@ -1429,6 +1537,7 @@ export class CompletePieceBrowserEngine {
     this.cancelOperations("destroy");
     this.haltPlayback();
     this.listeners.clear();
+    this.preparationListeners.clear();
     this.sampleSynth?.destroy();
     await this.context.close();
   }

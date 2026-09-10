@@ -4,6 +4,7 @@ import type { BrowserAudioEngine } from "@refrain/audio-engine/browser";
 import type {
   CompletePieceBrowserEngine,
   PlaybackEvidenceV0,
+  PreparationProgressV0,
 } from "@refrain/audio-engine/complete-browser";
 import { createExecutionBundle } from "@refrain/audio-engine/execution";
 import { SelenV21Canvas } from "./SelenV21Canvas.js";
@@ -126,6 +127,8 @@ export function AirRenderer({
   if (!engineSlot.current)
     engineSlot.current = new IdentityScopedEngineSlot(artifactIdentity);
   const unsubscribeTransport = useRef<(() => void) | undefined>(undefined);
+  const unsubscribePreparation = useRef<(() => void) | undefined>(undefined);
+  const [preparation, setPreparation] = useState<PreparationProgressV0>();
   const stopStateTimer = useRef<number | undefined>(undefined);
   const actionGeneration = useRef(0);
   const disposed = useRef(false);
@@ -214,6 +217,8 @@ export function AirRenderer({
         window.clearTimeout(stopStateTimer.current);
       unsubscribeTransport.current?.();
       unsubscribeTransport.current = undefined;
+      unsubscribePreparation.current?.();
+      unsubscribePreparation.current = undefined;
       void engineSlot.current?.dispose();
     };
   }, []);
@@ -228,6 +233,8 @@ export function AirRenderer({
     }
     unsubscribeTransport.current?.();
     unsubscribeTransport.current = undefined;
+    unsubscribePreparation.current?.();
+    unsubscribePreparation.current = undefined;
     void engineSlot.current!.replace(artifactIdentity);
     setPlayerState("idle");
     setTransportSeconds(0);
@@ -237,6 +244,7 @@ export function AirRenderer({
     setSelectedAnchor(undefined);
     setSelectionStatus(undefined);
     setExportStatus(undefined);
+    setPreparation(undefined);
   }, [artifactIdentity, artifact.compiled.durationSeconds]);
 
   const getEngine = async (): Promise<ActiveAudioEngine> => {
@@ -307,6 +315,11 @@ export function AirRenderer({
                         ? "error"
                         : "ready",
             );
+          },
+        );
+        unsubscribePreparation.current = created.subscribePreparation(
+          (progress) => {
+            setPreparation(progress.active ? progress : undefined);
           },
         );
       }
@@ -612,6 +625,13 @@ export function AirRenderer({
         piece={visualPiece}
         playing={playerState === "playing"}
         positionBeat={visualPositionBeat}
+        preparation={
+          playerState === "loading" ||
+          playerState === "preparing" ||
+          playerState === "buffering"
+            ? (preparation ?? null)
+            : null
+        }
         selectionOptions={selectionOptions}
         selectedAnchor={selectedAnchor}
         surface={surface}

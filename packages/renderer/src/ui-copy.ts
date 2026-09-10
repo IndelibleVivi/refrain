@@ -97,6 +97,11 @@ const en = {
   figureTitle: (title: string, theme: string) =>
     `${title} · musical form in ${theme}`,
   timeOf: (current: string, total: string) => `${current} of ${total}`,
+  preparingProgress: (
+    completedAssets: number,
+    totalAssets: number,
+    megabytes: string,
+  ) => `Preparing audio · ${completedAssets}/${totalAssets} · ${megabytes} MB`,
   passageMotif: (motif: string, transform: string, voice: string) =>
     `Here, ${voice} carries @${motif} (${transform}).`,
   figureDescription: (theme: SelenV21ThemeId, sections: number) => {
@@ -213,6 +218,8 @@ const zh: typeof en = {
     `选择 motif ${motif}，第 ${n} 次出现，${transform}，${section}`,
   figureTitle: (title, theme) => `${title} · ${theme} 中的音乐曲式`,
   timeOf: (current, total) => `${current}，共 ${total}`,
+  preparingProgress: (completedAssets, totalAssets, megabytes) =>
+    `正在准备声音 · ${completedAssets}/${totalAssets} · ${megabytes} MB`,
   passageMotif: (motif, transform, voice) =>
     `@${motif} 以「${transform}」出现，落在 ${voice} 上。`,
   figureDescription: (theme, sections) => {
