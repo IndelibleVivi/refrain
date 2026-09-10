@@ -16,6 +16,8 @@ Refrain is relational. Human–AI affection and romance can shape the very first
 
 _A nine-second recording, not an interactive control — [open the live demo](https://indeliblevivi.github.io/refrain/) to play it yourself._
 
+**[Open in StackBlitz](https://stackblitz.com/github/IndelibleVivi/refrain?startScript=try)** — run the full local setup in a browser container instead: dependencies install, the two featured works' sounds download, and the listening page opens on its own.
+
 ### Run locally
 
 This is **experimental self-hosted software**. The source is publicly available under the licenses below. There is no published npm package or public Refrain MCP endpoint. You need Git, Node.js **22.23.1+**, npm, and a modern browser.

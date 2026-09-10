@@ -16,6 +16,8 @@ Refrain 是 relational 的。只要人愿意，人机之间的爱意、调情和
 
 _这是一段九秒的录屏，不是可交互控件——想亲手玩请[打开试玩页](https://indeliblevivi.github.io/refrain/)。_
 
+**[在 StackBlitz 里打开](https://stackblitz.com/github/IndelibleVivi/refrain?startScript=try)**——在浏览器容器里跑完整本地流程：自动装依赖、下载两首示例的音色，然后试听页自己打开。
+
 ### 在本地运行
 
 目前是 **experimental、self-hosted 的软件**，源码已按下述许可公开。尚无发布到 npm 的安装包，也没有 Refrain 官方公共 MCP endpoint。需要 Git、**Node.js 22.23.1+**、npm 和现代浏览器。
