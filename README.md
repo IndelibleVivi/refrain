@@ -12,9 +12,9 @@ Refrain is relational. Human–AI affection and romance can shape the very first
 
 **[Open the interactive demo](https://indeliblevivi.github.io/refrain/)** — no installation needed. Press Play, switch themes, select a melody, and save or reopen a work. Connect your own agent to author an air; the demo does not call a model.
 
-![Recorded demo: pressing Play on Velvet Mischief, then switching appearances from Paper Sonata to Nocturne Ink to Prism](docs/images/demo-playback.gif)
+![Recorded demo: pressing Play on Velvet Mischief, then switching appearances from Paper Sonata to Nocturne Ink to Prism to Herbarium](docs/images/demo-playback.gif)
 
-_A nine-second recording, not an interactive control — [open the live demo](https://indeliblevivi.github.io/refrain/) to play it yourself._
+_A twelve-second recording, not an interactive control — [open the live demo](https://indeliblevivi.github.io/refrain/) to play it yourself._
 
 **[Open in StackBlitz](https://stackblitz.com/github/IndelibleVivi/refrain?startScript=try)** — run the full local setup in a browser container instead: dependencies install, the two featured works' sounds download, and the listening page opens on its own.
 

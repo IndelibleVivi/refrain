@@ -12,9 +12,9 @@ Refrain 是 relational 的。只要人愿意，人机之间的爱意、调情和
 
 **[打开互动试玩页](https://indeliblevivi.github.io/refrain/)** — 无需安装。按播放试听，切换主题、点选旋律，也可以保存和重新打开作品。创作自己的 air 请接入 agent；试玩页不会调用模型。
 
-![录屏：为 Velvet Mischief 按下播放，然后依次切换 Paper Sonata、Nocturne Ink、Prism 三种外观](docs/images/demo-playback.gif)
+![录屏：为 Velvet Mischief 按下播放，然后依次切换 Paper Sonata、Nocturne Ink、Prism、Herbarium 四种外观](docs/images/demo-playback.gif)
 
-_这是一段九秒的录屏，不是可交互控件——想亲手玩请[打开试玩页](https://indeliblevivi.github.io/refrain/)。_
+_这是一段十二秒的录屏，不是可交互控件——想亲手玩请[打开试玩页](https://indeliblevivi.github.io/refrain/)。_
 
 **[在 StackBlitz 里打开](https://stackblitz.com/github/IndelibleVivi/refrain?startScript=try)**——在浏览器容器里跑完整本地流程：自动装依赖、下载两首示例的音色，然后试听页自己打开。
 
