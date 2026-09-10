@@ -5,7 +5,7 @@ export function firstListenCopy(locale: RefrainLocale) {
     ? {
         title: "先听一首，再带上你们的故事。",
         intro:
-          "两首由 agent 写下的完整作品。按播放听听，换一种外观，点亮图里的旋律——它每次回来，都有迹可循。",
+          "两首由 agent 写下的完整作品。按播放听听，换一种外观，点亮图里的旋律——它每次回来，都有迹可循。第一次播放会加载音色（约 60 MB），之后留在本机，即刻响起。",
         label: "第一次来？",
         keep: "喜欢就保存",
         keepBody:
@@ -28,7 +28,7 @@ export function firstListenCopy(locale: RefrainLocale) {
     : {
         title: "Listen first. Bring your story next.",
         intro:
-          "Two complete works written by an agent. Press Play, try another appearance, and touch a melody in the score. You can follow it each time it returns.",
+          "Two complete works written by an agent. Press Play, try another appearance, and touch a melody in the score. You can follow it each time it returns. The first play fetches the instruments (about 60 MB, once); afterwards they stay on this device and start instantly.",
         label: "Your first air",
         keep: "Keep what you hear",
         keepBody:

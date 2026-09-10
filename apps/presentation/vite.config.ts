@@ -64,7 +64,21 @@ export default defineConfig(({ mode }) => ({
     ? {
         base: "./",
         publicDir: ".demo-assets",
-        build: { outDir: "dist-try" },
+        build: {
+          outDir: "dist-try",
+          rollupOptions: {
+            output: {
+              manualChunks(id) {
+                if (
+                  id.includes("node_modules/react-dom") ||
+                  id.includes("node_modules/react/") ||
+                  id.includes("node_modules/scheduler")
+                )
+                  return "react-vendor";
+              },
+            },
+          },
+        },
         resolve: {
           alias: {
             // Reuse the existing zero-asset Canvas guard; no SoundFont code is needed.
