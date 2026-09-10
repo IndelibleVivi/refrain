@@ -1,6 +1,6 @@
 import { createHash, randomUUID } from "node:crypto";
 import { spawn } from "node:child_process";
-import { createReadStream, createWriteStream } from "node:fs";
+import { createWriteStream } from "node:fs";
 import {
   chmod,
   copyFile,
@@ -53,8 +53,22 @@ export interface AssetAcquisitionProgress {
 }
 
 async function fileDigest(path: string): Promise<string> {
+  // Chunked handle reads instead of a createReadStream pipeline: sandboxed
+  // Node runtimes (WebContainers) trip their fs shim on the streaming path.
   const hash = createHash("sha256");
-  await pipeline(createReadStream(path), hash);
+  const handle = await open(path, "r");
+  try {
+    const chunk = Buffer.allocUnsafe(8 * 1024 * 1024);
+    let offset = 0;
+    for (;;) {
+      const { bytesRead } = await handle.read(chunk, 0, chunk.length, offset);
+      if (bytesRead === 0) break;
+      hash.update(chunk.subarray(0, bytesRead));
+      offset += bytesRead;
+    }
+  } finally {
+    await handle.close();
+  }
   return hash.digest("hex");
 }
 
