@@ -12,6 +12,10 @@ Refrain is relational. Human–AI affection and romance can shape the very first
 
 **[Open the interactive demo](https://indeliblevivi.github.io/refrain/)** — no installation needed. Press Play, switch themes, select a melody, and save or reopen a work. Connect your own agent to author an air; the demo does not call a model.
 
+![Recorded demo: pressing Play on Velvet Mischief, then switching appearances from Paper Sonata to Nocturne Ink to Prism](docs/images/demo-playback.gif)
+
+_A nine-second recording, not an interactive control — [open the live demo](https://indeliblevivi.github.io/refrain/) to play it yourself._
+
 ### Run locally
 
 This is **experimental self-hosted software**. The source is publicly available under the licenses below. There is no published npm package or public Refrain MCP endpoint. You need Git, Node.js **22.23.1+**, npm, and a modern browser.

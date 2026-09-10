@@ -73,6 +73,22 @@ async function matches(
   }
 }
 
+async function describeMismatch(
+  path: string,
+  expected: { bytes: number; sha256: string },
+): Promise<string> {
+  try {
+    const file = await stat(path);
+    const actual = await fileDigest(path);
+    return (
+      `expected ${expected.bytes} bytes sha256:${expected.sha256.slice(0, 12)}…, ` +
+      `received ${file.size} bytes sha256:${actual.slice(0, 12)}…`
+    );
+  } catch {
+    return "the download produced no readable file";
+  }
+}
+
 function normalizedContainerMember(path: string): string {
   const normalized = path.replaceAll("\\", "/");
   if (
@@ -245,7 +261,7 @@ export class FileContentAddressedStore {
         await this.extractContainer(containerPath, memberPath, partial);
         if (!(await matches(partial, asset)))
           throw new Error(
-            `Asset ${asset.id} extracted from its source container did not match its pinned bytes/SHA-256.`,
+            `Asset ${asset.id} extracted from its source container did not match its pinned bytes/SHA-256 (${await describeMismatch(partial, asset)}).`,
           );
         await this.publishPartial(partial, target);
         return {
@@ -270,7 +286,7 @@ export class FileContentAddressedStore {
       );
       if (!(await matches(partial, asset)))
         throw new Error(
-          `Asset ${asset.id} did not match its pinned bytes/SHA-256.`,
+          `Asset ${asset.id} did not match its pinned bytes/SHA-256 (${await describeMismatch(partial, asset)}, from ${source.origin}). A proxy or mirror may have altered the download; retry on a direct connection.`,
         );
       await this.publishPartial(partial, target);
       return {
