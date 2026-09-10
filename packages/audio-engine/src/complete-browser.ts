@@ -637,10 +637,7 @@ export class CompletePieceBrowserEngine {
         return bytes;
       } catch (cause) {
         if (cause instanceof Error && cause.name === "AbortError") throw cause;
-        if (
-          cause instanceof Error &&
-          cause.message.includes("failed to load")
-        )
+        if (cause instanceof Error && cause.message.includes("failed to load"))
           throw cause;
         // Cache infrastructure itself failed; fall back to a plain fetch.
       }
