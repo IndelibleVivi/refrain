@@ -23,7 +23,7 @@ import {
   COMPLETE_PIECE_VCSL_PERFORMANCE_BINDING,
   type PerformanceBinding,
 } from "@refrain/soundpack";
-import { streamExecutionWav } from "../apps/presentation/src/stream-wav.js";
+import { streamExecutionWav } from "@refrain/audio-engine/node-wav";
 
 const outputArgument = process.argv
   .find((argument) => argument.startsWith("--out="))

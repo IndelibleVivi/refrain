@@ -2,7 +2,7 @@
 
 [Start here](GETTING-STARTED.md) · [Skill and local authoring](../plugins/refrain/README.md) · [Self-hosting runbook](runbooks/self-host-mcp.md)
 
-Refrain's conversational tool is **`hum`**. Your agent writes the music; the tool returns a complete portable artifact and a Canvas resource. A host that implements MCP Apps can display the Canvas in the conversation. Installing a Skill and connecting an MCP server are separate steps.
+Refrain's conversational tools are **`hum`** and **`audition`**. Your agent writes the music; `hum` returns a complete portable artifact and a Canvas resource, while `audition` returns exact rendered audio. A host that implements MCP Apps can display the Canvas in the conversation. Installing a Skill and connecting an MCP server are separate steps.
 
 ## Local MCP connection
 
@@ -30,7 +30,7 @@ Register the following command in your host's local MCP settings. Use absolute p
 
 On macOS/Linux, `command -v node` prints the Node path. The CLI resolves its own installation, selects the production Canvas, and preserves protocol stdout regardless of the host's working directory. No additional `NODE_ENV`, development web server, credentials, or Refrain account is required. A directly started stdio server waits silently for its host; it is not a terminal chat interface.
 
-Restart the connection after building or updating the checkout. Ask the host to list its tools, confirm `hum`, then request a short air using the available synthetic instruments. Press Play in the returned Canvas. A Tool-only host may still call `hum`; it cannot show an embedded Canvas merely because the resource exists.
+Restart the connection after building or updating the checkout. Ask the host to list its tools, confirm `hum` and `audition`, then request a short air using the available synthetic instruments. Press Play in the returned Canvas. A Tool-only host may still call `hum`; it cannot show an embedded Canvas merely because the resource exists.
 
 ## Host boundary
 
@@ -54,6 +54,12 @@ Omitting `performance.bindingId` on a continuation inherits the parent default, 
 When an artifact carries several sounds, **Sound for this listening view** selects among them in both Canvas surfaces. Changing sound stops playback and resets position/selection; it never starts sound automatically. The choice is view-only: saving retains all bindings, render receipts, projections, caption, and the original default. A valid artifact without a selected or executable sound remains inspectable and exportable. This is not synchronized A/B playback and does not acquire extra samples; for a local sampled variant outside the prepared closure, reopen using `refrain open <file> --binding <carried-id>` after explicit acquisition.
 
 Selecting a motif, segment, or section can return its exact anchor and complete parent artifact through an explicit user action when the host permits it. Copied/sent requests also identify the currently auditioned binding; to continue that sound, the agent explicitly selects its carried ID without rewriting the parent default. The downloaded closed handoff preserves the saved parent/default and does not persist view-only audition state. Keep saved artifacts under your own custody.
+
+## Actual audio for the author
+
+`audition` accepts a complete Artifact@3 and an optional exact passage/binding or A/B pair. It returns native WAV audio content blocks and their exact audition packet, with a twenty-second limit per entry including context. This uses the existing SDK lifecycle transport and adds no second App resource. CLI audition retains full-piece output. See [musical correspondence](CORRESPONDENCE.md) for the workflow and local share/reply commands.
+
+The server does not fetch samples. Without `REFRAIN_AUDITION_ASSET_ROOT`, only zero-asset execution works; an operator may provide an already hydrated root. This setting does not alter Canvas assets or turn missing sampled sound into synth sound. Returning audio blocks is transport evidence only: the receiving host must separately support model audio input. No named host is claimed to have heard the result merely because its tool call succeeded.
 
 ## Private remote operation
 

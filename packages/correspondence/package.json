@@ -1,0 +1,29 @@
+{
+  "name": "@refrain/correspondence",
+  "version": "0.0.0-experimental",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": {
+      "refrain-built": "./dist/index.js",
+      "default": "./src/index.ts"
+    },
+    "./node": {
+      "refrain-built": "./dist/node.js",
+      "default": "./src/node.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc -b",
+    "typecheck": "tsc -b --pretty false"
+  },
+  "dependencies": {
+    "@refrain/audio-engine": "*",
+    "@refrain/compiler": "*",
+    "@refrain/identity": "*",
+    "@refrain/renderer": "*",
+    "@refrain/soundpack": "*",
+    "zod": "^4.1.5"
+  },
+  "license": "SEE LICENSE IN ../../LICENSING.md"
+}

@@ -9,6 +9,7 @@
     { "path": "packages/renderer" },
     { "path": "packages/mcp-server" },
     { "path": "apps/presentation" },
-    { "path": "apps/soundbench" }
+    { "path": "apps/soundbench" },
+    { "path": "packages/correspondence" }
   ]
 }

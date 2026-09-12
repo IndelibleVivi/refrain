@@ -3,6 +3,7 @@ import { resolve } from "node:path";
 import { tmpdir } from "node:os";
 import { Client } from "@modelcontextprotocol/sdk/client/index.js";
 import { StdioClientTransport } from "@modelcontextprotocol/sdk/client/stdio.js";
+import { assertAudition } from "./assert-audition.mjs";
 
 const transport = new StdioClientTransport({
   command: process.execPath,
@@ -185,10 +186,12 @@ try {
     throw new Error(
       "The first-use AIR@1 example must return a complete playable Artifact@3.",
     );
+  const audition = await assertAudition(client, tools, first.artifact);
   process.stdout.write(
     JSON.stringify(
       {
-        tool: humTool.name,
+        tools: tools.tools.map((t) => t.name),
+        audition,
         resource: appResource.uri,
         sourceRevision: structured.receipt.sourceRevision,
         receiptId: structured.receipt.receiptId,

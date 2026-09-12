@@ -88,11 +88,17 @@ Run author-model and runtime matrices in ChatGPT Apps, Codex, Claude Code, and K
 
 Dependency: public claims follow source, runtime, listening, rights, host, and owner acceptance; private GitHub plus green tests is not release.
 
-Execution order is A–G, then I, then J, then H. The letter `H` retains its established meaning; inserting local capability work before it is an implementation-order clarification, not a release claim or removal of host acceptance.
+Execution order is A–G, then I, then J, then K, then H. The letter `H` retains its established meaning; inserting local capability work before it is an implementation-order clarification, not a release claim or removal of host acceptance.
 
 Local authoring checkpoint (2026-09-08): a tool + Skill source candidate now supports sound discovery, canonical silent drafting, section/voice inspection, file-based Artifact@3 sealing and continuation, independent previews, and native export. One independent local agent exercise completed the workflow without implementation imports. It supports H's authoring/host lane but does not close the multi-author/multi-host matrix, F/G listening and aesthetic acceptance, or release.
 
 Local production checkpoint (2026-09-08): `produce init/inspect/apply` and its progressive Skill reference make existing Scene@1 processing available through exact file operations. The host can author group placement, low-pass, saturation, delay, room and fade while preserving AIR, musical receipts, pinned sounds and prior render evidence. First-match routing is shared with execution; fully silent voices and inseparable instrument/role groups are explicit. This advances first-piece production through the existing I/H contracts without introducing new DSP, changing programme order or claiming model hearing, palette acceptance or deployment.
+
+### K — Musical correspondence
+
+Owner direction adopted 2026-09-12: expression may address a person or another agent; craft serves communication rather than ranking or a professional production workflow. Build self-listening, exact native full/partial/A-B performance material, optional free responses, selected local sharing/reception, and formal musical reply on the current Artifact@3 authorities. CLI and MCP share preparation; audio-input support is verified per host rather than inferred from a file or player. No automated judge, required feedback, hosted library, or auto-delivery.
+
+Dependency: current I/J audio, artifact, selection and stateless continuation authorities. This extension advances before remaining host acceptance without removing any F/G/H gates. Source and verification status are recorded in [current-state.md](current-state.md); [CORRESPONDENCE.md](CORRESPONDENCE.md) owns its exact behavior.
 
 ## Complete coverage ledger
 
@@ -122,7 +128,7 @@ Local production checkpoint (2026-09-08): `produce init/inspect/apply` and its p
 | ST-02  | Inline, secure expiring session, file, MCP resource/attachment envelopes                                          | D                 | Operator storage/origin authority           | Missing/expired/identity/privacy/host tests              | verified         |
 | UI-01  | One view model and renderer, whole-form/current-detail, bounded representation                                    | D, G              | Selen only for aesthetics                   | View-model scale tests and browser QA                    | in-progress      |
 | UI-02  | Exact selection and accessible complete-piece transport                                                           | D, G              | Host handoff capability                     | Keyboard/reduced-motion/mobile/selection tests           | in-progress      |
-| MCP-01 | One stateless `hum`; compact complete result or exact resource reference; exact binding                           | C, D, H           | Implemented schema before tools/list change | Contract tests and real-host trials                      | in-progress      |
+| MCP-01 | Stateless `hum` and `audition`; exact artifact continuation and bounded actual audio                              | C, D, H           | Implemented schema before tools/list change | Contract tests and real-host trials                      | in-progress      |
 | EX-01  | Artifact, AIR, MIDI, native WAV, optional matched preview, profile, scene, binding, receipts, closure, provenance | C                 | Artifact/receipt migration                  | Export/import smoke and output digests                   | verified         |
 | PK-01  | One typed pack container whose semantic modules retain independent exact identities and provenance                | I                 | Existing content-addressed factory          | Manifest/module validation and invariance tests          | verified         |
 | PK-02  | Separate install, hydration, authoring shelf, execution closure, archive pin, and honest uninstall states         | I                 | Explicit operator root                      | Local manager lifecycle and shared-byte tests            | verified         |

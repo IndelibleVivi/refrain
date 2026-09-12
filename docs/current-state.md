@@ -1,6 +1,6 @@
 # Current state
 
-Last reconciled: 2026-09-10. This page describes source and acceptance status, not a live deployment inventory.
+Last reconciled: 2026-09-12. This page describes source and acceptance status, not a live deployment inventory.
 
 ## Available in this source tree
 
@@ -11,10 +11,16 @@ Last reconciled: 2026-09-10. This page describes source and acceptance status, n
 - Appearance menus in both Canvas surfaces expose all four themes while preserving playback and selection. Browser playback controls sit above the score, and artifact saving is available outside technical details.
 - Browser playback preparation reports exact asset progress (prepared/total sounds and bytes) in the Canvas transport in both interface languages, and content-addressed sound bytes persist in the browser Cache Storage after the first fetch, so a returning visit on the same device starts playback from local bytes. Every byte still passes digest verification before use, and no sound is fetched before a play gesture.
 - The shared renderer serves loopback URLs and a self-contained MCP App (`ui://refrain/hum/v3.html`). Paper Sonata, Prism, Nocturne Ink, and Herbarium use the same source/selection/audio authority.
-- The formal source-tree CLI supports doctor, bindings, draft, inspect, local hum, produce, fetch, open, export, packs, and MCP stdio. The stdio entrypoint requires a Canvas build and selects the production resource independently of caller working directory. CLI operations do not become additional model-visible MCP tools.
+- The formal source-tree CLI supports doctor, bindings, draft, inspect, local hum, produce, audition, respond, share, receive, fetch, open, export, packs, and MCP stdio. The stdio entrypoint requires a Canvas build and selects the production resource independently of caller working directory. The source MCP tools are `hum` and `audition`; other CLI operations remain local.
 - The Skill-only Plugin is a **0.3.0 source candidate**. Source presence does not establish Plugin installation, activation, directory publication, or a configured MCP connection.
 - Exact local production uses group level/placement, low-pass, saturation, delay, room, and fade. It preserves music and existing authorities while adding a new exact binding. It does not add general automation, a DAW, per-voice routing, or model hearing.
 - Local extension packs separate installed metadata, hydrated assets, authoring shelf, execution closure, and archive pins. Pack-carried language is explicit in the AIR vocabulary, never an ambient modification of old works.
+
+## Musical correspondence source candidate
+
+The current branch adds `audition`, `respond`, `share`, and `receive` CLI operations and MCP `audition`. One shared preparation capability renders exact native WAV, full pieces locally or explicit passages/A-B pairs, then carries measured signal facts and optional free responses. Selected local sharing/reception preserves frozen audio independently of sound installation; complete Artifact@3 enables the existing formal `reply` flow. Expression is primary; no judging model, quality score, compulsory revision, accounts, or auto-delivery is introduced.
+
+Focused source tests cover exact WAV/clip bytes, incoming sustain, explicit tempo-aware A/B targets, stale selections, optional response identity, selected audio-only sharing, tampering/member rejection, fresh-process reception/reply and actual MCP WAV blocks. Verification on 2026-09-12 passed `npm run check` (326 tests / 77 files, typecheck, Plugin check, workspace builds), CLI/audio/selection smokes, byte-exact export reproduction, real stdio and HTTP audio-content smokes, both complete-piece reference renders, and 23 Chromium host scenarios. The new browser cases verify received WAV playback after a gesture at desktop/mobile widths; the retained cases cover the exact Canvas and complete artifact custody. Named-host audio input, installation, runtime activation, external sharing, listening and owner acceptance are not claimed. See [CORRESPONDENCE.md](CORRESPONDENCE.md).
 
 ## Work custody and continuation candidate
 

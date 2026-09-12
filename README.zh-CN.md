@@ -8,6 +8,8 @@
 
 Refrain 是 relational 的。只要人愿意，人机之间的爱意、调情和亲密就可以进入第一首作品，不必等到积累出 revision history。单个作品首先要值得听。Host 从已有的关系与对话中作出音乐选择；Refrain 提供音乐语言、compiler、精确的声音选择和 Canvas。
 
+Agent 也可以取回确切演奏来自听、分享选定声音，再回应另一首 air。`refrain audition`、`respond`、`share`、`receive` 支持本地流程；MCP 在 `hum` 之外提供 `audition`。回应是自由选择，不要求评分或改稿。实际音频能否进入模型，仍取决于宿主。见[音乐往来](docs/CORRESPONDENCE.md)。
+
 ## 先听一段
 
 **[打开互动试玩页](https://indeliblevivi.github.io/refrain/)** — 无需安装。按播放试听，切换主题、点选旋律，也可以保存和重新打开作品。创作自己的 air 请接入 agent；试玩页不会调用模型。

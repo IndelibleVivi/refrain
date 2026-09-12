@@ -23,6 +23,7 @@ import type { HumSuccessV1 } from "./hum-v1.js";
 import { loadSelfContainedHumView } from "./self-contained-view.js";
 import { loadRuntimeReleaseIdentity } from "./release-identity.js";
 import { MCP_CANVAS_ASSETS } from "./canvas-runtime.js";
+import { registerAuditionTool } from "./audition.js";
 
 interface HealthResponse {
   status(code: number): HealthResponse;
@@ -85,6 +86,7 @@ export function createRefrainServer() {
       }),
     );
   }
+  registerAuditionTool(server, release);
   return server.registerTool(
     {
       name: "hum",

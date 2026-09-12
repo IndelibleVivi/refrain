@@ -27,7 +27,11 @@
     "./scene-renderer": "./src/scene-renderer.ts",
     "./scene-routing": "./src/scene-routing.ts",
     "./synth-kernel": "./src/synth-kernel.ts",
-    "./verified-asset-store": "./src/verified-asset-store.ts"
+    "./verified-asset-store": "./src/verified-asset-store.ts",
+    "./node-wav": {
+      "refrain-built": "./dist/node-wav.js",
+      "default": "./src/node-wav.ts"
+    }
   },
   "dependencies": {
     "@refrain/compiler": "*",

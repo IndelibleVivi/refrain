@@ -6,9 +6,9 @@ import {
   REFERENCE_BLOCK_FRAMES,
   renderExecutionBlocks,
   type ExecutionAssetBundle,
-  type ExecutionBundle,
-  type WavAmplitudePolicy,
-} from "@refrain/audio-engine";
+} from "./block-renderer.js";
+import type { ExecutionBundle } from "./execution.js";
+import type { WavAmplitudePolicy } from "./pcm.js";
 
 export interface StreamWavOptions {
   sampleRate?: number;
@@ -26,7 +26,10 @@ export interface StreamWavEvidence {
   peakWorkingBytes: number;
 }
 
-function wavHeader(sampleRate: number, frameCount: number): Uint8Array {
+export function pcmWavHeader(
+  sampleRate: number,
+  frameCount: number,
+): Uint8Array {
   const channelCount = 2;
   const bytesPerSample = 2;
   const dataSize = frameCount * channelCount * bytesPerSample;
@@ -101,28 +104,33 @@ export async function streamExecutionWav(
   let sourcePeak = 0;
   let rawOffset = 0;
   try {
-    for await (const block of renderExecutionBlocks(
-      bundle,
-      assets,
-      sampleRate,
-      {
-        blockFrames: REFERENCE_BLOCK_FRAMES,
-        isCancelled: options.isCancelled,
-      },
-    )) {
-      for (let index = 0; index < block.frameCount; index += 1) {
-        sourcePeak = Math.max(
-          sourcePeak,
-          Math.abs(block.left[index] ?? 0),
-          Math.abs(block.right[index] ?? 0),
-        );
+    try {
+      for await (const block of renderExecutionBlocks(
+        bundle,
+        assets,
+        sampleRate,
+        {
+          blockFrames: REFERENCE_BLOCK_FRAMES,
+          isCancelled: options.isCancelled,
+        },
+      )) {
+        for (let index = 0; index < block.frameCount; index += 1) {
+          sourcePeak = Math.max(
+            sourcePeak,
+            Math.abs(block.left[index] ?? 0),
+            Math.abs(block.right[index] ?? 0),
+          );
+        }
+        const bytes = interleavedFloatBlock(block.left, block.right);
+        await raw.write(bytes, 0, bytes.byteLength, rawOffset);
+        rawOffset += bytes.byteLength;
       }
-      const bytes = interleavedFloatBlock(block.left, block.right);
-      await raw.write(bytes, 0, bytes.byteLength, rawOffset);
-      rawOffset += bytes.byteLength;
+    } finally {
+      await raw.close();
     }
-  } finally {
-    await raw.close();
+  } catch (error) {
+    await rm(temporaryDirectory, { recursive: true, force: true });
+    throw error;
   }
   if (options.isCancelled?.()) {
     await rm(temporaryDirectory, { recursive: true, force: true });
@@ -141,7 +149,7 @@ export async function streamExecutionWav(
   const output = await open(outputPath, "w");
   const input = await open(rawPath, "r");
   const hash = createHash("sha256");
-  const header = wavHeader(sampleRate, frameCount);
+  const header = pcmWavHeader(sampleRate, frameCount);
   let outputOffset = 0;
   try {
     await output.write(header, 0, header.byteLength, outputOffset);
