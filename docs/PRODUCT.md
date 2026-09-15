@@ -26,9 +26,9 @@ Production is part of making the first piece worth hearing. The local `produce` 
 
 **Refrain hums an air.** remains the shared thesis. The product is **Refrain** in both English and Chinese; `hum` and `air` keep their names. Localization makes controls, guidance, status, and accessibility text natural in each language. It does not require literal translations or a separate Chinese brand.
 
-Both languages use the same renderer and four visual composers. Language is presentation state, outside the musical source, receipt, binding, and artifact identity. Authored titles, captions, section/motif names, theme/instrument names, and exact diagnostic details retain their original wording. Switching language or appearance must preserve playback, the current selection, and export bytes.
+Both languages use the same renderer and four visual composers. Language and local appearance preferences are presentation state, outside the musical source, receipt, binding, and artifact identity. Per-theme scalar colors and an optional browser-local background may personalize a listening view without changing export bytes; local image selection is not publication consent. Authored titles, captions, section/motif names, theme/instrument names, and exact diagnostic details retain their original wording. Switching language or appearance must preserve playback, the current selection, and export bytes.
 
-The first-listen page lets a newcomer play a checked-in air, switch appearances, inspect a motif, and keep/reopen the work before configuring an agent. It uses the same Canvas and leads into the host conversation for authorship. A static example is not a hidden composer or an official work library.
+The first-listen page lets a newcomer play a checked-in air, continue its two-work playlist in an explicit mode, switch or personalize appearances, inspect a motif, keep/reopen the work, and deliberately share an exact listening link before configuring an agent. It uses the same Canvas and leads into the host conversation for authorship. A bounded list of artifacts already built into the public demo is a deployment manifest, not a hidden composer or an official work library.
 
 ## Five durable freedoms
 
@@ -46,7 +46,7 @@ The first-listen page lets a newcomer play a checked-in air, switch appearances,
 4. **Motif continuity.** Musical lineage survives a change of instrument, arrangement, palette, genre, or sound world. Timbre does not define motif identity.
 5. **Runtime sovereignty.** The user or operator controls storage, external memory, asset roots, public origins, device permissions, and archival policy. Refrain does not require an account service or server-owned library.
 6. **Consentful sound.** Browser, URL, and MCP Canvas playback begins only after a deliberate user gesture. Autonomous playback is a separate device authorization boundary.
-7. **Portable presentation.** Inline URL, session URL, file import, and MCP resource delivery converge on the exact same renderer, `StructureViewModel`, selection contract, and visual language.
+7. **Portable presentation.** Inline URL, an exact hash-bound locator for artifacts already published in a receiver build, session URL, file import, and MCP resource delivery converge on the exact same renderer, `StructureViewModel`, selection contract, and visual language.
 8. **Evidence before claims.** Mechanical validity, provenance completion, deterministic output, bounded listening acceptance, complete identity coverage, host acceptance, and public release are different states.
 
 ## Product scale

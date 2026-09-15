@@ -7,6 +7,15 @@ export function firstListenCopy(locale: RefrainLocale) {
         intro:
           "两首由 agent 写下的完整作品。按播放听听，换一种外观，点亮图里的旋律——它每次回来，都有迹可循。第一次播放会加载音色（约 60 MB），之后留在本机，即刻响起。",
         label: "第一次来？",
+        playlist: "播放模式",
+        playbackModes: {
+          sequential: "顺序播放",
+          "repeat-all": "列表循环",
+          shuffle: "随机播放",
+          "repeat-one": "单曲循环",
+        },
+        changePlaybackMode: (current: string, next: string) =>
+          `当前${current}；切换为${next}`,
         keep: "喜欢就保存",
         keepBody:
           "在作品下方选择「导出 Refrain artifact」，把这首带走。以后用这里的「打开作品文件」重新打开。",
@@ -30,6 +39,15 @@ export function firstListenCopy(locale: RefrainLocale) {
         intro:
           "Two complete works written by an agent. Press Play, try another appearance, and touch a melody in the score. You can follow it each time it returns. The first play fetches the instruments (about 60 MB, once); afterwards they stay on this device and start instantly.",
         label: "Your first air",
+        playlist: "Playback mode",
+        playbackModes: {
+          sequential: "Sequential playback",
+          "repeat-all": "Repeat all",
+          shuffle: "Shuffle",
+          "repeat-one": "Repeat one",
+        },
+        changePlaybackMode: (current: string, next: string) =>
+          `${current}; change to ${next}`,
         keep: "Keep what you hear",
         keepBody:
           "Choose “Export Refrain artifact” below the piece to keep it. Use “Open a saved air” here whenever you want to return.",

@@ -10,7 +10,7 @@ Refrain is relational. Human–AI affection and romance can shape the very first
 
 ## Try it
 
-**[Open the interactive demo](https://indeliblevivi.github.io/refrain/)** — no installation needed. Press Play, switch themes, select a melody, and save or reopen a work. Connect your own agent to author an air; the demo does not call a model.
+**[Open the interactive demo](https://indeliblevivi.github.io/refrain/)** — no installation needed. Press Play, choose a playlist mode, switch or personalize a theme, select a melody, save or reopen a work, and share an exact listening link for either featured piece. Connect your own agent to author an air; the demo does not call a model.
 
 ![Recorded demo: pressing Play on Velvet Mischief, then switching appearances from Paper Sonata to Nocturne Ink to Prism to Herbarium](docs/images/demo-playback.gif)
 
@@ -30,7 +30,7 @@ node bin/refrain.mjs doctor
 npm run try
 ```
 
-Press **Play** at the top of the piece. Switch between four themes, select a melody, and choose **Export Refrain artifact** to keep it. Below the Canvas you can reopen a saved file and find the next step for your own agent. No provider key is needed. Local setup prepares the two featured works’ sound samples. Keep the terminal open; Ctrl+C ends the listening page.
+Press **Play** at the top of the piece. The two featured works can continue in sequential, repeat-all, shuffle, or repeat-one mode. Switch between four themes, personalize colors or a local background, select a melody, and choose **Export Refrain artifact** to keep it. **Share this air** creates an exact public-demo link when the published player carries the selected work and sound. Below the Canvas you can reopen a saved file and find the next step for your own agent. No provider key is needed. Local setup prepares the two featured works’ sound samples. Keep the terminal open; Ctrl+C ends the listening page.
 
 This local URL belongs to your computer. The public demo runs on GitHub Pages. See [building and hosting](docs/DEVELOPMENT.md#first-listen-page); for audio files, [export WAV / MIDI](docs/GETTING-STARTED.md#keep-the-piece).
 
@@ -43,7 +43,7 @@ This local URL belongs to your computer. The public demo runs on GitHub Pages. S
 
 ## Four appearances, one air
 
-Use the appearance menu above the Canvas to switch. The music, playback position, and selected passage stay with you. The images below are static screenshots, not interactive controls. Open the demo to play; click a screenshot only to enlarge it.
+Use the appearance menu above the Canvas to switch. The music, playback position, and selected passage stay with you. **Make this appearance yours** stores per-theme note/symbol color, text color, image opacity/blur, and one optional background image in this browser. Reset affects only the selected theme. These preferences do not alter AIR, receipts, bindings, or saved artifact bytes; local background images are never uploaded by the control. The images below are static screenshots, not interactive controls. Open the demo to play; click a screenshot only to enlarge it.
 
 <table>
   <tr>
@@ -60,8 +60,8 @@ Use the appearance menu above the Canvas to switch. The music, playback position
 
 - **An authored piece.** Motifs, reusable phrases, several voices, changing meters, groove, dynamics, sections, and an ending. The host writes the music; there is no hidden composition model.
 - **A deliberate sound.** Synthetic or sampled instruments and exact performance bindings. Local production tools adjust group levels, placement, low-pass, saturation, echo, room, and fades without rewriting the score.
-- **A piece you can navigate.** Play, pause, restart, seek, jump between sections, inspect recurring motifs, and select an exact musical region. Four visual themes share one renderer.
-- **Something you can keep.** Portable source and artifact, native WAV, MIDI, exact performance choices, and provenance. A later `hum` can revise, extend, reply, vary, or quote a saved artifact.
+- **A piece you can navigate.** Play, pause, restart, seek, jump between sections, continue a playlist in four modes, inspect recurring motifs, and select an exact musical region. Four visual themes share one renderer.
+- **Something you can keep or share deliberately.** Portable source and artifact, native WAV, MIDI, exact performance choices, and provenance. The public demo can create short, zero-upload, hash-bound links for its published works; small inline artifacts are supported only when the receiver also advertises the exact sound closure. A later `hum` can revise, extend, reply, vary, or quote a saved artifact.
 
 ## How it fits together
 
@@ -76,6 +76,7 @@ The conversational tool is `hum`. The CLI supplies smaller local authoring, insp
 - **MCP Canvas currently plays eight synthetic identities without external assets.** Exact sampled bindings stay attached but unavailable there; the ordinary browser supports selectively acquired samples.
 - **Self-hosted and stateless.** No Refrain account, hosted work library, or relationship database. Private conversation stays with the host; authored music and a deliberately shared caption can still carry personal meaning.
 - **Manual sound.** Playback needs a user gesture. Browser playback does not give the host model audio input. Compilation and structural reports do not certify that a piece sounds good.
+- **Exact sharing is capability-bound.** A listening link includes the complete portable work or an exact hash for a work already built into the public player, plus the current binding, theme, and optionally current scalar colors. It is readable and forwardable by anyone who receives it. Local background images, private/session URLs, and missing sound assets are never silently published or substituted. Oversize or unpublished works currently require a future static listening package; the button says so instead of creating a broken link.
 - **Two interface languages.** Use **EN / 中文** to switch the shared Canvas. It starts in the browser’s language (Chinese or English); the choice stays in the current view. Refrain, `hum`, `air`, theme/instrument names, authored titles, captions, and technical diagnostics keep their original wording.
 - **Experimental formats and host support.** AIR@1 is not a stable interchange standard. The current limit is eight minutes and twelve voices, with bounded event/source limits. Downloads, clipboard, and selection return depend on host capabilities.
 - **Candidate sounds and release state.** Four proof palettes render, but broader listening acceptance and multi-host trials remain open. A source checkout is not a packaged public release. [Current evidence and limits](docs/current-state.md).

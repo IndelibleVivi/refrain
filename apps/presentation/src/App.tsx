@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import type { AnyAirArtifact, SelenV21ThemeId } from "@refrain/renderer";
 import {
   AirRenderer,
@@ -11,14 +11,28 @@ import {
   PRESENTATION_REF_FORMAT,
   REFRAIN_ARTIFACT_MEDIA_TYPE,
   type PresentationRefV0,
+  parseSharedAppearance,
 } from "@refrain/renderer";
 import {
   decodePresentationHash,
   verifyArtifactForPresentation,
   verifyPresentationEnvelope,
 } from "./presentation-envelope.js";
-import { firstAir, demoWorks, hasDemoSound } from "./first-air.js";
+import {
+  demoPublishedArtifacts,
+  demoShareRecipient,
+  demoWorks,
+  firstAir,
+  hasDemoSound,
+  publishedDemoAir,
+} from "./first-air.js";
 import { firstListenCopy } from "./first-listen-copy.js";
+import {
+  PlaybackQueue,
+  cyclePlaybackMode,
+  readPlaybackMode,
+  type PlaybackMode,
+} from "./playback-queue.js";
 
 const VISUAL_THEMES = new Set<SelenV21ThemeId>([
   "paper-sonata",
@@ -26,12 +40,41 @@ const VISUAL_THEMES = new Set<SelenV21ThemeId>([
   "nocturne-ink",
   "herbarium",
 ]);
+const PLAYBACK_MODE_STORAGE_KEY = "refrain:playback-mode@0";
+const DEFAULT_TRY_PUBLIC_PLAYER_URL =
+  "https://indeliblevivi.github.io/refrain/";
+const PLAYBACK_MODE_ICONS: Record<PlaybackMode, string> = {
+  sequential: "→",
+  "repeat-all": "↻",
+  shuffle: "⤨",
+  "repeat-one": "↻¹",
+};
 
-function requestedVisualTheme(): SelenV21ThemeId {
+function storedPlaybackMode(): PlaybackMode {
+  try {
+    return readPlaybackMode(
+      window.localStorage.getItem(PLAYBACK_MODE_STORAGE_KEY),
+    );
+  } catch {
+    return "sequential";
+  }
+}
+
+function requestedVisualTheme(): SelenV21ThemeId | undefined {
   const requested = new URL(window.location.href).searchParams.get("theme");
   return requested && VISUAL_THEMES.has(requested as SelenV21ThemeId)
     ? (requested as SelenV21ThemeId)
-    : "paper-sonata";
+    : undefined;
+}
+
+function publicPlayerUrl(): string | undefined {
+  const configured = import.meta.env.VITE_REFRAIN_PUBLIC_PLAYER_URL?.trim();
+  if (configured) return configured;
+  const current = new URL(window.location.href);
+  if (import.meta.env.MODE !== "try") return undefined;
+  return current.protocol === "https:"
+    ? new URL(".", current).href
+    : DEFAULT_TRY_PUBLIC_PLAYER_URL;
 }
 
 export function App() {
@@ -42,11 +85,91 @@ export function App() {
   const [fileError, setFileError] = useState<string>();
   const [copyStatus, setCopyStatus] = useState<"copied" | "manual">();
   const revision = useRef(0);
+  const playbackCommandSequence = useRef(0);
+  const queue = useRef<PlaybackQueue | undefined>(undefined);
+  if (!queue.current)
+    queue.current = new PlaybackQueue(
+      demoWorks.map((work) => work.id),
+      { mode: storedPlaybackMode() },
+    );
+  const [queueSnapshot, setQueueSnapshot] = useState(() =>
+    queue.current!.snapshot(),
+  );
+  const [activeDemoId, setActiveDemoId] = useState<string>();
+  const activeDemoIdRef = useRef<string | undefined>(undefined);
+  const [playbackCommand, setPlaybackCommand] = useState<{
+    requestId: number;
+    action: "start-at-zero";
+    receiptId: string;
+  }>();
   const [artifact, setArtifact] = useState<AnyAirArtifact>();
   const [message, setMessage] = useState<{
     key: UiMessageKey;
     detail?: string;
   }>({ key: "loadingAir" });
+  const shareDeployment = useMemo(
+    () => ({
+      playerBaseUrl: publicPlayerUrl(),
+      recipient: demoShareRecipient,
+      publishedArtifacts: demoPublishedArtifacts,
+    }),
+    [],
+  );
+
+  const activateDemo = (id: string) => {
+    const result = firstAir(id);
+    if (!result.ok) return;
+    activeDemoIdRef.current = id;
+    setActiveDemoId(id);
+    setPlaybackCommand(undefined);
+    setArtifact(result.artifact);
+    setFileError(undefined);
+  };
+
+  const chooseDemo = (id: string) => {
+    revision.current += 1;
+    queue.current!.select(id);
+    setQueueSnapshot(queue.current!.snapshot());
+    activateDemo(id);
+  };
+
+  const resetDemoQueue = (id = demoWorks[0]!.id) => {
+    revision.current += 1;
+    queue.current!.replaceEntries(
+      demoWorks.map((work) => work.id),
+      id,
+    );
+    setQueueSnapshot(queue.current!.snapshot());
+    activateDemo(id);
+  };
+
+  const cycleMode = () => {
+    const next = queue.current!.cycleMode();
+    setQueueSnapshot(queue.current!.snapshot());
+    try {
+      window.localStorage.setItem(PLAYBACK_MODE_STORAGE_KEY, next);
+    } catch {
+      // A denied preference write does not block playback.
+    }
+  };
+
+  const continueQueue = () => {
+    const currentId = activeDemoIdRef.current;
+    if (!currentId || queue.current!.snapshot().currentId !== currentId) return;
+    const decision = queue.current!.next("ended");
+    setQueueSnapshot(queue.current!.snapshot());
+    if (decision.kind === "stop") return;
+    const result = firstAir(decision.entryId);
+    if (!result.ok) return;
+    activeDemoIdRef.current = decision.entryId;
+    setActiveDemoId(decision.entryId);
+    setArtifact(result.artifact);
+    setPlaybackCommand({
+      requestId: ++playbackCommandSequence.current,
+      action: "start-at-zero",
+      receiptId: result.artifact.receipt.receiptId,
+    });
+  };
 
   useEffect(() => {
     let active = true;
@@ -55,19 +178,28 @@ export function App() {
       setArtifact(undefined);
       setFileError(undefined);
       setMessage({ key: "loadingAir" });
+      const location = new URL(window.location.href);
+      const catalogId = location.searchParams.get("catalog");
+      const catalogArtifactSha256 = location.searchParams.get("artifact");
+      const isFirstListen =
+        !window.location.hash &&
+        !location.searchParams.get("sessionHref") &&
+        !catalogId &&
+        !catalogArtifactSha256;
+      setFirstListen(isFirstListen);
       const hash = new URLSearchParams(window.location.hash.slice(1));
       const artifactSha256 = hash.get("artifact");
       const fragment = hash.get("bytes");
-      const sessionHref = new URL(window.location.href).searchParams.get(
-        "sessionHref",
-      );
-      const bindingId = new URL(window.location.href).searchParams.get(
-        "binding",
-      );
+      const sessionHref = location.searchParams.get("sessionHref");
+      const bindingId = location.searchParams.get("binding");
       const load = async () => {
-        const isFirstListen = !window.location.hash && !sessionHref;
-        setFirstListen(isFirstListen);
         if (isFirstListen) return firstAir();
+        if (catalogId || catalogArtifactSha256)
+          return publishedDemoAir(
+            catalogId ?? "",
+            catalogArtifactSha256 ?? "",
+            bindingId ?? undefined,
+          );
         if (artifactSha256 && fragment) {
           const ref: PresentationRefV0 = {
             format: PRESENTATION_REF_FORMAT,
@@ -119,8 +251,17 @@ export function App() {
       void load()
         .then((result) => {
           if (!active || requestedRevision !== revision.current) return;
-          if (result.ok) setArtifact(result.artifact);
-          else
+          if (result.ok) {
+            if (isFirstListen) resetDemoQueue();
+            else {
+              activeDemoIdRef.current = undefined;
+              setActiveDemoId(undefined);
+              queue.current!.replaceEntries([]);
+              setQueueSnapshot(queue.current!.snapshot());
+              setPlaybackCommand(undefined);
+              setArtifact(result.artifact);
+            }
+          } else
             setMessage({
               key: "messageKey" in result ? result.messageKey : "invalidFile",
               detail: result.message,
@@ -150,8 +291,14 @@ export function App() {
         JSON.parse(await file.text()),
       );
       if (requestedRevision !== revision.current) return;
-      if (result.ok) setArtifact(result.artifact);
-      else setFileError(result.message);
+      if (result.ok) {
+        activeDemoIdRef.current = undefined;
+        setActiveDemoId(undefined);
+        queue.current!.replaceEntries([]);
+        setQueueSnapshot(queue.current!.snapshot());
+        setPlaybackCommand(undefined);
+        setArtifact(result.artifact);
+      } else setFileError(result.message);
     } catch (cause) {
       if (requestedRevision === revision.current)
         setFileError(cause instanceof Error ? cause.message : "Invalid JSON");
@@ -210,16 +357,30 @@ export function App() {
               <button
                 type="button"
                 key={work.id}
-                onClick={() => {
-                  ++revision.current;
-                  const result = firstAir(work.id);
-                  if (result.ok) setArtifact(result.artifact);
-                  setFileError(undefined);
-                }}
+                aria-current={activeDemoId === work.id ? "true" : undefined}
+                onClick={() => chooseDemo(work.id)}
               >
                 {work.title}
               </button>
             ))}
+          </div>
+          <div className="first-listen-playlist-mode">
+            <span>{welcome.playlist}</span>
+            <button
+              type="button"
+              data-playback-mode={queueSnapshot.mode}
+              aria-label={welcome.changePlaybackMode(
+                welcome.playbackModes[queueSnapshot.mode],
+                welcome.playbackModes[cyclePlaybackMode(queueSnapshot.mode)],
+              )}
+              title={welcome.playbackModes[queueSnapshot.mode]}
+              onClick={cycleMode}
+            >
+              <span aria-hidden="true">
+                {PLAYBACK_MODE_ICONS[queueSnapshot.mode]}
+              </span>
+              {welcome.playbackModes[queueSnapshot.mode]}
+            </button>
           </div>
         </header>
       ) : null}
@@ -240,6 +401,12 @@ export function App() {
         }
         surface="url"
         visualTheme={requestedVisualTheme()}
+        visualAppearance={parseSharedAppearance(
+          new URL(window.location.href).searchParams,
+        )}
+        playbackCommand={playbackCommand}
+        onPlaybackEnded={continueQueue}
+        shareDeployment={shareDeployment}
       />
       {firstListen ? (
         <footer className="first-listen-next">
@@ -251,9 +418,7 @@ export function App() {
               type="button"
               onClick={() => {
                 ++revision.current;
-                const result = firstAir();
-                if (result.ok) setArtifact(result.artifact);
-                setFileError(undefined);
+                resetDemoQueue();
               }}
             >
               {welcome.reset}

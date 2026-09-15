@@ -24,7 +24,7 @@ for (const width of [1280, 390]) {
     page.on("pageerror", (error) => errors.push(error.message));
     await page.goto("./");
     const original = stringifyRefrainArtifact(work.document);
-    await page.locator('input[type="file"]').setInputFiles({
+    await page.locator('input[type="file"][accept^=".json"]').setInputFiles({
       name: "work.refrain.json",
       mimeType: "application/json",
       buffer: Buffer.from(original),
@@ -61,7 +61,7 @@ for (const width of [1280, 390]) {
     const handoff = JSON.parse(await save(page, "导出选段"));
     expect(handoff.parentArtifact).toEqual(work.document);
     await page.reload();
-    await page.locator('input[type="file"]').setInputFiles({
+    await page.locator('input[type="file"][accept^=".json"]').setInputFiles({
       name: "saved.refrain.json",
       mimeType: "application/json",
       buffer: Buffer.from(saved),
@@ -89,7 +89,7 @@ test("valid unselected documents remain inspectable and never acquire a default 
   await page.goto("./");
   const ambiguous = structuredClone(work.document);
   delete ambiguous.defaultBindingId;
-  await page.locator('input[type="file"]').setInputFiles({
+  await page.locator('input[type="file"][accept^=".json"]').setInputFiles({
     name: "choose.refrain.json",
     mimeType: "application/json",
     buffer: Buffer.from(JSON.stringify(ambiguous)),
@@ -115,7 +115,7 @@ test("valid unselected documents remain inspectable and never acquire a default 
     renderReceipts: [],
     projections: [],
   };
-  await page.locator('input[type="file"]').setInputFiles({
+  await page.locator('input[type="file"][accept^=".json"]').setInputFiles({
     name: "unbound.refrain.json",
     mimeType: "application/json",
     buffer: Buffer.from(JSON.stringify(unbound)),

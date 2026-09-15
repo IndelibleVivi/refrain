@@ -13,6 +13,8 @@ import type { RefrainSelection, RefrainSelectionHandoff } from "./selection.js";
 import type { SelenV21ThemeId } from "./selen-v21-model.js";
 import type { AirReceiptV1 } from "./v1.js";
 import type { RefrainLocale, UiMessageKey } from "./ui-copy.js";
+import type { PortableShareAppearance } from "./appearance.js";
+import type { ShareDeployment } from "./current-air-share.js";
 
 export type ContinuationRelation =
   "revise" | "extend" | "reply" | "variation" | "quote";
@@ -188,6 +190,18 @@ export interface RendererAssetConfig {
   unavailableReason?: string;
 }
 
+export interface RendererPlaybackCommand {
+  readonly requestId: number;
+  readonly action: "start-at-zero";
+  readonly receiptId: string;
+}
+
+export interface RendererPlaybackEndedEvent {
+  readonly identity: string;
+  readonly runId: number;
+  readonly reason: "natural";
+}
+
 export interface RefrainRendererProps {
   initialLocale?: RefrainLocale;
   onLocaleChange?: (locale: RefrainLocale) => void;
@@ -201,6 +215,13 @@ export interface RefrainRendererProps {
     request: string,
     handoff: RefrainSelectionHandoff,
   ) => Promise<void> | void;
+  /** Consumed once; only a user-started queue continuation may create this. */
+  playbackCommand?: RendererPlaybackCommand;
+  onPlaybackEnded?: (event: RendererPlaybackEndedEvent) => void;
   surface?: "url" | "mcp-canvas";
   visualTheme?: SelenV21ThemeId;
+  /** Portable scalar presentation state; never includes local image bytes. */
+  visualAppearance?: PortableShareAppearance;
+  /** Build-owned public receiver capabilities for exact zero-upload sharing. */
+  shareDeployment?: ShareDeployment;
 }

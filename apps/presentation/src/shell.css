@@ -128,3 +128,35 @@ body {
   font: inherit;
   cursor: pointer;
 }
+.first-listen-works button[aria-current="true"] {
+  border-color: #35574c;
+  box-shadow: inset 0 0 0 1px #35574c;
+}
+.first-listen-playlist-mode {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+  color: #676d67;
+  font-size: 12px;
+}
+.first-listen-playlist-mode button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 36px;
+  border: 1px solid #b9c2ba;
+  border-radius: 999px;
+  padding: 6px 11px;
+  background: #f5f7f2;
+  color: #35574c;
+  font: inherit;
+  cursor: pointer;
+}
+.first-listen-playlist-mode button span[aria-hidden="true"] {
+  min-width: 18px;
+  font-size: 16px;
+  line-height: 1;
+  text-align: center;
+}

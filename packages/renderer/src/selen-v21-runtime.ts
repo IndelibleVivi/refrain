@@ -12,6 +12,11 @@ import {
   motifLandmarkAnchors,
   SELEN_V21_DENSE_MOTIF_THRESHOLD,
 } from "./selen-v21-density.js";
+import {
+  DEFAULT_BACKGROUND_OPACITY,
+  SELEN_V21_APPEARANCE_DEFAULTS,
+  type ResolvedAppearance,
+} from "./appearance.js";
 
 export type SelenV21Surface = "mcp" | "desktop" | "mobile";
 
@@ -87,7 +92,7 @@ const SELEN_V21_THEMES = {
       pulse: "#9b7942",
     },
     section: ["#29465f", "#6e6970", "#8b5260", "#9b7942"],
-    accent: "#29465f",
+    accent: SELEN_V21_APPEARANCE_DEFAULTS["paper-sonata"].symbolColor,
     companion: "#8b5260",
     display: "modern",
     texture: "subtle",
@@ -119,7 +124,7 @@ const SELEN_V21_THEMES = {
       pulse: "#e9a13c",
     },
     section: ["#6678ff", "#a56dff", "#f16e87", "#edac4a"],
-    accent: "#4965ff",
+    accent: SELEN_V21_APPEARANCE_DEFAULTS.prism.symbolColor,
     companion: "#f0677b",
     display: "modern",
     texture: "subtle",
@@ -151,7 +156,7 @@ const SELEN_V21_THEMES = {
       pulse: "#b3a077",
     },
     section: ["#c9c3b2", "#8fa6b2", "#8d7f8e", "#b3a077"],
-    accent: "#cfd3d6",
+    accent: SELEN_V21_APPEARANCE_DEFAULTS["nocturne-ink"].symbolColor,
     companion: "#8a5f6d",
     display: "editorial",
     texture: "subtle",
@@ -185,7 +190,7 @@ const SELEN_V21_THEMES = {
       pulse: "#a3854f",
     },
     section: ["#5d7a4e", "#7d946b", "#a3685f", "#a3854f"],
-    accent: "#6a7a58",
+    accent: SELEN_V21_APPEARANCE_DEFAULTS.herbarium.symbolColor,
     companion: "#a3685f",
     display: "lyrical",
     texture: "subtle",
@@ -203,6 +208,25 @@ function themeKey(id: SelenV21ThemeId) {
   return id;
 }
 
+function parseHex(hex) {
+  const value = hex.replace("#", "");
+  return [0, 2, 4].map((index) =>
+    Number.parseInt(value.slice(index, index + 2), 16),
+  );
+}
+
+function mixHex(left, right, rightWeight) {
+  const a = parseHex(left);
+  const b = parseHex(right);
+  return `#${a
+    .map((value, index) =>
+      Math.round(value * (1 - rightWeight) + b[index] * rightWeight)
+        .toString(16)
+        .padStart(2, "0"),
+    )
+    .join("")}`;
+}
+
 export function mountSelenV21(
   root: HTMLElement,
   input: {
@@ -215,6 +239,7 @@ export function mountSelenV21(
     selectionOptions: readonly SelenV21SelectionOption[];
     canReturnSelection: boolean;
     playbackEnabled: boolean;
+    appearance?: ResolvedAppearance;
   },
 ): SelenV21Runtime {
   const copy = uiCopy(input.locale);
@@ -222,6 +247,23 @@ export function mountSelenV21(
   const callbacks = input.callbacks;
   const themes = cloneThemes();
   const theme = themes[themeKey(input.themeId)];
+  const appearanceDefaults = SELEN_V21_APPEARANCE_DEFAULTS[input.themeId];
+  if (input.appearance?.symbolColor) {
+    const originalAccent = theme.accent;
+    theme.accent = input.appearance.symbolColor;
+    Object.keys(theme.voice).forEach((voiceId) => {
+      const original = theme.voice[voiceId];
+      theme.voice[voiceId] =
+        original === originalAccent
+          ? input.appearance.symbolColor
+          : mixHex(original, input.appearance.symbolColor, 0.58);
+    });
+    theme.section = theme.section.map((original) =>
+      original === originalAccent
+        ? input.appearance.symbolColor
+        : mixHex(original, input.appearance.symbolColor, 0.58),
+    );
+  }
   const durationBeats = Math.max(0.0001, piece.durationBeats);
   const durationSeconds = piece.durationSeconds;
   const beatSeconds = 60 / piece.tempo;
@@ -272,23 +314,6 @@ export function mountSelenV21(
     };
   };
 
-  function parseHex(hex) {
-    const value = hex.replace("#", "");
-    return [0, 2, 4].map((index) =>
-      Number.parseInt(value.slice(index, index + 2), 16),
-    );
-  }
-  function mixHex(left, right, rightWeight) {
-    const a = parseHex(left);
-    const b = parseHex(right);
-    return `#${a
-      .map((value, index) =>
-        Math.round(value * (1 - rightWeight) + b[index] * rightWeight)
-          .toString(16)
-          .padStart(2, "0"),
-      )
-      .join("")}`;
-  }
   function configureThemeRoot(themeRoot, selectedTheme) {
     themeRoot.dataset.display = selectedTheme.display;
     themeRoot.dataset.texture = selectedTheme.texture;
@@ -297,6 +322,27 @@ export function mountSelenV21(
     themeRoot.style.setProperty("--accent", selectedTheme.accent);
     themeRoot.style.setProperty("--companion", selectedTheme.companion);
     themeRoot.style.setProperty("--selection-bg", `${selectedTheme.accent}13`);
+    themeRoot.style.setProperty(
+      "--ink",
+      input.appearance?.textColor ?? appearanceDefaults.textColor,
+    );
+    if (input.appearance?.backgroundImageUrl) {
+      themeRoot.dataset.customBackground = "true";
+      themeRoot.style.setProperty(
+        "--appearance-image",
+        `url("${input.appearance.backgroundImageUrl.replaceAll('"', "%22")}")`,
+      );
+      themeRoot.style.setProperty(
+        "--appearance-opacity",
+        String(
+          input.appearance.backgroundOpacity ?? DEFAULT_BACKGROUND_OPACITY,
+        ),
+      );
+      themeRoot.style.setProperty(
+        "--appearance-blur",
+        `${input.appearance.backgroundBlurPx ?? 0}px`,
+      );
+    }
   }
 
   function transformLabel(occurrence) {

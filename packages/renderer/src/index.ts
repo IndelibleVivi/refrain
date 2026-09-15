@@ -16,6 +16,41 @@ export {
 } from "./identity.js";
 export type { ReceiptIntegrityError } from "./identity.js";
 export {
+  APPEARANCE_PREFERENCES_FORMAT,
+  DEFAULT_BACKGROUND_OPACITY,
+  MAX_APPEARANCE_IMAGE_BYTES,
+  MAX_BACKGROUND_BLUR_PX,
+  MAX_BACKGROUND_OPACITY,
+  SELEN_V21_APPEARANCE_DEFAULTS,
+  appearanceForTheme,
+  isRasterAppearanceImage,
+  normalizePortableAppearance,
+  parseAppearancePreferences,
+  parseSharedAppearance,
+} from "./appearance.js";
+export type {
+  AppearanceImageMetadata,
+  AppearancePreferences,
+  PortableShareAppearance,
+  ResolvedAppearance,
+  ThemeAppearance,
+} from "./appearance.js";
+export {
+  checkPublishedAssets,
+  planInlineShare,
+  publicPlayerBase,
+} from "./share-policy.js";
+export type {
+  AssetStamp,
+  ShareFailureReason,
+  SharePlan,
+  ShareRecipientCapabilities,
+} from "./share-policy.js";
+export { deliverShareLink } from "./share-delivery.js";
+export type { ShareDeliveryOutcome, SharePlatform } from "./share-delivery.js";
+export { prepareCurrentAirShare } from "./current-air-share.js";
+export type { ShareDeployment } from "./current-air-share.js";
+export {
   createRefrainArtifact,
   createRefrainArtifactV2,
   createRefrainArtifactV3,
@@ -82,6 +117,8 @@ export type {
   RefrainArtifactV2,
   RefrainArtifactV3,
   RendererAssetConfig,
+  RendererPlaybackCommand,
+  RendererPlaybackEndedEvent,
   RefrainRendererProps,
   VerifiedMotifLink,
 } from "./types.js";

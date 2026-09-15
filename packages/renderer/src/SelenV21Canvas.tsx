@@ -1,6 +1,7 @@
 import { useLayoutEffect, useRef, useState } from "react";
 import type { SelenV21Piece, SelenV21ThemeId } from "./selen-v21-model.js";
 import type { RefrainLocale } from "./ui-copy.js";
+import type { ResolvedAppearance } from "./appearance.js";
 import {
   mountSelenV21,
   type SelenV21Runtime,
@@ -24,6 +25,7 @@ interface SelenV21CanvasProps {
   selectedAnchor?: string;
   surface: "url" | "mcp-canvas";
   themeId?: SelenV21ThemeId;
+  appearance?: ResolvedAppearance;
 }
 
 function initialSurface(
@@ -49,6 +51,7 @@ export function SelenV21Canvas({
   selectedAnchor,
   surface,
   themeId = "paper-sonata",
+  appearance,
 }: SelenV21CanvasProps) {
   const host = useRef<HTMLDivElement>(null);
   const runtime = useRef<SelenV21Runtime | undefined>(undefined);
@@ -114,6 +117,7 @@ export function SelenV21Canvas({
       state: { playing, positionBeat, selectedAnchor, preparation },
       surface: resolvedSurface,
       themeId,
+      appearance,
     });
     // A language change redraws the same composer. Keep the listening engine
     // outside this bridge and retain the open passage controls in this view.
@@ -162,6 +166,7 @@ export function SelenV21Canvas({
     selectionOptions,
     surface,
     themeId,
+    appearance,
   ]);
 
   useLayoutEffect(() => {
