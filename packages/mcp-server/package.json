@@ -31,7 +31,8 @@
     "react-dom": "^19.1.1",
     "skybridge": "1.4.0",
     "vite": "^7.1.3",
-    "zod": "^4.1.5"
+    "zod": "^4.1.5",
+    "@refrain/correspondence": "*"
   },
   "devDependencies": {
     "@skybridge/devtools": "^1.4.0",

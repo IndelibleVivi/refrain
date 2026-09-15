@@ -4,7 +4,7 @@ import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { compileAir } from "@refrain/compiler";
 import { createExecutionBundle } from "@refrain/audio-engine";
-import { streamExecutionWav } from "./stream-wav.js";
+import { streamExecutionWav } from "@refrain/audio-engine/node-wav";
 
 function bundle() {
   return createExecutionBundle(

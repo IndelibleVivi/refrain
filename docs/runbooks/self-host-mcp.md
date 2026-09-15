@@ -93,7 +93,7 @@ docker inspect --format '{{.Image}} {{.State.Status}} {{.State.Health.Status}} {
 Wait for Docker health to reach `healthy`; `starting` is pending rather than a
 failed candidate. Then use a Streamable HTTP MCP client against that exact loopback
 port and perform the complete readback contract described below: exact release
-identity, exactly one `hum`, exactly one `ui://refrain/hum/v3.html`, self-contained
+identity, exactly `hum` and `audition`, exactly one `ui://refrain/hum/v3.html`, self-contained
 App bytes with no external Canvas dependency, available zero-asset synthetic
 execution, and exact sampled binding with `sample-origin-missing`. Stop the named
 candidate only after recording those results:
@@ -132,7 +132,7 @@ curl -fsS http://127.0.0.1:18101/healthz
 docker inspect --format '{{.State.Health.Status}}' refrain-mcp
 ```
 
-`/healthz` must return HTTP 200 with `status: "ok"`, `server: "Refrain"`, and the packaged source revision/bundle SHA-256; a successful `hum` must carry the same identity only in private `refrain/release` result metadata. An unauthenticated plain HTTP probe of `/mcp` may receive an MCP protocol error; it still must not receive a server error. Complete verification uses an MCP client to initialize, list `hum`, confirm that its description names the exact host default and zero-asset instrument closure, call synth-only AIR@1 without an explicit binding and require `performanceStatus: available`, then call a sample-backed AIR and require the same exact binding plus `sample-origin-missing`. It also asserts that resource discovery returns only the advertised App document and confirms its `text/html;profile=mcp-app` MIME type, empty Canvas network-domain declarations, and inline JS/CSS. Origin-level asset probes separately confirm the container's private SoundFont/worklet routes for direct clients; they are not dependencies of the MCP Canvas.
+`/healthz` must return HTTP 200 with `status: "ok"`, `server: "Refrain"`, and the packaged source revision/bundle SHA-256; a successful `hum` must carry the same identity only in private `refrain/release` result metadata. An unauthenticated plain HTTP probe of `/mcp` may receive an MCP protocol error; it still must not receive a server error. Complete verification uses an MCP client to initialize, list exactly `hum` and `audition`, confirm that its description names the exact host default and zero-asset instrument closure, call synth-only AIR@1 without an explicit binding and require `performanceStatus: available`, then call a sample-backed AIR and require the same exact binding plus `sample-origin-missing`. It also asserts that resource discovery returns only the advertised App document and confirms its `text/html;profile=mcp-app` MIME type, empty Canvas network-domain declarations, and inline JS/CSS. Origin-level asset probes separately confirm the container's private SoundFont/worklet routes for direct clients; they are not dependencies of the MCP Canvas.
 
 ## Attach OpenAI Secure MCP Tunnel
 
@@ -301,7 +301,7 @@ Keep `refrain-gpt-tunnel.service` healthy and ready throughout connection creati
 3. Enter the user-facing name `Refrain` and a short description such as `Relational music authoring and Selen Canvas playback through one private self-hosted MCP origin.`
 4. Under **Connection**, choose **Tunnel**, then select the dedicated Refrain tunnel or paste its non-secret `tunnel_id`.
 5. Choose **No Authentication**. The private OpenAI workspace/tunnel association is the outer transport boundary; Refrain has no account or OAuth issuer.
-6. Scan the server, confirm that exactly one model-visible tool named `hum` is discovered, and perform the final **Create** action manually.
+6. Scan the server, confirm that exactly two model-visible tools named `hum` and `audition` are discovered, and perform the final **Create** action manually.
 7. Start a fresh conversation, enable Refrain from the tools menu, and run the synthetic host acceptance below.
 
 These steps follow OpenAI's current [connect and test a plugin](https://developers.openai.com/plugins/deploy/connect-chatgpt) workflow. If ChatGPT asks for a Refrain, Tilia, or other product OAuth login in this private topology, stop: the wrong authentication mode, tunnel, or app was selected.
@@ -359,7 +359,7 @@ Refrain intentionally advertises no OAuth metadata on the private origin. Requir
 
 ### Host-specific discovery probe returns an error
 
-The deployed origin negotiates MCP `2025-06-18`. A host may issue a newer or host-specific discovery probe before falling back to the negotiated initialize/tool-discovery flow. Treat the probe as non-blocking only when the subsequent standard flow creates the connector and discovers exactly `hum`; do not upgrade the protocol merely to remove a warning.
+Read the actual negotiated protocol from the selected runtime; a previously accepted origin negotiated MCP `2025-06-18`. A host may issue a newer or host-specific discovery probe before falling back to the negotiated initialize/tool-discovery flow. Treat the probe as non-blocking only when the subsequent standard flow creates the connector and discovers the selected revision's advertised tools (current source: `hum` and `audition`); do not upgrade the protocol merely to remove a warning.
 
 ### Canvas reports `Failed to fetch template`
 
@@ -375,7 +375,8 @@ Treat these as two different boundaries. `The artifact AIR@1 receipt failed inte
 
 Do not call the deployment host-accepted until a real host has:
 
-- discovered exactly one `hum` tool and the App resource;
+- discovered exactly `hum` and `audition`, plus the one App resource;
+- returned a short synthetic `audition` as actual WAV content with the advertised digest; separately recorded whether the named host actually delivered audio to model input, rather than inferring hearing from tool success;
 - authored a valid AIR without receiving expanded events;
 - rendered the shared Selen Canvas rather than a host-specific fork;
 - kept audio at zero before an explicit Play gesture;

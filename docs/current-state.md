@@ -1,6 +1,6 @@
 # Current state
 
-Last reconciled: 2026-09-10. This page describes source and acceptance status, not a live deployment inventory.
+Last reconciled: 2026-09-15. This page describes source and acceptance status, not a live deployment inventory.
 
 ## Available in this source tree
 
@@ -11,10 +11,18 @@ Last reconciled: 2026-09-10. This page describes source and acceptance status, n
 - Appearance menus in both Canvas surfaces expose all four themes while preserving playback and selection. Browser playback controls sit above the score, and artifact saving is available outside technical details.
 - Browser playback preparation reports exact asset progress (prepared/total sounds and bytes) in the Canvas transport in both interface languages, and content-addressed sound bytes persist in the browser Cache Storage after the first fetch, so a returning visit on the same device starts playback from local bytes. Every byte still passes digest verification before use, and no sound is fetched before a play gesture.
 - The shared renderer serves loopback URLs and a self-contained MCP App (`ui://refrain/hum/v3.html`). Paper Sonata, Prism, Nocturne Ink, and Herbarium use the same source/selection/audio authority.
-- The formal source-tree CLI supports doctor, bindings, draft, inspect, local hum, produce, fetch, open, export, packs, and MCP stdio. The stdio entrypoint requires a Canvas build and selects the production resource independently of caller working directory. CLI operations do not become additional model-visible MCP tools.
+- The formal source-tree CLI supports doctor, bindings, draft, inspect, local hum, produce, audition, respond, share, receive, fetch, open, export, packs, and MCP stdio. The stdio entrypoint requires a Canvas build and selects the production resource independently of caller working directory. The source MCP tools are `hum` and `audition`; other CLI operations remain local.
 - The Skill-only Plugin is a **0.3.0 source candidate**. Source presence does not establish Plugin installation, activation, directory publication, or a configured MCP connection.
 - Exact local production uses group level/placement, low-pass, saturation, delay, room, and fade. It preserves music and existing authorities while adding a new exact binding. It does not add general automation, a DAW, per-voice routing, or model hearing.
 - Local extension packs separate installed metadata, hydrated assets, authoring shelf, execution closure, and archive pins. Pack-carried language is explicit in the AIR vocabulary, never an ambient modification of old works.
+
+## Musical correspondence source candidate
+
+The current branch adds `audition`, `respond`, `share`, and `receive` CLI operations and MCP `audition`. One shared preparation capability renders exact native WAV, full pieces locally or explicit passages/A-B pairs, then carries measured signal facts and optional free responses. `audition slice` reuses one verified complete single-entry native render for further exact cuts without rerendering; `verify` and `locate` check packet bytes and map clip-local time back to the original render. Selected local sharing/reception preserves frozen audio independently of sound installation; complete Artifact@3 enables the existing formal `reply` flow. Expression is primary; no judging model, quality score, compulsory revision, accounts, or auto-delivery is introduced.
+
+Focused source tests now also cover repeated no-rerender slicing, exact frozen PCM, local time mapping, cancellation after native render, canonical output/input path isolation across aliases, single-link members, copied-byte checks, and bounded streaming rejection of an unlisted share member before declared media hashing. Verification on 2026-09-15 passed `npm run check` (329 tests / 77 files, typecheck, Plugin check, workspace builds), CLI/audio/selection smokes, byte-exact export reproduction, and real stdio and HTTP audio-content smokes. A real CLI exercise rendered the sampled 92-second checked-in `After the Door · 门后` artifact, cut a three-second packet from its frozen WAV with `rerendered: false`, then verified and located it. Both 288-second and 480-second complete-piece native renders reproduced, and all 23 Chromium host scenarios passed, including received-WAV playback after a gesture at desktop/mobile widths. Named-host model audio input, installation, runtime activation, external sharing, human listening and owner acceptance are not claimed. See [CORRESPONDENCE.md](CORRESPONDENCE.md).
+
+A clean committed-tree runtime candidate from `9bea42c` passed a fresh production-only dependency install and isolated Node HTTP execution. All 575 release-manifest files reproduced their byte counts and SHA-256 values; health, private result metadata, both tools, actual audition WAV and the single self-contained App agreed on the packaged revision. That packaged candidate predates the current frozen-slicing and custody hardening. This is candidate evidence, not current-revision packaging, OCI image construction or deployment. The unchanged transitive Hono dependency still reports a moderate npm audit finding; dependency remediation is separate from this feature.
 
 ## Work custody and continuation candidate
 

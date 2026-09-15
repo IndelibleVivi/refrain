@@ -6,7 +6,7 @@ config:
     rankSpacing: 28
 ---
 flowchart LR
-  subgraph HOST[Your host]
+  subgraph HOST[Authoring or receiving host]
     H["Agent + Skill<br/>Authors the score<br/>Chooses expression and sound"]
   end
   subgraph CORE[Refrain · stateless]
@@ -15,10 +15,13 @@ flowchart LR
   A["Portable artifact<br/>Score · receipt · binding"]
   V["Shared Canvas<br/>MCP App / browser<br/>You press Play"]
   E["Files you keep<br/>Artifact · source · WAV · MIDI"]
+  L["Audition · share · receive<br/>Exact WAV · optional parent<br/>Model audio input: unknown"]
   H -->|"authored AIR"| T
   T -->|"returns"| A
   A --> V
   A -->|"export"| E
+  A --> L
+  L -.->|"sound + optional response"| H
   V -.->|"exact selection + parent"| H
   classDef host fill:#e8eee7,stroke:#50684e,color:#20341e
   classDef core fill:#edf1f5,stroke:#536b83,color:#273b50
@@ -27,6 +30,6 @@ flowchart LR
   class H host
   class T core
   class A artifact
-  class V,E output
+  class V,E,L output
   style HOST fill:#f7f9f5,stroke:#9daa96
   style CORE fill:#f5f7fa,stroke:#9baabb

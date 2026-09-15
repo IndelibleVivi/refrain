@@ -5,6 +5,7 @@ import { tmpdir } from "node:os";
 import { join, resolve } from "node:path";
 import { Client } from "@modelcontextprotocol/sdk/client/index.js";
 import { StreamableHTTPClientTransport } from "@modelcontextprotocol/sdk/client/streamableHttp.js";
+import { assertAudition } from "./assert-audition.mjs";
 
 async function availablePort() {
   const server = createServer();
@@ -163,6 +164,12 @@ try {
       "HTTP hum did not carry its exact private release identity.",
     );
 
+  const audition = await assertAudition(client, tools, artifact);
+  if (audition.release?.bundleDigest !== expectedRelease.bundleDigest)
+    throw new Error(
+      "HTTP audition did not carry its exact private release identity.",
+    );
+
   const sampledFixture = JSON.parse(
     await readFile(resolve("fixtures/air-v1/crooked-return.air.json"), "utf8"),
   );
@@ -302,7 +309,8 @@ try {
     `${JSON.stringify(
       {
         transport: "streamable-http",
-        tool: humTool.name,
+        tools: tools.tools.map((t) => t.name),
+        audition,
         release: expectedRelease.bundleDigest,
         resource: resourceUri,
         canvasBytes: htmlBytes,

@@ -52,7 +52,7 @@ import {
   type PerformanceBindingV1,
 } from "@refrain/soundpack/vnext";
 import { selectPerformanceBinding } from "./select-performance-binding.js";
-import { streamExecutionWav } from "./stream-wav.js";
+import { streamExecutionWav } from "@refrain/audio-engine/node-wav";
 
 const arguments_ = process.argv.slice(2);
 const inputPath = arguments_.find((argument) => !argument.startsWith("--"));

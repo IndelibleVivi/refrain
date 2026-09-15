@@ -26,6 +26,13 @@ Usage:
   refrain produce init <artifact> --id <new-binding-id> --out <settings-file> [--binding <carried-id>]
   refrain produce inspect <artifact> [--settings <file>] [--binding <carried-id>] [--json]
   refrain produce apply <artifact> --settings <file> --out <new-artifact> [--binding <carried-id>]
+  refrain audition <artifact> --out <directory> [--binding <carried-id>] [--section <id> | --selection <file> | --start <seconds> --end <seconds>] [--context <seconds>] [--compare <artifact> --compare-section <id>] [--asset-root <directory>]
+  refrain audition slice <full-audition-directory> --out <directory> [--section <id> | --selection <file> | --start <seconds> --end <seconds>] [--context <seconds>]
+  refrain audition verify <audition-directory> [--json]
+  refrain audition locate <audition-directory> --at <local-seconds> [--entry a|b] [--json]
+  refrain respond <audition-directory> --observer <name> --basis <audio-input,score-reading,render-measurements,human-listening> --message <text> --out <response-file> [--entry a|b] [--start <seconds> --end <seconds>]
+  refrain share <audition-directory> --out <directory> --attribution <text> --rights <text> [--include-artifact] [--response <file>] [--invitation welcome|music|conversation|none] [--message <text>]
+  refrain receive <share-directory> [--out <new-directory>] [--json]
   refrain fetch (--candidate <id> | --profile <id> | --palette <id> | --air <file> --binding <id>)
   refrain open <air-or-artifact> [--binding <id>] [--no-open] [--json]
   refrain export <air-or-artifact> [--binding <id>] [--out <directory>] [--matched-preview]
@@ -56,6 +63,10 @@ function doctor() {
     bindings: resolve(repoRoot, "apps/presentation/src/bindings.ts"),
     authoring: resolve(repoRoot, "apps/presentation/src/authoring.ts"),
     production: resolve(repoRoot, "apps/presentation/src/production.ts"),
+    correspondence: resolve(
+      repoRoot,
+      "apps/presentation/src/correspondence.ts",
+    ),
     packs: resolve(repoRoot, "apps/presentation/src/packs.ts"),
     mcpStdio: resolve(repoRoot, "packages/mcp-server/src/stdio.ts"),
   };
@@ -162,6 +173,12 @@ async function main() {
       .filter((line) => line.startsWith(`  refrain ${command} `));
     if (!usage.length)
       throw new Error(`Unknown command ${command}. Run refrain --help.`);
+    if (["audition", "respond", "share", "receive"].includes(command)) {
+      process.stdout.write(
+        `Usage:\n${usage.join("\n")}\n\nSee docs/CORRESPONDENCE.md for exact sound, comparison, optional responses, and local sharing. No automatic playback, upload, or model-hearing claim.\n`,
+      );
+      return 0;
+    }
     if (command === "produce") {
       process.stdout.write(
         `Usage:\n${usage.join("\n")}\n\nInit writes editable scene settings; inspect resolves current or proposed routing; apply retains the music and adds a new exact binding.\nUse --json for machine output. See plugins/refrain/skills/refrain-air-authoring/references/production.md.\n`,
@@ -175,6 +192,12 @@ async function main() {
   }
   if (command === "produce")
     return runTypeScript("apps/presentation/src/production.ts", [
+      ...rest,
+      ...(json ? ["--json"] : []),
+    ]);
+  if (["audition", "respond", "share", "receive"].includes(command))
+    return runTypeScript("apps/presentation/src/correspondence.ts", [
+      command,
       ...rest,
       ...(json ? ["--json"] : []),
     ]);

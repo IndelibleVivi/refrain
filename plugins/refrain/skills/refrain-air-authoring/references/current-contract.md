@@ -60,8 +60,9 @@ The installable source-tree CLI is a thin shell over the same canonical implemen
 - `refrain fetch ...` acquires one explicit candidate, profile, palette, or AIR-plus-binding asset closure.
 - `refrain open <air-or-artifact>` prepares only the selected exact asset closure and starts an independent loopback instance of the shared URL renderer with an isolated asset projection and same-origin session when needed; Play still requires a user gesture.
 - `refrain export <air-or-artifact>` emits the strict portable artifact, source, MIDI, native WAV, binding, receipt, asset-closure, and provenance projections.
+- `refrain audition`, `respond`, `share`, and `receive` support exact audio and optional musical correspondence. See [correspondence.md](correspondence.md).
 - `refrain packs ...` exposes the existing operator-rooted pack lifecycle.
-- `refrain mcp stdio` lets a CLI/agent/harness configure the same one-tool stateless MCP server locally.
+- `refrain mcp stdio` lets a CLI/agent/harness configure the same stateless MCP server with `hum` and `audition` locally.
 
 These commands do not create another grammar, renderer, hosted library, or composing model. The repo-local Plugin candidate still does not claim a public MCP endpoint or marketplace publication.
 

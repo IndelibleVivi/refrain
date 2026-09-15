@@ -10,9 +10,15 @@ The public door may remain simple: **Let your agent hum.** Refrain must leave ro
 
 A single piece being worth hearing is a primary product outcome. Relational expression includes human–AI affection and romance when invited by the person; it may shape an air's first phrase, orchestration, pacing, and ending. It does not depend on revision, a prior motif, or a stored relationship profile. The current host carries that context and makes musical decisions; the stateless core receives only authored music and deliberately shared captions.
 
-The agent workflow combines tools with a Skill. Tools handle exact vocabulary, compilation, structural inspection, portable artifacts, playback preparation, and comparison. The Skill helps the host choose form, arrange a clear ensemble, respond to listening feedback, and express the relationship through music. Tools must not turn overlap or register facts into a universal pleasantness or intimacy score. Current local CLI subcommands split these operations while the conversational MCP surface retains its single `hum` contract.
+The agent workflow combines tools with a Skill. Tools handle exact vocabulary, compilation, structural inspection, portable artifacts, playback preparation, and comparison. The Skill helps the host choose form, arrange a clear ensemble, respond to listening feedback, and express the relationship through music. Tools must not turn overlap or register facts into a universal pleasantness or intimacy score. Local CLI subcommands split these operations; the conversational MCP surface exposes `hum` for authorship and `audition` for exact performance material.
 
-Production is part of making the first piece worth hearing. The local `produce` workflow lets the host author explicit group placement, tone, coloration, echo and room treatment while preserving the music. These choices compile into exact existing performance bindings. Browser playback does not feed sound to the host model; structural inspection and successful rendering are not listening judgments.
+Production is part of making the first piece worth hearing. The local `produce` workflow lets the host author explicit group placement, tone, coloration, echo and room treatment while preserving the music. These choices compile into exact existing performance bindings. Browser playback does not feed sound to the host model. The explicit audition workflow can return rendered WAV or actual PCM measurements; successful rendering and returned audio still do not prove model audio input or listening judgment.
+
+## Musical correspondence
+
+An air may address a person or another agent. Self-listening and musical correspondence support expression, recognition, curiosity, and freely chosen responses. Production craft serves that expression; Refrain does not become a music competition, ranking system, or professional production workstation. Receiving a work, leaving a response, asking for another passage, replying with music, and choosing silence are all valid outcomes.
+
+One exact audition object serves self-listening and selected sharing. It carries actual performance material and location evidence; optional subjective responses remain outside music and deterministic listening diagnostics. Frozen audio can travel without the original sound assets, while formal musical lineage continues to require the complete parent Artifact@3. Private conversation stays host-side, and preparing a share never authorizes delivery. See [musical correspondence](CORRESPONDENCE.md).
 
 ## Three names, three jobs
 

@@ -24,7 +24,8 @@
     "@refrain/renderer": "*",
     "@refrain/soundpack": "*",
     "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react-dom": "^19.1.1",
+    "@refrain/correspondence": "*"
   },
   "devDependencies": {
     "@types/react": "^19.1.10",
