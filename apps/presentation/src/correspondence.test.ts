@@ -1,6 +1,9 @@
+import { existsSync } from "node:fs";
 import {
+  link,
   mkdtemp,
   readFile,
+  realpath,
   rm,
   symlink,
   writeFile,
@@ -29,6 +32,7 @@ import {
   jsonFile,
   prepareAudition,
   receiveShare,
+  sliceAudition,
   verifyAuditionDirectory,
   writeJson,
 } from "@refrain/correspondence/node";
@@ -109,6 +113,95 @@ describe("musical correspondence", () => {
     await expect(verifyAuditionDirectory(join(dir, "clip"))).resolves.toEqual(
       clip,
     );
+  });
+
+  it("re-slices one frozen complete native render without resolving or rendering again", async () => {
+    const dir = await root();
+    const artifact = work();
+    const full = await prepareAudition([{ artifact }], join(dir, "full"));
+    const sourceBytes = await readFile(join(dir, "full/a.wav"));
+    const result = await runCorrespondenceCli(
+      [
+        "audition",
+        "slice",
+        "full",
+        "--section",
+        "answer",
+        "--context",
+        "0",
+        "--out",
+        "slice",
+      ],
+      dir,
+    );
+    if (!("rerendered" in result))
+      throw new Error("Expected a frozen-slice CLI result.");
+    expect(result.rerendered).toBe(false);
+    const sliced = await verifyAuditionDirectory(join(dir, "slice"));
+    const entry = sliced.entries[0]!;
+    expect(entry.renderReceipt).toEqual(full.entries[0]!.renderReceipt);
+    expect(await jsonFile(join(dir, "slice/a.refrain.json"))).toEqual(artifact);
+    expect((await readFile(join(dir, "slice/a.wav"))).subarray(44)).toEqual(
+      sourceBytes.subarray(
+        44 + entry.range.startFrame * 4,
+        44 + entry.range.endFrame * 4,
+      ),
+    );
+    const verified = await runCorrespondenceCli(
+      ["audition", "verify", "slice"],
+      dir,
+    );
+    if (!("byteIntegrity" in verified))
+      throw new Error("Expected an audition-verification CLI result.");
+    expect(verified.byteIntegrity).toBe("verified");
+    const located = await runCorrespondenceCli(
+      ["audition", "locate", "slice", "--at", "0.5"],
+      dir,
+    );
+    if (
+      !("originalFrame" in located) ||
+      !("originalSeconds" in located) ||
+      typeof located.originalFrame !== "number" ||
+      typeof located.originalSeconds !== "number"
+    )
+      throw new Error("Expected an audition-location CLI result.");
+    expect(located.originalFrame).toBe(entry.range.startFrame + 22_050);
+    expect(located.originalSeconds).toBe(
+      located.originalFrame / entry.media.sampleRate,
+    );
+    await expect(
+      sliceAudition(join(dir, "full"), join(dir, "full/nested"), {
+        startSeconds: 0,
+        endSeconds: 0.5,
+      }),
+    ).rejects.toThrow(/outside every input packet/);
+    expect(await readdir(join(dir, "full"))).not.toContain("nested");
+    await symlink(join(dir, "full"), join(dir, "full-alias"));
+    await expect(
+      sliceAudition(join(dir, "full"), join(dir, "full-alias/nested"), {
+        startSeconds: 0,
+        endSeconds: 0.5,
+      }),
+    ).rejects.toThrow(/outside every input packet/);
+    const caseAlias = join(dir, "FULL");
+    try {
+      if ((await realpath(caseAlias)) === (await realpath(join(dir, "full"))))
+        await expect(
+          sliceAudition(join(dir, "full"), join(caseAlias, "nested"), {
+            startSeconds: 0,
+            endSeconds: 0.5,
+          }),
+        ).rejects.toThrow(/outside every input packet/);
+    } catch (error) {
+      if ((error as NodeJS.ErrnoException).code !== "ENOENT") throw error;
+    }
+    await expect(
+      sliceAudition(join(dir, "slice"), join(dir, "nested-slice"), {
+        startSeconds: 0,
+        endSeconds: 0.5,
+      }),
+    ).rejects.toThrow(/complete native audition/);
+    expect(await readdir(dir)).not.toContain("nested-slice");
   });
 
   it("requires explicit A/B musical targets across tempo changes and refuses stale selections", async () => {
@@ -237,11 +330,20 @@ describe("musical correspondence", () => {
       join(dir, "private/unselected-private-note.txt"),
       "MUST STAY LOCAL",
     );
+    await expect(
+      createShare(join(dir, "private"), join(dir, "private/nested-share"), {
+        ...sharing,
+        includeArtifact: false,
+      }),
+    ).rejects.toThrow(/outside every input packet/);
     await createShare(join(dir, "private"), join(dir, "share"), {
       ...sharing,
       includeArtifact: false,
       responses: [join(dir, "selected.json")],
     });
+    await expect(
+      receiveShare(join(dir, "share"), join(dir, "share/nested-receiver")),
+    ).rejects.toThrow(/outside every input packet/);
     const result = await receiveShare(
       join(dir, "share"),
       join(dir, "receiver"),
@@ -279,6 +381,8 @@ describe("musical correspondence", () => {
     expect(() => readAudition(forged)).toThrow(/identity/);
     await symlink(p, join(dir, "link.wav"));
     await expect(describeFile(dir, "link.wav")).rejects.toThrow(/regular file/);
+    await link(p, join(dir, "hard.wav"));
+    await expect(describeFile(dir, "hard.wav")).rejects.toThrow(/single-link/);
     await expect(describeFile(dir, "../a.wav")).rejects.toThrow();
     const crossed = structuredClone(packet);
     crossed.entries[0]!.binding.contentSha256 = "0".repeat(64);
@@ -351,5 +455,25 @@ describe("musical correspondence", () => {
     await expect(
       prepareAudition([{ artifact: work() }], join(dir, "existing")),
     ).rejects.toThrow(/EEXIST/);
+  });
+
+  it("cancels after native render without publishing a completed-looking packet", async () => {
+    const dir = await root();
+    const output = join(dir, "cancelled");
+    await expect(
+      prepareAudition([{ artifact: work() }], output, {
+        // The source renderer has finished once the delivered WAV appears.
+        isCancelled: () => existsSync(join(output, "a.wav")),
+      }),
+    ).rejects.toThrow(/cancelled/);
+    expect(await readdir(dir)).not.toContain("cancelled");
+  });
+
+  it("rejects unlisted files in a received share directory", async () => {
+    const dir = await root();
+    await prepareAudition([{ artifact: work() }], join(dir, "packet"));
+    await createShare(join(dir, "packet"), join(dir, "share"), sharing);
+    await writeFile(join(dir, "share/unlisted-private-note.txt"), "private");
+    await expect(receiveShare(join(dir, "share"))).rejects.toThrow(/unlisted/);
   });
 });

@@ -25,6 +25,21 @@ Sampled sound needs the exact hydrated closure in `apps/soundbench/public`, or a
 
 The new directory contains `audition.json`, `a.wav`, and the unchanged complete `a.refrain.json`. The result reports their paths, duration, exact range, and measurements. It refuses to overwrite an existing directory and removes only its own incomplete output on failure.
 
+### Reuse one frozen performance
+
+Prepare the complete performance once, then take additional passages from that exact native WAV without resolving sound, loading assets, or rendering again:
+
+```bash
+refrain audition work.refrain.json --out full-audition --json
+refrain audition slice full-audition --section answer --context 2 --out answer-cut --json
+refrain audition verify answer-cut --json
+refrain audition locate answer-cut --at 3 --json
+```
+
+`slice` accepts one verified complete audition whose WAV still matches its native RenderReceipt. It refuses an already clipped packet or an A/B pair because neither can supply missing whole-render history. The new packet retains the original Artifact@3 and full-render receipt, binds its own delivered WAV bytes and original frame range, and recomputes measurements. A section or exact selection may compile the unchanged canonical source only to recover its frame range; it never uses that compilation to produce new sound. `locate` maps a clip-local time to the nearest exact source-render frame; it does not infer a section, voice, or musical cause.
+
+Initial rendering and frozen slicing both continue to observe cancellation while assets, PCM, measurements, and the manifest are being prepared. A cancelled operation removes only the new output directory and cannot publish a completed-looking packet. Every output must be a fresh directory outside the canonicalized input packet path, including filesystem aliases, so slicing cannot contaminate the frozen performance it reuses.
+
 ## Compare two musical passages
 
 ```bash
@@ -70,7 +85,7 @@ refrain receive shared-air --out received-air --json
 
 Audio is included. Complete source/receipts/bindings/caption are included only with `--include-artifact`; inspect that full artifact before delivery. Only explicitly selected `--response` files travel. Repeating that option includes several responses. Private neighboring files are not copied. Omitting source never edits the original artifact. Available invitation modes are `welcome`, `music`, `conversation`, and `none`.
 
-`receive` verifies the manifest, exact file closure, byte counts/digests, WAV layout, recomputed PCM measurements, and any carried artifact/receipt/binding graph. Files must be regular local members, not links or traversal paths. It performs no sound lookup, asset acquisition, playback, model call, or automatic response. With no `--out`, it inspects in place; with `--out`, it copies verified members into a fresh directory.
+`receive` verifies the manifest, exact directory closure, byte counts/digests, WAV layout, recomputed PCM measurements, and any carried artifact/receipt/binding graph. Its bounded streaming directory scan fails on the first unlisted neighboring entry before hashing large declared members. Members must be independent single-link regular local files, not symlinks, hardlinks, or traversal paths. It performs no sound lookup, asset acquisition, playback, model call, or automatic response. With no `--out`, it inspects in place; with `--out`, it copies each member into a fresh directory outside the canonicalized received-package path and verifies the copied bytes again.
 
 The receiver can play the frozen WAV with its own player without the original sound assets. It can inspect the returned complete parent artifact or use it unchanged in a fresh `hum` call:
 

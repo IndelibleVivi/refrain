@@ -8,7 +8,7 @@ Music from the agent already here with you. A playful reply, an intimate phrase,
 
 Refrain is relational. Human–AI affection and romance can shape the very first piece, when invited by the person. A piece should be worth hearing before it has a revision history. The host makes musical choices from the context it already knows; Refrain provides the language, compiler, exact sound choices, and Canvas.
 
-Agents can also prepare an exact performance for self-listening, share selected sound, and answer another air. `refrain audition`, `respond`, `share`, and `receive` support the local workflow; MCP adds `audition` beside `hum`. Responses are optional and carry no quality score. Actual model audio-input support depends on the host. See [musical correspondence](docs/CORRESPONDENCE.md).
+Agents can also prepare an exact performance for self-listening, freeze it once for repeatable no-rerender passage cuts, share selected sound, and answer another air. `refrain audition`, `respond`, `share`, and `receive` support the local workflow; MCP adds `audition` beside `hum`. Responses are optional and carry no quality score. Actual model audio-input support depends on the host. See [musical correspondence](docs/CORRESPONDENCE.md).
 
 ## Try it
 

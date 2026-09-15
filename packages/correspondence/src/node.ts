@@ -1,16 +1,26 @@
 import { createHash } from "node:crypto";
-import { createReadStream } from "node:fs";
+import { constants } from "node:fs";
 import {
   copyFile,
   lstat,
   mkdir,
   mkdtemp,
   open,
+  opendir,
   readFile,
+  realpath,
   rm,
   writeFile,
 } from "node:fs/promises";
-import { dirname, join, resolve } from "node:path";
+import {
+  basename,
+  dirname,
+  isAbsolute,
+  join,
+  relative,
+  resolve,
+  sep,
+} from "node:path";
 import { tmpdir } from "node:os";
 import { compileAirV1 } from "@refrain/compiler/v1";
 import { createExecutionBundle } from "@refrain/audio-engine/execution";
@@ -45,11 +55,12 @@ export async function jsonFile(path: string): Promise<unknown> {
 }
 async function packetJson(directory: string, filename: string) {
   const path = join(directory, filename);
-  if (!(await lstat(path)).isFile())
-    throw new Error(
-      `Packet member ${filename} must be a regular file, not a link.`,
-    );
-  return jsonFile(path);
+  const before = await describeFile(directory, filename);
+  const value = await jsonFile(path);
+  const after = await describeFile(directory, filename);
+  if (before.bytes !== after.bytes || before.sha256 !== after.sha256)
+    throw new Error(`Packet member ${filename} changed while it was read.`);
+  return value;
 }
 export async function writeJson(path: string, value: unknown) {
   await writeFile(path, `${JSON.stringify(value, null, 2)}\n`, { flag: "wx" });
@@ -60,14 +71,55 @@ export async function describeFile(
 ): Promise<PacketFile> {
   fileSchema.shape.filename.parse(filename);
   const path = join(directory, filename);
-  const stat = await lstat(path);
-  if (!stat.isFile())
+  const before = await lstat(path);
+  if (!before.isFile() || before.nlink !== 1)
     throw new Error(
-      `Packet member ${filename} must be a regular file, not a link.`,
+      `Packet member ${filename} must be a single-link regular file.`,
     );
-  const hash = createHash("sha256");
-  for await (const chunk of createReadStream(path)) hash.update(chunk);
-  return { filename, bytes: stat.size, sha256: `sha256:${hash.digest("hex")}` };
+  const handle = await open(
+    path,
+    constants.O_RDONLY | (constants.O_NOFOLLOW ?? 0),
+  );
+  try {
+    const opened = await handle.stat();
+    if (
+      !opened.isFile() ||
+      opened.nlink !== 1 ||
+      opened.dev !== before.dev ||
+      opened.ino !== before.ino ||
+      opened.size !== before.size
+    )
+      throw new Error(`Packet member ${filename} changed while opening.`);
+    const hash = createHash("sha256");
+    const buffer = Buffer.alloc(65_536);
+    let position = 0;
+    while (position < opened.size) {
+      const { bytesRead } = await handle.read(
+        buffer,
+        0,
+        Math.min(buffer.length, opened.size - position),
+        position,
+      );
+      if (!bytesRead)
+        throw new Error(`Packet member ${filename} changed while hashing.`);
+      hash.update(buffer.subarray(0, bytesRead));
+      position += bytesRead;
+    }
+    const after = await handle.stat();
+    if (
+      after.size !== opened.size ||
+      after.mtimeMs !== opened.mtimeMs ||
+      after.ctimeMs !== opened.ctimeMs
+    )
+      throw new Error(`Packet member ${filename} changed while hashing.`);
+    return {
+      filename,
+      bytes: position,
+      sha256: `sha256:${hash.digest("hex")}`,
+    };
+  } finally {
+    await handle.close();
+  }
 }
 async function verifyFile(directory: string, expected: PacketFile) {
   const actual = await describeFile(directory, expected.filename);
@@ -78,6 +130,88 @@ async function verifyFile(directory: string, expected: PacketFile) {
   return join(directory, expected.filename);
 }
 
+function ensureNotCancelled(isCancelled?: () => boolean) {
+  if (isCancelled?.()) throw new Error("Audition preparation was cancelled.");
+}
+
+function outputIsWithin(root: string, output: string) {
+  const pathFromRoot = relative(root, output);
+  return (
+    pathFromRoot === "" ||
+    (pathFromRoot !== ".." &&
+      !pathFromRoot.startsWith(`..${sep}`) &&
+      !isAbsolute(pathFromRoot))
+  );
+}
+
+async function canonicalProspectivePath(path: string) {
+  const absolute = resolve(path);
+  try {
+    return await realpath(absolute);
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code !== "ENOENT") throw error;
+  }
+  const missing = [basename(absolute)];
+  let cursor = dirname(absolute);
+  while (true) {
+    try {
+      return resolve(await realpath(cursor), ...missing.reverse());
+    } catch (error) {
+      if ((error as NodeJS.ErrnoException).code !== "ENOENT") throw error;
+    }
+    const parent = dirname(cursor);
+    if (parent === cursor)
+      throw new Error(`No existing ancestor for output path ${path}.`);
+    missing.push(basename(cursor));
+    cursor = parent;
+  }
+}
+
+async function ensureOutputOutsideRoots(destination: string, roots: string[]) {
+  const output = await canonicalProspectivePath(destination);
+  for (const root of roots) {
+    if (outputIsWithin(await realpath(root), output))
+      throw new Error(
+        "The output directory must stay outside every input packet.",
+      );
+  }
+}
+
+async function verifyExactDirectory(
+  directory: string,
+  expectedFilenames: Iterable<string>,
+) {
+  const remaining = new Set(expectedFilenames);
+  const entries = await opendir(directory);
+  for await (const entry of entries) {
+    if (!remaining.delete(entry.name))
+      throw new Error(
+        `The share directory contains unlisted package member ${entry.name}.`,
+      );
+  }
+  if (remaining.size)
+    throw new Error(
+      `The share directory is missing package member ${remaining.values().next().value}.`,
+    );
+}
+
+async function copyVerifiedFile(
+  sourceDirectory: string,
+  destinationDirectory: string,
+  expected: PacketFile,
+) {
+  await copyFile(
+    join(sourceDirectory, expected.filename),
+    join(destinationDirectory, expected.filename),
+  );
+  const copied = await describeFile(destinationDirectory, expected.filename);
+  if (copied.bytes !== expected.bytes || copied.sha256 !== expected.sha256)
+    throw new Error(
+      `Packet member ${expected.filename} changed while it was copied.`,
+    );
+  return copied;
+}
+
 // Crop only the finished reference WAV. Earlier oscillators, sustains, delay and
 // room history have already participated in the canonical complete render.
 async function cropWav(
@@ -85,7 +219,9 @@ async function cropWav(
   output: string,
   startFrame: number,
   endFrame: number,
+  isCancelled?: () => boolean,
 ) {
+  ensureNotCancelled(isCancelled);
   const input = await open(source, "r");
   const target = await open(output, "wx");
   try {
@@ -94,6 +230,7 @@ async function cropWav(
     let position = 44 + startFrame * 4;
     const end = 44 + endFrame * 4;
     while (position < end) {
+      ensureNotCancelled(isCancelled);
       const { bytesRead } = await input.read(
         buffer,
         0,
@@ -105,13 +242,19 @@ async function cropWav(
       await target.write(buffer.subarray(0, bytesRead));
       position += bytesRead;
     }
+    ensureNotCancelled(isCancelled);
   } finally {
     await input.close();
     await target.close();
   }
 }
 
-export async function measureWav(path: string, frames: number) {
+export async function measureWav(
+  path: string,
+  frames: number,
+  isCancelled?: () => boolean,
+) {
+  ensureNotCancelled(isCancelled);
   const input = await open(path, "r");
   const header = Buffer.alloc(44);
   let peak = 0,
@@ -130,6 +273,7 @@ export async function measureWav(path: string, frames: number) {
       );
     const buffer = Buffer.alloc(65_536);
     while (frameIndex < frames) {
+      ensureNotCancelled(isCancelled);
       const count = Math.min(buffer.length, (frames - frameIndex) * 4);
       const { bytesRead } = await input.read(
         buffer,
@@ -158,6 +302,7 @@ export async function measureWav(path: string, frames: number) {
         frameIndex++;
       }
     }
+    ensureNotCancelled(isCancelled);
   } finally {
     await input.close();
   }
@@ -189,6 +334,7 @@ async function prepareEntry(
   directory: string,
   options: PrepareOptions,
 ): Promise<AuditionEntry> {
+  ensureNotCancelled(options.isCancelled);
   const artifact = readArtifact(input.artifact);
   const bindingId =
     input.bindingId ??
@@ -226,6 +372,7 @@ async function prepareEntry(
     samples: Record<string, ArrayBuffer>;
   } = { samples };
   for (const required of bundle.plan.assetRequirements) {
+    ensureNotCancelled(options.isCancelled);
     if (!options.assetRoot)
       throw new Error(
         "Exact sampled assets are unavailable on this host. Use local refrain audition with the hydrated asset root; the binding will not be substituted.",
@@ -243,12 +390,14 @@ async function prepareEntry(
     if (required.kind === "soundfont") assets.soundfont = data;
     else samples[required.assetId] = data;
   }
+  ensureNotCancelled(options.isCancelled);
   const temporary = await mkdtemp(join(tmpdir(), "refrain-audition-render-"));
   try {
     const reference = join(temporary, "native.wav");
     const evidence = await streamExecutionWav(bundle, assets, reference, {
       isCancelled: options.isCancelled,
     });
+    ensureNotCancelled(options.isCancelled);
     const renderReceipt = createExecutionRenderReceipt(bundle, {
       sourceRevision: artifact.receipt.sourceRevision,
       adapter: "wav",
@@ -267,9 +416,12 @@ async function prepareEntry(
       join(directory, mediaName),
       target.range.startFrame,
       target.range.endFrame,
+      options.isCancelled,
     );
+    ensureNotCancelled(options.isCancelled);
     const artifactName = `${key}.refrain.json`;
     await writeJson(join(directory, artifactName), artifact);
+    ensureNotCancelled(options.isCancelled);
     const entry: AuditionEntry = {
       key,
       work: {
@@ -285,21 +437,33 @@ async function prepareEntry(
         frames,
       },
       ...target,
-      measurements: await measureWav(join(directory, mediaName), frames),
+      measurements: await measureWav(
+        join(directory, mediaName),
+        frames,
+        options.isCancelled,
+      ),
       artifact: await describeFile(directory, artifactName),
     };
     verifyEntryArtifact(entry, artifact);
+    ensureNotCancelled(options.isCancelled);
     return entry;
   } finally {
     await rm(temporary, { recursive: true, force: true });
   }
 }
 
-async function newDirectory<T>(directory: string, operation: () => Promise<T>) {
+async function newDirectory<T>(
+  directory: string,
+  operation: () => Promise<T>,
+  isCancelled?: () => boolean,
+) {
+  ensureNotCancelled(isCancelled);
   await mkdir(dirname(directory), { recursive: true });
   await mkdir(directory);
   try {
-    return await operation();
+    const result = await operation();
+    ensureNotCancelled(isCancelled);
+    return result;
   } catch (error) {
     await rm(directory, { recursive: true, force: true });
     throw error;
@@ -312,16 +476,26 @@ export async function prepareAudition(
 ) {
   if (inputs.length < 1 || inputs.length > 2)
     throw new Error("Provide one performance or an explicit A/B pair.");
-  return newDirectory(directory, async () => {
-    const entries: AuditionEntry[] = [];
-    for (let i = 0; i < inputs.length; i++)
-      entries.push(
-        await prepareEntry(i === 0 ? "a" : "b", inputs[i]!, directory, options),
-      );
-    const packet = sealAudition(entries);
-    await writeJson(join(directory, "audition.json"), packet);
-    return packet;
-  });
+  return newDirectory(
+    directory,
+    async () => {
+      const entries: AuditionEntry[] = [];
+      for (let i = 0; i < inputs.length; i++)
+        entries.push(
+          await prepareEntry(
+            i === 0 ? "a" : "b",
+            inputs[i]!,
+            directory,
+            options,
+          ),
+        );
+      ensureNotCancelled(options.isCancelled);
+      const packet = sealAudition(entries);
+      await writeJson(join(directory, "audition.json"), packet);
+      return packet;
+    },
+    options.isCancelled,
+  );
 }
 
 export async function verifyAuditionDirectory(directory: string) {
@@ -352,6 +526,94 @@ export async function verifyAuditionDirectory(directory: string) {
   return packet;
 }
 
+/** Reuses one exact complete native render. It never resolves sound, loads
+ * assets, or rerenders; compilation is limited to exact target mapping. */
+export async function sliceAudition(
+  directory: string,
+  destination: string,
+  target: AuditionTarget,
+  options: Pick<PrepareOptions, "isCancelled"> = {},
+) {
+  ensureNotCancelled(options.isCancelled);
+  await ensureOutputOutsideRoots(destination, [directory]);
+  const packet = await verifyAuditionDirectory(directory);
+  if (packet.entries.length !== 1)
+    throw new Error(
+      "Frozen slicing accepts one complete performance, not an A/B packet.",
+    );
+  const entry = packet.entries[0]!;
+  if (
+    entry.range.startFrame !== 0 ||
+    entry.range.endFrame !== entry.range.totalFrames ||
+    entry.media.sha256 !== entry.renderReceipt.outputSha256
+  )
+    throw new Error(
+      "Slice from a complete native audition so preceding performance history remains available.",
+    );
+  if (!entry.artifact)
+    throw new Error("Frozen slicing requires the complete carried Artifact@3.");
+  const hasTarget =
+    target.section !== undefined ||
+    target.selection !== undefined ||
+    target.startSeconds !== undefined ||
+    target.endSeconds !== undefined;
+  if (!hasTarget)
+    throw new Error("Choose a section, exact selection, or start/end range.");
+  const artifactPath = await verifyFile(directory, entry.artifact);
+  const artifact = readArtifact(await jsonFile(artifactPath));
+  const resolved = resolveTarget(artifact, target, entry.range.totalFrames);
+  const frames = resolved.range.endFrame - resolved.range.startFrame;
+  return newDirectory(
+    destination,
+    async () => {
+      const mediaName = entry.media.filename;
+      await cropWav(
+        join(directory, mediaName),
+        join(destination, mediaName),
+        resolved.range.startFrame,
+        resolved.range.endFrame,
+        options.isCancelled,
+      );
+      const artifactFile = await copyVerifiedFile(
+        directory,
+        destination,
+        entry.artifact!,
+      );
+      const {
+        media: _media,
+        range: _range,
+        selection: _selection,
+        measurements: _measurements,
+        artifact: _artifact,
+        ...authority
+      } = entry;
+      const sliced: AuditionEntry = {
+        ...authority,
+        media: {
+          ...(await describeFile(destination, mediaName)),
+          sampleRate: SAMPLE_RATE,
+          channels: 2,
+          frames,
+        },
+        range: resolved.range,
+        ...(resolved.selection ? { selection: resolved.selection } : {}),
+        measurements: await measureWav(
+          join(destination, mediaName),
+          frames,
+          options.isCancelled,
+        ),
+        artifact: artifactFile,
+      };
+      verifyEntryArtifact(sliced, artifact);
+      ensureNotCancelled(options.isCancelled);
+      const result = sealAudition([sliced]);
+      await writeJson(join(destination, "audition.json"), result);
+      return result;
+    },
+    options.isCancelled,
+  );
+}
+
 export interface ShareOptions {
   includeArtifact: boolean;
   responses?: string[];
@@ -364,6 +626,7 @@ export async function createShare(
   destination: string,
   options: ShareOptions,
 ) {
+  await ensureOutputOutsideRoots(destination, [directory]);
   const packet = await verifyAuditionDirectory(directory);
   const responses: MusicalResponse[] = [];
   for (const path of options.responses ?? [])
@@ -382,11 +645,7 @@ export async function createShare(
         entry.media,
         ...(entry.artifact ? [entry.artifact] : []),
       ]) {
-        await copyFile(
-          join(directory, member.filename),
-          join(destination, member.filename),
-        );
-        files.push(await describeFile(destination, member.filename));
+        files.push(await copyVerifiedFile(directory, destination, member));
       }
     }
     for (let i = 0; i < responses.length; i++) {
@@ -409,9 +668,15 @@ export async function createShare(
 }
 
 export async function receiveShare(directory: string, destination?: string) {
+  if (destination) await ensureOutputOutsideRoots(destination, [directory]);
   const manifest = readShare(await packetJson(directory, "share.json"));
   if (manifest.audition.filename !== "audition.json")
     throw new Error("The share must carry audition.json.");
+  await verifyExactDirectory(directory, [
+    "share.json",
+    manifest.audition.filename,
+    ...manifest.files.map((file) => file.filename),
+  ]);
   await verifyFile(directory, manifest.audition);
   for (const file of manifest.files) await verifyFile(directory, file);
   const packet = await verifyAuditionDirectory(directory);
@@ -444,11 +709,9 @@ export async function receiveShare(directory: string, destination?: string) {
   if (destination)
     await newDirectory(destination, async () => {
       for (const member of [manifest.audition, ...manifest.files])
-        await copyFile(
-          join(directory, member.filename),
-          join(destination, member.filename),
-        );
-      await writeJson(join(destination, "share.json"), manifest);
+        await copyVerifiedFile(directory, destination, member);
+      const shareFile = await describeFile(directory, "share.json");
+      await copyVerifiedFile(directory, destination, shareFile);
     });
   const root = destination ?? directory;
   return {

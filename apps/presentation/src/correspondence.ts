@@ -12,35 +12,63 @@ import {
   jsonFile,
   prepareAudition,
   receiveShare,
+  sliceAudition,
   verifyAuditionDirectory,
   writeJson,
   type PrepareInput,
 } from "@refrain/correspondence/node";
 
+async function withAuditionCancellation<T>(
+  operation: (isCancelled: () => boolean) => Promise<T>,
+) {
+  let cancelled = false;
+  const cancel = () => {
+    cancelled = true;
+  };
+  process.once("SIGINT", cancel);
+  process.once("SIGTERM", cancel);
+  try {
+    return await operation(() => cancelled);
+  } finally {
+    process.removeListener("SIGINT", cancel);
+    process.removeListener("SIGTERM", cancel);
+  }
+}
+
 export async function runCorrespondenceCli(args: string[], cwd: string) {
   const [command, ...rest] = args;
+  const auditionAction =
+    command === "audition" && ["slice", "verify", "locate"].includes(rest[0]!)
+      ? rest.shift()
+      : "prepare";
   const definitions: Record<
     string,
     { type: "string" | "boolean"; multiple?: boolean }
   > = { json: { type: "boolean" } };
   const fields =
     command === "audition"
-      ? [
-          "out",
-          "binding",
-          "section",
-          "selection",
-          "start",
-          "end",
-          "context",
-          "compare",
-          "compare-binding",
-          "compare-section",
-          "compare-selection",
-          "compare-start",
-          "compare-end",
-          "asset-root",
-        ]
+      ? auditionAction === "prepare"
+        ? [
+            "out",
+            "binding",
+            "section",
+            "selection",
+            "start",
+            "end",
+            "context",
+            "compare",
+            "compare-binding",
+            "compare-section",
+            "compare-selection",
+            "compare-start",
+            "compare-end",
+            "asset-root",
+          ]
+        : auditionAction === "slice"
+          ? ["out", "section", "selection", "start", "end", "context"]
+          : auditionAction === "locate"
+            ? ["entry", "at"]
+            : []
       : command === "respond"
         ? [
             "out",
@@ -82,6 +110,47 @@ export async function runCorrespondenceCli(args: string[], cwd: string) {
   const path = (p: string) => resolve(cwd, p);
   const inputPath = path(positionals[0]!);
   if (command === "audition") {
+    if (auditionAction === "verify") {
+      const packet = await verifyAuditionDirectory(inputPath);
+      return {
+        ok: true,
+        auditionId: packet.auditionId,
+        byteIntegrity: "verified",
+        entries: packet.entries.map((entry) => ({
+          entry: entry.key,
+          sha256: entry.media.sha256,
+          durationSeconds: entry.media.frames / entry.media.sampleRate,
+          range: entry.range,
+        })),
+      };
+    }
+    if (auditionAction === "locate") {
+      const packet = await verifyAuditionDirectory(inputPath);
+      const key = value("entry") ?? "a";
+      if (key !== "a" && key !== "b")
+        throw new Error("--entry must be a or b.");
+      const entry = packet.entries.find((candidate) => candidate.key === key);
+      if (!entry) throw new Error(`Audition entry ${key} is absent.`);
+      const seconds = Number(required("at"));
+      const duration = entry.media.frames / entry.media.sampleRate;
+      if (!Number.isFinite(seconds) || seconds < 0 || seconds > duration)
+        throw new Error("--at is outside the delivered audio.");
+      const localFrame = Math.min(
+        entry.media.frames,
+        Math.round(seconds * entry.media.sampleRate),
+      );
+      const originalFrame = entry.range.startFrame + localFrame;
+      return {
+        ok: true,
+        auditionId: packet.auditionId,
+        entry: key,
+        localSeconds: localFrame / entry.media.sampleRate,
+        originalFrame,
+        originalSeconds: originalFrame / entry.media.sampleRate,
+        sourceRevision: entry.work.sourceRevision,
+        renderReceiptId: entry.renderReceipt.renderReceiptId,
+      };
+    }
     const target = async (prefix = ""): Promise<AuditionTarget> => ({
       ...(value(`${prefix}section`)
         ? { section: value(`${prefix}section`) }
@@ -102,6 +171,30 @@ export async function runCorrespondenceCli(args: string[], cwd: string) {
       contextSeconds: Number(value("context") ?? 2),
     });
     const a = await target();
+    if (auditionAction === "slice") {
+      const output = path(required("out"));
+      const packet = await withAuditionCancellation((isCancelled) =>
+        sliceAudition(inputPath, output, a, { isCancelled }),
+      );
+      return {
+        ok: true,
+        path: output,
+        auditionId: packet.auditionId,
+        status: "audio-sliced-from-frozen-native-render",
+        rerendered: false,
+        modelAudioInput: "unknown",
+        entry: {
+          wav: resolve(output, packet.entries[0]!.media.filename),
+          sha256: packet.entries[0]!.media.sha256,
+          durationSeconds:
+            packet.entries[0]!.media.frames /
+            packet.entries[0]!.media.sampleRate,
+          range: packet.entries[0]!.range,
+          selection: packet.entries[0]!.selection,
+          measurements: packet.entries[0]!.measurements,
+        },
+      };
+    }
     const hasTarget = (t: AuditionTarget) =>
       t.section !== undefined ||
       t.selection !== undefined ||
@@ -131,7 +224,9 @@ export async function runCorrespondenceCli(args: string[], cwd: string) {
     const assetRoot = value("asset-root")
       ? path(value("asset-root")!)
       : fileURLToPath(new URL("../../soundbench/public/", import.meta.url));
-    const packet = await prepareAudition(inputs, output, { assetRoot });
+    const packet = await withAuditionCancellation((isCancelled) =>
+      prepareAudition(inputs, output, { assetRoot, isCancelled }),
+    );
     return {
       ok: true,
       path: output,
