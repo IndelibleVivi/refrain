@@ -131,7 +131,7 @@ export function App() {
     receiptId: string;
   }>();
   const [firstListen, setFirstListen] = useState(false);
-  const [listOpen, setListOpen] = useState(() => window.innerWidth > 850),
+  const [listOpen, setListOpen] = useState(false),
     [helpOpen, setHelpOpen] = useState(false);
   const [fileError, setFileError] = useState<string>();
   const [copyStatus, setCopyStatus] = useState<"copied" | "manual">();
@@ -191,7 +191,7 @@ export function App() {
     setSnapshot(queue.current!.snapshot());
     activate(playlistRef.current.entries.find((entry) => entry.id === id));
     setFileError(undefined);
-    if (window.innerWidth <= 850) setListOpen(false);
+    setListOpen(false);
   };
   const applyDecision = (decision: QueueDecision) => {
     setSnapshot(queue.current!.snapshot());
@@ -425,45 +425,163 @@ export function App() {
     </label>
   );
 
+  const listDialog = useRef<HTMLDialogElement>(null);
+  const helpDialog = useRef<HTMLDialogElement>(null);
+  useEffect(() => {
+    const dialog = listDialog.current;
+    if (listOpen && !dialog?.open) dialog?.showModal();
+    else if (!listOpen && dialog?.open) dialog.close();
+  }, [listOpen]);
+  useEffect(() => {
+    const dialog = helpDialog.current;
+    if (helpOpen && !dialog?.open) dialog?.showModal();
+    else if (!helpOpen && dialog?.open) dialog.close();
+  }, [helpOpen]);
+  const playlistButton = (
+    <button
+      type="button"
+      className="player-queue-trigger"
+      aria-label={words.playlist + " " + playlist.entries.length}
+      aria-expanded={listOpen}
+      aria-controls="player-playlist"
+      onClick={() => setListOpen(true)}
+    >
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M4 6h16M4 12h16M4 18h10" />
+      </svg>
+      <span>{words.playlist}</span>
+      <small>{String(playlist.entries.length).padStart(2, "0")}</small>
+    </button>
+  );
+
   return (
     <main className="presentation-shell" lang={locale}>
-      <header className="player-masthead">
-        <div className="player-wordmark">
-          Refrain <span>hums an air.</span>
-        </div>
-        <nav aria-label={words.player}>
-          <button
-            type="button"
-            aria-expanded={listOpen}
-            aria-controls="player-playlist"
-            onClick={() => setListOpen(!listOpen)}
-          >
-            {words.playlist} <span>{playlist.entries.length}</span>
-          </button>
-          <button
-            type="button"
-            aria-expanded={helpOpen}
-            onClick={() => setHelpOpen(!helpOpen)}
-          >
-            {words.help}
-          </button>
-        </nav>
-      </header>
-      {firstListen ? <p className="player-welcome">{words.welcome}</p> : null}
-      <div className="player-layout" data-list-open={listOpen}>
-        <aside
-          className="player-playlist"
-          id="player-playlist"
-          aria-label={words.playlist}
+      <section className="player-stage" aria-label={words.player}>
+        {fileError ? (
+          <p role="alert" className="player-error">
+            {copy.invalidFile} <span lang="en">{fileError}</span>
+          </p>
+        ) : null}
+        {artifact ? (
+          <AirRenderer
+            key={activeEntry?.id}
+            toolbarActions={playlistButton}
+            queueControls={{
+              position: snapshot.entries.indexOf(snapshot.currentId ?? "") + 1,
+              total: snapshot.entries.length,
+              previousLabel: words.previous,
+              nextLabel: words.next,
+              nextDisabled:
+                snapshot.mode === "sequential" &&
+                snapshot.currentId === snapshot.entries.at(-1),
+              mode: snapshot.mode,
+              modeIcon: MODE_ICONS[snapshot.mode],
+              modeLabel: welcome.playbackModes[snapshot.mode],
+              modeActionLabel: welcome.changePlaybackMode(
+                welcome.playbackModes[snapshot.mode],
+                welcome.playbackModes[cyclePlaybackMode(snapshot.mode)],
+              ),
+              onPrevious: () => applyDecision(queue.current!.previous()),
+              onNext: () => applyDecision(queue.current!.next("next")),
+              onCycleMode: cycleMode,
+            }}
+            initialLocale={locale}
+            onLocaleChange={setLocale}
+            artifact={artifact}
+            assets={
+              firstListen || import.meta.env.MODE === "try"
+                ? hasDemoSound(artifact)
+                  ? { assetBaseUrl: new URL(".", location.href).href }
+                  : {}
+                : {
+                    soundBankUrl: "/soundpacks/GeneralUser-GS.sf2",
+                    assetBaseUrl: "",
+                    workletUrl: "/spessasynth_processor.min.js",
+                  }
+            }
+            surface="url"
+            visualTheme={activeEntry?.presentation?.theme}
+            visualAppearance={activeEntry?.presentation?.appearance}
+            playbackCommand={playbackCommand}
+            onPlaybackEnded={() => applyDecision(queue.current!.next("ended"))}
+            shareDeployment={shareDeployment}
+            onAuditionBindingChange={(bindingId) =>
+              setPlaylist((current) => ({
+                ...current,
+                entries: current.entries.map((entry) =>
+                  entry.id === snapshot.currentId
+                    ? { ...entry, bindingId }
+                    : entry,
+                ),
+              }))
+            }
+          />
+        ) : (
+          <>
+            <header className="player-empty-header">
+              <div className="refrain-wordmark">
+                Refrain<span>hums an air.</span>
+              </div>
+              {playlistButton}
+              <LanguageSwitch locale={locale} onChange={setLocale} />
+            </header>
+            <div className="presentation-message">
+              <h1>{copy[message.key]}</h1>
+              {message.detail ? <p>{message.detail}</p> : null}
+              <p>{words.empty}</p>
+              <button type="button" onClick={() => setListOpen(true)}>
+                {words.add}
+              </button>
+            </div>
+          </>
+        )}
+      </section>
+      <footer className="player-footer">
+        <span>{words.footer}</span>
+        <button
+          type="button"
+          aria-expanded={helpOpen}
+          onClick={() => setHelpOpen(true)}
         >
-          <div className="player-list-heading">
-            <span>{words.playlist}</span>
-            <span>{String(playlist.entries.length).padStart(2, "0")}</span>
-          </div>
+          {words.help} ↗
+        </button>
+      </footer>
+      <dialog
+        ref={listDialog}
+        className="player-playlist player-sheet"
+        id="player-playlist"
+        aria-label={words.playlist}
+        onClose={() => {
+          setListOpen(false);
+          requestAnimationFrame(() =>
+            document
+              .querySelector<HTMLButtonElement>(".player-queue-trigger")
+              ?.focus(),
+          );
+        }}
+        onClick={(event) => {
+          if (event.target === event.currentTarget) setListOpen(false);
+        }}
+      >
+        <div className="player-sheet-content">
+          <header className="player-sheet-header">
+            <span>
+              {words.playlist}{" "}
+              <small>{String(playlist.entries.length).padStart(2, "0")}</small>
+            </span>
+            <button
+              type="button"
+              aria-label={copy.close}
+              autoFocus
+              onClick={() => setListOpen(false)}
+            >
+              ×
+            </button>
+          </header>
           <input
             className="player-list-title"
             aria-label={words.title}
-            maxLength={200}
+            maxLength={256}
             placeholder={words.untitled}
             value={playlist.title}
             onChange={(event) =>
@@ -486,6 +604,9 @@ export function App() {
                     {String(index + 1).padStart(2, "0")}
                   </span>
                   <span>{entry.artifact.source.title}</span>
+                  <span className="player-entry-indicator" aria-hidden="true">
+                    ♪
+                  </span>
                 </button>
                 <div className="player-entry-actions">
                   <button
@@ -527,108 +648,34 @@ export function App() {
           <div className="player-list-actions">
             {fileInput}
             <button type="button" onClick={savePlaylist}>
-              {words.save}
+              {words.save} ↓
             </button>
           </div>
           <p className="player-local-note">{words.local}</p>
-        </aside>
-        <section className="player-stage" aria-label={words.player}>
-          {fileError ? (
-            <p role="alert" className="player-error">
-              {copy.invalidFile} <span lang="en">{fileError}</span>
-            </p>
-          ) : null}
-          {artifact ? (
-            <>
-              <div className="player-queue-controls">
-                <div>
-                  <button
-                    type="button"
-                    aria-label={words.previous}
-                    onClick={() => applyDecision(queue.current!.previous())}
-                  >
-                    ←
-                  </button>
-                  <button
-                    type="button"
-                    aria-label={words.next}
-                    onClick={() => applyDecision(queue.current!.next("next"))}
-                    disabled={
-                      snapshot.mode === "sequential" &&
-                      snapshot.currentId === snapshot.entries.at(-1)
-                    }
-                  >
-                    →
-                  </button>
-                  <span>
-                    {snapshot.entries.indexOf(snapshot.currentId ?? "") + 1} /{" "}
-                    {snapshot.entries.length}
-                  </span>
-                </div>
-                <button
-                  type="button"
-                  data-playback-mode={snapshot.mode}
-                  aria-label={welcome.changePlaybackMode(
-                    welcome.playbackModes[snapshot.mode],
-                    welcome.playbackModes[cyclePlaybackMode(snapshot.mode)],
-                  )}
-                  onClick={cycleMode}
-                >
-                  <span aria-hidden="true">{MODE_ICONS[snapshot.mode]}</span>{" "}
-                  {welcome.playbackModes[snapshot.mode]}
-                </button>
-              </div>
-              <AirRenderer
-                key={activeEntry?.id}
-                initialLocale={locale}
-                onLocaleChange={setLocale}
-                artifact={artifact}
-                assets={
-                  firstListen || import.meta.env.MODE === "try"
-                    ? hasDemoSound(artifact)
-                      ? { assetBaseUrl: new URL(".", location.href).href }
-                      : {}
-                    : {
-                        soundBankUrl: "/soundpacks/GeneralUser-GS.sf2",
-                        assetBaseUrl: "",
-                        workletUrl: "/spessasynth_processor.min.js",
-                      }
-                }
-                surface="url"
-                visualTheme={activeEntry?.presentation?.theme}
-                visualAppearance={activeEntry?.presentation?.appearance}
-                playbackCommand={playbackCommand}
-                onPlaybackEnded={() =>
-                  applyDecision(queue.current!.next("ended"))
-                }
-                shareDeployment={shareDeployment}
-                onAuditionBindingChange={(bindingId) =>
-                  setPlaylist((current) => ({
-                    ...current,
-                    entries: current.entries.map((entry) =>
-                      entry.id === snapshot.currentId
-                        ? { ...entry, bindingId }
-                        : entry,
-                    ),
-                  }))
-                }
-              />
-            </>
-          ) : (
-            <div className="presentation-message">
-              <LanguageSwitch locale={locale} onChange={setLocale} />
-              <h1>{copy[message.key]}</h1>
-              {message.detail ? <p>{message.detail}</p> : null}
-              <p>{words.empty}</p>
-              <button type="button" onClick={() => setListOpen(true)}>
-                {words.playlist}
-              </button>
-            </div>
-          )}
-        </section>
-      </div>
-      {helpOpen ? (
-        <section className="player-help">
+        </div>
+      </dialog>
+      <dialog
+        ref={helpDialog}
+        className="player-help player-sheet"
+        aria-label={words.help}
+        onClose={() => setHelpOpen(false)}
+        onClick={(event) => {
+          if (event.target === event.currentTarget) setHelpOpen(false);
+        }}
+      >
+        <div className="player-sheet-content">
+          <header className="player-sheet-header">
+            <span>{words.help}</span>
+            <button
+              type="button"
+              aria-label={copy.close}
+              autoFocus
+              onClick={() => setHelpOpen(false)}
+            >
+              ×
+            </button>
+          </header>
+          {firstListen ? <p>{words.welcome}</p> : null}
           <h2>{welcome.next}</h2>
           <p>{welcome.nextBody}</p>
           <a
@@ -664,13 +711,13 @@ export function App() {
               setFileError(undefined);
               installPlaylist(demoPlaylist());
               setFirstListen(true);
+              setHelpOpen(false);
             }}
           >
             {words.examples}
           </button>
-        </section>
-      ) : null}
-      <footer className="player-footer">{words.footer}</footer>
+        </div>
+      </dialog>
     </main>
   );
 }

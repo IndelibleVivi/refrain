@@ -8,7 +8,7 @@ import type {
 } from "@refrain/audio-engine/complete-browser";
 import { createExecutionBundle } from "@refrain/audio-engine/execution";
 import { SelenV21Canvas } from "./SelenV21Canvas.js";
-import { useRefrainLocale } from "./locale.js";
+import { LanguageSwitch, useRefrainLocale } from "./locale.js";
 import { uiCopy, type UiMessageKey } from "./ui-copy.js";
 import { stringifyRefrainArtifact } from "./portable.js";
 import {
@@ -119,6 +119,8 @@ export function AirRenderer({
   playbackCommand,
   onPlaybackEnded,
   onAuditionBindingChange,
+  toolbarActions,
+  queueControls,
   shareDeployment,
 }: RefrainRendererProps) {
   const document = useMemo(
@@ -541,6 +543,9 @@ export function AirRenderer({
     return () => {
       disposed.current = true;
       actionGeneration.current += 1;
+      // StrictMode replays this mount after disposing its first audio attempt.
+      // Let the replay consume the still-current queue command again.
+      consumedPlaybackCommand.current = 0;
       completionGate.current.cancel();
       completionRun.current = undefined;
       if (stopStateTimer.current !== undefined)
@@ -976,79 +981,69 @@ export function AirRenderer({
       data-playback-adapter={playbackEvidence?.adapter}
       data-opening-assets={playbackEvidence?.openingAssets.length}
       data-surface={surface}
+      data-visual-theme={selectedTheme}
       data-llm={`Viewing the air ${artifact.source.title}; source revision ${artifact.receipt.sourceRevision}; receipt ${artifact.receipt.receiptId}; performance binding ${performanceBinding ? `${performanceBinding.id} sha256:${performanceBinding.contentSha256}` : "unbound"}; performance ${performanceUnavailable ? `unavailable: ${performanceUnavailable.message}` : "available"}; musical relation ${artifact.receipt.verification.status}; ${artifact.compiled.motifOccurrences.length} motif occurrences.`}
     >
-      {bindings.length > 1 ? (
-        <div className="refrain-renderer__performance">
-          <label>
-            <span>{copy.auditionSound}</span>
-            <select
-              aria-label={copy.auditionSound}
-              value={performanceBinding?.id ?? ""}
-              onChange={(event) => {
-                setAudition({ document, bindingId: event.currentTarget.value });
-                onAuditionBindingChange?.(
-                  event.currentTarget.value || undefined,
-                );
-              }}
-            >
-              <option value="">{copy.chooseSound}</option>
-              {bindings.map((binding) => (
-                <option key={binding.id} value={binding.id}>
-                  {binding.id}
-                </option>
-              ))}
-            </select>
-          </label>
-          <p>{copy.auditionOnly}</p>
-        </div>
-      ) : null}
       {surface === "url" ? (
-        <div className="refrain-view-actions">
-          <AppearanceControls
-            appearance={currentAppearance}
-            locale={locale}
-            theme={selectedTheme}
-            followsWork={portableAppearanceActive}
-            onSource={(work) => {
-              setPortableAppearanceActive(work);
-              setSelectedTheme(
-                work
-                  ? (visualTheme ?? "paper-sonata")
-                  : (appearancePreferencesRef.current.selectedTheme ??
-                      selectedTheme),
-              );
-              setAppearanceNotice(undefined);
-            }}
-            onTheme={changeTheme}
-            notice={
-              appearanceNotice === "saved"
-                ? copy.appearanceSaved
-                : appearanceNotice === "reset"
-                  ? copy.appearanceReset
-                  : appearanceNotice === "invalid"
-                    ? copy.invalidBackground
-                    : appearanceNotice === "failed"
-                      ? copy.appearanceFailed
-                      : undefined
-            }
-            onChange={changeAppearance}
-            onImage={(file) => void setAppearanceImage(file)}
-            onRemoveImage={() => void removeAppearanceImage()}
-            onReset={() => void resetAppearance()}
-          />
-          <ShareControl
-            hasLocalBackground={Boolean(currentAppearance.backgroundImage)}
-            includeAppearance={includeShareAppearance}
-            locale={locale}
-            onIncludeAppearanceChange={setIncludeShareAppearance}
-            plan={sharePlan}
-            title={artifact.source.title}
-          />
-        </div>
+        <header className="refrain-player-header">
+          <div className="refrain-wordmark">
+            Refrain<span>hums an air.</span>
+          </div>
+          <nav className="refrain-view-actions" aria-label={copy.transport}>
+            {toolbarActions}
+            <AppearanceControls
+              appearance={currentAppearance}
+              locale={locale}
+              theme={selectedTheme}
+              followsWork={portableAppearanceActive}
+              onSource={(work) => {
+                setPortableAppearanceActive(work);
+                setSelectedTheme(
+                  work
+                    ? (visualTheme ?? "paper-sonata")
+                    : (appearancePreferencesRef.current.selectedTheme ??
+                        selectedTheme),
+                );
+                setAppearanceNotice(undefined);
+              }}
+              onTheme={changeTheme}
+              notice={
+                appearanceNotice === "saved"
+                  ? copy.appearanceSaved
+                  : appearanceNotice === "reset"
+                    ? copy.appearanceReset
+                    : appearanceNotice === "invalid"
+                      ? copy.invalidBackground
+                      : appearanceNotice === "failed"
+                        ? copy.appearanceFailed
+                        : undefined
+              }
+              onChange={changeAppearance}
+              onImage={(file) => void setAppearanceImage(file)}
+              onRemoveImage={() => void removeAppearanceImage()}
+              onReset={() => void resetAppearance()}
+            />
+            <ShareControl
+              hasLocalBackground={Boolean(currentAppearance.backgroundImage)}
+              includeAppearance={includeShareAppearance}
+              locale={locale}
+              onIncludeAppearanceChange={setIncludeShareAppearance}
+              plan={sharePlan}
+              title={artifact.source.title}
+            />
+            <LanguageSwitch
+              locale={locale}
+              onChange={(next) => {
+                setLocale(next);
+                onLocaleChange?.(next);
+              }}
+            />
+          </nav>
+        </header>
       ) : null}
       <SelenV21Canvas
         artifactIdentity={artifactIdentity}
+        queueControls={queueControls}
         locale={locale}
         callbacks={{
           onLocaleChange: (next) => {
@@ -1091,6 +1086,34 @@ export function AirRenderer({
         themeId={selectedTheme}
         appearance={resolvedAppearance}
       />
+      {bindings.length > 1 ? (
+        <details
+          className="refrain-renderer__performance"
+          open={surface === "mcp-canvas" ? true : undefined}
+        >
+          <summary>{copy.auditionSound}</summary>
+          <label>
+            <span>{copy.auditionOnly}</span>
+            <select
+              aria-label={copy.auditionSound}
+              value={performanceBinding?.id ?? ""}
+              onChange={(event) => {
+                setAudition({ document, bindingId: event.currentTarget.value });
+                onAuditionBindingChange?.(
+                  event.currentTarget.value || undefined,
+                );
+              }}
+            >
+              <option value="">{copy.chooseSound}</option>
+              {bindings.map((binding) => (
+                <option key={binding.id} value={binding.id}>
+                  {binding.id}
+                </option>
+              ))}
+            </select>
+          </label>
+        </details>
+      ) : null}
       {playerError ? (
         <p className="refrain-renderer__notice" role="alert">
           {copy.operationFailed} <span lang="en">{playerError}</span>

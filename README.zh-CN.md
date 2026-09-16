@@ -10,9 +10,9 @@ Refrain 是 relational 的。只要人愿意，人机之间的爱意、调情和
 
 ## 先听一段
 
-**[打开互动试玩页](https://indeliblevivi.github.io/refrain/)** — 无需安装。按播放试听、选择播放模式、切换或定制主题、点选旋律、保存和重新打开作品，也可以为两首 featured work 分享准确的试听链接。创作自己的 air 请接入 agent；试玩页不会调用模型。
+**[打开互动试玩页](https://indeliblevivi.github.io/refrain/)** — 无需安装即可试听 featured works。创作自己的 air 请接入 agent；试玩页不会调用模型。下文的新 Player、个人歌单和外观控件仍是 source candidate，请在本地运行这个 checkout 体验；源码验证与线上部署分别记录在 [当前状态](docs/current-state.md)。
 
-此前的 Canvas 录屏（当前 Player 将设置收进了 **外观**）：
+此前的 Canvas 录屏（当前 Player 已改为宽幅聆听布局，设置位于 **外观**）：
 
 ![录屏：为 Velvet Mischief 按下播放，然后依次切换 Paper Sonata、Nocturne Ink、Prism、Herbarium 四种外观](docs/images/demo-playback.gif)
 
@@ -32,7 +32,7 @@ node bin/refrain.mjs doctor
 npm run try
 ```
 
-浏览器打开后，按上方的 **播放**。两首 featured work 可以按顺序播放、列表循环、随机播放或单曲循环。打开 **外观** 选择主题、调整本机配色与照片，点选旋律，再用 **导出 Refrain artifact** 保存作品；当公共播放器已经携带当前作品与准确声音时，**分享这首 air** 会生成准确的 public-demo 链接。打开 **播放列表** 加入已保存的作品或重开歌单，**关于 Refrain** 中有接入自己 agent 的指引。不需要 provider key；本地首次启动会准备这两首作品的音色采样。保持终端运行；Ctrl+C 结束 Player。
+浏览器打开后，按音乐可视化下方的 **播放**。两首 featured work 可以按顺序播放、列表循环、随机播放或单曲循环。打开 **外观** 选择主题、调整本机配色与照片，点选旋律，再用 **导出 Refrain artifact** 保存作品；当公共播放器已经携带当前作品与准确声音时，**分享这首 air** 会生成准确的 public-demo 链接。打开 **播放列表** 加入已保存的作品或重开歌单，**关于 Refrain** 中有接入自己 agent 的指引。不需要 provider key；本地首次启动会准备这两首作品的音色采样。保持终端运行；Ctrl+C 结束 Player。
 
 这个本地 URL 只属于你的电脑。公共试玩页已托管在 GitHub Pages；[构建与托管说明](docs/DEVELOPMENT.md#first-listen-page)。需要音频文件时，[导出 WAV / MIDI](docs/GETTING-STARTED.md#keep-the-piece)。
 
@@ -45,7 +45,7 @@ npm run try
 
 ## 自己的 Player，自己的作品
 
-试听入口就是 `refrain open` 使用的同一个 Player，只是预装了两首示例。打开 **播放列表**，可一次加入多个 `.refrain.json`、排序、移除、命名，再保存为 `.refrain-playlist.json` 随时重开。上一首/下一首、顺序、列表循环、随机、单曲循环共用真实播放状态。保存的列表带上完整作品与所选精确声音，不带音色文件或私人照片；文件不会上传。
+试听入口就是 `refrain open` 使用的同一个 Player，只是预装了两首示例。当前作品独占一整个聆听空间：标题、音乐画面和统一播放控制。歌单从侧边展开；想读声部、motif 与精确选段时，再打开 **走进这首 air**。打开 **播放列表**，可一次加入多个 `.refrain.json`、排序、移除、命名，再保存为 `.refrain-playlist.json` 随时重开。上一首/下一首、顺序、列表循环、随机、单曲循环共用真实播放状态。保存的列表带上完整作品与所选精确声音，不带音色文件或私人照片；文件不会上传。
 
 ```bash
 refrain open first.refrain.json second.refrain.json --theme nocturne-ink

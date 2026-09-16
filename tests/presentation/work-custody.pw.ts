@@ -3,6 +3,8 @@ import { test, expect, type Page } from "@playwright/test";
 import { makeWorkDocument } from "../lib/work-document.js";
 import { stringifyRefrainArtifact } from "../../packages/renderer/src/portable.js";
 
+type JsonFile = { name: string; mimeType: string; buffer: Buffer };
+
 let work: Awaited<ReturnType<typeof makeWorkDocument>>;
 test.beforeAll(async () => {
   work = await makeWorkDocument();
@@ -15,6 +17,33 @@ async function save(page: Page, name: string) {
   await page.getByRole("button", { name, exact: true }).click();
   return readFile((await (await pending).path())!, "utf8");
 }
+// The file input lives inside the native playlist dialog, so every import opens
+// the sheet first and closes it again to listen.
+async function importJson(page: Page, files: JsonFile | JsonFile[]) {
+  const toggle = page.locator('[aria-controls="player-playlist"]');
+  if ((await toggle.getAttribute("aria-expanded")) === "false")
+    await toggle.click();
+  const dialog = page.locator("dialog#player-playlist");
+  await expect(dialog).toBeVisible();
+  await dialog
+    .locator('input[type="file"][accept^=".json"]')
+    .setInputFiles(files);
+  await page.keyboard.press("Escape");
+  await expect(dialog).toBeHidden();
+}
+// The carried-sound chooser is a collapsed details element now.
+async function openSoundChooser(page: Page) {
+  const details = page.locator("details.refrain-renderer__performance");
+  await expect(details).toHaveCount(1);
+  if ((await details.getAttribute("open")) === null)
+    await details.locator("summary").first().click();
+  await expect(details).toHaveAttribute("open", "");
+  return page.getByRole("combobox", {
+    name: "Sound for this listening view",
+    exact: true,
+  });
+}
+
 for (const width of [1280, 390]) {
   test(`complete production archive survives sound choice, save and reopen at ${width}px`, async ({
     page,
@@ -24,15 +53,12 @@ for (const width of [1280, 390]) {
     page.on("pageerror", (error) => errors.push(error.message));
     await page.goto("./");
     const original = stringifyRefrainArtifact(work.document);
-    await page.locator('input[type="file"][accept^=".json"]').setInputFiles({
+    await importJson(page, {
       name: "work.refrain.json",
       mimeType: "application/json",
       buffer: Buffer.from(original),
     });
-    const sound = page.getByRole("combobox", {
-      name: "Sound for this listening view",
-      exact: true,
-    });
+    const sound = await openSoundChooser(page);
     await expect(sound).toHaveValue(work.document.defaultBindingId!);
     const renderer = page.locator(".refrain-renderer");
     await page.getByRole("button", { name: "Play", exact: true }).click();
@@ -58,22 +84,19 @@ for (const width of [1280, 390]) {
     expect(saved).toBe(original);
     expect(JSON.parse(saved).renderReceipts.length).toBeGreaterThan(0);
     expect(JSON.parse(saved).projections.length).toBeGreaterThan(0);
-    await page.locator(".product-details summary").click();
+    await page.locator("details.product-details summary").first().click();
     await page.locator(".exact-selection select").selectOption({ index: 1 });
     const handoff = JSON.parse(await save(page, "导出选段"));
     expect(handoff.parentArtifact).toEqual(work.document);
     await page.reload();
-    await page.locator('input[type="file"][accept^=".json"]').setInputFiles({
+    await importJson(page, {
       name: "saved.refrain.json",
       mimeType: "application/json",
       buffer: Buffer.from(saved),
     });
-    await expect(
-      page.getByRole("combobox", {
-        name: "Sound for this listening view",
-        exact: true,
-      }),
-    ).toHaveValue(work.document.defaultBindingId!);
+    await expect(await openSoundChooser(page)).toHaveValue(
+      work.document.defaultBindingId!,
+    );
     await page.getByRole("button", { name: "Play", exact: true }).click();
     await expect(renderer).toHaveAttribute("data-player-state", "playing");
     expect(
@@ -91,7 +114,7 @@ test("valid unselected documents remain inspectable and never acquire a default 
   await page.goto("./");
   const ambiguous = structuredClone(work.document);
   delete ambiguous.defaultBindingId;
-  await page.locator('input[type="file"][accept^=".json"]').setInputFiles({
+  await importJson(page, {
     name: "choose.refrain.json",
     mimeType: "application/json",
     buffer: Buffer.from(JSON.stringify(ambiguous)),
@@ -99,12 +122,8 @@ test("valid unselected documents remain inspectable and never acquire a default 
   await expect(
     page.getByRole("button", { name: "Play", exact: true }),
   ).toBeDisabled();
-  await page
-    .getByRole("combobox", {
-      name: "Sound for this listening view",
-      exact: true,
-    })
-    .selectOption(work.originalBindingId);
+  const sound = await openSoundChooser(page);
+  await sound.selectOption(work.originalBindingId);
   await expect(
     page.getByRole("button", { name: "Play", exact: true }),
   ).toBeEnabled();
@@ -117,7 +136,7 @@ test("valid unselected documents remain inspectable and never acquire a default 
     renderReceipts: [],
     projections: [],
   };
-  await page.locator('input[type="file"][accept^=".json"]').setInputFiles({
+  await importJson(page, {
     name: "unbound.refrain.json",
     mimeType: "application/json",
     buffer: Buffer.from(JSON.stringify(unbound)),

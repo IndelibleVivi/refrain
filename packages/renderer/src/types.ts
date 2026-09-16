@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import type { AirSource, Diagnostic } from "@refrain/air-schema";
 import type { AirSourceV1 } from "@refrain/air-schema/v1";
 import type { CompiledAir } from "@refrain/compiler";
@@ -202,7 +203,26 @@ export interface RendererPlaybackEndedEvent {
   readonly reason: "natural";
 }
 
+/** Presentation-only queue controls; the Player retains queue authority. */
+export interface RendererQueueControls {
+  position: number;
+  total: number;
+  previousLabel: string;
+  nextLabel: string;
+  nextDisabled: boolean;
+  mode: string;
+  modeIcon: string;
+  modeLabel: string;
+  modeActionLabel: string;
+  onPrevious: () => void;
+  onNext: () => void;
+  onCycleMode: () => void;
+}
+
 export interface RefrainRendererProps {
+  /** URL Player navigation; never part of music or MCP payloads. */
+  toolbarActions?: ReactNode;
+  queueControls?: RendererQueueControls;
   initialLocale?: RefrainLocale;
   onLocaleChange?: (locale: RefrainLocale) => void;
   artifact: AnyAirArtifact;

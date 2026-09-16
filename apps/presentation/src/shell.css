@@ -1,193 +1,212 @@
 body {
+  --room-bg: #f7f4ed;
+  --room-ink: #293230;
+  --room-muted: #73796e;
+  --room-line: #dcded2;
   min-width: 280px;
   margin: 0;
-  background: #f0f0e9;
-  color: #344139;
+  background: var(--room-bg, #f7f4ed);
+  color: var(--room-ink, #2a302e);
   font:
-    13px/1.55 system-ui,
+    13px/1.6 -apple-system,
+    BlinkMacSystemFont,
+    "PingFang SC",
     sans-serif;
 }
+body:has(dialog[open]) {
+  overflow: hidden;
+}
 .presentation-shell {
-  width: min(1400px, calc(100% - 64px));
-  margin: 0 auto;
+  min-height: 100dvh;
+  padding: 0 clamp(20px, 4vw, 64px);
 }
 .presentation-shell * {
   box-sizing: border-box;
 }
-.player-masthead {
+.player-stage {
+  min-width: 0;
+}
+.player-queue-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+}
+.player-queue-trigger svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.4;
+}
+.player-queue-trigger small {
+  font-size: 10px;
+  color: var(--room-muted);
+  font-variant-numeric: tabular-nums;
+}
+.player-footer {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+  padding: 22px 0 28px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  min-height: 96px;
-  border-bottom: 1px solid #ccd2c6;
+  color: var(--room-muted, #828578);
+  font-size: 10px;
+  letter-spacing: 0.03em;
 }
-.player-wordmark {
-  font:
-    500 29px/1.2 Georgia,
-    serif;
-  letter-spacing: -0.045em;
-  color: #274032;
-}
-.player-wordmark span {
-  margin-left: 10px;
-  font-size: 14px;
-  font-style: italic;
-  letter-spacing: 0;
-  color: #74806e;
-}
-.player-masthead nav {
-  display: flex;
-  gap: 18px;
-}
-.player-masthead button,
-.player-queue-controls button,
-.player-help button {
+.player-footer button {
   border: 0;
   background: transparent;
-  font: inherit;
   color: inherit;
+  font: inherit;
   cursor: pointer;
-  padding: 10px 4px;
+  padding: 10px 0;
 }
-.player-masthead button span {
-  margin-left: 5px;
-  font-variant-numeric: tabular-nums;
-  color: #87917d;
+.player-sheet {
+  color: var(--room-ink);
+  background: var(--room-bg);
+  border: 0;
+  margin: 0 0 0 auto;
+  width: min(440px, 100%);
+  height: 100dvh;
+  max-height: 100dvh;
+  max-width: 100%;
+  padding: 0;
+  box-shadow: -20px 0 100px #111c2520;
 }
-.player-masthead button[aria-expanded="true"] {
-  text-decoration: underline;
-  text-underline-offset: 7px;
+.player-sheet::backdrop {
+  background: #15252c38;
+  backdrop-filter: blur(5px);
 }
-.player-welcome {
-  margin: 18px 0 0;
-  color: #6e7c69;
-  font-size: 12px;
+.player-sheet-content {
+  min-height: 100%;
+  padding: 32px;
 }
-.player-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: 30px;
-  align-items: start;
-  margin-block: 24px;
-}
-.player-playlist {
-  display: none;
-}
-.player-layout[data-list-open="true"] {
-  grid-template-columns: 255px minmax(0, 1fr);
-}
-.player-layout[data-list-open="true"] .player-playlist {
-  display: block;
-}
-.player-stage {
-  min-width: 0;
-  background: #faf9f4;
-  border: 1px solid #d4d8cc;
-  border-radius: 4px;
-  padding: 12px 20px 20px;
-  box-shadow: 0 10px 50px #31462a08;
-}
-.player-list-heading {
+.player-sheet-header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  color: var(--room-muted);
   font-size: 11px;
-  color: #76816f;
   letter-spacing: 0.06em;
-  padding-block: 8px 14px;
+}
+.player-sheet-header small {
+  margin-left: 12px;
+}
+.player-sheet-header button {
+  background: none;
+  border: 0;
+  color: var(--room-ink);
+  font-size: 28px;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
 }
 .player-list-title {
+  width: 100%;
   border: 0;
   border-bottom: 1px solid transparent;
-  background: transparent;
-  color: #344b38;
-  font:
-    500 23px/1.3 Georgia,
-    serif;
-  width: 100%;
-  padding: 0 0 12px;
   border-radius: 0;
+  background: none;
+  color: inherit;
+  padding: 0 0 20px;
+  font:
+    32px/1.3 "Iowan Old Style",
+    "Songti SC",
+    Georgia,
+    serif;
 }
 .player-list-title:focus {
-  border-bottom-color: #85927a;
   outline: none;
+  border-color: var(--room-muted);
 }
 .player-playlist ol {
-  padding: 0;
   list-style: none;
-  margin: 20px 0;
+  padding: 0;
+  margin: 20px 0 40px;
 }
 .player-playlist li {
-  padding: 10px 0;
-  border-top: 1px solid #d5dacd;
-}
-.player-playlist li[data-current="true"] {
-  border-top-color: #859b78;
+  border-top: 1px solid var(--room-line);
+  padding: 18px 0 10px;
 }
 .player-entry {
   display: flex;
+  align-items: baseline;
+  gap: 18px;
   width: 100%;
-  gap: 12px;
-  text-align: left;
-  color: #68785f;
-  background: transparent;
+  padding: 0;
   border: 0;
-  padding: 8px 0;
+  background: none;
+  color: var(--room-muted);
+  text-align: left;
   font:
-    500 14px/1.5 system-ui,
-    sans-serif;
+    16px/1.6 "Iowan Old Style",
+    "Songti SC",
+    Georgia,
+    serif;
   cursor: pointer;
 }
-.player-entry span:last-child {
+.player-entry span:nth-child(2) {
+  flex: 1;
   overflow-wrap: anywhere;
 }
-.player-entry[aria-current="true"] {
-  color: #294c35;
-}
 .player-entry-number {
-  font:
-    11px/2 system-ui,
-    sans-serif;
-  color: #89977b;
-  font-variant-numeric: tabular-nums;
+  font: 10px/1.6 monospace;
+}
+.player-entry[aria-current="true"] {
+  color: var(--room-ink);
+}
+.player-entry-indicator {
+  visibility: hidden;
+  font-size: 20px;
+}
+.player-entry[aria-current="true"] .player-entry-indicator {
+  visibility: visible;
 }
 .player-entry-actions {
   display: flex;
   justify-content: flex-end;
+  gap: 4px;
+  margin-top: 8px;
 }
 .player-entry-actions button {
-  width: 32px;
-  height: 30px;
+  width: 36px;
+  height: 32px;
   border: 0;
-  background: transparent;
-  color: #728269;
-  font:
-    16px system-ui,
-    sans-serif;
+  background: none;
+  color: var(--room-muted);
+  font-size: 15px;
   cursor: pointer;
 }
 .player-entry-actions button:disabled {
-  opacity: 0.3;
+  opacity: 0.25;
   cursor: default;
 }
+.player-entry-actions button:not(:disabled):hover {
+  color: var(--room-ink);
+  background: var(--room-line);
+}
 .player-list-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 24px;
+  display: grid;
+  gap: 12px;
 }
 .player-list-actions > button,
-.player-file {
-  border: 1px solid #adbba2;
-  border-radius: 5px;
-  padding: 10px 12px;
+.player-file,
+.player-help button:not(.player-sheet-header button),
+.presentation-message button {
+  display: block;
+  border: 1px solid var(--room-line);
   background: transparent;
-  color: #415c3d;
-  cursor: pointer;
+  color: inherit;
+  border-radius: 2px;
+  padding: 12px 16px;
+  text-align: left;
   font: inherit;
+  cursor: pointer;
 }
 .player-file {
-  display: inline-flex;
   position: relative;
 }
 .player-file input {
@@ -198,143 +217,86 @@ body {
   overflow: hidden;
 }
 .player-file:focus-within,
-.presentation-shell button:focus-visible {
-  outline: 2px solid #55754a;
-  outline-offset: 3px;
+.presentation-shell button:focus-visible,
+.player-list-title:focus-visible {
+  outline: 2px solid var(--room-ink);
+  outline-offset: 4px;
 }
 .player-local-note {
+  color: var(--room-muted);
   font-size: 11px;
   line-height: 1.8;
-  color: #7c8872;
-}
-.player-queue-controls {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid #dce0d4;
-  padding-bottom: 6px;
-  margin-bottom: 2px;
-  font-size: 11px;
-  color: #76836c;
-}
-.player-queue-controls > div {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.player-queue-controls > div button {
-  width: 34px;
-  font-size: 20px;
-  padding: 2px;
-}
-.player-queue-controls button:disabled {
-  opacity: 0.3;
-  cursor: default;
+  margin-top: 24px;
 }
 .player-help {
-  width: min(680px, 100%);
-  padding-block: 18px 28px;
-  line-height: 1.8;
+  width: min(520px, 100%);
+  line-height: 1.9;
 }
 .player-help h2 {
   font:
-    500 25px Georgia,
+    30px/1.4 "Iowan Old Style",
+    "Songti SC",
+    Georgia,
     serif;
+  margin: 30px 0 16px;
 }
 .player-help a {
-  color: #42633e;
-  text-underline-offset: 4px;
+  color: inherit;
+  text-underline-offset: 5px;
 }
 .player-help details {
-  margin-top: 20px;
+  margin-block: 30px;
 }
 .player-help blockquote {
-  border-left: 2px solid #b4c0a7;
   margin: 16px 0;
-  padding-left: 18px;
+  padding-left: 16px;
+  border-left: 1px solid var(--room-line);
 }
-.player-footer {
-  color: #8c9681;
-  font-size: 11px;
-  padding: 12px 0 30px;
-  border-top: 1px solid #d7ddcf;
+.player-empty-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-block: 30px;
+}
+.player-empty-header .refrain-wordmark {
+  margin-right: auto;
 }
 .presentation-message {
-  width: min(620px, 100%);
-  margin: 10vh auto;
-  padding: 10px;
+  width: min(600px, 100%);
+  margin: 18vh auto;
 }
 .presentation-message h1 {
   font:
-    500 30px/1.2 Georgia,
+    40px/1.3 "Iowan Old Style",
+    "Songti SC",
+    Georgia,
     serif;
 }
 .player-error {
-  color: #944f53;
+  width: min(1120px, 100%);
+  margin: 16px auto;
+  color: #b85d60;
   overflow-wrap: anywhere;
 }
-.player-stage .air-page-brand {
-  display: none;
-}
-.player-stage .air-page-topbar {
-  justify-content: flex-end;
-}
-.player-stage .air-page {
-  box-shadow: none;
-}
-@media (max-width: 850px) {
+@media (max-width: 620px) {
   .presentation-shell {
-    width: calc(100% - 28px);
+    padding-inline: 20px;
   }
-  .player-layout[data-list-open="true"] {
-    grid-template-columns: minmax(0, 1fr);
+  .player-queue-trigger {
+    gap: 5px;
   }
-  .player-playlist {
-    border-bottom: 1px solid #cbd3c2;
-    padding-bottom: 20px;
-  }
-  .player-playlist ol {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-  }
-}
-@media (max-width: 500px) {
-  .presentation-shell {
-    width: calc(100% - 16px);
-  }
-  .player-masthead {
-    min-height: 70px;
-    gap: 8px;
-  }
-  .player-wordmark {
-    font-size: 24px;
-  }
-  .player-wordmark span {
+  .player-queue-trigger > span {
     display: none;
   }
-  .player-masthead nav {
-    gap: 12px;
-    font-size: 11px;
-  }
-  .player-welcome {
-    font-size: 11px;
-    margin: 12px 4px 0;
-  }
-  .player-layout {
-    margin-block: 14px;
-    gap: 18px;
-  }
-  .player-stage {
-    padding: 8px 5px 14px;
-  }
-  .player-queue-controls {
-    margin-inline: 8px;
-  }
-  .player-playlist {
-    padding: 0 10px 20px;
+  .player-sheet-content {
+    padding: 24px;
   }
   .player-footer {
-    margin-inline: 4px;
+    font-size: 9px;
+    gap: 12px;
+    padding-block: 12px 22px;
+  }
+  .player-footer > span {
+    max-width: 180px;
   }
 }

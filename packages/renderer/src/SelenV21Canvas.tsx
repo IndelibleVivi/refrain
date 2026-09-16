@@ -1,6 +1,7 @@
 import { useLayoutEffect, useRef, useState } from "react";
 import type { SelenV21Piece, SelenV21ThemeId } from "./selen-v21-model.js";
 import type { RefrainLocale } from "./ui-copy.js";
+import type { RendererQueueControls } from "./types.js";
 import type { ResolvedAppearance } from "./appearance.js";
 import {
   mountSelenV21,
@@ -13,6 +14,7 @@ import {
 
 interface SelenV21CanvasProps {
   artifactIdentity: string;
+  queueControls?: RendererQueueControls;
   locale: RefrainLocale;
   callbacks: SelenV21RuntimeCallbacks;
   canReturnSelection: boolean;
@@ -39,6 +41,7 @@ function initialSurface(
 
 export function SelenV21Canvas({
   artifactIdentity,
+  queueControls,
   locale,
   callbacks,
   canReturnSelection,
@@ -53,6 +56,9 @@ export function SelenV21Canvas({
   themeId = "paper-sonata",
   appearance,
 }: SelenV21CanvasProps) {
+  const queueRef = useRef(queueControls);
+  queueRef.current = queueControls;
+  const queueKey = JSON.stringify(queueControls);
   const host = useRef<HTMLDivElement>(null);
   const runtime = useRef<SelenV21Runtime | undefined>(undefined);
   const presentation = useRef<
@@ -62,6 +68,7 @@ export function SelenV21Canvas({
         selection: string;
         languageFocused: boolean;
         themeFocused: boolean;
+        focusedControl?: string;
       }
     | undefined
   >(undefined);
@@ -109,6 +116,14 @@ export function SelenV21Canvas({
         onStopPlayback: () => callbacksRef.current.onStopPlayback(),
         onTogglePlayback: () => callbacksRef.current.onTogglePlayback(),
       },
+      queueControls: queueControls
+        ? {
+            ...queueControls,
+            onPrevious: () => queueRef.current?.onPrevious(),
+            onNext: () => queueRef.current?.onNext(),
+            onCycleMode: () => queueRef.current?.onCycleMode(),
+          }
+        : undefined,
       locale,
       piece,
       canReturnSelection,
@@ -138,6 +153,12 @@ export function SelenV21Canvas({
       }
       if (previous.languageFocused)
         element.querySelector<HTMLButtonElement>(".refrain-language")?.focus();
+      if (previous.focusedControl)
+        element
+          .querySelector<HTMLElement>(
+            '[data-control="' + previous.focusedControl + '"]',
+          )
+          ?.focus();
       if (previous.themeFocused)
         element.querySelector<HTMLSelectElement>(".refrain-theme")?.focus();
     }
@@ -150,6 +171,9 @@ export function SelenV21Canvas({
             ?.value ?? "",
         languageFocused:
           element.querySelector(".refrain-language") === document.activeElement,
+        focusedControl: element.contains(document.activeElement)
+          ? (document.activeElement as HTMLElement)?.dataset.control
+          : undefined,
         themeFocused:
           element.querySelector(".refrain-theme") === document.activeElement,
       };
@@ -158,6 +182,7 @@ export function SelenV21Canvas({
     };
   }, [
     artifactIdentity,
+    queueKey,
     locale,
     canReturnSelection,
     playbackEnabled,

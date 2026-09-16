@@ -17,6 +17,7 @@ const en = {
   continuous: "Through-line",
   now: "Here, now",
   about: "About this air",
+  exploreAir: "Inside this air",
   sections: "sections",
   noSections: "unsectioned",
   voices: "voices",
@@ -101,11 +102,8 @@ const en = {
   segment: "segment",
   motif: "motif",
   noMotif: "No motif in this passage",
-  noMotifDefined: "An air unfolding without a named motif.",
   motifCopy:
     "Every appearance of a motif, across this air. Choose one to see where it returns and how it changes.",
-  manuscript: "An air on the page",
-  pressedSheet: "An air, pressed into a page",
   artifactDownloaded: "Refrain artifact downloaded.",
   sourceDownloaded: "AIR source downloaded.",
   selectionDownloaded: "Selection downloaded.",
@@ -142,7 +140,6 @@ const en = {
   appearances: (n: number) => `${n} ${n === 1 ? "appearance" : "appearances"}`,
   activeVoices: (n: number) =>
     `${n} ${n === 1 ? "voice" : "voices"} in this passage.`,
-  acrossVoices: (n: number) => `across ${n} ${n === 1 ? "voice" : "voices"}`,
   jump: (label: string, beat: number) => `Jump to ${label}, beat ${beat}`,
   selectMotif: (motif: string, n: number, transform: string, section: string) =>
     `Select motif ${motif}, appearance ${n}, ${transform}, ${section}`,
@@ -194,6 +191,7 @@ const zh: typeof en = {
   continuous: "连续段",
   now: "此刻",
   about: "关于这首 air",
+  exploreAir: "走进这首 air",
   sections: "分节",
   noSections: "无分节",
   voices: "声部",
@@ -276,11 +274,8 @@ const zh: typeof en = {
   segment: "片段",
   motif: "motif",
   noMotif: "此处没有 motif",
-  noMotifDefined: "这首 air 自由展开，尚未命名 motif。",
   motifCopy:
     "一个 motif 在整首 air 里的每一次出现。点亮一处，看看它回到了哪里，又变成了什么样子。",
-  manuscript: "一首 air，落在纸上",
-  pressedSheet: "一首 air，藏进这一页",
   artifactDownloaded: "已下载 Refrain artifact。",
   sourceDownloaded: "已下载 AIR source。",
   selectionDownloaded: "已下载选段。",
@@ -314,7 +309,6 @@ const zh: typeof en = {
   families: (n) => `${n} 个 motif 家族`,
   appearances: (n) => `${n} 次出现`,
   activeVoices: (n) => `${n} 个声部在此处活动。`,
-  acrossVoices: (n) => `穿过 ${n} 个声部`,
   jump: (label, beat) => `跳到 ${label}，第 ${beat} 拍`,
   selectMotif: (motif, n, transform, section) =>
     `选择 motif ${motif}，第 ${n} 次出现，${transform}，${section}`,

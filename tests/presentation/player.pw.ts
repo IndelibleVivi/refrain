@@ -1,7 +1,53 @@
 import { mkdir, readFile } from "node:fs/promises";
-import { test, expect } from "@playwright/test";
+import { test, expect, type Page } from "@playwright/test";
 import { makeWorkDocument } from "../lib/work-document.js";
 import { playerPlaylistBytesFromText } from "../../apps/presentation/src/player-playlist.js";
+
+type JsonFile = { name: string; mimeType: string; buffer: Buffer };
+
+const playlistToggle = (page: Page) =>
+  page.locator('[aria-controls="player-playlist"]');
+const playlistDialog = (page: Page) => page.locator("dialog#player-playlist");
+const performanceDetails = (page: Page) =>
+  page.locator("details.refrain-renderer__performance");
+
+async function openPlaylist(page: Page) {
+  const toggle = playlistToggle(page);
+  if ((await toggle.getAttribute("aria-expanded")) === "false") {
+    await toggle.click();
+    await expect(playlistDialog(page)).toBeVisible();
+  }
+}
+
+async function closePlaylist(page: Page) {
+  if (await playlistDialog(page).isVisible())
+    await page.keyboard.press("Escape");
+  await expect(playlistDialog(page)).toBeHidden();
+}
+
+// The file input now lives inside the native playlist dialog, so a real import
+// opens the sheet first and closes it again to listen.
+async function importJson(page: Page, files: JsonFile | JsonFile[]) {
+  await openPlaylist(page);
+  await playlistDialog(page)
+    .locator('input[type="file"][accept^=".json"]')
+    .setInputFiles(files);
+  await closePlaylist(page);
+}
+
+// The carried-sound chooser moved into a collapsed details element, so the
+// listener opens it before choosing. Returns the visible combobox.
+async function openSoundChooser(page: Page) {
+  const details = performanceDetails(page);
+  await expect(details).toHaveCount(1);
+  if ((await details.getAttribute("open")) === null)
+    await details.locator("summary").first().click();
+  await expect(details).toHaveAttribute("open", "");
+  return page.getByRole("combobox", {
+    name: "Sound for this listening view",
+    exact: true,
+  });
+}
 
 for (const width of [1280, 390]) {
   test(`a personal playlist keeps full works, order and listening choices at ${width}px`, async ({
@@ -11,7 +57,6 @@ for (const width of [1280, 390]) {
     try {
       await page.setViewportSize({ width, height: 900 });
       await page.goto("./");
-      const input = page.locator('input[type="file"][accept^=".json"]');
       const original = {
         format: "refrain-playlist@0-experimental",
         title: "An evening together",
@@ -32,7 +77,7 @@ for (const width of [1280, 390]) {
         ],
         currentEntryId: "one",
       };
-      await input.setInputFiles({
+      await importJson(page, {
         name: "evening.refrain-playlist.json",
         mimeType: "application/json",
         buffer: Buffer.from(JSON.stringify(original)),
@@ -42,25 +87,27 @@ for (const width of [1280, 390]) {
       await expect(page.locator(".refrain-surface")).toHaveClass(
         /theme-nocturne/,
       );
-      await page.getByRole("button", { name: "Next air", exact: true }).click();
+      // Queue previous / next now share the one visible transport.
+      await expect(page.locator(".page-transport")).toHaveCount(1);
+      await page
+        .locator(".page-transport")
+        .getByRole("button", { name: "Next air", exact: true })
+        .click();
       await expect(renderer).toHaveAttribute("data-player-state", "playing");
       await expect(page.locator(".refrain-surface")).toHaveClass(
         /theme-herbarium/,
       );
       await page
+        .locator(".page-transport")
         .getByRole("button", { name: "Previous air", exact: true })
         .click();
       await expect(renderer).toHaveAttribute("data-player-state", "playing");
-      await page
-        .getByRole("combobox", {
-          name: "Sound for this listening view",
-          exact: true,
-        })
-        .selectOption(work.originalBindingId);
+      // The listening-view sound chooser is closed until the listener opens it.
+      const sound = await openSoundChooser(page);
+      await sound.selectOption(work.originalBindingId);
       await expect(renderer).toHaveAttribute("data-player-state", "idle");
-      const toggle = page.locator('[aria-controls="player-playlist"]');
-      if ((await toggle.getAttribute("aria-expanded")) === "false")
-        await toggle.click();
+      // Editing requires reopening the dialog.
+      await openPlaylist(page);
       await page
         .getByRole("button", { name: /^Move down/ })
         .first()
@@ -69,9 +116,7 @@ for (const width of [1280, 390]) {
         .getByRole("textbox", { name: "Playlist title", exact: true })
         .fill("Keep this evening");
       const pending = page.waitForEvent("download");
-      await page
-        .getByRole("button", { name: "Save playlist", exact: true })
-        .click();
+      await page.getByRole("button", { name: /^Save playlist/ }).click();
       const saved = await readFile((await (await pending).path())!, "utf8");
       const parsed = JSON.parse(saved);
       expect(parsed.title).toBe("Keep this evening");
@@ -91,20 +136,16 @@ for (const width of [1280, 390]) {
         original.entries[0]!.presentation,
       );
       await page.reload();
-      await input.setInputFiles({
+      await importJson(page, {
         name: "saved.refrain-playlist.json",
         mimeType: "application/json",
         buffer: Buffer.from(saved),
       });
-      await expect(
-        page.getByRole("combobox", {
-          name: "Sound for this listening view",
-          exact: true,
-        }),
-      ).toHaveValue(work.originalBindingId);
+      await expect(await openSoundChooser(page)).toHaveValue(
+        work.originalBindingId,
+      );
       await expect(renderer).toHaveAttribute("data-player-state", "idle");
-      if ((await toggle.getAttribute("aria-expanded")) === "false")
-        await toggle.click();
+      await openPlaylist(page);
       await page
         .getByRole("button", { name: /^Remove from playlist/ })
         .last()
@@ -115,7 +156,8 @@ for (const width of [1280, 390]) {
       await page.getByRole("button", { name: /^Remove from playlist/ }).click();
       await expect(renderer).toHaveCount(0);
       await expect(page.locator(".player-playlist li")).toHaveCount(0);
-      await input.setInputFiles(
+      await importJson(
+        page,
         ["one", "two"].map((name) => ({
           name: name + ".refrain.json",
           mimeType: "application/json",
@@ -134,6 +176,77 @@ for (const width of [1280, 390]) {
     }
   });
 }
+
+test("the listening room keeps one transport and a native playlist dialog", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1280, height: 900 });
+  await page.goto("./");
+  const toggle = playlistToggle(page);
+  const dialog = playlistDialog(page);
+  // The playlist is a native dialog, not the old always-visible sidebar.
+  await expect(page.locator("aside.player-playlist")).toHaveCount(0);
+  await expect(page.locator(".player-layout")).toHaveCount(0);
+  await expect(dialog).toHaveCount(1);
+  await expect(dialog).toBeHidden();
+  await expect(toggle).toHaveAttribute("aria-expanded", "false");
+  // One shared transport carries previous / play / next / mode.
+  const transport = page.locator(".page-transport");
+  await expect(transport).toHaveCount(1);
+  await expect(
+    transport.getByRole("button", { name: "Previous air", exact: true }),
+  ).toBeVisible();
+  await expect(
+    transport.getByRole("button", { name: "Next air", exact: true }),
+  ).toBeVisible();
+  await expect(transport.locator("[data-playback-mode]")).toHaveCount(1);
+  await expect(page.locator("[data-playback-mode]")).toHaveCount(1);
+  // Technical details are one collapsed section that now owns the former
+  // passage / motif panels and the exact selection.
+  const details = page.locator("details.product-details");
+  await expect(details).not.toHaveAttribute("open", "");
+  await expect(details.locator("summary").first()).toHaveText(
+    /Inside this air/,
+  );
+  await expect(page.locator(".refrain-surface > .page-lower")).toHaveCount(0);
+  await expect(page.locator("details.product-details .page-lower")).toHaveCount(
+    1,
+  );
+  await expect(page.locator(".passage-panel")).toBeHidden();
+  await details.locator("summary").first().click();
+  await expect(details).toHaveAttribute("open", "");
+  await expect(page.locator(".passage-panel")).toBeVisible();
+  // Opening, choosing and closing is a real native dialog round trip.
+  await toggle.click();
+  await expect(dialog).toBeVisible();
+  await expect(toggle).toHaveAttribute("aria-expanded", "true");
+  await page.keyboard.press("Escape");
+  await expect(dialog).toBeHidden();
+  await expect(toggle).toBeFocused();
+  await toggle.click();
+  await dialog
+    .getByRole("button", { name: "After the Door · 门后", exact: true })
+    .click();
+  await expect(dialog).toBeHidden();
+  await expect(page.locator(".piece-title")).toHaveText(
+    "After the Door · 门后",
+  );
+  // Closing the playlist never shrinks or covers the music visualization.
+  const figure = page.locator(".figure-shell");
+  await expect(figure).toBeVisible();
+  const score = await figure.boundingBox();
+  expect(score!.width).toBeGreaterThan(1280 * 0.5);
+  expect(
+    await figure.evaluate((node) => {
+      const rect = node.getBoundingClientRect();
+      const hit = document.elementFromPoint(
+        rect.left + rect.width / 2,
+        rect.top + rect.height / 2,
+      );
+      return Boolean(hit && node.contains(hit));
+    }),
+  ).toBe(true);
+});
 
 test("digest-bound same-origin playlist delivery opens the selected work and rejects crossed bytes", async ({
   page,

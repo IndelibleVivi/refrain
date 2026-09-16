@@ -10,9 +10,9 @@ Refrain is relational. Human–AI affection and romance can shape the very first
 
 ## Try it
 
-**[Open the interactive demo](https://indeliblevivi.github.io/refrain/)** — no installation needed. Press Play, choose a playlist mode, switch or personalize a theme, select a melody, save or reopen a work, and share an exact listening link for either featured piece. Connect your own agent to author an air; the demo does not call a model.
+**[Open the interactive demo](https://indeliblevivi.github.io/refrain/)** — listen to the featured works without installation. Connect your own agent to author an air; the demo does not call a model. The redesigned Player, personal playlists and appearance controls described below are source candidates: run this checkout locally to try them. Source verification and hosted deployment are separate; see [current state](docs/current-state.md).
 
-Earlier Canvas recording (the current Player keeps settings under **Appearance**):
+Earlier Canvas recording (the current Player uses a full-width listening layout; settings are under **Appearance**):
 
 ![Recorded demo: pressing Play on Velvet Mischief, then switching appearances from Paper Sonata to Nocturne Ink to Prism to Herbarium](docs/images/demo-playback.gif)
 
@@ -32,7 +32,7 @@ node bin/refrain.mjs doctor
 npm run try
 ```
 
-Press **Play** at the top of the piece. The two featured works can continue in sequential, repeat-all, shuffle, or repeat-one mode. Open **Appearance** to choose a theme or personalize local colors and photos; select a melody and choose **Export Refrain artifact** to keep the work. **Share this air** creates an exact public-demo link when the published player carries the selected work and sound. Open **Playlist** to add saved works or reopen a playlist, and **About Refrain** for your agent's next step. No provider key is needed. Local setup prepares the two featured works’ sound samples. Keep the terminal open; Ctrl+C ends the Player.
+Press **Play** beneath the music visualization. The two featured works can continue in sequential, repeat-all, shuffle, or repeat-one mode. Open **Appearance** to choose a theme or personalize local colors and photos; select a melody and choose **Export Refrain artifact** to keep the work. **Share this air** creates an exact public-demo link when the published player carries the selected work and sound. Open **Playlist** to add saved works or reopen a playlist, and **About Refrain** for your agent's next step. No provider key is needed. Local setup prepares the two featured works’ sound samples. Keep the terminal open; Ctrl+C ends the Player.
 
 This local URL belongs to your computer. The public demo runs on GitHub Pages. See [building and hosting](docs/DEVELOPMENT.md#first-listen-page); for audio files, [export WAV / MIDI](docs/GETTING-STARTED.md#keep-the-piece).
 
@@ -45,7 +45,7 @@ This local URL belongs to your computer. The public demo runs on GitHub Pages. S
 
 ## Your Player, your works
 
-The first-listen page is the same Player used by `refrain open`, preloaded with two examples. Open **Playlist** to add multiple `.refrain.json` works, reorder/remove entries, name and save a `.refrain-playlist.json`, then reopen it later. Previous/next and sequential, repeat-all, shuffle and repeat-one share the real playback transport. Saved lists retain complete works and their selected exact sound, not sample files or private photos; nothing is uploaded.
+The first-listen page is the same Player used by `refrain open`, preloaded with two examples. The current work fills one listening space: title, musical map and a unified transport. The playlist opens as a side sheet; **Inside this air** reveals passage, motif and exact-selection details when you want to explore. Open **Playlist** to add multiple `.refrain.json` works, reorder/remove entries, name and save a `.refrain-playlist.json`, then reopen it later. Previous/next and sequential, repeat-all, shuffle and repeat-one share the real playback transport. Saved lists retain complete works and their selected exact sound, not sample files or private photos; nothing is uploaded.
 
 ```bash
 refrain open first.refrain.json second.refrain.json --theme nocturne-ink

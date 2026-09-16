@@ -4,6 +4,7 @@
 // a second, approximate React geometry implementation.
 // @ts-nocheck
 
+import type { RendererQueueControls } from "./types.js";
 import type { SelenV21Piece, SelenV21ThemeId } from "./selen-v21-model.js";
 import { uiCopy, type RefrainLocale } from "./ui-copy.js";
 import type { RefrainSelectionKind } from "./selection.js";
@@ -240,6 +241,7 @@ export function mountSelenV21(
     canReturnSelection: boolean;
     playbackEnabled: boolean;
     appearance?: ResolvedAppearance;
+    queueControls?: RendererQueueControls;
   },
 ): SelenV21Runtime {
   const copy = uiCopy(input.locale);
@@ -621,7 +623,7 @@ export function mountSelenV21(
     if (themeId === "paper-sonata") {
       if (desktop)
         return {
-          width: 840,
+          width: 1120,
           height: 430,
           left: 28,
           right: 24,
@@ -652,7 +654,7 @@ export function mountSelenV21(
     if (themeId === "nocturne-ink") {
       if (desktop)
         return {
-          width: 900,
+          width: 1120,
           height: 370,
           left: 34,
           right: 26,
@@ -683,7 +685,7 @@ export function mountSelenV21(
     if (themeId === "herbarium") {
       if (desktop)
         return {
-          width: 880,
+          width: 1120,
           height: 400,
           left: 30,
           right: 24,
@@ -713,7 +715,7 @@ export function mountSelenV21(
     }
     if (desktop)
       return {
-        width: 900,
+        width: 1120,
         height: 350,
         left: 36,
         right: 27,
@@ -1032,6 +1034,11 @@ export function mountSelenV21(
     if (kind === "restart")
       button.innerHTML =
         '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.1 8.2H2.8V4.9M3.4 8.1A9 9 0 1 1 3 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    if (kind === "previous" || kind === "next")
+      button.innerHTML =
+        '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6v12M18 6l-9 6 9 6z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"' +
+        (kind === "next" ? ' transform="rotate(180 12 12)"' : "") +
+        "/></svg>";
     if (kind === "stop")
       button.innerHTML =
         '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="6.5" width="11" height="11" rx="1.4" fill="currentColor"/></svg>';
@@ -1055,7 +1062,27 @@ export function mountSelenV21(
     play.addEventListener("click", () => void togglePlayback());
     restart.addEventListener("click", () => restartPlayback());
     stop.addEventListener("click", () => stopPlayback());
-    buttons.append(play, restart, stop);
+    const queue = !compact ? input.queueControls : undefined;
+    if (queue) {
+      const previous = createIconButton(queue.previousLabel, "previous");
+      const next = createIconButton(queue.nextLabel, "next");
+      previous.addEventListener("click", queue.onPrevious);
+      next.addEventListener("click", queue.onNext);
+      next.disabled = queue.nextDisabled;
+      buttons.append(previous, play, next);
+    } else buttons.append(play);
+    const secondary = htmlEl("div", "transport-secondary");
+    secondary.append(restart, stop);
+    if (queue) {
+      const mode = htmlEl("button", "queue-mode", queue.modeIcon);
+      mode.type = "button";
+      mode.dataset.playbackMode = queue.mode;
+      mode.dataset.control = "queue-mode";
+      mode.setAttribute("aria-label", queue.modeActionLabel);
+      mode.title = queue.modeLabel;
+      mode.addEventListener("click", queue.onCycleMode);
+      secondary.append(mode);
+    }
     const timeline = htmlEl("div", "timeline");
     const time = htmlEl("div", "time");
     const current = htmlEl("strong", "", "0:00");
@@ -1077,7 +1104,10 @@ export function mountSelenV21(
     seek.disabled = !input.playbackEnabled;
     seek.addEventListener("input", () => seekTo(Number(seek.value)));
     timeline.append(time, sectionNow, seek);
-    root.append(buttons, timeline);
+    if (compact) {
+      buttons.append(restart, stop);
+      root.append(buttons, timeline);
+    } else root.append(buttons, timeline, secondary);
     transports.push({ root, play, current, total, sectionNow, seek });
     return root;
   }
@@ -1085,7 +1115,7 @@ export function mountSelenV21(
   function buildDetails(theme) {
     const details = htmlEl("details", "product-details");
     const summary = document.createElement("summary");
-    summary.innerHTML = `<span>${copy.about}</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 9 12 14.5 17.5 9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+    summary.innerHTML = `<span>${input.surface === "mcp" ? copy.about : copy.exploreAir}</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 9 12 14.5 17.5 9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
     const body = htmlEl("div", "details-body");
     const grid = htmlEl("div", "details-grid");
     [
@@ -3433,40 +3463,29 @@ export function mountSelenV21(
     return root;
   }
 
-  function buildPageTopbar(theme) {
-    const bar = htmlEl("div", "air-page-topbar");
-    bar.append(htmlEl("div", "air-page-brand", "Refrain"));
-    const controls = htmlEl("div", "air-page-controls");
-    controls.append(buildLanguageSwitch());
-    bar.append(controls);
-    return bar;
-  }
-
   function buildPageHero(theme) {
     const hero = htmlEl("header", "page-hero");
-    if (theme.id === "paper-sonata")
-      hero.append(htmlEl("p", "product-mark", copy.manuscript));
-    if (theme.id === "herbarium")
-      hero.append(htmlEl("p", "product-mark", copy.pressedSheet));
-    const returnVoices = new Set(
-      piece.motifOccurrences.map((item) => item.voiceId),
-    ).size;
-    const motifFamilies = new Set(
-      piece.motifOccurrences.map((item) => item.motif),
-    ).size;
-    hero.append(
-      htmlEl("h2", "piece-title", piece.title),
-      htmlEl("p", "piece-caption", piece.caption),
-      htmlEl(
-        "p",
-        "lineage-note",
-        piece.motifOccurrences.length
-          ? motifFamilies > 1
-            ? `${copy.families(motifFamilies)} · ${copy.appearances(piece.motifOccurrences.length)} · ${copy.acrossVoices(returnVoices)}`
-            : `@${piece.motifOccurrences[0]?.motif ?? "motif"} · ${copy.appearances(piece.motifOccurrences.length)} · ${copy.acrossVoices(returnVoices)}`
-          : copy.noMotifDefined,
-      ),
-    );
+    const overline = htmlEl("div", "listening-overline");
+    overline.append(htmlEl("span", "", theme.label));
+    if (input.queueControls)
+      overline.append(
+        htmlEl(
+          "span",
+          "listening-index",
+          String(input.queueControls.position).padStart(2, "0") +
+            " / " +
+            String(input.queueControls.total).padStart(2, "0"),
+        ),
+      );
+    const title = htmlEl("h2", "piece-title");
+    const separator = piece.title.indexOf(" · ");
+    if (separator >= 0) {
+      title.append(
+        document.createTextNode(piece.title.slice(0, separator + 3)),
+        htmlEl("span", "piece-title-part", piece.title.slice(separator + 3)),
+      );
+    } else title.textContent = piece.title;
+    hero.append(overline, title, htmlEl("p", "piece-caption", piece.caption));
     return hero;
   }
 
@@ -3588,7 +3607,6 @@ export function mountSelenV21(
       "aria-label",
       `${piece.title}, ${theme.label} Air Page ${mobile ? "mobile" : "desktop"}`,
     );
-    const topbar = buildPageTopbar(theme);
     const hero = buildPageHero(theme);
     const figure = buildFigure(theme, surface);
     const transport = buildTransport(theme, surface);
@@ -3600,18 +3618,10 @@ export function mountSelenV21(
     if (motif) lower.append(motif.root);
     else lower.classList.add("single");
     const details = buildDetails(theme);
-    root.append(topbar, transport);
-    if (theme.id === "paper-sonata") {
-      const spread = htmlEl("div", "paper-page-spread");
-      const editorial = htmlEl("div", "paper-editorial");
-      editorial.append(hero);
-      const stage = htmlEl("div", "paper-stage");
-      stage.append(figure.shell);
-      spread.append(editorial, stage);
-      root.append(spread, jumps, lower, details);
-    } else {
-      root.append(hero, figure.shell, jumps, lower, details);
-    }
+    details.querySelector(".details-body").prepend(lower);
+    const stage = htmlEl("div", "listening-stage");
+    stage.append(figure.shell, jumps);
+    root.append(hero, stage, transport, details);
     presentations.push({
       root,
       theme,
