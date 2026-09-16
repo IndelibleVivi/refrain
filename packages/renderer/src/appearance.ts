@@ -47,6 +47,8 @@ export interface AppearanceImageMetadata {
 
 export interface ThemeAppearance extends PortableShareAppearance {
   readonly backgroundImage?: AppearanceImageMetadata;
+  readonly backgroundPosition?: "center" | "top" | "bottom";
+  readonly backgroundFit?: "cover" | "contain";
 }
 
 export interface AppearancePreferences {
@@ -57,6 +59,8 @@ export interface AppearancePreferences {
 
 export interface ResolvedAppearance extends PortableShareAppearance {
   readonly backgroundImageUrl?: string;
+  readonly backgroundPosition?: ThemeAppearance["backgroundPosition"];
+  readonly backgroundFit?: ThemeAppearance["backgroundFit"];
 }
 
 function record(value: unknown): Record<string, unknown> | undefined {
@@ -151,6 +155,21 @@ function parseThemeAppearance(value: unknown): ThemeAppearance {
   if (!candidate) return {};
   return {
     ...(normalizePortableAppearance(candidate) ?? {}),
+    ...(candidate.backgroundPosition === "center" ||
+    candidate.backgroundPosition === "top" ||
+    candidate.backgroundPosition === "bottom"
+      ? {
+          backgroundPosition:
+            candidate.backgroundPosition as ThemeAppearance["backgroundPosition"],
+        }
+      : {}),
+    ...(candidate.backgroundFit === "cover" ||
+    candidate.backgroundFit === "contain"
+      ? {
+          backgroundFit:
+            candidate.backgroundFit as ThemeAppearance["backgroundFit"],
+        }
+      : {}),
     ...(appearanceImageMetadata(candidate.backgroundImage)
       ? { backgroundImage: appearanceImageMetadata(candidate.backgroundImage) }
       : {}),

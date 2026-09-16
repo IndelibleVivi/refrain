@@ -73,11 +73,6 @@
 }
 
 .refrain-appearance-controls {
-  width: min(100%, 860px);
-  margin: 0 auto 12px;
-  border: 1px solid rgba(52, 54, 52, 0.18);
-  border-radius: 14px;
-  background: rgba(251, 250, 246, 0.82);
   color: #373b39;
   font:
     12px/1.45 Inter,
@@ -85,16 +80,149 @@
     system-ui,
     sans-serif;
 }
-.refrain-appearance-controls > summary {
+.refrain-appearance-controls > button {
   min-height: 42px;
-  padding: 11px 13px;
+  padding: 8px 14px;
+  background: transparent;
+  border: 0;
+  color: inherit;
   cursor: pointer;
-  font-weight: 700;
+}
+.refrain-view-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 4px;
+  position: relative;
+  z-index: 5;
+  padding: 0 8px;
+}
+.refrain-appearance-dialog {
+  color: #333e3b;
+  background: #faf9f4;
+  border: 1px solid #d2d6cc;
+  width: min(440px, calc(100% - 24px));
+  max-height: calc(100dvh - 32px);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 24px 100px #14282033;
+  font:
+    13px/1.6 system-ui,
+    sans-serif;
+}
+.refrain-appearance-dialog::backdrop {
+  background: #13272255;
+  backdrop-filter: blur(4px);
+}
+.refrain-appearance-dialog header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.refrain-appearance-dialog h2 {
+  margin: 0;
+  font:
+    500 24px/1.3 Georgia,
+    serif;
+}
+.refrain-appearance-dialog header button {
+  background: transparent;
+  border: 0;
+  font-size: 26px;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+}
+.refrain-appearance-dialog button:focus-visible,
+.refrain-appearance-dialog summary:focus-visible,
+.refrain-appearance-controls__file:focus-within {
+  outline: 2px solid #426552;
+  outline-offset: 3px;
+}
+.refrain-appearance-source {
+  display: flex;
+  background: #eeeee6;
+  border-radius: 8px;
+  padding: 4px;
+}
+.refrain-appearance-source button {
+  flex: 1;
+  border: 0;
+  padding: 10px 6px;
+  color: #59675d;
+  background: transparent;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.refrain-appearance-source button[aria-pressed="true"] {
+  background: #fffefa;
+  color: #263c32;
+  box-shadow: 0 1px 4px #293b2515;
+}
+.refrain-appearance-theme,
+.refrain-photo-crop label {
+  display: grid;
+  gap: 7px;
+}
+.refrain-appearance-dialog select {
+  font: inherit;
+  padding: 9px;
+  border: 1px solid #cbd1c5;
+  border-radius: 6px;
+  background: #fffefa;
+  color: inherit;
+  min-width: 0;
+}
+.refrain-palette {
+  display: flex;
+  border: 0;
+  padding: 0;
+  gap: 10px;
+  margin: 0;
+}
+.refrain-palette legend {
+  margin-bottom: 8px;
+}
+.refrain-palette button {
+  flex: 1;
+  display: grid;
+  justify-items: center;
+  gap: 5px;
+  font-size: 11px;
+  color: #657162;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  padding: 7px 3px;
+  cursor: pointer;
+}
+.refrain-palette button[aria-pressed="true"] {
+  border-color: #9ba994;
+  background: #f0f1e9;
+}
+.refrain-palette button span {
+  width: 24px;
+  height: 24px;
+  background: var(--swatch);
+  border-radius: 50%;
+}
+.refrain-fine-tune {
+  padding-block: 6px;
+}
+.refrain-fine-tune summary {
+  cursor: pointer;
+  color: #667361;
+  margin-bottom: 8px;
+}
+.refrain-photo-crop {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
 }
 .refrain-appearance-controls__body {
   display: grid;
-  gap: 12px;
-  padding: 0 13px 13px;
+  gap: 18px;
 }
 .refrain-appearance-controls__colors,
 .refrain-appearance-controls__actions {
@@ -152,11 +280,7 @@
 }
 
 .refrain-share-control {
-  width: min(100%, 860px);
-  margin: 0 auto 12px;
-  border: 1px solid rgba(52, 54, 52, 0.18);
-  border-radius: 14px;
-  background: rgba(251, 250, 246, 0.82);
+  margin: 0;
   color: #373b39;
   font:
     12px/1.45 Inter,
@@ -168,9 +292,17 @@
   min-height: 42px;
   padding: 11px 13px;
   cursor: pointer;
-  font-weight: 700;
+  list-style: none;
 }
 .refrain-share-control__body {
+  position: absolute;
+  right: 0;
+  top: 44px;
+  width: min(360px, 100%);
+  border: 1px solid #cbd1c5;
+  border-radius: 12px;
+  background: #faf9f4;
+  box-shadow: 0 14px 45px #273e2526;
   display: grid;
   gap: 10px;
   padding: 0 13px 13px;
@@ -381,22 +513,57 @@
 .refrain-surface[data-custom-background="true"] {
   position: relative;
   isolation: isolate;
+  overflow: hidden;
 }
 .refrain-surface[data-custom-background="true"]::before {
   position: absolute;
   z-index: 0;
   inset: calc(-1 * var(--appearance-blur, 0px));
   background-image: var(--appearance-image);
-  background-position: center;
-  background-size: cover;
+  background-position: var(--appearance-position, center);
+  background-size: var(--appearance-fit, cover);
+  background-repeat: no-repeat;
   content: "";
   filter: blur(var(--appearance-blur, 0px));
-  opacity: var(--appearance-opacity, 0.24);
+  opacity: calc(var(--appearance-opacity, 0.24) * 0.18);
   pointer-events: none;
 }
 .refrain-surface[data-custom-background="true"] > * {
   position: relative;
   z-index: 1;
+}
+.refrain-surface[data-custom-background="true"] .figure-shell {
+  background: var(--surface);
+  isolation: isolate;
+}
+.refrain-surface[data-custom-background="true"] .figure-shell::before {
+  content: "";
+  position: absolute;
+  inset: calc(-1 * var(--appearance-blur, 0px));
+  background: var(--appearance-image) var(--appearance-position, center) /
+    var(--appearance-fit, cover) no-repeat;
+  opacity: var(--appearance-opacity, 0.24);
+  filter: blur(var(--appearance-blur, 0px));
+  pointer-events: none;
+  z-index: -1;
+}
+.refrain-surface[data-custom-background="true"]
+  .svg-paper-sheet
+  > rect:first-child {
+  fill-opacity: 0.28;
+}
+.refrain-surface[data-custom-background="true"].theme-nocturne
+  .svg-background
+  > rect:first-child,
+.refrain-surface[data-custom-background="true"].theme-herbarium
+  .svg-background
+  > rect:first-child {
+  fill-opacity: 0.12;
+}
+.refrain-surface[data-custom-background="true"] .page-transport,
+.refrain-surface[data-custom-background="true"] .product-details,
+.refrain-surface[data-custom-background="true"] .page-lower {
+  background: color-mix(in srgb, var(--surface) 90%, transparent);
 }
 .refrain-surface.theme-paper {
   --page: #eeeae1;

@@ -218,6 +218,8 @@ export interface RefrainRendererProps {
   /** Consumed once; only a user-started queue continuation may create this. */
   playbackCommand?: RendererPlaybackCommand;
   onPlaybackEnded?: (event: RendererPlaybackEndedEvent) => void;
+  /** Listening selection only; the full portable artifact remains unchanged. */
+  onAuditionBindingChange?: (bindingId: string | undefined) => void;
   surface?: "url" | "mcp-canvas";
   visualTheme?: SelenV21ThemeId;
   /** Portable scalar presentation state; never includes local image bytes. */

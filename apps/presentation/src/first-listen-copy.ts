@@ -3,11 +3,27 @@ import type { RefrainLocale } from "@refrain/renderer";
 export function firstListenCopy(locale: RefrainLocale) {
   return locale === "zh-CN"
     ? {
-        title: "先听一首，再带上你们的故事。",
-        intro:
-          "两首由 agent 写下的完整作品。按播放听听，换一种外观，点亮图里的旋律——它每次回来，都有迹可循。第一次播放会加载音色（约 60 MB），之后留在本机，即刻响起。",
-        label: "第一次来？",
-        playlist: "播放模式",
+        player: {
+          player: "Player",
+          playlist: "播放列表",
+          help: "关于 Refrain",
+          welcome:
+            "从这两首开始听，也可以放进你自己的作品。声音只在你按下播放后响起。",
+          title: "列表名称",
+          untitled: "我的播放列表",
+          add: "添加作品 / 打开列表",
+          save: "保存播放列表",
+          previous: "上一首",
+          next: "下一首",
+          up: "上移",
+          down: "下移",
+          remove: "从列表移除",
+          empty: "把保存的作品或播放列表放进来，继续听。",
+          local:
+            "文件只在本机读取。保存列表会带上完整作品，不包含音色文件或私人照片。",
+          examples: "打开示例列表",
+          footer: "音乐由你的 agent 写下，作品由你保管。",
+        },
         playbackModes: {
           sequential: "顺序播放",
           "repeat-all": "列表循环",
@@ -16,13 +32,9 @@ export function firstListenCopy(locale: RefrainLocale) {
         },
         changePlaybackMode: (current: string, next: string) =>
           `当前${current}；切换为${next}`,
-        keep: "喜欢就保存",
-        keepBody:
-          "在作品下方选择「导出 Refrain artifact」，把这首带走。以后用这里的「打开作品文件」重新打开。",
         open: "打开作品文件",
         local:
           "文件只在你的浏览器中读取，不会上传。这两首保留原来的声音选择；按播放后加载所需音色。其他作品可能需要在自己的 Refrain 中准备音色。",
-        reset: "回到这首示例",
         next: "让你的 agent 为你写一首",
         nextBody:
           "Refrain 是你们对话的一部分。熟悉你的 agent 把此刻写成音乐，Refrain 让它响起来、看得见、带得走。这个页面先让你试听；创作从接入自己的 agent 开始。",
@@ -35,11 +47,27 @@ export function firstListenCopy(locale: RefrainLocale) {
         manual: "可以选中上面的文字手动复制。",
       }
     : {
-        title: "Listen first. Bring your story next.",
-        intro:
-          "Two complete works written by an agent. Press Play, try another appearance, and touch a melody in the score. You can follow it each time it returns. The first play fetches the instruments (about 60 MB, once); afterwards they stay on this device and start instantly.",
-        label: "Your first air",
-        playlist: "Playback mode",
+        player: {
+          player: "Player",
+          playlist: "Playlist",
+          help: "About Refrain",
+          welcome:
+            "Begin with these two airs, or bring your own. Nothing plays until you press Play.",
+          title: "Playlist title",
+          untitled: "My playlist",
+          add: "Add airs / open playlist",
+          save: "Save playlist",
+          previous: "Previous air",
+          next: "Next air",
+          up: "Move up",
+          down: "Move down",
+          remove: "Remove from playlist",
+          empty: "Bring a saved air or playlist here and keep listening.",
+          local:
+            "Files stay on this device. A saved playlist carries complete works, not sound files or personal photos.",
+          examples: "Open example playlist",
+          footer: "Written by your agent. Yours to keep.",
+        },
         playbackModes: {
           sequential: "Sequential playback",
           "repeat-all": "Repeat all",
@@ -48,13 +76,9 @@ export function firstListenCopy(locale: RefrainLocale) {
         },
         changePlaybackMode: (current: string, next: string) =>
           `${current}; change to ${next}`,
-        keep: "Keep what you hear",
-        keepBody:
-          "Choose “Export Refrain artifact” below the piece to keep it. Use “Open a saved air” here whenever you want to return.",
         open: "Open a saved air",
         local:
           "Files are read in your browser and never uploaded. These two works keep their original sounds, loaded after Play. Other works may need sounds prepared in your own Refrain runtime.",
-        reset: "Back to the example",
         next: "Let your agent write one for you",
         nextBody:
           "Refrain belongs in your conversation. The agent who knows you writes the moment into music; Refrain makes it audible, visible, and yours to keep. This page is a first listen. Connect your own agent to begin creating.",

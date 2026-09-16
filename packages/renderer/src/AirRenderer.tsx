@@ -48,6 +48,7 @@ import {
   APPEARANCE_PREFERENCES_FORMAT,
   appearanceForTheme,
   isRasterAppearanceImage,
+  normalizePortableAppearance,
   parseAppearancePreferences,
   type AppearancePreferences,
   type PortableShareAppearance,
@@ -117,6 +118,7 @@ export function AirRenderer({
   onLocaleChange,
   playbackCommand,
   onPlaybackEnded,
+  onAuditionBindingChange,
   shareDeployment,
 }: RefrainRendererProps) {
   const document = useMemo(
@@ -152,13 +154,10 @@ export function AirRenderer({
   const appearancePreferencesRef = useRef(appearancePreferences);
   appearancePreferencesRef.current = appearancePreferences;
   const [selectedTheme, setSelectedTheme] = useState(
-    visualTheme ??
-      initialAppearancePreferences.current.selectedTheme ??
-      "paper-sonata",
+    visualTheme ?? "paper-sonata",
   );
-  const [portableAppearanceActive, setPortableAppearanceActive] = useState(
-    Boolean(visualAppearance),
-  );
+  const [portableAppearanceActive, setPortableAppearanceActive] =
+    useState(true);
   const [backgroundImageUrl, setBackgroundImageUrl] = useState<string>();
   const backgroundImageUrlRef = useRef<string | undefined>(undefined);
   const backgroundLoadRevision = useRef(0);
@@ -174,8 +173,8 @@ export function AirRenderer({
   const [includeShareAppearance, setIncludeShareAppearance] = useState(true);
   const visualAppearanceKey = JSON.stringify(visualAppearance ?? null);
   useEffect(() => {
-    if (visualTheme) setSelectedTheme(visualTheme);
-    setPortableAppearanceActive(Boolean(visualAppearance));
+    setSelectedTheme(visualTheme ?? "paper-sonata");
+    setPortableAppearanceActive(true);
   }, [visualTheme, visualAppearanceKey]);
   const copy = uiCopy(locale);
   const [playerState, setPlayerState] = useState<PlayerState>("idle");
@@ -283,12 +282,8 @@ export function AirRenderer({
     [appearancePreferences, selectedTheme],
   );
   const currentAppearance = useMemo<ThemeAppearance>(
-    () => ({
-      ...storedAppearance,
-      ...(portableAppearanceActive && selectedTheme === visualTheme
-        ? visualAppearance
-        : {}),
-    }),
+    () =>
+      portableAppearanceActive ? { ...visualAppearance } : storedAppearance,
     [
       portableAppearanceActive,
       selectedTheme,
@@ -300,15 +295,16 @@ export function AirRenderer({
   const resolvedAppearance = useMemo<ResolvedAppearance>(
     () => ({
       ...currentAppearance,
-      ...(backgroundImageUrl ? { backgroundImageUrl } : {}),
+      ...(!portableAppearanceActive && backgroundImageUrl
+        ? { backgroundImageUrl }
+        : {}),
     }),
-    [backgroundImageUrl, currentAppearance],
+    [backgroundImageUrl, currentAppearance, portableAppearanceActive],
   );
   const portableShareAppearance = useMemo<
     PortableShareAppearance | undefined
   >(() => {
-    const { backgroundImage: _backgroundImage, ...portable } =
-      currentAppearance;
+    const portable = normalizePortableAppearance(currentAppearance) ?? {};
     return Object.keys(portable).length ? portable : undefined;
   }, [currentAppearance]);
   const preparedShare = useMemo(
@@ -377,9 +373,7 @@ export function AirRenderer({
 
   const changeTheme = (nextTheme: typeof selectedTheme) => {
     setSelectedTheme(nextTheme);
-    setPortableAppearanceActive(
-      Boolean(visualAppearance) && nextTheme === visualTheme,
-    );
+    setPortableAppearanceActive(false);
     const next = parseAppearancePreferences({
       ...appearancePreferencesRef.current,
       selectedTheme: nextTheme,
@@ -394,10 +388,11 @@ export function AirRenderer({
     const preferences = appearancePreferencesRef.current;
     const next = parseAppearancePreferences({
       ...preferences,
+      selectedTheme,
       themes: {
         ...preferences.themes,
         [selectedTheme]: {
-          ...appearanceForTheme(preferences, selectedTheme),
+          ...currentAppearance,
           ...change,
         },
       },
@@ -408,11 +403,11 @@ export function AirRenderer({
   };
 
   const setAppearanceImage = async (file: File) => {
-    setPortableAppearanceActive(false);
     if (!isRasterAppearanceImage(file)) {
       setAppearanceNotice("invalid");
       return;
     }
+    if (portableAppearanceActive) changeAppearance({});
     const targetTheme = selectedTheme;
     const mutation = beginAppearanceMutation(targetTheme);
     desiredBackgrounds.current.set(targetTheme, file);
@@ -990,9 +985,12 @@ export function AirRenderer({
             <select
               aria-label={copy.auditionSound}
               value={performanceBinding?.id ?? ""}
-              onChange={(event) =>
-                setAudition({ document, bindingId: event.currentTarget.value })
-              }
+              onChange={(event) => {
+                setAudition({ document, bindingId: event.currentTarget.value });
+                onAuditionBindingChange?.(
+                  event.currentTarget.value || undefined,
+                );
+              }}
             >
               <option value="">{copy.chooseSound}</option>
               {bindings.map((binding) => (
@@ -1006,11 +1004,23 @@ export function AirRenderer({
         </div>
       ) : null}
       {surface === "url" ? (
-        <>
+        <div className="refrain-view-actions">
           <AppearanceControls
             appearance={currentAppearance}
             locale={locale}
             theme={selectedTheme}
+            followsWork={portableAppearanceActive}
+            onSource={(work) => {
+              setPortableAppearanceActive(work);
+              setSelectedTheme(
+                work
+                  ? (visualTheme ?? "paper-sonata")
+                  : (appearancePreferencesRef.current.selectedTheme ??
+                      selectedTheme),
+              );
+              setAppearanceNotice(undefined);
+            }}
+            onTheme={changeTheme}
             notice={
               appearanceNotice === "saved"
                 ? copy.appearanceSaved
@@ -1035,7 +1045,7 @@ export function AirRenderer({
             plan={sharePlan}
             title={artifact.source.title}
           />
-        </>
+        </div>
       ) : null}
       <SelenV21Canvas
         artifactIdentity={artifactIdentity}

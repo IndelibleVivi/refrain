@@ -342,6 +342,14 @@ export function mountSelenV21(
         "--appearance-blur",
         `${input.appearance.backgroundBlurPx ?? 0}px`,
       );
+      themeRoot.style.setProperty(
+        "--appearance-position",
+        input.appearance.backgroundPosition ?? "center",
+      );
+      themeRoot.style.setProperty(
+        "--appearance-fit",
+        input.appearance.backgroundFit ?? "cover",
+      );
     }
   }
 
@@ -3429,7 +3437,7 @@ export function mountSelenV21(
     const bar = htmlEl("div", "air-page-topbar");
     bar.append(htmlEl("div", "air-page-brand", "Refrain"));
     const controls = htmlEl("div", "air-page-controls");
-    controls.append(buildThemeSwitch(theme), buildLanguageSwitch());
+    controls.append(buildLanguageSwitch());
     bar.append(controls);
     return bar;
   }

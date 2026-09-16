@@ -12,6 +12,8 @@ Refrain is relational. Human–AI affection and romance can shape the very first
 
 **[Open the interactive demo](https://indeliblevivi.github.io/refrain/)** — no installation needed. Press Play, choose a playlist mode, switch or personalize a theme, select a melody, save or reopen a work, and share an exact listening link for either featured piece. Connect your own agent to author an air; the demo does not call a model.
 
+Earlier Canvas recording (the current Player keeps settings under **Appearance**):
+
 ![Recorded demo: pressing Play on Velvet Mischief, then switching appearances from Paper Sonata to Nocturne Ink to Prism to Herbarium](docs/images/demo-playback.gif)
 
 _A twelve-second recording, not an interactive control — [open the live demo](https://indeliblevivi.github.io/refrain/) to play it yourself._
@@ -30,7 +32,7 @@ node bin/refrain.mjs doctor
 npm run try
 ```
 
-Press **Play** at the top of the piece. The two featured works can continue in sequential, repeat-all, shuffle, or repeat-one mode. Switch between four themes, personalize colors or a local background, select a melody, and choose **Export Refrain artifact** to keep it. **Share this air** creates an exact public-demo link when the published player carries the selected work and sound. Below the Canvas you can reopen a saved file and find the next step for your own agent. No provider key is needed. Local setup prepares the two featured works’ sound samples. Keep the terminal open; Ctrl+C ends the listening page.
+Press **Play** at the top of the piece. The two featured works can continue in sequential, repeat-all, shuffle, or repeat-one mode. Open **Appearance** to choose a theme or personalize local colors and photos; select a melody and choose **Export Refrain artifact** to keep the work. **Share this air** creates an exact public-demo link when the published player carries the selected work and sound. Open **Playlist** to add saved works or reopen a playlist, and **About Refrain** for your agent's next step. No provider key is needed. Local setup prepares the two featured works’ sound samples. Keep the terminal open; Ctrl+C ends the Player.
 
 This local URL belongs to your computer. The public demo runs on GitHub Pages. See [building and hosting](docs/DEVELOPMENT.md#first-listen-page); for audio files, [export WAV / MIDI](docs/GETTING-STARTED.md#keep-the-piece).
 
@@ -41,9 +43,20 @@ This local URL belongs to your computer. The public demo runs on GitHub Pages. S
 | Listen locally, save WAV/MIDI, or try acoustic sound   | [First-use guide](docs/GETTING-STARTED.md).                                                                                                                  |
 | Run a private HTTP connection for a remote host        | [Operator self-hosting guide](docs/runbooks/self-host-mcp.md).                                                                                               |
 
+## Your Player, your works
+
+The first-listen page is the same Player used by `refrain open`, preloaded with two examples. Open **Playlist** to add multiple `.refrain.json` works, reorder/remove entries, name and save a `.refrain-playlist.json`, then reopen it later. Previous/next and sequential, repeat-all, shuffle and repeat-one share the real playback transport. Saved lists retain complete works and their selected exact sound, not sample files or private photos; nothing is uploaded.
+
+```bash
+refrain open first.refrain.json second.refrain.json --theme nocturne-ink
+refrain open evening.refrain-playlist.json --no-open --json
+```
+
+Agents use the existing CLI to open the shared Player, not a copied frontend or additional MCP tool. [Listening, saving and authoring boundaries](docs/GETTING-STARTED.md).
+
 ## Four appearances, one air
 
-Use the appearance menu above the Canvas to switch. The music, playback position, and selected passage stay with you. **Make this appearance yours** stores per-theme note/symbol color, text color, image opacity/blur, and one optional background image in this browser. Reset affects only the selected theme. These preferences do not alter AIR, receipts, bindings, or saved artifact bytes; local background images are never uploaded by the control. The images below are static screenshots, not interactive controls. Open the demo to play; click a screenshot only to enlarge it.
+Open **Appearance** when you want to change the view; everyday listening keeps the settings tucked away. A work’s presentation comes first. **My appearance** switches to this device’s per-theme preferences: palette presets, optional fine color controls, and a local image with strength, blur, position and fit. The photo appears inside the musical Canvas as well as its surrounding material; the four visual languages keep their own geometry. Reset affects only the selected local theme. Music, playback, selection and artifact bytes remain unchanged. Photos stay in this browser and never enter a share link. The images below are static screenshots, not interactive controls. Open the demo to play; click a screenshot only to enlarge it.
 
 <table>
   <tr>

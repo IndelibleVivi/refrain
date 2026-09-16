@@ -12,6 +12,8 @@ Refrain 是 relational 的。只要人愿意，人机之间的爱意、调情和
 
 **[打开互动试玩页](https://indeliblevivi.github.io/refrain/)** — 无需安装。按播放试听、选择播放模式、切换或定制主题、点选旋律、保存和重新打开作品，也可以为两首 featured work 分享准确的试听链接。创作自己的 air 请接入 agent；试玩页不会调用模型。
 
+此前的 Canvas 录屏（当前 Player 将设置收进了 **外观**）：
+
 ![录屏：为 Velvet Mischief 按下播放，然后依次切换 Paper Sonata、Nocturne Ink、Prism、Herbarium 四种外观](docs/images/demo-playback.gif)
 
 _这是一段十二秒的录屏，不是可交互控件——想亲手玩请[打开试玩页](https://indeliblevivi.github.io/refrain/)。_
@@ -30,7 +32,7 @@ node bin/refrain.mjs doctor
 npm run try
 ```
 
-浏览器打开后，按上方的 **播放**。两首 featured work 可以按顺序播放、列表循环、随机播放或单曲循环。直接切换四个主题，调整配色或本地背景，点选旋律，再用 **导出 Refrain artifact** 保存作品；当公共播放器已经携带当前作品与准确声音时，**分享这首 air** 会生成准确的 public-demo 链接。页面下方可以重新打开保存的文件，也有接入自己 agent 的指引。不需要 provider key；本地首次启动会准备这两首作品的音色采样。保持终端运行；Ctrl+C 结束试听页。
+浏览器打开后，按上方的 **播放**。两首 featured work 可以按顺序播放、列表循环、随机播放或单曲循环。打开 **外观** 选择主题、调整本机配色与照片，点选旋律，再用 **导出 Refrain artifact** 保存作品；当公共播放器已经携带当前作品与准确声音时，**分享这首 air** 会生成准确的 public-demo 链接。打开 **播放列表** 加入已保存的作品或重开歌单，**关于 Refrain** 中有接入自己 agent 的指引。不需要 provider key；本地首次启动会准备这两首作品的音色采样。保持终端运行；Ctrl+C 结束 Player。
 
 这个本地 URL 只属于你的电脑。公共试玩页已托管在 GitHub Pages；[构建与托管说明](docs/DEVELOPMENT.md#first-listen-page)。需要音频文件时，[导出 WAV / MIDI](docs/GETTING-STARTED.md#keep-the-piece)。
 
@@ -41,9 +43,20 @@ npm run try
 | 本地听、保存 WAV/MIDI、尝试原声音色 | [首次使用指南](docs/GETTING-STARTED.md)。                                                                                    |
 | 为远程 host 配置私人 HTTP 连接      | [Self-hosting 操作指南](docs/runbooks/self-host-mcp.md)。                                                                    |
 
+## 自己的 Player，自己的作品
+
+试听入口就是 `refrain open` 使用的同一个 Player，只是预装了两首示例。打开 **播放列表**，可一次加入多个 `.refrain.json`、排序、移除、命名，再保存为 `.refrain-playlist.json` 随时重开。上一首/下一首、顺序、列表循环、随机、单曲循环共用真实播放状态。保存的列表带上完整作品与所选精确声音，不带音色文件或私人照片；文件不会上传。
+
+```bash
+refrain open first.refrain.json second.refrain.json --theme nocturne-ink
+refrain open evening.refrain-playlist.json --no-open --json
+```
+
+写歌的 agent 用现有 CLI 拉起共享 Player，不必复制前端，也不新增 MCP 工具。[聆听、保存与创作边界](docs/GETTING-STARTED.md)。
+
 ## 四种外观，同一首 air
 
-在 Canvas 上方的外观菜单中直接切换。音乐、播放位置和选中的段落保留。展开 **让这个外观更像你**，可以为每个主题分别保存音符/符号色、文字色、图片透明度/模糊，以及一张可选的本地背景；reset 只恢复当前主题。它们不会改变 AIR、receipt、binding 或保存的 artifact bytes，本地背景也不会被控件上传。下面是同一首示例的静态截图，不是可交互控件。播放请打开试玩页；点击截图仅放大图片。
+日常聆听时收起设置，需要调整再打开 **外观**。默认采用 **作品呈现**；切到 **我的外观**，可使用本机保存的主题偏好：先选配色，再按需微调颜色，或加入本地照片、调整浓度、模糊、位置与裁切。照片会进入音乐 Canvas 的材质层，四种视觉语言各自的几何结构保留。reset 只恢复当前本机主题。音乐、播放位置、选段与 artifact bytes 不变；私人照片留在浏览器，不会上传或进入分享链接。下面是同一首示例的静态截图，不是可交互控件。播放请打开试玩页；点击截图仅放大图片。
 
 <table>
   <tr>

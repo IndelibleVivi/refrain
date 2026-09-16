@@ -40,9 +40,11 @@ for (const width of [1280, 390]) {
     await sound.selectOption(work.originalBindingId);
     await expect(renderer).toHaveAttribute("data-player-state", "idle");
     await expect(sound).toHaveValue(work.originalBindingId);
+    await page.getByRole("button", { name: "Appearance", exact: true }).click();
     await page
       .getByRole("combobox", { name: "Appearance", exact: true })
       .selectOption("nocturne-ink");
+    await page.getByRole("button", { name: "Close", exact: true }).click();
     await page.getByRole("button", { name: "Language", exact: true }).click();
     await expect(
       page.getByRole("combobox", { name: "当前试听声音", exact: true }),

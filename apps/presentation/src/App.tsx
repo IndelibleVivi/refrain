@@ -1,18 +1,19 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import type { AnyAirArtifact, SelenV21ThemeId } from "@refrain/renderer";
 import {
   AirRenderer,
   LanguageSwitch,
   useRefrainLocale,
   uiCopy,
-  type UiMessageKey,
   decodeInlinePresentationRef,
   parseArtifactBytes,
   PRESENTATION_REF_FORMAT,
   REFRAIN_ARTIFACT_MEDIA_TYPE,
-  type PresentationRefV0,
   parseSharedAppearance,
+  type AnyAirArtifact,
+  type SelenV21ThemeId,
+  type UiMessageKey,
 } from "@refrain/renderer";
+import { portableArtifactForView } from "@refrain/renderer/artifact-document";
 import {
   decodePresentationHash,
   verifyArtifactForPresentation,
@@ -32,77 +33,108 @@ import {
   cyclePlaybackMode,
   readPlaybackMode,
   type PlaybackMode,
+  type QueueDecision,
 } from "./playback-queue.js";
+import {
+  parsePlayerPlaylist,
+  parsePlayerPlaylistBytes,
+  stringifyPlayerPlaylist,
+  type PlayerPlaylist,
+  type PlayerPlaylistEntry,
+} from "./player-playlist.js";
 
-const VISUAL_THEMES = new Set<SelenV21ThemeId>([
-  "paper-sonata",
-  "prism",
-  "nocturne-ink",
-  "herbarium",
-]);
-const PLAYBACK_MODE_STORAGE_KEY = "refrain:playback-mode@0";
-const DEFAULT_TRY_PUBLIC_PLAYER_URL =
-  "https://indeliblevivi.github.io/refrain/";
-const PLAYBACK_MODE_ICONS: Record<PlaybackMode, string> = {
+const MODE_KEY = "refrain:playback-mode@0";
+const MODE_ICONS: Record<PlaybackMode, string> = {
   sequential: "→",
   "repeat-all": "↻",
   shuffle: "⤨",
   "repeat-one": "↻¹",
 };
-
-function storedPlaybackMode(): PlaybackMode {
+function storedMode(): PlaybackMode {
   try {
-    return readPlaybackMode(
-      window.localStorage.getItem(PLAYBACK_MODE_STORAGE_KEY),
-    );
+    return readPlaybackMode(localStorage.getItem(MODE_KEY));
   } catch {
     return "sequential";
   }
 }
-
-function requestedVisualTheme(): SelenV21ThemeId | undefined {
-  const requested = new URL(window.location.href).searchParams.get("theme");
-  return requested && VISUAL_THEMES.has(requested as SelenV21ThemeId)
-    ? (requested as SelenV21ThemeId)
-    : undefined;
+function requestedPresentation(): PlayerPlaylistEntry["presentation"] {
+  const params = new URL(location.href).searchParams;
+  const theme = params.get("theme");
+  const appearance = parseSharedAppearance(params);
+  if (!theme && !appearance) return undefined;
+  return {
+    theme: ["paper-sonata", "prism", "nocturne-ink", "herbarium"].includes(
+      theme ?? "",
+    )
+      ? (theme as SelenV21ThemeId)
+      : "paper-sonata",
+    ...(appearance ? { appearance } : {}),
+  };
 }
-
 function publicPlayerUrl(): string | undefined {
   const configured = import.meta.env.VITE_REFRAIN_PUBLIC_PLAYER_URL?.trim();
   if (configured) return configured;
-  const current = new URL(window.location.href);
   if (import.meta.env.MODE !== "try") return undefined;
-  return current.protocol === "https:"
-    ? new URL(".", current).href
-    : DEFAULT_TRY_PUBLIC_PLAYER_URL;
+  return location.protocol === "https:"
+    ? new URL(".", location.href).href
+    : "https://indeliblevivi.github.io/refrain/";
+}
+function entryForView(
+  view: AnyAirArtifact,
+  id: string = crypto.randomUUID(),
+): PlayerPlaylistEntry {
+  return {
+    id,
+    artifact: portableArtifactForView(view),
+    ...(view.performanceBinding
+      ? { bindingId: view.performanceBinding.id }
+      : {}),
+  };
+}
+function demoPlaylist(): PlayerPlaylist {
+  return {
+    format: "refrain-playlist@0-experimental",
+    title: "First airs",
+    entries: demoWorks.map((work) => {
+      const result = firstAir(work.id);
+      if (!result.ok) throw new Error(result.message);
+      return {
+        ...entryForView(result.artifact, work.id),
+        presentation: { theme: "paper-sonata" },
+      };
+    }),
+  };
 }
 
 export function App() {
   const [locale, setLocale] = useRefrainLocale();
-  const copy = uiCopy(locale);
-  const welcome = firstListenCopy(locale);
-  const [firstListen, setFirstListen] = useState(false);
-  const [fileError, setFileError] = useState<string>();
-  const [copyStatus, setCopyStatus] = useState<"copied" | "manual">();
-  const revision = useRef(0);
-  const playbackCommandSequence = useRef(0);
+  const copy = uiCopy(locale),
+    welcome = firstListenCopy(locale),
+    words = welcome.player;
+  const revision = useRef(0),
+    sequence = useRef(0);
   const queue = useRef<PlaybackQueue | undefined>(undefined);
   if (!queue.current)
-    queue.current = new PlaybackQueue(
-      demoWorks.map((work) => work.id),
-      { mode: storedPlaybackMode() },
-    );
-  const [queueSnapshot, setQueueSnapshot] = useState(() =>
-    queue.current!.snapshot(),
-  );
-  const [activeDemoId, setActiveDemoId] = useState<string>();
-  const activeDemoIdRef = useRef<string | undefined>(undefined);
+    queue.current = new PlaybackQueue([], { mode: storedMode() });
+  const [snapshot, setSnapshot] = useState(() => queue.current!.snapshot());
+  const [playlist, setPlaylist] = useState<PlayerPlaylist>({
+    format: "refrain-playlist@0-experimental",
+    title: "",
+    entries: [],
+  });
+  const playlistRef = useRef(playlist);
+  playlistRef.current = playlist;
+  const [artifact, setArtifact] = useState<AnyAirArtifact>();
   const [playbackCommand, setPlaybackCommand] = useState<{
     requestId: number;
     action: "start-at-zero";
     receiptId: string;
   }>();
-  const [artifact, setArtifact] = useState<AnyAirArtifact>();
+  const [firstListen, setFirstListen] = useState(false);
+  const [listOpen, setListOpen] = useState(() => window.innerWidth > 850),
+    [helpOpen, setHelpOpen] = useState(false);
+  const [fileError, setFileError] = useState<string>();
+  const [copyStatus, setCopyStatus] = useState<"copied" | "manual">();
   const [message, setMessage] = useState<{
     key: UiMessageKey;
     detail?: string;
@@ -115,347 +147,530 @@ export function App() {
     }),
     [],
   );
+  const activeEntry = playlist.entries.find(
+    (entry) => entry.id === snapshot.currentId,
+  );
 
-  const activateDemo = (id: string) => {
-    const result = firstAir(id);
-    if (!result.ok) return;
-    activeDemoIdRef.current = id;
-    setActiveDemoId(id);
+  const activate = (entry: PlayerPlaylistEntry | undefined, start = false) => {
     setPlaybackCommand(undefined);
-    setArtifact(result.artifact);
-    setFileError(undefined);
-  };
-
-  const chooseDemo = (id: string) => {
-    revision.current += 1;
-    queue.current!.select(id);
-    setQueueSnapshot(queue.current!.snapshot());
-    activateDemo(id);
-  };
-
-  const resetDemoQueue = (id = demoWorks[0]!.id) => {
-    revision.current += 1;
-    queue.current!.replaceEntries(
-      demoWorks.map((work) => work.id),
-      id,
+    if (!entry) {
+      setArtifact(undefined);
+      setMessage({ key: "noAir" });
+      return;
+    }
+    const result = verifyArtifactForPresentation(
+      entry.artifact,
+      entry.bindingId,
     );
-    setQueueSnapshot(queue.current!.snapshot());
-    activateDemo(id);
+    if (!result.ok) {
+      setFileError(result.message);
+      return;
+    }
+    setArtifact(result.artifact);
+    if (start)
+      setPlaybackCommand({
+        requestId: ++sequence.current,
+        action: "start-at-zero",
+        receiptId: result.artifact.receipt.receiptId,
+      });
   };
-
+  const installPlaylist = (next: PlayerPlaylist) => {
+    playlistRef.current = next;
+    setPlaylist(next);
+    queue.current!.replaceEntries(
+      next.entries.map((entry) => entry.id),
+      next.currentEntryId ?? next.entries[0]?.id,
+    );
+    const state = queue.current!.snapshot();
+    setSnapshot(state);
+    activate(next.entries.find((entry) => entry.id === state.currentId));
+  };
+  const choose = (id: string) => {
+    ++revision.current;
+    queue.current!.select(id);
+    setSnapshot(queue.current!.snapshot());
+    activate(playlistRef.current.entries.find((entry) => entry.id === id));
+    setFileError(undefined);
+    if (window.innerWidth <= 850) setListOpen(false);
+  };
+  const applyDecision = (decision: QueueDecision) => {
+    setSnapshot(queue.current!.snapshot());
+    if (decision.kind !== "stop")
+      activate(
+        playlistRef.current.entries.find(
+          (entry) => entry.id === decision.entryId,
+        ),
+        true,
+      );
+  };
   const cycleMode = () => {
-    const next = queue.current!.cycleMode();
-    setQueueSnapshot(queue.current!.snapshot());
+    const mode = queue.current!.cycleMode();
+    setSnapshot(queue.current!.snapshot());
     try {
-      window.localStorage.setItem(PLAYBACK_MODE_STORAGE_KEY, next);
+      localStorage.setItem(MODE_KEY, mode);
     } catch {
-      // A denied preference write does not block playback.
+      /* Preferences are optional. */
     }
   };
-
-  const continueQueue = () => {
-    const currentId = activeDemoIdRef.current;
-    if (!currentId || queue.current!.snapshot().currentId !== currentId) return;
-    const decision = queue.current!.next("ended");
-    setQueueSnapshot(queue.current!.snapshot());
-    if (decision.kind === "stop") return;
-    const result = firstAir(decision.entryId);
-    if (!result.ok) return;
-    activeDemoIdRef.current = decision.entryId;
-    setActiveDemoId(decision.entryId);
-    setArtifact(result.artifact);
-    setPlaybackCommand({
-      requestId: ++playbackCommandSequence.current,
-      action: "start-at-zero",
-      receiptId: result.artifact.receipt.receiptId,
-    });
+  const updateEntries = (entries: PlayerPlaylistEntry[]) => {
+    const previous = queue.current!.snapshot().currentId;
+    const { currentEntryId: _current, ...base } = playlistRef.current;
+    const next = { ...base, entries };
+    playlistRef.current = next;
+    setPlaylist(next);
+    queue.current!.replaceEntries(entries.map((entry) => entry.id));
+    const state = queue.current!.snapshot();
+    setSnapshot(state);
+    if (previous !== state.currentId)
+      activate(entries.find((entry) => entry.id === state.currentId));
+  };
+  const move = (index: number, offset: number) => {
+    const entries = [...playlistRef.current.entries],
+      target = index + offset;
+    if (target < 0 || target >= entries.length) return;
+    [entries[index], entries[target]] = [entries[target]!, entries[index]!];
+    updateEntries(entries);
   };
 
   useEffect(() => {
     let active = true;
-    const loadHash = () => {
-      const requestedRevision = ++revision.current;
+    const loadLocation = async () => {
+      const request = ++revision.current,
+        url = new URL(location.href);
+      const hash = new URLSearchParams(url.hash.slice(1));
       setArtifact(undefined);
       setFileError(undefined);
       setMessage({ key: "loadingAir" });
-      const location = new URL(window.location.href);
-      const catalogId = location.searchParams.get("catalog");
-      const catalogArtifactSha256 = location.searchParams.get("artifact");
-      const isFirstListen =
-        !window.location.hash &&
-        !location.searchParams.get("sessionHref") &&
-        !catalogId &&
-        !catalogArtifactSha256;
-      setFirstListen(isFirstListen);
-      const hash = new URLSearchParams(window.location.hash.slice(1));
-      const artifactSha256 = hash.get("artifact");
-      const fragment = hash.get("bytes");
-      const sessionHref = location.searchParams.get("sessionHref");
-      const bindingId = location.searchParams.get("binding");
-      const load = async () => {
-        if (isFirstListen) return firstAir();
-        if (catalogId || catalogArtifactSha256)
-          return publishedDemoAir(
-            catalogId ?? "",
-            catalogArtifactSha256 ?? "",
-            bindingId ?? undefined,
-          );
-        if (artifactSha256 && fragment) {
-          const ref: PresentationRefV0 = {
-            format: PRESENTATION_REF_FORMAT,
-            artifactSha256,
-            mediaType: REFRAIN_ARTIFACT_MEDIA_TYPE,
-            delivery: { kind: "inline", fragment },
-          };
-          const decoded = decodeInlinePresentationRef(ref);
-          return decoded.ok
-            ? verifyArtifactForPresentation(
-                decoded.artifact,
-                bindingId ?? undefined,
-              )
-            : decoded;
-        }
-        if (sessionHref && artifactSha256) {
-          const response = await fetch(sessionHref, { cache: "no-store" });
-          if (!response.ok) {
-            let reason = `HTTP ${response.status}`;
-            try {
-              const body = (await response.json()) as { reason?: unknown };
-              if (typeof body.reason === "string") reason = body.reason;
-            } catch {
-              // The typed status is optional when an intermediary replaced it.
-            }
-            return {
-              ok: false as const,
-              message: reason,
-              messageKey: "sessionUnavailable" as const,
-            };
-          }
-          const bytes = new Uint8Array(await response.arrayBuffer());
-          const parsed = parseArtifactBytes(bytes, artifactSha256);
-          return parsed.ok
-            ? verifyArtifactForPresentation(
-                parsed.artifact,
-                bindingId ?? undefined,
-              )
-            : parsed;
-        }
-        const decoded = decodePresentationHash(window.location.hash);
-        if (decoded) return verifyPresentationEnvelope(decoded);
-        return {
-          ok: false as const,
-          message: "",
-          messageKey: "noAir" as const,
-        };
+      const apply = (next: PlayerPlaylist) => {
+        if (active && request === revision.current) installPlaylist(next);
       };
-      void load()
-        .then((result) => {
-          if (!active || requestedRevision !== revision.current) return;
-          if (result.ok) {
-            if (isFirstListen) resetDemoQueue();
-            else {
-              activeDemoIdRef.current = undefined;
-              setActiveDemoId(undefined);
-              queue.current!.replaceEntries([]);
-              setQueueSnapshot(queue.current!.snapshot());
-              setPlaybackCommand(undefined);
-              setArtifact(result.artifact);
-            }
-          } else
-            setMessage({
-              key: "messageKey" in result ? result.messageKey : "invalidFile",
-              detail: result.message,
+      try {
+        const catalog = url.searchParams.get("catalog"),
+          catalogHash = url.searchParams.get("artifact");
+        const sessionHref = url.searchParams.get("sessionHref"),
+          playlistHref = url.searchParams.get("playlistHref");
+        const binding = url.searchParams.get("binding") ?? undefined;
+        const root =
+          !url.hash &&
+          !catalog &&
+          !catalogHash &&
+          !sessionHref &&
+          !playlistHref;
+        setFirstListen(root);
+        if (root) {
+          apply(demoPlaylist());
+          return;
+        }
+        if (playlistHref) {
+          const endpoint = new URL(playlistHref, url);
+          if (endpoint.origin !== url.origin)
+            throw new Error("Playlist delivery must use this Player’s origin.");
+          const response = await fetch(endpoint, { cache: "no-store" });
+          if (!response.ok)
+            throw new Error(
+              "Playlist unavailable (HTTP " + response.status + ").",
+            );
+          const parsed = parsePlayerPlaylistBytes(
+            new Uint8Array(await response.arrayBuffer()),
+            hash.get("playlist") ?? "",
+          );
+          if (!parsed.ok) throw new Error(parsed.message);
+          apply(parsed.playlist);
+          return;
+        }
+        const load = async () => {
+          if (catalog || catalogHash)
+            return publishedDemoAir(catalog ?? "", catalogHash ?? "", binding);
+          const digest = hash.get("artifact"),
+            fragment = hash.get("bytes");
+          if (digest && fragment) {
+            const decoded = decodeInlinePresentationRef({
+              format: PRESENTATION_REF_FORMAT,
+              artifactSha256: digest,
+              mediaType: REFRAIN_ARTIFACT_MEDIA_TYPE,
+              delivery: { kind: "inline", fragment },
             });
-        })
-        .catch((cause: unknown) => {
-          if (active && requestedRevision === revision.current)
-            setMessage({
-              key: "invalidFile",
-              detail: cause instanceof Error ? cause.message : undefined,
-            });
-        });
+            return decoded.ok
+              ? verifyArtifactForPresentation(decoded.artifact, binding)
+              : decoded;
+          }
+          if (sessionHref && digest) {
+            const endpoint = new URL(sessionHref, url);
+            if (endpoint.origin !== url.origin)
+              throw new Error(
+                "Artifact delivery must use this Player’s origin.",
+              );
+            const response = await fetch(endpoint, { cache: "no-store" });
+            if (!response.ok)
+              return {
+                ok: false as const,
+                message: "HTTP " + response.status,
+                messageKey: "sessionUnavailable" as const,
+              };
+            const parsed = parseArtifactBytes(
+              new Uint8Array(await response.arrayBuffer()),
+              digest,
+            );
+            return parsed.ok
+              ? verifyArtifactForPresentation(parsed.artifact, binding)
+              : parsed;
+          }
+          const decoded = decodePresentationHash(url.hash);
+          return decoded
+            ? verifyPresentationEnvelope(decoded)
+            : { ok: false as const, message: "", messageKey: "noAir" as const };
+        };
+        const result = await load();
+        if (!active || request !== revision.current) return;
+        if (result.ok)
+          apply({
+            format: "refrain-playlist@0-experimental",
+            title: result.artifact.source.title,
+            entries: [
+              {
+                ...entryForView(result.artifact),
+                ...(requestedPresentation()
+                  ? { presentation: requestedPresentation() }
+                  : {}),
+              },
+            ],
+          });
+        else
+          setMessage({
+            key: "messageKey" in result ? result.messageKey : "invalidFile",
+            detail: result.message,
+          });
+      } catch (cause) {
+        if (active && request === revision.current)
+          setMessage({
+            key: "invalidFile",
+            detail: cause instanceof Error ? cause.message : String(cause),
+          });
+      }
     };
-    loadHash();
-    window.addEventListener("hashchange", loadHash);
+    void loadLocation();
+    window.addEventListener("hashchange", loadLocation);
     return () => {
       active = false;
-      window.removeEventListener("hashchange", loadHash);
+      window.removeEventListener("hashchange", loadLocation);
     };
   }, []);
 
-  const openFile = async (file: File) => {
-    const requestedRevision = ++revision.current;
+  const openFiles = async (files: File[]) => {
+    const request = ++revision.current;
     setFileError(undefined);
     try {
-      const result = verifyArtifactForPresentation(
-        JSON.parse(await file.text()),
+      const values: unknown[] = await Promise.all(
+        files.map(async (file) => JSON.parse(await file.text()) as unknown),
       );
-      if (requestedRevision !== revision.current) return;
-      if (result.ok) {
-        activeDemoIdRef.current = undefined;
-        setActiveDemoId(undefined);
-        queue.current!.replaceEntries([]);
-        setQueueSnapshot(queue.current!.snapshot());
-        setPlaybackCommand(undefined);
-        setArtifact(result.artifact);
-      } else setFileError(result.message);
+      if (request !== revision.current) return;
+      if (
+        values.length === 1 &&
+        (values[0] as { format?: string })?.format ===
+          "refrain-playlist@0-experimental"
+      ) {
+        const parsed = parsePlayerPlaylist(values[0]);
+        if (!parsed.ok) throw new Error(parsed.message);
+        installPlaylist(parsed.playlist);
+      } else {
+        const added = values.map((value) => {
+          const result = verifyArtifactForPresentation(value);
+          if (!result.ok) throw new Error(result.message);
+          return entryForView(result.artifact);
+        });
+        const parsed = parsePlayerPlaylist({
+          ...playlistRef.current,
+          entries: [...playlistRef.current.entries, ...added],
+          currentEntryId: added[0]?.id,
+        });
+        if (!parsed.ok) throw new Error(parsed.message);
+        installPlaylist(parsed.playlist);
+      }
+      setFirstListen(false);
     } catch (cause) {
-      if (requestedRevision === revision.current)
-        setFileError(cause instanceof Error ? cause.message : "Invalid JSON");
+      setFileError(cause instanceof Error ? cause.message : "Invalid JSON");
     }
   };
+  const savePlaylist = () => {
+    const { currentEntryId: _current, ...base } = playlist;
+    const text = stringifyPlayerPlaylist({
+      ...base,
+      ...(snapshot.currentId ? { currentEntryId: snapshot.currentId } : {}),
+    });
+    const url = URL.createObjectURL(
+      new Blob([text], { type: "application/json" }),
+    );
+    const anchor = document.createElement("a");
+    anchor.href = url;
+    anchor.download =
+      (playlist.title.replace(/[^\p{L}\p{N}._-]+/gu, "-") || "playlist") +
+      ".refrain-playlist.json";
+    anchor.click();
+    setTimeout(() => URL.revokeObjectURL(url), 30_000);
+  };
   const fileInput = (
-    <label className="first-listen-file">
-      {firstListen ? welcome.open : copy.openFile}
+    <label className="player-file">
+      ＋ {words.add}
       <input
         accept=".json,.refrain.json,application/json,application/vnd.refrain+json"
+        aria-label={welcome.open}
+        multiple
+        type="file"
         onChange={(event) => {
-          const file = event.currentTarget.files?.[0];
-          if (file) void openFile(file);
+          const files = Array.from(event.currentTarget.files ?? []);
+          if (files.length) void openFiles(files);
           event.currentTarget.value = "";
         }}
-        type="file"
       />
     </label>
   );
-  const error = fileError ? (
-    <p role="alert">
-      {copy.invalidFile} <span lang="en">{fileError}</span>
-    </p>
-  ) : null;
 
-  if (!artifact) {
-    return (
-      <main className="presentation-message" lang={locale}>
-        <LanguageSwitch locale={locale} onChange={setLocale} />
-        <p>Refrain hums an air.</p>
-        <h1>{copy[message.key]}</h1>
-        {message.detail ? <p lang="en">{message.detail}</p> : null}
-        <p>
-          {copy.openCommand}{" "}
-          <code>node bin/refrain.mjs open path/to/file.air.json</code>
-        </p>
-        {fileInput}
-        {error}
-      </main>
-    );
-  }
   return (
     <main className="presentation-shell" lang={locale}>
-      {firstListen ? (
-        <header className="first-listen-intro">
-          <p className="first-listen-mark">
-            Refrain hums an air. <span>{welcome.label}</span>
-          </p>
-          <h1>{welcome.title}</h1>
-          <p>{welcome.intro}</p>
-          <div
-            className="first-listen-works"
-            aria-label={locale === "zh-CN" ? "选择作品" : "Choose a work"}
+      <header className="player-masthead">
+        <div className="player-wordmark">
+          Refrain <span>hums an air.</span>
+        </div>
+        <nav aria-label={words.player}>
+          <button
+            type="button"
+            aria-expanded={listOpen}
+            aria-controls="player-playlist"
+            onClick={() => setListOpen(!listOpen)}
           >
-            {demoWorks.map((work) => (
-              <button
-                type="button"
-                key={work.id}
-                aria-current={activeDemoId === work.id ? "true" : undefined}
-                onClick={() => chooseDemo(work.id)}
-              >
-                {work.title}
-              </button>
-            ))}
+            {words.playlist} <span>{playlist.entries.length}</span>
+          </button>
+          <button
+            type="button"
+            aria-expanded={helpOpen}
+            onClick={() => setHelpOpen(!helpOpen)}
+          >
+            {words.help}
+          </button>
+        </nav>
+      </header>
+      {firstListen ? <p className="player-welcome">{words.welcome}</p> : null}
+      <div className="player-layout" data-list-open={listOpen}>
+        <aside
+          className="player-playlist"
+          id="player-playlist"
+          aria-label={words.playlist}
+        >
+          <div className="player-list-heading">
+            <span>{words.playlist}</span>
+            <span>{String(playlist.entries.length).padStart(2, "0")}</span>
           </div>
-          <div className="first-listen-playlist-mode">
-            <span>{welcome.playlist}</span>
-            <button
-              type="button"
-              data-playback-mode={queueSnapshot.mode}
-              aria-label={welcome.changePlaybackMode(
-                welcome.playbackModes[queueSnapshot.mode],
-                welcome.playbackModes[cyclePlaybackMode(queueSnapshot.mode)],
-              )}
-              title={welcome.playbackModes[queueSnapshot.mode]}
-              onClick={cycleMode}
-            >
-              <span aria-hidden="true">
-                {PLAYBACK_MODE_ICONS[queueSnapshot.mode]}
-              </span>
-              {welcome.playbackModes[queueSnapshot.mode]}
+          <input
+            className="player-list-title"
+            aria-label={words.title}
+            maxLength={200}
+            placeholder={words.untitled}
+            value={playlist.title}
+            onChange={(event) =>
+              setPlaylist({ ...playlist, title: event.currentTarget.value })
+            }
+          />
+          <ol>
+            {playlist.entries.map((entry, index) => (
+              <li key={entry.id} data-current={entry.id === snapshot.currentId}>
+                <button
+                  className="player-entry"
+                  type="button"
+                  aria-label={entry.artifact.source.title}
+                  aria-current={
+                    entry.id === snapshot.currentId ? "true" : undefined
+                  }
+                  onClick={() => choose(entry.id)}
+                >
+                  <span className="player-entry-number">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <span>{entry.artifact.source.title}</span>
+                </button>
+                <div className="player-entry-actions">
+                  <button
+                    type="button"
+                    disabled={index === 0}
+                    aria-label={words.up + " · " + entry.artifact.source.title}
+                    onClick={() => move(index, -1)}
+                  >
+                    ↑
+                  </button>
+                  <button
+                    type="button"
+                    disabled={index === playlist.entries.length - 1}
+                    aria-label={
+                      words.down + " · " + entry.artifact.source.title
+                    }
+                    onClick={() => move(index, 1)}
+                  >
+                    ↓
+                  </button>
+                  <button
+                    type="button"
+                    aria-label={
+                      words.remove + " · " + entry.artifact.source.title
+                    }
+                    onClick={() =>
+                      updateEntries(
+                        playlist.entries.filter((item) => item.id !== entry.id),
+                      )
+                    }
+                  >
+                    ×
+                  </button>
+                </div>
+              </li>
+            ))}
+          </ol>
+          {!playlist.entries.length ? <p>{words.empty}</p> : null}
+          <div className="player-list-actions">
+            {fileInput}
+            <button type="button" onClick={savePlaylist}>
+              {words.save}
             </button>
           </div>
-        </header>
-      ) : null}
-      <AirRenderer
-        initialLocale={locale}
-        onLocaleChange={setLocale}
-        artifact={artifact}
-        assets={
-          firstListen || import.meta.env.MODE === "try"
-            ? hasDemoSound(artifact)
-              ? { assetBaseUrl: new URL(".", window.location.href).href }
-              : {}
-            : {
-                soundBankUrl: "/soundpacks/GeneralUser-GS.sf2",
-                assetBaseUrl: "",
-                workletUrl: "/spessasynth_processor.min.js",
-              }
-        }
-        surface="url"
-        visualTheme={requestedVisualTheme()}
-        visualAppearance={parseSharedAppearance(
-          new URL(window.location.href).searchParams,
-        )}
-        playbackCommand={playbackCommand}
-        onPlaybackEnded={continueQueue}
-        shareDeployment={shareDeployment}
-      />
-      {firstListen ? (
-        <footer className="first-listen-next">
-          <section className="first-listen-keep">
-            <h2>{welcome.keep}</h2>
-            <p>{welcome.keepBody}</p>
-            {fileInput}
+          <p className="player-local-note">{words.local}</p>
+        </aside>
+        <section className="player-stage" aria-label={words.player}>
+          {fileError ? (
+            <p role="alert" className="player-error">
+              {copy.invalidFile} <span lang="en">{fileError}</span>
+            </p>
+          ) : null}
+          {artifact ? (
+            <>
+              <div className="player-queue-controls">
+                <div>
+                  <button
+                    type="button"
+                    aria-label={words.previous}
+                    onClick={() => applyDecision(queue.current!.previous())}
+                  >
+                    ←
+                  </button>
+                  <button
+                    type="button"
+                    aria-label={words.next}
+                    onClick={() => applyDecision(queue.current!.next("next"))}
+                    disabled={
+                      snapshot.mode === "sequential" &&
+                      snapshot.currentId === snapshot.entries.at(-1)
+                    }
+                  >
+                    →
+                  </button>
+                  <span>
+                    {snapshot.entries.indexOf(snapshot.currentId ?? "") + 1} /{" "}
+                    {snapshot.entries.length}
+                  </span>
+                </div>
+                <button
+                  type="button"
+                  data-playback-mode={snapshot.mode}
+                  aria-label={welcome.changePlaybackMode(
+                    welcome.playbackModes[snapshot.mode],
+                    welcome.playbackModes[cyclePlaybackMode(snapshot.mode)],
+                  )}
+                  onClick={cycleMode}
+                >
+                  <span aria-hidden="true">{MODE_ICONS[snapshot.mode]}</span>{" "}
+                  {welcome.playbackModes[snapshot.mode]}
+                </button>
+              </div>
+              <AirRenderer
+                key={activeEntry?.id}
+                initialLocale={locale}
+                onLocaleChange={setLocale}
+                artifact={artifact}
+                assets={
+                  firstListen || import.meta.env.MODE === "try"
+                    ? hasDemoSound(artifact)
+                      ? { assetBaseUrl: new URL(".", location.href).href }
+                      : {}
+                    : {
+                        soundBankUrl: "/soundpacks/GeneralUser-GS.sf2",
+                        assetBaseUrl: "",
+                        workletUrl: "/spessasynth_processor.min.js",
+                      }
+                }
+                surface="url"
+                visualTheme={activeEntry?.presentation?.theme}
+                visualAppearance={activeEntry?.presentation?.appearance}
+                playbackCommand={playbackCommand}
+                onPlaybackEnded={() =>
+                  applyDecision(queue.current!.next("ended"))
+                }
+                shareDeployment={shareDeployment}
+                onAuditionBindingChange={(bindingId) =>
+                  setPlaylist((current) => ({
+                    ...current,
+                    entries: current.entries.map((entry) =>
+                      entry.id === snapshot.currentId
+                        ? { ...entry, bindingId }
+                        : entry,
+                    ),
+                  }))
+                }
+              />
+            </>
+          ) : (
+            <div className="presentation-message">
+              <LanguageSwitch locale={locale} onChange={setLocale} />
+              <h1>{copy[message.key]}</h1>
+              {message.detail ? <p>{message.detail}</p> : null}
+              <p>{words.empty}</p>
+              <button type="button" onClick={() => setListOpen(true)}>
+                {words.playlist}
+              </button>
+            </div>
+          )}
+        </section>
+      </div>
+      {helpOpen ? (
+        <section className="player-help">
+          <h2>{welcome.next}</h2>
+          <p>{welcome.nextBody}</p>
+          <a
+            href="https://github.com/IndelibleVivi/refrain/blob/main/docs/GETTING-STARTED.md"
+            target="_blank"
+            rel="noreferrer"
+          >
+            {welcome.guide} ↗
+          </a>
+          <details>
+            <summary>{welcome.promptLabel}</summary>
+            <blockquote>{welcome.prompt}</blockquote>
             <button
               type="button"
               onClick={() => {
-                ++revision.current;
-                resetDemoQueue();
-              }}
-            >
-              {welcome.reset}
-            </button>
-            {error}
-            <p className="first-listen-note">{welcome.local}</p>
-          </section>
-          <section>
-            <h2>{welcome.next}</h2>
-            <p>{welcome.nextBody}</p>
-            <a
-              href="https://github.com/IndelibleVivi/refrain/blob/main/docs/MCP.md"
-              target="_blank"
-              rel="noreferrer"
-            >
-              {welcome.guide} ↗
-            </a>
-            <details className="first-listen-prompt">
-              <summary>{welcome.promptLabel}</summary>
-              <blockquote>{welcome.prompt}</blockquote>
-              <button
-                type="button"
-                onClick={() => {
-                  void navigator.clipboard?.writeText(welcome.prompt).then(
+                if (!navigator.clipboard) setCopyStatus("manual");
+                else
+                  void navigator.clipboard.writeText(welcome.prompt).then(
                     () => setCopyStatus("copied"),
                     () => setCopyStatus("manual"),
                   );
-                  if (!navigator.clipboard) setCopyStatus("manual");
-                }}
-              >
-                {welcome.copy}
-              </button>
-              <p role="status">{copyStatus ? welcome[copyStatus] : ""}</p>
-            </details>
-          </section>
-        </footer>
+              }}
+            >
+              {welcome.copy}
+            </button>
+            <p role="status">{copyStatus ? welcome[copyStatus] : ""}</p>
+          </details>
+          <p>{welcome.local}</p>
+          <button
+            type="button"
+            onClick={() => {
+              ++revision.current;
+              setFileError(undefined);
+              installPlaylist(demoPlaylist());
+              setFirstListen(true);
+            }}
+          >
+            {words.examples}
+          </button>
+        </section>
       ) : null}
+      <footer className="player-footer">{words.footer}</footer>
     </main>
   );
 }

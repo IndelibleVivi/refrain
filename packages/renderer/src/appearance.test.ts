@@ -4,9 +4,32 @@ import {
   appearanceForTheme,
   parseAppearancePreferences,
   parseSharedAppearance,
+  normalizePortableAppearance,
 } from "./appearance.js";
 
 describe("renderer appearance presentation state", () => {
+  it("keeps image composition local and accepts only its closed choices", () => {
+    const preferences = parseAppearancePreferences({
+      format: APPEARANCE_PREFERENCES_FORMAT,
+      themes: {
+        prism: {
+          backgroundPosition: "top",
+          backgroundFit: "contain",
+          symbolColor: "#112233",
+        },
+        herbarium: { backgroundFit: ["cover"], backgroundPosition: "left" },
+      },
+    });
+    expect(preferences.themes.prism).toEqual({
+      backgroundPosition: "top",
+      backgroundFit: "contain",
+      symbolColor: "#112233",
+    });
+    expect(preferences.themes.herbarium).toEqual({});
+    expect(normalizePortableAppearance(preferences.themes.prism)).toEqual({
+      symbolColor: "#112233",
+    });
+  });
   it("parses bounded per-theme preferences without accepting unknown fields", () => {
     const parsed = parseAppearancePreferences({
       format: APPEARANCE_PREFERENCES_FORMAT,

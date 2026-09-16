@@ -15,7 +15,8 @@ export interface PresentationSessionRecordV0 {
   operatorScope: string;
   createdAt: string;
   expiresAt: string;
-  mediaType: typeof REFRAIN_ARTIFACT_MEDIA_TYPE;
+  /** Truthful response content type for the stored bytes. */
+  mediaType: string;
   artifactBytes: Uint8Array;
 }
 
@@ -54,6 +55,42 @@ export class PresentationSessionStore {
       delivery: { kind: "session"; href: string; expiresAt: string };
     };
   } {
+    const created = this.storeBytes(
+      artifactBytes,
+      artifactSha256,
+      hrefBase,
+      REFRAIN_ARTIFACT_MEDIA_TYPE,
+      now,
+    );
+    return {
+      token: created.token,
+      ref: {
+        format: "refrain-presentation-ref@0-experimental",
+        artifactSha256,
+        mediaType: REFRAIN_ARTIFACT_MEDIA_TYPE,
+        delivery: created.delivery,
+      },
+    };
+  }
+
+  /** A playlist is transport bytes, never an artifact PresentationRef. */
+  createPlaylist(bytes: Uint8Array, sha256: string, hrefBase: string) {
+    return this.storeBytes(
+      bytes,
+      sha256,
+      hrefBase,
+      "application/vnd.refrain-playlist+json",
+      Date.now(),
+    );
+  }
+
+  private storeBytes(
+    artifactBytes: Uint8Array,
+    artifactSha256: string,
+    hrefBase: string,
+    mediaType: string,
+    now: number,
+  ) {
     const token = randomBytes(24).toString("base64url");
     const hash = tokenHash(token);
     const createdAt = new Date(now).toISOString();
@@ -65,20 +102,15 @@ export class PresentationSessionStore {
       operatorScope: this.operatorScope,
       createdAt,
       expiresAt,
-      mediaType: REFRAIN_ARTIFACT_MEDIA_TYPE,
+      mediaType,
       artifactBytes: artifactBytes.slice(),
     });
     return {
       token,
-      ref: {
-        format: "refrain-presentation-ref@0-experimental",
-        artifactSha256,
-        mediaType: REFRAIN_ARTIFACT_MEDIA_TYPE,
-        delivery: {
-          kind: "session",
-          href: `${hrefBase.replace(/\/$/, "")}/${token}?artifactSha256=${encodeURIComponent(artifactSha256)}`,
-          expiresAt,
-        },
+      delivery: {
+        kind: "session" as const,
+        href: `${hrefBase.replace(/\/$/, "")}/${token}?artifactSha256=${encodeURIComponent(artifactSha256)}`,
+        expiresAt,
       },
     };
   }

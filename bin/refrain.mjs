@@ -27,7 +27,7 @@ Usage:
   refrain produce inspect <artifact> [--settings <file>] [--binding <carried-id>] [--json]
   refrain produce apply <artifact> --settings <file> --out <new-artifact> [--binding <carried-id>]
   refrain fetch (--candidate <id> | --profile <id> | --palette <id> | --air <file> --binding <id>)
-  refrain open <air-or-artifact> [--binding <id>] [--no-open] [--json]
+  refrain open <air-or-artifact> [more-air-or-artifact ...] [--binding <id>] [--theme <theme-id>] [--no-open] [--json]
   refrain export <air-or-artifact> [--binding <id>] [--out <directory>] [--matched-preview]
   refrain packs <command> [options]
   refrain mcp stdio
@@ -202,7 +202,7 @@ async function main() {
       "apps/presentation/src/open-air.ts",
       assignedOptions(
         [...rest, ...(json ? ["--json"] : [])],
-        new Set(["--binding"]),
+        new Set(["--binding", "--theme"]),
       ),
     );
   if (command === "export")

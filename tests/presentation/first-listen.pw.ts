@@ -1,10 +1,30 @@
 import { readFile } from "node:fs/promises";
-import { test, expect } from "@playwright/test";
+import { test, expect, type Page } from "@playwright/test";
 import { parseRefrainArtifact } from "../../packages/renderer/src/portable.js";
 import { createRefrainArtifactV3 } from "../../packages/renderer/src/portable.js";
 import { createRootReceiptV1 } from "../../packages/renderer/src/v1.js";
 import { compileAirV1 } from "../../packages/compiler/src/v1.js";
 import { F_ACOUSTIC_CHAMBER_PERFORMANCE_BINDING } from "../../packages/soundpack/src/index.js";
+
+async function showPlaylist(page: Page) {
+  const toggle = page.locator('[aria-controls="player-playlist"]');
+  if ((await toggle.getAttribute("aria-expanded")) === "false")
+    await toggle.click();
+}
+async function selectTheme(page: Page, theme: string) {
+  await page.getByRole("button", { name: "Appearance", exact: true }).click();
+  const control = page.getByRole("combobox", {
+    name: "Appearance",
+    exact: true,
+  });
+  await control.focus();
+  await control.selectOption(theme);
+  await expect(control).toBeFocused();
+  await page.getByRole("button", { name: "Close", exact: true }).click();
+  await expect(
+    page.getByRole("button", { name: "Appearance", exact: true }),
+  ).toBeFocused();
+}
 
 for (const width of [1280, 390]) {
   test(`first listen, themes, language, and a saved return at ${width}px`, async ({
@@ -27,10 +47,9 @@ for (const width of [1280, 390]) {
       };
     });
     await page.goto("./");
+    await showPlaylist(page);
     const renderer = page.locator(".refrain-renderer");
-    await expect(page.getByRole("heading", { level: 1 })).toHaveText(
-      "Listen first. Bring your story next.",
-    );
+    await expect(page.locator(".player-wordmark")).toContainText("Refrain");
     await expect(page.locator(".piece-title")).toHaveText(
       "Velvet Mischief · 夜色偏心",
     );
@@ -41,6 +60,7 @@ for (const width of [1280, 390]) {
     await expect(page.locator(".piece-title")).toHaveText(
       "After the Door · 门后",
     );
+    await showPlaylist(page);
     await page
       .getByRole("button", { name: "Velvet Mischief · 夜色偏心", exact: true })
       .click();
@@ -59,9 +79,7 @@ for (const width of [1280, 390]) {
     await expect
       .poll(async () => Number(await page.locator("input.seek").inputValue()))
       .toBeGreaterThan(0);
-    await page
-      .getByRole("combobox", { name: "Appearance", exact: true })
-      .selectOption("prism");
+    await selectTheme(page, "prism");
     await expect(renderer).toHaveAttribute("data-player-state", "playing");
     await page.getByRole("button", { name: "Pause", exact: true }).click();
     const paused = await page.locator("input.seek").inputValue();
@@ -75,14 +93,7 @@ for (const width of [1280, 390]) {
       "paper-sonata",
       "prism",
     ]) {
-      const control = page.getByRole("combobox", {
-        name: "Appearance",
-        exact: true,
-      });
-      await control.focus();
-      await control.selectOption(theme);
-      await expect(control).toHaveValue(theme);
-      await expect(control).toBeFocused();
+      await selectTheme(page, theme);
       await expect(page.locator("input.seek")).toHaveValue(paused);
       await expect(renderer).toHaveAttribute("data-player-state", "paused");
       await expect(passage).toHaveValue(selection);
@@ -97,12 +108,12 @@ for (const width of [1280, 390]) {
       ).toBe(true);
     }
     await page.getByRole("button", { name: "Language", exact: true }).click();
-    await expect(page.getByRole("heading", { level: 1 })).toHaveText(
-      "先听一首，再带上你们的故事。",
+    await expect(page.locator(".player-welcome")).toContainText(
+      "从这两首开始听",
     );
-    await expect(
-      page.getByRole("combobox", { name: "外观", exact: true }),
-    ).toHaveValue("prism");
+    await expect(page.locator(".refrain-appearance-theme select")).toHaveValue(
+      "prism",
+    );
     await expect(page.locator("input.seek")).toHaveValue(paused);
     expect(
       await page.evaluate(() =>
@@ -144,13 +155,16 @@ for (const width of [1280, 390]) {
     });
     await expect(page.getByRole("alert")).toBeVisible();
     await expect(page.locator(".piece-title")).toHaveText(source.title);
-    await page.getByRole("button", { name: "回到这首示例" }).click();
+    await page
+      .getByRole("button", { name: "关于 Refrain", exact: true })
+      .click();
+    await page.getByRole("button", { name: "打开示例列表" }).click();
     await expect(page.getByRole("alert")).toHaveCount(0);
     await expect(
       page.getByRole("link", { name: "接入 agent · 设置指南 ↗" }),
-    ).toHaveAttribute("href", /\/docs\/MCP.md$/);
-    await page.locator(".first-listen-prompt summary").click();
-    await expect(page.locator(".first-listen-prompt blockquote")).toContainText(
+    ).toHaveAttribute("href", /\/docs\/GETTING-STARTED.md$/);
+    await page.locator(".player-help details summary").click();
+    await expect(page.locator(".player-help details blockquote")).toContainText(
       "私人对话留在 host",
     );
     expect(errors).toEqual([]);
@@ -167,6 +181,7 @@ test("playlist mode persists and a real transport end advances the queue", async
   page,
 }) => {
   await page.goto("./");
+  await showPlaylist(page);
   const mode = page.locator("[data-playback-mode]");
   await expect(mode).toHaveAttribute("data-playback-mode", "sequential");
   await mode.click();
@@ -200,13 +215,13 @@ test("appearance stays local while exact colors travel in an easy-share link", a
     origin: "http://127.0.0.1:4326",
   });
   await page.goto("./");
-  await page
-    .getByRole("combobox", { name: "Appearance", exact: true })
-    .selectOption("prism");
+  await showPlaylist(page);
+  await selectTheme(page, "prism");
   await page.getByRole("button", { name: "Play", exact: true }).click();
   const renderer = page.locator(".refrain-renderer");
   await expect(renderer).toHaveAttribute("data-player-state", "playing");
-  await page.getByText("Make this appearance yours", { exact: true }).click();
+  await page.getByRole("button", { name: "Appearance", exact: true }).click();
+  await page.getByText("Fine-tune colors", { exact: true }).click();
 
   await page.locator('[data-appearance-control="symbol"]').fill("#a13b7c");
   await page.locator('[data-appearance-control="text"]').fill("#102030");
@@ -233,11 +248,17 @@ test("appearance stays local while exact colors travel in an easy-share link", a
   ).toBe("#a13b7c");
 
   await page.reload();
-  await expect(
-    page.getByRole("combobox", { name: "Appearance", exact: true }),
-  ).toHaveValue("prism");
+  await expect(surface).not.toHaveAttribute("data-custom-background", "true");
+  await expect(surface).toHaveAttribute(
+    "data-composer",
+    "paper-folio-composer@0",
+  );
+  await page.getByRole("button", { name: "Appearance", exact: true }).click();
+  await page.getByText("Fine-tune colors", { exact: true }).click();
+  await page
+    .getByRole("button", { name: "My appearance", exact: true })
+    .click();
   await expect(surface).toHaveAttribute("data-custom-background", "true");
-  await page.getByText("Make this appearance yours", { exact: true }).click();
   await expect(page.locator('[data-appearance-control="symbol"]')).toHaveValue(
     "#a13b7c",
   );
@@ -245,6 +266,7 @@ test("appearance stays local while exact colors travel in an easy-share link", a
     "#102030",
   );
 
+  await page.getByRole("button", { name: "Close", exact: true }).click();
   await page.getByText("Share this air", { exact: true }).click();
   await expect(
     page.getByText("Your background image stays on this device."),
@@ -267,6 +289,7 @@ test("appearance stays local while exact colors travel in an easy-share link", a
   expect(shared.href).not.toContain("blob:");
   expect(shared.hash).toBe("");
 
+  await page.getByRole("button", { name: "Appearance", exact: true }).click();
   await page
     .getByRole("button", { name: "Reset this appearance", exact: true })
     .click();
@@ -324,6 +347,7 @@ test("a saved sampled work reuses an exact published closure without fetching be
   const requests: string[] = [];
   page.on("request", (request) => requests.push(request.url()));
   await page.goto("./");
+  await showPlaylist(page);
   await page.locator('input[type="file"][accept^=".json"]').setInputFiles({
     name: "sampled.refrain.json",
     mimeType: "application/json",
@@ -356,6 +380,7 @@ test("After the Door plays with its original sampled binding", async ({
   const errors: string[] = [];
   page.on("pageerror", (error) => errors.push(error.message));
   await page.goto("./");
+  await showPlaylist(page);
   await page
     .getByRole("button", { name: "After the Door · 门后", exact: true })
     .click();
