@@ -11,6 +11,8 @@ interface Note {
   erosion: number;
   bloom: number;
   layer: 0 | 1;
+  note: number;
+  manual: boolean;
   left: number;
   right: number;
 }
@@ -36,7 +38,7 @@ export function prepare(session: Session): Program {
   const cached = programs.get(session);
   if (cached) return cached;
   const notes: Note[] = [];
-  const add = (at: number, index: number, layer: 0 | 1) => {
+  const add = (at: number, index: number, layer: 0 | 1, manual = false) => {
     if (at < 0 || at >= session.work.duration) return;
     const material = session.work.notes[index],
       m = momentAt(session, at);
@@ -57,6 +59,8 @@ export function prepare(session: Session): Program {
       erosion: m.erosion,
       bloom: m.bloom,
       layer,
+      note: index,
+      manual,
       left: Math.sqrt((1 - pan) / 2),
       right: Math.sqrt((1 + pan) / 2),
     });
@@ -86,6 +90,14 @@ export function prepare(session: Session): Program {
           add(Math.max(span.start, at), index, 1);
       });
     }
+  }
+  // Direct plucks open a new attack at their exact moment, in the timbre then
+  // in effect. They never advance the route or replace layer/phrase choices.
+  for (const gesture of session.gestures) {
+    if (gesture.kind !== "pluck") continue;
+    const targets: (0 | 1)[] =
+      gesture.layers === "both" ? [0, 1] : [gesture.layers === "a" ? 0 : 1];
+    for (const layer of targets) add(gesture.at, gesture.note, layer, true);
   }
   notes.sort((a, b) => a.at - b.at);
   const levels: Level[] = [];
@@ -153,8 +165,6 @@ export function renderStereo(
 function voiceValue(note: Note, t: number, at: number) {
   if (t < 0 || at >= note.end) return 0;
   const color = note.layer === 0 ? 1 - note.erosion : 0.55;
-  const envelope = (1 - Math.exp(-t / note.attack)) * Math.exp(-t / note.decay);
-  const fade = Math.min(1, Math.max(0, (note.end - at) / 0.06));
   return (
     (oscillatorSample("sine", note.frequency * t) +
       oscillatorSample("sine", note.frequency * 2 * t) *
@@ -170,9 +180,22 @@ function voiceValue(note: Note, t: number, at: number) {
           0.15 *
           note.bloom
         : 0)) *
-    envelope *
-    fade *
+    voiceEnvelope(note, t) *
+    voiceTailFade(note, at) *
     0.17
+  );
+}
+/** One envelope authority shared by sample rendering and the voice projection. */
+function voiceEnvelope(note: Note, t: number) {
+  return (1 - Math.exp(-t / note.attack)) * Math.exp(-t / note.decay);
+}
+function voiceTailFade(note: Note, at: number) {
+  return Math.min(1, Math.max(0, (note.end - at) / 0.06));
+}
+function routeGate(at: number, duration: number) {
+  return Math.max(
+    0,
+    Math.min(1, at / 0.25, (duration - at) / Math.min(5, duration / 5)),
   );
 }
 function finish(
@@ -184,10 +207,7 @@ function finish(
 ) {
   for (let i = 0; i < left.length; i++) {
     const t = (first + i) / rate;
-    const gate = Math.max(
-      0,
-      Math.min(1, t / 0.25, (duration - t) / Math.min(5, duration / 5)),
-    );
+    const gate = routeGate(t, duration);
     left[i] = Math.tanh(left[i]) * 0.8 * gate;
     right[i] = Math.tanh(right[i]) * 0.8 * gate;
   }
@@ -231,4 +251,79 @@ export function renderWav(session: Session, sampleRate = 22050): Uint8Array {
     }
   }
   return bytes;
+}
+export interface VoiceView {
+  note: number;
+  layer: "a" | "b";
+  level: number;
+  age: number;
+  duration: number;
+  manual: boolean;
+}
+interface SelectedVoice {
+  note: number;
+  layer: 0 | 1;
+  level: number;
+  age: number;
+  duration: number;
+  manual: boolean;
+}
+function levelGain(program: Program, at: number, layer: number) {
+  let active: Level | undefined;
+  for (const level of program.levels) if (level.at <= at) active = level;
+  return levelAt(active, at, layer);
+}
+function louder(a: SelectedVoice, b: SelectedVoice) {
+  if (Math.abs(a.level - b.level) > 1e-6) return a.level > b.level;
+  if (a.manual !== b.manual) return a.manual;
+  return a.age < b.age;
+}
+/**
+ * Audible note/layer projection for the field view. At most one voice survives
+ * per material note and layer, so the whole-form marks stay bounded while each
+ * entry reflects the intensity actually present in the shared sample kernel.
+ */
+export function voicesAt(session: Session, seconds: number): VoiceView[] {
+  const program = prepare(session);
+  const at = Math.max(0, Math.min(program.duration, seconds));
+  const gate = routeGate(at, program.duration);
+  const selected = new Map<string, SelectedVoice>();
+  if (gate > 0) {
+    const gains = [levelGain(program, at, 0), levelGain(program, at, 1)];
+    for (const note of program.notes) {
+      if (note.at > at || note.end <= at) continue;
+      const level = Math.min(
+        1,
+        Math.max(
+          0,
+          voiceEnvelope(note, at - note.at) *
+            voiceTailFade(note, at) *
+            gains[note.layer] *
+            gate,
+        ),
+      );
+      if (level <= 1e-4) continue;
+      const voice: SelectedVoice = {
+        note: note.note,
+        layer: note.layer,
+        level,
+        age: at - note.at,
+        duration: note.end - note.at,
+        manual: note.manual,
+      };
+      const key = note.layer + ":" + note.note;
+      const current = selected.get(key);
+      if (!current || louder(voice, current)) selected.set(key, voice);
+    }
+  }
+  return [...selected.values()]
+    .sort((a, b) => a.note - b.note || a.layer - b.layer)
+    .map((voice) => ({
+      note: voice.note,
+      layer: voice.layer === 0 ? "a" : "b",
+      level: voice.level,
+      age: voice.age,
+      duration: voice.duration,
+      manual: voice.manual,
+    }));
 }

@@ -11,6 +11,8 @@ const delta = (s: ReturnType<typeof createSession>, t: number) => {
   const m = momentAt(s, t);
   return (m.phaseB - m.phaseA + 1) % 1;
 };
+const historical = () =>
+  serializeSession({ ...createSession(), format: "drift-study-session@0" });
 describe("Drift study editable work and performance", () => {
   it("freezes evolution and relative phase while the loop clock keeps moving", () => {
     const s = withGesture(createSession(), {
@@ -107,5 +109,127 @@ describe("Drift study editable work and performance", () => {
     const s = createSession();
     mutate(s);
     expect(() => parseSession(JSON.stringify(s))).toThrow();
+  });
+});
+describe("Drift study direct plucks", () => {
+  it("keeps @0 sessions exact and rejects plucks in paths or bookmarks", () => {
+    const saved = historical();
+    const reopened = parseSession(saved);
+    expect(reopened.format).toBe("drift-study-session@0");
+    expect(serializeSession(reopened)).toBe(saved);
+    const path = JSON.parse(saved);
+    path.gestures = [{ at: 5, kind: "pluck", note: 0, layers: "a" }];
+    expect(() => parseSession(JSON.stringify(path))).toThrow();
+    const kept = JSON.parse(saved);
+    kept.bookmarks = [
+      {
+        name: "旧岔口",
+        at: 5,
+        gestures: [{ at: 5, kind: "pluck", note: 0, layers: "a" }],
+      },
+    ];
+    expect(() => parseSession(JSON.stringify(kept))).toThrow();
+  });
+  it("starts new sessions at @1, round-trips plucks, and upgrades old @0 edits", () => {
+    const base = createSession();
+    expect(base.format).toBe("drift-study-session@1");
+    let s = withGesture(base, {
+      at: 4,
+      kind: "pluck",
+      note: 2,
+      layers: "both",
+    });
+    s = withGesture(s, { at: 9, kind: "pluck", note: 0, layers: "b" });
+    expect(parseSession(serializeSession(s))).toEqual(s);
+
+    const old = parseSession(historical());
+    const plucked = withGesture(old, {
+      at: 6,
+      kind: "pluck",
+      note: 1,
+      layers: "a",
+    });
+    expect(old.format).toBe("drift-study-session@0");
+    expect(plucked.format).toBe("drift-study-session@1");
+    expect(parseSession(serializeSession(plucked))).toEqual(plucked);
+    expect(
+      withGesture(old, { at: 6, kind: "layers", layers: "a" }).format,
+    ).toBe("drift-study-session@0");
+  });
+  it("rejects pluck note indices outside the material and non-integer indices", () => {
+    const base = createSession();
+    const ok = withGesture(base, {
+      at: 1,
+      kind: "pluck",
+      note: 0,
+      layers: "a",
+    });
+    expect(() =>
+      withGesture(base, { at: 3, kind: "pluck", note: 4, layers: "a" }),
+    ).toThrow();
+    expect(() =>
+      withGesture(base, { at: 3, kind: "pluck", note: -1, layers: "a" }),
+    ).toThrow();
+    const shaped = JSON.parse(serializeSession(ok));
+    shaped.gestures = [{ at: 1, kind: "pluck", note: 1.5, layers: "a" }];
+    expect(() => parseSession(JSON.stringify(shaped))).toThrow();
+    shaped.gestures = [{ at: 1, kind: "pluck", note: 0, layers: "c" }];
+    expect(() => parseSession(JSON.stringify(shaped))).toThrow();
+  });
+  it("leaves phase, rules and layer selection unchanged while keeping order", () => {
+    const base = createSession();
+    const plucked = withGesture(base, {
+      at: 3,
+      kind: "pluck",
+      note: 0,
+      layers: "b",
+    });
+    const facts = (s: ReturnType<typeof createSession>, t: number) => {
+      const m = momentAt(s, t);
+      return {
+        frozen: m.frozen,
+        layers: m.layers,
+        rules: m.rules,
+        phaseA: +m.phaseA.toFixed(10),
+        phaseB: +m.phaseB.toFixed(10),
+        evolution: +m.evolution.toFixed(6),
+        erosion: +m.erosion.toFixed(6),
+        bloom: +m.bloom.toFixed(6),
+      };
+    };
+    for (const t of [0, 1, 2.99, 3, 3.5, 12, 40, 71.9])
+      expect(facts(plucked, t)).toEqual(facts(base, t));
+    let ordered = withGesture(base, {
+      at: 5,
+      kind: "rules",
+      rules: { drift: 1, erosion: 0, bloom: 0 },
+    });
+    ordered = withGesture(ordered, {
+      at: 5,
+      kind: "pluck",
+      note: 0,
+      layers: "a",
+    });
+    ordered = withGesture(ordered, {
+      at: 5,
+      kind: "pluck",
+      note: 2,
+      layers: "b",
+    });
+    expect(ordered.gestures.map((g) => g.kind)).toEqual([
+      "rules",
+      "pluck",
+      "pluck",
+    ]);
+    let path = withGesture(base, {
+      at: 20,
+      kind: "pluck",
+      note: 2,
+      layers: "a",
+    });
+    path = withGesture(path, { at: 30, kind: "layers", layers: "b" });
+    const branch = withGesture(path, { at: 10, kind: "freeze", frozen: true });
+    expect(branch.gestures.map((g) => g.kind)).toEqual(["freeze"]);
+    expect(momentAt(branch, 31).layers).toBe("both");
   });
 });

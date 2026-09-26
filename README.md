@@ -45,7 +45,7 @@ This local URL belongs to your computer. The public demo runs on GitHub Pages. S
 
 ## A playable experiment: Drift study
 
-Run `npm run drift` after `npm ci`, then open `http://127.0.0.1:4387`. Two shadows of one phrase gradually drift apart: A loses its sharp attack while B grows a longer tail. Play the 72-second route, drag the field, freeze the evolution, keep one layer, undo, or return to a named moment. Save the editable experiment as JSON and the complete performance as WAV.
+Run `npm run drift` after `npm ci`, then open `http://127.0.0.1:4387`. Two shadows of one phrase gradually drift apart: A loses its sharp attack while B grows a longer tail. Play the 72-second route, tap its notes, drag the field, freeze the evolution, keep one layer, undo, or return to a named moment. Note glows follow the sound envelopes; direct plucks leave ripples and become part of the saved performance. Save the editable experiment as JSON and the complete performance as WAV.
 
 This separate, Chinese-language study uses local synthesis with no sound downloads or model calls. It has its own experimental work/session format and does not import AIR or issue a Refrain artifact or receipt. It is available in this source tree, not the hosted demo. [Controls, files and verification](apps/drift-study/README.md).
 

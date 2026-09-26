@@ -8,7 +8,8 @@ import {
   withGesture,
 } from "./model";
 import { DriftEngine } from "./engine";
-import { drawField } from "./visual";
+import { drawField, noteName, notePositions } from "./visual";
+import { voicesAt } from "./kernel";
 
 const el = <T extends HTMLElement = HTMLElement>(id: string) =>
   document.getElementById(id) as T;
@@ -48,6 +49,8 @@ let redraw = true;
 const reduced = matchMedia("(prefers-reduced-motion: reduce)");
 const canvas = el<HTMLCanvasElement>("visual");
 const rules = ["drift", "erosion", "bloom"] as const;
+let highlightedNote: number | undefined;
+let noteSignature = "";
 
 function notice(message: string, error = false) {
   el("notice").textContent = message;
@@ -85,6 +88,7 @@ function commit(next: Session, label: string, position = engine.position) {
   engine.setSession(session, position);
   remember(session, label);
   renderBookmarks();
+  renderNoteTargets();
   persist();
   redraw = true;
   notice(label);
@@ -142,6 +146,7 @@ function moveHistory(direction: number) {
   el<HTMLButtonElement>("undo").disabled = index === 0;
   el<HTMLButtonElement>("redo").disabled = index === history.length - 1;
   renderBookmarks();
+  renderNoteTargets();
   persist();
   redraw = true;
   notice(
@@ -149,6 +154,24 @@ function moveHistory(direction: number) {
   );
 }
 
+async function startPlayback(): Promise<boolean> {
+  const generation = ++playGeneration;
+  starting = true;
+  redraw = true;
+  try {
+    await engine.play();
+    if (generation !== playGeneration || engine.status !== "playing")
+      return false;
+    notice("声音正在回来。点一下音符，也可以冻结一次相遇。");
+    return true;
+  } catch (error) {
+    if (generation === playGeneration) fail(error);
+    return false;
+  } finally {
+    if (generation === playGeneration) starting = false;
+    redraw = true;
+  }
+}
 async function togglePlay() {
   if (starting || engine.status === "playing") {
     ++playGeneration;
@@ -158,19 +181,83 @@ async function togglePlay() {
     redraw = true;
     return;
   }
-  const generation = ++playGeneration;
-  starting = true;
-  redraw = true;
-  try {
-    await engine.play();
-    if (generation !== playGeneration) return;
-    notice("声音正在回来。试着冻结一次相遇，或者拨动声场。");
-  } catch (error) {
-    if (generation === playGeneration) fail(error);
-  } finally {
-    if (generation === playGeneration) starting = false;
-    redraw = true;
+  await startPlayback();
+}
+async function pluckNote(note: number) {
+  if (starting || !session.work.notes[note]) return;
+  endGesture();
+  if (engine.status !== "playing" && !(await startPlayback())) return;
+  const at = engine.position;
+  apply(
+    { at, kind: "pluck", note, layers: momentAt(session, at).layers },
+    "拨响 " +
+      noteName(session.work.notes[note].midi) +
+      "。这一声也留在了演奏里。",
+  );
+}
+function positionNoteTargets() {
+  const rect = canvas.getBoundingClientRect();
+  for (const point of notePositions(session.work, rect.width, rect.height)) {
+    const button = document.querySelector<HTMLButtonElement>(
+      '[data-note="' + point.index + '"]',
+    );
+    if (button) {
+      button.style.left = point.x + "px";
+      button.style.top = point.y + "px";
+    }
   }
+}
+function renderNoteTargets() {
+  const signature = JSON.stringify(session.work.notes);
+  if (signature === noteSignature) return;
+  noteSignature = signature;
+  highlightedNote = undefined;
+  const root = el("note-targets");
+  root.replaceChildren();
+  session.work.notes.forEach((note, index) => {
+    const button = document.createElement("button");
+    button.className = "note-target";
+    button.dataset.note = String(index);
+    button.type = "button";
+    const label = noteName(note.midi);
+    const shortcut = index < 9 ? "，数字键 " + (index + 1) : "";
+    button.setAttribute("aria-label", "拨响 " + label + shortcut);
+    button.title = "拨响 " + label + shortcut;
+    const caption = document.createElement("span");
+    caption.textContent = label;
+    button.append(caption);
+    button.onclick = () => {
+      void pluckNote(index);
+    };
+    button.onpointerenter = button.onfocus = () => {
+      highlightedNote = index;
+      redraw = true;
+    };
+    button.onpointerleave = () => {
+      if (document.activeElement !== button) highlightedNote = undefined;
+      redraw = true;
+    };
+    button.onblur = () => {
+      highlightedNote = undefined;
+      redraw = true;
+    };
+    button.onkeydown = (event) => {
+      if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+        event.preventDefault();
+        const next =
+          (index +
+            (event.key === "ArrowRight" ? 1 : -1) +
+            session.work.notes.length) %
+          session.work.notes.length;
+        root
+          .querySelector<HTMLButtonElement>('[data-note="' + next + '"]')
+          ?.focus();
+      }
+      if (event.key.startsWith("Arrow")) event.stopPropagation();
+    };
+    root.append(button);
+  });
+  positionNoteTargets();
 }
 el("play").onclick = () => {
   void togglePlay();
@@ -253,7 +340,11 @@ function touchField(event: PointerEvent) {
   });
 }
 field.onpointerdown = (event) => {
-  if (event.button !== 0) return;
+  if (
+    event.button !== 0 ||
+    (event.target as HTMLElement).closest(".note-target")
+  )
+    return;
   event.preventDefault();
   dragging = event.pointerId;
   field.setPointerCapture(event.pointerId);
@@ -442,7 +533,18 @@ document.addEventListener("keydown", (event) => {
     event.altKey
   )
     return;
-  if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "z") {
+  if (
+    !event.metaKey &&
+    !event.ctrlKey &&
+    /^[1-9]$/.test(event.key) &&
+    !event.repeat
+  ) {
+    event.preventDefault();
+    void pluckNote(Number(event.key) - 1);
+  } else if (
+    (event.metaKey || event.ctrlKey) &&
+    event.key.toLowerCase() === "z"
+  ) {
     event.preventDefault();
     moveHistory(event.shiftKey ? 1 : -1);
   } else if (
@@ -468,6 +570,7 @@ window.addEventListener("pagehide", () => {
   engine.dispose();
 });
 new ResizeObserver(() => {
+  positionNoteTargets();
   redraw = true;
 }).observe(field);
 
@@ -485,7 +588,16 @@ function refresh(now: number) {
   const active = status === "playing";
   if (redraw || (active && now - lastDraw > (reduced.matches ? 160 : 30))) {
     const moment = momentAt(session, position);
-    drawField(canvas, moment, session.work, active);
+    const voices = voicesAt(session, position);
+    drawField(
+      canvas,
+      moment,
+      session.work,
+      active,
+      voices,
+      highlightedNote,
+      reduced.matches,
+    );
     el("elapsed").textContent = time(position);
     el("duration").textContent = time(session.work.duration);
     const seek = el<HTMLInputElement>("seek");
@@ -544,6 +656,7 @@ function refresh(now: number) {
   requestAnimationFrame(refresh);
 }
 renderBookmarks();
+renderNoteTargets();
 if (recovered)
   notice("上次的实验还在。按播放，从 " + time(session.cursor) + " 继续。");
 if (!storageAvailable) {
@@ -563,5 +676,6 @@ Object.defineProperty(window, "driftStudy", {
       position: engine.position,
     }),
     history: () => ({ index: historyIndex, length: history.length }),
+    voices: () => clone(voicesAt(session, engine.position)),
   }),
 });

@@ -42,9 +42,15 @@
             id="field"
             role="group"
             tabindex="0"
-            aria-label="可拨动的声场：左右方向键改变偏移，上下方向键改变余响；也可使用旁边的滑杆"
+            aria-label="可拨动的声场：点音符或按数字拨响；左右方向键改变偏移，上下方向键改变余响"
           >
             <canvas id="visual" aria-hidden="true"></canvas>
+            <div
+              id="note-targets"
+              class="note-targets"
+              role="group"
+              aria-label="拨响短句中的音符"
+            ></div>
             <div class="field-top">
               <span class="field-title"><i></i> TWO SHADOWS OF ONE PHRASE</span
               ><span id="field-state">等待触碰</span>
@@ -56,7 +62,7 @@
               <span
                 ><b class="a-key">A</b> 起音渐隐
                 <b class="b-key">B</b> 余响渐长</span
-              ><span class="drag-hint">拖动：左右偏移 · 上下余响</span>
+              ><span class="drag-hint">点音符拨响 · 拖空白改变演化</span>
             </div>
           </div>
           <div class="transport">
@@ -213,7 +219,7 @@
             <h3>材料、做法、这一遍</h3>
             <p>
               初始短句 E4 · B4 · F♯5 ·
-              A4，两条独立的时间轨迹。文件保存音符、循环长度、演化规则、带时间的操作与命名岔口。回到较早的位置再修改，会从那里走出新的一支。
+              A4，两条独立的时间轨迹。点音符会拨响当前留下的声音层，也会开始演奏。光迹跟随真实声音的起落；拨奏和演化操作一起保存在文件中。文件保存音符、循环长度、演化规则、带时间的操作与命名岔口。回到较早的位置再修改，会从那里走出新的一支。
             </p>
             <p>
               这是独立的合成声音实验。它不导入 AIR 或原生 binding，不签发

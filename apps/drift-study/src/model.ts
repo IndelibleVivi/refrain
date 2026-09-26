@@ -4,12 +4,13 @@ import type {
   Moment,
   Rules,
   Session,
+  SessionFormat,
   Work,
 } from "./contracts";
 
 export function createSession(): Session {
   return {
-    format: "drift-study-session@0",
+    format: "drift-study-session@1",
     work: {
       format: "drift-study-work@0",
       title: "Drift study",
@@ -78,27 +79,47 @@ function layers(value: unknown): Layers {
     throw new Error("未知的声音层。");
   return value;
 }
-function gestures(value: unknown, duration: number): Gesture[] {
+const shapes = {
+  rules: ["at", "kind", "rules"],
+  freeze: ["at", "kind", "frozen"],
+  layers: ["at", "kind", "layers"],
+  pluck: ["at", "kind", "note", "layers"],
+} as const;
+function gestures(
+  value: unknown,
+  duration: number,
+  work: Work,
+  allowPluck: boolean,
+): Gesture[] {
   if (!Array.isArray(value) || value.length > 2048)
     throw new Error("一份演奏最多记录 2048 次控制变化。");
   let previous = 0;
   return value.map((item: unknown) => {
     if (!item || typeof item !== "object") throw new Error("无效的操作。");
     const kind = (item as { kind?: unknown }).kind;
-    const key =
+    const shape =
       kind === "rules"
-        ? "rules"
+        ? shapes.rules
         : kind === "freeze"
-          ? "frozen"
+          ? shapes.freeze
           : kind === "layers"
-            ? "layers"
-            : undefined;
-    if (!key) throw new Error("未知的操作类型。");
-    const g = object(item, ["at", "kind", key], "gesture");
+            ? shapes.layers
+            : kind === "pluck"
+              ? shapes.pluck
+              : undefined;
+    if (!shape) throw new Error("未知的操作类型。");
+    if (kind === "pluck" && !allowPluck)
+      throw new Error("这份实验版本不支持直接拨动音符。");
+    const g = object(item, [...shape], "gesture");
     const at = number(g.at, previous, duration, "操作时间");
     previous = at;
     if (kind === "rules") return { at, kind, rules: rules(g.rules) };
     if (kind === "layers") return { at, kind, layers: layers(g.layers) };
+    if (kind === "pluck") {
+      const note = number(g.note, 0, work.notes.length - 1, "拨动音符");
+      if (!Number.isInteger(note)) throw new Error("拨动音符需要整数索引。");
+      return { at, kind, note, layers: layers(g.layers) };
+    }
     if (typeof g.frozen !== "boolean")
       throw new Error("frozen 应当是 boolean。");
     return { at, kind: "freeze", frozen: g.frozen };
@@ -118,10 +139,12 @@ export function parseSession(input: string): Session {
     ["format", "work", "gestures", "cursor", "bookmarks"],
     "experiment",
   );
-  if (s.format !== "drift-study-session@0")
+  const format = s.format as SessionFormat;
+  if (format !== "drift-study-session@0" && format !== "drift-study-session@1")
     throw new Error(
       "不支持这个实验版本；此入口不导入 AIR 或 RefrainArtifact。",
     );
+  const allowPluck = format === "drift-study-session@1";
   const w = object(
     s.work,
     ["format", "title", "duration", "loopSeconds", "notes", "rules"],
@@ -157,16 +180,16 @@ export function parseSession(input: string): Session {
   if (!Array.isArray(s.bookmarks) || s.bookmarks.length > 12)
     throw new Error("最多保留 12 个岔口。");
   return {
-    format: "drift-study-session@0",
+    format,
     work,
-    gestures: gestures(s.gestures, duration),
+    gestures: gestures(s.gestures, duration, work, allowPluck),
     cursor: number(s.cursor, 0, duration, "当前位置"),
     bookmarks: s.bookmarks.map((item: unknown) => {
       const b = object(item, ["name", "at", "gestures"], "bookmark");
       return {
         name: text(b.name, 48, "岔口名称"),
         at: number(b.at, 0, duration, "岔口位置"),
-        gestures: gestures(b.gestures, duration),
+        gestures: gestures(b.gestures, duration, work, allowPluck),
       };
     }),
   };
@@ -175,8 +198,13 @@ export function serializeSession(session: Session): string {
   return JSON.stringify(parseSession(JSON.stringify(session)), null, 2) + "\n";
 }
 export function withGesture(session: Session, gesture: Gesture): Session {
-  const next = {
+  // A direct pluck is only expressible in @1, so this editing operation
+  // upgrades an older @0 session explicitly rather than relabeling it.
+  const format: SessionFormat =
+    gesture.kind === "pluck" ? "drift-study-session@1" : session.format;
+  const next: Session = {
     ...session,
+    format,
     gestures: [
       ...session.gestures.filter((g) => g.at <= gesture.at),
       structuredClone(gesture),
@@ -184,7 +212,12 @@ export function withGesture(session: Session, gesture: Gesture): Session {
     cursor: gesture.at,
   };
   // Same-time order is meaningful; a new past action retires only the later path.
-  gestures(next.gestures, session.work.duration);
+  gestures(
+    next.gestures,
+    session.work.duration,
+    session.work,
+    format === "drift-study-session@1",
+  );
   return next;
 }
 
@@ -229,7 +262,7 @@ export function trajectory(session: Session): Span[] {
     span = { ...span, ...evolved(span, gesture.at), start: gesture.at };
     if (gesture.kind === "rules") span.rules = gesture.rules;
     else if (gesture.kind === "freeze") span.frozen = gesture.frozen;
-    else span.layers = gesture.layers;
+    else if (gesture.kind === "layers") span.layers = gesture.layers;
   }
   spans.push(span);
   trajectories.set(session, spans);

@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { createSession, withGesture } from "./model";
-import { prepare, renderStereo, renderWav } from "./kernel";
+import { prepare, renderStereo, renderWav, voicesAt } from "./kernel";
 
 const energy = (values: Float32Array) =>
   values.reduce((sum, v) => sum + v * v, 0) / values.length;
@@ -79,5 +79,101 @@ describe("Drift study shared audio kernel", () => {
     expect(
       Math.abs(view.getInt16(before.length - 2, true)),
     ).toBeLessThanOrEqual(1);
+  });
+});
+describe("Drift study plucks and visual voice projection", () => {
+  const short = (session = createSession()) => {
+    session.work.duration = 12;
+    return session;
+  };
+  it("keeps no-pluck rendering identical across the historical and current labels", () => {
+    const historical = short({
+      ...createSession(),
+      format: "drift-study-session@0",
+    });
+    const current = short(createSession());
+    expect(prepare(historical).notes.every((note) => !note.manual)).toBe(true);
+    expect(renderStereo(historical, 0, 8000, 8000)).toEqual(
+      renderStereo(current, 0, 8000, 8000),
+    );
+  });
+  it("adds an audible pluck attack and changes the finite PCM and WAV", () => {
+    const base = short(createSession());
+    const plucked = short(
+      withGesture(createSession(), {
+        at: 2.4,
+        kind: "pluck",
+        note: 0,
+        layers: "both",
+      }),
+    );
+    const before = renderStereo(base, 2.4, 4096, 8000);
+    const after = renderStereo(plucked, 2.4, 4096, 8000);
+    expect(after.left).not.toEqual(before.left);
+    expect(after.right).not.toEqual(before.right);
+    expect(energy(after.left)).toBeGreaterThan(energy(before.left));
+    const reference = renderWav(base, 8000),
+      withPluck = renderWav(plucked, 8000);
+    expect(withPluck.length).toBe(reference.length);
+    expect(withPluck).not.toEqual(reference);
+  });
+  it("reconstructs plucks identically across block boundaries and seeks", () => {
+    let s = short(createSession());
+    s = withGesture(s, { at: 1.05, kind: "pluck", note: 3, layers: "b" });
+    s = withGesture(s, { at: 2.7, kind: "pluck", note: 0, layers: "a" });
+    const whole = renderStereo(s, 0, 24000, 8000);
+    const pieces = new Float32Array(24000);
+    for (let i = 0; i < 24000; i += 128)
+      pieces.set(
+        renderStereo(s, i / 8000, Math.min(128, 24000 - i), 8000).left,
+        i,
+      );
+    expect(pieces).toEqual(whole.left);
+    expect(renderStereo(s, 1.05, 1600, 8000).left).toEqual(
+      whole.left.slice(8400, 10000),
+    );
+  });
+  it("reports bounded, envelope-true voices and nothing after the finite end", () => {
+    const s = short(createSession());
+    for (const t of [0, 0.3, 1.2, 2.4, 6, 11.9]) {
+      const voices = voicesAt(s, t);
+      expect(voices.length).toBeLessThanOrEqual(32);
+      const keys = voices.map((voice) => voice.note + ":" + voice.layer);
+      expect(new Set(keys).size).toBe(keys.length);
+      for (const voice of voices) {
+        expect(voice.level).toBeGreaterThan(0);
+        expect(voice.level).toBeLessThanOrEqual(1);
+        expect(voice.age).toBeGreaterThanOrEqual(0);
+        expect(voice.duration).toBeGreaterThan(0);
+        expect(voice.manual).toBe(false);
+        expect(["a", "b"]).toContain(voice.layer);
+        expect(voice.note).toBeGreaterThanOrEqual(0);
+        expect(voice.note).toBeLessThan(s.work.notes.length);
+      }
+    }
+    const muted = withGesture(s, { at: 1, kind: "layers", layers: "b" });
+    const at = voicesAt(muted, 2.4);
+    expect(at.some((voice) => voice.layer === "a")).toBe(false);
+    expect(at.some((voice) => voice.layer === "b")).toBe(true);
+    expect(voicesAt(s, 12)).toEqual([]);
+    expect(voicesAt(s, 20)).toEqual([]);
+    expect(voicesAt(s, -3)).toEqual([]);
+  });
+  it("marks direct pluck voices for the field view", () => {
+    const s = withGesture(createSession(), {
+      at: 0.9,
+      kind: "pluck",
+      note: 0,
+      layers: "both",
+    });
+    const voices = voicesAt(s, 0.95);
+    const manual = voices.filter((voice) => voice.manual);
+    expect(manual.map((voice) => voice.layer).sort()).toEqual(["a", "b"]);
+    expect(manual.every((voice) => voice.note === 0)).toBe(true);
+    expect(
+      voices.every(
+        (voice) => voice.note >= 0 && voice.note < s.work.notes.length,
+      ),
+    ).toBe(true);
   });
 });

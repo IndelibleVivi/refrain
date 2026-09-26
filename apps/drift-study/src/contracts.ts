@@ -21,14 +21,16 @@ export interface Work {
 export type Gesture =
   | { at: number; kind: "rules"; rules: Rules }
   | { at: number; kind: "freeze"; frozen: boolean }
-  | { at: number; kind: "layers"; layers: Layers };
+  | { at: number; kind: "layers"; layers: Layers }
+  | { at: number; kind: "pluck"; note: number; layers: Layers };
 export interface Bookmark {
   name: string;
   at: number;
   gestures: Gesture[];
 }
+export type SessionFormat = "drift-study-session@0" | "drift-study-session@1";
 export interface Session {
-  format: "drift-study-session@0";
+  format: SessionFormat;
   work: Work;
   gestures: Gesture[];
   cursor: number;
