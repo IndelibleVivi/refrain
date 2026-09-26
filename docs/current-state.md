@@ -1,6 +1,6 @@
 # Current state
 
-Last reconciled: 2026-09-16. This page describes source and acceptance status, not a live deployment inventory.
+Last updated: 2026-09-26 for Drift study; production evidence below retains its own dates. This page describes source and acceptance status, not a live deployment inventory.
 
 ## Available in this source tree
 
@@ -16,6 +16,12 @@ Last reconciled: 2026-09-16. This page describes source and acceptance status, n
 - The Skill-only Plugin is a **0.3.0 source candidate**. Source presence does not establish Plugin installation, activation, directory publication, or a configured MCP connection.
 - Exact local production uses group level/placement, low-pass, saturation, delay, room, and fade. It preserves music and existing authorities while adding a new exact binding. It does not add general automation, a DAW, per-voice routing, or model hearing.
 - Local extension packs separate installed metadata, hydrated assets, authoring shelf, execution closure, and archive pins. Pack-carried language is explicit in the AIR vocabulary, never an ambient modification of old works.
+
+## Drift study experiment
+
+The independent [Drift study](../apps/drift-study/README.md) is source-complete and locally exercised in Chromium. `npm run drift` opens a finite 72-second synthetic route with phase drift, evolving attack/tails, freeze/release, layer choice, undo/redo, named return points, local persistence, exact-version experiment JSON and a complete stereo WAV export. It does not import AIR or produce native bindings, artifacts or receipts, and does not change the production Canvas.
+
+The 2026-09-26 candidate passed 17 focused model/audio tests, the root typecheck and its production build. Local browser checks at desktop and 390px exercised explicit playback with nonzero AudioWorklet PCM, freeze while transport continues, layer/history/drag controls, JSON download/reopen and invalid-file recovery, localStorage restore, keyboard controls, finite ending, named returns and WAV download. The actual Vite development entry also exercised cancellation during deferred audio-module loading, subsequent explicit playback and Escape rollback of a drag, with no console warnings or errors. The downloaded WAV contained 72 seconds of nonzero stereo PCM at 22,050 Hz. These are local engineering observations; physical mobile devices and owner listening/visual acceptance remain unverified. This experiment has not been deployed to Pages or integrated into MCP.
 
 ## Work custody and continuation candidate
 

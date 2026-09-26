@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#ecece5" />
+    <title>Drift study · Refrain</title>
+    <link rel="icon" href="data:," />
+  </head>
+  <body>
+    <main class="desk">
+      <header class="masthead">
+        <a
+          class="wordmark"
+          href="https://github.com/IndelibleVivi/refrain"
+          target="_blank"
+          rel="noreferrer"
+          >refrain<span>·</span></a
+        >
+        <span class="edition">SOUND EXPERIMENT / 02</span>
+        <div class="file-actions">
+          <button id="open" class="quiet">打开实验</button>
+          <button id="save" class="save">
+            保存实验 <span aria-hidden="true">↗</span>
+          </button>
+          <input id="file" type="file" accept=".json,application/json" hidden />
+        </div>
+      </header>
+      <section class="introduction" aria-labelledby="title">
+        <div>
+          <p class="eyebrow">A SMALL STUDY IN RETURNING</p>
+          <h1 id="title">Drift study<span class="title-dot">.</span></h1>
+        </div>
+        <p class="premise">
+          两道回声，慢慢错开。<br /><span>拨动它，或者，让它自己发生。</span>
+        </p>
+      </section>
+      <section class="instrument" aria-label="声音实验台">
+        <div class="sound-side">
+          <div
+            class="field"
+            id="field"
+            role="group"
+            tabindex="0"
+            aria-label="可拨动的声场：左右方向键改变偏移，上下方向键改变余响；也可使用旁边的滑杆"
+          >
+            <canvas id="visual" aria-hidden="true"></canvas>
+            <div class="field-top">
+              <span class="field-title"><i></i> TWO SHADOWS OF ONE PHRASE</span
+              ><span id="field-state">等待触碰</span>
+            </div>
+            <div class="field-coordinate">
+              <span id="phase">Δ 0.00</span><span>相对位置 / 一圈</span>
+            </div>
+            <div class="field-bottom">
+              <span
+                ><b class="a-key">A</b> 起音渐隐
+                <b class="b-key">B</b> 余响渐长</span
+              ><span class="drag-hint">拖动：左右偏移 · 上下余响</span>
+            </div>
+          </div>
+          <div class="transport">
+            <button id="play" class="play" aria-label="开始聆听">
+              <span id="play-icon" aria-hidden="true">▶</span
+              ><span id="play-label">开始聆听</span>
+            </button>
+            <button
+              id="restart"
+              class="restart"
+              aria-label="回到开头"
+              title="回到开头，保留已记录的操作"
+            >
+              ↶
+            </button>
+            <div class="time-track">
+              <div class="time-label">
+                <span id="elapsed">0:00</span
+                ><span id="transport-status">一条 72 秒的默认路线</span
+                ><span id="duration">1:12</span>
+              </div>
+              <input
+                id="seek"
+                aria-label="播放位置"
+                type="range"
+                min="0"
+                max="72"
+                step="0.1"
+                value="0"
+              />
+            </div>
+            <label class="volume"
+              ><span aria-hidden="true">◖</span
+              ><input
+                id="volume"
+                aria-label="监听音量"
+                type="range"
+                min="0"
+                max="100"
+                value="65"
+            /></label>
+          </div>
+        </div>
+        <aside class="controls" aria-label="改变这次演奏">
+          <div class="controls-heading">
+            <span>让它怎样回来</span><span class="control-index">01—03</span>
+          </div>
+          <label class="rule"
+            ><span class="rule-heading"
+              ><span>偏移速度</span><output id="drift-value">48%</output></span
+            ><input
+              aria-label="偏移速度"
+              id="drift"
+              type="range"
+              min="0"
+              max="100"
+              step="1"
+              value="48"
+            /><span class="range-ends"
+              ><span>贴近</span><span>走散</span></span
+            ></label
+          >
+          <label class="rule"
+            ><span class="rule-heading"
+              ><span>起音消散</span
+              ><output id="erosion-value">62%</output></span
+            ><input
+              aria-label="起音消散"
+              id="erosion"
+              type="range"
+              min="0"
+              max="100"
+              step="1"
+              value="62"
+            /><span class="range-ends"
+              ><span>清晰</span><span>柔化</span></span
+            ></label
+          >
+          <label class="rule"
+            ><span class="rule-heading"
+              ><span>余响生长</span><output id="bloom-value">65%</output></span
+            ><input
+              aria-label="余响生长"
+              id="bloom"
+              type="range"
+              min="0"
+              max="100"
+              step="1"
+              value="65"
+            /><span class="range-ends"
+              ><span>短促</span><span>漫开</span></span
+            ></label
+          >
+          <button id="freeze" class="freeze" aria-pressed="false">
+            <span id="freeze-symbol" aria-hidden="true">✳</span
+            ><span id="freeze-label">冻结这次相遇</span>
+          </button>
+          <p id="freeze-note" class="control-note">停住演化，声音继续回来。</p>
+          <fieldset class="layer-choice">
+            <legend>留下哪一层</legend>
+            <label
+              ><input type="radio" name="layers" value="both" checked /><span
+                >两层</span
+              ></label
+            ><label
+              ><input type="radio" name="layers" value="a" /><span
+                >A <small>起音</small></span
+              ></label
+            ><label
+              ><input type="radio" name="layers" value="b" /><span
+                >B <small>余响</small></span
+              ></label
+            >
+          </fieldset>
+          <div class="history-actions">
+            <button id="undo" disabled>↶ 撤回</button
+            ><button id="redo" disabled>重做 ↷</button>
+          </div>
+        </aside>
+      </section>
+      <section class="keeps" aria-labelledby="keeps-title">
+        <div class="keeps-intro">
+          <p class="eyebrow">SOMETHING TO RETURN TO</p>
+          <h2 id="keeps-title">留下一个岔口。</h2>
+          <p>保留此刻的规则和走过的路。<br />回来时，还可以往别处走。</p>
+        </div>
+        <div class="keeps-work">
+          <form id="bookmark-form">
+            <label class="sr-only" for="bookmark-name">给这一刻命名</label
+            ><input
+              id="bookmark-name"
+              maxlength="48"
+              placeholder="给这一刻一个名字…"
+              autocomplete="off"
+            /><button class="keep-button" type="submit">
+              保留这一刻 <span aria-hidden="true">＋</span>
+            </button>
+          </form>
+          <div id="bookmarks" class="bookmarks">
+            <p class="empty-keeps">还没有留下岔口。随时都可以。</p>
+          </div>
+        </div>
+      </section>
+      <div class="session-status">
+        <p id="notice" role="status" aria-live="polite">
+          按下播放，声音才会开始。
+        </p>
+        <span id="storage">仅在本机</span>
+      </div>
+      <details class="underneath">
+        <summary>这件实验里有什么 <span aria-hidden="true">＋</span></summary>
+        <div class="underneath-content">
+          <div>
+            <h3>材料、做法、这一遍</h3>
+            <p>
+              初始短句 E4 · B4 · F♯5 ·
+              A4，两条独立的时间轨迹。文件保存音符、循环长度、演化规则、带时间的操作与命名岔口。回到较早的位置再修改，会从那里走出新的一支。
+            </p>
+            <p>
+              这是独立的合成声音实验。它不导入 AIR 或原生 binding，不签发
+              Refrain receipt；它保存的是这件乐器和这次演奏。
+            </p>
+          </div>
+          <div>
+            <h3>带走声音</h3>
+            <p>
+              WAV
+              渲染完整路线和已记录的操作。监听音量只影响此处播放，导出使用固定的实验音量。重新打开实验文件不会自动发声。
+            </p>
+            <button id="export-wav" class="export-wav">导出这一遍 WAV ↗</button
+            ><button id="new-session" class="quiet new-session">
+              回到最初的实验
+            </button>
+          </div>
+        </div>
+      </details>
+      <footer>
+        <span>REFRAIN HUMS AN AIR.</span
+        ><span>DRIFT STUDY · LOCAL EXPERIMENT</span>
+      </footer>
+    </main>
+    <script type="module" src="/src/app.ts"></script>
+  </body>
+</html>

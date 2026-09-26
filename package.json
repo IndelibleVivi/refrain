@@ -45,11 +45,14 @@
     "test:fast": "npm run test",
     "test:mcp-host": "npm run build:mcp-host && playwright test --config playwright.mcp-host.config.ts",
     "test:watch": "vitest",
-    "typecheck": "tsc -b",
+    "typecheck": "tsc -b && npm run typecheck --workspace @refrain/drift-study",
     "try": "npm run prepare:demo && npm run try --workspace @refrain/presentation",
     "build:try": "npm run prepare:demo && npm run build:try --workspace @refrain/presentation",
     "test:try": "npm run build:try && playwright test --config playwright.presentation.config.ts",
-    "prepare:demo": "tsx scripts/prepare-demo.ts"
+    "prepare:demo": "tsx scripts/prepare-demo.ts",
+    "drift": "npm run dev --workspace @refrain/drift-study",
+    "build:drift": "npm run build --workspace @refrain/drift-study",
+    "test:drift": "npm run typecheck --workspace @refrain/drift-study && vitest run apps/drift-study --maxWorkers=2 && npm run build:drift"
   },
   "devDependencies": {
     "@playwright/test": "1.62.1",

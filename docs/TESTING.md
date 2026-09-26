@@ -24,6 +24,12 @@ and workspace builds). Sound-candidate, export, package, complete-piece, and rel
 work keeps its additional gates in [`AGENTS.md`](../AGENTS.md); the command table
 above does not replace them.
 
+## Drift study lane
+
+`npm run test:drift` typechecks the independent experiment, runs its model/audio tests and builds its relative-path static output. The model tests cover frozen evolution with a moving loop, continuity on release, branching from a past gesture, immutable bookmarks and exact-version file rejection/round trips. Audio tests cover actual onset/phase agreement, timbre and layer effects, seek/block equality and finite stereo WAV output. Root `typecheck`, `test` and workspace `build` include this app through their existing CI jobs.
+
+For browser changes, serve `npm run drift` and check desktop/mobile explicit play, pause/restart/seek/end, freeze/release, layer choice, undo/redo, one undo entry per drag, keyboard controls, named returns, JSON save/open including malformed-file recovery, localStorage restoration and a real WAV download. Confirm no AudioContext before Play, nonzero worklet output after Play, no horizontal overflow and clean console output. Browser observations and screenshots remain local evidence under `output/playwright/`; this lane is separate from AIR/Canvas, physical-device and listening acceptance. [Experiment controls and format](../apps/drift-study/README.md).
+
 ## Local CLI lane
 
 After `npm ci`, link the source tree once and verify it from another working directory:

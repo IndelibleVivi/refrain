@@ -43,6 +43,12 @@ This local URL belongs to your computer. The public demo runs on GitHub Pages. S
 | Listen locally, save WAV/MIDI, or try acoustic sound   | [First-use guide](docs/GETTING-STARTED.md).                                                                                                                  |
 | Run a private HTTP connection for a remote host        | [Operator self-hosting guide](docs/runbooks/self-host-mcp.md).                                                                                               |
 
+## A playable experiment: Drift study
+
+Run `npm run drift` after `npm ci`, then open `http://127.0.0.1:4387`. Two shadows of one phrase gradually drift apart: A loses its sharp attack while B grows a longer tail. Play the 72-second route, drag the field, freeze the evolution, keep one layer, undo, or return to a named moment. Save the editable experiment as JSON and the complete performance as WAV.
+
+This separate, Chinese-language study uses local synthesis with no sound downloads or model calls. It has its own experimental work/session format and does not import AIR or issue a Refrain artifact or receipt. It is available in this source tree, not the hosted demo. [Controls, files and verification](apps/drift-study/README.md).
+
 ## Your Player, your works
 
 The first-listen page is the same Player used by `refrain open`, preloaded with two examples. The current work fills one listening space: title, musical map and a unified transport. The playlist opens as a side sheet; **Inside this air** reveals passage, motif and exact-selection details when you want to explore. Open **Playlist** to add multiple `.refrain.json` works, reorder/remove entries, name and save a `.refrain-playlist.json`, then reopen it later. Previous/next and sequential, repeat-all, shuffle and repeat-one share the real playback transport. Saved lists retain complete works and their selected exact sound, not sample files or private photos; nothing is uploaded.

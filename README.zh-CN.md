@@ -43,6 +43,12 @@ npm run try
 | 本地听、保存 WAV/MIDI、尝试原声音色 | [首次使用指南](docs/GETTING-STARTED.md)。                                                                                    |
 | 为远程 host 配置私人 HTTP 连接      | [Self-hosting 操作指南](docs/runbooks/self-host-mcp.md)。                                                                    |
 
+## 一个可玩的实验：Drift study
+
+完成 `npm ci` 后运行 `npm run drift`，打开 `http://127.0.0.1:4387`。同一个短句的两道回声渐渐错开：A 的起音逐渐柔化，B 的余响逐渐变长。可以听完 72 秒的默认路线，也可以拖动声场、冻结演化、留下单层、撤回，或回到命名过的某一刻。JSON 保存可继续修改的实验，WAV 保存完整的一遍声音。
+
+这是独立的中文交互实验，使用本地合成，不下载音源、不调用模型。它有自己的 work/session 格式，不导入 AIR，也不生成 Refrain artifact 或 receipt。目前入口在源码中，未部署到公共试玩页。[操作、文件与验证说明](apps/drift-study/README.md)。
+
 ## 自己的 Player，自己的作品
 
 试听入口就是 `refrain open` 使用的同一个 Player，只是预装了两首示例。当前作品独占一整个聆听空间：标题、音乐画面和统一播放控制。歌单从侧边展开；想读声部、motif 与精确选段时，再打开 **走进这首 air**。打开 **播放列表**，可一次加入多个 `.refrain.json`、排序、移除、命名，再保存为 `.refrain-playlist.json` 随时重开。上一首/下一首、顺序、列表循环、随机、单曲循环共用真实播放状态。保存的列表带上完整作品与所选精确声音，不带音色文件或私人照片；文件不会上传。
