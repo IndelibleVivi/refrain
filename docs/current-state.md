@@ -1,6 +1,6 @@
 # Current state
 
-Last updated: 2026-09-26 for Drift study; production evidence below retains its own dates. This page describes source and acceptance status, not a live deployment inventory.
+Last updated: 2026-09-29 for Breath study; production evidence below retains its own dates. This page describes source and acceptance status, not a live deployment inventory.
 
 ## Available in this source tree
 
@@ -16,6 +16,12 @@ Last updated: 2026-09-26 for Drift study; production evidence below retains its 
 - The Skill-only Plugin is a **0.3.0 source candidate**. Source presence does not establish Plugin installation, activation, directory publication, or a configured MCP connection.
 - Exact local production uses group level/placement, low-pass, saturation, delay, room, and fade. It preserves music and existing authorities while adding a new exact binding. It does not add general automation, a DAW, per-voice routing, or model hearing.
 - Local extension packs separate installed metadata, hydrated assets, authoring shelf, execution closure, and archive pins. Pack-carried language is explicit in the AIR vocabulary, never an ambient modification of old works.
+
+## Breath study experiment
+
+The independent [Breath study](../apps/breath-study/README.md) is source-complete and locally exercised in Chromium. `npm run breath` opens an authored three-phrase melody with direct note audition, explicit breath insertion, a synthetic pluck/glass morph, a short stereo echo field, original/variation comparison, undo/redo, strict experiment JSON save/reopen, local persistence and complete stereo WAV export. The experiment does not import AIR or issue native receipts. Its separate [nylon companion](../examples/breath-study/README.md) carries the same 36 melody pitches and beat onsets in AIR@1 and Artifact@3, with the existing FreePats candidate and an explicit close-room production binding. No new external sound pack is installed.
+
+The 2026-09-29 candidate passed 19 focused model/kernel/companion tests, the root typecheck and its production build. Forty-eight local browser assertions across the development entry, relative-path built preview and native companion covered nonzero PCM, pre-gesture silence, play/pause/resume/seek/end, note audition, original/variation preservation, drag/undo/cancel, keyboard and reduced motion, JSON download/reopen/invalid-file recovery, local restore, WAV download and desktop/390px layout. Deferred play and audition cancellation, simulated hidden-page events, rejected AudioContext unlock, worker failure/retry and a duration-exceeding edit were exercised. The downloaded WAV reproduced the saved experiment byte-for-byte; the companion download matched the checked-in artifact exactly. Native export and ordinary Player playback prepared the companion's exact 18-asset closure. Console warnings/errors were empty during ordinary playback checks. These are local engineering observations, not physical-device/Safari behavior or owner listening/visual acceptance. This experiment has not been deployed to Pages or integrated into MCP.
 
 ## Drift study experiment
 

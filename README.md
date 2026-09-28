@@ -43,6 +43,12 @@ This local URL belongs to your computer. The public demo runs on GitHub Pages. S
 | Listen locally, save WAV/MIDI, or try acoustic sound   | [First-use guide](docs/GETTING-STARTED.md).                                                                                                                  |
 | Run a private HTTP connection for a remote host        | [Operator self-hosting guide](docs/runbooks/self-host-mcp.md).                                                                                               |
 
+## A new sound leaf: Breath study
+
+Run `npm run breath` and open `http://127.0.0.1:4390`. Pull open the space inside a melody, morph a warm synthetic pluck toward glass, touch individual notes, and compare the original with your variation. Undo, local JSON save/reopen and complete WAV export keep the result portable. No samples or model calls are needed. A separate native nylon-guitar companion carries the same melody through AIR and an exact sampled binding. [Play, save, and hear the companion](apps/breath-study/README.md).
+
+This is an independent source experiment, not a replacement Canvas or a deployed public page. Its sound and visual direction remain listening candidates.
+
 ## A playable experiment: Drift study
 
 Run `npm run drift` after `npm ci`, then open `http://127.0.0.1:4387`. Two shadows of one phrase gradually drift apart: A loses its sharp attack while B grows a longer tail. Play the 72-second route, tap its notes, drag the field, freeze the evolution, keep one layer, undo, or return to a named moment. Note glows follow the sound envelopes; direct plucks leave ripples and become part of the saved performance. Save the editable experiment as JSON and the complete performance as WAV.

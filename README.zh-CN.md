@@ -43,6 +43,12 @@ npm run try
 | 本地听、保存 WAV/MIDI、尝试原声音色 | [首次使用指南](docs/GETTING-STARTED.md)。                                                                                    |
 | 为远程 host 配置私人 HTTP 连接      | [Self-hosting 操作指南](docs/runbooks/self-host-mcp.md)。                                                                    |
 
+## 新的声音 leaf：Breath study
+
+运行 `npm run breath`，打开 `http://127.0.0.1:4390`。把旋律中的一处空隙拉开，让温暖的合成拨弦渐渐折成玻璃；可以点奏音符、对照原句与变形、撤回，并保存 JSON 或导出完整 WAV。实验不下载音色，不调用模型。另附同一旋律的正式 AIR／尼龙吉他 Artifact，保留独立的精确采样 binding。[操作、保存与采样版试听](apps/breath-study/README.md)。
+
+这是独立的源码实验，未替换正式 Canvas，未部署到公共试玩页；声音和视觉仍是待亲自体验的候选。
+
 ## 一个可玩的实验：Drift study
 
 完成 `npm ci` 后运行 `npm run drift`，打开 `http://127.0.0.1:4387`。同一个短句的两道回声渐渐错开：A 的起音逐渐柔化，B 的余响逐渐变长。可以听完 72 秒的默认路线，也可以点音符拨响、拖动声场、冻结演化、留下单层、撤回，或回到命名过的某一刻。音符光迹跟随声音的起落，亲手拨出的涟漪也会进入保存的演奏。JSON 保存可继续修改的实验，WAV 保存完整的一遍声音。

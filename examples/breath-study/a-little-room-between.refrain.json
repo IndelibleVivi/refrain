@@ -1,0 +1,656 @@
+{
+  "format": "refrain-artifact@3-experimental",
+  "source": {
+    "format": "air@1-experimental",
+    "title": "A little room between",
+    "conductor": {
+      "tempo": 84,
+      "meters": [
+        {
+          "bar": 1,
+          "meter": "4/4"
+        }
+      ]
+    },
+    "vocabulary": {
+      "format": "refrain-air-vocabulary-closure@0-experimental",
+      "id": "refrain-draft-language@1",
+      "instruments": [
+        {
+          "id": "nylon_guitar",
+          "label": "Nylon guitar",
+          "family": "pitched",
+          "midiMin": 40,
+          "midiMax": 88,
+          "status": "active",
+          "authoringMeaning": "A plucked nylon-string voice with a soft attack and short natural decay."
+        }
+      ],
+      "techniques": [],
+      "contentSha256": "bea7b0c2c52b9eeb3c99f786ec767dc3f0269c502b0c831f8896e29b8ae541ca"
+    },
+    "motifs": {},
+    "sections": [
+      {
+        "id": "first-light",
+        "startBar": 1,
+        "bars": 4
+      },
+      {
+        "id": "reflection",
+        "startBar": 5,
+        "bars": 4
+      },
+      {
+        "id": "landing",
+        "startBar": 9,
+        "bars": 4
+      }
+    ],
+    "voices": [
+      {
+        "id": "thread",
+        "instrument": "nylon_guitar",
+        "role": "lead",
+        "gainDb": -3,
+        "pan": -0.12,
+        "realize": [
+          {
+            "id": "melody-1",
+            "section": "first-light",
+            "kind": "literal",
+            "part": "E4/8.@mp B4/8.@p C#5/4.@mp E5/4@mf | F#5/4.@mf E5/4.@mp C#5/4@p | B4/4.@mp G#4/4.@p F#4/4@p | E4/2@mp B4/2@p",
+            "gate": 0.88
+          },
+          {
+            "id": "melody-2",
+            "section": "reflection",
+            "kind": "literal",
+            "part": "E4/8.@mp B4/8.@p C#5/4.@mp E5/4@mf | F#5/4.@mf G#5/4.@mp E5/4@p | C#5/4.@mp B4/4.@p G#4/4@p | F#4/2@mp E4/2@p",
+            "gate": 0.88
+          },
+          {
+            "id": "melody-3",
+            "section": "landing",
+            "kind": "literal",
+            "part": "E4/8.@mp B4/8.@p C#5/4.@mp E5/4@mf | F#5/4.@mf E5/4.@mp C#5/4@p | B4/4.@mp G#4/4.@p F#4/4@p | E4/2@mp E4/2@pp",
+            "gate": 0.88
+          }
+        ]
+      },
+      {
+        "id": "ground",
+        "instrument": "nylon_guitar",
+        "role": "bass",
+        "gainDb": -9,
+        "pan": 0.08,
+        "part": "E2/1@mp | C#3/1@mp | A2/1@mp | B2/1@mp | E2/1@mp | C#3/1@mp | A2/1@mp | B2/1@mp | E2/1@mp | C#3/1@mp | A2/1@mp | E2/1@mp"
+      },
+      {
+        "id": "resonance-1",
+        "instrument": "nylon_guitar",
+        "role": "harmony",
+        "gainDb": -12,
+        "pan": 0.23,
+        "part": "r/16 G#3/2@pp r/4. r/16 | r/16 G#3/2@pp r/4. r/16 | r/16 A3/2@pp r/4. r/16 | r/16 F#3/2@pp r/4. r/16 | r/16 G#3/2@p r/4. r/16 | r/16 G#3/2@p r/4. r/16 | r/16 A3/2@p r/4. r/16 | r/16 F#3/2@p r/4. r/16 | r/16 G#3/2@pp r/4. r/16 | r/16 G#3/2@pp r/4. r/16 | r/16 A3/2@pp r/4. r/16 | r/16 G#3/2@pp r/4. r/16"
+      },
+      {
+        "id": "resonance-2",
+        "instrument": "nylon_guitar",
+        "role": "harmony",
+        "gainDb": -12,
+        "pan": 0.32,
+        "part": "r/1 | r/1 | r/1 | r/1 | r/8 B3/2@p r/4. | r/8 C#4/2@p r/4. | r/8 C#4/2@p r/4. | r/8 B3/2@p r/4. | r/8 B3/2@pp r/4. | r/8 C#4/2@pp r/4. | r/8 C#4/2@pp r/4. | r/8 B3/2@pp r/4."
+      },
+      {
+        "id": "resonance-3",
+        "instrument": "nylon_guitar",
+        "role": "harmony",
+        "gainDb": -12,
+        "pan": 0.41000000000000003,
+        "part": "r/8. F#4/2@pp r/4 r/16 | r/8. D#4/2@pp r/4 r/16 | r/8. G#4/2@pp r/4 r/16 | r/8. E4/2@pp r/4 r/16 | r/8. F#4/2@p r/4 r/16 | r/8. D#4/2@p r/4 r/16 | r/8. G#4/2@p r/4 r/16 | r/8. E4/2@p r/4 r/16 | r/8. F#4/2@pp r/4 r/16 | r/8. D#4/2@pp r/4 r/16 | r/8. G#4/2@pp r/4 r/16 | r/8. E4/2@pp r/4 r/16"
+      }
+    ],
+    "key": "E major"
+  },
+  "receipt": {
+    "format": "refrain-receipt@1-experimental",
+    "sourceRevision": "sha256:c24a9d6b743d597f901e197ddaca3241ee8add13899f496241038e3651905e73",
+    "airId": "sha256:c24a9d6b743d597f901e197ddaca3241ee8add13899f496241038e3651905e73",
+    "sourceFormat": "air@1-experimental",
+    "verification": {
+      "contract": "musical-relation@1-experimental",
+      "status": "not_applicable",
+      "motifLinks": [],
+      "orchestrationLinks": [],
+      "recurrences": [],
+      "contrasts": [],
+      "absences": []
+    },
+    "receiptId": "sha256:0652b33586579fa51cef833d40816ce9dcc846095276964cdb92f91113952f9f"
+  },
+  "performanceBindings": [
+    {
+      "format": "refrain-performance-binding@1-experimental",
+      "id": "breath-close-room@1",
+      "requiredInstrumentIds": ["nylon_guitar"],
+      "soundProfile": {
+        "format": "refrain-sound-profile@2-experimental",
+        "id": "f-acoustic-chamber@1.production",
+        "vocabulary": {
+          "id": "refrain-core-instruments@0",
+          "sha256": "2fd91e85dba740981accdbaed41b5508387fef15672633eb39ec06752abae418"
+        },
+        "coverage": [
+          "air_pad",
+          "chamber_strings",
+          "clarinet",
+          "clean_bass",
+          "dust_texture",
+          "flute",
+          "glass_bell",
+          "harp",
+          "lattice_pluck",
+          "marimba",
+          "nylon_guitar",
+          "prism_lead",
+          "rhythm_pulse",
+          "soft_percussion",
+          "solo_cello",
+          "sub_bass",
+          "warm_piano"
+        ],
+        "selections": {
+          "air_pad": {
+            "candidateChain": [
+              {
+                "id": "air-pad-subtractive-original",
+                "sha256": "3717480602f5d3760f07d3a4531ea5ae59c228de84492fec420d6be793848d48"
+              }
+            ],
+            "fallbackPolicy": "strict",
+            "profileGainDb": -4
+          },
+          "chamber_strings": {
+            "candidateChain": [
+              {
+                "id": "chamber-strings-vsco-sections-full",
+                "sha256": "45adc125d09ac4c08d1bf6f14e56898806768837f1d2ca0a386b6ebc3d9307de"
+              }
+            ],
+            "fallbackPolicy": "strict"
+          },
+          "clarinet": {
+            "candidateChain": [
+              {
+                "id": "clarinet-vsco-suslong-full",
+                "sha256": "144e2a8e089355f8b8101844640ea30f38054dd2d5c1cb1f7403614e73bf783f"
+              }
+            ],
+            "fallbackPolicy": "strict"
+          },
+          "clean_bass": {
+            "candidateChain": [
+              {
+                "id": "clean-bass-subtractive-original",
+                "sha256": "26ea8be6de3ead654e262ff34875446cd890bcfd95e8d70ab3325ef3018f0eb2"
+              }
+            ],
+            "fallbackPolicy": "strict"
+          },
+          "dust_texture": {
+            "candidateChain": [
+              {
+                "id": "dust-texture-subtractive-original",
+                "sha256": "dd3959ff09dd94d8fdeaf956cee408701d02d261f08cfd8806ded7b3ea4e4084"
+              }
+            ],
+            "fallbackPolicy": "strict",
+            "profileGainDb": -6
+          },
+          "flute": {
+            "candidateChain": [
+              {
+                "id": "flute-vsco-susnv-full",
+                "sha256": "1f1b5d89eb3330d643c04e2194efbefb77827164364856463a67220b4fc1ca40"
+              }
+            ],
+            "fallbackPolicy": "strict"
+          },
+          "glass_bell": {
+            "candidateChain": [
+              {
+                "id": "glass-bell-modal-original",
+                "sha256": "23a1c109541dd8fcbda429e9ef547977c42d1ea3c8f56254cd86a6090f5b3e66"
+              }
+            ],
+            "fallbackPolicy": "strict",
+            "profileGainDb": -3
+          },
+          "harp": {
+            "candidateChain": [
+              {
+                "id": "harp-vsco-full",
+                "sha256": "d995945514b0ff70e0edfdd373e98af78c65f9fedcac9a342351d369d2ac378a"
+              }
+            ],
+            "fallbackPolicy": "strict"
+          },
+          "lattice_pluck": {
+            "candidateChain": [
+              {
+                "id": "lattice-pluck-subtractive-original",
+                "sha256": "ab75f87979d0d291f331f7eaa9dc9f9bf4e1f0e80ec668f253a2c6bcde87e73b"
+              }
+            ],
+            "fallbackPolicy": "strict",
+            "profileGainDb": -3
+          },
+          "marimba": {
+            "candidateChain": [
+              {
+                "id": "marimba-vsco-full",
+                "sha256": "a0285d6815659b861bc425476defc04b9cfbe3ff23df2929bfa01d6375bcf29d"
+              }
+            ],
+            "fallbackPolicy": "strict"
+          },
+          "nylon_guitar": {
+            "candidateChain": [
+              {
+                "id": "nylon-guitar-freepats-spanish-classical",
+                "sha256": "126009345d28ab7f9ae3bf99ca4b632602d3871cdbf3854c8d9dd7733f05bdb8"
+              }
+            ],
+            "fallbackPolicy": "strict"
+          },
+          "prism_lead": {
+            "candidateChain": [
+              {
+                "id": "prism-lead-subtractive-original",
+                "sha256": "090cfaa42f686657fe422d932239abec8f55577f7a5291c1f6eb821e1b530d53"
+              }
+            ],
+            "fallbackPolicy": "strict",
+            "profileGainDb": -5
+          },
+          "rhythm_pulse": {
+            "candidateChain": [
+              {
+                "id": "rhythm-pulse-modal-original",
+                "sha256": "2f3c8bda957fdb7dde72c2c11a87e8a9a57859563668c0649036ca253a6754f2"
+              }
+            ],
+            "fallbackPolicy": "strict",
+            "profileGainDb": -5
+          },
+          "soft_percussion": {
+            "candidateChain": [
+              {
+                "id": "soft-percussion-vcsl-acoustic-kit",
+                "sha256": "9d649c24ab7da6b57ee52686cce788cd413269a4b6da18ad49a4d171007b1f0f"
+              }
+            ],
+            "fallbackPolicy": "strict"
+          },
+          "solo_cello": {
+            "candidateChain": [
+              {
+                "id": "solo-cello-bigcat-bowed-full",
+                "sha256": "9c395b4ac7f5155fb591e47394e843ea10cd8d8a8056ebf0a61a197a190260a4"
+              }
+            ],
+            "fallbackPolicy": "strict"
+          },
+          "sub_bass": {
+            "candidateChain": [
+              {
+                "id": "sub-bass-subtractive-original",
+                "sha256": "b798eff320d1816cd8365af1c5143d7d70e69894f8633622c9c09bcff75f88fd"
+              }
+            ],
+            "fallbackPolicy": "strict",
+            "profileGainDb": -4
+          },
+          "warm_piano": {
+            "candidateChain": [
+              {
+                "id": "warm-piano-vsco-upright-full",
+                "sha256": "0444949c89f8f998057dfa4ce633f3a385586deac2a1577ee31bc2e4b5497843"
+              }
+            ],
+            "fallbackPolicy": "strict"
+          }
+        },
+        "contentSha256": "69f1ca8539a4c63d28def7ec4f5e167d2b76f1da36e1cd6b4ad43348c635a51a"
+      },
+      "soundProfileSha256": "69f1ca8539a4c63d28def7ec4f5e167d2b76f1da36e1cd6b4ad43348c635a51a",
+      "renderScene": {
+        "format": "refrain-render-scene@1-experimental",
+        "id": "breath-close-room@1.scene",
+        "master": {
+          "gainDb": 1,
+          "peakCeiling": 0.72,
+          "velocityScale": 1
+        },
+        "buses": [
+          {
+            "id": "close",
+            "output": "master",
+            "processors": [
+              {
+                "id": "soften",
+                "type": "lowpass",
+                "frequencyHz": 6200,
+                "q": 0.7
+              },
+              {
+                "id": "small-room",
+                "type": "room",
+                "decaySeconds": 0.85,
+                "mix": 0.12
+              },
+              {
+                "id": "ending",
+                "type": "fade",
+                "inSeconds": 0.015,
+                "outSeconds": 0.8,
+                "tailSeconds": 2
+              }
+            ]
+          }
+        ],
+        "routes": [
+          {
+            "id": "all",
+            "bus": "close",
+            "match": {}
+          }
+        ],
+        "contentSha256": "6ec5ea3455349e25e09206e49f89cd787f312270c0395533db8cf729cca05e5f"
+      },
+      "candidateDigests": {
+        "air-pad-subtractive-original": "3717480602f5d3760f07d3a4531ea5ae59c228de84492fec420d6be793848d48",
+        "chamber-strings-vsco-sections-full": "45adc125d09ac4c08d1bf6f14e56898806768837f1d2ca0a386b6ebc3d9307de",
+        "clarinet-vsco-suslong-full": "144e2a8e089355f8b8101844640ea30f38054dd2d5c1cb1f7403614e73bf783f",
+        "clean-bass-subtractive-original": "26ea8be6de3ead654e262ff34875446cd890bcfd95e8d70ab3325ef3018f0eb2",
+        "dust-texture-subtractive-original": "dd3959ff09dd94d8fdeaf956cee408701d02d261f08cfd8806ded7b3ea4e4084",
+        "flute-vsco-susnv-full": "1f1b5d89eb3330d643c04e2194efbefb77827164364856463a67220b4fc1ca40",
+        "glass-bell-modal-original": "23a1c109541dd8fcbda429e9ef547977c42d1ea3c8f56254cd86a6090f5b3e66",
+        "harp-vsco-full": "d995945514b0ff70e0edfdd373e98af78c65f9fedcac9a342351d369d2ac378a",
+        "lattice-pluck-subtractive-original": "ab75f87979d0d291f331f7eaa9dc9f9bf4e1f0e80ec668f253a2c6bcde87e73b",
+        "marimba-vsco-full": "a0285d6815659b861bc425476defc04b9cfbe3ff23df2929bfa01d6375bcf29d",
+        "nylon-guitar-freepats-spanish-classical": "126009345d28ab7f9ae3bf99ca4b632602d3871cdbf3854c8d9dd7733f05bdb8",
+        "prism-lead-subtractive-original": "090cfaa42f686657fe422d932239abec8f55577f7a5291c1f6eb821e1b530d53",
+        "rhythm-pulse-modal-original": "2f3c8bda957fdb7dde72c2c11a87e8a9a57859563668c0649036ca253a6754f2",
+        "soft-percussion-vcsl-acoustic-kit": "9d649c24ab7da6b57ee52686cce788cd413269a4b6da18ad49a4d171007b1f0f",
+        "solo-cello-bigcat-bowed-full": "9c395b4ac7f5155fb591e47394e843ea10cd8d8a8056ebf0a61a197a190260a4",
+        "sub-bass-subtractive-original": "b798eff320d1816cd8365af1c5143d7d70e69894f8633622c9c09bcff75f88fd",
+        "warm-piano-vsco-upright-full": "0444949c89f8f998057dfa4ce633f3a385586deac2a1577ee31bc2e4b5497843"
+      },
+      "permittedOverrides": [],
+      "overrides": {},
+      "renderer": {
+        "contract": "refrain-renderer@2-experimental",
+        "performancePlanFormat": "performance-plan@4-experimental",
+        "adapters": [
+          "browser-direct",
+          "browser-streaming-pcm",
+          "worker-block-pcm",
+          "node-block-pcm",
+          "wav",
+          "midi"
+        ]
+      },
+      "contentSha256": "b7261aa4e2892d8145926e4039834d3da7635f99a4548734dcd886e326b2224e"
+    },
+    {
+      "format": "refrain-performance-binding@0-experimental",
+      "id": "f-acoustic-chamber@0",
+      "soundProfile": {
+        "format": "refrain-sound-profile@1-experimental",
+        "id": "f-acoustic-chamber@1",
+        "vocabulary": {
+          "id": "refrain-core-instruments@0",
+          "sha256": "9f6a54c1c4431812525696ebc68e517fd21e2dc7d92a0722937b640cf583e63b"
+        },
+        "selections": {
+          "warm_piano": {
+            "candidateChain": [
+              {
+                "id": "warm-piano-vsco-upright-full",
+                "sha256": "0444949c89f8f998057dfa4ce633f3a385586deac2a1577ee31bc2e4b5497843"
+              }
+            ],
+            "fallbackPolicy": "strict"
+          },
+          "nylon_guitar": {
+            "candidateChain": [
+              {
+                "id": "nylon-guitar-freepats-spanish-classical",
+                "sha256": "126009345d28ab7f9ae3bf99ca4b632602d3871cdbf3854c8d9dd7733f05bdb8"
+              }
+            ],
+            "fallbackPolicy": "strict"
+          },
+          "harp": {
+            "candidateChain": [
+              {
+                "id": "harp-vsco-full",
+                "sha256": "d995945514b0ff70e0edfdd373e98af78c65f9fedcac9a342351d369d2ac378a"
+              }
+            ],
+            "fallbackPolicy": "strict"
+          },
+          "clean_bass": {
+            "candidateChain": [
+              {
+                "id": "clean-bass-subtractive-original",
+                "sha256": "26ea8be6de3ead654e262ff34875446cd890bcfd95e8d70ab3325ef3018f0eb2"
+              }
+            ],
+            "fallbackPolicy": "strict"
+          },
+          "chamber_strings": {
+            "candidateChain": [
+              {
+                "id": "chamber-strings-vsco-sections-full",
+                "sha256": "45adc125d09ac4c08d1bf6f14e56898806768837f1d2ca0a386b6ebc3d9307de"
+              }
+            ],
+            "fallbackPolicy": "strict"
+          },
+          "solo_cello": {
+            "candidateChain": [
+              {
+                "id": "solo-cello-bigcat-bowed-full",
+                "sha256": "9c395b4ac7f5155fb591e47394e843ea10cd8d8a8056ebf0a61a197a190260a4"
+              }
+            ],
+            "fallbackPolicy": "strict"
+          },
+          "flute": {
+            "candidateChain": [
+              {
+                "id": "flute-vsco-susnv-full",
+                "sha256": "1f1b5d89eb3330d643c04e2194efbefb77827164364856463a67220b4fc1ca40"
+              }
+            ],
+            "fallbackPolicy": "strict"
+          },
+          "clarinet": {
+            "candidateChain": [
+              {
+                "id": "clarinet-vsco-suslong-full",
+                "sha256": "144e2a8e089355f8b8101844640ea30f38054dd2d5c1cb1f7403614e73bf783f"
+              }
+            ],
+            "fallbackPolicy": "strict"
+          },
+          "marimba": {
+            "candidateChain": [
+              {
+                "id": "marimba-vsco-full",
+                "sha256": "a0285d6815659b861bc425476defc04b9cfbe3ff23df2929bfa01d6375bcf29d"
+              }
+            ],
+            "fallbackPolicy": "strict"
+          },
+          "soft_percussion": {
+            "candidateChain": [
+              {
+                "id": "soft-percussion-vcsl-acoustic-kit",
+                "sha256": "9d649c24ab7da6b57ee52686cce788cd413269a4b6da18ad49a4d171007b1f0f"
+              }
+            ],
+            "fallbackPolicy": "strict"
+          },
+          "air_pad": {
+            "candidateChain": [
+              {
+                "id": "air-pad-subtractive-original",
+                "sha256": "3717480602f5d3760f07d3a4531ea5ae59c228de84492fec420d6be793848d48"
+              }
+            ],
+            "fallbackPolicy": "strict",
+            "profileGainDb": -4
+          },
+          "glass_bell": {
+            "candidateChain": [
+              {
+                "id": "glass-bell-modal-original",
+                "sha256": "23a1c109541dd8fcbda429e9ef547977c42d1ea3c8f56254cd86a6090f5b3e66"
+              }
+            ],
+            "fallbackPolicy": "strict",
+            "profileGainDb": -3
+          },
+          "sub_bass": {
+            "candidateChain": [
+              {
+                "id": "sub-bass-subtractive-original",
+                "sha256": "b798eff320d1816cd8365af1c5143d7d70e69894f8633622c9c09bcff75f88fd"
+              }
+            ],
+            "fallbackPolicy": "strict",
+            "profileGainDb": -4
+          },
+          "lattice_pluck": {
+            "candidateChain": [
+              {
+                "id": "lattice-pluck-subtractive-original",
+                "sha256": "ab75f87979d0d291f331f7eaa9dc9f9bf4e1f0e80ec668f253a2c6bcde87e73b"
+              }
+            ],
+            "fallbackPolicy": "strict",
+            "profileGainDb": -3
+          },
+          "prism_lead": {
+            "candidateChain": [
+              {
+                "id": "prism-lead-subtractive-original",
+                "sha256": "090cfaa42f686657fe422d932239abec8f55577f7a5291c1f6eb821e1b530d53"
+              }
+            ],
+            "fallbackPolicy": "strict",
+            "profileGainDb": -5
+          },
+          "dust_texture": {
+            "candidateChain": [
+              {
+                "id": "dust-texture-subtractive-original",
+                "sha256": "dd3959ff09dd94d8fdeaf956cee408701d02d261f08cfd8806ded7b3ea4e4084"
+              }
+            ],
+            "fallbackPolicy": "strict",
+            "profileGainDb": -6
+          },
+          "rhythm_pulse": {
+            "candidateChain": [
+              {
+                "id": "rhythm-pulse-modal-original",
+                "sha256": "2f3c8bda957fdb7dde72c2c11a87e8a9a57859563668c0649036ca253a6754f2"
+              }
+            ],
+            "fallbackPolicy": "strict",
+            "profileGainDb": -5
+          }
+        },
+        "contentSha256": "6aea0cc2801d242ba4820183a2ac8ab66f28b10f6ce6c355d845fa90930cc2fe"
+      },
+      "soundProfileSha256": "6aea0cc2801d242ba4820183a2ac8ab66f28b10f6ce6c355d845fa90930cc2fe",
+      "renderScene": {
+        "format": "refrain-render-scene@0-experimental",
+        "id": "f-acoustic-chamber-native@0",
+        "masterGainDb": -11,
+        "peakCeiling": 0.72,
+        "velocityScale": 1,
+        "contentSha256": "2c2ed054678cd8bd6550632e32dd9077a861bbef701b8829c3ce61675d8f0d5a"
+      },
+      "soundPalette": {
+        "format": "refrain-sound-palette@0-experimental",
+        "id": "f-acoustic-chamber@0",
+        "status": "listening-candidate",
+        "soundProfile": {
+          "id": "f-acoustic-chamber@1",
+          "sha256": "6aea0cc2801d242ba4820183a2ac8ab66f28b10f6ce6c355d845fa90930cc2fe"
+        },
+        "renderScene": {
+          "id": "f-acoustic-chamber-native@0",
+          "sha256": "2c2ed054678cd8bd6550632e32dd9077a861bbef701b8829c3ce61675d8f0d5a"
+        },
+        "authoringGuide": "Write primarily with piano, nylon guitar, harp, chamber strings, solo cello, winds, marimba, and restrained acoustic percussion. Let register, breath, decay, and ensemble handoff carry the form; reserve synthetic identities for one clearly authored contrast rather than ambient filler.",
+        "descriptors": ["acoustic", "chamber", "breath", "resonant"],
+        "strengths": [
+          "independent full-range acoustic sample identities",
+          "lyrical counterpoint and long sectional form"
+        ],
+        "constraints": [
+          "Faye listening acceptance pending",
+          "articulation requests currently resolve through explicit whole-identity fallbacks"
+        ],
+        "intentionalContrasts": [
+          "one sparse glass or air event may puncture the acoustic room"
+        ],
+        "contentSha256": "a75b3c086e5bee066a5333dd6540fef148c22a56c788d763b80493c636544c72"
+      },
+      "soundPaletteSha256": "a75b3c086e5bee066a5333dd6540fef148c22a56c788d763b80493c636544c72",
+      "candidateDigests": {
+        "air-pad-subtractive-original": "3717480602f5d3760f07d3a4531ea5ae59c228de84492fec420d6be793848d48",
+        "chamber-strings-vsco-sections-full": "45adc125d09ac4c08d1bf6f14e56898806768837f1d2ca0a386b6ebc3d9307de",
+        "clarinet-vsco-suslong-full": "144e2a8e089355f8b8101844640ea30f38054dd2d5c1cb1f7403614e73bf783f",
+        "clean-bass-subtractive-original": "26ea8be6de3ead654e262ff34875446cd890bcfd95e8d70ab3325ef3018f0eb2",
+        "dust-texture-subtractive-original": "dd3959ff09dd94d8fdeaf956cee408701d02d261f08cfd8806ded7b3ea4e4084",
+        "flute-vsco-susnv-full": "1f1b5d89eb3330d643c04e2194efbefb77827164364856463a67220b4fc1ca40",
+        "glass-bell-modal-original": "23a1c109541dd8fcbda429e9ef547977c42d1ea3c8f56254cd86a6090f5b3e66",
+        "harp-vsco-full": "d995945514b0ff70e0edfdd373e98af78c65f9fedcac9a342351d369d2ac378a",
+        "lattice-pluck-subtractive-original": "ab75f87979d0d291f331f7eaa9dc9f9bf4e1f0e80ec668f253a2c6bcde87e73b",
+        "marimba-vsco-full": "a0285d6815659b861bc425476defc04b9cfbe3ff23df2929bfa01d6375bcf29d",
+        "nylon-guitar-freepats-spanish-classical": "126009345d28ab7f9ae3bf99ca4b632602d3871cdbf3854c8d9dd7733f05bdb8",
+        "prism-lead-subtractive-original": "090cfaa42f686657fe422d932239abec8f55577f7a5291c1f6eb821e1b530d53",
+        "rhythm-pulse-modal-original": "2f3c8bda957fdb7dde72c2c11a87e8a9a57859563668c0649036ca253a6754f2",
+        "soft-percussion-vcsl-acoustic-kit": "9d649c24ab7da6b57ee52686cce788cd413269a4b6da18ad49a4d171007b1f0f",
+        "solo-cello-bigcat-bowed-full": "9c395b4ac7f5155fb591e47394e843ea10cd8d8a8056ebf0a61a197a190260a4",
+        "sub-bass-subtractive-original": "b798eff320d1816cd8365af1c5143d7d70e69894f8633622c9c09bcff75f88fd",
+        "warm-piano-vsco-upright-full": "0444949c89f8f998057dfa4ce633f3a385586deac2a1577ee31bc2e4b5497843"
+      },
+      "permittedOverrides": ["masterGainDb", "peakCeiling", "velocityScale"],
+      "overrides": {},
+      "renderer": {
+        "contract": "refrain-renderer@1-experimental",
+        "performancePlanFormat": "performance-plan@3-experimental",
+        "adapters": [
+          "browser-direct",
+          "browser-streaming-pcm",
+          "worker-block-pcm",
+          "node-block-pcm",
+          "wav",
+          "midi"
+        ]
+      },
+      "contentSha256": "80fa41ccbf38166341dd12242d53f4d8faa3ee513807a3ba69604f0c8252b8c5"
+    }
+  ],
+  "defaultBindingId": "breath-close-room@1",
+  "caption": "Three returns of one small melody, with room to breathe."
+}

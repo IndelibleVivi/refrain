@@ -1,0 +1,113 @@
+{
+  "format": "air@1-experimental",
+  "title": "A little room between",
+  "conductor": {
+    "tempo": 84,
+    "meters": [
+      {
+        "bar": 1,
+        "meter": "4/4"
+      }
+    ]
+  },
+  "vocabulary": {
+    "format": "refrain-air-vocabulary-closure@0-experimental",
+    "id": "refrain-draft-language@1",
+    "instruments": [
+      {
+        "id": "nylon_guitar",
+        "label": "Nylon guitar",
+        "family": "pitched",
+        "midiMin": 40,
+        "midiMax": 88,
+        "status": "active",
+        "authoringMeaning": "A plucked nylon-string voice with a soft attack and short natural decay."
+      }
+    ],
+    "techniques": [],
+    "contentSha256": "bea7b0c2c52b9eeb3c99f786ec767dc3f0269c502b0c831f8896e29b8ae541ca"
+  },
+  "motifs": {},
+  "sections": [
+    {
+      "id": "first-light",
+      "startBar": 1,
+      "bars": 4
+    },
+    {
+      "id": "reflection",
+      "startBar": 5,
+      "bars": 4
+    },
+    {
+      "id": "landing",
+      "startBar": 9,
+      "bars": 4
+    }
+  ],
+  "voices": [
+    {
+      "id": "thread",
+      "instrument": "nylon_guitar",
+      "role": "lead",
+      "gainDb": -3,
+      "pan": -0.12,
+      "realize": [
+        {
+          "id": "melody-1",
+          "section": "first-light",
+          "kind": "literal",
+          "part": "E4/8.@mp B4/8.@p C#5/4.@mp E5/4@mf | F#5/4.@mf E5/4.@mp C#5/4@p | B4/4.@mp G#4/4.@p F#4/4@p | E4/2@mp B4/2@p",
+          "gate": 0.88
+        },
+        {
+          "id": "melody-2",
+          "section": "reflection",
+          "kind": "literal",
+          "part": "E4/8.@mp B4/8.@p C#5/4.@mp E5/4@mf | F#5/4.@mf G#5/4.@mp E5/4@p | C#5/4.@mp B4/4.@p G#4/4@p | F#4/2@mp E4/2@p",
+          "gate": 0.88
+        },
+        {
+          "id": "melody-3",
+          "section": "landing",
+          "kind": "literal",
+          "part": "E4/8.@mp B4/8.@p C#5/4.@mp E5/4@mf | F#5/4.@mf E5/4.@mp C#5/4@p | B4/4.@mp G#4/4.@p F#4/4@p | E4/2@mp E4/2@pp",
+          "gate": 0.88
+        }
+      ]
+    },
+    {
+      "id": "ground",
+      "instrument": "nylon_guitar",
+      "role": "bass",
+      "gainDb": -9,
+      "pan": 0.08,
+      "part": "E2/1@mp | C#3/1@mp | A2/1@mp | B2/1@mp | E2/1@mp | C#3/1@mp | A2/1@mp | B2/1@mp | E2/1@mp | C#3/1@mp | A2/1@mp | E2/1@mp"
+    },
+    {
+      "id": "resonance-1",
+      "instrument": "nylon_guitar",
+      "role": "harmony",
+      "gainDb": -12,
+      "pan": 0.23,
+      "part": "r/16 G#3/2@pp r/4. r/16 | r/16 G#3/2@pp r/4. r/16 | r/16 A3/2@pp r/4. r/16 | r/16 F#3/2@pp r/4. r/16 | r/16 G#3/2@p r/4. r/16 | r/16 G#3/2@p r/4. r/16 | r/16 A3/2@p r/4. r/16 | r/16 F#3/2@p r/4. r/16 | r/16 G#3/2@pp r/4. r/16 | r/16 G#3/2@pp r/4. r/16 | r/16 A3/2@pp r/4. r/16 | r/16 G#3/2@pp r/4. r/16"
+    },
+    {
+      "id": "resonance-2",
+      "instrument": "nylon_guitar",
+      "role": "harmony",
+      "gainDb": -12,
+      "pan": 0.32,
+      "part": "r/1 | r/1 | r/1 | r/1 | r/8 B3/2@p r/4. | r/8 C#4/2@p r/4. | r/8 C#4/2@p r/4. | r/8 B3/2@p r/4. | r/8 B3/2@pp r/4. | r/8 C#4/2@pp r/4. | r/8 C#4/2@pp r/4. | r/8 B3/2@pp r/4."
+    },
+    {
+      "id": "resonance-3",
+      "instrument": "nylon_guitar",
+      "role": "harmony",
+      "gainDb": -12,
+      "pan": 0.41000000000000003,
+      "part": "r/8. F#4/2@pp r/4 r/16 | r/8. D#4/2@pp r/4 r/16 | r/8. G#4/2@pp r/4 r/16 | r/8. E4/2@pp r/4 r/16 | r/8. F#4/2@p r/4 r/16 | r/8. D#4/2@p r/4 r/16 | r/8. G#4/2@p r/4 r/16 | r/8. E4/2@p r/4 r/16 | r/8. F#4/2@pp r/4 r/16 | r/8. D#4/2@pp r/4 r/16 | r/8. G#4/2@pp r/4 r/16 | r/8. E4/2@pp r/4 r/16"
+    }
+  ],
+  "key": "E major"
+}
