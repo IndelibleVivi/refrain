@@ -134,8 +134,9 @@ The shared Player / first-listen browser lane (`npm run test:try`) builds the st
 ## Breath study lane
 
 `npm run test:breath` checks the independent source parser, exact breath transform,
-shared pluck/glass PCM and WAV, and the melody/onset match to its native nylon AIR,
-then builds the relative-path static app. `npm run breath` serves port 4390.
+shared pluck/glass PCM and WAV, the melody/onset match to both sampled companion
+AIRs, and the archtop Artifact@3 receipt/projection graph, then builds the
+relative-path static app. `npm run breath` serves port 4390.
 For changes to this experiment, check real-browser explicit play/cancel,
 pause/resume/seek/end, single-note audition, page hiding, reference/variation,
 continuous drag with one undo and cancellation, JSON save/reopen/bad-file
@@ -143,5 +144,18 @@ preservation, local restore, actual WAV download, keyboard/reduced motion,
 console and desktop/mobile overflow. Compare downloaded WAV with the same source
 rendered by the local kernel. Native-companion changes additionally need canonical
 inspect/export and ordinary browser playback with its exact sample closure.
+For the Shinyguitar candidate, run the exact-lock builder and companion render:
+
+```bash
+npm run soundpack:build-shinyguitar -- --source-root /path/to/karoryfer.shinyguitar
+npm run breath:build-archtop -- --source-root /path/to/karoryfer.shinyguitar --out tmp/breath-shinyguitar
+REFRAIN_SHINYGUITAR_SOURCE_ROOT=/path/to/karoryfer.shinyguitar npx vitest run packages/soundpack/src/shinyguitar.test.ts scripts/build-shinyguitar-candidate.test.ts
+```
+
+The focused soundpack tests must reject bytes outside the checked-in 272-asset
+lock, preserve all 68 four-way RR groups, and resolve plan@4 through the carried
+vocabulary. Compare the generated audition-matched WAV with a nylon export made
+using `--matched-preview`; neither deterministic output establishes listening
+acceptance.
 Keep local scripts/screenshots under ignored `output/playwright/`; neither browser
 PCM nor passing tests establish human listening acceptance.

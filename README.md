@@ -45,7 +45,7 @@ This local URL belongs to your computer. The public demo runs on GitHub Pages. S
 
 ## A new sound leaf: Breath study
 
-Run `npm run breath` and open `http://127.0.0.1:4390`. Pull open the space inside a melody, morph a warm synthetic pluck toward glass, touch individual notes, and compare the original with your variation. Undo, local JSON save/reopen and complete WAV export keep the result portable. No samples or model calls are needed. A separate native nylon-guitar companion carries the same melody through AIR and an exact sampled binding. [Play, save, and hear the companion](apps/breath-study/README.md).
+Run `npm run breath` and open `http://127.0.0.1:4390`. Pull open the space inside a melody, morph a warm synthetic pluck toward glass, touch individual notes, and compare the original with your variation. Undo, local JSON save/reopen and complete WAV export keep the result portable. The app itself needs no samples or model calls. Separate nylon-guitar and optional Shinyguitar archtop Artifact@3 companions carry the same melody through exact sampled bindings; the archtop remains a listening candidate. [Play, save, and make the level-matched comparison](apps/breath-study/README.md).
 
 This is an independent source experiment, not a replacement Canvas or a deployed public page. Its sound and visual direction remain listening candidates.
 

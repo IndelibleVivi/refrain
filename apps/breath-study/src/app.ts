@@ -1,5 +1,6 @@
 import "./style.css";
 import companionUrl from "../../../examples/breath-study/a-little-room-between.refrain.json?url";
+import archtopCompanionUrl from "../../../examples/breath-study/a-little-room-between-archtop.refrain.json?url";
 import type { Work, Settings, Status } from "./contracts";
 import { initialWork } from "./seed";
 import { compileWork, parseWork } from "./model";
@@ -87,7 +88,7 @@ $("#app").innerHTML = `
   </section>
   <div class="lower"><div class="history"><button id="undo" class="text-button">↶ 撤回</button><button id="redo" class="text-button">↷ 重做</button><span class="divider"></span><button id="reset" class="text-button">回到初始</button></div><div class="keep"><button id="save" class="text-button">保存实验</button><button id="wav" class="save-button">${svgIcon("save")}<span>带走 WAV</span></button></div></div>
   <p id="message" class="message" role="status" aria-live="polite"></p>
-  <details class="about"><summary>关于这片声音</summary><div class="about-grid"><div><label class="title-label">作品名字<input id="title" maxlength="100"></label><p>同一句旋律，三次经过。留白只拉开时间，折光与余温只改变声音。调节时会暂歇，松手后从当前乐句重新聆听。</p><p>点奏是临时试听，不写入作品；保存和 WAV 保留你调整后的完整编排。原句对照不覆盖你的变形。快捷键：空格播放 / 暂停，数字 1–9 点奏，⌘ / Ctrl Z 撤回。</p></div><div><p>这是一个独立的 Refrain 声音实验。音色是本地合成拨弦与玻璃泛音，没有外部采样、上传或模型调用。不是原声吉他录音。</p><p>实验文件保留完整音符与声音参数，可在这里重新打开；它不是 AIR 或正式 performance binding。监听音量只影响当前播放。WAV 导出当前选择的原句或变形，保留原生力度。</p><p><a class="companion-link" href="${companionUrl}" download="a-little-room-between.refrain.json">↓ 带走这首 air 的尼龙吉他版</a><br>这是同一旋律的正式 Artifact，可用 Refrain Player 打开；它保留自己的准确采样与房间处理，不跟随这里的变形。</p><p>本机自动保留最近一份实验。浏览器或端口变化不会带走它，请保存文件。</p></div></div></details>
+  <details class="about"><summary>关于这片声音</summary><div class="about-grid"><div><label class="title-label">作品名字<input id="title" maxlength="100"></label><p>同一句旋律，三次经过。留白只拉开时间，折光与余温只改变声音。调节时会暂歇，松手后从当前乐句重新聆听。</p><p>点奏是临时试听，不写入作品；保存和 WAV 保留你调整后的完整编排。原句对照不覆盖你的变形。快捷键：空格播放 / 暂停，数字 1–9 点奏，⌘ / Ctrl Z 撤回。</p></div><div><p>这是一个独立的 Refrain 声音实验。音色是本地合成拨弦与玻璃泛音，没有外部采样、上传或模型调用。不是原声吉他录音。</p><p>实验文件保留完整音符与声音参数，可在这里重新打开；它不是 AIR 或正式 performance binding。监听音量只影响当前播放。WAV 导出当前选择的原句或变形，保留原生力度。</p><p><a class="companion-link" href="${companionUrl}" download="a-little-room-between.refrain.json">↓ 带走这首 air 的尼龙吉他版</a><br><a class="companion-link" href="${archtopCompanionUrl}" download="a-little-room-between-archtop.refrain.json">↓ 带走新的 archtop 声音候选</a><br>它们是同一旋律的正式 Artifact，各自保留准确采样与房间处理，不跟随这里的变形。尼龙版可由普通 Player 精确播放；archtop pack 尚未安装到 Player，先用单独生成的 A/B WAV 试听。Archtop 仍在等你的 listening acceptance。</p><p>本机自动保留最近一份实验。浏览器或端口变化不会带走它，请保存文件。</p></div></div></details>
   <footer><span>Refrain hums an air.</span><span>AN EXPERIMENT, KEPT CLOSE.</span></footer>
 </main>`;
 

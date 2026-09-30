@@ -45,7 +45,7 @@ npm run try
 
 ## 新的声音 leaf：Breath study
 
-运行 `npm run breath`，打开 `http://127.0.0.1:4390`。把旋律中的一处空隙拉开，让温暖的合成拨弦渐渐折成玻璃；可以点奏音符、对照原句与变形、撤回，并保存 JSON 或导出完整 WAV。实验不下载音色，不调用模型。另附同一旋律的正式 AIR／尼龙吉他 Artifact，保留独立的精确采样 binding。[操作、保存与采样版试听](apps/breath-study/README.md)。
+运行 `npm run breath`，打开 `http://127.0.0.1:4390`。把旋律中的一处空隙拉开，让温暖的合成拨弦渐渐折成玻璃；可以点奏音符、对照原句与变形、撤回，并保存 JSON 或导出完整 WAV。App 本身不下载音色，也不调用模型。另附同一旋律的尼龙吉他与可选 Shinyguitar archtop Artifact@3，各自保留精确采样 binding；archtop 仍是待亲自聆听的候选。[操作、保存与响度匹配 A/B 试听](apps/breath-study/README.md)。
 
 这是独立的源码实验，未替换正式 Canvas，未部署到公共试玩页；声音和视觉仍是待亲自体验的候选。
 

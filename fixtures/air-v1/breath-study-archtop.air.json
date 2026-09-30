@@ -1,0 +1,248 @@
+{
+  "format": "air@1-experimental",
+  "title": "A little room between · Archtop",
+  "conductor": { "tempo": 84, "meters": [{ "bar": 1, "meter": "4/4" }] },
+  "vocabulary": {
+    "format": "refrain-air-vocabulary-closure@0-experimental",
+    "id": "refrain-shinyguitar-archtop-language@1",
+    "instruments": [
+      {
+        "id": "air_pad",
+        "label": "Air pad",
+        "family": "texture",
+        "midiMin": 36,
+        "midiMax": 96,
+        "status": "active",
+        "authoringMeaning": "A restrained synthetic sustained texture used as supporting air rather than an acoustic substitute."
+      },
+      {
+        "id": "archtop_guitar",
+        "label": "Archtop guitar",
+        "family": "pitched",
+        "midiMin": 33,
+        "midiMax": 91,
+        "status": "active",
+        "authoringMeaning": "A microphone-captured archtop guitar with a firm plucked attack and short natural decay, distinct from the core nylon_guitar voice."
+      },
+      {
+        "id": "chamber_strings",
+        "label": "Chamber strings",
+        "family": "pitched",
+        "midiMin": 36,
+        "midiMax": 96,
+        "status": "active",
+        "authoringMeaning": "A blended sustained string ensemble for harmony, counterlines, and long dynamic shapes."
+      },
+      {
+        "id": "clarinet",
+        "label": "Clarinet",
+        "family": "pitched",
+        "midiMin": 50,
+        "midiMax": 94,
+        "status": "active",
+        "authoringMeaning": "A rounded sustained woodwind voice spanning warm low lines and clear upper melody."
+      },
+      {
+        "id": "clean_bass",
+        "label": "Clean bass",
+        "family": "pitched",
+        "midiMin": 28,
+        "midiMax": 67,
+        "status": "active",
+        "authoringMeaning": "A clear low-register bass voice that supports pulse and harmonic foundation."
+      },
+      {
+        "id": "dust_texture",
+        "label": "Dust texture",
+        "family": "texture",
+        "midiMin": 36,
+        "midiMax": 108,
+        "status": "active",
+        "authoringMeaning": "A deliberately unstable synthetic texture for degraded air, soft interference, and worn harmonic edges."
+      },
+      {
+        "id": "flute",
+        "label": "Flute",
+        "family": "pitched",
+        "midiMin": 60,
+        "midiMax": 96,
+        "status": "active",
+        "authoringMeaning": "A light sustained woodwind voice for exposed melody and airy upper-register motion."
+      },
+      {
+        "id": "glass_bell",
+        "label": "Glass bell",
+        "family": "texture",
+        "midiMin": 60,
+        "midiMax": 108,
+        "status": "active",
+        "authoringMeaning": "A restrained synthetic bell color for sparse high-register punctuation and returning motifs."
+      },
+      {
+        "id": "harp",
+        "label": "Harp",
+        "family": "pitched",
+        "midiMin": 24,
+        "midiMax": 103,
+        "status": "active",
+        "authoringMeaning": "A resonant concert-harp voice for separated notes, arpeggiation, and luminous harmony."
+      },
+      {
+        "id": "lattice_pluck",
+        "label": "Lattice pluck",
+        "family": "pitched",
+        "midiMin": 36,
+        "midiMax": 96,
+        "status": "active",
+        "authoringMeaning": "A short synthetic pluck for interlocking figures, pointillist harmony, and bright repeated patterns."
+      },
+      {
+        "id": "marimba",
+        "label": "Marimba",
+        "family": "pitched",
+        "midiMin": 45,
+        "midiMax": 96,
+        "status": "active",
+        "authoringMeaning": "A pitched wooden mallet voice for melodic percussion, pulse, and resonant ostinato."
+      },
+      {
+        "id": "nylon_guitar",
+        "label": "Nylon guitar",
+        "family": "pitched",
+        "midiMin": 40,
+        "midiMax": 88,
+        "status": "active",
+        "authoringMeaning": "A plucked nylon-string voice with a soft attack and short natural decay."
+      },
+      {
+        "id": "prism_lead",
+        "label": "Prism lead",
+        "family": "pitched",
+        "midiMin": 48,
+        "midiMax": 100,
+        "status": "active",
+        "authoringMeaning": "A clear synthetic lead voice for exposed motifs, bent contour, and focused upper-register lines."
+      },
+      {
+        "id": "rhythm_pulse",
+        "label": "Rhythm pulse",
+        "family": "percussion",
+        "midiMin": 36,
+        "midiMax": 51,
+        "status": "active",
+        "authoringMeaning": "A tuned electronic pulse set for kick-like anchors, clipped answers, and sparse beat-led structure.",
+        "supportedNotes": [36, 38, 42, 46, 49, 51]
+      },
+      {
+        "id": "soft_percussion",
+        "label": "Soft percussion",
+        "family": "percussion",
+        "midiMin": 36,
+        "midiMax": 51,
+        "status": "active",
+        "authoringMeaning": "A restrained unpitched kit for soft low hits, hand-drum-like accents, hats, and light color.",
+        "supportedNotes": [36, 38, 42, 46, 49, 51]
+      },
+      {
+        "id": "solo_cello",
+        "label": "Solo cello",
+        "family": "pitched",
+        "midiMin": 36,
+        "midiMax": 76,
+        "status": "active",
+        "authoringMeaning": "A single bowed cello voice for lyrical lead, bass, and expressive sustained lines."
+      },
+      {
+        "id": "sub_bass",
+        "label": "Sub bass",
+        "family": "pitched",
+        "midiMin": 24,
+        "midiMax": 72,
+        "status": "active",
+        "authoringMeaning": "A synthetic sub-bass voice for grounded fundamentals, slow pressure, and sparse low-register motion."
+      },
+      {
+        "id": "warm_piano",
+        "label": "Warm piano",
+        "family": "pitched",
+        "midiMin": 21,
+        "midiMax": 108,
+        "status": "active",
+        "authoringMeaning": "A rounded acoustic piano voice for melody, harmony, and intimate accompaniment."
+      }
+    ],
+    "techniques": [],
+    "contentSha256": "174f57a6ba2e7270f0b6ee2fffce49bace11bf3180f1a491ef5546399d5bb122"
+  },
+  "motifs": {},
+  "sections": [
+    { "id": "first-light", "startBar": 1, "bars": 4 },
+    { "id": "reflection", "startBar": 5, "bars": 4 },
+    { "id": "landing", "startBar": 9, "bars": 4 }
+  ],
+  "voices": [
+    {
+      "id": "thread",
+      "instrument": "archtop_guitar",
+      "role": "lead",
+      "gainDb": -3,
+      "pan": -0.12,
+      "realize": [
+        {
+          "id": "melody-1",
+          "section": "first-light",
+          "kind": "literal",
+          "part": "E4/8.@mp B4/8.@p C#5/4.@mp E5/4@mf | F#5/4.@mf E5/4.@mp C#5/4@p | B4/4.@mp G#4/4.@p F#4/4@p | E4/2@mp B4/2@p",
+          "gate": 0.88
+        },
+        {
+          "id": "melody-2",
+          "section": "reflection",
+          "kind": "literal",
+          "part": "E4/8.@mp B4/8.@p C#5/4.@mp E5/4@mf | F#5/4.@mf G#5/4.@mp E5/4@p | C#5/4.@mp B4/4.@p G#4/4@p | F#4/2@mp E4/2@p",
+          "gate": 0.88
+        },
+        {
+          "id": "melody-3",
+          "section": "landing",
+          "kind": "literal",
+          "part": "E4/8.@mp B4/8.@p C#5/4.@mp E5/4@mf | F#5/4.@mf E5/4.@mp C#5/4@p | B4/4.@mp G#4/4.@p F#4/4@p | E4/2@mp E4/2@pp",
+          "gate": 0.88
+        }
+      ]
+    },
+    {
+      "id": "ground",
+      "instrument": "archtop_guitar",
+      "role": "bass",
+      "gainDb": -9,
+      "pan": 0.08,
+      "part": "E2/1@mp | C#3/1@mp | A2/1@mp | B2/1@mp | E2/1@mp | C#3/1@mp | A2/1@mp | B2/1@mp | E2/1@mp | C#3/1@mp | A2/1@mp | E2/1@mp"
+    },
+    {
+      "id": "resonance-1",
+      "instrument": "archtop_guitar",
+      "role": "harmony",
+      "gainDb": -12,
+      "pan": 0.23,
+      "part": "r/16 G#3/2@pp r/4. r/16 | r/16 G#3/2@pp r/4. r/16 | r/16 A3/2@pp r/4. r/16 | r/16 F#3/2@pp r/4. r/16 | r/16 G#3/2@p r/4. r/16 | r/16 G#3/2@p r/4. r/16 | r/16 A3/2@p r/4. r/16 | r/16 F#3/2@p r/4. r/16 | r/16 G#3/2@pp r/4. r/16 | r/16 G#3/2@pp r/4. r/16 | r/16 A3/2@pp r/4. r/16 | r/16 G#3/2@pp r/4. r/16"
+    },
+    {
+      "id": "resonance-2",
+      "instrument": "archtop_guitar",
+      "role": "harmony",
+      "gainDb": -12,
+      "pan": 0.32,
+      "part": "r/1 | r/1 | r/1 | r/1 | r/8 B3/2@p r/4. | r/8 C#4/2@p r/4. | r/8 C#4/2@p r/4. | r/8 B3/2@p r/4. | r/8 B3/2@pp r/4. | r/8 C#4/2@pp r/4. | r/8 C#4/2@pp r/4. | r/8 B3/2@pp r/4."
+    },
+    {
+      "id": "resonance-3",
+      "instrument": "archtop_guitar",
+      "role": "harmony",
+      "gainDb": -12,
+      "pan": 0.41000000000000003,
+      "part": "r/8. F#4/2@pp r/4 r/16 | r/8. D#4/2@pp r/4 r/16 | r/8. G#4/2@pp r/4 r/16 | r/8. E4/2@pp r/4 r/16 | r/8. F#4/2@p r/4 r/16 | r/8. D#4/2@p r/4 r/16 | r/8. G#4/2@p r/4 r/16 | r/8. E4/2@p r/4 r/16 | r/8. F#4/2@pp r/4 r/16 | r/8. D#4/2@pp r/4 r/16 | r/8. G#4/2@pp r/4 r/16 | r/8. E4/2@pp r/4 r/16"
+    }
+  ],
+  "key": "E major"
+}

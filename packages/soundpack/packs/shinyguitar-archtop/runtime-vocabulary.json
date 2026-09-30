@@ -1,0 +1,171 @@
+{
+  "format": "refrain-authoring-vocabulary-closure@0-experimental",
+  "id": "refrain-shinyguitar-archtop@0",
+  "instruments": [
+    {
+      "id": "air_pad",
+      "label": "Air pad",
+      "family": "texture",
+      "midiMin": 36,
+      "midiMax": 96,
+      "status": "active",
+      "authoringMeaning": "A restrained synthetic sustained texture used as supporting air rather than an acoustic substitute."
+    },
+    {
+      "id": "archtop_guitar",
+      "label": "Archtop guitar",
+      "family": "pitched",
+      "midiMin": 33,
+      "midiMax": 91,
+      "status": "active",
+      "authoringMeaning": "A microphone-captured archtop guitar with a firm plucked attack and short natural decay, distinct from the core nylon_guitar voice."
+    },
+    {
+      "id": "chamber_strings",
+      "label": "Chamber strings",
+      "family": "pitched",
+      "midiMin": 36,
+      "midiMax": 96,
+      "status": "active",
+      "authoringMeaning": "A blended sustained string ensemble for harmony, counterlines, and long dynamic shapes."
+    },
+    {
+      "id": "clarinet",
+      "label": "Clarinet",
+      "family": "pitched",
+      "midiMin": 50,
+      "midiMax": 94,
+      "status": "active",
+      "authoringMeaning": "A rounded sustained woodwind voice spanning warm low lines and clear upper melody."
+    },
+    {
+      "id": "clean_bass",
+      "label": "Clean bass",
+      "family": "pitched",
+      "midiMin": 28,
+      "midiMax": 67,
+      "status": "active",
+      "authoringMeaning": "A clear low-register bass voice that supports pulse and harmonic foundation."
+    },
+    {
+      "id": "dust_texture",
+      "label": "Dust texture",
+      "family": "texture",
+      "midiMin": 36,
+      "midiMax": 108,
+      "status": "active",
+      "authoringMeaning": "A deliberately unstable synthetic texture for degraded air, soft interference, and worn harmonic edges."
+    },
+    {
+      "id": "flute",
+      "label": "Flute",
+      "family": "pitched",
+      "midiMin": 60,
+      "midiMax": 96,
+      "status": "active",
+      "authoringMeaning": "A light sustained woodwind voice for exposed melody and airy upper-register motion."
+    },
+    {
+      "id": "glass_bell",
+      "label": "Glass bell",
+      "family": "texture",
+      "midiMin": 60,
+      "midiMax": 108,
+      "status": "active",
+      "authoringMeaning": "A restrained synthetic bell color for sparse high-register punctuation and returning motifs."
+    },
+    {
+      "id": "harp",
+      "label": "Harp",
+      "family": "pitched",
+      "midiMin": 24,
+      "midiMax": 103,
+      "status": "active",
+      "authoringMeaning": "A resonant concert-harp voice for separated notes, arpeggiation, and luminous harmony."
+    },
+    {
+      "id": "lattice_pluck",
+      "label": "Lattice pluck",
+      "family": "pitched",
+      "midiMin": 36,
+      "midiMax": 96,
+      "status": "active",
+      "authoringMeaning": "A short synthetic pluck for interlocking figures, pointillist harmony, and bright repeated patterns."
+    },
+    {
+      "id": "marimba",
+      "label": "Marimba",
+      "family": "pitched",
+      "midiMin": 45,
+      "midiMax": 96,
+      "status": "active",
+      "authoringMeaning": "A pitched wooden mallet voice for melodic percussion, pulse, and resonant ostinato."
+    },
+    {
+      "id": "nylon_guitar",
+      "label": "Nylon guitar",
+      "family": "pitched",
+      "midiMin": 40,
+      "midiMax": 88,
+      "status": "active",
+      "authoringMeaning": "A plucked nylon-string voice with a soft attack and short natural decay."
+    },
+    {
+      "id": "prism_lead",
+      "label": "Prism lead",
+      "family": "pitched",
+      "midiMin": 48,
+      "midiMax": 100,
+      "status": "active",
+      "authoringMeaning": "A clear synthetic lead voice for exposed motifs, bent contour, and focused upper-register lines."
+    },
+    {
+      "id": "rhythm_pulse",
+      "label": "Rhythm pulse",
+      "family": "percussion",
+      "midiMin": 36,
+      "midiMax": 51,
+      "status": "active",
+      "supportedNotes": [36, 38, 42, 46, 49, 51],
+      "authoringMeaning": "A tuned electronic pulse set for kick-like anchors, clipped answers, and sparse beat-led structure."
+    },
+    {
+      "id": "soft_percussion",
+      "label": "Soft percussion",
+      "family": "percussion",
+      "midiMin": 36,
+      "midiMax": 51,
+      "status": "active",
+      "supportedNotes": [36, 38, 42, 46, 49, 51],
+      "authoringMeaning": "A restrained unpitched kit for soft low hits, hand-drum-like accents, hats, and light color."
+    },
+    {
+      "id": "solo_cello",
+      "label": "Solo cello",
+      "family": "pitched",
+      "midiMin": 36,
+      "midiMax": 76,
+      "status": "active",
+      "authoringMeaning": "A single bowed cello voice for lyrical lead, bass, and expressive sustained lines."
+    },
+    {
+      "id": "sub_bass",
+      "label": "Sub bass",
+      "family": "pitched",
+      "midiMin": 24,
+      "midiMax": 72,
+      "status": "active",
+      "authoringMeaning": "A synthetic sub-bass voice for grounded fundamentals, slow pressure, and sparse low-register motion."
+    },
+    {
+      "id": "warm_piano",
+      "label": "Warm piano",
+      "family": "pitched",
+      "midiMin": 21,
+      "midiMax": 108,
+      "status": "active",
+      "authoringMeaning": "A rounded acoustic piano voice for melody, harmony, and intimate accompaniment."
+    }
+  ],
+  "contentSha256": "1dea69fbbba1f34cdf0b58e74e2509e371f2c0df9617f09cda14f666d51eb399"
+}

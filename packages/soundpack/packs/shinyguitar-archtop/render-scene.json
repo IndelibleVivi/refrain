@@ -1,0 +1,23 @@
+{
+  "format": "refrain-render-scene@1-experimental",
+  "id": "refrain-shinyguitar-archtop-room@1",
+  "master": { "gainDb": -12, "peakCeiling": 0.7, "velocityScale": 1 },
+  "buses": [
+    {
+      "id": "guitar",
+      "output": "master",
+      "processors": [
+        {
+          "id": "place",
+          "type": "gain-pan",
+          "gainDb": -1,
+          "pan": 0,
+          "width": 1.05
+        },
+        { "id": "air", "type": "lowpass", "frequencyHz": 12000, "q": 0.7 }
+      ]
+    }
+  ],
+  "routes": [{ "id": "all", "bus": "guitar", "match": {} }],
+  "contentSha256": "7cc7635e23899cb3c2c52f2e67bbf02ffa94cbfe219042d6ddcd4d920f5f7154"
+}

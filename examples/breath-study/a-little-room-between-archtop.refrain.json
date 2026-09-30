@@ -1,0 +1,1507 @@
+{
+  "format": "refrain-artifact@3-experimental",
+  "source": {
+    "format": "air@1-experimental",
+    "title": "A little room between · Archtop",
+    "conductor": { "tempo": 84, "meters": [{ "bar": 1, "meter": "4/4" }] },
+    "vocabulary": {
+      "format": "refrain-air-vocabulary-closure@0-experimental",
+      "id": "refrain-shinyguitar-archtop-language@1",
+      "instruments": [
+        {
+          "id": "air_pad",
+          "label": "Air pad",
+          "family": "texture",
+          "midiMin": 36,
+          "midiMax": 96,
+          "status": "active",
+          "authoringMeaning": "A restrained synthetic sustained texture used as supporting air rather than an acoustic substitute."
+        },
+        {
+          "id": "archtop_guitar",
+          "label": "Archtop guitar",
+          "family": "pitched",
+          "midiMin": 33,
+          "midiMax": 91,
+          "status": "active",
+          "authoringMeaning": "A microphone-captured archtop guitar with a firm plucked attack and short natural decay, distinct from the core nylon_guitar voice."
+        },
+        {
+          "id": "chamber_strings",
+          "label": "Chamber strings",
+          "family": "pitched",
+          "midiMin": 36,
+          "midiMax": 96,
+          "status": "active",
+          "authoringMeaning": "A blended sustained string ensemble for harmony, counterlines, and long dynamic shapes."
+        },
+        {
+          "id": "clarinet",
+          "label": "Clarinet",
+          "family": "pitched",
+          "midiMin": 50,
+          "midiMax": 94,
+          "status": "active",
+          "authoringMeaning": "A rounded sustained woodwind voice spanning warm low lines and clear upper melody."
+        },
+        {
+          "id": "clean_bass",
+          "label": "Clean bass",
+          "family": "pitched",
+          "midiMin": 28,
+          "midiMax": 67,
+          "status": "active",
+          "authoringMeaning": "A clear low-register bass voice that supports pulse and harmonic foundation."
+        },
+        {
+          "id": "dust_texture",
+          "label": "Dust texture",
+          "family": "texture",
+          "midiMin": 36,
+          "midiMax": 108,
+          "status": "active",
+          "authoringMeaning": "A deliberately unstable synthetic texture for degraded air, soft interference, and worn harmonic edges."
+        },
+        {
+          "id": "flute",
+          "label": "Flute",
+          "family": "pitched",
+          "midiMin": 60,
+          "midiMax": 96,
+          "status": "active",
+          "authoringMeaning": "A light sustained woodwind voice for exposed melody and airy upper-register motion."
+        },
+        {
+          "id": "glass_bell",
+          "label": "Glass bell",
+          "family": "texture",
+          "midiMin": 60,
+          "midiMax": 108,
+          "status": "active",
+          "authoringMeaning": "A restrained synthetic bell color for sparse high-register punctuation and returning motifs."
+        },
+        {
+          "id": "harp",
+          "label": "Harp",
+          "family": "pitched",
+          "midiMin": 24,
+          "midiMax": 103,
+          "status": "active",
+          "authoringMeaning": "A resonant concert-harp voice for separated notes, arpeggiation, and luminous harmony."
+        },
+        {
+          "id": "lattice_pluck",
+          "label": "Lattice pluck",
+          "family": "pitched",
+          "midiMin": 36,
+          "midiMax": 96,
+          "status": "active",
+          "authoringMeaning": "A short synthetic pluck for interlocking figures, pointillist harmony, and bright repeated patterns."
+        },
+        {
+          "id": "marimba",
+          "label": "Marimba",
+          "family": "pitched",
+          "midiMin": 45,
+          "midiMax": 96,
+          "status": "active",
+          "authoringMeaning": "A pitched wooden mallet voice for melodic percussion, pulse, and resonant ostinato."
+        },
+        {
+          "id": "nylon_guitar",
+          "label": "Nylon guitar",
+          "family": "pitched",
+          "midiMin": 40,
+          "midiMax": 88,
+          "status": "active",
+          "authoringMeaning": "A plucked nylon-string voice with a soft attack and short natural decay."
+        },
+        {
+          "id": "prism_lead",
+          "label": "Prism lead",
+          "family": "pitched",
+          "midiMin": 48,
+          "midiMax": 100,
+          "status": "active",
+          "authoringMeaning": "A clear synthetic lead voice for exposed motifs, bent contour, and focused upper-register lines."
+        },
+        {
+          "id": "rhythm_pulse",
+          "label": "Rhythm pulse",
+          "family": "percussion",
+          "midiMin": 36,
+          "midiMax": 51,
+          "status": "active",
+          "authoringMeaning": "A tuned electronic pulse set for kick-like anchors, clipped answers, and sparse beat-led structure.",
+          "supportedNotes": [36, 38, 42, 46, 49, 51]
+        },
+        {
+          "id": "soft_percussion",
+          "label": "Soft percussion",
+          "family": "percussion",
+          "midiMin": 36,
+          "midiMax": 51,
+          "status": "active",
+          "authoringMeaning": "A restrained unpitched kit for soft low hits, hand-drum-like accents, hats, and light color.",
+          "supportedNotes": [36, 38, 42, 46, 49, 51]
+        },
+        {
+          "id": "solo_cello",
+          "label": "Solo cello",
+          "family": "pitched",
+          "midiMin": 36,
+          "midiMax": 76,
+          "status": "active",
+          "authoringMeaning": "A single bowed cello voice for lyrical lead, bass, and expressive sustained lines."
+        },
+        {
+          "id": "sub_bass",
+          "label": "Sub bass",
+          "family": "pitched",
+          "midiMin": 24,
+          "midiMax": 72,
+          "status": "active",
+          "authoringMeaning": "A synthetic sub-bass voice for grounded fundamentals, slow pressure, and sparse low-register motion."
+        },
+        {
+          "id": "warm_piano",
+          "label": "Warm piano",
+          "family": "pitched",
+          "midiMin": 21,
+          "midiMax": 108,
+          "status": "active",
+          "authoringMeaning": "A rounded acoustic piano voice for melody, harmony, and intimate accompaniment."
+        }
+      ],
+      "techniques": [],
+      "contentSha256": "174f57a6ba2e7270f0b6ee2fffce49bace11bf3180f1a491ef5546399d5bb122"
+    },
+    "motifs": {},
+    "sections": [
+      { "id": "first-light", "startBar": 1, "bars": 4 },
+      { "id": "reflection", "startBar": 5, "bars": 4 },
+      { "id": "landing", "startBar": 9, "bars": 4 }
+    ],
+    "voices": [
+      {
+        "id": "thread",
+        "instrument": "archtop_guitar",
+        "role": "lead",
+        "gainDb": -3,
+        "pan": -0.12,
+        "realize": [
+          {
+            "id": "melody-1",
+            "section": "first-light",
+            "kind": "literal",
+            "part": "E4/8.@mp B4/8.@p C#5/4.@mp E5/4@mf | F#5/4.@mf E5/4.@mp C#5/4@p | B4/4.@mp G#4/4.@p F#4/4@p | E4/2@mp B4/2@p",
+            "gate": 0.88
+          },
+          {
+            "id": "melody-2",
+            "section": "reflection",
+            "kind": "literal",
+            "part": "E4/8.@mp B4/8.@p C#5/4.@mp E5/4@mf | F#5/4.@mf G#5/4.@mp E5/4@p | C#5/4.@mp B4/4.@p G#4/4@p | F#4/2@mp E4/2@p",
+            "gate": 0.88
+          },
+          {
+            "id": "melody-3",
+            "section": "landing",
+            "kind": "literal",
+            "part": "E4/8.@mp B4/8.@p C#5/4.@mp E5/4@mf | F#5/4.@mf E5/4.@mp C#5/4@p | B4/4.@mp G#4/4.@p F#4/4@p | E4/2@mp E4/2@pp",
+            "gate": 0.88
+          }
+        ]
+      },
+      {
+        "id": "ground",
+        "instrument": "archtop_guitar",
+        "role": "bass",
+        "gainDb": -9,
+        "pan": 0.08,
+        "part": "E2/1@mp | C#3/1@mp | A2/1@mp | B2/1@mp | E2/1@mp | C#3/1@mp | A2/1@mp | B2/1@mp | E2/1@mp | C#3/1@mp | A2/1@mp | E2/1@mp"
+      },
+      {
+        "id": "resonance-1",
+        "instrument": "archtop_guitar",
+        "role": "harmony",
+        "gainDb": -12,
+        "pan": 0.23,
+        "part": "r/16 G#3/2@pp r/4. r/16 | r/16 G#3/2@pp r/4. r/16 | r/16 A3/2@pp r/4. r/16 | r/16 F#3/2@pp r/4. r/16 | r/16 G#3/2@p r/4. r/16 | r/16 G#3/2@p r/4. r/16 | r/16 A3/2@p r/4. r/16 | r/16 F#3/2@p r/4. r/16 | r/16 G#3/2@pp r/4. r/16 | r/16 G#3/2@pp r/4. r/16 | r/16 A3/2@pp r/4. r/16 | r/16 G#3/2@pp r/4. r/16"
+      },
+      {
+        "id": "resonance-2",
+        "instrument": "archtop_guitar",
+        "role": "harmony",
+        "gainDb": -12,
+        "pan": 0.32,
+        "part": "r/1 | r/1 | r/1 | r/1 | r/8 B3/2@p r/4. | r/8 C#4/2@p r/4. | r/8 C#4/2@p r/4. | r/8 B3/2@p r/4. | r/8 B3/2@pp r/4. | r/8 C#4/2@pp r/4. | r/8 C#4/2@pp r/4. | r/8 B3/2@pp r/4."
+      },
+      {
+        "id": "resonance-3",
+        "instrument": "archtop_guitar",
+        "role": "harmony",
+        "gainDb": -12,
+        "pan": 0.41000000000000003,
+        "part": "r/8. F#4/2@pp r/4 r/16 | r/8. D#4/2@pp r/4 r/16 | r/8. G#4/2@pp r/4 r/16 | r/8. E4/2@pp r/4 r/16 | r/8. F#4/2@p r/4 r/16 | r/8. D#4/2@p r/4 r/16 | r/8. G#4/2@p r/4 r/16 | r/8. E4/2@p r/4 r/16 | r/8. F#4/2@pp r/4 r/16 | r/8. D#4/2@pp r/4 r/16 | r/8. G#4/2@pp r/4 r/16 | r/8. E4/2@pp r/4 r/16"
+      }
+    ],
+    "key": "E major"
+  },
+  "receipt": {
+    "format": "refrain-receipt@1-experimental",
+    "sourceRevision": "sha256:bb55d26b43488b46ac18429ee6b7513c248e0a760b540589b01b9a429e0778dc",
+    "airId": "sha256:bb55d26b43488b46ac18429ee6b7513c248e0a760b540589b01b9a429e0778dc",
+    "sourceFormat": "air@1-experimental",
+    "verification": {
+      "contract": "musical-relation@1-experimental",
+      "status": "not_applicable",
+      "motifLinks": [],
+      "orchestrationLinks": [],
+      "recurrences": [],
+      "contrasts": [],
+      "absences": []
+    },
+    "receiptId": "sha256:c0930398591f40222f806af205f62ea2f975b187fee076a96bee1896098eac5d"
+  },
+  "performanceBindings": [
+    {
+      "format": "refrain-performance-binding@1-experimental",
+      "id": "refrain-shinyguitar-archtop@1",
+      "requiredInstrumentIds": ["archtop_guitar"],
+      "soundProfile": {
+        "format": "refrain-sound-profile@2-experimental",
+        "id": "refrain-shinyguitar-archtop@2",
+        "vocabulary": {
+          "id": "refrain-shinyguitar-archtop@0",
+          "sha256": "1dea69fbbba1f34cdf0b58e74e2509e371f2c0df9617f09cda14f666d51eb399"
+        },
+        "coverage": ["archtop_guitar"],
+        "selections": {
+          "archtop_guitar": {
+            "candidateChain": [
+              {
+                "id": "archtop-guitar-shinyguitar-acoustic",
+                "sha256": "7c4228273b9e3d4cca74b2489d2d835fb3d87913f08497242e9000f2765e479f"
+              }
+            ],
+            "fallbackPolicy": "strict"
+          }
+        },
+        "contentSha256": "01e284451addc2f17fcfdc0958a13aad13fecf8a5adde7ef8dc1fb8abc693db6"
+      },
+      "soundProfileSha256": "01e284451addc2f17fcfdc0958a13aad13fecf8a5adde7ef8dc1fb8abc693db6",
+      "renderScene": {
+        "format": "refrain-render-scene@1-experimental",
+        "id": "refrain-shinyguitar-archtop-room@1",
+        "master": { "gainDb": -12, "peakCeiling": 0.7, "velocityScale": 1 },
+        "buses": [
+          {
+            "id": "guitar",
+            "output": "master",
+            "processors": [
+              {
+                "id": "place",
+                "type": "gain-pan",
+                "gainDb": -1,
+                "pan": 0,
+                "width": 1.05
+              },
+              { "id": "air", "type": "lowpass", "frequencyHz": 12000, "q": 0.7 }
+            ]
+          }
+        ],
+        "routes": [{ "id": "all", "bus": "guitar", "match": {} }],
+        "contentSha256": "7cc7635e23899cb3c2c52f2e67bbf02ffa94cbfe219042d6ddcd4d920f5f7154"
+      },
+      "candidateDigests": {
+        "archtop-guitar-shinyguitar-acoustic": "7c4228273b9e3d4cca74b2489d2d835fb3d87913f08497242e9000f2765e479f"
+      },
+      "permittedOverrides": ["masterGainDb", "peakCeiling", "velocityScale"],
+      "overrides": {},
+      "renderer": {
+        "contract": "refrain-renderer@2-experimental",
+        "performancePlanFormat": "performance-plan@4-experimental",
+        "adapters": [
+          "browser-direct",
+          "browser-streaming-pcm",
+          "worker-block-pcm",
+          "node-block-pcm",
+          "wav",
+          "midi"
+        ]
+      },
+      "contentSha256": "a940d68bc36df55824a02dcd920f104b9a77d84b8b96e3957ebe4c0bda53d941"
+    }
+  ],
+  "defaultBindingId": "refrain-shinyguitar-archtop@1",
+  "renderReceipts": [
+    {
+      "format": "refrain-render-receipt@3-experimental",
+      "sourceRevision": "sha256:bb55d26b43488b46ac18429ee6b7513c248e0a760b540589b01b9a429e0778dc",
+      "compilerContract": "compiled-air@1-experimental",
+      "resolverContract": "refrain-sound-resolver@1-experimental",
+      "vocabularyDigest": "sha256:1dea69fbbba1f34cdf0b58e74e2509e371f2c0df9617f09cda14f666d51eb399",
+      "soundClosureDigest": "sha256:5dc80f5d06ee134a5ce9007cbca747f60df882092e24a17c733ab92978ec0438",
+      "soundProfileDigest": "sha256:01e284451addc2f17fcfdc0958a13aad13fecf8a5adde7ef8dc1fb8abc693db6",
+      "renderSceneDigest": "sha256:7cc7635e23899cb3c2c52f2e67bbf02ffa94cbfe219042d6ddcd4d920f5f7154",
+      "performanceBindingDigest": "sha256:a940d68bc36df55824a02dcd920f104b9a77d84b8b96e3957ebe4c0bda53d941",
+      "resolvedRenderProfileDigest": "sha256:d882d4eb7d3375f7f1cc0040f62d731e353a8c57ed528d747d5cf630a2341e4d",
+      "rendererContract": "refrain-renderer@2-experimental",
+      "performancePlanDigest": "sha256:fb3247c13f58d4ff5c7dcf7b89e98a1bb4637397839c62cf1cab414c1b135b15",
+      "selectedCandidates": [
+        {
+          "instrumentId": "archtop_guitar",
+          "candidateId": "archtop-guitar-shinyguitar-acoustic",
+          "candidateDigest": "sha256:7c4228273b9e3d4cca74b2489d2d835fb3d87913f08497242e9000f2765e479f",
+          "fallbackUsed": false
+        }
+      ],
+      "requiredAssets": [
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-a2-vl3-rr1-1-2eec9cdc43a7",
+          "sha256": "2eec9cdc43a79058401158c6fe29362c2ec10208c8a8c52bb321de980eb6eba9",
+          "bytes": 930284
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-a2-vl3-rr3-1-7e2f9472bf6e",
+          "sha256": "7e2f9472bf6e0f57b1236f7c6dfa3e8392a2ac8615a3d7e7001b299c4f0445ca",
+          "bytes": 930284
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-a2-vl3-rr4-1-c0f4ab7c1e6c",
+          "sha256": "c0f4ab7c1e6ce6d398927c7e08a60e6f21e10be11b84b2b2915395a788d698ee",
+          "bytes": 930284
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-a3-vl2-rr1-1-741db64b4c52",
+          "sha256": "741db64b4c52ed7b11d1d8cd5e177785ddfe32db67fc23e829cef2428edccdc8",
+          "bytes": 930284
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-a3-vl2-rr2-1-274c7620215e",
+          "sha256": "274c7620215e617ee562667eca30e4a59ccb13da342cd5ff0720c020af03d5e4",
+          "bytes": 930284
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-a3-vl2-rr3-1-ba94df24fcdd",
+          "sha256": "ba94df24fcdd620485e7ce2bee59e0943b5bc5424a62b7914f7c298863e0b1ba",
+          "bytes": 930284
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-a3-vl2-rr4-1-e0cf13dc08a5",
+          "sha256": "e0cf13dc08a56cecb1ed4f1ae51ba4d52f98ff0c82fc56a01d1d2f5e03223cec",
+          "bytes": 930284
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-a4-vl2-rr1-1-d6303b416904",
+          "sha256": "d6303b4169046808deb79a311372a267246547abeee1f8546da77d6be605664a",
+          "bytes": 744236
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-a4-vl2-rr2-1-54e6703c25a5",
+          "sha256": "54e6703c25a5d7ffa12cb121a6cd33969556b63c81b6ba9c0c34484439ece812",
+          "bytes": 744236
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-a4-vl2-rr3-1-d69faad8b9fa",
+          "sha256": "d69faad8b9fa34700fae70bbe8cabf19402946efa52798b9d44a6361f2b2d7ad",
+          "bytes": 744236
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-a4-vl2-rr4-1-4f57ff517e37",
+          "sha256": "4f57ff517e378cef9fd7b68af206ca8f7a783d855b17182c3c58ef9cc2ca5185",
+          "bytes": 744236
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-a5-vl3-rr3-1-8404fdc5a2d7",
+          "sha256": "8404fdc5a2d7b3810a137232da1829ac32afc4b370cd298cb93f26c533ed69c9",
+          "bytes": 558188
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c3-vl3-rr1-1-ec242d1c0a1a",
+          "sha256": "ec242d1c0a1aca8aa4507d24d4fc58c46c13a0a20b54ef9f3560aecdf438663e",
+          "bytes": 930284
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c3-vl3-rr2-1-e77ab187c510",
+          "sha256": "e77ab187c5101e8d00bcdad4f8acea79bc9bd902b11367b5bd74b99dba3bc6b7",
+          "bytes": 930284
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c3-vl3-rr3-1-4350fa0c8a70",
+          "sha256": "4350fa0c8a709a815a4c570d783c9486440f5640951568980dc65de8c11d86e9",
+          "bytes": 930284
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c3-vl3-rr4-1-8e2e4b7b16bc",
+          "sha256": "8e2e4b7b16bcd63ae34e13084c33e57030fe6df5f17af4e1338516b619259fda",
+          "bytes": 930284
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c4-vl2-rr1-1-6b3d07ff6814",
+          "sha256": "6b3d07ff68144d4f5d5ac42350e5c4250f625c4a2e909fc19ae9d4e944d80eb1",
+          "bytes": 930284
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c4-vl2-rr2-1-ded240d24345",
+          "sha256": "ded240d243450450d654d1f1f54abc2dd20f2f51a5d770b2794c09a3702498ec",
+          "bytes": 930284
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c4-vl2-rr3-1-2ca6968c26ca",
+          "sha256": "2ca6968c26ca24b4c2bbd3f5573caa3f42d0d5d05f390707c6bceedfb89b4358",
+          "bytes": 930284
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c4-vl2-rr4-1-d4f5141a5f74",
+          "sha256": "d4f5141a5f749d0956c1c629b1a39d16c70dd2a63709d2d3e5737b98574c5b22",
+          "bytes": 930284
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c5-vl2-rr1-1-84051ad00423",
+          "sha256": "84051ad0042396b83a72f2341c58238f46ba2c28b9ea4ec1cd8db45e1e132a53",
+          "bytes": 744236
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c5-vl2-rr2-1-3e9c39cb2a58",
+          "sha256": "3e9c39cb2a58cc5e40ad7a754ce883adaa4d58562d33e2fece6635cb9a6b74f3",
+          "bytes": 744236
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c5-vl2-rr3-1-98216d736d9b",
+          "sha256": "98216d736d9b74b4bcafb1ee5ef50bc837fa0ce52ed0c416bc6b396fc124a3ab",
+          "bytes": 744236
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c5-vl2-rr4-1-93e1917b1422",
+          "sha256": "93e1917b14225ef7ccbbfe604fcd65a4e219f7e0201c1916900d3d42181e678a",
+          "bytes": 744236
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c5-vl3-rr1-1-40ce5a6ecb73",
+          "sha256": "40ce5a6ecb73699e90810ce9c11f0f1106df621dfb9a837ab9ec3fb44ba40c09",
+          "bytes": 744236
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c5-vl3-rr2-1-b58b3691febe",
+          "sha256": "b58b3691febecc953978f98d918e2e46e543200f5e2c92f1b5c2e247d0f32553",
+          "bytes": 744236
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c5-vl3-rr3-1-9223bdfebff3",
+          "sha256": "9223bdfebff30aa046b6f7944e3654c03573f38fef6749def1d6a94c188841f9",
+          "bytes": 744236
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c5-vl3-rr4-1-791fbadca667",
+          "sha256": "791fbadca6673d6674f5dd7a5e15f572cfd540d27bfe362747fd5e84ac0d9066",
+          "bytes": 744236
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-e2-vl3-rr1-1-47c975087b22",
+          "sha256": "47c975087b22897c3da370ec715d5bec1d4b27b791ba1c001531fbb28ba57e03",
+          "bytes": 1054316
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-e2-vl3-rr2-1-a0ea824e0c63",
+          "sha256": "a0ea824e0c63f6ed57a9dad75094682056fd9e3812060ce973cf44e1319d8de5",
+          "bytes": 1054316
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-e2-vl3-rr3-1-51ce7f1864d5",
+          "sha256": "51ce7f1864d5a6853987c2a42334a6e7521614ad5b18efaa22d4dc99895648ed",
+          "bytes": 1054316
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-e2-vl3-rr4-1-1ca919e082ac",
+          "sha256": "1ca919e082acf58134983d3159f604f781449acd477f13571390c256f53efdfe",
+          "bytes": 1054316
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-eb4-vl2-rr1-1-21e8973f5505",
+          "sha256": "21e8973f550525084e3995839f9490eda34036efbe1597a18157e0cbb07839be",
+          "bytes": 744236
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-eb4-vl2-rr2-1-d7baf88d5a8e",
+          "sha256": "d7baf88d5a8e2534541349601154689fcbf3ff9d104cfb8c2790305de828d466",
+          "bytes": 744236
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-eb4-vl2-rr3-1-a68547773e9a",
+          "sha256": "a68547773e9a3e94f5ad9f8b6c5ded81b3169d96d80424849a95ef7ef03607a5",
+          "bytes": 744236
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-eb4-vl2-rr4-1-f0c7fe3abab5",
+          "sha256": "f0c7fe3abab55048d5ce33f54c591f402c6ba544c5e521c69aae50bdd5b9db3f",
+          "bytes": 744236
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-eb4-vl3-rr1-1-d9bfb23d3fbe",
+          "sha256": "d9bfb23d3fbe40915843e4cdfe8c5341214b1ee602589dac6b18fa1d56d0457f",
+          "bytes": 744236
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-eb4-vl3-rr2-1-6281afdec972",
+          "sha256": "6281afdec9726a453a1246643213785d9c0a217203b13e6fe6490e323361cd0f",
+          "bytes": 744236
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-eb4-vl3-rr3-1-10aaba2b0ac5",
+          "sha256": "10aaba2b0ac5a5251613c4848b0b1929e21999260dd48e52a312091237c99861",
+          "bytes": 744236
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-eb4-vl3-rr4-1-a7397b89a0fc",
+          "sha256": "a7397b89a0fc802f6668db7cb1303116035f7d76dea291a9e27ac525abd03650",
+          "bytes": 744236
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-eb5-vl2-rr2-1-14f50c3849fd",
+          "sha256": "14f50c3849fdab5d56efe175ac006cdd60dc13a540bb27cf1aa2d65971c94609",
+          "bytes": 620204
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-eb5-vl3-rr1-1-9c405ad2d5a4",
+          "sha256": "9c405ad2d5a4859a8cbb66526d70bc277a1682bd17cd7296cfa81f0610c208de",
+          "bytes": 620204
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-eb5-vl3-rr2-1-0f47a63a4e38",
+          "sha256": "0f47a63a4e380121035e447a8ff9977c825e1b49dba13add64c04777c940b3f8",
+          "bytes": 620204
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-eb5-vl3-rr3-1-1fdb957a3f30",
+          "sha256": "1fdb957a3f30924ce0ecfc85ed1a38d6a5f666a436137ce04d7abed84df9fc5c",
+          "bytes": 620204
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-eb5-vl3-rr4-1-ef4738686bd8",
+          "sha256": "ef4738686bd82d31475e470531c2a0c1da680edabe9c09a599fe776c16921627",
+          "bytes": 620204
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-gb3-vl2-rr3-1-fd5f16be8a80",
+          "sha256": "fd5f16be8a80dc384711e814c7f3262ee3cba5993df8aa8ee2496ecdaec9faf9",
+          "bytes": 930284
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-gb3-vl2-rr4-1-f1c8d648976a",
+          "sha256": "f1c8d648976aad32d646a2288a435df2bab3a37ef71718985e74ef0092d6e8ec",
+          "bytes": 930284
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-gb4-vl2-rr1-1-55b558cf9f2a",
+          "sha256": "55b558cf9f2a29a7a48ba4d93c98000dab4f7af8168940942bf811c92eb39195",
+          "bytes": 744236
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-gb4-vl2-rr3-1-2ecdd42c48eb",
+          "sha256": "2ecdd42c48eb643191c3d42326cbe3a4c08ab0c3b48e52e772cd2117174c68c1",
+          "bytes": 744236
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-gb4-vl2-rr4-1-b7a7fd1f0707",
+          "sha256": "b7a7fd1f07079c4813825b59075ae8abfa5a2d791eb29b515f726ff645d21b3a",
+          "bytes": 744236
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-gb4-vl3-rr1-1-0f58455166af",
+          "sha256": "0f58455166afa02e564ba2138e4f653c911a2923baef5ec075a629f289003ac2",
+          "bytes": 744236
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-gb5-vl3-rr2-1-ce863a8c2f70",
+          "sha256": "ce863a8c2f7062ac8e8eda8f92c711bc6bda6ee691e0cb56a29253b8d2d410ea",
+          "bytes": 620204
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-gb5-vl3-rr3-1-3cf2b991a319",
+          "sha256": "3cf2b991a3194b34cf836930be2c51179546e3168191d135ac63318e574807e2",
+          "bytes": 620204
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-gb5-vl3-rr4-1-6e8e186e824d",
+          "sha256": "6e8e186e824df3ca8210220cc8e61950712dc876ef2bff01c9665f5bbd32dd27",
+          "bytes": 620204
+        }
+      ],
+      "verifiedAssets": [
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-a2-vl3-rr1-1-2eec9cdc43a7",
+          "bytes": 930284,
+          "sha256": "2eec9cdc43a79058401158c6fe29362c2ec10208c8a8c52bb321de980eb6eba9"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-a2-vl3-rr3-1-7e2f9472bf6e",
+          "bytes": 930284,
+          "sha256": "7e2f9472bf6e0f57b1236f7c6dfa3e8392a2ac8615a3d7e7001b299c4f0445ca"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-a2-vl3-rr4-1-c0f4ab7c1e6c",
+          "bytes": 930284,
+          "sha256": "c0f4ab7c1e6ce6d398927c7e08a60e6f21e10be11b84b2b2915395a788d698ee"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-a3-vl2-rr1-1-741db64b4c52",
+          "bytes": 930284,
+          "sha256": "741db64b4c52ed7b11d1d8cd5e177785ddfe32db67fc23e829cef2428edccdc8"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-a3-vl2-rr2-1-274c7620215e",
+          "bytes": 930284,
+          "sha256": "274c7620215e617ee562667eca30e4a59ccb13da342cd5ff0720c020af03d5e4"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-a3-vl2-rr3-1-ba94df24fcdd",
+          "bytes": 930284,
+          "sha256": "ba94df24fcdd620485e7ce2bee59e0943b5bc5424a62b7914f7c298863e0b1ba"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-a3-vl2-rr4-1-e0cf13dc08a5",
+          "bytes": 930284,
+          "sha256": "e0cf13dc08a56cecb1ed4f1ae51ba4d52f98ff0c82fc56a01d1d2f5e03223cec"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-a4-vl2-rr1-1-d6303b416904",
+          "bytes": 744236,
+          "sha256": "d6303b4169046808deb79a311372a267246547abeee1f8546da77d6be605664a"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-a4-vl2-rr2-1-54e6703c25a5",
+          "bytes": 744236,
+          "sha256": "54e6703c25a5d7ffa12cb121a6cd33969556b63c81b6ba9c0c34484439ece812"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-a4-vl2-rr3-1-d69faad8b9fa",
+          "bytes": 744236,
+          "sha256": "d69faad8b9fa34700fae70bbe8cabf19402946efa52798b9d44a6361f2b2d7ad"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-a4-vl2-rr4-1-4f57ff517e37",
+          "bytes": 744236,
+          "sha256": "4f57ff517e378cef9fd7b68af206ca8f7a783d855b17182c3c58ef9cc2ca5185"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-a5-vl3-rr3-1-8404fdc5a2d7",
+          "bytes": 558188,
+          "sha256": "8404fdc5a2d7b3810a137232da1829ac32afc4b370cd298cb93f26c533ed69c9"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c3-vl3-rr1-1-ec242d1c0a1a",
+          "bytes": 930284,
+          "sha256": "ec242d1c0a1aca8aa4507d24d4fc58c46c13a0a20b54ef9f3560aecdf438663e"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c3-vl3-rr2-1-e77ab187c510",
+          "bytes": 930284,
+          "sha256": "e77ab187c5101e8d00bcdad4f8acea79bc9bd902b11367b5bd74b99dba3bc6b7"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c3-vl3-rr3-1-4350fa0c8a70",
+          "bytes": 930284,
+          "sha256": "4350fa0c8a709a815a4c570d783c9486440f5640951568980dc65de8c11d86e9"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c3-vl3-rr4-1-8e2e4b7b16bc",
+          "bytes": 930284,
+          "sha256": "8e2e4b7b16bcd63ae34e13084c33e57030fe6df5f17af4e1338516b619259fda"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c4-vl2-rr1-1-6b3d07ff6814",
+          "bytes": 930284,
+          "sha256": "6b3d07ff68144d4f5d5ac42350e5c4250f625c4a2e909fc19ae9d4e944d80eb1"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c4-vl2-rr2-1-ded240d24345",
+          "bytes": 930284,
+          "sha256": "ded240d243450450d654d1f1f54abc2dd20f2f51a5d770b2794c09a3702498ec"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c4-vl2-rr3-1-2ca6968c26ca",
+          "bytes": 930284,
+          "sha256": "2ca6968c26ca24b4c2bbd3f5573caa3f42d0d5d05f390707c6bceedfb89b4358"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c4-vl2-rr4-1-d4f5141a5f74",
+          "bytes": 930284,
+          "sha256": "d4f5141a5f749d0956c1c629b1a39d16c70dd2a63709d2d3e5737b98574c5b22"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c5-vl2-rr1-1-84051ad00423",
+          "bytes": 744236,
+          "sha256": "84051ad0042396b83a72f2341c58238f46ba2c28b9ea4ec1cd8db45e1e132a53"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c5-vl2-rr2-1-3e9c39cb2a58",
+          "bytes": 744236,
+          "sha256": "3e9c39cb2a58cc5e40ad7a754ce883adaa4d58562d33e2fece6635cb9a6b74f3"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c5-vl2-rr3-1-98216d736d9b",
+          "bytes": 744236,
+          "sha256": "98216d736d9b74b4bcafb1ee5ef50bc837fa0ce52ed0c416bc6b396fc124a3ab"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c5-vl2-rr4-1-93e1917b1422",
+          "bytes": 744236,
+          "sha256": "93e1917b14225ef7ccbbfe604fcd65a4e219f7e0201c1916900d3d42181e678a"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c5-vl3-rr1-1-40ce5a6ecb73",
+          "bytes": 744236,
+          "sha256": "40ce5a6ecb73699e90810ce9c11f0f1106df621dfb9a837ab9ec3fb44ba40c09"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c5-vl3-rr2-1-b58b3691febe",
+          "bytes": 744236,
+          "sha256": "b58b3691febecc953978f98d918e2e46e543200f5e2c92f1b5c2e247d0f32553"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c5-vl3-rr3-1-9223bdfebff3",
+          "bytes": 744236,
+          "sha256": "9223bdfebff30aa046b6f7944e3654c03573f38fef6749def1d6a94c188841f9"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c5-vl3-rr4-1-791fbadca667",
+          "bytes": 744236,
+          "sha256": "791fbadca6673d6674f5dd7a5e15f572cfd540d27bfe362747fd5e84ac0d9066"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-e2-vl3-rr1-1-47c975087b22",
+          "bytes": 1054316,
+          "sha256": "47c975087b22897c3da370ec715d5bec1d4b27b791ba1c001531fbb28ba57e03"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-e2-vl3-rr2-1-a0ea824e0c63",
+          "bytes": 1054316,
+          "sha256": "a0ea824e0c63f6ed57a9dad75094682056fd9e3812060ce973cf44e1319d8de5"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-e2-vl3-rr3-1-51ce7f1864d5",
+          "bytes": 1054316,
+          "sha256": "51ce7f1864d5a6853987c2a42334a6e7521614ad5b18efaa22d4dc99895648ed"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-e2-vl3-rr4-1-1ca919e082ac",
+          "bytes": 1054316,
+          "sha256": "1ca919e082acf58134983d3159f604f781449acd477f13571390c256f53efdfe"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-eb4-vl2-rr1-1-21e8973f5505",
+          "bytes": 744236,
+          "sha256": "21e8973f550525084e3995839f9490eda34036efbe1597a18157e0cbb07839be"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-eb4-vl2-rr2-1-d7baf88d5a8e",
+          "bytes": 744236,
+          "sha256": "d7baf88d5a8e2534541349601154689fcbf3ff9d104cfb8c2790305de828d466"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-eb4-vl2-rr3-1-a68547773e9a",
+          "bytes": 744236,
+          "sha256": "a68547773e9a3e94f5ad9f8b6c5ded81b3169d96d80424849a95ef7ef03607a5"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-eb4-vl2-rr4-1-f0c7fe3abab5",
+          "bytes": 744236,
+          "sha256": "f0c7fe3abab55048d5ce33f54c591f402c6ba544c5e521c69aae50bdd5b9db3f"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-eb4-vl3-rr1-1-d9bfb23d3fbe",
+          "bytes": 744236,
+          "sha256": "d9bfb23d3fbe40915843e4cdfe8c5341214b1ee602589dac6b18fa1d56d0457f"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-eb4-vl3-rr2-1-6281afdec972",
+          "bytes": 744236,
+          "sha256": "6281afdec9726a453a1246643213785d9c0a217203b13e6fe6490e323361cd0f"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-eb4-vl3-rr3-1-10aaba2b0ac5",
+          "bytes": 744236,
+          "sha256": "10aaba2b0ac5a5251613c4848b0b1929e21999260dd48e52a312091237c99861"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-eb4-vl3-rr4-1-a7397b89a0fc",
+          "bytes": 744236,
+          "sha256": "a7397b89a0fc802f6668db7cb1303116035f7d76dea291a9e27ac525abd03650"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-eb5-vl2-rr2-1-14f50c3849fd",
+          "bytes": 620204,
+          "sha256": "14f50c3849fdab5d56efe175ac006cdd60dc13a540bb27cf1aa2d65971c94609"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-eb5-vl3-rr1-1-9c405ad2d5a4",
+          "bytes": 620204,
+          "sha256": "9c405ad2d5a4859a8cbb66526d70bc277a1682bd17cd7296cfa81f0610c208de"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-eb5-vl3-rr2-1-0f47a63a4e38",
+          "bytes": 620204,
+          "sha256": "0f47a63a4e380121035e447a8ff9977c825e1b49dba13add64c04777c940b3f8"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-eb5-vl3-rr3-1-1fdb957a3f30",
+          "bytes": 620204,
+          "sha256": "1fdb957a3f30924ce0ecfc85ed1a38d6a5f666a436137ce04d7abed84df9fc5c"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-eb5-vl3-rr4-1-ef4738686bd8",
+          "bytes": 620204,
+          "sha256": "ef4738686bd82d31475e470531c2a0c1da680edabe9c09a599fe776c16921627"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-gb3-vl2-rr3-1-fd5f16be8a80",
+          "bytes": 930284,
+          "sha256": "fd5f16be8a80dc384711e814c7f3262ee3cba5993df8aa8ee2496ecdaec9faf9"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-gb3-vl2-rr4-1-f1c8d648976a",
+          "bytes": 930284,
+          "sha256": "f1c8d648976aad32d646a2288a435df2bab3a37ef71718985e74ef0092d6e8ec"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-gb4-vl2-rr1-1-55b558cf9f2a",
+          "bytes": 744236,
+          "sha256": "55b558cf9f2a29a7a48ba4d93c98000dab4f7af8168940942bf811c92eb39195"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-gb4-vl2-rr3-1-2ecdd42c48eb",
+          "bytes": 744236,
+          "sha256": "2ecdd42c48eb643191c3d42326cbe3a4c08ab0c3b48e52e772cd2117174c68c1"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-gb4-vl2-rr4-1-b7a7fd1f0707",
+          "bytes": 744236,
+          "sha256": "b7a7fd1f07079c4813825b59075ae8abfa5a2d791eb29b515f726ff645d21b3a"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-gb4-vl3-rr1-1-0f58455166af",
+          "bytes": 744236,
+          "sha256": "0f58455166afa02e564ba2138e4f653c911a2923baef5ec075a629f289003ac2"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-gb5-vl3-rr2-1-ce863a8c2f70",
+          "bytes": 620204,
+          "sha256": "ce863a8c2f7062ac8e8eda8f92c711bc6bda6ee691e0cb56a29253b8d2d410ea"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-gb5-vl3-rr3-1-3cf2b991a319",
+          "bytes": 620204,
+          "sha256": "3cf2b991a3194b34cf836930be2c51179546e3168191d135ac63318e574807e2"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-gb5-vl3-rr4-1-6e8e186e824d",
+          "bytes": 620204,
+          "sha256": "6e8e186e824df3ca8210220cc8e61950712dc876ef2bff01c9665f5bbd32dd27"
+        }
+      ],
+      "adapter": "wav",
+      "sampleRate": 44100,
+      "outputSha256": "sha256:1e614891f6884ababd6e4d4753ae3ca7341a8c129a438cf61b25fa40a0a11758",
+      "outputAmplitude": { "mode": "native-gain" },
+      "adaptationNotes": [
+        "Rendered by the bounded Node block kernel and encoded as stereo PCM16 WAV."
+      ],
+      "renderReceiptId": "sha256:8e88664c3a92030ce053cd375dd2b7539ccfca483fd3d5b8ec2660e8816e0c34"
+    },
+    {
+      "format": "refrain-render-receipt@3-experimental",
+      "sourceRevision": "sha256:bb55d26b43488b46ac18429ee6b7513c248e0a760b540589b01b9a429e0778dc",
+      "compilerContract": "compiled-air@1-experimental",
+      "resolverContract": "refrain-sound-resolver@1-experimental",
+      "vocabularyDigest": "sha256:1dea69fbbba1f34cdf0b58e74e2509e371f2c0df9617f09cda14f666d51eb399",
+      "soundClosureDigest": "sha256:5dc80f5d06ee134a5ce9007cbca747f60df882092e24a17c733ab92978ec0438",
+      "soundProfileDigest": "sha256:01e284451addc2f17fcfdc0958a13aad13fecf8a5adde7ef8dc1fb8abc693db6",
+      "renderSceneDigest": "sha256:7cc7635e23899cb3c2c52f2e67bbf02ffa94cbfe219042d6ddcd4d920f5f7154",
+      "performanceBindingDigest": "sha256:a940d68bc36df55824a02dcd920f104b9a77d84b8b96e3957ebe4c0bda53d941",
+      "resolvedRenderProfileDigest": "sha256:d882d4eb7d3375f7f1cc0040f62d731e353a8c57ed528d747d5cf630a2341e4d",
+      "rendererContract": "refrain-renderer@2-experimental",
+      "performancePlanDigest": "sha256:fb3247c13f58d4ff5c7dcf7b89e98a1bb4637397839c62cf1cab414c1b135b15",
+      "selectedCandidates": [
+        {
+          "instrumentId": "archtop_guitar",
+          "candidateId": "archtop-guitar-shinyguitar-acoustic",
+          "candidateDigest": "sha256:7c4228273b9e3d4cca74b2489d2d835fb3d87913f08497242e9000f2765e479f",
+          "fallbackUsed": false
+        }
+      ],
+      "requiredAssets": [
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-a2-vl3-rr1-1-2eec9cdc43a7",
+          "sha256": "2eec9cdc43a79058401158c6fe29362c2ec10208c8a8c52bb321de980eb6eba9",
+          "bytes": 930284
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-a2-vl3-rr3-1-7e2f9472bf6e",
+          "sha256": "7e2f9472bf6e0f57b1236f7c6dfa3e8392a2ac8615a3d7e7001b299c4f0445ca",
+          "bytes": 930284
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-a2-vl3-rr4-1-c0f4ab7c1e6c",
+          "sha256": "c0f4ab7c1e6ce6d398927c7e08a60e6f21e10be11b84b2b2915395a788d698ee",
+          "bytes": 930284
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-a3-vl2-rr1-1-741db64b4c52",
+          "sha256": "741db64b4c52ed7b11d1d8cd5e177785ddfe32db67fc23e829cef2428edccdc8",
+          "bytes": 930284
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-a3-vl2-rr2-1-274c7620215e",
+          "sha256": "274c7620215e617ee562667eca30e4a59ccb13da342cd5ff0720c020af03d5e4",
+          "bytes": 930284
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-a3-vl2-rr3-1-ba94df24fcdd",
+          "sha256": "ba94df24fcdd620485e7ce2bee59e0943b5bc5424a62b7914f7c298863e0b1ba",
+          "bytes": 930284
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-a3-vl2-rr4-1-e0cf13dc08a5",
+          "sha256": "e0cf13dc08a56cecb1ed4f1ae51ba4d52f98ff0c82fc56a01d1d2f5e03223cec",
+          "bytes": 930284
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-a4-vl2-rr1-1-d6303b416904",
+          "sha256": "d6303b4169046808deb79a311372a267246547abeee1f8546da77d6be605664a",
+          "bytes": 744236
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-a4-vl2-rr2-1-54e6703c25a5",
+          "sha256": "54e6703c25a5d7ffa12cb121a6cd33969556b63c81b6ba9c0c34484439ece812",
+          "bytes": 744236
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-a4-vl2-rr3-1-d69faad8b9fa",
+          "sha256": "d69faad8b9fa34700fae70bbe8cabf19402946efa52798b9d44a6361f2b2d7ad",
+          "bytes": 744236
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-a4-vl2-rr4-1-4f57ff517e37",
+          "sha256": "4f57ff517e378cef9fd7b68af206ca8f7a783d855b17182c3c58ef9cc2ca5185",
+          "bytes": 744236
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-a5-vl3-rr3-1-8404fdc5a2d7",
+          "sha256": "8404fdc5a2d7b3810a137232da1829ac32afc4b370cd298cb93f26c533ed69c9",
+          "bytes": 558188
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c3-vl3-rr1-1-ec242d1c0a1a",
+          "sha256": "ec242d1c0a1aca8aa4507d24d4fc58c46c13a0a20b54ef9f3560aecdf438663e",
+          "bytes": 930284
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c3-vl3-rr2-1-e77ab187c510",
+          "sha256": "e77ab187c5101e8d00bcdad4f8acea79bc9bd902b11367b5bd74b99dba3bc6b7",
+          "bytes": 930284
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c3-vl3-rr3-1-4350fa0c8a70",
+          "sha256": "4350fa0c8a709a815a4c570d783c9486440f5640951568980dc65de8c11d86e9",
+          "bytes": 930284
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c3-vl3-rr4-1-8e2e4b7b16bc",
+          "sha256": "8e2e4b7b16bcd63ae34e13084c33e57030fe6df5f17af4e1338516b619259fda",
+          "bytes": 930284
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c4-vl2-rr1-1-6b3d07ff6814",
+          "sha256": "6b3d07ff68144d4f5d5ac42350e5c4250f625c4a2e909fc19ae9d4e944d80eb1",
+          "bytes": 930284
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c4-vl2-rr2-1-ded240d24345",
+          "sha256": "ded240d243450450d654d1f1f54abc2dd20f2f51a5d770b2794c09a3702498ec",
+          "bytes": 930284
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c4-vl2-rr3-1-2ca6968c26ca",
+          "sha256": "2ca6968c26ca24b4c2bbd3f5573caa3f42d0d5d05f390707c6bceedfb89b4358",
+          "bytes": 930284
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c4-vl2-rr4-1-d4f5141a5f74",
+          "sha256": "d4f5141a5f749d0956c1c629b1a39d16c70dd2a63709d2d3e5737b98574c5b22",
+          "bytes": 930284
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c5-vl2-rr1-1-84051ad00423",
+          "sha256": "84051ad0042396b83a72f2341c58238f46ba2c28b9ea4ec1cd8db45e1e132a53",
+          "bytes": 744236
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c5-vl2-rr2-1-3e9c39cb2a58",
+          "sha256": "3e9c39cb2a58cc5e40ad7a754ce883adaa4d58562d33e2fece6635cb9a6b74f3",
+          "bytes": 744236
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c5-vl2-rr3-1-98216d736d9b",
+          "sha256": "98216d736d9b74b4bcafb1ee5ef50bc837fa0ce52ed0c416bc6b396fc124a3ab",
+          "bytes": 744236
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c5-vl2-rr4-1-93e1917b1422",
+          "sha256": "93e1917b14225ef7ccbbfe604fcd65a4e219f7e0201c1916900d3d42181e678a",
+          "bytes": 744236
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c5-vl3-rr1-1-40ce5a6ecb73",
+          "sha256": "40ce5a6ecb73699e90810ce9c11f0f1106df621dfb9a837ab9ec3fb44ba40c09",
+          "bytes": 744236
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c5-vl3-rr2-1-b58b3691febe",
+          "sha256": "b58b3691febecc953978f98d918e2e46e543200f5e2c92f1b5c2e247d0f32553",
+          "bytes": 744236
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c5-vl3-rr3-1-9223bdfebff3",
+          "sha256": "9223bdfebff30aa046b6f7944e3654c03573f38fef6749def1d6a94c188841f9",
+          "bytes": 744236
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c5-vl3-rr4-1-791fbadca667",
+          "sha256": "791fbadca6673d6674f5dd7a5e15f572cfd540d27bfe362747fd5e84ac0d9066",
+          "bytes": 744236
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-e2-vl3-rr1-1-47c975087b22",
+          "sha256": "47c975087b22897c3da370ec715d5bec1d4b27b791ba1c001531fbb28ba57e03",
+          "bytes": 1054316
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-e2-vl3-rr2-1-a0ea824e0c63",
+          "sha256": "a0ea824e0c63f6ed57a9dad75094682056fd9e3812060ce973cf44e1319d8de5",
+          "bytes": 1054316
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-e2-vl3-rr3-1-51ce7f1864d5",
+          "sha256": "51ce7f1864d5a6853987c2a42334a6e7521614ad5b18efaa22d4dc99895648ed",
+          "bytes": 1054316
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-e2-vl3-rr4-1-1ca919e082ac",
+          "sha256": "1ca919e082acf58134983d3159f604f781449acd477f13571390c256f53efdfe",
+          "bytes": 1054316
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-eb4-vl2-rr1-1-21e8973f5505",
+          "sha256": "21e8973f550525084e3995839f9490eda34036efbe1597a18157e0cbb07839be",
+          "bytes": 744236
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-eb4-vl2-rr2-1-d7baf88d5a8e",
+          "sha256": "d7baf88d5a8e2534541349601154689fcbf3ff9d104cfb8c2790305de828d466",
+          "bytes": 744236
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-eb4-vl2-rr3-1-a68547773e9a",
+          "sha256": "a68547773e9a3e94f5ad9f8b6c5ded81b3169d96d80424849a95ef7ef03607a5",
+          "bytes": 744236
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-eb4-vl2-rr4-1-f0c7fe3abab5",
+          "sha256": "f0c7fe3abab55048d5ce33f54c591f402c6ba544c5e521c69aae50bdd5b9db3f",
+          "bytes": 744236
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-eb4-vl3-rr1-1-d9bfb23d3fbe",
+          "sha256": "d9bfb23d3fbe40915843e4cdfe8c5341214b1ee602589dac6b18fa1d56d0457f",
+          "bytes": 744236
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-eb4-vl3-rr2-1-6281afdec972",
+          "sha256": "6281afdec9726a453a1246643213785d9c0a217203b13e6fe6490e323361cd0f",
+          "bytes": 744236
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-eb4-vl3-rr3-1-10aaba2b0ac5",
+          "sha256": "10aaba2b0ac5a5251613c4848b0b1929e21999260dd48e52a312091237c99861",
+          "bytes": 744236
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-eb4-vl3-rr4-1-a7397b89a0fc",
+          "sha256": "a7397b89a0fc802f6668db7cb1303116035f7d76dea291a9e27ac525abd03650",
+          "bytes": 744236
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-eb5-vl2-rr2-1-14f50c3849fd",
+          "sha256": "14f50c3849fdab5d56efe175ac006cdd60dc13a540bb27cf1aa2d65971c94609",
+          "bytes": 620204
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-eb5-vl3-rr1-1-9c405ad2d5a4",
+          "sha256": "9c405ad2d5a4859a8cbb66526d70bc277a1682bd17cd7296cfa81f0610c208de",
+          "bytes": 620204
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-eb5-vl3-rr2-1-0f47a63a4e38",
+          "sha256": "0f47a63a4e380121035e447a8ff9977c825e1b49dba13add64c04777c940b3f8",
+          "bytes": 620204
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-eb5-vl3-rr3-1-1fdb957a3f30",
+          "sha256": "1fdb957a3f30924ce0ecfc85ed1a38d6a5f666a436137ce04d7abed84df9fc5c",
+          "bytes": 620204
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-eb5-vl3-rr4-1-ef4738686bd8",
+          "sha256": "ef4738686bd82d31475e470531c2a0c1da680edabe9c09a599fe776c16921627",
+          "bytes": 620204
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-gb3-vl2-rr3-1-fd5f16be8a80",
+          "sha256": "fd5f16be8a80dc384711e814c7f3262ee3cba5993df8aa8ee2496ecdaec9faf9",
+          "bytes": 930284
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-gb3-vl2-rr4-1-f1c8d648976a",
+          "sha256": "f1c8d648976aad32d646a2288a435df2bab3a37ef71718985e74ef0092d6e8ec",
+          "bytes": 930284
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-gb4-vl2-rr1-1-55b558cf9f2a",
+          "sha256": "55b558cf9f2a29a7a48ba4d93c98000dab4f7af8168940942bf811c92eb39195",
+          "bytes": 744236
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-gb4-vl2-rr3-1-2ecdd42c48eb",
+          "sha256": "2ecdd42c48eb643191c3d42326cbe3a4c08ab0c3b48e52e772cd2117174c68c1",
+          "bytes": 744236
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-gb4-vl2-rr4-1-b7a7fd1f0707",
+          "sha256": "b7a7fd1f07079c4813825b59075ae8abfa5a2d791eb29b515f726ff645d21b3a",
+          "bytes": 744236
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-gb4-vl3-rr1-1-0f58455166af",
+          "sha256": "0f58455166afa02e564ba2138e4f653c911a2923baef5ec075a629f289003ac2",
+          "bytes": 744236
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-gb5-vl3-rr2-1-ce863a8c2f70",
+          "sha256": "ce863a8c2f7062ac8e8eda8f92c711bc6bda6ee691e0cb56a29253b8d2d410ea",
+          "bytes": 620204
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-gb5-vl3-rr3-1-3cf2b991a319",
+          "sha256": "3cf2b991a3194b34cf836930be2c51179546e3168191d135ac63318e574807e2",
+          "bytes": 620204
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-gb5-vl3-rr4-1-6e8e186e824d",
+          "sha256": "6e8e186e824df3ca8210220cc8e61950712dc876ef2bff01c9665f5bbd32dd27",
+          "bytes": 620204
+        }
+      ],
+      "verifiedAssets": [
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-a2-vl3-rr1-1-2eec9cdc43a7",
+          "bytes": 930284,
+          "sha256": "2eec9cdc43a79058401158c6fe29362c2ec10208c8a8c52bb321de980eb6eba9"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-a2-vl3-rr3-1-7e2f9472bf6e",
+          "bytes": 930284,
+          "sha256": "7e2f9472bf6e0f57b1236f7c6dfa3e8392a2ac8615a3d7e7001b299c4f0445ca"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-a2-vl3-rr4-1-c0f4ab7c1e6c",
+          "bytes": 930284,
+          "sha256": "c0f4ab7c1e6ce6d398927c7e08a60e6f21e10be11b84b2b2915395a788d698ee"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-a3-vl2-rr1-1-741db64b4c52",
+          "bytes": 930284,
+          "sha256": "741db64b4c52ed7b11d1d8cd5e177785ddfe32db67fc23e829cef2428edccdc8"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-a3-vl2-rr2-1-274c7620215e",
+          "bytes": 930284,
+          "sha256": "274c7620215e617ee562667eca30e4a59ccb13da342cd5ff0720c020af03d5e4"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-a3-vl2-rr3-1-ba94df24fcdd",
+          "bytes": 930284,
+          "sha256": "ba94df24fcdd620485e7ce2bee59e0943b5bc5424a62b7914f7c298863e0b1ba"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-a3-vl2-rr4-1-e0cf13dc08a5",
+          "bytes": 930284,
+          "sha256": "e0cf13dc08a56cecb1ed4f1ae51ba4d52f98ff0c82fc56a01d1d2f5e03223cec"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-a4-vl2-rr1-1-d6303b416904",
+          "bytes": 744236,
+          "sha256": "d6303b4169046808deb79a311372a267246547abeee1f8546da77d6be605664a"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-a4-vl2-rr2-1-54e6703c25a5",
+          "bytes": 744236,
+          "sha256": "54e6703c25a5d7ffa12cb121a6cd33969556b63c81b6ba9c0c34484439ece812"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-a4-vl2-rr3-1-d69faad8b9fa",
+          "bytes": 744236,
+          "sha256": "d69faad8b9fa34700fae70bbe8cabf19402946efa52798b9d44a6361f2b2d7ad"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-a4-vl2-rr4-1-4f57ff517e37",
+          "bytes": 744236,
+          "sha256": "4f57ff517e378cef9fd7b68af206ca8f7a783d855b17182c3c58ef9cc2ca5185"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-a5-vl3-rr3-1-8404fdc5a2d7",
+          "bytes": 558188,
+          "sha256": "8404fdc5a2d7b3810a137232da1829ac32afc4b370cd298cb93f26c533ed69c9"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c3-vl3-rr1-1-ec242d1c0a1a",
+          "bytes": 930284,
+          "sha256": "ec242d1c0a1aca8aa4507d24d4fc58c46c13a0a20b54ef9f3560aecdf438663e"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c3-vl3-rr2-1-e77ab187c510",
+          "bytes": 930284,
+          "sha256": "e77ab187c5101e8d00bcdad4f8acea79bc9bd902b11367b5bd74b99dba3bc6b7"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c3-vl3-rr3-1-4350fa0c8a70",
+          "bytes": 930284,
+          "sha256": "4350fa0c8a709a815a4c570d783c9486440f5640951568980dc65de8c11d86e9"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c3-vl3-rr4-1-8e2e4b7b16bc",
+          "bytes": 930284,
+          "sha256": "8e2e4b7b16bcd63ae34e13084c33e57030fe6df5f17af4e1338516b619259fda"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c4-vl2-rr1-1-6b3d07ff6814",
+          "bytes": 930284,
+          "sha256": "6b3d07ff68144d4f5d5ac42350e5c4250f625c4a2e909fc19ae9d4e944d80eb1"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c4-vl2-rr2-1-ded240d24345",
+          "bytes": 930284,
+          "sha256": "ded240d243450450d654d1f1f54abc2dd20f2f51a5d770b2794c09a3702498ec"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c4-vl2-rr3-1-2ca6968c26ca",
+          "bytes": 930284,
+          "sha256": "2ca6968c26ca24b4c2bbd3f5573caa3f42d0d5d05f390707c6bceedfb89b4358"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c4-vl2-rr4-1-d4f5141a5f74",
+          "bytes": 930284,
+          "sha256": "d4f5141a5f749d0956c1c629b1a39d16c70dd2a63709d2d3e5737b98574c5b22"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c5-vl2-rr1-1-84051ad00423",
+          "bytes": 744236,
+          "sha256": "84051ad0042396b83a72f2341c58238f46ba2c28b9ea4ec1cd8db45e1e132a53"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c5-vl2-rr2-1-3e9c39cb2a58",
+          "bytes": 744236,
+          "sha256": "3e9c39cb2a58cc5e40ad7a754ce883adaa4d58562d33e2fece6635cb9a6b74f3"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c5-vl2-rr3-1-98216d736d9b",
+          "bytes": 744236,
+          "sha256": "98216d736d9b74b4bcafb1ee5ef50bc837fa0ce52ed0c416bc6b396fc124a3ab"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c5-vl2-rr4-1-93e1917b1422",
+          "bytes": 744236,
+          "sha256": "93e1917b14225ef7ccbbfe604fcd65a4e219f7e0201c1916900d3d42181e678a"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c5-vl3-rr1-1-40ce5a6ecb73",
+          "bytes": 744236,
+          "sha256": "40ce5a6ecb73699e90810ce9c11f0f1106df621dfb9a837ab9ec3fb44ba40c09"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c5-vl3-rr2-1-b58b3691febe",
+          "bytes": 744236,
+          "sha256": "b58b3691febecc953978f98d918e2e46e543200f5e2c92f1b5c2e247d0f32553"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c5-vl3-rr3-1-9223bdfebff3",
+          "bytes": 744236,
+          "sha256": "9223bdfebff30aa046b6f7944e3654c03573f38fef6749def1d6a94c188841f9"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-c5-vl3-rr4-1-791fbadca667",
+          "bytes": 744236,
+          "sha256": "791fbadca6673d6674f5dd7a5e15f572cfd540d27bfe362747fd5e84ac0d9066"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-e2-vl3-rr1-1-47c975087b22",
+          "bytes": 1054316,
+          "sha256": "47c975087b22897c3da370ec715d5bec1d4b27b791ba1c001531fbb28ba57e03"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-e2-vl3-rr2-1-a0ea824e0c63",
+          "bytes": 1054316,
+          "sha256": "a0ea824e0c63f6ed57a9dad75094682056fd9e3812060ce973cf44e1319d8de5"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-e2-vl3-rr3-1-51ce7f1864d5",
+          "bytes": 1054316,
+          "sha256": "51ce7f1864d5a6853987c2a42334a6e7521614ad5b18efaa22d4dc99895648ed"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-e2-vl3-rr4-1-1ca919e082ac",
+          "bytes": 1054316,
+          "sha256": "1ca919e082acf58134983d3159f604f781449acd477f13571390c256f53efdfe"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-eb4-vl2-rr1-1-21e8973f5505",
+          "bytes": 744236,
+          "sha256": "21e8973f550525084e3995839f9490eda34036efbe1597a18157e0cbb07839be"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-eb4-vl2-rr2-1-d7baf88d5a8e",
+          "bytes": 744236,
+          "sha256": "d7baf88d5a8e2534541349601154689fcbf3ff9d104cfb8c2790305de828d466"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-eb4-vl2-rr3-1-a68547773e9a",
+          "bytes": 744236,
+          "sha256": "a68547773e9a3e94f5ad9f8b6c5ded81b3169d96d80424849a95ef7ef03607a5"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-eb4-vl2-rr4-1-f0c7fe3abab5",
+          "bytes": 744236,
+          "sha256": "f0c7fe3abab55048d5ce33f54c591f402c6ba544c5e521c69aae50bdd5b9db3f"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-eb4-vl3-rr1-1-d9bfb23d3fbe",
+          "bytes": 744236,
+          "sha256": "d9bfb23d3fbe40915843e4cdfe8c5341214b1ee602589dac6b18fa1d56d0457f"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-eb4-vl3-rr2-1-6281afdec972",
+          "bytes": 744236,
+          "sha256": "6281afdec9726a453a1246643213785d9c0a217203b13e6fe6490e323361cd0f"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-eb4-vl3-rr3-1-10aaba2b0ac5",
+          "bytes": 744236,
+          "sha256": "10aaba2b0ac5a5251613c4848b0b1929e21999260dd48e52a312091237c99861"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-eb4-vl3-rr4-1-a7397b89a0fc",
+          "bytes": 744236,
+          "sha256": "a7397b89a0fc802f6668db7cb1303116035f7d76dea291a9e27ac525abd03650"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-eb5-vl2-rr2-1-14f50c3849fd",
+          "bytes": 620204,
+          "sha256": "14f50c3849fdab5d56efe175ac006cdd60dc13a540bb27cf1aa2d65971c94609"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-eb5-vl3-rr1-1-9c405ad2d5a4",
+          "bytes": 620204,
+          "sha256": "9c405ad2d5a4859a8cbb66526d70bc277a1682bd17cd7296cfa81f0610c208de"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-eb5-vl3-rr2-1-0f47a63a4e38",
+          "bytes": 620204,
+          "sha256": "0f47a63a4e380121035e447a8ff9977c825e1b49dba13add64c04777c940b3f8"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-eb5-vl3-rr3-1-1fdb957a3f30",
+          "bytes": 620204,
+          "sha256": "1fdb957a3f30924ce0ecfc85ed1a38d6a5f666a436137ce04d7abed84df9fc5c"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-eb5-vl3-rr4-1-ef4738686bd8",
+          "bytes": 620204,
+          "sha256": "ef4738686bd82d31475e470531c2a0c1da680edabe9c09a599fe776c16921627"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-gb3-vl2-rr3-1-fd5f16be8a80",
+          "bytes": 930284,
+          "sha256": "fd5f16be8a80dc384711e814c7f3262ee3cba5993df8aa8ee2496ecdaec9faf9"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-gb3-vl2-rr4-1-f1c8d648976a",
+          "bytes": 930284,
+          "sha256": "f1c8d648976aad32d646a2288a435df2bab3a37ef71718985e74ef0092d6e8ec"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-gb4-vl2-rr1-1-55b558cf9f2a",
+          "bytes": 744236,
+          "sha256": "55b558cf9f2a29a7a48ba4d93c98000dab4f7af8168940942bf811c92eb39195"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-gb4-vl2-rr3-1-2ecdd42c48eb",
+          "bytes": 744236,
+          "sha256": "2ecdd42c48eb643191c3d42326cbe3a4c08ab0c3b48e52e772cd2117174c68c1"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-gb4-vl2-rr4-1-b7a7fd1f0707",
+          "bytes": 744236,
+          "sha256": "b7a7fd1f07079c4813825b59075ae8abfa5a2d791eb29b515f726ff645d21b3a"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-gb4-vl3-rr1-1-0f58455166af",
+          "bytes": 744236,
+          "sha256": "0f58455166afa02e564ba2138e4f653c911a2923baef5ec075a629f289003ac2"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-gb5-vl3-rr2-1-ce863a8c2f70",
+          "bytes": 620204,
+          "sha256": "ce863a8c2f7062ac8e8eda8f92c711bc6bda6ee691e0cb56a29253b8d2d410ea"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-gb5-vl3-rr3-1-3cf2b991a319",
+          "bytes": 620204,
+          "sha256": "3cf2b991a3194b34cf836930be2c51179546e3168191d135ac63318e574807e2"
+        },
+        {
+          "assetId": "archtop-guitar-shinyguitar-acoustic-gb5-vl3-rr4-1-6e8e186e824d",
+          "bytes": 620204,
+          "sha256": "6e8e186e824df3ca8210220cc8e61950712dc876ef2bff01c9665f5bbd32dd27"
+        }
+      ],
+      "adapter": "wav",
+      "sampleRate": 44100,
+      "outputSha256": "sha256:20cd3012cc07819d9d868d4e684e7c40e6c5f20b941f4a4e03c46550871ece62",
+      "outputAmplitude": {
+        "mode": "audition-peak-matched",
+        "targetPeak": 0.85,
+        "contract": "refrain-audition-peak-match@0-experimental"
+      },
+      "adaptationNotes": [
+        "Rendered by the bounded Node block kernel, peak-matched only for comparison, and encoded as stereo PCM16 WAV."
+      ],
+      "renderReceiptId": "sha256:004377021d311ab1d0d3341d803c3e75bc9e0b83807e12bd2cc469af0525bd60"
+    }
+  ],
+  "projections": [
+    {
+      "format": "refrain-projection-reference@0-experimental",
+      "kind": "native-wav",
+      "filename": "a-little-room-between-archtop.native.wav",
+      "renderReceiptId": "sha256:8e88664c3a92030ce053cd375dd2b7539ccfca483fd3d5b8ec2660e8816e0c34"
+    },
+    {
+      "format": "refrain-projection-reference@0-experimental",
+      "kind": "audition-matched-wav",
+      "filename": "a-little-room-between-archtop.audition-matched.wav",
+      "renderReceiptId": "sha256:004377021d311ab1d0d3341d803c3e75bc9e0b83807e12bd2cc469af0525bd60"
+    }
+  ],
+  "caption": "The same authored melody as the nylon companion, embodied by the pack-carried Shinyguitar archtop candidate. Listening acceptance remains pending."
+}

@@ -1,0 +1,68 @@
+{
+  "format": "refrain-performance-binding@1-experimental",
+  "id": "refrain-shinyguitar-archtop@1",
+  "requiredInstrumentIds": ["archtop_guitar"],
+  "soundProfile": {
+    "format": "refrain-sound-profile@2-experimental",
+    "id": "refrain-shinyguitar-archtop@2",
+    "vocabulary": {
+      "id": "refrain-shinyguitar-archtop@0",
+      "sha256": "1dea69fbbba1f34cdf0b58e74e2509e371f2c0df9617f09cda14f666d51eb399"
+    },
+    "coverage": ["archtop_guitar"],
+    "selections": {
+      "archtop_guitar": {
+        "candidateChain": [
+          {
+            "id": "archtop-guitar-shinyguitar-acoustic",
+            "sha256": "7c4228273b9e3d4cca74b2489d2d835fb3d87913f08497242e9000f2765e479f"
+          }
+        ],
+        "fallbackPolicy": "strict"
+      }
+    },
+    "contentSha256": "01e284451addc2f17fcfdc0958a13aad13fecf8a5adde7ef8dc1fb8abc693db6"
+  },
+  "soundProfileSha256": "01e284451addc2f17fcfdc0958a13aad13fecf8a5adde7ef8dc1fb8abc693db6",
+  "renderScene": {
+    "format": "refrain-render-scene@1-experimental",
+    "id": "refrain-shinyguitar-archtop-room@1",
+    "master": { "gainDb": -12, "peakCeiling": 0.7, "velocityScale": 1 },
+    "buses": [
+      {
+        "id": "guitar",
+        "output": "master",
+        "processors": [
+          {
+            "id": "place",
+            "type": "gain-pan",
+            "gainDb": -1,
+            "pan": 0,
+            "width": 1.05
+          },
+          { "id": "air", "type": "lowpass", "frequencyHz": 12000, "q": 0.7 }
+        ]
+      }
+    ],
+    "routes": [{ "id": "all", "bus": "guitar", "match": {} }],
+    "contentSha256": "7cc7635e23899cb3c2c52f2e67bbf02ffa94cbfe219042d6ddcd4d920f5f7154"
+  },
+  "candidateDigests": {
+    "archtop-guitar-shinyguitar-acoustic": "7c4228273b9e3d4cca74b2489d2d835fb3d87913f08497242e9000f2765e479f"
+  },
+  "permittedOverrides": ["masterGainDb", "peakCeiling", "velocityScale"],
+  "overrides": {},
+  "renderer": {
+    "contract": "refrain-renderer@2-experimental",
+    "performancePlanFormat": "performance-plan@4-experimental",
+    "adapters": [
+      "browser-direct",
+      "browser-streaming-pcm",
+      "worker-block-pcm",
+      "node-block-pcm",
+      "wav",
+      "midi"
+    ]
+  },
+  "contentSha256": "a940d68bc36df55824a02dcd920f104b9a77d84b8b96e3957ebe4c0bda53d941"
+}

@@ -22,6 +22,7 @@ Sample binaries are acquired selectively and are not tracked in the source repos
 - [VSCO 2 Community Edition — CC0](third_party/VSCO-2-CE/LICENSE.txt)
 - [FreePats Spanish Classical Guitar — CC0](third_party/FreePats-Spanish-Classical-Guitar/LICENSE.txt)
 - [Karoryfer/Bigcat cello — CC0](third_party/Karoryfer-Bigcat-Cello/LICENSE.txt)
+- [Karoryfer Shinyguitar — CC0](third_party/Karoryfer-Shinyguitar/LICENSE.txt)
 - [GeneralUser GS — its own license](third_party/GeneralUser-GS/LICENSE.txt)
 
 GeneralUser GS is an optional development/audition fallback with upstream sample-provenance limitations. It is not selected by the four F proof palettes or the synthetic first-use example. Do not present its package notice as proof of every sample's provenance.

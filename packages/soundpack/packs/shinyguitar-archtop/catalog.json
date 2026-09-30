@@ -1,0 +1,18 @@
+{
+  "format": "refrain-sound-catalog@0-experimental",
+  "id": "refrain-shinyguitar-archtop@0-catalog",
+  "candidates": [
+    {
+      "candidateId": "archtop-guitar-shinyguitar-acoustic",
+      "instrumentId": "archtop_guitar",
+      "engine": "sampler",
+      "releaseStatus": "listening-candidate",
+      "candidateContentSha256": "7c4228273b9e3d4cca74b2489d2d835fb3d87913f08497242e9000f2765e479f",
+      "shard": {
+        "path": "./candidates/sha256/722eb4a0a1135001658afc2159f3d9a1eb8e55a9e9a3fd9762a3901c5c4f878c.json",
+        "sha256": "722eb4a0a1135001658afc2159f3d9a1eb8e55a9e9a3fd9762a3901c5c4f878c"
+      }
+    }
+  ],
+  "contentSha256": "57ef1631627c75c5aaa682b4184a7979c82d63baed5d6d0d88851dbba171a57c"
+}

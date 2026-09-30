@@ -67,7 +67,7 @@ limit preserves the last valid settings. JSON object fields are ordinary source
 fields, not hashes or Refrain receipt identities. This app does not import AIR or
 issue native bindings/receipts. The companion download below is a separate file.
 
-## The native nylon companion
+## The sampled companions
 
 [The AIR source](../../fixtures/air-v1/breath-study.air.json) and
 [the exact Artifact@3](../../examples/breath-study/a-little-room-between.refrain.json)
@@ -90,25 +90,60 @@ ordinary shared Player and its verified sample closure. The zero-asset MCP Canva
 cannot play this sampled binding. The experiment's sliders never rewrite this
 companion artifact. This is a listening candidate, not a listening acceptance.
 
-## Sound assets: what to add next
+The new [archtop AIR](../../fixtures/air-v1/breath-study-archtop.air.json) and
+[exact archtop Artifact@3](../../examples/breath-study/a-little-room-between-archtop.refrain.json)
+keep those same 36 melody pitches and beat onsets, replace every voice with the
+pack-carried `archtop_guitar` identity, and select
+`refrain-shinyguitar-archtop@1`. The Artifact carries exact native and
+audition-matched RenderReceipt@3/projection references. The app offers both
+Artifacts without loading either sample closure.
 
-No new external sample DLC is installed by Breath study. The current FreePats
-candidate contains 39 assets and 39 regions with a single velocity range per
-region, without round-robin alternatives. Its source is a
+Build the optional candidate from an exact local copy of the pinned upstream
+source, then render its native and comparison WAVs:
+
+```bash
+npm run soundpack:build-shinyguitar -- --source-root /path/to/karoryfer.shinyguitar
+npm run breath:build-archtop -- --source-root /path/to/karoryfer.shinyguitar --out tmp/breath-shinyguitar
+node bin/refrain.mjs export examples/breath-study/a-little-room-between.refrain.json --matched-preview --out tmp/breath-nylon-matched
+```
+
+Compare `tmp/breath-nylon-matched/a-little-room-between.audition-matched.wav`
+with `tmp/breath-shinyguitar/a-little-room-between-archtop.audition-matched.wav`.
+Both use the same score and the explicit peak-match contract; room, filtering,
+gain and decay remain part of each exact binding, so this compares complete
+embodiments rather than pretending to isolate raw sample tone.
+
+## The optional archtop DLC candidate
+
+The current FreePats candidate contains 39 assets and 39 regions with a single
+velocity range per region, without round-robin alternatives. Its source is a
 [CC0 Spanish classical guitar](https://freepats.zenvoid.org/Guitar/acoustic-guitar.html).
 The source explicitly describes imperfect recording conditions and noise filtering.
 That establishes provenance and an identifiable limitation, not a quality verdict.
 
-A focused next candidate is the acoustic side of
+A focused alternative is the acoustic/microphone side of
 [Karoryfer Shinyguitar](https://shop.karoryfer.com/pages/free-shinyguitar).
 Its upstream [SFZ](https://github.com/sfzinstruments/karoryfer.shinyguitar/blob/master/Programs/acoustic.sfz)
-provides velocity layers and alternative attacks; the publisher lists the free
-libraries under [CC0](https://shop.karoryfer.com/pages/free-samples).
-It is an archtop with microphone/pickup recordings, not a nylon-guitar replacement.
-The full upstream library is a 352 MB download; a Refrain candidate should prepare
-only its chosen exact closure. Source review, mapping/provenance, deterministic
-round robin, same-phrase listening packets and human listening still precede any
-adoption. No Shinyguitar bytes, mappings, or third-party code are bundled here.
+provides four velocity layers and four alternative attacks per zone; the publisher
+lists the free libraries under [CC0](https://shop.karoryfer.com/pages/free-samples).
+It is a distinct archtop identity, not a nylon-guitar replacement. Refrain pins
+commit `57243cca85277dbcc120ce17c6178032f93c80f3`, the exact program and license,
+and a checked-in byte/SHA lock for all 272 acoustic attack WAVs. Its closed SFZ
+compiler lowers the 68 four-way random groups to deterministic candidate-scoped
+round robin. Pickup/electric programs and release-noise samples stay outside the
+candidate.
+
+Pack metadata, mappings and the CC0 notice are tracked; the 222,776,152 sample
+bytes are not. The builder refuses a local WAV that differs from the checked-in
+upstream lock. The Breath piece resolves only 54 assets / 43,413,576 bytes and
+has been rendered locally at 44.1 kHz for 34.536 seconds. This proves exact
+execution and creates the listening files; `listeningAcceptance` remains
+`pending-faye`, and public release remains false.
+
+This candidate is not installed into local pack discovery. The archtop Artifact
+therefore preserves an exact but currently unavailable binding in the ordinary
+Player; use the rendered WAVs for this listening decision. Installing the pack
+and its sample projection is a separate integration boundary.
 
 ## Code and evidence boundaries
 
@@ -116,10 +151,15 @@ adoption. No Shinyguitar bytes, mappings, or third-party code are bundled here.
 one sample implementation; `render-worker.ts` runs that kernel for PCM/WAV;
 `engine.ts` owns gesture-only AudioContext, cancellation and transport;
 `app.ts` owns UI/history/files; `seed.ts` owns this authored composition.
-The kernel reuses Refrain's oscillator primitive. Production AIR, compiler,
-soundpack candidates, native renderer and MCP contracts are unchanged.
+The kernel reuses Refrain's oscillator primitive. Production AIR grammar,
+native renderer and MCP contracts are unchanged. The canonical soundpack path
+is extended with an explicit carried vocabulary and closed SFZ lowering for the
+new candidate; the core vocabulary, catalog and existing candidate identities
+remain unchanged.
 
 Run `test:breath` for typecheck, model/kernel/companion checks and production build.
+The companion check keeps both sampled AIRs on the same melody/onset sequence and
+parses the archtop Artifact's exact receipt/projection graph.
 Real-browser checks cover actual nonzero PCM, controls, cancelled startup, JSON
 and WAV downloads, reopen, keyboard, reduced motion, and desktop/mobile layout.
 See [current evidence](../../docs/current-state.md#breath-study-experiment).

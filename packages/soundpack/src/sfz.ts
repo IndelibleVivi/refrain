@@ -3,6 +3,7 @@ import {
   soundObjectContentSha256,
   validateSoundpackManifest,
   type InstrumentCandidate,
+  type InstrumentVocabulary,
   type SoundAssetDefinition,
   type SoundpackManifest,
 } from "./index.js";
@@ -30,6 +31,61 @@ const ALLOWED_OPCODES = new Set([
   "volume",
 ]);
 const SHA256 = /^[0-9a-f]{64}$/;
+
+/**
+ * Deliberately-handled SFZ opcodes whose sound-affecting behavior this closed
+ * compiler fixes at one exact value. A region carrying one of these opcodes at
+ * any other value fails closed. Each entry records what the opcode means, the
+ * exact value accepted, and the fixed interpretation this first Shinyguitar
+ * candidate applies, so the choice is inspectable rather than silently dropped.
+ *
+ * For the standalone `Programs/acoustic.sfz`, the samples are microphone
+ * recordings. The safe fixed controller state is CC100=0: at CC100=0 the
+ * `amplitude_oncc100=100` blend selects the base region amplitude, so the
+ * microphone take plays at unity. CC100=127 would be excluded by `hicc100=126`.
+ * CC106=0 keeps `ampeg_release=0.250` at 0.250 because the
+ * `ampeg_releasecc106=-0.200` offset then contributes zero.
+ */
+export const FIXED_SFZ_OPCODES: Readonly<
+  Record<
+    string,
+    { exactValue: string; meaning: string; fixedInterpretation: string }
+  >
+> = Object.freeze({
+  amplitude: {
+    exactValue: "100",
+    meaning:
+      "Static amplitude percentage applied to the region when no controller overrides it.",
+    fixedInterpretation:
+      "Fixed at unity (100). The candidate calibration holds the single gain authority; per-region volume/calibration stay the only level controls.",
+  },
+  amplitude_oncc100: {
+    meaning:
+      "Amplitude blended by CC100 between the magnetic pickup signal (0) and the microphone signal (127).",
+    exactValue: "100",
+    fixedInterpretation:
+      "Evaluated at the fixed controller state CC100=0, where the blend selects the base region amplitude. The microphone take plays at unity; CC100 is not a runtime control.",
+  },
+  hicc100: {
+    exactValue: "126",
+    meaning: "Upper CC100 bound above which the region stops responding.",
+    fixedInterpretation:
+      "Satisfied at the fixed controller state CC100=0 (0 <= 126), so the region is included. It does not select among RR variants.",
+  },
+  ampeg_releasecc106: {
+    exactValue: "-0.200",
+    meaning: "Release-time offset applied by CC106 (release-noise volume).",
+    fixedInterpretation:
+      "Evaluated at the fixed controller state CC106=0, where the offset contributes zero; the declared ampeg_release is unchanged.",
+  },
+});
+
+/** Fixed controller state this candidate compiler assumes, per the program readme. */
+export const FIXED_SFZ_CONTROLLERS: Readonly<Record<string, number>> =
+  Object.freeze({ 100: 0, 106: 0 });
+
+/** Random-interval opcodes lowered to deterministic candidate-scoped RR. */
+const RANDOM_INTERVAL_OPCODES = new Set(["hirand", "lorand"]);
 
 type SfzScope = "control" | "global" | "group" | "region";
 type OpcodeMap = Record<string, { value: string; line: number }>;
@@ -75,6 +131,14 @@ export interface CompileSfzCandidateInput {
   releaseStatus: "listening-candidate" | "release-candidate";
   defaults?: SfzCompilerDefaults;
   assetLocks: readonly SfzAssetLock[];
+  /**
+   * Exact authoring vocabulary this candidate belongs to. Core SFZ candidates
+   * omit it and validate against the core instrument vocabulary. A pack-carried
+   * instrument (for example `archtop_guitar`) must pass its explicit closure so
+   * the candidate validates against the carried vocabulary instead of the core
+   * list. This never mutates the global vocabulary.
+   */
+  vocabulary?: InstrumentVocabulary;
 }
 
 export interface SfzSourceMap {
@@ -89,6 +153,35 @@ export interface SfzSourceMap {
     assetId: string;
     inheritedOpcodes: Record<string, string>;
   }>;
+  randomization: {
+    policy: "candidate-scoped-explicit-round-robin";
+    groups: Array<{
+      key: string;
+      sourceLine: number;
+      count: number;
+      variants: Array<{ index: number; samplePath: string }>;
+    }>;
+    fixedOpcodes: Array<{
+      opcode: string;
+      exactValue: string;
+      meaning: string;
+      fixedInterpretation: string;
+    }>;
+    /** Fixed MIDI controller state this compilation assumes. */
+    controllerState: Record<string, number>;
+  };
+  /**
+   * How declared sample paths became exact asset-lock paths. Recorded because
+   * the pinned Shinyguitar program writes `sample=acoustic\...` while the
+   * repository stores the WAVs alongside a missing `default_path`, so the
+   * compiler must normalize the root explicitly rather than pretend the path
+   * exists verbatim.
+   */
+  pathNormalization: {
+    declaredExample: string;
+    resolvedExample: string;
+    note: string;
+  };
 }
 
 export interface SfzCoverage {
@@ -151,10 +244,11 @@ function assignOpcode(
   value: string,
   line: number,
 ) {
-  if (
-    !ALLOWED_OPCODES.has(opcode) &&
-    !/^amp_velcurve_(?:[0-9]|[1-9][0-9]|1[01][0-9]|12[0-7])$/.test(opcode)
-  )
+  const fixable =
+    opcode in FIXED_SFZ_OPCODES ||
+    RANDOM_INTERVAL_OPCODES.has(opcode) ||
+    /^amp_velcurve_(?:[0-9]|[1-9][0-9]|1[01][0-9]|12[0-7])$/.test(opcode);
+  if (!ALLOWED_OPCODES.has(opcode) && !fixable)
     throw new Error(
       `Unsupported sound-affecting SFZ opcode ${opcode} at line ${line}.`,
     );
@@ -258,21 +352,143 @@ export function collectSfzSamplePaths(
   ];
 }
 
+interface LoweredRandomGroups {
+  /** Deterministic RR index (1-based) per top-level region index, if member. */
+  indexByRegion: Map<number, { index: number; count: number }>;
+  /** Source-line origin of each lowered group, for the source map. */
+  groupByRegion: Map<number, number>;
+  /** Canonical selection-identity key of each lowered group. */
+  keyByRegion: Map<number, string>;
+}
+
+/**
+ * Canonical identity shared by every region of one random-selection group.
+ *
+ * The identity is the effective region state with random-selection and sample
+ * opcodes removed: two regions in the same group differ only by their sample
+ * and their `lorand`/`hirand` interval. Global values are folded in so an
+ * unrelated change cannot merge two distinct zones.
+ */
+function randomSelectionIdentity(
+  global: OpcodeMap,
+  region: ParsedSfz["regions"][number],
+): string {
+  const effective: Record<string, string> = {};
+  for (const scope of [global, region.group, region.values]) {
+    for (const [opcode, item] of Object.entries(scope)) {
+      if (opcode === "sample" || opcode === "lorand" || opcode === "hirand")
+        continue;
+      effective[opcode] = item.value;
+    }
+  }
+  return Object.entries(effective)
+    .sort(([left], [right]) => left.localeCompare(right))
+    .map(([opcode, value]) => `${opcode}=${value}`)
+    .join("\u0000");
+}
+
+/**
+ * Lowers regions that partition the [0,1] random draw.
+ *
+ * Groups are formed by exact selection identity, not by adjacency: the pinned
+ * Shinyguitar program writes its 68 four-way groups back to back with no
+ * non-random separator, so adjacency cannot separate them. Every group must be
+ * exactly one complete, non-overlapping partition of [0,1]; the compiler turns
+ * it into explicit deterministic round robins and never adds runtime randomness.
+ */
+function lowerRandomIntervals(
+  global: OpcodeMap,
+  regions: ParsedSfz["regions"],
+): LoweredRandomGroups {
+  const indexByRegion: LoweredRandomGroups["indexByRegion"] = new Map();
+  const groupByRegion: LoweredRandomGroups["groupByRegion"] = new Map();
+  const keyByRegion: LoweredRandomGroups["keyByRegion"] = new Map();
+  const groups = new Map<
+    string,
+    Array<{ regionIndex: number; line: number; low: number; high: number }>
+  >();
+  regions.forEach((region, regionIndex) => {
+    const { line, values } = region;
+    const hasRandom =
+      values.lorand !== undefined || values.hirand !== undefined;
+    if (!hasRandom) return;
+    const low = values.lorand === undefined ? 0 : Number(values.lorand.value);
+    const high = values.hirand === undefined ? 1 : Number(values.hirand.value);
+    if (
+      !Number.isFinite(low) ||
+      !Number.isFinite(high) ||
+      low < 0 ||
+      high > 1 ||
+      low >= high
+    )
+      throw new Error(
+        `SFZ region at line ${line} has an invalid random interval.`,
+      );
+    const key = randomSelectionIdentity(global, region);
+    const group = groups.get(key) ?? [];
+    group.push({ regionIndex, line, low, high });
+    groups.set(key, group);
+  });
+  for (const [key, members] of groups) {
+    const intervals = [...members].sort((left, right) => left.low - right.low);
+    let cursor = 0;
+    for (const interval of intervals) {
+      if (interval.low !== cursor)
+        throw new Error(
+          "SFZ random intervals must form a complete non-overlapping partition of [0,1].",
+        );
+      cursor = interval.high;
+    }
+    if (cursor !== 1)
+      throw new Error(
+        "SFZ random intervals must form a complete non-overlapping partition of [0,1].",
+      );
+    if (intervals.length < 2)
+      throw new Error(
+        "SFZ random intervals need at least two variants forming a complete non-overlapping partition of [0,1].",
+      );
+    const groupLine = intervals[0]!.line;
+    intervals.forEach((interval, position) => {
+      indexByRegion.set(interval.regionIndex, {
+        index: position + 1,
+        count: intervals.length,
+      });
+      groupByRegion.set(interval.regionIndex, groupLine);
+      keyByRegion.set(interval.regionIndex, key);
+    });
+  }
+  return { indexByRegion, groupByRegion, keyByRegion };
+}
+
 export function compileSfzCandidate(
   input: CompileSfzCandidateInput,
 ): CompiledSfzCandidate {
   const parsed = parseSfz(input.sfzText);
   const base = sfzDirectory(input.sfzPath);
   const defaultPath = valueOf(parsed.control, "default_path") ?? ".";
+  const randomGroups = lowerRandomIntervals(parsed.global, parsed.regions);
   const locks = new Map(
     input.assetLocks.map((lock) => [normalizeRelativePath(lock.path), lock]),
   );
   if (locks.size !== input.assetLocks.length)
     throw new Error("SFZ asset lock contains duplicate paths.");
   const sourceMapRegions: SfzSourceMap["regions"] = [];
+  const loweredRandomGroups: SfzSourceMap["randomization"]["groups"] = [];
+  const usedFixedOpcodes = new Set<string>();
+  let firstDeclaredSample: string | undefined;
+  let firstResolvedSample: string | undefined;
   const assetById = new Map<string, SoundAssetDefinition>();
   const regions = parsed.regions.flatMap(({ line, values, group }, index) => {
     const effective = { ...parsed.global, ...group, ...values };
+    for (const opcode of Object.keys(effective)) {
+      const fixed = FIXED_SFZ_OPCODES[opcode];
+      if (!fixed) continue;
+      if (effective[opcode]!.value !== fixed.exactValue)
+        throw new Error(
+          `SFZ opcode ${opcode} must be exactly ${fixed.exactValue} at line ${line}; other values are unsupported.`,
+        );
+      usedFixedOpcodes.add(opcode);
+    }
     const dynamic = finiteNumber(
       effective,
       "ampeg_dynamic",
@@ -290,6 +506,11 @@ export function compileSfzCandidate(
       seqPosition > seqLength
     )
       throw new Error("SFZ v0 supports deterministic sequence lengths 1 or 2.");
+    const random = randomGroups.indexByRegion.get(index);
+    if (random && seqLength !== 1)
+      throw new Error(
+        "SFZ region cannot combine sequence and random-interval selection.",
+      );
     const highCc107 = finiteNumber(effective, "hicc107", 127);
     const cc107 = input.defaults?.cc107 ?? 0;
     if (
@@ -305,6 +526,8 @@ export function compileSfzCandidate(
     const sample = valueOf(values, "sample");
     if (!sample) throw new Error(`SFZ region at line ${line} has no sample.`);
     const samplePath = resolveRelativePath(base, defaultPath, sample);
+    firstDeclaredSample ??= sample.replace(/\\/g, "/");
+    firstResolvedSample ??= samplePath;
     const lock = locks.get(samplePath);
     if (!lock)
       throw new Error(`SFZ sample ${samplePath} has no exact asset lock.`);
@@ -401,6 +624,32 @@ export function compileSfzCandidate(
           .map(([key, item]) => [key, item.value]),
       ),
     });
+    // Existing seq_length semantics keep their original stable group string;
+    // lowered random intervals use a distinct deterministic group so no
+    // existing candidate identity changes.
+    const seqKey = `sfz-${minMidi}-${rootMidi}-${maxMidi}-${minVelocity}-${maxVelocity}`;
+    const randomIdentity = randomGroups.keyByRegion.get(index);
+    const randomKey = `sfz-rr-${sha256Hex(randomIdentity ?? "")}`;
+    const roundRobin =
+      random !== undefined
+        ? { group: randomKey, index: random.index - 1, count: random.count }
+        : seqLength === 1
+          ? undefined
+          : { group: seqKey, index: seqPosition - 1, count: seqLength };
+    if (
+      random !== undefined &&
+      !loweredRandomGroups.some((group) => group.key === randomKey)
+    )
+      loweredRandomGroups.push({
+        key: randomKey,
+        sourceLine: randomGroups.groupByRegion.get(index) ?? line,
+        count: random.count,
+        variants: [],
+      });
+    if (random !== undefined) {
+      const group = loweredRandomGroups.find((item) => item.key === randomKey)!;
+      group.variants[random.index - 1] = { index: random.index, samplePath };
+    }
     return [
       {
         id: regionId,
@@ -410,15 +659,7 @@ export function compileSfzCandidate(
         pitch: { minMidi, rootMidi, maxMidi },
         velocity: { min: minVelocity, max: maxVelocity },
         ...(velocityGainCurve === undefined ? {} : { velocityGainCurve }),
-        ...(seqLength === 1
-          ? {}
-          : {
-              roundRobin: {
-                group: `sfz-${minMidi}-${rootMidi}-${maxMidi}-${minVelocity}-${maxVelocity}`,
-                index: seqPosition - 1,
-                count: seqLength,
-              },
-            }),
+        ...(roundRobin === undefined ? {} : { roundRobin }),
         gainDb,
         tuneCents: 0,
         attackSeconds,
@@ -465,7 +706,10 @@ export function compileSfzCandidate(
     ...validationCore,
     contentSha256: soundObjectContentSha256(validationCore),
   };
-  const errors = validateSoundpackManifest(validationManifest);
+  const errors = validateSoundpackManifest(
+    validationManifest,
+    input.vocabulary,
+  );
   if (errors.length) throw new Error(errors.join("\n"));
   return {
     candidate,
@@ -476,6 +720,34 @@ export function compileSfzCandidate(
       source: { path: input.sfzPath, sha256: sha256Hex(input.sfzText) },
       normalization: { ...input.defaults },
       regions: sourceMapRegions,
+      randomization: {
+        policy: "candidate-scoped-explicit-round-robin",
+        groups: loweredRandomGroups
+          .map((group) => ({
+            key: group.key,
+            sourceLine: group.sourceLine,
+            count: group.count,
+            variants: group.variants.filter(
+              (variant): variant is { index: number; samplePath: string } =>
+                variant !== undefined,
+            ),
+          }))
+          .sort((left, right) => left.sourceLine - right.sourceLine),
+        fixedOpcodes: [...usedFixedOpcodes]
+          .sort((left, right) => left.localeCompare(right))
+          .map((opcode) => ({
+            opcode,
+            exactValue: FIXED_SFZ_OPCODES[opcode]!.exactValue,
+            meaning: FIXED_SFZ_OPCODES[opcode]!.meaning,
+            fixedInterpretation: FIXED_SFZ_OPCODES[opcode]!.fixedInterpretation,
+          })),
+        controllerState: { ...FIXED_SFZ_CONTROLLERS },
+      },
+      pathNormalization: {
+        declaredExample: firstDeclaredSample ?? "",
+        resolvedExample: firstResolvedSample ?? "",
+        note: "Backslashes are normalized before the declared sample is resolved against the SFZ directory and default_path. Asset locks bind that logical path to an exact source asset; source-specific disk mapping remains in the asset processing history.",
+      },
     },
     coverage: {
       playableMin,

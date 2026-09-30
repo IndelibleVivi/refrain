@@ -35,6 +35,10 @@
     "./binding-status": {
       "refrain-built": "./dist/binding-status.js",
       "default": "./src/binding-status.ts"
+    },
+    "./shinyguitar": {
+      "refrain-built": "./dist/shinyguitar.js",
+      "default": "./src/shinyguitar.ts"
     }
   },
   "scripts": {
@@ -43,6 +47,7 @@
     "typecheck": "tsc -b --pretty false"
   },
   "dependencies": {
+    "@refrain/air-schema": "*",
     "@refrain/identity": "*"
   },
   "license": "SEE LICENSE IN ../../LICENSING.md"

@@ -111,15 +111,21 @@ describe("allow-listed SFZ compiler", () => {
     ).toEqual([12, 20]);
   });
 
-  it("fails closed on unknown sound opcodes, random selection, and path escape", () => {
+  it("fails closed on unknown sound opcodes, incomplete random partitions, and path escape", () => {
     expect(() =>
       compileSfzCandidate(input(source.replace("volume=12", "cutoff=1200"))),
     ).toThrow(/Unsupported sound-affecting SFZ opcode cutoff/);
+    // A lone lorand/hirand region cannot be a complete partition of [0,1].
     expect(() =>
       compileSfzCandidate(
-        input(source.replace("group_label=main", "lorand=0")),
+        input(source.replace("sample=soft.wav", "sample=soft.wav\nlorand=0")),
       ),
-    ).toThrow(/Unsupported sound-affecting SFZ opcode lorand/);
+    ).toThrow(/complete non-overlapping partition of \[0,1\]/);
+    expect(() =>
+      compileSfzCandidate(
+        input(source.replace("sample=loud.wav", "sample=loud.wav\nhirand=0.5")),
+      ),
+    ).toThrow(/complete non-overlapping partition of \[0,1\]/);
     expect(() =>
       compileSfzCandidate(
         input(source.replace("soft.wav", "..\\..\\..\\..\\soft.wav")),
@@ -186,5 +192,264 @@ hivel=127
     expect(compiled.candidate.mapping).toMatchObject({
       regions: [{ pitch: { minMidi: 59, rootMidi: 60, maxMidi: 61 } }],
     });
+  });
+
+  it("accepts the fixed controller opcodes only at their exact values", () => {
+    const fixed = (over: string) =>
+      `<control>
+default_path=acoustic\\
+<global>
+ampeg_dynamic=1
+ampeg_attack=0.001
+ampeg_release=0.25
+<group>
+lokey=33
+hikey=38
+pitch_keycenter=37
+${over}
+amp_velcurve_32=1
+<region>
+sample=zone_vl1_rr1.wav
+hirand=0.250
+<region>
+sample=zone_vl1_rr2.wav
+lorand=0.250
+hirand=0.500
+<region>
+sample=zone_vl1_rr3.wav
+lorand=0.500
+hirand=0.750
+<region>
+sample=zone_vl1_rr4.wav
+lorand=0.750
+`;
+    const names = [
+      "zone_vl1_rr1",
+      "zone_vl1_rr2",
+      "zone_vl1_rr3",
+      "zone_vl1_rr4",
+    ];
+    const locks = names.map((name, index) => ({
+      path: `acoustic/${name}.wav`,
+      asset: {
+        id: `fixed-${index}`,
+        kind: "wav" as const,
+        source: {
+          repository: "https://github.com/sfzinstruments/karoryfer.shinyguitar",
+          ref: "57243cca85277dbcc120ce17c6178032f93c80f3",
+          url: `https://example/${name}.wav`,
+        },
+        localPath: `soundpacks/shiny/${name}.wav`,
+        bytes: 2048 + index,
+        sha256: (index + 7).toString(16).repeat(64),
+        audio: { sampleRate: 44_100, frameCount: 512, channels: 1 as const },
+        license: {
+          expression: "CC0-1.0",
+          path: "third_party/Karoryfer-Shinyguitar/LICENSE.txt",
+          assetScope: "test",
+        },
+        processingHistory: [
+          {
+            operation: "source-lock",
+            tool: "fixture",
+            inputSha256: (index + 7).toString(16).repeat(64),
+            outputSha256: (index + 7).toString(16).repeat(64),
+            parameters: {},
+          },
+        ],
+        releaseStatus: "listening-candidate" as const,
+        publicReleaseAccepted: false as const,
+      },
+    }));
+    const compileWith = (over: string) =>
+      compileSfzCandidate({
+        ...input(fixed(over)),
+        candidateId: "archtop-guitar-shinyguitar-acoustic",
+        instrumentId: "archtop_guitar",
+        assetLocks: locks,
+        vocabulary: {
+          format: "refrain-instrument-vocabulary@0-experimental",
+          id: "test-archtop@0",
+          contentSha256: "f".repeat(64),
+          instruments: [
+            {
+              id: "archtop_guitar",
+              label: "Archtop guitar",
+              family: "pitched",
+              midiMin: 33,
+              midiMax: 91,
+              status: "active",
+              authoringMeaning: "test",
+            },
+          ],
+        },
+        defaults: {
+          ampegDynamic: 1,
+          attackSeconds: 0.001,
+          releaseSeconds: 0.25,
+          minVelocity: 1,
+          maxVelocity: 127,
+        },
+      });
+    const accepted = compileWith(
+      "amplitude=100\namplitude_oncc100=100\nhicc100=126\nampeg_releasecc106=-0.200",
+    );
+    expect(
+      accepted.sourceMap.randomization.fixedOpcodes.map(
+        (entry) => entry.opcode,
+      ),
+    ).toEqual(
+      expect.arrayContaining([
+        "amplitude",
+        "amplitude_oncc100",
+        "hicc100",
+        "ampeg_releasecc106",
+      ]),
+    );
+    expect(accepted.sourceMap.randomization.controllerState).toEqual({
+      "100": 0,
+      "106": 0,
+    });
+    for (const bad of [
+      "amplitude=50",
+      "amplitude_oncc100=50",
+      "hicc100=64",
+      "ampeg_releasecc106=-0.5",
+    ])
+      expect(() => compileWith(bad)).toThrow(/must be exactly/);
+  });
+
+  it("lowers a complete four-way lorand/hirand partition to candidate-scoped RR", () => {
+    const partition = `<control>
+default_path=acoustic\\
+<global>
+ampeg_dynamic=1
+ampeg_attack=0.001
+ampeg_release=0.25
+<group>
+lokey=33
+hikey=38
+hivel=32
+pitch_keycenter=37
+amplitude=100
+amplitude_oncc100=100
+hicc100=126
+ampeg_releasecc106=-0.200
+amp_velcurve_32=1
+<region>
+sample=zone_vl1_rr1.wav
+hirand=0.250
+<region>
+sample=zone_vl1_rr2.wav
+lorand=0.250
+hirand=0.500
+<region>
+sample=zone_vl1_rr3.wav
+lorand=0.500
+hirand=0.750
+<region>
+sample=zone_vl1_rr4.wav
+lorand=0.750
+`;
+    const names = [
+      "zone_vl1_rr1",
+      "zone_vl1_rr2",
+      "zone_vl1_rr3",
+      "zone_vl1_rr4",
+    ];
+    const locks = names.map((name, index) => ({
+      path: `acoustic/${name}.wav`,
+      asset: {
+        id: `shiny-${index}`,
+        kind: "wav" as const,
+        source: {
+          repository: "https://github.com/sfzinstruments/karoryfer.shinyguitar",
+          ref: "57243cca85277dbcc120ce17c6178032f93c80f3",
+          url: `https://example/${name}.wav`,
+        },
+        localPath: `soundpacks/shiny/${name}.wav`,
+        bytes: 2048 + index,
+        sha256: String(index + 3).repeat(64),
+        audio: { sampleRate: 44_100, frameCount: 512, channels: 1 as const },
+        license: {
+          expression: "CC0-1.0",
+          path: "third_party/Karoryfer-Shinyguitar/LICENSE.txt",
+          assetScope: "Pinned Shinyguitar acoustic attack WAV.",
+        },
+        processingHistory: [
+          {
+            operation: "source-lock",
+            tool: "fixture",
+            inputSha256: String(index + 3).repeat(64),
+            outputSha256: String(index + 3).repeat(64),
+            parameters: {},
+          },
+        ],
+        releaseStatus: "listening-candidate" as const,
+        publicReleaseAccepted: false as const,
+      },
+    }));
+    const compiled = compileSfzCandidate({
+      ...input(partition),
+      candidateId: "archtop-guitar-shinyguitar-acoustic",
+      instrumentId: "archtop_guitar",
+      assetLocks: locks,
+      vocabulary: {
+        format: "refrain-instrument-vocabulary@0-experimental",
+        id: "test-archtop@0",
+        contentSha256: "f".repeat(64),
+        instruments: [
+          {
+            id: "archtop_guitar",
+            label: "Archtop guitar",
+            family: "pitched",
+            midiMin: 33,
+            midiMax: 91,
+            status: "active",
+            authoringMeaning: "A microphone-captured archtop guitar.",
+          },
+        ],
+      },
+      defaults: {
+        ampegDynamic: 1,
+        attackSeconds: 0.001,
+        releaseSeconds: 0.25,
+        minVelocity: 1,
+        maxVelocity: 127,
+      },
+    });
+    expect(compiled.candidate.mapping).toMatchObject({
+      playableMin: 33,
+      playableMax: 38,
+      regions: [
+        { roundRobin: { index: 0, count: 4 } },
+        { roundRobin: { index: 1, count: 4 } },
+        { roundRobin: { index: 2, count: 4 } },
+        { roundRobin: { index: 3, count: 4 } },
+      ],
+    });
+    expect(compiled.sourceMap.randomization).toMatchObject({
+      policy: "candidate-scoped-explicit-round-robin",
+      groups: [{ count: 4 }],
+    });
+    expect(
+      new Set(
+        compiled.sourceMap.randomization.groups[0]!.variants.map(
+          (variant) => variant.samplePath,
+        ),
+      ).size,
+    ).toBe(4);
+    expect(
+      compiled.sourceMap.randomization.fixedOpcodes.map(
+        (entry) => entry.opcode,
+      ),
+    ).toEqual(
+      expect.arrayContaining([
+        "amplitude",
+        "amplitude_oncc100",
+        "hicc100",
+        "ampeg_releasecc106",
+      ]),
+    );
   });
 });

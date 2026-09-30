@@ -55,7 +55,9 @@
     "test:drift": "npm run typecheck --workspace @refrain/drift-study && vitest run apps/drift-study --maxWorkers=2 && npm run build:drift",
     "breath": "npm run dev --workspace @refrain/breath-study",
     "build:breath": "npm run build --workspace @refrain/breath-study",
-    "test:breath": "npm run typecheck --workspace @refrain/breath-study && vitest run apps/breath-study/src --maxWorkers=2 && npm run build:breath"
+    "test:breath": "npm run typecheck --workspace @refrain/breath-study && vitest run apps/breath-study/src --maxWorkers=2 && npm run build:breath",
+    "soundpack:build-shinyguitar": "tsx scripts/build-shinyguitar-candidate.ts",
+    "breath:build-archtop": "tsx scripts/build-breath-archtop-companion.ts"
   },
   "devDependencies": {
     "@playwright/test": "1.62.1",

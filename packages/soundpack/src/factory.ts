@@ -240,11 +240,17 @@ export class ShardCandidateProvider implements CandidateProvider {
   constructor(
     readonly catalog: SoundCatalog,
     shards: readonly CandidateShard[],
+    /**
+     * Exact authoring vocabulary this provider validates against. Defaults to
+     * the core instrument vocabulary, so the global core provider is unchanged.
+     * A pack-specific catalog/shard passes its carried vocabulary explicitly.
+     */
+    readonly vocabulary: InstrumentVocabulary = INSTRUMENT_VOCABULARY,
   ) {
     const catalogErrors = validateSoundCatalog(catalog);
     if (catalogErrors.length) throw new Error(catalogErrors.join("\n"));
     for (const shard of shards) {
-      const errors = validateCandidateShard(shard);
+      const errors = validateCandidateShard(shard, this.vocabulary);
       if (errors.length) throw new Error(errors.join("\n"));
       this.shards.set(shard.contentSha256, shard);
     }

@@ -74,6 +74,34 @@ Eight project-original synth candidates complete the 17-identity F vocabulary: `
 
 Four exact strict profiles/palettes/bindings—`f-acoustic-chamber@0`, `f-luminous-hybrid@0`, `f-lofi-degraded@0`, and `f-synthetic-beat@0`—select all 17 identities without GeneralUser GS. Each packet binds one native AIR render, an explicitly peak-matched preview, identity/pairing coverage, exact asset closure and receipts, and a separately rendered 8:00/12-voice/21,840-event stress embodiment. Mechanical status is `native-and-stress-rendered`; all four `listeningAcceptance` values remain `pending-faye`, and `publicReleaseAcceptance` remains false.
 
+## Karoryfer Shinyguitar archtop (microphone/acoustic attack)
+
+The first ExtensionPack@1 **authoring-vocabulary** pack carries a new `archtop_guitar` identity. It is deliberately separate from the core `nylon_guitar` and does not edit `instrument-vocabulary.json`, the core catalog, or any existing candidate/profile identity.
+
+| Fact                      | Value                                                                                                                                                       |
+| ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Upstream                  | `https://github.com/sfzinstruments/karoryfer.shinyguitar`                                                                                                   |
+| Pinned commit             | `57243cca85277dbcc120ce17c6178032f93c80f3`                                                                                                                  |
+| Program                   | `Programs/acoustic.sfz` (SHA-256 `266d9e6aeeda988590b911f83a5656db5d3f93e9c9ce5cd46de7e2cfea992a2e`, 30,217 bytes)                                          |
+| License                   | `LICENSE` CC0-1.0 (SHA-256 `a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499`), retained at `third_party/Karoryfer-Shinyguitar/LICENSE.txt` |
+| Boundary                  | Acoustic/microphone attack side only. Pickup/electric, release-noise, and other Shinyguitar programs are excluded.                                          |
+| Candidate                 | `archtop-guitar-shinyguitar-acoustic` (sampler, `listening-candidate`)                                                                                      |
+| AIR vocabulary            | `refrain-shinyguitar-archtop-language@1` (`174f57a6ba2e7270f0b6ee2fffce49bace11bf3180f1a491ef5546399d5bb122`)                                               |
+| Runtime vocabulary / pack | `refrain-shinyguitar-archtop@0` (`1dea69fbbba1f34cdf0b58e74e2509e371f2c0df9617f09cda14f666d51eb399`) / ExtensionPack@1 of the same ID                       |
+| SoundProfile@2            | `refrain-shinyguitar-archtop@2`                                                                                                                             |
+| Scene / Binding           | `refrain-shinyguitar-archtop-room@1` / `refrain-shinyguitar-archtop@1`                                                                                      |
+| Coverage                  | MIDI 33–91, four velocity layers (breaks 1/33/65/97), 272 regions, 68 four-way candidate-scoped RR groups, 272 WAVs / 222,776,152 bytes                     |
+
+The program writes Windows-style `sample=acoustic\\<name>.wav` with no `default_path`, while the repository stores the WAVs under `Samples/acoustic/` beside `Programs/`. The build normalizes the separator, rebases the program-relative logical path to that exact source directory, and records the mapping in each asset's processing history and the generated `source-map.json`. Its four `lorand`/`hirand` quarters per zone are lowered to explicit deterministic candidate-scoped round robin; the compiler accepts only a complete non-overlapping [0,1] partition and never adds runtime randomness. Four source-specific opcodes (`amplitude=100`, `amplitude_oncc100=100`, `hicc100=126`, `ampeg_releasecc106=-0.200`) are accepted only at those exact values and pinned to the fixed controller state CC100=0, CC106=0, which keeps the microphone take at unity and the program's declared `ampeg_release=0.250` unchanged; any other value for those four opcodes fails closed.
+
+Rebuild with an explicit source root (the WAVs stay untracked):
+
+```bash
+npm run soundpack:build-shinyguitar -- --source-root /path/to/karoryfer.shinyguitar
+```
+
+The immutable shard is also the independent rebuild lock: before writing any new output, the builder verifies every local sample's byte count and SHA-256 against it, so modified local audio cannot be relabeled as bytes from the pinned ref. The shard, pack-relative catalog, `pack.json` (ExtensionPack@1), exact `authoring-vocabulary.json`, runtime `runtime-vocabulary.json`, `sound-profile.json`, `render-scene.json`, `performance-binding.json`, `source-map.json`, and `build-record.json` live under `packages/soundpack/packs/shinyguitar-archtop/`. Status stays `listening-candidate`; this is engineering evidence, never Faye acceptance or public-release approval.
+
 ## Reproducible local pipeline
 
 ```bash
@@ -84,6 +112,7 @@ npm run soundpack:fetch -- --air fixtures/valid/e-wind-pilot.air.json --binding 
 npm run soundpack:fetch -- --air fixtures/f-palettes/acoustic-chamber-native.air.json --binding f-acoustic-chamber@0
 npm run listening:packets -- --out=tmp/g3b-listening-packets
 npm run f:palette-packets -- --out=tmp/f-palette-packets --render-stress
+npm run soundpack:build-shinyguitar -- --source-root /path/to/karoryfer.shinyguitar
 ```
 
 The catalog command validates all immutable shards, direct profile pins, and deterministic static imports. Fetch has no fetch-all default: it requires one exact candidate/profile/palette/AIR target, derives only that closure, and accepts bytes into the repo-external content-addressed store selected by `scripts/sound-content-store-root.ts` only when byte count and SHA-256 match. It reports verified assets and bytes as acquisition proceeds, then atomically projects the exact content into ignored soundbench paths. Browser and headless render paths repeat the same byte-count/SHA-256 boundary before decode, and `refrain-render-receipt@2-experimental` records the exact binding/scene/palette/renderer authority and bytes actually verified. The packet command renders five tracked same-AIR comparisons: the three digest-bound G3A decisions plus percussion and chamber-strings candidates. Listening packets explicitly use `refrain-audition-peak-match@0-experimental`; ordinary WAV export is native-gain. Each `refrain-listening-packet@2-experimental` contains exact bindings, profiles, scenes, required-asset closures, render receipts, provenance, output digests, local cold/warm load/render/first-sound measurements, peaks, and separate mechanical/listening acceptance fields.

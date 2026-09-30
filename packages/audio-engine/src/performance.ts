@@ -603,9 +603,24 @@ export function createPerformancePlan(
     options.instrumentVocabulary ??
     (isVnext ? CORE_AUTHORING_VOCABULARY : INSTRUMENT_VOCABULARY);
   if (registry !== SOUND_REGISTRY) {
+    // Validate a custom registry against the explicit authoring vocabulary when
+    // one was supplied, so pack-carried instruments resolve. Bridging the
+    // closed authoring closure to the `InstrumentVocabulary` shape keeps one
+    // vocabulary identity rather than a relaxed validator.
+    const registryVocabulary: InstrumentVocabulary =
+      "contentSha256" in vocabulary &&
+      vocabulary.format ===
+        "refrain-authoring-vocabulary-closure@0-experimental"
+        ? {
+            format: "refrain-instrument-vocabulary@0-experimental",
+            id: vocabulary.id,
+            contentSha256: vocabulary.contentSha256,
+            instruments: [...vocabulary.instruments],
+          }
+        : (vocabulary as InstrumentVocabulary);
     const manifestErrors = validateSoundpackManifest(
       registry,
-      INSTRUMENT_VOCABULARY,
+      registryVocabulary,
     );
     if (manifestErrors.length) throw new Error(manifestErrors.join("\n"));
   }
