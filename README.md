@@ -43,6 +43,12 @@ This local URL belongs to your computer. The public demo runs on GitHub Pages. S
 | Listen locally, save WAV/MIDI, or try acoustic sound   | [First-use guide](docs/GETTING-STARTED.md).                                                                                                                  |
 | Run a private HTTP connection for a remote host        | [Operator self-hosting guide](docs/runbooks/self-host-mcp.md).                                                                                               |
 
+## A phrase you can hand over
+
+`npm run handoff` opens **A borrowed beat · 借来的半拍**, an independent Chinese-language study with piano, marimba and sparse nylon-guitar support. Listen to its complete default performance, choose who takes two upcoming phrases, and hear that choice change the response and ending. Save/reopen the full experiment, compare with the original, or keep its complete WAV and native air.
+
+Preparation uses the existing exact sampled candidates and may selectively download their sound bytes. Browser sound starts only after a gesture. This finite experiment is available in this source tree, not the hosted demo or MCP Canvas; it does not change AIR's fixed-score contract. [Controls, sound preparation and file boundaries](apps/handoff-study/README.md).
+
 ## A new sound leaf: Breath study
 
 Run `npm run breath` and open `http://127.0.0.1:4390`. Pull open the space inside a melody, morph a warm synthetic pluck toward glass, touch individual notes, and compare the original with your variation. Undo, local JSON save/reopen and complete WAV export keep the result portable. The app itself needs no samples or model calls. Separate nylon-guitar and optional Shinyguitar archtop Artifact@3 companions carry the same melody through exact sampled bindings; the archtop remains a listening candidate. [Play, save, and make the level-matched comparison](apps/breath-study/README.md).

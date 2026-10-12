@@ -24,6 +24,12 @@ and workspace builds). Sound-candidate, export, package, complete-piece, and rel
 work keeps its additional gates in [`AGENTS.md`](../AGENTS.md); the command table
 above does not replace them.
 
+## Handoff study lane
+
+`npm run test:handoff` checks exact saved work/audio closure, both phrase-boundary choices, comparison preservation, overlapped release assembly, complete deterministic WAV, cancellation, gate locking and atomic seek/resume reconstruction. Musical-source tests compile every branch and verify genuine changed responses/endings and identical pre-gate material. Its prepared build uses the existing canonical sampled sound/render path, without changing candidate identities. The ordinary workspace build compiles the interface; `build:handoff` additionally prepares the complete sound package.
+
+Serve `npm run handoff` and verify actual nonzero browser PCM after Play, no WAV requests or AudioContext before a gesture, both handoffs and lock timing, pause/resume/seek/restart/ending, comparison with edited route retained, complete save/reopen and invalid-file recovery, local persistence, real WAV/native-air downloads, keyboard access and desktop/390 px overflow. Check cancelled or hidden-page startup cannot emit deferred sound. Frozen session WAV and the separate complete native AIR have different RR/DSP histories and do not claim byte identity. [Controls and exact file boundary](../apps/handoff-study/README.md). Browser evidence is local, separate from listening, physical-device, MCP and deployment acceptance.
+
 ## Drift study lane
 
 `npm run test:drift` typechecks the independent experiment, runs its model/audio tests and builds its relative-path static output. The model tests cover frozen evolution with a moving loop, continuity on release, branching from a past gesture, immutable bookmarks and exact-version file rejection/round trips. Audio tests cover actual onset/phase agreement, timbre and layer effects, seek/block equality, direct-pluck audio/WAV, bounded voice-envelope projections and finite stereo WAV output. Model coverage keeps historical session@0 exact and checks session@1 pluck round trips and invalid note indices. Root `typecheck`, `test` and workspace `build` include this app through their existing CI jobs.

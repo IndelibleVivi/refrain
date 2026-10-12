@@ -43,6 +43,12 @@ npm run try
 | 本地听、保存 WAV/MIDI、尝试原声音色 | [首次使用指南](docs/GETTING-STARTED.md)。                                                                                    |
 | 为远程 host 配置私人 HTTP 连接      | [Self-hosting 操作指南](docs/runbooks/self-host-mcp.md)。                                                                    |
 
+## 一句可以交出去的音乐
+
+`npm run handoff` 打开独立实验 **A borrowed beat · 借来的半拍**：钢琴、木琴和疏开的尼龙吉他先走完一份默认演奏；你可以提前决定两处接句由谁完成，听它改变后面的回答与结尾。实验支持完整保存／重开、原演奏对照、完整 WAV 与原生 air 导出。
+
+准备步骤复用已有确切采样音源，首次可能选择性下载声音 bytes；浏览器只有在手势后才发声。这一有限作品只在当前 source tree 中提供，尚未进入 hosted demo 或 MCP Canvas，也没有改变 AIR 的写定乐谱契约。[操作、声音准备与文件边界](apps/handoff-study/README.md)。
+
 ## 新的声音 leaf：Breath study
 
 运行 `npm run breath`，打开 `http://127.0.0.1:4390`。把旋律中的一处空隙拉开，让温暖的合成拨弦渐渐折成玻璃；可以点奏音符、对照原句与变形、撤回，并保存 JSON 或导出完整 WAV。App 本身不下载音色，也不调用模型。另附同一旋律的尼龙吉他与可选 Shinyguitar archtop Artifact@3，各自保留精确采样 binding；archtop 仍是待亲自聆听的候选。[操作、保存与响度匹配 A/B 试听](apps/breath-study/README.md)。

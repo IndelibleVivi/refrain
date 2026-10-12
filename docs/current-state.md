@@ -1,6 +1,6 @@
 # Current state
 
-Last updated: 2026-09-30 for the Breath archtop candidate; production evidence below retains its own dates. This page describes source and acceptance status, not a live deployment inventory.
+Last updated: 2026-10-12 for the phrase-handoff study; production evidence below retains its own dates. This page describes source and acceptance status, not a live deployment inventory.
 
 ## Available in this source tree
 
@@ -16,6 +16,12 @@ Last updated: 2026-09-30 for the Breath archtop candidate; production evidence b
 - The Skill-only Plugin is a **0.3.0 source candidate**. Source presence does not establish Plugin installation, activation, directory publication, or a configured MCP connection.
 - Exact local production uses group level/placement, low-pass, saturation, delay, room, and fade. It preserves music and existing authorities while adding a new exact binding. It does not add general automation, a DAW, per-voice routing, or model hearing.
 - Local extension packs separate installed metadata, hydrated assets, authoring shelf, execution closure, and archive pins. Pack-carried language is explicit in the AIR vocabulary, never an ambient modification of old works.
+
+## Phrase-handoff study experiment
+
+[A borrowed beat · 借来的半拍](../apps/handoff-study/README.md) is source-complete and locally exercised in Chromium on 2026-10-12. `npm run handoff` prepares 19 authored phrase projections from an exact 36-asset acoustic closure and opens a bounded listening stage. Eight two-bar phrases at 96 BPM form a complete default performance. Two choices enter at beats 16 and 40; four authored routes preserve the shared opening and change foreground rhythm, guitar spacing and returning material. The default frozen performance lasts 41.5 seconds; marimba-ending routes retain an eight-second release tail and last 48 seconds. Exact native [AIR@1/Artifact@3 companions](../examples/handoff-study/README.md) remain separate from the experiment realization.
+
+The dedicated lane passes 18 source/model/transport/PCM tests, workspace typecheck and a fully prepared static build. The complete source-tree `npm run check` also passes (95 test files, 472 tests, two conditional skips), as does the local CLI smoke; the ordinary native exporter produces the default route’s complete WAV/MIDI/provenance. The static listening package has actual gesture-started PCM, cancelled preparation stays silent after its pending files arrive, and monitor levels 0/1 produce identical full WAV bytes. Real browser checks cover gesture-started nonzero PCM, no pre-gesture AudioContext or phrase WAV request, both choices, gate lock, paused/playing seek, pause/resume/restart/natural end, original comparison, strict save/reopen and bad-file preservation, exact full WAV export, local reload, keyboard playback, reduced motion, and desktop/390 px overflow. The downloaded 48-second chosen-route WAV reproduces the exact frozen assembly byte-for-byte. The default native Artifact@3 also plays through the ordinary Player at desktop and mobile widths. Four assembled routes measure peaks 0.113–0.139 with the explicit 0.8 session mixer. These are source and local runtime observations; human listening/visual acceptance, physical-device playback, MCP interaction, public demo delivery and production activation are not established. No canonical AIR, renderer or sound-candidate contract was changed.
 
 ## Breath study experiment
 

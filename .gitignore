@@ -30,3 +30,5 @@ tmp/
 apps/presentation/dist-try/
 
 apps/presentation/.demo-assets/
+
+apps/handoff-study/.audio/

@@ -1,0 +1,108 @@
+{
+  "format": "air@1-experimental",
+  "title": "A borrowed beat · 借来的半拍 · mm route",
+  "conductor": {
+    "tempo": 96,
+    "meters": [
+      {
+        "bar": 1,
+        "meter": "4/4"
+      }
+    ]
+  },
+  "key": "A minor",
+  "vocabulary": {
+    "format": "refrain-air-vocabulary-closure@0-experimental",
+    "id": "handoff-study-language@1",
+    "instruments": [
+      {
+        "id": "marimba",
+        "label": "Marimba",
+        "family": "pitched",
+        "midiMin": 45,
+        "midiMax": 96,
+        "status": "active",
+        "authoringMeaning": "A pitched wooden mallet voice for melodic percussion, pulse, and resonant ostinato."
+      },
+      {
+        "id": "nylon_guitar",
+        "label": "Nylon guitar",
+        "family": "pitched",
+        "midiMin": 40,
+        "midiMax": 88,
+        "status": "active",
+        "authoringMeaning": "A plucked nylon-string voice with a soft attack and short natural decay."
+      },
+      {
+        "id": "warm_piano",
+        "label": "Warm piano",
+        "family": "pitched",
+        "midiMin": 21,
+        "midiMax": 108,
+        "status": "active",
+        "authoringMeaning": "A rounded acoustic piano voice for melody, harmony, and intimate accompaniment."
+      }
+    ],
+    "techniques": [],
+    "contentSha256": "0aac0793f988cfed15b34152132e808915ee5f403b917b15ea9fa5b424898917"
+  },
+  "motifs": {},
+  "voices": [
+    {
+      "id": "guitar-bass",
+      "instrument": "nylon_guitar",
+      "role": "bass",
+      "gainDb": 0,
+      "pan": 0.05,
+      "realize": [
+        {
+          "id": "route",
+          "kind": "literal",
+          "part": "A2/2@mp E3/2@p | A2/2@mp E3/2@p | F2/2@mp C3/2@p | G2/2@mp D3/2@p | C3/1@mp | A2/1@mp | D3/1@mp | E2/1@mp | F2/1@mp | G2/1@mp | C3/1@mp | E2/1@mp | D3/1@mp | F2/1@mp | E2/1@mp | A2/1@mp"
+        }
+      ]
+    },
+    {
+      "id": "guitar-harm",
+      "instrument": "nylon_guitar",
+      "role": "harmony",
+      "gainDb": -5,
+      "pan": 0.28,
+      "realize": [
+        {
+          "id": "route",
+          "kind": "literal",
+          "part": "[C4,E4]/2.@pp r/4 | [C4,E4]/2.@pp r/4 | [A3,C4]/2.@pp r/4 | [B3,D4]/2.@pp r/4 | r/8 [G4,C5]/4.@pp [G4,C5]/4.@pp r/8 | r/8 [E4,A4]/4.@pp [E4,A4]/4.@pp r/8 | r/8 [A4,D5]/4.@pp [A4,D5]/4.@pp r/8 | r/8 [B4,E5]/4.@pp [B4,E5]/4.@pp r/8 | r/8 [C4,F4]/4.@pp [C4,F4]/4.@pp r/8 | r/8 [D4,G4]/4.@pp [D4,G4]/4.@pp r/8 | r/8 [G4,C5]/4.@pp [G4,C5]/4.@pp r/8 | r/8 [B4,E5]/4.@pp [B4,E5]/4.@pp r/8 | r/8 [A4,D5]/4.@pp [A4,D5]/4.@pp r/8 | r/8 [C4,F4]/4.@pp [C4,F4]/4.@pp r/8 | r/8 [B4,E5]/4.@pp [B4,E5]/4.@pp r/8 | r/8 [E4,A4]/4.@pp [E4,A4]/4.@pp r/8"
+        }
+      ]
+    },
+    {
+      "id": "piano",
+      "instrument": "warm_piano",
+      "role": "lead",
+      "gainDb": 5,
+      "pan": -0.08,
+      "realize": [
+        {
+          "id": "route",
+          "kind": "literal",
+          "part": "A3/4.@mp C4/8@p E4/2@mf | D4/4@mp E4/4@mp C4/2@p | r/1 | r/1 | r/1 | r/1 | r/1 | r/1 | r/1 | r/1 | r/1 | r/1 | r/1 | r/1 | r/1 | r/1"
+        }
+      ]
+    },
+    {
+      "id": "marimba",
+      "instrument": "marimba",
+      "role": "lead",
+      "gainDb": 4,
+      "pan": 0.14,
+      "realize": [
+        {
+          "id": "route",
+          "kind": "literal",
+          "part": "r/1 | r/1 | r/8 F4/8@mf r/8 A4/8@mf C5/4.@mf A4/8@mp | r/8 G4/8@mf r/8 B4/8@mf D5/4.@mf B4/8@mp | r/8 C4/8@mf r/8 E4/8@mf G4/4.@mf E4/8@mp | r/8 A4/8@mf r/8 C5/8@mf E5/4.@mf C5/8@mp | r/8 D4/8@mf r/8 F4/8@mf A4/4.@mf F4/8@mp | E4/8@mf G#4/8@mf B4/4@mp r/2 | r/8 C5/4.@mp r/8 A4/4.@mp | r/8 D5/4.@mp r/8 B4/4.@mp | r/8 C4/8@mf r/8 E4/8@mf G4/4.@mf E4/8@mp | r/8 E4/8@mf r/8 G4/8@mf B4/4.@mf G4/8@mp | r/8 F4/8@mf r/8 A4/8@mf D4/4.@mf A4/8@mp | A4/8@mf F4/8@mf C5/4@mp r/2 | B4/4@mf G#4/4@mf E5/4@mp r/4 | r/8 G#4/4@mp A4/2@p r/8"
+        }
+      ]
+    }
+  ]
+}

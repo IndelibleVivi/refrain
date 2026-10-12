@@ -45,7 +45,7 @@
     "test:fast": "npm run test",
     "test:mcp-host": "npm run build:mcp-host && playwright test --config playwright.mcp-host.config.ts",
     "test:watch": "vitest",
-    "typecheck": "tsc -b && npm run typecheck --workspace @refrain/drift-study && npm run typecheck --workspace @refrain/breath-study",
+    "typecheck": "tsc -b && npm run typecheck --workspace @refrain/drift-study && npm run typecheck --workspace @refrain/breath-study && npm run typecheck --workspace @refrain/handoff-study",
     "try": "npm run prepare:demo && npm run try --workspace @refrain/presentation",
     "build:try": "npm run prepare:demo && npm run build:try --workspace @refrain/presentation",
     "test:try": "npm run build:try && playwright test --config playwright.presentation.config.ts",
@@ -57,7 +57,11 @@
     "build:breath": "npm run build --workspace @refrain/breath-study",
     "test:breath": "npm run typecheck --workspace @refrain/breath-study && vitest run apps/breath-study/src --maxWorkers=2 && npm run build:breath",
     "soundpack:build-shinyguitar": "tsx scripts/build-shinyguitar-candidate.ts",
-    "breath:build-archtop": "tsx scripts/build-breath-archtop-companion.ts"
+    "breath:build-archtop": "tsx scripts/build-breath-archtop-companion.ts",
+    "handoff:prepare": "tsx scripts/prepare-handoff-study.ts",
+    "handoff": "npm run handoff:prepare && npm run dev --workspace @refrain/handoff-study",
+    "build:handoff": "npm run handoff:prepare && npm run build --workspace @refrain/handoff-study",
+    "test:handoff": "npm run typecheck --workspace @refrain/handoff-study && vitest run apps/handoff-study/src --maxWorkers=2 && npm run build:handoff"
   },
   "devDependencies": {
     "@playwright/test": "1.62.1",
