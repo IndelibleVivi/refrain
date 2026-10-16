@@ -14,6 +14,16 @@ These grants cover only project-original rights that the relevant licensor can g
 | npm dependencies                                                                                                                                                                                                  | Their respective package licenses. They are installed from the lockfile, not relicensed by Refrain.                                           |
 | User-authored airs, private context, and exports outside this repository                                                                                                                                          | Not included in a repository-wide grant. Refrain does not claim ownership of your music. Third-party sounds still carry their own terms.      |
 
+The Lantern Score follows that existing material split: its authored musical
+material in `apps/nocturne-desk/src/score.ts`, authored visual content in `apps/nocturne-desk/src/assets/`, engraved illustration
+details in `apps/nocturne-desk/src/drawing.ts`, and app README prose use CC BY-NC-SA 4.0.
+The generated artwork carries its prompts and provenance beside the assets;
+the general limitation on exclusive AI-output rights above still applies.
+The surrounding builders, UI, validation, audio scheduling, noise synthesis and tests remain
+functional SUL-1.0 material. The Anatomy project is a design-method reference;
+no Anatomy code, templates or assets are incorporated. Existing sampled assets
+retain the notices below.
+
 ## Sound notices
 
 Sample binaries are acquired selectively and are not tracked in the source repository. The retained upstream notices are:

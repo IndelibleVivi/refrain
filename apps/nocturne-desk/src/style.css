@@ -1,0 +1,658 @@
+:root {
+  font-family: Georgia, "Songti SC", "Noto Serif CJK SC", serif;
+  color: #3b3b37;
+  background: #fff;
+  font-synthesis: none;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+button,
+input,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+button,
+input {
+  font: inherit;
+}
+button {
+  color: inherit;
+  border: 0;
+  cursor: pointer;
+  background: none;
+}
+button:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+button:focus-visible,
+a:focus-visible,
+summary:focus-visible {
+  outline: 1px solid #7b8b80;
+  outline-offset: 6px;
+}
+button:hover {
+  color: #161e19;
+}
+a {
+  color: inherit;
+}
+button svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.1;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.room {
+  isolation: isolate;
+  position: relative;
+  min-height: 100svh;
+  overflow: hidden;
+  background: #fff;
+}
+.masthead {
+  height: 72px;
+  margin: 0 4.5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+}
+.brand {
+  text-decoration: none;
+  font-size: 29px;
+  letter-spacing: -1.5px;
+  font-style: italic;
+  display: flex;
+  align-items: baseline;
+  gap: 24px;
+}
+.brand span {
+  font-size: 12px;
+  letter-spacing: 0.1px;
+  color: #858b82;
+}
+.icon-button {
+  display: inline-grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  padding: 10px;
+  transition: background 0.2s;
+}
+.icon-button:hover {
+  background: #8b9b8610;
+}
+#tools-open {
+  border: 1px solid #7a847526;
+}
+.stage {
+  position: relative;
+  width: min(1120px, calc((100svh - 325px) * 1.333333), 100%);
+  aspect-ratio: 4/3;
+  margin: 0 auto;
+  isolation: isolate;
+}
+.atelier,
+.atelier img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  user-select: none;
+}
+.atelier {
+  pointer-events: none;
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    #000 1.5%,
+    #000 93%,
+    transparent
+  );
+}
+.scene-controls {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.hit-shape {
+  fill: transparent;
+  stroke: none;
+  pointer-events: all;
+  cursor: pointer;
+}
+.instrument,
+#plant {
+  outline: none;
+}
+.instrument:hover .hit-shape,
+#plant:hover .hit-shape {
+  fill: #6f765408;
+}
+.instrument:focus-visible .hit-shape,
+#plant:focus-visible .hit-shape {
+  stroke: #7b8b8099;
+  stroke-width: 1.5;
+  stroke-dasharray: 2 6;
+  fill: #cad4bd0a;
+}
+.playing-detail {
+  pointer-events: none;
+  fill: none;
+  stroke: #514b3e;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.4;
+}
+.playing-detail [data-tone] {
+  opacity: calc(var(--note, 0) * 0.8);
+  stroke-width: calc(0.6 + var(--note, 0) * 1.5);
+}
+.harp .playing-detail [data-tone] {
+  transform: translateX(calc(var(--note, 0) * 1.2px));
+  stroke: #665e4e;
+}
+.piano .playing-detail [data-tone] {
+  transform: translateY(calc(var(--note, 0) * 1.3px));
+  stroke-width: 4;
+}
+.playing-detail [data-bow] {
+  stroke-width: 2.2;
+  opacity: 0;
+  transform: translateX(calc(var(--bow, 0) * 1px));
+}
+.bow-hair {
+  stroke-width: 0.7;
+  stroke: #a39a85;
+}
+.playing-detail [data-mallet] {
+  opacity: calc(0.08 + var(--strike, 0) * 0.65);
+  transform: rotate(calc(var(--strike, 0) * -7deg));
+  stroke-width: 2;
+}
+.playing-detail [data-mallet] ellipse {
+  fill: #a49e8e;
+  stroke-width: 1;
+}
+.instrument-panels {
+  position: absolute;
+  bottom: 2%;
+  left: 0;
+  width: 100%;
+  height: 36px;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.instrument-caption {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  white-space: nowrap;
+  padding: 2px 14px;
+  background: #ffffffed;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s;
+  font-size: 12px;
+}
+.stage[data-active-voice="piano"] [data-caption="piano"],
+.stage[data-active-voice="harp"] [data-caption="harp"],
+.stage[data-active-voice="cello"] [data-caption="cello"],
+.stage[data-active-voice="marimba"] [data-caption="marimba"] {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+.instrument-name {
+  font-style: italic;
+  letter-spacing: 0.2px;
+}
+.voice-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 4px;
+  font-size: 11px;
+}
+.voice-toggle i {
+  width: 7px;
+  height: 7px;
+  border: 1px solid #74806a;
+  border-radius: 50%;
+}
+.voice-toggle[aria-pressed="true"] i {
+  background: #74806a;
+}
+.voice-toggle span {
+  color: #798172;
+}
+.wind-caption {
+  position: absolute;
+  right: 6%;
+  font-size: 10px;
+  color: #7c876d;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.wind-on .wind-caption {
+  opacity: 1;
+}
+.conductor {
+  position: relative;
+  width: 310px;
+  max-width: 90%;
+  margin: 0 auto 0;
+  text-align: center;
+  padding: 12px 0 18px;
+}
+.chapter-heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 30px;
+}
+.chapter-heading h1 {
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  margin: 0;
+}
+.chapter-heading #play-section {
+  position: absolute;
+  right: 50px;
+  top: -6px;
+  opacity: 0.5;
+}
+.chapter-heading #play-section svg {
+  width: 13px;
+  height: 13px;
+}
+.chapter-heading #play-section:hover {
+  opacity: 1;
+}
+.phrases {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 14px 0 17px;
+}
+.phrase {
+  position: relative;
+  width: 36px;
+  height: 34px;
+  font-size: 13px;
+  color: #a4aaa1;
+  transition: color 0.25s;
+}
+.phrase[aria-current="true"] {
+  color: #3d4737;
+}
+.phrase:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 16px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #6f7c63;
+  opacity: 0;
+}
+.phrase[aria-current="true"]:after {
+  opacity: 1;
+}
+.playing-line {
+  position: absolute;
+  bottom: 0;
+  height: 1px;
+  left: 5px;
+  width: calc(var(--progress, 0%) * 0.7);
+  background: #63775a;
+}
+.transport {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+.play-button {
+  width: 52px;
+  height: 52px;
+  border: 1px solid #8c968578;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #ffffff70;
+  transition:
+    background 0.3s,
+    transform 0.3s;
+}
+.play-button:hover {
+  background: white;
+  transform: scale(1.04);
+}
+.play-button svg {
+  width: 16px;
+  height: 16px;
+  fill: #5c6a51;
+  stroke: none;
+}
+.transport #stop {
+  width: 34px;
+  height: 34px;
+  opacity: 0.45;
+}
+.transport #stop svg {
+  width: 12px;
+  height: 12px;
+}
+.time {
+  font-size: 10px;
+  font-variant-numeric: tabular-nums;
+  color: #8c9487;
+  min-width: 34px;
+}
+.touch-hint {
+  font-family: "Songti SC", serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #929a8b;
+  margin: 16px 0 0;
+  transition: opacity 0.5s;
+}
+.is-playing .touch-hint {
+  opacity: 0;
+}
+input[type="range"] {
+  appearance: none;
+  -webkit-appearance: none;
+  display: block;
+  height: 22px;
+  background: transparent;
+  cursor: pointer;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 1px;
+  background: #b8c0b3;
+}
+input[type="range"]::-moz-range-track {
+  height: 1px;
+  background: #b8c0b3;
+}
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #738369;
+  margin-top: -2px;
+}
+input[type="range"]::-moz-range-thumb {
+  width: 5px;
+  height: 5px;
+  border: 0;
+  border-radius: 50%;
+  background: #738369;
+}
+input[type="range"]:focus-visible {
+  outline: 1px solid #8c9d80;
+  outline-offset: 3px;
+}
+#seek {
+  width: 160px;
+  margin: 12px auto 0;
+}
+.notice {
+  position: fixed;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: min(90%, 600px);
+  padding: 8px 14px;
+  z-index: 8;
+  margin: 0;
+  text-align: center;
+  font-size: 12px;
+  color: #67715e;
+  background: #fffffff0;
+  border-radius: 2px;
+  box-shadow: 0 3px 30px #6c7c5210;
+  pointer-events: none;
+}
+.notice:empty {
+  display: none;
+}
+.sr-only {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.import-input {
+  display: none;
+}
+dialog {
+  color: #3b4435;
+  border: 1px solid #d7ded3;
+  background: #fffefa;
+  box-shadow: 0 30px 100px #36472e15;
+  width: 430px;
+  max-width: calc(100% - 32px);
+  max-height: 85svh;
+  padding: 25px 30px;
+  overflow: auto;
+  font-size: 13px;
+}
+dialog::backdrop {
+  background: #edf1e9b3;
+  backdrop-filter: blur(7px);
+}
+.dialog-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+.dialog-head h2 {
+  font-size: 22px;
+  letter-spacing: 4px;
+  font-weight: 400;
+  margin: 0;
+}
+.dialog-head .icon-button {
+  font-family: Arial;
+  font-size: 24px;
+  font-weight: 200;
+}
+.title-label {
+  display: grid;
+  gap: 10px;
+  font-size: 11px;
+  color: #86917d;
+}
+.title-label input {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #d6ddce;
+  padding: 10px 0;
+  width: 100%;
+  color: #3b4435;
+  outline-color: #98ab89;
+}
+.harmony {
+  font-size: 12px;
+  color: #93a085;
+  font-style: italic;
+  margin: 16px 0 25px;
+}
+.presets {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 22px;
+}
+.presets button {
+  padding: 10px 15px;
+  border-bottom: 1px solid transparent;
+}
+.presets button.active {
+  border-color: #879a72;
+}
+.history-controls {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  margin: 18px 0;
+}
+.history-controls button {
+  padding: 8px 0;
+  font-size: 12px;
+}
+.history-controls #compare {
+  margin-left: auto;
+  color: #748365;
+}
+.history-controls #compare[aria-pressed="true"] {
+  text-decoration: underline;
+}
+.volume-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 24px 0;
+  color: #839077;
+  font-size: 12px;
+}
+.volume-label input {
+  width: 50%;
+}
+.file-tools {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: #e6eade;
+  border: 1px solid #e6eade;
+}
+.file-tools button {
+  padding: 16px;
+  background: #fffefa;
+  font-size: 12px;
+}
+.file-tools button:hover {
+  background: #f5f7f1;
+}
+details {
+  margin: 25px 0 0;
+  font-size: 12px;
+  line-height: 1.9;
+  color: #7f8978;
+}
+summary {
+  cursor: pointer;
+}
+details p {
+  margin: 16px 0;
+}
+.boot {
+  padding: 30px;
+  line-height: 1.8;
+}
+
+@media (max-width: 700px) {
+  .masthead {
+    height: 62px;
+    margin: 0 24px;
+  }
+  .brand {
+    font-size: 25px;
+    gap: 14px;
+  }
+  .brand span {
+    font-size: 10px;
+  }
+  #tools-open {
+    width: 35px;
+    height: 35px;
+  }
+  .stage {
+    width: 100%;
+    aspect-ratio: 3/4;
+    margin: 0 auto;
+    max-width: 510px;
+  }
+  .conductor {
+    padding-top: 4px;
+    padding-bottom: 30px;
+  }
+  .notice {
+    bottom: 6px;
+    font-size: 11px;
+  }
+  dialog {
+    padding: 20px 24px;
+  }
+  .chapter-heading h1 {
+    font-size: 14px;
+  }
+  .transport {
+    gap: 22px;
+  }
+  .touch-hint {
+    margin-top: 8px;
+  }
+  .phrases {
+    margin: 10px 0 12px;
+  }
+  .instrument-panels {
+    bottom: 0;
+  }
+  .instrument-caption {
+    font-size: 11px;
+  }
+  .wind-caption {
+    right: 5%;
+    font-size: 9px;
+  }
+}
+@media (max-width: 370px) {
+  .brand span {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *:before,
+  *:after {
+    transition: none !important;
+    animation: none !important;
+  }
+  .playing-detail [data-bow],
+  .playing-detail [data-mallet],
+  .playing-detail [data-tone] {
+    transform: none !important;
+  }
+}

@@ -45,7 +45,7 @@
     "test:fast": "npm run test",
     "test:mcp-host": "npm run build:mcp-host && playwright test --config playwright.mcp-host.config.ts",
     "test:watch": "vitest",
-    "typecheck": "tsc -b && npm run typecheck --workspace @refrain/drift-study && npm run typecheck --workspace @refrain/breath-study && npm run typecheck --workspace @refrain/handoff-study",
+    "typecheck": "tsc -b && npm run typecheck --workspace @refrain/drift-study && npm run typecheck --workspace @refrain/breath-study && npm run typecheck --workspace @refrain/handoff-study && npm run typecheck --workspace @refrain/nocturne-desk",
     "try": "npm run prepare:demo && npm run try --workspace @refrain/presentation",
     "build:try": "npm run prepare:demo && npm run build:try --workspace @refrain/presentation",
     "test:try": "npm run build:try && playwright test --config playwright.presentation.config.ts",
@@ -61,7 +61,11 @@
     "handoff:prepare": "tsx scripts/prepare-handoff-study.ts",
     "handoff": "npm run handoff:prepare && npm run dev --workspace @refrain/handoff-study",
     "build:handoff": "npm run handoff:prepare && npm run build --workspace @refrain/handoff-study",
-    "test:handoff": "npm run typecheck --workspace @refrain/handoff-study && vitest run apps/handoff-study/src --maxWorkers=2 && npm run build:handoff"
+    "test:handoff": "npm run typecheck --workspace @refrain/handoff-study && vitest run apps/handoff-study/src --maxWorkers=2 && npm run build:handoff",
+    "desk": "npm run desk:prepare && npm run dev --workspace @refrain/nocturne-desk",
+    "desk:prepare": "tsx scripts/prepare-nocturne-desk.ts",
+    "build:desk": "npm run desk:prepare && npm run build --workspace @refrain/nocturne-desk",
+    "test:desk": "npm run typecheck --workspace @refrain/nocturne-desk && vitest run apps/nocturne-desk/src --maxWorkers=2 && npm run build:desk"
   },
   "devDependencies": {
     "@playwright/test": "1.62.1",

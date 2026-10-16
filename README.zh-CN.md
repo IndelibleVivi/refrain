@@ -43,6 +43,10 @@ npm run try
 | 本地听、保存 WAV/MIDI、尝试原声音色 | [首次使用指南](docs/GETTING-STARTED.md)。                                                                                    |
 | 为远程 host 配置私人 HTTP 连接      | [Self-hosting 操作指南](docs/runbooks/self-host-mcp.md)。                                                                    |
 
+## 一张可以亲手编配的手稿
+
+`npm run desk` 打开独立作品 **The Lantern Score · 灯下乐谱**：窗光与植物围合成一间白色琴房，四件乐器的演奏细节跟随真实音符。碰乐器试听，决定六页室内乐由谁在场；碰橄榄树听轻轻的风。编配、对照、撤回和保存收进右上角，再带走完整实验 WAV 或可检查的原生 air。声音准备只使用所需的确切采样，浏览器由手势开启演奏。这是源码中的新实验，未替换正式 Canvas 或部署到公共试玩页。[操作、声音准备与导出边界](apps/nocturne-desk/README.md)。
+
 ## 一句可以交出去的音乐
 
 `npm run handoff` 打开独立实验 **A borrowed beat · 借来的半拍**：钢琴、木琴和疏开的尼龙吉他先走完一份默认演奏；你可以提前决定两处接句由谁完成，听它改变后面的回答与结尾。实验支持完整保存／重开、原演奏对照、完整 WAV 与原生 air 导出。

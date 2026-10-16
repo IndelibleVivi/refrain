@@ -43,6 +43,10 @@ This local URL belongs to your computer. The public demo runs on GitHub Pages. S
 | Listen locally, save WAV/MIDI, or try acoustic sound   | [First-use guide](docs/GETTING-STARTED.md).                                                                                                                  |
 | Run a private HTTP connection for a remote host        | [Operator self-hosting guide](docs/runbooks/self-host-mcp.md).                                                                                               |
 
+## A manuscript you can orchestrate
+
+`npm run desk` opens **The Lantern Score · 灯下乐谱**, an independent six-page chamber miniature. In a sunlit illustrated atelier, touch individual instruments to audition their phrases, choose each section’s ensemble, and touch the olive tree for quiet local wind noise. Engraved playing details follow the real notes. A compact drawer holds three authored arrangements, undo/redo and save/reopen. Export a complete experiment WAV or an inspectable native air. Exact sampled sounds are prepared selectively; browser audio requires an explicit gesture. This source candidate is separate from the hosted demo and production Canvas. [Controls, sound preparation and export boundaries](apps/nocturne-desk/README.md).
+
 ## A phrase you can hand over
 
 `npm run handoff` opens **A borrowed beat · 借来的半拍**, an independent Chinese-language study with piano, marimba and sparse nylon-guitar support. Listen to its complete default performance, choose who takes two upcoming phrases, and hear that choice change the response and ending. Save/reopen the full experiment, compare with the original, or keep its complete WAV and native air.

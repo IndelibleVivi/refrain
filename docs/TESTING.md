@@ -5,6 +5,10 @@ activated-runtime evidence, and owner acceptance. A green lane proves only the
 claim named here; evidence from an earlier lane does not silently satisfy a later
 package, deployment, real-host, listening, or release boundary.
 
+## Lantern Score experiment
+
+`npm run test:desk` runs the independent desk's TypeScript and focused score/session/audio tests, prepares the exact sampled stems and builds its relative-path listening package. `npm run desk` opens the actual development surface at port 4393. Browser checks cover pre-gesture silence, preparation cancellation, individual audition, instrument-specific note feedback, standalone wind and hidden-page shutdown, complete playback/seek/tails, per-section orchestration, comparison/history, strict files and complete WAV/native-air downloads at desktop and 390 px. Use `npm run build:desk` for a distributable prepared static directory; ordinary workspace build alone does not prepare sounds. Native Artifact playback is checked separately through the existing Player. These checks do not establish listening/visual acceptance, physical mobile behavior or deployment.
+
 ## Surfaces
 
 | Surface                   | Claim                                                                                                                                                                                 | Default local command                                                                                                                      | Ordinary CI                                                                                         | Still outside this lane                                                                                                       |

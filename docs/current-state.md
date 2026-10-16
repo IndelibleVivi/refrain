@@ -1,6 +1,6 @@
 # Current state
 
-Last updated: 2026-10-12 for the phrase-handoff study; production evidence below retains its own dates. This page describes source and acceptance status, not a live deployment inventory.
+Last updated: 2026-10-16 for the Lantern Score atelier; production evidence below retains its own dates. This page describes source and acceptance status, not a live deployment inventory.
 
 ## Available in this source tree
 
@@ -16,6 +16,12 @@ Last updated: 2026-10-12 for the phrase-handoff study; production evidence below
 - The Skill-only Plugin is a **0.3.0 source candidate**. Source presence does not establish Plugin installation, activation, directory publication, or a configured MCP connection.
 - Exact local production uses group level/placement, low-pass, saturation, delay, room, and fade. It preserves music and existing authorities while adding a new exact binding. It does not add general automation, a DAW, per-voice routing, or model hearing.
 - Local extension packs separate installed metadata, hydrated assets, authoring shelf, execution closure, and archive pins. Pack-carried language is explicit in the AIR vocabulary, never an ambient modification of old works.
+
+## Lantern Score atelier experiment
+
+[The Lantern Score · 灯下乐谱](../apps/nocturne-desk/README.md) is source-complete and locally exercised in Chromium on 2026-10-16. `npm run desk` opens a sunlit illustrated atelier with four individually playable instruments, exact note-driven key/string/bow/mallet details, and independent local wind noise on the olive tree. Desktop and portrait artwork share one interaction and music model. Six authored four-bar sections at 88 BPM support per-section orchestration, three written arrangements, comparison, undo/redo, strict local save/reopen, complete frozen WAV and canonical Artifact@3 export. The 24 stems use the existing chamber binding and an exact 33-asset closure; the exercised complete native arrangement requires 34 assets because its sample rotation differs. Default and constellation performances retain a 77.455-second tail-inclusive duration; solitude lasts 66.545 seconds. No canonical AIR, renderer or sound candidate was changed.
+
+The dedicated lane passes seven source/session/PCM/noise tests, TypeScript and a prepared static build. Real browser checks cover pre-gesture silence, preparation cancellation, rejected-byte recovery, individual audition, actual note feedback and rest, pause/resume/seek/section jump/restart/natural end, future-versus-current edits, the last-voice guard, comparison/history, save/reopen/invalid-file preservation, independent ambience and hidden-page shutdown, keyboard and reduced motion, desktop and 390 px controls, and the built package under a relative subpath. The 13,663,028-byte downloaded WAV exactly reproduces the selected frozen assembly; monitor levels 0/1 produce identical exports. The downloaded Artifact@3 equals the canonical factory result and produces gesture-started nonzero PCM through the ordinary Player at desktop and mobile widths. Mechanical render peaks are 0.088–0.098, with an all-subset absolute-sum bound of 0.106. These are source/local-browser observations, not physical-device, human listening, final visual acceptance, MCP integration or public deployment evidence. The public demo remains unchanged.
 
 ## Phrase-handoff study experiment
 
