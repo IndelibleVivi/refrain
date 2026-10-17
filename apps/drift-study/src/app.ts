@@ -38,7 +38,8 @@ let history: { session: Session; label: string }[] = [
   { session: clone(session), label: "最初" },
 ];
 let historyIndex = 0;
-let gestureStart: { session: Session; at: number } | undefined;
+let gestureStart:
+  { session: Session; at: number; previous?: Gesture } | undefined;
 let starting = false;
 let seeking = false;
 let playGeneration = 0;
@@ -102,11 +103,25 @@ function beginGesture() {
 function editRules(values: Rules) {
   beginGesture();
   try {
-    session = withGesture(session, {
+    const latest: Gesture = {
       at: engine.position,
       kind: "rules",
       rules: values,
-    });
+    };
+    // One live drag samples the same instant many times; keep only its newest
+    // sample. Retire this gesture's own trailing sample before validation so a
+    // full log still accepts the final value. Earlier or imported same-time
+    // controls keep their array order.
+    const previous = gestureStart?.previous;
+    const base =
+      previous &&
+      session.gestures.at(-1) === previous &&
+      previous.at === latest.at
+        ? { ...session, gestures: session.gestures.slice(0, -1) }
+        : session;
+    const next = withGesture(base, latest);
+    if (gestureStart) gestureStart.previous = next.gestures.at(-1);
+    session = next;
     engine.setSession(session);
     redraw = true;
   } catch (error) {
@@ -438,7 +453,9 @@ el("export-wav").onclick = async () => {
 };
 document.addEventListener("keydown", (event) => {
   if (
-    (event.target as HTMLElement).matches("input,textarea,select") ||
+    (event.target as HTMLElement).matches(
+      'input:not([type="range"]):not([type="radio"]):not([type="checkbox"]):not([type="file"]),textarea,select,[contenteditable]',
+    ) ||
     event.altKey
   )
     return;
