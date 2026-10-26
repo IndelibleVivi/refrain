@@ -31,10 +31,11 @@ Usage:
   refrain audition verify <audition-directory> [--json]
   refrain audition locate <audition-directory> --at <local-seconds> [--entry a|b] [--json]
   refrain respond <audition-directory> --observer <name> --basis <audio-input,score-reading,render-measurements,human-listening> --message <text> --out <response-file> [--entry a|b] [--start <seconds> --end <seconds>]
+  refrain respond inspect <response-file> --audition <audition-or-share-directory> [--json]
   refrain share <audition-directory> --out <directory> --attribution <text> --rights <text> [--include-artifact] [--response <file>] [--invitation welcome|music|conversation|none] [--message <text>]
   refrain receive <share-directory> [--out <new-directory>] [--json]
   refrain fetch (--candidate <id> | --profile <id> | --palette <id> | --air <file> --binding <id>)
-  refrain open <air-or-artifact> [--binding <id>] [--no-open] [--json]
+  refrain open <air-or-artifact> [more-air-or-artifact ...] [--binding <id>] [--theme <theme-id>] [--no-open] [--json]
   refrain export <air-or-artifact> [--binding <id>] [--out <directory>] [--matched-preview]
   refrain packs <command> [options]
   refrain mcp stdio
@@ -225,7 +226,7 @@ async function main() {
       "apps/presentation/src/open-air.ts",
       assignedOptions(
         [...rest, ...(json ? ["--json"] : [])],
-        new Set(["--binding"]),
+        new Set(["--binding", "--theme"]),
       ),
     );
   if (command === "export")

@@ -8,7 +8,7 @@ import type {
 } from "@refrain/audio-engine/complete-browser";
 import { createExecutionBundle } from "@refrain/audio-engine/execution";
 import { SelenV21Canvas } from "./SelenV21Canvas.js";
-import { useRefrainLocale } from "./locale.js";
+import { LanguageSwitch, useRefrainLocale } from "./locale.js";
 import { uiCopy, type UiMessageKey } from "./ui-copy.js";
 import { stringifyRefrainArtifact } from "./portable.js";
 import {
@@ -28,12 +28,40 @@ import {
 import { buildSelenV21Piece } from "./selen-v21-model.js";
 import { IdentityScopedEngineSlot } from "./identity-scoped-engine.js";
 import { rendererPlaybackCapability } from "./playback-capability.js";
+import {
+  PlaybackCompletionGate,
+  type PlaybackRun,
+} from "./playback-completion.js";
 import type {
   DownloadArtifact,
   DownloadArtifactOutcome,
   RefrainRendererProps,
 } from "./types.js";
 import { buildStructureViewModel } from "./view-model.js";
+import { AppearanceControls } from "./AppearanceControls.js";
+import { ShareControl } from "./ShareControl.js";
+import {
+  planPreparedCurrentAirShare,
+  prepareCurrentAirShareContext,
+} from "./current-air-share.js";
+import {
+  APPEARANCE_PREFERENCES_FORMAT,
+  appearanceForTheme,
+  isRasterAppearanceImage,
+  normalizePortableAppearance,
+  parseAppearancePreferences,
+  type AppearancePreferences,
+  type PortableShareAppearance,
+  type ResolvedAppearance,
+  type ThemeAppearance,
+} from "./appearance.js";
+import {
+  deleteAppearanceBackground,
+  readAppearanceBackground,
+  readStoredAppearancePreferences,
+  writeAppearanceBackground,
+  writeStoredAppearancePreferences,
+} from "./appearance-storage.js";
 
 type PlayerState =
   | "idle"
@@ -84,9 +112,16 @@ export function AirRenderer({
   onDownload,
   onSelectionRequest,
   surface = "url",
-  visualTheme = "paper-sonata",
+  visualTheme,
+  visualAppearance,
   initialLocale,
   onLocaleChange,
+  playbackCommand,
+  onPlaybackEnded,
+  onAuditionBindingChange,
+  toolbarActions,
+  queueControls,
+  shareDeployment,
 }: RefrainRendererProps) {
   const document = useMemo(
     () => portableArtifactForView(suppliedArtifact),
@@ -105,8 +140,44 @@ export function AirRenderer({
   );
   const bindings = carriedBindings(document);
   const [locale, setLocale] = useRefrainLocale(initialLocale);
-  const [selectedTheme, setSelectedTheme] = useState(visualTheme);
-  useEffect(() => setSelectedTheme(visualTheme), [visualTheme]);
+  const initialAppearancePreferences = useRef<
+    AppearancePreferences | undefined
+  >(undefined);
+  if (!initialAppearancePreferences.current)
+    initialAppearancePreferences.current =
+      surface === "url" && typeof window !== "undefined"
+        ? readStoredAppearancePreferences()
+        : parseAppearancePreferences({
+            format: APPEARANCE_PREFERENCES_FORMAT,
+            themes: {},
+          });
+  const [appearancePreferences, setAppearancePreferences] =
+    useState<AppearancePreferences>(initialAppearancePreferences.current);
+  const appearancePreferencesRef = useRef(appearancePreferences);
+  appearancePreferencesRef.current = appearancePreferences;
+  const [selectedTheme, setSelectedTheme] = useState(
+    visualTheme ?? "paper-sonata",
+  );
+  const [portableAppearanceActive, setPortableAppearanceActive] =
+    useState(true);
+  const [backgroundImageUrl, setBackgroundImageUrl] = useState<string>();
+  const backgroundImageUrlRef = useRef<string | undefined>(undefined);
+  const backgroundLoadRevision = useRef(0);
+  const appearanceMutationRevisions = useRef(
+    new Map<typeof selectedTheme, number>(),
+  );
+  const desiredBackgrounds = useRef(
+    new Map<typeof selectedTheme, Blob | undefined>(),
+  );
+  const [appearanceNotice, setAppearanceNotice] = useState<
+    "saved" | "reset" | "invalid" | "failed"
+  >();
+  const [includeShareAppearance, setIncludeShareAppearance] = useState(true);
+  const visualAppearanceKey = JSON.stringify(visualAppearance ?? null);
+  useEffect(() => {
+    setSelectedTheme(visualTheme ?? "paper-sonata");
+    setPortableAppearanceActive(true);
+  }, [visualTheme, visualAppearanceKey]);
   const copy = uiCopy(locale);
   const [playerState, setPlayerState] = useState<PlayerState>("idle");
   const [playerError, setPlayerError] = useState<string>();
@@ -131,6 +202,11 @@ export function AirRenderer({
   const [preparation, setPreparation] = useState<PreparationProgressV0>();
   const stopStateTimer = useRef<number | undefined>(undefined);
   const actionGeneration = useRef(0);
+  const completionGate = useRef(new PlaybackCompletionGate());
+  const completionRun = useRef<PlaybackRun | undefined>(undefined);
+  const onPlaybackEndedRef = useRef(onPlaybackEnded);
+  onPlaybackEndedRef.current = onPlaybackEnded;
+  const consumedPlaybackCommand = useRef(0);
   const disposed = useRef(false);
   const renderedArtifactIdentity = useRef(artifactIdentity);
   const structure = useMemo(
@@ -203,6 +279,260 @@ export function AirRenderer({
     playbackCapability.status === "unavailable"
       ? playbackCapability
       : undefined;
+  const storedAppearance = useMemo(
+    () => appearanceForTheme(appearancePreferences, selectedTheme),
+    [appearancePreferences, selectedTheme],
+  );
+  const currentAppearance = useMemo<ThemeAppearance>(
+    () =>
+      portableAppearanceActive ? { ...visualAppearance } : storedAppearance,
+    [
+      portableAppearanceActive,
+      selectedTheme,
+      storedAppearance,
+      visualAppearanceKey,
+      visualTheme,
+    ],
+  );
+  const resolvedAppearance = useMemo<ResolvedAppearance>(
+    () => ({
+      ...currentAppearance,
+      ...(!portableAppearanceActive && backgroundImageUrl
+        ? { backgroundImageUrl }
+        : {}),
+    }),
+    [backgroundImageUrl, currentAppearance, portableAppearanceActive],
+  );
+  const portableShareAppearance = useMemo<
+    PortableShareAppearance | undefined
+  >(() => {
+    const portable = normalizePortableAppearance(currentAppearance) ?? {};
+    return Object.keys(portable).length ? portable : undefined;
+  }, [currentAppearance]);
+  const preparedShare = useMemo(
+    () =>
+      prepareCurrentAirShareContext({
+        view: artifact,
+        deployment: shareDeployment,
+      }),
+    [artifact, shareDeployment],
+  );
+  const sharePlan = useMemo(
+    () =>
+      planPreparedCurrentAirShare({
+        prepared: preparedShare,
+        theme: selectedTheme,
+        ...(includeShareAppearance && portableShareAppearance
+          ? { appearance: portableShareAppearance }
+          : {}),
+      }),
+    [
+      includeShareAppearance,
+      portableShareAppearance,
+      preparedShare,
+      selectedTheme,
+    ],
+  );
+  const backgroundMetadataKey = JSON.stringify(
+    currentAppearance.backgroundImage ?? null,
+  );
+
+  const replaceBackgroundImageUrl = (next: string | undefined) => {
+    const previous = backgroundImageUrlRef.current;
+    if (previous && previous !== next) URL.revokeObjectURL(previous);
+    backgroundImageUrlRef.current = next;
+    setBackgroundImageUrl(next);
+  };
+
+  const persistAppearancePreferences = (next: AppearancePreferences) => {
+    appearancePreferencesRef.current = next;
+    setAppearancePreferences(next);
+    if (surface !== "url") return true;
+    try {
+      writeStoredAppearancePreferences(next);
+      return true;
+    } catch {
+      return false;
+    }
+  };
+
+  const beginAppearanceMutation = (theme: typeof selectedTheme) => {
+    const revision = (appearanceMutationRevisions.current.get(theme) ?? 0) + 1;
+    appearanceMutationRevisions.current.set(theme, revision);
+    return revision;
+  };
+
+  const appearanceMutationIsCurrent = (
+    theme: typeof selectedTheme,
+    revision: number,
+  ) => appearanceMutationRevisions.current.get(theme) === revision;
+
+  const reconcileBackgroundStorage = async (theme: typeof selectedTheme) => {
+    const desired = desiredBackgrounds.current.get(theme);
+    if (desired) await writeAppearanceBackground(theme, desired);
+    else await deleteAppearanceBackground(theme);
+  };
+
+  const changeTheme = (nextTheme: typeof selectedTheme) => {
+    setSelectedTheme(nextTheme);
+    setPortableAppearanceActive(false);
+    const next = parseAppearancePreferences({
+      ...appearancePreferencesRef.current,
+      selectedTheme: nextTheme,
+    });
+    setAppearanceNotice(
+      persistAppearancePreferences(next) ? "saved" : "failed",
+    );
+  };
+
+  const changeAppearance = (change: Partial<ThemeAppearance>) => {
+    setPortableAppearanceActive(false);
+    const preferences = appearancePreferencesRef.current;
+    const next = parseAppearancePreferences({
+      ...preferences,
+      selectedTheme,
+      themes: {
+        ...preferences.themes,
+        [selectedTheme]: {
+          ...currentAppearance,
+          ...change,
+        },
+      },
+    });
+    setAppearanceNotice(
+      persistAppearancePreferences(next) ? "saved" : "failed",
+    );
+  };
+
+  const setAppearanceImage = async (file: File) => {
+    if (!isRasterAppearanceImage(file)) {
+      setAppearanceNotice("invalid");
+      return;
+    }
+    if (portableAppearanceActive) changeAppearance({});
+    const targetTheme = selectedTheme;
+    const mutation = beginAppearanceMutation(targetTheme);
+    desiredBackgrounds.current.set(targetTheme, file);
+    try {
+      await writeAppearanceBackground(targetTheme, file);
+      if (!appearanceMutationIsCurrent(targetTheme, mutation)) {
+        await reconcileBackgroundStorage(targetTheme);
+        return;
+      }
+      const preferences = appearancePreferencesRef.current;
+      const next = parseAppearancePreferences({
+        ...preferences,
+        themes: {
+          ...preferences.themes,
+          [targetTheme]: {
+            ...appearanceForTheme(preferences, targetTheme),
+            backgroundImage: {
+              name: file.name,
+              mediaType: file.type,
+              bytes: file.size,
+            },
+          },
+        },
+      });
+      setAppearanceNotice(
+        persistAppearancePreferences(next) ? "saved" : "failed",
+      );
+    } catch {
+      if (appearanceMutationIsCurrent(targetTheme, mutation))
+        setAppearanceNotice("failed");
+    }
+  };
+
+  const removeAppearanceImage = async () => {
+    setPortableAppearanceActive(false);
+    const targetTheme = selectedTheme;
+    const mutation = beginAppearanceMutation(targetTheme);
+    desiredBackgrounds.current.set(targetTheme, undefined);
+    try {
+      await deleteAppearanceBackground(targetTheme);
+      if (!appearanceMutationIsCurrent(targetTheme, mutation)) {
+        await reconcileBackgroundStorage(targetTheme);
+        return;
+      }
+      const preferences = appearancePreferencesRef.current;
+      const { backgroundImage: _backgroundImage, ...withoutImage } =
+        appearanceForTheme(preferences, targetTheme);
+      const next = parseAppearancePreferences({
+        ...preferences,
+        themes: { ...preferences.themes, [targetTheme]: withoutImage },
+      });
+      setAppearanceNotice(
+        persistAppearancePreferences(next) ? "saved" : "failed",
+      );
+    } catch {
+      if (appearanceMutationIsCurrent(targetTheme, mutation))
+        setAppearanceNotice("failed");
+    }
+  };
+
+  const resetAppearance = async () => {
+    setPortableAppearanceActive(false);
+    const targetTheme = selectedTheme;
+    const mutation = beginAppearanceMutation(targetTheme);
+    desiredBackgrounds.current.set(targetTheme, undefined);
+    try {
+      if (
+        appearanceForTheme(appearancePreferencesRef.current, targetTheme)
+          .backgroundImage
+      )
+        await deleteAppearanceBackground(targetTheme);
+      if (!appearanceMutationIsCurrent(targetTheme, mutation)) {
+        await reconcileBackgroundStorage(targetTheme);
+        return;
+      }
+      const preferences = appearancePreferencesRef.current;
+      const next = parseAppearancePreferences({
+        ...preferences,
+        themes: { ...preferences.themes, [targetTheme]: {} },
+      });
+      setAppearanceNotice(
+        persistAppearancePreferences(next) ? "reset" : "failed",
+      );
+    } catch {
+      if (appearanceMutationIsCurrent(targetTheme, mutation))
+        setAppearanceNotice("failed");
+    }
+  };
+
+  useEffect(
+    () => () => {
+      backgroundLoadRevision.current += 1;
+      if (backgroundImageUrlRef.current)
+        URL.revokeObjectURL(backgroundImageUrlRef.current);
+      backgroundImageUrlRef.current = undefined;
+    },
+    [],
+  );
+
+  useEffect(() => {
+    const revision = ++backgroundLoadRevision.current;
+    replaceBackgroundImageUrl(undefined);
+    if (surface !== "url" || !currentAppearance.backgroundImage) return;
+    void readAppearanceBackground(selectedTheme).then(
+      (blob) => {
+        if (revision !== backgroundLoadRevision.current) return;
+        if (!blob) {
+          setAppearanceNotice("failed");
+          return;
+        }
+        const url = URL.createObjectURL(blob);
+        if (revision !== backgroundLoadRevision.current) {
+          URL.revokeObjectURL(url);
+          return;
+        }
+        replaceBackgroundImageUrl(url);
+      },
+      () => {
+        if (revision === backgroundLoadRevision.current)
+          setAppearanceNotice("failed");
+      },
+    );
+  }, [backgroundMetadataKey, selectedTheme, surface]);
 
   useEffect(() => {
     disposed.current = false;
@@ -213,6 +543,11 @@ export function AirRenderer({
     return () => {
       disposed.current = true;
       actionGeneration.current += 1;
+      // StrictMode replays this mount after disposing its first audio attempt.
+      // Let the replay consume the still-current queue command again.
+      consumedPlaybackCommand.current = 0;
+      completionGate.current.cancel();
+      completionRun.current = undefined;
       if (stopStateTimer.current !== undefined)
         window.clearTimeout(stopStateTimer.current);
       unsubscribeTransport.current?.();
@@ -227,6 +562,8 @@ export function AirRenderer({
     if (renderedArtifactIdentity.current === artifactIdentity) return;
     renderedArtifactIdentity.current = artifactIdentity;
     actionGeneration.current += 1;
+    completionGate.current.cancel();
+    completionRun.current = undefined;
     if (stopStateTimer.current !== undefined) {
       window.clearTimeout(stopStateTimer.current);
       stopStateTimer.current = undefined;
@@ -302,6 +639,14 @@ export function AirRenderer({
         unsubscribeTransport.current = created.subscribeTransport(
           (snapshot) => {
             setTransportSeconds(snapshot.positionFrame / snapshot.sampleRate);
+            const run = completionRun.current;
+            if (run) {
+              const ended = completionGate.current.observe(run, snapshot);
+              if (ended) {
+                completionRun.current = undefined;
+                onPlaybackEndedRef.current?.(ended);
+              }
+            }
             setPlayerState(
               snapshot.status === "playing"
                 ? "playing"
@@ -345,6 +690,8 @@ export function AirRenderer({
   const togglePlayback = async () => {
     if (playerState === "playing") {
       actionGeneration.current += 1;
+      completionGate.current.cancel();
+      completionRun.current = undefined;
       if (stopStateTimer.current !== undefined) {
         window.clearTimeout(stopStateTimer.current);
         stopStateTimer.current = undefined;
@@ -362,11 +709,14 @@ export function AirRenderer({
     if (playerState === "preparing" || playerState === "buffering") return;
     const generation = actionGeneration.current + 1;
     actionGeneration.current = generation;
+    let playbackRun: PlaybackRun | undefined;
     try {
       const audio = await getEngine();
       if (generation !== actionGeneration.current || disposed.current) return;
       setPlayerState("preparing");
       if (completePieceEngine(audio)) {
+        playbackRun = completionGate.current.begin(artifactIdentity);
+        completionRun.current = playbackRun;
         if (playerState === "paused") await audio.resume();
         else {
           setPlaybackEvidence(await audio.playAt(transportSeconds));
@@ -397,6 +747,9 @@ export function AirRenderer({
         Math.ceil(receipt.durationSeconds * 1000),
       );
     } catch (cause) {
+      if (playbackRun) completionGate.current.cancel(playbackRun);
+      if (completionRun.current === playbackRun)
+        completionRun.current = undefined;
       if (generation !== actionGeneration.current || disposed.current) return;
       setPlayerState("error");
       setPlayerError(
@@ -405,8 +758,68 @@ export function AirRenderer({
     }
   };
 
+  const startPlaybackAtZero = async () => {
+    const generation = actionGeneration.current + 1;
+    actionGeneration.current = generation;
+    completionGate.current.cancel();
+    completionRun.current = undefined;
+    setTransportSeconds(0);
+    let playbackRun: PlaybackRun | undefined;
+    try {
+      const audio = await getEngine();
+      if (generation !== actionGeneration.current || disposed.current) return;
+      setPlayerState("preparing");
+      if (completePieceEngine(audio)) {
+        playbackRun = completionGate.current.begin(artifactIdentity);
+        completionRun.current = playbackRun;
+        setPlaybackEvidence(await audio.playAt(0));
+      } else {
+        audio.stop();
+        const receipt = await audio.play(
+          artifact.compiled,
+          performanceBinding as PerformanceBinding,
+        );
+        if (!receipt) {
+          setPlayerState("ready");
+          return;
+        }
+      }
+      if (generation !== actionGeneration.current || disposed.current) return;
+      setPlayerState("playing");
+    } catch (cause) {
+      if (playbackRun) completionGate.current.cancel(playbackRun);
+      if (completionRun.current === playbackRun)
+        completionRun.current = undefined;
+      if (generation !== actionGeneration.current || disposed.current) return;
+      setPlayerState("error");
+      setPlayerError(
+        cause instanceof Error ? cause.message : "Playback failed to start.",
+      );
+    }
+  };
+
+  useEffect(() => {
+    if (!playbackCommand) return;
+    if (playbackCommand.requestId <= consumedPlaybackCommand.current) return;
+    consumedPlaybackCommand.current = playbackCommand.requestId;
+    if (
+      playbackCommand.action !== "start-at-zero" ||
+      playbackCommand.receiptId !== artifact.receipt.receiptId
+    )
+      return;
+    void startPlaybackAtZero();
+  }, [
+    artifact.receipt.receiptId,
+    artifactIdentity,
+    playbackCommand?.action,
+    playbackCommand?.receiptId,
+    playbackCommand?.requestId,
+  ]);
+
   const stopCompletePiece = () => {
     actionGeneration.current += 1;
+    completionGate.current.cancel();
+    completionRun.current = undefined;
     const currentEngine = engineSlot.current!.current(artifactIdentity);
     currentEngine?.stop();
     setTransportSeconds(0);
@@ -414,33 +827,23 @@ export function AirRenderer({
   };
 
   const restartCompletePiece = async () => {
-    const generation = actionGeneration.current + 1;
-    actionGeneration.current = generation;
-    setTransportSeconds(0);
-    const currentEngine = engineSlot.current!.current(artifactIdentity);
-    if (!currentEngine) return;
-    if (!completePieceEngine(currentEngine)) {
-      currentEngine.stop();
-      setPlayerState("ready");
+    if (!engineSlot.current!.current(artifactIdentity)) {
+      actionGeneration.current += 1;
+      completionGate.current.cancel();
+      completionRun.current = undefined;
+      setTransportSeconds(0);
+      setPlayerState("idle");
       return;
     }
-    try {
-      setPlayerState("preparing");
-      await currentEngine.restart();
-      if (generation === actionGeneration.current && !disposed.current)
-        setPlayerState("playing");
-    } catch (cause) {
-      if (generation !== actionGeneration.current || disposed.current) return;
-      setPlayerState("error");
-      setPlayerError(
-        cause instanceof Error ? cause.message : "Restart failed.",
-      );
-    }
+    await startPlaybackAtZero();
   };
 
   const seekCompletePiece = async (seconds: number) => {
+    const wasPlaying = playerState === "playing";
     const generation = actionGeneration.current + 1;
     actionGeneration.current = generation;
+    completionGate.current.cancel();
+    completionRun.current = undefined;
     setTransportSeconds(seconds);
     if (!isCompletePiece) return;
     const slot = engineSlot.current!;
@@ -449,13 +852,21 @@ export function AirRenderer({
       ? undefined
       : slot.pending(artifactIdentity);
     if (!currentEngine && !pendingEngine) return;
+    let playbackRun: PlaybackRun | undefined;
     try {
       setPlayerState("preparing");
       const audio = currentEngine ?? (await pendingEngine!);
       if (generation !== actionGeneration.current || disposed.current) return;
       if (!completePieceEngine(audio)) return;
+      if (wasPlaying) {
+        playbackRun = completionGate.current.begin(artifactIdentity);
+        completionRun.current = playbackRun;
+      }
       await audio.seek(seconds);
     } catch (cause) {
+      if (playbackRun) completionGate.current.cancel(playbackRun);
+      if (completionRun.current === playbackRun)
+        completionRun.current = undefined;
       if (generation !== actionGeneration.current || disposed.current) return;
       setPlayerState("error");
       setPlayerError(cause instanceof Error ? cause.message : "Seek failed.");
@@ -570,39 +981,76 @@ export function AirRenderer({
       data-playback-adapter={playbackEvidence?.adapter}
       data-opening-assets={playbackEvidence?.openingAssets.length}
       data-surface={surface}
+      data-visual-theme={selectedTheme}
       data-llm={`Viewing the air ${artifact.source.title}; source revision ${artifact.receipt.sourceRevision}; receipt ${artifact.receipt.receiptId}; performance binding ${performanceBinding ? `${performanceBinding.id} sha256:${performanceBinding.contentSha256}` : "unbound"}; performance ${performanceUnavailable ? `unavailable: ${performanceUnavailable.message}` : "available"}; musical relation ${artifact.receipt.verification.status}; ${artifact.compiled.motifOccurrences.length} motif occurrences.`}
     >
-      {bindings.length > 1 ? (
-        <div className="refrain-renderer__performance">
-          <label>
-            <span>{copy.auditionSound}</span>
-            <select
-              aria-label={copy.auditionSound}
-              value={performanceBinding?.id ?? ""}
-              onChange={(event) =>
-                setAudition({ document, bindingId: event.currentTarget.value })
+      {surface === "url" ? (
+        <header className="refrain-player-header">
+          <div className="refrain-wordmark">
+            Refrain<span>hums an air.</span>
+          </div>
+          <nav className="refrain-view-actions" aria-label={copy.transport}>
+            {toolbarActions}
+            <AppearanceControls
+              appearance={currentAppearance}
+              locale={locale}
+              theme={selectedTheme}
+              followsWork={portableAppearanceActive}
+              onSource={(work) => {
+                setPortableAppearanceActive(work);
+                setSelectedTheme(
+                  work
+                    ? (visualTheme ?? "paper-sonata")
+                    : (appearancePreferencesRef.current.selectedTheme ??
+                        selectedTheme),
+                );
+                setAppearanceNotice(undefined);
+              }}
+              onTheme={changeTheme}
+              notice={
+                appearanceNotice === "saved"
+                  ? copy.appearanceSaved
+                  : appearanceNotice === "reset"
+                    ? copy.appearanceReset
+                    : appearanceNotice === "invalid"
+                      ? copy.invalidBackground
+                      : appearanceNotice === "failed"
+                        ? copy.appearanceFailed
+                        : undefined
               }
-            >
-              <option value="">{copy.chooseSound}</option>
-              {bindings.map((binding) => (
-                <option key={binding.id} value={binding.id}>
-                  {binding.id}
-                </option>
-              ))}
-            </select>
-          </label>
-          <p>{copy.auditionOnly}</p>
-        </div>
+              onChange={changeAppearance}
+              onImage={(file) => void setAppearanceImage(file)}
+              onRemoveImage={() => void removeAppearanceImage()}
+              onReset={() => void resetAppearance()}
+            />
+            <ShareControl
+              hasLocalBackground={Boolean(currentAppearance.backgroundImage)}
+              includeAppearance={includeShareAppearance}
+              locale={locale}
+              onIncludeAppearanceChange={setIncludeShareAppearance}
+              plan={sharePlan}
+              title={artifact.source.title}
+            />
+            <LanguageSwitch
+              locale={locale}
+              onChange={(next) => {
+                setLocale(next);
+                onLocaleChange?.(next);
+              }}
+            />
+          </nav>
+        </header>
       ) : null}
       <SelenV21Canvas
         artifactIdentity={artifactIdentity}
+        queueControls={queueControls}
         locale={locale}
         callbacks={{
           onLocaleChange: (next) => {
             setLocale(next);
             onLocaleChange?.(next);
           },
-          onThemeChange: setSelectedTheme,
+          onThemeChange: changeTheme,
           onExportArtifact: () => requestExport("artifact"),
           onExportSource: () => requestExport("source"),
           onRestartPlayback: () => restartCompletePiece(),
@@ -636,7 +1084,36 @@ export function AirRenderer({
         selectedAnchor={selectedAnchor}
         surface={surface}
         themeId={selectedTheme}
+        appearance={resolvedAppearance}
       />
+      {bindings.length > 1 ? (
+        <details
+          className="refrain-renderer__performance"
+          open={surface === "mcp-canvas" ? true : undefined}
+        >
+          <summary>{copy.auditionSound}</summary>
+          <label>
+            <span>{copy.auditionOnly}</span>
+            <select
+              aria-label={copy.auditionSound}
+              value={performanceBinding?.id ?? ""}
+              onChange={(event) => {
+                setAudition({ document, bindingId: event.currentTarget.value });
+                onAuditionBindingChange?.(
+                  event.currentTarget.value || undefined,
+                );
+              }}
+            >
+              <option value="">{copy.chooseSound}</option>
+              {bindings.map((binding) => (
+                <option key={binding.id} value={binding.id}>
+                  {binding.id}
+                </option>
+              ))}
+            </select>
+          </label>
+        </details>
+      ) : null}
       {playerError ? (
         <p className="refrain-renderer__notice" role="alert">
           {copy.operationFailed} <span lang="en">{playerError}</span>

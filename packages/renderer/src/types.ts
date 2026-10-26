@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import type { AirSource, Diagnostic } from "@refrain/air-schema";
 import type { AirSourceV1 } from "@refrain/air-schema/v1";
 import type { CompiledAir } from "@refrain/compiler";
@@ -13,6 +14,8 @@ import type { RefrainSelection, RefrainSelectionHandoff } from "./selection.js";
 import type { SelenV21ThemeId } from "./selen-v21-model.js";
 import type { AirReceiptV1 } from "./v1.js";
 import type { RefrainLocale, UiMessageKey } from "./ui-copy.js";
+import type { PortableShareAppearance } from "./appearance.js";
+import type { ShareDeployment } from "./current-air-share.js";
 
 export type ContinuationRelation =
   "revise" | "extend" | "reply" | "variation" | "quote";
@@ -188,7 +191,38 @@ export interface RendererAssetConfig {
   unavailableReason?: string;
 }
 
+export interface RendererPlaybackCommand {
+  readonly requestId: number;
+  readonly action: "start-at-zero";
+  readonly receiptId: string;
+}
+
+export interface RendererPlaybackEndedEvent {
+  readonly identity: string;
+  readonly runId: number;
+  readonly reason: "natural";
+}
+
+/** Presentation-only queue controls; the Player retains queue authority. */
+export interface RendererQueueControls {
+  position: number;
+  total: number;
+  previousLabel: string;
+  nextLabel: string;
+  nextDisabled: boolean;
+  mode: string;
+  modeIcon: string;
+  modeLabel: string;
+  modeActionLabel: string;
+  onPrevious: () => void;
+  onNext: () => void;
+  onCycleMode: () => void;
+}
+
 export interface RefrainRendererProps {
+  /** URL Player navigation; never part of music or MCP payloads. */
+  toolbarActions?: ReactNode;
+  queueControls?: RendererQueueControls;
   initialLocale?: RefrainLocale;
   onLocaleChange?: (locale: RefrainLocale) => void;
   artifact: AnyAirArtifact;
@@ -201,6 +235,15 @@ export interface RefrainRendererProps {
     request: string,
     handoff: RefrainSelectionHandoff,
   ) => Promise<void> | void;
+  /** Consumed once; only a user-started queue continuation may create this. */
+  playbackCommand?: RendererPlaybackCommand;
+  onPlaybackEnded?: (event: RendererPlaybackEndedEvent) => void;
+  /** Listening selection only; the full portable artifact remains unchanged. */
+  onAuditionBindingChange?: (bindingId: string | undefined) => void;
   surface?: "url" | "mcp-canvas";
   visualTheme?: SelenV21ThemeId;
+  /** Portable scalar presentation state; never includes local image bytes. */
+  visualAppearance?: PortableShareAppearance;
+  /** Build-owned public receiver capabilities for exact zero-upload sharing. */
+  shareDeployment?: ShareDeployment;
 }

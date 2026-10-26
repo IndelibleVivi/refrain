@@ -34,6 +34,8 @@ Use strict diagnostics for exact grammar/range errors. The live MCP input schema
 refrain inspect response.air.json --json
 refrain hum response.air.json --out response.refrain.json --binding f-synthetic-beat@0 --json
 refrain open response.refrain.json --no-open --json
+refrain open first.refrain.json second.refrain.json --theme prism --no-open --json
+refrain open saved.refrain-playlist.json --no-open --json
 ```
 
 `inspect` compiles the source or integrity-checks an imported artifact. It reports whole-piece structural ListeningReport facts, section overlap, per-voice register/velocity/gate/gain/pan, and bounded exact motif anchors. Add `--section <id>` and/or `--voice <id>` to focus the report. Section inspection includes authored sustains entering from the preceding section, while sample decay and bus/reverb tails require rendered evidence. Whole-piece facts stay explicitly labeled whole-piece.
@@ -41,6 +43,10 @@ refrain open response.refrain.json --no-open --json
 Local `hum` seals complete AIR@1 into the same canonical Artifact@3 using the existing `hum` receipt logic. New roots default visibly to `f-synthetic-beat@0`; `--binding` accepts a built-in ID or a file containing an exact Binding@0/@1. Its `performance` field reports runtime selection availability, not acquisition, actual playback, or quality. `--caption` carries only text intentionally shared with the piece.
 
 `open` prepares the selected asset closure, starts an independent loopback preview, and returns the real URL after the server is listening. Show that URL in the host's browser. Keep the process alive. It chooses a free port, so multiple pieces/revisions can remain open without replacing one another's sound assets. `--json` always returns a short expiring same-origin session URL, keeping complete artifact bytes out of the command result; ordinary text mode uses inline delivery where it fits and a session for larger works; the portable artifact file remains the durable authority. Playback starts only from the person's Play gesture. Omit `--no-open` to launch the ordinary browser.
+
+Passing more than one ordinary work, or one saved playlist file, opens the canonical Player as a `refrain-playlist@0-experimental` queue instead of a single work. The report then adds `kind: "playlist"`, `entryCount`, and the exact binding IDs; its URL still stays compact, carrying a same-origin expiring `playlistHref` plus a `playlist` hash with the queue's SHA-256, never the queue itself. The Player fetches that same-origin locator and verifies those exact bytes. A saved playlist keeps its own entry IDs, current entry, and per-entry binding and presentation; the file stays byte-exact when no flag is passed. Multiple input works become `entry-1`, `entry-2`, ... in argument order, keep their canonical artifact documents, and use the union of each work's exact selected assets; two works that name different content for one asset ID are refused rather than silently merged. Entries are verified through the same canonical artifact/selection path as one file. Duplicate IDs, invalid artifacts, a malformed scalar appearance, and an unknown `--theme` are reported as errors. An object claiming any `refrain-playlist@` format must pass the exact playlist parser; it is never reinterpreted as AIR. A saved playlist accepts an empty queue and carries at most 256 entries.
+
+`--binding` and `--theme` are deliberate overrides. An explicit `--binding` applies to every opened work; `--theme` accepts only the four existing theme IDs (`paper-sonata`, `prism`, `nocturne-ink`, `herbarium`) and becomes the authored presentation for the works you pass as files, or overrides each saved entry's saved theme. Neither flag invents a musical choice: a saved entry's own binding is used when you do not override it.
 
 For sampled sound, an asset preparation error names the missing closure. Acquire deliberately:
 

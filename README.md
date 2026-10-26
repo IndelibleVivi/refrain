@@ -12,13 +12,17 @@ Agents can also prepare an exact performance for self-listening, freeze it once 
 
 ## Try it
 
-**[Open the interactive demo](https://indeliblevivi.github.io/refrain/)** — no installation needed. Press Play, switch themes, select a melody, and save or reopen a work. Connect your own agent to author an air; the demo does not call a model.
+**[Open the interactive demo](https://indeliblevivi.github.io/refrain/)** — listen to the featured works without installation. Connect your own agent to author an air; the demo does not call a model. The redesigned Player, personal playlists and appearance controls described below are source candidates: run this checkout locally to try them. Source verification and hosted deployment are separate; see [current state](docs/current-state.md).
+
+Earlier Canvas recording (the current Player uses a full-width listening layout; settings are under **Appearance**):
 
 ![Recorded demo: pressing Play on Velvet Mischief, then switching appearances from Paper Sonata to Nocturne Ink to Prism to Herbarium](docs/images/demo-playback.gif)
 
 _A twelve-second recording, not an interactive control — [open the live demo](https://indeliblevivi.github.io/refrain/) to play it yourself._
 
 **[Open in StackBlitz](https://stackblitz.com/github/IndelibleVivi/refrain?startScript=try)** — run the full local setup in a browser container instead: dependencies install, the two featured works' sounds download, and the listening page opens on its own.
+
+Use the same Player to hear original and revised artifacts together: `refrain open original.refrain.json revised.refrain.json`. [The correspondence workflow](docs/CORRESPONDENCE.md) connects exact selection, verified response inspection, host-authored revision and full playlist saving.
 
 ### Run locally
 
@@ -32,7 +36,7 @@ node bin/refrain.mjs doctor
 npm run try
 ```
 
-Press **Play** at the top of the piece. Switch between four themes, select a melody, and choose **Export Refrain artifact** to keep it. Below the Canvas you can reopen a saved file and find the next step for your own agent. No provider key is needed. Local setup prepares the two featured works’ sound samples. Keep the terminal open; Ctrl+C ends the listening page.
+Press **Play** beneath the music visualization. The two featured works can continue in sequential, repeat-all, shuffle, or repeat-one mode. Open **Appearance** to choose a theme or personalize local colors and photos; select a melody and choose **Export Refrain artifact** to keep the work. **Share this air** creates an exact public-demo link when the published player carries the selected work and sound. Open **Playlist** to add saved works or reopen a playlist, and **About Refrain** for your agent's next step. No provider key is needed. Local setup prepares the two featured works’ sound samples. Keep the terminal open; Ctrl+C ends the Player.
 
 This local URL belongs to your computer. The public demo runs on GitHub Pages. See [building and hosting](docs/DEVELOPMENT.md#first-listen-page); for audio files, [export WAV / MIDI](docs/GETTING-STARTED.md#keep-the-piece).
 
@@ -43,9 +47,20 @@ This local URL belongs to your computer. The public demo runs on GitHub Pages. S
 | Listen locally, save WAV/MIDI, or try acoustic sound   | [First-use guide](docs/GETTING-STARTED.md).                                                                                                                  |
 | Run a private HTTP connection for a remote host        | [Operator self-hosting guide](docs/runbooks/self-host-mcp.md).                                                                                               |
 
+## Your Player, your works
+
+The first-listen page is the same Player used by `refrain open`, preloaded with two examples. The current work fills one listening space: title, musical map and a unified transport. The playlist opens as a side sheet; **Inside this air** reveals passage, motif and exact-selection details when you want to explore. Open **Playlist** to add multiple `.refrain.json` works, reorder/remove entries, name and save a `.refrain-playlist.json`, then reopen it later. Previous/next and sequential, repeat-all, shuffle and repeat-one share the real playback transport. Saved lists retain complete works and their selected exact sound, not sample files or private photos; nothing is uploaded.
+
+```bash
+refrain open first.refrain.json second.refrain.json --theme nocturne-ink
+refrain open evening.refrain-playlist.json --no-open --json
+```
+
+Agents use the existing CLI to open the shared Player, not a copied frontend or additional MCP tool. [Listening, saving and authoring boundaries](docs/GETTING-STARTED.md).
+
 ## Four appearances, one air
 
-Use the appearance menu above the Canvas to switch. The music, playback position, and selected passage stay with you. The images below are static screenshots, not interactive controls. Open the demo to play; click a screenshot only to enlarge it.
+Open **Appearance** when you want to change the view; everyday listening keeps the settings tucked away. A work’s presentation comes first. **My appearance** switches to this device’s per-theme preferences: palette presets, optional fine color controls, and a local image with strength, blur, position and fit. The photo appears inside the musical Canvas as well as its surrounding material; the four visual languages keep their own geometry. Reset affects only the selected local theme. Music, playback, selection and artifact bytes remain unchanged. Photos stay in this browser and never enter a share link. The images below are static screenshots, not interactive controls. Open the demo to play; click a screenshot only to enlarge it.
 
 <table>
   <tr>
@@ -62,8 +77,8 @@ Use the appearance menu above the Canvas to switch. The music, playback position
 
 - **An authored piece.** Motifs, reusable phrases, several voices, changing meters, groove, dynamics, sections, and an ending. The host writes the music; there is no hidden composition model.
 - **A deliberate sound.** Synthetic or sampled instruments and exact performance bindings. Local production tools adjust group levels, placement, low-pass, saturation, echo, room, and fades without rewriting the score.
-- **A piece you can navigate.** Play, pause, restart, seek, jump between sections, inspect recurring motifs, and select an exact musical region. Four visual themes share one renderer.
-- **Something you can keep.** Portable source and artifact, native WAV, MIDI, exact performance choices, and provenance. A later `hum` can revise, extend, reply, vary, or quote a saved artifact.
+- **A piece you can navigate.** Play, pause, restart, seek, jump between sections, continue a playlist in four modes, inspect recurring motifs, and select an exact musical region. Four visual themes share one renderer.
+- **Something you can keep or share deliberately.** Portable source and artifact, native WAV, MIDI, exact performance choices, and provenance. The public demo can create short, zero-upload, hash-bound links for its published works; small inline artifacts are supported only when the receiver also advertises the exact sound closure. A later `hum` can revise, extend, reply, vary, or quote a saved artifact.
 
 ## How it fits together
 
@@ -78,6 +93,7 @@ The conversational tool is `hum`. The CLI supplies smaller local authoring, insp
 - **MCP Canvas currently plays eight synthetic identities without external assets.** Exact sampled bindings stay attached but unavailable there; the ordinary browser supports selectively acquired samples.
 - **Self-hosted and stateless.** No Refrain account, hosted work library, or relationship database. Private conversation stays with the host; authored music and a deliberately shared caption can still carry personal meaning.
 - **Manual sound.** Playback needs a user gesture. Browser playback does not give the host model audio input. Compilation and structural reports do not certify that a piece sounds good.
+- **Exact sharing is capability-bound.** A listening link includes the complete portable work or an exact hash for a work already built into the public player, plus the current binding, theme, and optionally current scalar colors. It is readable and forwardable by anyone who receives it. Local background images, private/session URLs, and missing sound assets are never silently published or substituted. Oversize or unpublished works currently require a future static listening package; the button says so instead of creating a broken link.
 - **Two interface languages.** Use **EN / 中文** to switch the shared Canvas. It starts in the browser’s language (Chinese or English); the choice stays in the current view. Refrain, `hum`, `air`, theme/instrument names, authored titles, captions, and technical diagnostics keep their original wording.
 - **Experimental formats and host support.** AIR@1 is not a stable interchange standard. The current limit is eight minutes and twelve voices, with bounded event/source limits. Downloads, clipboard, and selection return depend on host capabilities.
 - **Candidate sounds and release state.** Four proof palettes render, but broader listening acceptance and multi-host trials remain open. A source checkout is not a packaged public release. [Current evidence and limits](docs/current-state.md).
