@@ -87,7 +87,7 @@ describe("soundpack", () => {
     ).toMatchObject({ decision: "accepted", decidedBy: "Faye" });
   });
 
-  it("accepts only the two closed versioned synth patch families", () => {
+  it("accepts only the closed static and touch versions of the two synth families", () => {
     const patches = SOUND_REGISTRY.candidates
       .filter((candidate) => candidate.engine === "synth")
       .map((candidate) => candidate.patch!);
@@ -95,9 +95,11 @@ describe("soundpack", () => {
       new Set([
         "refrain-synth-modal@0-experimental",
         "refrain-synth-subtractive@0-experimental",
+        "refrain-synth-modal@1-experimental",
+        "refrain-synth-subtractive@1-experimental",
       ]),
     );
-    expect(patches).toHaveLength(8);
+    expect(patches).toHaveLength(12);
     expect(patches.flatMap(validateSynthPatch)).toEqual([]);
     expect(
       validateSynthPatch({

@@ -1232,6 +1232,181 @@
         }
       },
       "contentSha256": "5dd57536158db38aee791c21f84c7505fe03cf1e6cf3a734dc4cceb62a454e6d"
+    },
+    {
+      "format": "refrain-sound-profile@1-experimental",
+      "id": "touch@1",
+      "vocabulary": {
+        "id": "refrain-core-instruments@0",
+        "sha256": "9f6a54c1c4431812525696ebc68e517fd21e2dc7d92a0722937b640cf583e63b"
+      },
+      "selections": {
+        "warm_piano": {
+          "candidateChain": [
+            {
+              "id": "warm-piano-vsco-upright-full",
+              "sha256": "0444949c89f8f998057dfa4ce633f3a385586deac2a1577ee31bc2e4b5497843"
+            }
+          ],
+          "fallbackPolicy": "strict",
+          "profileGainDb": -5
+        },
+        "nylon_guitar": {
+          "candidateChain": [
+            {
+              "id": "nylon-guitar-freepats-spanish-classical",
+              "sha256": "126009345d28ab7f9ae3bf99ca4b632602d3871cdbf3854c8d9dd7733f05bdb8"
+            }
+          ],
+          "fallbackPolicy": "strict",
+          "profileGainDb": -5
+        },
+        "harp": {
+          "candidateChain": [
+            {
+              "id": "harp-vsco-full",
+              "sha256": "d995945514b0ff70e0edfdd373e98af78c65f9fedcac9a342351d369d2ac378a"
+            }
+          ],
+          "fallbackPolicy": "strict",
+          "profileGainDb": -5
+        },
+        "clean_bass": {
+          "candidateChain": [
+            {
+              "id": "clean-bass-subtractive-original",
+              "sha256": "26ea8be6de3ead654e262ff34875446cd890bcfd95e8d70ab3325ef3018f0eb2"
+            }
+          ],
+          "fallbackPolicy": "strict"
+        },
+        "chamber_strings": {
+          "candidateChain": [
+            {
+              "id": "chamber-strings-vsco-sections-full",
+              "sha256": "45adc125d09ac4c08d1bf6f14e56898806768837f1d2ca0a386b6ebc3d9307de"
+            }
+          ],
+          "fallbackPolicy": "strict",
+          "profileGainDb": -5
+        },
+        "solo_cello": {
+          "candidateChain": [
+            {
+              "id": "solo-cello-bigcat-bowed-full",
+              "sha256": "9c395b4ac7f5155fb591e47394e843ea10cd8d8a8056ebf0a61a197a190260a4"
+            }
+          ],
+          "fallbackPolicy": "strict",
+          "profileGainDb": -5
+        },
+        "flute": {
+          "candidateChain": [
+            {
+              "id": "flute-vsco-susnv-full",
+              "sha256": "1f1b5d89eb3330d643c04e2194efbefb77827164364856463a67220b4fc1ca40"
+            }
+          ],
+          "fallbackPolicy": "strict",
+          "profileGainDb": -5
+        },
+        "clarinet": {
+          "candidateChain": [
+            {
+              "id": "clarinet-vsco-suslong-full",
+              "sha256": "144e2a8e089355f8b8101844640ea30f38054dd2d5c1cb1f7403614e73bf783f"
+            }
+          ],
+          "fallbackPolicy": "strict",
+          "profileGainDb": -5
+        },
+        "marimba": {
+          "candidateChain": [
+            {
+              "id": "marimba-vsco-full",
+              "sha256": "a0285d6815659b861bc425476defc04b9cfbe3ff23df2929bfa01d6375bcf29d"
+            }
+          ],
+          "fallbackPolicy": "strict",
+          "profileGainDb": -3
+        },
+        "soft_percussion": {
+          "candidateChain": [
+            {
+              "id": "soft-percussion-vcsl-acoustic-kit",
+              "sha256": "9d649c24ab7da6b57ee52686cce788cd413269a4b6da18ad49a4d171007b1f0f"
+            }
+          ],
+          "fallbackPolicy": "strict"
+        },
+        "air_pad": {
+          "candidateChain": [
+            {
+              "id": "air-pad-touch-original",
+              "sha256": "ff9979647ca335f532a469c8152740bd457d81ded3554bff03e970467ee66ffa"
+            }
+          ],
+          "fallbackPolicy": "strict"
+        },
+        "glass_bell": {
+          "candidateChain": [
+            {
+              "id": "glass-bell-touch-original",
+              "sha256": "d9a555fad36bed7b02f995370e51eb4ab6944c588de694928044a149f8dd1e74"
+            }
+          ],
+          "fallbackPolicy": "strict"
+        },
+        "sub_bass": {
+          "candidateChain": [
+            {
+              "id": "sub-bass-subtractive-original",
+              "sha256": "b798eff320d1816cd8365af1c5143d7d70e69894f8633622c9c09bcff75f88fd"
+            }
+          ],
+          "fallbackPolicy": "strict",
+          "profileGainDb": 1
+        },
+        "lattice_pluck": {
+          "candidateChain": [
+            {
+              "id": "lattice-pluck-touch-original",
+              "sha256": "904ba8ff210da5344bb1b7988f7c182291a3860bbdfbdd529124f81c80f99576"
+            }
+          ],
+          "fallbackPolicy": "strict"
+        },
+        "prism_lead": {
+          "candidateChain": [
+            {
+              "id": "prism-lead-touch-original",
+              "sha256": "0456d41eab8c25de9cd7ff8624f2ed29c6c15d63945dcd47f2fa7a3fd32f79e7"
+            }
+          ],
+          "fallbackPolicy": "strict"
+        },
+        "dust_texture": {
+          "candidateChain": [
+            {
+              "id": "dust-texture-subtractive-original",
+              "sha256": "dd3959ff09dd94d8fdeaf956cee408701d02d261f08cfd8806ded7b3ea4e4084"
+            }
+          ],
+          "fallbackPolicy": "strict",
+          "profileGainDb": -2
+        },
+        "rhythm_pulse": {
+          "candidateChain": [
+            {
+              "id": "rhythm-pulse-modal-original",
+              "sha256": "2f3c8bda957fdb7dde72c2c11a87e8a9a57859563668c0649036ca253a6754f2"
+            }
+          ],
+          "fallbackPolicy": "strict",
+          "profileGainDb": 2
+        }
+      },
+      "contentSha256": "47f4891355c3a3cfe2581bb0c06a19e18033a1916c9f5ebfad4e800236c72854"
     }
   ]
 }

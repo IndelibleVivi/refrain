@@ -24,6 +24,10 @@ and workspace builds). Sound-candidate, export, package, complete-piece, and rel
 work keeps its additional gates in [`AGENTS.md`](../AGENTS.md); the command table
 above does not replace them.
 
+## Touch and sound-following Canvas
+
+`packages/audio-engine/src/synth-touch.test.ts` checks strict versioned endpoints, deterministic velocity-to-timbre projection, unchanged historical patches and normalized waveform differences beyond a volume change. `envelope-scheduling.test.ts` checks the actual browser voice scheduler and clipped/elapsed attack, decay and zero-decay boundaries. Real Chromium checks additionally need nonzero PCM during a short attack, measured voice activity after Play, silent marks before a gesture and after pause/stop, four themes, reduced motion and desktop/mobile overflow. These observations prove execution and lifecycle behavior, not human listening or visual acceptance. The portable demonstration is [Undertow](../examples/touch/README.md).
+
 ## Local CLI lane
 
 After `npm ci`, link the source tree once and verify it from another working directory:

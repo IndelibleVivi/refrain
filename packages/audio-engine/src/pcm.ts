@@ -3,7 +3,11 @@ import type { CompiledAirV1 } from "@refrain/compiler/v1";
 import type { PerformanceBinding, SynthPatch } from "@refrain/soundpack";
 import { envelopeLevel } from "./envelope.js";
 import { verifyAssetBytes } from "./digest.js";
-import { processSynthSample, synthFilter } from "./synth-kernel.js";
+import {
+  processSynthSample,
+  synthFilter,
+  synthNotePatch,
+} from "./synth-kernel.js";
 import {
   createPerformancePlan,
   type PerformanceEvent,
@@ -69,13 +73,14 @@ function exactArrayBuffer(bytes: Uint8Array): ArrayBuffer {
 
 async function mixSynthEvent(
   event: PerformanceEvent,
-  patch: SynthPatch,
+  sourcePatch: SynthPatch,
   tempo: number,
   sampleRate: number,
   left: Float32Array,
   right: Float32Array,
   options: RenderPcmOptions,
 ): Promise<boolean> {
+  const patch = synthNotePatch(sourcePatch, event.performanceVelocity);
   const startSeconds = (event.startBeat * 60) / tempo;
   const noteDuration = (event.soundingDurationBeats * 60) / tempo;
   const startSample = Math.floor(startSeconds * sampleRate);

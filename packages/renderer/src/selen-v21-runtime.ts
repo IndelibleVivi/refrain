@@ -34,6 +34,13 @@ export interface SelenV21RuntimeState {
 }
 
 export interface SelenV21RuntimeCallbacks {
+  readSound?: () =>
+    | {
+        positionBeat: number;
+        masterRms: number;
+        lanes: Readonly<Record<string, number>>;
+      }
+    | undefined;
   onLocaleChange: (locale: RefrainLocale) => void;
   onThemeChange: (theme: SelenV21ThemeId) => void;
   onTogglePlayback: () => void | Promise<void>;
@@ -279,6 +286,14 @@ export function mountSelenV21(
   const figures = [];
   const transports = [];
   const presentations = [];
+  const laneEvents = new Map(
+    piece.voices.map((voice) => [
+      voice.id,
+      piece.events.filter((event) => event.voiceId === voice.id),
+    ]),
+  );
+  let soundFrame;
+  let lastSoundFrameTime = 0;
   let instanceCounter = 0;
 
   const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
@@ -1203,6 +1218,7 @@ export function mountSelenV21(
       renderNocturneFigure(instance);
     else if (instance.theme.id === "herbarium") renderHerbariumFigure(instance);
     else renderPrismFigure(instance);
+    installResonance(instance);
   }
 
   function prepareFigure(instance, plan) {
@@ -1212,6 +1228,7 @@ export function mountSelenV21(
     instance.xForBeat = xForBeat;
     instance.beatForX = beatForX;
     instance.motifPoint = motifPoint;
+    instance.plan = plan;
     svg.setAttribute("viewBox", `0 0 ${m.width} ${m.height}`);
     svg.replaceChildren();
     refs.motifs.clear();
@@ -1230,6 +1247,124 @@ export function mountSelenV21(
     svg.setAttribute("aria-labelledby", `${prefix}-title ${prefix}-desc`);
     svg.append(title, desc);
     return prefix;
+  }
+
+  // Four bounded voice traces listen to the actual graph. Geometry remains
+  // owned by each composer; no expanded event schedule or decorative clock.
+  function installResonance(instance) {
+    const group = svgEl("g", {
+      class: "sound-resonance",
+      "aria-hidden": "true",
+      "pointer-events": "none",
+    });
+    instance.refs.resonance = new Map();
+    for (const voice of piece.voices) {
+      const mark = svgEl("g", { "data-sounding-lane": voice.id, opacity: 0 });
+      const color = instance.theme.voice[voice.id] ?? instance.theme.accent;
+      const halo = svgEl("ellipse", {
+        cx: 0,
+        cy: 0,
+        rx: 6,
+        ry: 3,
+        fill: color,
+        opacity: 0.38,
+        filter: `url(#${instance.id}-blur)`,
+      });
+      const thread = svgEl("path", {
+        d: "M-10 0 Q0 -2 10 0",
+        fill: "none",
+        stroke: color,
+        "stroke-width": 1.2,
+        "stroke-linecap": "round",
+      });
+      const core = svgEl("circle", {
+        cx: 0,
+        cy: 0,
+        r: 1.5,
+        fill: instance.theme.id === "nocturne-ink" ? "#eee6cd" : color,
+      });
+      mark.append(halo, thread, core);
+      group.append(mark);
+      instance.refs.resonance.set(voice.id, {
+        mark,
+        halo,
+        thread,
+        core,
+        strength: 0,
+      });
+    }
+    instance.svg.append(group);
+  }
+
+  function paintResonance(sound, delta) {
+    const reduced = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    for (const instance of figures) {
+      const { plan, refs } = instance;
+      for (const [id, item] of refs.resonance ?? []) {
+        const rms =
+          sound && sound.masterRms > 0.000001 ? (sound.lanes[id] ?? 0) : 0;
+        const target =
+          rms > 0.00004 ? clamp((20 * Math.log10(rms) + 65) / 48, 0, 1) : 0;
+        const smoothing =
+          1 - Math.exp(-delta / (target > item.strength ? 32 : 180));
+        item.strength += (target - item.strength) * smoothing;
+        if (!sound) item.strength = 0;
+        const strength = item.strength;
+        item.mark.setAttribute(
+          "opacity",
+          String(reduced ? (target > 0.02 ? 0.65 : 0) : strength * 0.95),
+        );
+        const beat = sound?.positionBeat ?? state.positionBeat;
+        const x = plan.xForBeat(beat);
+        // Pitch position follows the bounded phrase projection; loudness is
+        // measured audio. A rest/release retains the last local register.
+        const events = laneEvents.get(id) ?? [];
+        let event;
+        for (const candidate of events) {
+          if (candidate.startBeat > beat) break;
+          event = candidate;
+        }
+        const midi = event?.midi ?? (id === "bass" ? 38 : 67);
+        const y = plan.voiceY
+          ? plan.voiceY(plan.frameForBeat(beat), id, midi)
+          : plan.yForVoiceMidi(id, midi) + (plan.weaveFor?.(id, x) ?? 0);
+        item.mark.setAttribute(
+          "transform",
+          `translate(${x.toFixed(2)} ${y.toFixed(2)})`,
+        );
+        const spread = reduced ? 7 : 5 + strength * 22;
+        item.halo.setAttribute("rx", String(spread));
+        item.halo.setAttribute("ry", String(reduced ? 3 : 2 + strength * 9));
+        item.thread.setAttribute(
+          "d",
+          `M${-spread} 0 Q0 ${reduced ? 0 : -strength * 7} ${spread * 0.55} 0`,
+        );
+        item.core.setAttribute("r", String(reduced ? 1.8 : 1 + strength * 2.4));
+        item.mark.dataset.level = strength.toFixed(3);
+      }
+    }
+  }
+
+  function syncSoundFrames() {
+    if (!state.playing || !callbacks.readSound) {
+      if (soundFrame !== undefined) cancelAnimationFrame(soundFrame);
+      soundFrame = undefined;
+      paintResonance(undefined, 16);
+      return;
+    }
+    if (soundFrame !== undefined) return;
+    lastSoundFrameTime = performance.now();
+    const paint = (now) => {
+      paintResonance(
+        callbacks.readSound?.(),
+        Math.min(100, now - lastSoundFrameTime),
+      );
+      lastSoundFrameTime = now;
+      soundFrame = requestAnimationFrame(paint);
+    };
+    soundFrame = requestAnimationFrame(paint);
   }
 
   function addSharedFigureDefs(instance, prefix, theme, plan) {
@@ -3929,6 +4064,7 @@ export function mountSelenV21(
   product.lang = input.locale;
   root.replaceChildren(product);
   updateAll();
+  syncSoundFrames();
 
   return {
     update(nextState) {
@@ -3937,8 +4073,10 @@ export function mountSelenV21(
       state.selectedAnchor = nextState.selectedAnchor ?? null;
       state.preparation = nextState.preparation ?? null;
       updateAll();
+      syncSoundFrames();
     },
     destroy() {
+      if (soundFrame !== undefined) cancelAnimationFrame(soundFrame);
       root.replaceChildren();
     },
   };

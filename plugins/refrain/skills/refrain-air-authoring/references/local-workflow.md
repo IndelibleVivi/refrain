@@ -12,6 +12,8 @@ refrain draft --out response.air.json --title "A place beside you" --instruments
 
 Binding discovery includes exact IDs, instrument coverage, and each palette's authoring guide. The eight synth instruments in `f-synthetic-beat@0` also execute in the zero-asset MCP Canvas. Sampled instruments require an ordinary browser with the exact assets available.
 
+`touch@0` is an explicit sample-free alternative for authored dynamic color. It keeps the same eight instrument identities and substitutes four velocity-responsive candidates. Use `refrain hum response.air.json --binding touch@0 --out response.refrain.json` to select it; the ordinary root default remains `f-synthetic-beat@0`. For the complete playable comparison, see [Undertow](../../../../../examples/touch/README.md).
+
 `draft` creates valid **silent** AIR@1 with the selected immutable vocabulary already carried. Defaults are 96 BPM, 4/4, eight bars. Every initial voice has a placeholder `lead` role and a full-length rest. Edit this file to author music: choose the actual roles, sections, motifs, notes, and expression. The draft is not a finished composition. It is a score document, not a parallel input grammar.
 
 For more or different built-in instruments, explicitly create another draft with the desired `--instruments` and carry that generated vocabulary into the authored source. Never hand-edit a vocabulary digest. Extension vocabulary remains an exact pack-carried source contract, not something `draft` guesses.

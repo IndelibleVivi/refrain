@@ -1887,7 +1887,7 @@ body:has(.refrain-renderer[data-surface="url"][data-visual-theme="herbarium"]),
   position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  width: min(1120px, 100%);
+  width: min(900px, 100%);
   min-width: 0;
   margin: 0 auto;
   border: 0;
@@ -2119,7 +2119,7 @@ body:has(.refrain-renderer[data-surface="url"][data-visual-theme="herbarium"]),
   font-size: 12px;
 }
 .refrain-renderer[data-surface="url"] .refrain-renderer__performance {
-  width: min(1120px, 100%);
+  width: min(900px, 100%);
   padding: 0 0 20px;
   margin: 0 auto;
   color: var(--room-muted);

@@ -9,7 +9,7 @@ import { heldEnvelopeLevel } from "./envelope.js";
 import { verifyAssetBytes } from "./digest.js";
 import { scheduleWithLookahead, type LookaheadAction } from "./lookahead.js";
 import { createNoteLifecycle } from "./note-lifecycle.js";
-import { synthOscillatorProjection } from "./synth-kernel.js";
+import { synthOscillatorProjection, synthNotePatch } from "./synth-kernel.js";
 import {
   createAuditionPerformancePlan,
   createPerformancePlan,
@@ -346,10 +346,11 @@ export class BrowserAudioEngine {
   private createSynthVoice(
     event: PerformanceEvent,
     voice: PerformanceVoice,
-    patch: SynthPatch,
+    sourcePatch: SynthPatch,
     start: number,
     end: number,
   ): void {
+    const patch = synthNotePatch(sourcePatch, event.performanceVelocity);
     const gain = this.context.createGain();
     const panner = this.context.createStereoPanner();
     panner.pan.value = voice.pan;

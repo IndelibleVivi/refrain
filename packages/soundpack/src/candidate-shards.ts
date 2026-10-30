@@ -31,6 +31,10 @@ import shard29 from "./candidates/sha256/3adda69b68dd94c987c1b304aa24cfb094c3ab6
 import shard30 from "./candidates/sha256/d42d5267e3b3aa96da2c93d71bdcff7bae740a0896ab814d475e9094c77d28c6.json" with { type: "json" };
 import shard31 from "./candidates/sha256/9b8333c778f0482f6ee2d6492546c5ec6d7ed06b72a383e41069926822c62edc.json" with { type: "json" };
 import shard32 from "./candidates/sha256/c9a90e88b511e60d8cdd31cebef096d1bca2d106d3f0efdeead1143ca31f62b1.json" with { type: "json" };
+import shard33 from "./candidates/sha256/a7c128ca4ff3ed51bef7d27dbfc10ca51628d37ad4b445bda54cc6e61bd7f949.json" with { type: "json" };
+import shard34 from "./candidates/sha256/ce06e8bea8ce3c8004b19df97af92c000c2b4e3847ed12ac98703f3a93f15172.json" with { type: "json" };
+import shard35 from "./candidates/sha256/9e7ac476901a2bcd0f8834f36394a6e0f778a7e3d7da2cfbe5d6fcb1c47939e6.json" with { type: "json" };
+import shard36 from "./candidates/sha256/4f2468d8604cd29692e87c583690d634f55a62eb6849d4b23fd1c8b65888c677.json" with { type: "json" };
 
 export const candidateShardJson = [
   shard0,
@@ -66,4 +70,8 @@ export const candidateShardJson = [
   shard30,
   shard31,
   shard32,
+  shard33,
+  shard34,
+  shard35,
+  shard36,
 ] as const;

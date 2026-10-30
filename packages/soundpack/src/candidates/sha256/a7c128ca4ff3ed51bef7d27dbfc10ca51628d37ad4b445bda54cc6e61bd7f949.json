@@ -1,0 +1,59 @@
+{
+  "format": "refrain-candidate-shard@0-experimental",
+  "id": "air-pad-touch-original",
+  "candidateContentSha256": "ff9979647ca335f532a469c8152740bd457d81ded3554bff03e970467ee66ffa",
+  "candidate": {
+    "id": "air-pad-touch-original",
+    "instrumentId": "air_pad",
+    "engine": "synth",
+    "mapping": {
+      "type": "midi-fallback",
+      "program": 89
+    },
+    "calibrationGainDb": -20,
+    "releaseStatus": "development-identity",
+    "patch": {
+      "format": "refrain-synth-subtractive@1-experimental",
+      "velocityExponent": 1.2,
+      "attack": 0.42,
+      "decay": 1.1,
+      "sustain": 0.62,
+      "release": 2.8,
+      "filterHz": {
+        "soft": 480,
+        "hard": 2800
+      },
+      "filterQ": 0.6,
+      "oscillators": [
+        {
+          "type": "sine",
+          "ratio": 1,
+          "gain": {
+            "soft": 0.72,
+            "hard": 0.55
+          }
+        },
+        {
+          "type": "triangle",
+          "ratio": 1,
+          "gain": {
+            "soft": 0.13,
+            "hard": 0.26
+          },
+          "detune": -4
+        },
+        {
+          "type": "sine",
+          "ratio": 2,
+          "gain": {
+            "soft": 0.035,
+            "hard": 0.12
+          },
+          "detune": 4
+        }
+      ]
+    }
+  },
+  "assets": [],
+  "contentSha256": "a7c128ca4ff3ed51bef7d27dbfc10ca51628d37ad4b445bda54cc6e61bd7f949"
+}

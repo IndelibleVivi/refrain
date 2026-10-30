@@ -1,0 +1,59 @@
+{
+  "format": "refrain-candidate-shard@0-experimental",
+  "id": "prism-lead-touch-original",
+  "candidateContentSha256": "0456d41eab8c25de9cd7ff8624f2ed29c6c15d63945dcd47f2fa7a3fd32f79e7",
+  "candidate": {
+    "id": "prism-lead-touch-original",
+    "instrumentId": "prism_lead",
+    "engine": "synth",
+    "mapping": {
+      "type": "midi-fallback",
+      "program": 81
+    },
+    "calibrationGainDb": -14,
+    "releaseStatus": "development-identity",
+    "patch": {
+      "format": "refrain-synth-subtractive@1-experimental",
+      "velocityExponent": 1.15,
+      "attack": 0.018,
+      "decay": 0.32,
+      "sustain": 0.46,
+      "release": 0.72,
+      "filterHz": {
+        "soft": 600,
+        "hard": 6200
+      },
+      "filterQ": 0.72,
+      "oscillators": [
+        {
+          "type": "triangle",
+          "ratio": 1,
+          "gain": {
+            "soft": 0.64,
+            "hard": 0.46
+          }
+        },
+        {
+          "type": "sawtooth",
+          "ratio": 1,
+          "gain": {
+            "soft": 0.025,
+            "hard": 0.22
+          },
+          "detune": 3.2
+        },
+        {
+          "type": "sine",
+          "ratio": 2,
+          "gain": {
+            "soft": 0.12,
+            "hard": 0.18
+          },
+          "detune": -2
+        }
+      ]
+    }
+  },
+  "assets": [],
+  "contentSha256": "4f2468d8604cd29692e87c583690d634f55a62eb6849d4b23fd1c8b65888c677"
+}

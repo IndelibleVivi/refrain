@@ -14,7 +14,7 @@ Agents can also prepare an exact performance for self-listening, freeze it once 
 
 **[Open the interactive demo](https://indeliblevivi.github.io/refrain/)** — listen to the featured works without installation. Connect your own agent to author an air; the demo does not call a model. The redesigned Player, personal playlists and appearance controls described below are source candidates: run this checkout locally to try them. Source verification and hosted deployment are separate; see [current state](docs/current-state.md).
 
-Earlier Canvas recording (the current Player uses a full-width listening layout; settings are under **Appearance**):
+Earlier Canvas recording (the current Player uses a bounded music stage; settings are under **Appearance**):
 
 ![Recorded demo: pressing Play on Velvet Mischief, then switching appearances from Paper Sonata to Nocturne Ink to Prism to Herbarium](docs/images/demo-playback.gif)
 
@@ -23,6 +23,8 @@ _A twelve-second recording, not an interactive control — [open the live demo](
 **[Open in StackBlitz](https://stackblitz.com/github/IndelibleVivi/refrain?startScript=try)** — run the full local setup in a browser container instead: dependencies install, the two featured works' sounds download, and the listening page opens on its own.
 
 Use the same Player to hear original and revised artifacts together: `refrain open original.refrain.json revised.refrain.json`. [The correspondence workflow](docs/CORRESPONDENCE.md) connects exact selection, verified response inspection, host-authored revision and full playlist saving.
+
+The source candidate also includes **Touch**: four original synthetic voices whose authored dynamics change timbre as well as volume. [Undertow · 潮汐以内](examples/touch/README.md) is a complete, sample-free piece with both Touch and Classic sound choices in one portable artifact. Open it locally with `node bin/refrain.mjs open examples/touch/undertow.refrain.json --theme nocturne-ink`. The shared Canvas responds to measured voice activity during playback; no sound starts before Play. Listening and visual acceptance remain pending.
 
 ### Run locally
 

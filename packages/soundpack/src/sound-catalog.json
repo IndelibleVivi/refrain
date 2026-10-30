@@ -364,7 +364,51 @@
         "path": "./candidates/sha256/c9a90e88b511e60d8cdd31cebef096d1bca2d106d3f0efdeead1143ca31f62b1.json",
         "sha256": "c9a90e88b511e60d8cdd31cebef096d1bca2d106d3f0efdeead1143ca31f62b1"
       }
+    },
+    {
+      "candidateId": "air-pad-touch-original",
+      "instrumentId": "air_pad",
+      "engine": "synth",
+      "releaseStatus": "development-identity",
+      "candidateContentSha256": "ff9979647ca335f532a469c8152740bd457d81ded3554bff03e970467ee66ffa",
+      "shard": {
+        "path": "./candidates/sha256/a7c128ca4ff3ed51bef7d27dbfc10ca51628d37ad4b445bda54cc6e61bd7f949.json",
+        "sha256": "a7c128ca4ff3ed51bef7d27dbfc10ca51628d37ad4b445bda54cc6e61bd7f949"
+      }
+    },
+    {
+      "candidateId": "glass-bell-touch-original",
+      "instrumentId": "glass_bell",
+      "engine": "synth",
+      "releaseStatus": "development-identity",
+      "candidateContentSha256": "d9a555fad36bed7b02f995370e51eb4ab6944c588de694928044a149f8dd1e74",
+      "shard": {
+        "path": "./candidates/sha256/ce06e8bea8ce3c8004b19df97af92c000c2b4e3847ed12ac98703f3a93f15172.json",
+        "sha256": "ce06e8bea8ce3c8004b19df97af92c000c2b4e3847ed12ac98703f3a93f15172"
+      }
+    },
+    {
+      "candidateId": "lattice-pluck-touch-original",
+      "instrumentId": "lattice_pluck",
+      "engine": "synth",
+      "releaseStatus": "development-identity",
+      "candidateContentSha256": "904ba8ff210da5344bb1b7988f7c182291a3860bbdfbdd529124f81c80f99576",
+      "shard": {
+        "path": "./candidates/sha256/9e7ac476901a2bcd0f8834f36394a6e0f778a7e3d7da2cfbe5d6fcb1c47939e6.json",
+        "sha256": "9e7ac476901a2bcd0f8834f36394a6e0f778a7e3d7da2cfbe5d6fcb1c47939e6"
+      }
+    },
+    {
+      "candidateId": "prism-lead-touch-original",
+      "instrumentId": "prism_lead",
+      "engine": "synth",
+      "releaseStatus": "development-identity",
+      "candidateContentSha256": "0456d41eab8c25de9cd7ff8624f2ed29c6c15d63945dcd47f2fa7a3fd32f79e7",
+      "shard": {
+        "path": "./candidates/sha256/4f2468d8604cd29692e87c583690d634f55a62eb6849d4b23fd1c8b65888c677.json",
+        "sha256": "4f2468d8604cd29692e87c583690d634f55a62eb6849d4b23fd1c8b65888c677"
+      }
     }
   ],
-  "contentSha256": "d95b16a57c76971b2144fa7f76410d1bb810884fc758498abfa63b842890e22f"
+  "contentSha256": "b0553f02457d86178fca2fe69cacb5dd43a199bc5fa594b012a47e93c11455b9"
 }

@@ -175,6 +175,8 @@ Browser Worklet playback, browser direct synth/sampler playback, transferable bl
 
 Parity acceptance is semantic rather than byte-identical: event timing, note-off timing, channel/percussion mapping, patch selection, gain/pan policy, and expression agree across applicable adapters. Focused regressions cover quiet (`pp`) material, hybrid sampled/synth schedules, early stop, dense textures, audition gain, and attenuation-only PCM output.
 
+The strict subtractive/modal synth `@1` patch families add explicit note-on velocity response below AIR. Their soft/hard partial gains interpolate linearly at `clamp(performanceVelocity, 0, 1) ** velocityExponent`; subtractive cutoff interpolates geometrically at the same amount. Envelope times, sustain, partial decay and release remain fixed. One shared `synthNotePatch` executes these declared parameters into the existing static DSP representation for every adapter; it performs no candidate selection and never mutates a plan. Plan fields and musical source stay unchanged; the new patch format and candidate digest bind the new execution meaning. Historical synth `@0` contracts and offline output remain exact.
+
 ### Verified continuation relations
 
 `from` may carry relation evidence as `motifLinks`, each linking a prior motif occurrence to a child motif occurrence by the exact stable anchors published in compact summaries. Refrain recompiles both sources and verifies the anchor, motif identity, and link; callers cannot assert a verified result directly. Names alone are insufficient because one motif may occur more than once under different transforms.

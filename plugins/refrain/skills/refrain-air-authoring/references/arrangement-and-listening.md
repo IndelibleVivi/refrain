@@ -6,6 +6,8 @@ A single air should hold attention and make musical sense on its own. Relational
 
 ## Give the ear a path
 
+For a sample-free work whose touch should change its tone, explicitly choose `touch@0` through binding discovery. Its lattice pluck and glass bell respond with changing partial balance; prism lead and air pad also open their filters as effective note velocity increases. Write the contrast in AIR segment dynamics or curves. `gainDb` is a mix level, not a substitute for touch. Timing and release remain fixed by the candidate; no new notation or hidden performance model is introduced. The complete [Undertow example](../../../../../examples/touch/README.md) keeps Touch and Classic bindings on the same source so their difference can be heard without rewriting the notes. Neither that example nor the Canvas activity marks establish listening quality.
+
 Before adding voices, decide what leads each section. Write accompaniment that leaves room for that line's register, attacks, and held notes. Distinguish the roles of bass foundation, harmonic support, counterline, pulse, and color. A color need not play in every bar; two melodies may alternate or answer instead of competing throughout a passage.
 
 At a return, choose what has changed: the harmony beneath a preserved melody, the space between replies, a new body, or a different ending. Do not rely on volume and extra layers as the only means of development. Bring the piece to a deliberate close.

@@ -39,6 +39,7 @@
     "soundpack:build-f-samples": "tsx scripts/build-f-sample-candidates.ts",
     "soundpack:build-f-palettes": "tsx scripts/build-f-palettes.ts",
     "soundpack:build-synth-families": "tsx scripts/build-synth-families.ts",
+    "soundpack:build-touch": "tsx scripts/build-touch-sounds.ts && npm run soundpack:catalog",
     "soundpack:fetch": "tsx scripts/fetch-soundpack.ts",
     "tranche:d:evidence": "tsx scripts/tranche-d-evidence.ts",
     "test": "vitest run --maxWorkers=2",

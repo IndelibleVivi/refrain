@@ -101,6 +101,7 @@ export function SelenV21Canvas({
     if (!element) return;
     runtime.current = mountSelenV21(element, {
       callbacks: {
+        readSound: () => callbacksRef.current.readSound?.(),
         onLocaleChange: (next) => callbacksRef.current.onLocaleChange(next),
         onThemeChange: (next) => callbacksRef.current.onThemeChange(next),
         onExportArtifact: () => callbacksRef.current.onExportArtifact?.(),

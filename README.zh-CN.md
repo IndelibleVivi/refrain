@@ -14,7 +14,7 @@ Agent 也可以取回确切演奏来自听，将它封存一次后反复截取�
 
 **[打开互动试玩页](https://indeliblevivi.github.io/refrain/)** — 无需安装即可试听 featured works。创作自己的 air 请接入 agent；试玩页不会调用模型。下文的新 Player、个人歌单和外观控件仍是 source candidate，请在本地运行这个 checkout 体验；源码验证与线上部署分别记录在 [当前状态](docs/current-state.md)。
 
-此前的 Canvas 录屏（当前 Player 已改为宽幅聆听布局，设置位于 **外观**）：
+此前的 Canvas 录屏（当前 Player 使用有界的乐谱舞台，设置位于 **外观**）：
 
 ![录屏：为 Velvet Mischief 按下播放，然后依次切换 Paper Sonata、Nocturne Ink、Prism、Herbarium 四种外观](docs/images/demo-playback.gif)
 
@@ -23,6 +23,8 @@ _这是一段十二秒的录屏，不是可交互控件——想亲手玩请[打
 **[在 StackBlitz 里打开](https://stackblitz.com/github/IndelibleVivi/refrain?startScript=try)**——在浏览器容器里跑完整本地流程：自动装依赖、下载两首示例的音色，然后试听页自己打开。
 
 原作和修改版进入同一个 Player：`refrain open original.refrain.json revised.refrain.json`。[音乐往返流程](docs/CORRESPONDENCE.md)串起精确选段、反馈核验、host 创作修改和完整歌单保存。
+
+源码候选还加入了 **Touch**：四种原创合成音色，让 air 中写明的轻重变化同时改变音色和音量。[Undertow · 潮汐以内](examples/touch/README.md) 是一首无需下载采样的完整作品，同一个可保存的 artifact 带着 Touch 与 Classic 两种声音。运行 `node bin/refrain.mjs open examples/touch/undertow.refrain.json --theme nocturne-ink` 即可用现有 Player 打开；播放时，Canvas 会回应实际测到的声部活动。仍需按 Play 才会发声，听感与视觉尚待接受。
 
 ### 在本地运行
 

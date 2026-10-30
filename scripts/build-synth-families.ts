@@ -231,48 +231,32 @@ await writeFile(
 );
 const profileSet = JSON.parse(await readFile(profilePath, "utf8"));
 profileSet.profiles = profileSet.profiles.map(
-  (profile: { selections: Record<string, unknown>; contentSha256: string }) => {
+  (profile: {
+    selections: Record<
+      string,
+      {
+        candidateChain: Array<{ id: string; sha256: string }>;
+        [key: string]: unknown;
+      }
+    >;
+    contentSha256: string;
+  }) => {
+    const selections = { ...profile.selections };
+    for (const [instrumentId, pin] of pins) {
+      const existing = selections[instrumentId];
+      // This builder owns the original candidates, not a profile's choice of
+      // another family. Preserve explicit Touch choices and profile gain.
+      if (
+        !existing ||
+        existing.candidateChain.some((selected) => selected.id !== pin.id)
+      )
+        continue;
+      selections[instrumentId] = { ...existing, candidateChain: [pin] };
+    }
     const core = {
       ...profile,
-      vocabulary: {
-        id: vocabulary.id,
-        sha256: vocabulary.contentSha256,
-      },
-      selections: {
-        ...profile.selections,
-        clean_bass: {
-          candidateChain: [pins.get("clean_bass")],
-          fallbackPolicy: "strict",
-        },
-        air_pad: {
-          candidateChain: [pins.get("air_pad")],
-          fallbackPolicy: "strict",
-        },
-        glass_bell: {
-          candidateChain: [pins.get("glass_bell")],
-          fallbackPolicy: "strict",
-        },
-        sub_bass: {
-          candidateChain: [pins.get("sub_bass")],
-          fallbackPolicy: "strict",
-        },
-        lattice_pluck: {
-          candidateChain: [pins.get("lattice_pluck")],
-          fallbackPolicy: "strict",
-        },
-        prism_lead: {
-          candidateChain: [pins.get("prism_lead")],
-          fallbackPolicy: "strict",
-        },
-        dust_texture: {
-          candidateChain: [pins.get("dust_texture")],
-          fallbackPolicy: "strict",
-        },
-        rhythm_pulse: {
-          candidateChain: [pins.get("rhythm_pulse")],
-          fallbackPolicy: "strict",
-        },
-      },
+      vocabulary: { id: vocabulary.id, sha256: vocabulary.contentSha256 },
+      selections,
     };
     delete core.contentSha256;
     return { ...core, contentSha256: digest(core) };

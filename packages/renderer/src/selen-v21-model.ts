@@ -100,7 +100,7 @@ function mean(values: readonly number[]): number {
 
 type VisualVoiceId = SelenV21Voice["id"];
 
-function visualVoiceId(role: string): VisualVoiceId {
+export function visualVoiceId(role: string): VisualVoiceId {
   if (role === "bass") return "bass";
   if (role === "percussion") return "pulse";
   if (role === "lead" || role === "melody") return "lead";

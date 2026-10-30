@@ -25,7 +25,7 @@ import {
   stringifyRefrainSelectionHandoff,
   type RefrainSelectionKind,
 } from "./selection.js";
-import { buildSelenV21Piece } from "./selen-v21-model.js";
+import { buildSelenV21Piece, visualVoiceId } from "./selen-v21-model.js";
 import { IdentityScopedEngineSlot } from "./identity-scoped-engine.js";
 import { rendererPlaybackCapability } from "./playback-capability.js";
 import {
@@ -1046,6 +1046,26 @@ export function AirRenderer({
         queueControls={queueControls}
         locale={locale}
         callbacks={{
+          readSound: () => {
+            const engine = engineSlot.current?.current(artifactIdentity);
+            if (!engine || !completePieceEngine(engine)) return undefined;
+            const signal = engine.readSignalFrame();
+            if (!signal) return undefined;
+            const lanes: Record<string, number> = {};
+            for (const voice of artifact.source.voices) {
+              const lane = visualVoiceId(voice.role);
+              lanes[lane] =
+                (lanes[lane] ?? 0) + (signal.voiceRms[voice.id] ?? 0) ** 2;
+            }
+            for (const lane of Object.keys(lanes))
+              lanes[lane] = Math.sqrt(lanes[lane]!);
+            return {
+              positionBeat:
+                (signal.positionSeconds * artifact.compiled.tempo) / 60,
+              masterRms: signal.masterRms,
+              lanes,
+            };
+          },
           onLocaleChange: (next) => {
             setLocale(next);
             onLocaleChange?.(next);

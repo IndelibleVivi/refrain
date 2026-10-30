@@ -36,10 +36,12 @@ These complete works retain their original acoustic and synthetic sounds. Local 
 For a specific AIR or saved artifact, use the ordinary CLI preview:
 
 ```bash
-node bin/refrain.mjs open fixtures/air-v1/synthetic-counterpulse.air.json --binding f-synthetic-beat@0
+node bin/refrain.mjs open examples/touch/undertow.refrain.json --theme nocturne-ink
 ```
 
 That command supports `--no-open` to print a URL without launching a browser, and `--json` for an agent-readable session result.
+
+This sample-free piece uses the new Touch candidate. Its **Sound for this listening view** disclosure carries `undertow-touch@1` and `undertow-classic@1`: the same music with the same production settings and different exact instruments. Switching sound stops and resets playback; press Play again. These are native levels, not synchronized or loudness-matched A/B. [The work's guide](../examples/touch/README.md) also explains the dry bindings and export path. During direct synth/sample playback, small marks in the existing musical traces respond to measured pre-bus voice activity. They stop on pause/stop; reduced motion keeps their size fixed. They are playback observations, not saved music or a quality score.
 
 The ordinary CLI preview URL is temporary and belongs to this computer. It is not a shareable hosted work or a durable save. Save the artifact before closing a preview you want to keep.
 
@@ -67,13 +69,13 @@ An imported artifact with multiple sounds exposes **Sound for this listening vie
 For WAV, MIDI, and the full export directory:
 
 ```bash
-node bin/refrain.mjs export fixtures/air-v1/synthetic-counterpulse.air.json --binding f-synthetic-beat@0 --out tmp/first-air
+node bin/refrain.mjs export examples/touch/undertow.refrain.json --out tmp/first-air
 ```
 
 The output directory contains portable `.refrain.json` and `.air.json` files, a native WAV, MIDI, and exact performance/provenance sidecars. The command prints their locations. Reopen the portable artifact with:
 
 ```bash
-node bin/refrain.mjs open tmp/first-air/pulse-leaves-a-door-open.refrain.json
+node bin/refrain.mjs open tmp/first-air/undertow.refrain.json
 ```
 
 Use a new output directory for a second export. Native WAV retains the selected production levels; `--matched-preview` adds an explicitly loudness-matched listening preview. MIDI approximates the performance and does not preserve Refrain's synths or effects. A `.refrain.json` retains exact musical and performance choices; sampled sound bytes may need to be acquired separately when reopening elsewhere.

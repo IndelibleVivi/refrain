@@ -1,4 +1,4 @@
-import type { SynthPatch } from "@refrain/soundpack";
+import type { StaticSynthPatch } from "@refrain/soundpack";
 import { envelopeLevel } from "./envelope.js";
 import type { BiquadLowPass } from "./filter.js";
 import { verifyAssetBytes } from "./digest.js";
@@ -6,7 +6,11 @@ import { performanceEventAt, type ExecutionBundle } from "./execution.js";
 import { encodeExecutionMidi } from "./midi.js";
 import type { PerformanceEvent, PerformanceVoice } from "./performance.js";
 import { decodeWave, type DecodedWave } from "./sampler.js";
-import { processSynthSample, synthFilter } from "./synth-kernel.js";
+import {
+  processSynthSample,
+  synthFilter,
+  synthNotePatch,
+} from "./synth-kernel.js";
 import { SceneBlockProcessor } from "./scene-renderer.js";
 
 export const BLOCK_RENDERER_CONTRACT =
@@ -35,7 +39,7 @@ export interface BlockRenderOptions {
 interface ActiveSynth {
   event: PerformanceEvent;
   voice: PerformanceVoice;
-  patch: SynthPatch;
+  patch: StaticSynthPatch;
   filter?: BiquadLowPass;
   endFrame: number;
 }
@@ -359,11 +363,12 @@ export async function* renderExecutionBlocks(
             (voice.patch?.release ?? 0)) * sampleRate,
       );
       if (voice.engine === "synth" && voice.patch) {
+        const patch = synthNotePatch(voice.patch, event.performanceVelocity);
         activeSynth.set(nextEventIndex, {
           event,
           voice,
-          patch: voice.patch,
-          filter: synthFilter(voice.patch, sampleRate),
+          patch,
+          filter: synthFilter(patch, sampleRate),
           endFrame,
         });
       } else if (voice.engine === "sampler" && event.sample) {

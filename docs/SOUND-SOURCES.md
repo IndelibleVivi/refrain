@@ -76,6 +76,8 @@ Four exact strict profiles/palettes/bindings—`f-acoustic-chamber@0`, `f-lumino
 
 ## Reproducible local pipeline
 
+The additional `touch@0` listening candidate selects four new project-original zero-asset synth shards for `lattice_pluck`, `glass_bell`, `prism_lead`, and `air_pad`. Strict subtractive/modal `@1` patches declare soft/hard partial gains, a velocity exponent, and (for subtractive patches) soft/hard cutoff. The shared audio kernel executes the effective note-on velocity once: amplitude interpolates linearly and frequency geometrically after applying the exponent. Attack, decay, sustain and release remain fixed. This is timbral response, not random humanization, an acoustic-model claim, or continuous note expression. Historical `@0` patches and candidate/profile identities remain unchanged. `npm run soundpack:build-touch` rebuilds the four shards, exact profile and lightweight catalog; `scripts/build-touch-sounds.ts` owns these original parameters. All four remain listening candidates, without owner acceptance. See [the authored listening work](../examples/touch/README.md).
+
 ```bash
 npm run soundpack:catalog
 npm run soundpack:fetch -- --candidate flute-vsco-susnv-sfz-pilot

@@ -58,7 +58,44 @@ export interface ModalSynthPatch {
   release: number;
 }
 
-export type SynthPatch = SubtractiveSynthPatch | ModalSynthPatch;
+export interface VelocityRange {
+  soft: number;
+  hard: number;
+}
+
+/** Note-on timbral response. Envelope times stay fixed, including seek/tail bounds. */
+export interface TouchSubtractiveSynthPatch extends Omit<
+  SubtractiveSynthPatch,
+  "format" | "oscillators" | "filterHz"
+> {
+  format: "refrain-synth-subtractive@1-experimental";
+  velocityExponent: number;
+  filterHz: VelocityRange;
+  oscillators: Array<{
+    type: OscillatorType;
+    ratio: number;
+    gain: VelocityRange;
+    detune?: number;
+  }>;
+}
+
+export interface TouchModalSynthPatch extends Omit<
+  ModalSynthPatch,
+  "format" | "modes"
+> {
+  format: "refrain-synth-modal@1-experimental";
+  velocityExponent: number;
+  modes: Array<{
+    ratio: number;
+    gain: VelocityRange;
+    decaySeconds: number;
+    detune?: number;
+  }>;
+}
+
+export type StaticSynthPatch = SubtractiveSynthPatch | ModalSynthPatch;
+export type SynthPatch =
+  StaticSynthPatch | TouchSubtractiveSynthPatch | TouchModalSynthPatch;
 
 export interface ProcessingStep {
   operation: string;
@@ -662,6 +699,75 @@ function validateSampleMap(
 
 export function validateSynthPatch(value: unknown): string[] {
   if (!isRecord(value)) return ["Synth patch must be an object."];
+  if (
+    value.format === "refrain-synth-subtractive@1-experimental" ||
+    value.format === "refrain-synth-modal@1-experimental"
+  ) {
+    const subtractive =
+      value.format === "refrain-synth-subtractive@1-experimental";
+    const layersKey = subtractive ? "oscillators" : "modes";
+    const layers = value[layersKey];
+    const range = (v: unknown, min: number, max: number) =>
+      isRecord(v) &&
+      exactKeys(v, ["soft", "hard"]) &&
+      [v.soft, v.hard].every(
+        (n) =>
+          typeof n === "number" && Number.isFinite(n) && n >= min && n <= max,
+      );
+    const errors: string[] = [];
+    if (
+      typeof value.velocityExponent !== "number" ||
+      !Number.isFinite(value.velocityExponent) ||
+      value.velocityExponent < 0.25 ||
+      value.velocityExponent > 4
+    )
+      errors.push("Touch synth velocityExponent must be between 0.25 and 4.");
+    if (subtractive && !range(value.filterHz, 20, 24_000))
+      errors.push(
+        "Touch synth filterHz must contain closed soft/hard frequencies.",
+      );
+    if (Array.isArray(layers)) {
+      for (const [index, layer] of layers.entries()) {
+        if (!isRecord(layer) || !range(layer.gain, 0, 1))
+          errors.push(
+            `Touch synth layer ${index} needs closed soft/hard gains.`,
+          );
+      }
+    }
+    // Validate both endpoints through the exact historical contracts. This also
+    // rejects extra fields, unmatched topology and invalid envelope parameters.
+    for (const endpoint of ["soft", "hard"] as const) {
+      const { velocityExponent: _exponent, ...base } = value;
+      errors.push(
+        ...validateSynthPatch({
+          ...base,
+          format: subtractive
+            ? "refrain-synth-subtractive@0-experimental"
+            : "refrain-synth-modal@0-experimental",
+          ...(subtractive
+            ? {
+                filterHz: isRecord(value.filterHz)
+                  ? value.filterHz[endpoint]
+                  : undefined,
+              }
+            : {}),
+          [layersKey]: Array.isArray(layers)
+            ? layers.map((layer) =>
+                isRecord(layer)
+                  ? {
+                      ...layer,
+                      gain: isRecord(layer.gain)
+                        ? layer.gain[endpoint]
+                        : undefined,
+                    }
+                  : layer,
+              )
+            : layers,
+        }),
+      );
+    }
+    return [...new Set(errors)];
+  }
   const errors: string[] = [];
   const finite = (candidate: unknown, min: number, max: number) =>
     typeof candidate === "number" &&
@@ -1264,6 +1370,9 @@ export const F_LOFI_DEGRADED_SOUND_PROFILE = builtInProfiles.find(
 )!;
 export const F_SYNTHETIC_BEAT_SOUND_PROFILE = builtInProfiles.find(
   (profile) => profile.id === "f-synthetic-beat@1",
+)!;
+export const TOUCH_SOUND_PROFILE = builtInProfiles.find(
+  (profile) => profile.id === "touch@1",
 )!;
 
 export function candidatesForInstrument(
@@ -2135,6 +2244,28 @@ export const F_SYNTHETIC_BEAT_PALETTE: Readonly<SoundPalette> =
     ],
   });
 
+export const TOUCH_PALETTE: Readonly<SoundPalette> = createSoundPalette({
+  id: "touch@0",
+  status: "listening-candidate",
+  soundProfile: TOUCH_SOUND_PROFILE,
+  renderScene: F_SYNTHETIC_BEAT_SCENE,
+  authoringGuide:
+    "Write touch into AIR dynamics: quiet lattice plucks have a rounded fundamental; stronger attacks expose brief upper partials. Glass blooms into inharmonic overtones, prism opens its filter, and air gains color. Let one voice lead, leave room after attacks, and vary explicit dynamics across a returning phrase. These are original synthetic instruments, not acoustic emulations.",
+  descriptors: ["touch-responsive", "resonant", "synthetic", "intimate"],
+  strengths: [
+    "velocity changes timbre as well as amplitude",
+    "four original zero-asset voices with fixed, reconstructible release tails",
+  ],
+  constraints: [
+    "listening acceptance pending",
+    "note-on response; sustained-note expression and filter automation are not implied",
+    "remaining instruments retain their exact synthetic-beat candidates",
+  ],
+  intentionalContrasts: [
+    "a soft returning phrase can acquire bright overtones when explicitly played harder",
+  ],
+});
+
 export const DEFAULT_PERFORMANCE_BINDING: Readonly<PerformanceBinding> =
   createPerformanceBinding({
     id: "engineering-audition-transparent@0",
@@ -2244,6 +2375,14 @@ export const F_SYNTHETIC_BEAT_PERFORMANCE_BINDING: Readonly<PerformanceBinding> 
     F_SYNTHETIC_BEAT_SCENE,
   );
 
+export const TOUCH_PERFORMANCE_BINDING: Readonly<PerformanceBinding> =
+  createFCompletePieceBinding(
+    "touch@0",
+    TOUCH_SOUND_PROFILE,
+    TOUCH_PALETTE,
+    F_SYNTHETIC_BEAT_SCENE,
+  );
+
 export const BUILT_IN_PERFORMANCE_BINDINGS: readonly PerformanceBinding[] = [
   DEFAULT_PERFORMANCE_BINDING,
   G3B_VCSL_LISTENING_PERFORMANCE_BINDING,
@@ -2254,6 +2393,7 @@ export const BUILT_IN_PERFORMANCE_BINDINGS: readonly PerformanceBinding[] = [
   F_LUMINOUS_HYBRID_PERFORMANCE_BINDING,
   F_LOFI_DEGRADED_PERFORMANCE_BINDING,
   F_SYNTHETIC_BEAT_PERFORMANCE_BINDING,
+  TOUCH_PERFORMANCE_BINDING,
 ];
 
 export const performanceBindingById = new Map(

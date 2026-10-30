@@ -1,7 +1,8 @@
 import type { SynthPatch } from "@refrain/soundpack";
+import { synthNotePatch } from "./synth-kernel.js";
 import { sceneRouteForVoice } from "./scene-routing.js";
 import type { RenderSceneV1, SceneProcessor } from "@refrain/soundpack/vnext";
-import { envelopeLevel, heldEnvelopeLevel } from "./envelope.js";
+import { envelopeLevel, scheduleHeldEnvelope } from "./envelope.js";
 import { encodeExecutionMidi } from "./midi.js";
 import {
   createExecutionCursor,
@@ -80,6 +81,14 @@ export interface PreparationProgressV0 {
   totalAssets: number;
   completedBytes: number;
   totalBytes: number;
+}
+
+/** Read-only playback observation; never an AIR, plan or render authority. */
+export interface PlaybackSignalFrame {
+  positionSeconds: number;
+  masterRms: number;
+  /** Direct synth/sample voice outputs, before shared scene buses. */
+  voiceRms: Readonly<Record<string, number>>;
 }
 
 type BrowserDecodedAsset =
@@ -282,6 +291,11 @@ export class CompletePieceBrowserEngine {
   private readonly transportController: ExecutionTransportController;
   private readonly master: GainNode;
   private readonly analyser: AnalyserNode;
+  private readonly signalSamples = new Float32Array(256);
+  private readonly voiceMeters = new Map<
+    string,
+    { node: AnalyserNode; samples: Float32Array<ArrayBuffer> }
+  >();
   private readonly limiter: DynamicsCompressorNode;
   private readonly sceneBusInputs = new Map<string, GainNode>();
   private readonly sceneFades: Array<{
@@ -491,6 +505,47 @@ export class CompletePieceBrowserEngine {
     return bus === "master"
       ? this.master
       : (this.sceneBusInputs.get(bus) ?? this.master);
+  }
+
+  private monitoredDestinationForVoice(voice: PerformanceVoice): AudioNode {
+    const existing = this.voiceMeters.get(voice.voiceId);
+    if (existing) return existing.node;
+    const node = this.context.createAnalyser();
+    node.fftSize = 256;
+    node.connect(this.destinationForVoice(voice));
+    this.voiceMeters.set(voice.voiceId, {
+      node,
+      samples: new Float32Array(256),
+    });
+    return node;
+  }
+
+  readSignalFrame(): PlaybackSignalFrame | undefined {
+    if (
+      this.destroyed ||
+      this.transportController.snapshot().status !== "playing"
+    )
+      return undefined;
+    const rms = (node: AnalyserNode, samples: Float32Array<ArrayBuffer>) => {
+      node.getFloatTimeDomainData(samples);
+      let energy = 0;
+      for (const sample of samples) energy += sample * sample;
+      return Math.sqrt(energy / samples.length);
+    };
+    return {
+      positionSeconds: Math.min(
+        this.bundle.plan.renderDurationSeconds,
+        this.originFrame / REFERENCE_SAMPLE_RATE +
+          Math.max(0, this.context.currentTime - this.originAudioTime),
+      ),
+      masterRms: rms(this.analyser, this.signalSamples),
+      voiceRms: Object.fromEntries(
+        [...this.voiceMeters].map(([id, meter]) => [
+          id,
+          rms(meter.node, meter.samples),
+        ]),
+      ),
+    };
   }
 
   private scheduleSceneFades(baseTime: number, targetSeconds: number): void {
@@ -1016,11 +1071,12 @@ export class CompletePieceBrowserEngine {
   private createSynthVoice(
     event: PerformanceEvent,
     voice: PerformanceVoice,
-    patch: SynthPatch,
+    sourcePatch: SynthPatch,
     start: number,
     elapsedSeconds: number,
     phase: "attack" | "sustain" | "release",
   ): void {
+    const patch = synthNotePatch(sourcePatch, event.performanceVelocity);
     const noteSeconds =
       (event.soundingDurationBeats * 60) / this.bundle.compiled.tempo;
     const remainingHeld = Math.max(0, noteSeconds - elapsedSeconds);
@@ -1042,8 +1098,9 @@ export class CompletePieceBrowserEngine {
       gain
         .connect(filter)
         .connect(panner)
-        .connect(this.destinationForVoice(voice));
-    } else gain.connect(panner).connect(this.destinationForVoice(voice));
+        .connect(this.monitoredDestinationForVoice(voice));
+    } else
+      gain.connect(panner).connect(this.monitoredDestinationForVoice(voice));
     const peak = Math.max(
       0.0001,
       dbToGain(event.effectiveGainDb) * event.performanceVelocity,
@@ -1052,27 +1109,14 @@ export class CompletePieceBrowserEngine {
       0.0001,
       peak * envelopeLevel(elapsedSeconds, noteSeconds, patch),
     );
-    gain.gain.setValueAtTime(initial, start);
-    if (phase !== "release") {
-      const attackRemaining = patch.attack - elapsedSeconds;
-      if (attackRemaining > 0 && attackRemaining < remainingHeld)
-        gain.gain.linearRampToValueAtTime(peak, start + attackRemaining);
-      if (patch.format === "refrain-synth-subtractive@0-experimental") {
-        const decayRemaining = patch.attack + patch.decay - elapsedSeconds;
-        if (decayRemaining > 0 && decayRemaining < remainingHeld)
-          gain.gain.linearRampToValueAtTime(
-            Math.max(0.0001, peak * patch.sustain),
-            start + decayRemaining,
-          );
-      }
-      gain.gain.setValueAtTime(
-        Math.max(
-          0.0001,
-          peak * heldEnvelopeLevel(elapsedSeconds + remainingHeld, patch),
-        ),
-        releaseStart,
-      );
-    }
+    if (phase === "release") gain.gain.setValueAtTime(initial, start);
+    else
+      scheduleHeldEnvelope(gain.gain, patch, {
+        start,
+        elapsedSeconds,
+        noteOffSeconds: noteSeconds,
+        peak,
+      });
     if (stopAt > releaseStart) {
       const releaseStartLevel = Math.max(
         0.0001,
@@ -1175,7 +1219,7 @@ export class CompletePieceBrowserEngine {
     source
       .connect(gain)
       .connect(panner)
-      .connect(this.destinationForVoice(voice));
+      .connect(this.monitoredDestinationForVoice(voice));
     if (sample.loop.mode === "sustain") {
       source.loop = true;
       source.loopStart = playable.loopStart;
@@ -1291,7 +1335,7 @@ export class CompletePieceBrowserEngine {
     source
       .connect(gain)
       .connect(panner)
-      .connect(this.destinationForVoice(voice));
+      .connect(this.monitoredDestinationForVoice(voice));
     const bounded = Math.max(0, Math.min(offset, buffer.duration - 0.000_001));
     source.start(start, bounded);
     source.stop(start + (buffer.duration - bounded) / playbackRate);
@@ -1535,6 +1579,7 @@ export class CompletePieceBrowserEngine {
     this.haltPlayback();
     this.listeners.clear();
     this.preparationListeners.clear();
+    this.voiceMeters.clear();
     this.sampleSynth?.destroy();
     await this.context.close();
   }

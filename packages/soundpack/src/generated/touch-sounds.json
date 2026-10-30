@@ -1,0 +1,29 @@
+{
+  "format": "refrain-synth-family-evidence@0-experimental",
+  "candidates": [
+    {
+      "candidateId": "lattice-pluck-touch-original",
+      "candidateContentSha256": "904ba8ff210da5344bb1b7988f7c182291a3860bbdfbdd529124f81c80f99576",
+      "shardSha256": "9e7ac476901a2bcd0f8834f36394a6e0f778a7e3d7da2cfbe5d6fcb1c47939e6",
+      "patchFormat": "refrain-synth-modal@1-experimental"
+    },
+    {
+      "candidateId": "glass-bell-touch-original",
+      "candidateContentSha256": "d9a555fad36bed7b02f995370e51eb4ab6944c588de694928044a149f8dd1e74",
+      "shardSha256": "ce06e8bea8ce3c8004b19df97af92c000c2b4e3847ed12ac98703f3a93f15172",
+      "patchFormat": "refrain-synth-modal@1-experimental"
+    },
+    {
+      "candidateId": "prism-lead-touch-original",
+      "candidateContentSha256": "0456d41eab8c25de9cd7ff8624f2ed29c6c15d63945dcd47f2fa7a3fd32f79e7",
+      "shardSha256": "4f2468d8604cd29692e87c583690d634f55a62eb6849d4b23fd1c8b65888c677",
+      "patchFormat": "refrain-synth-subtractive@1-experimental"
+    },
+    {
+      "candidateId": "air-pad-touch-original",
+      "candidateContentSha256": "ff9979647ca335f532a469c8152740bd457d81ded3554bff03e970467ee66ffa",
+      "shardSha256": "a7c128ca4ff3ed51bef7d27dbfc10ca51628d37ad4b445bda54cc6e61bd7f949",
+      "patchFormat": "refrain-synth-subtractive@1-experimental"
+    }
+  ]
+}

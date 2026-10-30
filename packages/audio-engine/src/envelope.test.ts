@@ -1,8 +1,8 @@
 import { describe, expect, it } from "vitest";
-import type { SynthPatch } from "@refrain/soundpack";
+import type { StaticSynthPatch } from "@refrain/soundpack";
 import { envelopeLevel, heldEnvelopeLevel } from "./envelope.js";
 
-const patch: SynthPatch = {
+const patch: StaticSynthPatch = {
   format: "refrain-synth-subtractive@0-experimental",
   oscillators: [{ type: "sine", ratio: 1, gain: 1 }],
   attack: 1,
@@ -24,5 +24,23 @@ describe("synth envelope", () => {
     expect(envelopeLevel(1.5, 1.5, patch)).toBeCloseTo(0.75);
     expect(envelopeLevel(2.5, 2.5, patch)).toBeCloseTo(0.5);
     expect(envelopeLevel(4.5, 2.5, patch)).toBe(0);
+  });
+
+  it("keeps held levels continuous at exact stage boundaries", () => {
+    expect(heldEnvelopeLevel(0, patch)).toBe(0);
+    expect(heldEnvelopeLevel(1, patch)).toBe(1);
+    expect(heldEnvelopeLevel(1 - 1e-12, patch)).toBeCloseTo(1);
+    expect(heldEnvelopeLevel(2, patch)).toBe(0.5);
+  });
+
+  it("handles zero and near-zero note durations without a held-stage jump", () => {
+    expect(envelopeLevel(0, 0, patch)).toBe(0);
+    expect(envelopeLevel(1e-6, 1e-6, patch)).toBeCloseTo(1e-6);
+    expect(envelopeLevel(2e-6, 1e-6, patch)).toBeGreaterThan(0);
+  });
+
+  it("preserves an elapsed start inside the quadratic release", () => {
+    expect(envelopeLevel(3, 2.5, patch)).toBeCloseTo(0.28125);
+    expect(envelopeLevel(3.5, 2.5, patch)).toBeCloseTo(0.125);
   });
 });

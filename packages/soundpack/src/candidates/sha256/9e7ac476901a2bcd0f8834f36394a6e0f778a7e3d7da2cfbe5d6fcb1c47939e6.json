@@ -1,0 +1,68 @@
+{
+  "format": "refrain-candidate-shard@0-experimental",
+  "id": "lattice-pluck-touch-original",
+  "candidateContentSha256": "904ba8ff210da5344bb1b7988f7c182291a3860bbdfbdd529124f81c80f99576",
+  "candidate": {
+    "id": "lattice-pluck-touch-original",
+    "instrumentId": "lattice_pluck",
+    "engine": "synth",
+    "mapping": {
+      "type": "midi-fallback",
+      "program": 84
+    },
+    "calibrationGainDb": -12,
+    "releaseStatus": "development-identity",
+    "patch": {
+      "format": "refrain-synth-modal@1-experimental",
+      "velocityExponent": 1.35,
+      "attack": 0.004,
+      "release": 1.45,
+      "modes": [
+        {
+          "ratio": 1,
+          "gain": {
+            "soft": 0.82,
+            "hard": 0.56
+          },
+          "decaySeconds": 1.9
+        },
+        {
+          "ratio": 2,
+          "gain": {
+            "soft": 0.1,
+            "hard": 0.24
+          },
+          "decaySeconds": 0.72,
+          "detune": 1.4
+        },
+        {
+          "ratio": 3,
+          "gain": {
+            "soft": 0.015,
+            "hard": 0.12
+          },
+          "decaySeconds": 0.38,
+          "detune": -1.8
+        },
+        {
+          "ratio": 4.01,
+          "gain": {
+            "soft": 0.004,
+            "hard": 0.065
+          },
+          "decaySeconds": 0.21
+        },
+        {
+          "ratio": 6.02,
+          "gain": {
+            "soft": 0,
+            "hard": 0.025
+          },
+          "decaySeconds": 0.09
+        }
+      ]
+    }
+  },
+  "assets": [],
+  "contentSha256": "9e7ac476901a2bcd0f8834f36394a6e0f778a7e3d7da2cfbe5d6fcb1c47939e6"
+}
